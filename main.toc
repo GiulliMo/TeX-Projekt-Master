@@ -1,4 +1,5 @@
 \babel@toc {ngerman}{}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {ngerman}{}
 \contentsline {chapter}{Inhaltsverzeichnis}{i}{chapter*.1}
 \contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{ii}{chapter*.2}

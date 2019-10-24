@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2019.1.14)  24 OCT 2019 20:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2019.1.14)  24 OCT 2019 20:23
 entering extended mode
 **./main.tex
 (main.tex
@@ -936,24 +936,243 @@ Package: xstring 2018/12/09 v1.81 String manipulations (CT)
 )
 \AC@clearlist=\toks34
 )
+(X:\Miktex\tex\latex\biblatex\biblatex.sty
+Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
+
+(X:\Miktex\tex\latex\logreq\logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count327
+ (X:\Miktex\tex\latex\logreq\logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count328
+\c@listtotal=\count329
+\c@listcount=\count330
+\c@liststart=\count331
+\c@liststop=\count332
+\c@citecount=\count333
+\c@citetotal=\count334
+\c@multicitecount=\count335
+\c@multicitetotal=\count336
+\c@instcount=\count337
+\c@maxnames=\count338
+\c@minnames=\count339
+\c@maxitems=\count340
+\c@minitems=\count341
+\c@citecounter=\count342
+\c@maxcitecounter=\count343
+\c@savedcitecounter=\count344
+\c@uniquelist=\count345
+\c@uniquename=\count346
+\c@refsection=\count347
+\c@refsegment=\count348
+\c@maxextratitle=\count349
+\c@maxextratitleyear=\count350
+\c@maxextraname=\count351
+\c@maxextradate=\count352
+\c@maxextraalpha=\count353
+\c@abbrvpenalty=\count354
+\c@highnamepenalty=\count355
+\c@lownamepenalty=\count356
+\c@maxparens=\count357
+\c@parenlevel=\count358
+\blx@tempcnta=\count359
+\blx@tempcntb=\count360
+\blx@tempcntc=\count361
+\blx@maxsection=\count362
+\blx@maxsegment@0=\count363
+\blx@notetype=\count364
+\blx@parenlevel@text=\count365
+\blx@parenlevel@foot=\count366
+\blx@sectionciteorder@0=\count367
+\blx@entrysetcounter=\count368
+\labelnumberwidth=\skip89
+\labelalphawidth=\skip90
+\biblabelsep=\skip91
+\bibitemsep=\skip92
+\bibnamesep=\skip93
+\bibinitsep=\skip94
+\bibparsep=\skip95
+\bibhang=\skip96
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\c@mincomprange=\count369
+\c@maxcomprange=\count370
+\c@mincompwidth=\count371
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+(X:\Miktex\tex\latex\biblatex\blx-dm.def
+File: blx-dm.def 2018/11/02 v3.12 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'IEEEtran.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count372
+\c@savedafterword=\count373
+\c@annotator=\count374
+\c@savedannotator=\count375
+\c@author=\count376
+\c@savedauthor=\count377
+\c@bookauthor=\count378
+\c@savedbookauthor=\count379
+\c@commentator=\count380
+\c@savedcommentator=\count381
+\c@editor=\count382
+\c@savededitor=\count383
+\c@editora=\count384
+\c@savededitora=\count385
+\c@editorb=\count386
+\c@savededitorb=\count387
+\c@editorc=\count388
+\c@savededitorc=\count389
+\c@foreword=\count390
+\c@savedforeword=\count391
+\c@holder=\count392
+\c@savedholder=\count393
+\c@introduction=\count394
+\c@savedintroduction=\count395
+\c@namea=\count396
+\c@savednamea=\count397
+\c@nameb=\count398
+\c@savednameb=\count399
+\c@namec=\count400
+\c@savednamec=\count401
+\c@translator=\count402
+\c@savedtranslator=\count403
+\c@shortauthor=\count404
+\c@savedshortauthor=\count405
+\c@shorteditor=\count406
+\c@savedshorteditor=\count407
+\c@labelname=\count408
+\c@savedlabelname=\count409
+\c@institution=\count410
+\c@savedinstitution=\count411
+\c@lista=\count412
+\c@savedlista=\count413
+\c@listb=\count414
+\c@savedlistb=\count415
+\c@listc=\count416
+\c@savedlistc=\count417
+\c@listd=\count418
+\c@savedlistd=\count419
+\c@liste=\count420
+\c@savedliste=\count421
+\c@listf=\count422
+\c@savedlistf=\count423
+\c@location=\count424
+\c@savedlocation=\count425
+\c@organization=\count426
+\c@savedorganization=\count427
+\c@origlocation=\count428
+\c@savedoriglocation=\count429
+\c@origpublisher=\count430
+\c@savedorigpublisher=\count431
+\c@publisher=\count432
+\c@savedpublisher=\count433
+\c@language=\count434
+\c@savedlanguage=\count435
+\c@origlanguage=\count436
+\c@savedoriglanguage=\count437
+\c@pageref=\count438
+\c@savedpageref=\count439
+\shorthandwidth=\skip97
+\shortjournalwidth=\skip98
+\shortserieswidth=\skip99
+\shorttitlewidth=\skip100
+\shortauthorwidth=\skip101
+\shorteditorwidth=\skip102
+\locallabelnumberwidth=\skip103
+\locallabelalphawidth=\skip104
+\localshorthandwidth=\skip105
+\localshortjournalwidth=\skip106
+\localshortserieswidth=\skip107
+\localshorttitlewidth=\skip108
+\localshortauthorwidth=\skip109
+\localshorteditorwidth=\skip110
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(X:\Miktex\tex\latex\biblatex\blx-compat.def
+File: blx-compat.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load BibTeX backend compatibility...
+Package biblatex Info: ... file 'blx-bibtex.def' found.
+
+(X:\Miktex\tex\latex\biblatex\blx-bibtex.def
+File: blx-bibtex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+
+
+Package biblatex Warning: Using fall-back BibTeX(8) backend:
+(biblatex)                functionality may be reduced/unavailable.
+
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (X:\Miktex\tex\latex\biblatex\biblatex.def
+File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
+\c@textcitecount=\count440
+\c@textcitetotal=\count441
+\c@textcitemaxnames=\count442
+\c@biburlnumpenalty=\count443
+\c@biburlucpenalty=\count444
+\c@biburllcpenalty=\count445
+\c@smartand=\count446
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(X:\Miktex\tex\latex\biblatex\bbx\numeric.bbx
+File: numeric.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(X:\Miktex\tex\latex\biblatex\bbx\standard.bbx
+File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count447
+\c@bbx:relatedtotal=\count448
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(X:\Miktex\tex\latex\biblatex\cbx\numeric.cbx
+File: numeric.cbx 2018/11/02 v3.12 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(X:\Miktex\tex\latex\biblatex\biblatex.cfg
+File: biblatex.cfg 
+))
 (X:\Miktex\tex\latex\listings\listings.sty
-\lst@mode=\count327
+\lst@mode=\count449
 \lst@gtempboxa=\box90
 \lst@token=\toks35
-\lst@length=\count328
+\lst@length=\count450
 \lst@currlwidth=\dimen263
-\lst@column=\count329
-\lst@pos=\count330
+\lst@column=\count451
+\lst@pos=\count452
 \lst@lostspace=\dimen264
 \lst@width=\dimen265
-\lst@newlines=\count331
-\lst@lineno=\count332
+\lst@newlines=\count453
+\lst@lineno=\count454
 \lst@maxwidth=\dimen266
 
 (X:\Miktex\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-\c@lstnumber=\count333
-\lst@skipnumbers=\count334
+\c@lstnumber=\count455
+\lst@skipnumbers=\count456
 \lst@framebox=\box91
 )
 (X:\Miktex\tex\latex\listings\listings.cfg
@@ -963,7 +1182,51 @@ Package: listings 2018/09/02 1.7 (Carsten Heinz)
 
 (X:\Miktex\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
-) (main.aux)
+)
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+
+(X:\Miktex\tex\latex\biblatex\lbx\ngerman.lbx
+File: ngerman.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+(X:\Miktex\tex\latex\biblatex\lbx\german.lbx
+File: german.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+
+(X:\Miktex\tex\latex\biblatex\lbx\german.lbx
+File: german.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+))
+Package biblatex Info: Trying to load language 'USenglish'...
+Package biblatex Info: ... file 'USenglish.lbx' found.
+
+(X:\Miktex\tex\latex\biblatex\lbx\USenglish.lbx
+File: USenglish.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'american'...
+Package biblatex Info: ... file 'american.lbx' found.
+
+(X:\Miktex\tex\latex\biblatex\lbx\american.lbx
+File: american.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(X:\Miktex\tex\latex\biblatex\lbx\english.lbx
+File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+))
+Package biblatex Info: Trying to load language 'american'...
+Package biblatex Info: ... file 'american.lbx' found.
+
+(X:\Miktex\tex\latex\biblatex\lbx\american.lbx
+File: american.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(X:\Miktex\tex\latex\biblatex\lbx\english.lbx
+File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
+))) (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
@@ -1021,16 +1284,16 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (X:\Miktex\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count335
+\scratchcounter=\count457
 \scratchdimen=\dimen267
 \scratchbox=\box92
-\nofMPsegments=\count336
-\nofMParguments=\count337
+\nofMPsegments=\count458
+\nofMParguments=\count459
 \everyMPshowfont=\toks36
-\MPscratchCnt=\count338
+\MPscratchCnt=\count460
 \MPscratchDim=\dimen268
-\MPnumerator=\count339
-\makeMPintoPDFobject=\count340
+\MPnumerator=\count461
+\makeMPintoPDFobject=\count462
 \everyMPtoPDFconversion=\toks37
 ) (X:\Miktex\tex\latex\oberdiek\epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1134,14 +1397,14 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (X:\Miktex\tex\generic\oberdiek\gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count341
+\c@section@level=\count463
 )
 LaTeX Info: Redefining \ref on input line 94.
 LaTeX Info: Redefining \pageref on input line 94.
 LaTeX Info: Redefining \nameref on input line 94.
  (main.out) (main.out)
-\@outlinefile=\write3
-\openout3 = `main.out'.
+\@outlinefile=\write4
+\openout4 = `main.out'.
 
 Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           Using `bookmark' together with `hyperref' is recommended,
@@ -1159,9 +1422,22 @@ File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
 Package auxhook Info: \AddLineBeginMainAux comes a little late,
 (auxhook)             because the main .aux file is already opened on input lin
 e 164.
-\BKM@id=\count342
+\BKM@id=\count464
 ))
-\c@lstlisting=\count343
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Input encoding 'utf8' specified.
+Package biblatex Info: Data encoding 'utf8' specified.
+(biblatex)             No need to reencode data.
+\openout3 = `main-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (main.bbl)
+Package biblatex Info: Reference section=0 on input line 94.
+Package biblatex Info: Reference segment=0 on input line 94.
+\c@lstlisting=\count465
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 94.
 
 (X:\Miktex\tex\latex\lm\ot1lmr.fd
@@ -1227,8 +1503,8 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 157.
  (X:\Miktex\tex\latex\lm\t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (main.toc)
-\tf@toc=\write4
-\openout4 = `main.toc'.
+\tf@toc=\write5
+\openout5 = `main.toc'.
 
  [1
 
@@ -1323,15 +1599,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--54
  []
 
 
-LaTeX Warning: Citation `dalton' on page 2 undefined on input line 56.
-
-
-LaTeX Warning: Citation `dalton' on page 2 undefined on input line 72.
-
-
-LaTeX Warning: Citation `dalton' on page 2 undefined on input line 72.
-
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
@@ -1339,10 +1606,6 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [2 <./_img/foc-dc-ac.pdf>]
-
-LaTeX Warning: Citation `ternes2015' on page 3 undefined on input line 85.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
@@ -1356,9 +1619,6 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 LaTeX Warning: Reference `anhang_LastenheftEpOS' on page 4 undefined on input l
 ine 90.
 
-
-LaTeX Warning: Citation `drv8303' on page 4 undefined on input line 94.
-
 LaTeX Font Info:    Try loading font information for TS1+lmr on input line 104.
 
 (X:\Miktex\tex\latex\lm\ts1lmr.fd
@@ -1370,20 +1630,16 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 [4
 
 ] (main.lof)
-\tf@lof=\write5
-\openout5 = `main.lof'.
+\tf@lof=\write6
+\openout6 = `main.lof'.
 
  [1
 
 
 
-] (main.lot
-
-LaTeX Warning: Citation `dalton' on page II undefined on input line 4.
-
-)
-\tf@lot=\write6
-\openout6 = `main.lot'.
+] (main.lot)
+\tf@lot=\write7
+\openout7 = `main.lot'.
 
  [2
 
@@ -1400,29 +1656,41 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
  ) 
 Here is how much of TeX's memory you used:
- 28828 strings out of 492970
- 510349 string characters out of 3143823
- 903554 words of memory out of 3000000
- 32279 multiletter control sequences out of 15000+200000
+ 35206 strings out of 492970
+ 633005 string characters out of 3143823
+ 1213709 words of memory out of 3000000
+ 38587 multiletter control sequences out of 15000+200000
  604997 words of font info for 75 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 46i,21n,80p,9085b,1963s stack positions out of 5000i,500n,10000p,200000b,50000s
-{X:/Miktex/fonts/enc/dvips/lm/lm-mathit.enc}{X:/Miktex/fonts/enc/dvips/lm/lm-
-mathex.enc}{X:/Miktex/fonts/enc/dvips/lm/lm-mathsy.enc}{X:/Miktex/fonts/enc/dvi
-ps/lm/lm-ts1.enc}{X:/Miktex/fonts/enc/dvips/lm/lm-rm.enc}{X:/Miktex/fonts/enc/d
-vips/lm/lm-ec.enc}<X:/Miktex/fonts/type1/public/lm/lmbx12.pfb><X:/Miktex/fonts/
-type1/public/lm/lmex10.pfb><X:/Miktex/fonts/type1/public/lm/lmmi12.pfb><X:/Mikt
-ex/fonts/type1/public/lm/lmmi8.pfb><X:/Miktex/fonts/type1/public/lm/lmr12.pfb><
-X:/Miktex/fonts/type1/public/lm/lmr6.pfb><X:/Miktex/fonts/type1/public/lm/lmr8.
-pfb><X:/Miktex/fonts/type1/public/lm/lmro12.pfb><X:/Miktex/fonts/type1/public/l
-m/lmss8.pfb><X:/Miktex/fonts/type1/public/lm/lmssbx10.pfb><X:/Miktex/fonts/type
-1/public/lm/lmsy10.pfb><X:/Miktex/fonts/type1/public/lm/lmsy8.pfb><X:/Miktex/fo
-nts/type1/public/lm/lmtt10.pfb><X:/Miktex/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (10 pages, 388614 bytes).
+ 1143 hyphenation exceptions out of 8191
+ 46i,21n,80p,9085b,3072s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{cite.0@drv8303} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@ternes2015} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@dalton} has been referenced but does not exi
+st, replaced by a fixed one
+
+{X:/Miktex/fonts/enc/dvips/lm/lm-mathit.enc}{X:/Miktex/fonts/enc/dvips/lm/lm-ma
+thex.enc}{X:/Miktex/fonts/enc/dvips/lm/lm-mathsy.enc}{X:/Miktex/fonts/enc/dvips
+/lm/lm-ts1.enc}{X:/Miktex/fonts/enc/dvips/lm/lm-rm.enc}{X:/Miktex/fonts/enc/dvi
+ps/lm/lm-ec.enc}<X:/Miktex/fonts/type1/public/lm/lmbx12.pfb><X:/Miktex/fonts/ty
+pe1/public/lm/lmex10.pfb><X:/Miktex/fonts/type1/public/lm/lmmi12.pfb><X:/Miktex
+/fonts/type1/public/lm/lmmi8.pfb><X:/Miktex/fonts/type1/public/lm/lmr12.pfb><X:
+/Miktex/fonts/type1/public/lm/lmr6.pfb><X:/Miktex/fonts/type1/public/lm/lmr8.pf
+b><X:/Miktex/fonts/type1/public/lm/lmro12.pfb><X:/Miktex/fonts/type1/public/lm/
+lmss8.pfb><X:/Miktex/fonts/type1/public/lm/lmssbx10.pfb><X:/Miktex/fonts/type1/
+public/lm/lmsy10.pfb><X:/Miktex/fonts/type1/public/lm/lmsy8.pfb><X:/Miktex/font
+s/type1/public/lm/lmtt10.pfb><X:/Miktex/fonts/type1/public/lm/lmtt12.pfb>
+Output written on main.pdf (10 pages, 389712 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
+ 236 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
  99 words of extra memory for PDF output out of 10000 (max. 10000000)
 
