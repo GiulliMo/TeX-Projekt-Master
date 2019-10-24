@@ -1,0 +1,228 @@
+%	Autor:		Sean Dalton	
+%	Datum:		tt.mm.jjjj
+%	Short:		Bachelorarbeit
+% DOCUMENTCLASS -----------------------------------------------------------------------------------------
+\documentclass[12pt,a4paper,oneside,numbers=noenddot,headsepline,captions=tableheading,toc=bibliography,openany]{scrbook}
+
+\usepackage{geometry}
+\geometry{a4paper,left=40mm,right=25mm, top=25mm, bottom=25mm, includeheadfoot}
+
+
+% SPRACHE------------------------------------------------------------------------------------------------
+	\usepackage[utf8]{inputenc}
+	\usepackage[autostyle,babel,german=guillemets,style=german]{csquotes}
+	\usepackage[USenglish,ngerman]{babel} 
+	\selectlanguage{ngerman}
+	
+
+% TABELLEN-----------------------------------------------------------------------------------------------
+	\usepackage{multirow} % Tabellen-Zellen �ber mehrere Zeilen1
+	\usepackage{multicol} % mehre Spalten auf eine Seite
+	\usepackage{tabularx} % F�r Tabellen mit vorgegeben Gr��en
+	\usepackage{array}
+	\usepackage{float}
+	\usepackage{booktabs}
+	\usepackage{longtable} % Tabellen �ber mehrere Seiten
+	\usepackage{rotating}
+	\usepackage[table,xcdraw]{xcolor}
+	
+
+	\usepackage{pdflscape}
+	
+% BILDER-------------------------------------------------------------------------------------------------
+	\usepackage{graphicx}
+	\usepackage{color}
+
+
+% ALLGEMEINES--------------------------------------------------------------------------------------------
+	\usepackage{amsmath,amssymb} % Mathesachen
+	\usepackage[T1]{fontenc} % Ligaturen, richtige Umlaute im PDF
+	\usepackage[hyphens,obeyspaces,spaces]{url}		% bricht lange URLs ?sch�n? um
+	\usepackage[decimalsymbol=comma]{siunitx}
+	\usepackage[onehalfspacing]{setspace}
+	\setlength{\parindent}{0cm}	% Disable automatic parindent
+	\usepackage{placeins}
+	\sloppy
+	
+	\usepackage{pdfpages}
+	\usepackage{enumitem}
+	\graphicspath{{_img/}}
+% PDF-----------------------------------------------------------------------------------------------------
+	\usepackage{pdfpages}
+	\usepackage[ngerman,%
+	pdfauthor={Sean Dalton},%
+	pdftitle={Entwicklung der eingebetteten Hardware einer modularen Antriebsplattform},%
+	colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black%
+	]{hyperref}
+
+% ABKÜRZUNGEN --------------------------------------------------------------------------------------------
+	\usepackage[nohyperlinks]{acronym}
+
+
+% BIBLATEX -----------------------------------------------------------------------------------------------
+%	\usepackage[backend=bibtex,%
+%	style=IEEEtran,%
+%	bibstyle=numeric,%
+%	citestyle=numeric,%
+%	sorting=none,%
+%	]{biblatex}
+%	\bibliography{_bib/biblio}
+	
+% QUELLCODE -------------------------------------------------------------------
+\usepackage{listings}
+\definecolor{mygreen}{RGB}{28,172,0} 		% color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\lstset{language=Matlab,%
+	basicstyle=\footnotesize\ttfamily,
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}	
+	
+% DOCUMENT ------------------------------------------------------------------------------------------------
+\begin{document}
+
+%\pagestyle{empty}
+
+
+\cleardoublepage
+
+% ----------------------------------------------------------------------------------------------------------
+% TITELSEITE -----------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------
+\begin{titlepage}
+	\singlespacing
+	
+%----------------Einzelnes Logo	
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{logo}
+	\end{center}
+
+%----------------Zwei Logo		
+%	\begin{figure}
+%		\centering
+%		\begin{minipage}[b]{0.5\textwidth}
+%			\includegraphics[width=\textwidth]{_img/Logo_Smart_RGB}
+%		\end{minipage}
+%		\hfill
+%		\begin{minipage}[b]{0.4\textwidth}
+%			\includegraphics[width=\textwidth]{_img/logo}
+%		\end{minipage}
+%	\end{figure}
+	
+	\begin{center}
+		\vspace*{3cm}
+		\Huge
+		\textbf{Entwicklungsprojekt}\\
+		\vspace*{0.5cm}
+		\large
+		zur Erlangung des akademischen Grades\\
+		Bachelor of Engineering (B.Eng.)\\
+		\vspace*{1cm}
+		\huge
+		\textbf{Entwicklung der eingebetteten Hardware einer modularen Antriebsplattform }\\
+		\vspace*{2cm}
+		\vfill
+		\normalsize
+		\newcolumntype{x}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}p{#1}}
+		
+		\begin{tabular}{x{6cm}p{7.5cm}}
+			\rule{0mm}{5ex}\textbf{Autor:} & Sean William Dalton\newline sean.dalton@hs-bochum.de\newline Matrikelnummer: 013208208\\
+			\rule{0mm}{5ex}\textbf{Erstgutachter:} & Prof.\ Dr.-Ing.\ Arno Bergmann \\
+			\rule{0mm}{2ex}\textbf{Zweitgutachter:} &  \\ 
+			\rule{0mm}{5ex}\textbf{Abgabedatum:} & tt.mm.jjjj\\ 
+		\end{tabular} 
+	\end{center}
+\end{titlepage}
+\onehalfspacing
+\cleardoublepage
+%\input{_vermerke/erklaerung}
+\cleardoublepage
+% ----------------------------------------------------------------------------------------------------------
+% VERZEICHNISSE --------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------
+ \pagenumbering{roman}
+ 
+ \tableofcontents
+ \addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+ \cleardoublepage
+
+\chapter*{Abkürzungsverzeichnis}
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+\begin{acronym}[PMSM]	% längste Abkürzung
+	\acro{ASM}{Asynchronmaschine}
+	\acro{GSM}{Gleichstrommaschine}
+	\acro{PMSM}{Permanentmagneterregte Synchronmaschine}	
+\end{acronym}
+\cleardoublepage
+
+\pagestyle{plain}
+
+\chapter*{Symbolverzeichnis}
+\addcontentsline{toc}{chapter}{Symbolverzeichnis}
+
+\begin{longtable}{p{3cm}p{8cm}p{2cm}}
+	\setlength\tabcolsep{9pt}
+Symbol & Bedeutung                & Einheit               \\ \hline
+	\endfirsthead
+Symbol             & Bedeutung                & Einheit               \\ \hline
+	\endhead
+	\toprule
+	$B$			& magnetische Flussdichte				& \si{\tesla} \\
+	$D$			& Elektrische Flussdichte				& \si{\ampere\second\per\square\meter} \\
+$E$			& Elektrische Feldstärke				& \si{\volt\per\meter} \\
+$H$			& magnetische Feldstärke				& \si{\ampere\per\meter} \\
+
+\bottomrule
+\end{longtable}
+
+
+\cleardoublepage
+\pagestyle{headings}
+\pagenumbering{arabic}
+\setlength{\parskip}{0.1em}
+% ----------------------------------------------------------------------------------------------------------
+% INHALT ---------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------
+
+\input{_content/_template}
+%\input{_content/einleitung}
+%\input{_content/grundlagen}
+%\input{_content/systemkonzipierung}
+%\input{_content/implementierung}
+%\input{_content/verifikation}
+%\input{_content/fazit}
+\clearpage
+
+   
+%Almost done
+\pagenumbering{Roman}
+\clearpage
+
+% ----------------------------------------------------------------------------------------------------------
+% REFERENZEN -----------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------
+\listoffigures
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\clearpage
+
+\listoftables
+\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+\clearpage
+
+%\printbibliography
+\clearpage
+
+
+%Ende der Arbeit -----------------------------------------------------------------------
+\end{document}
