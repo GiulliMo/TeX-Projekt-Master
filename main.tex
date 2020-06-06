@@ -2,10 +2,10 @@
 %	Datum:		tt.mm.jjjj
 %	Short:		Bachelorarbeit
 % DOCUMENTCLASS -----------------------------------------------------------------------------------------
-\documentclass[12pt,a4paper,oneside,numbers=noenddot,headsepline,captions=tableheading,toc=bibliography,openany]{scrbook}
+\documentclass[12pt,a4paper,oneside,numbers=noenddot,headsepline,captions=tableheading,toc=bibliography,openany]{article}
 
-\usepackage{geometry}
-\geometry{a4paper,left=40mm,right=25mm, top=25mm, bottom=25mm, includeheadfoot}
+%\usepackage{geometry}
+%\geometry{a4paper,left=30mm,right=30mm, top=25mm, bottom=25mm, includeheadfoot}
 
 
 % SPRACHE------------------------------------------------------------------------------------------------
@@ -14,8 +14,6 @@
 	\usepackage[USenglish,ngerman]{babel} 
 	\usepackage{lmodern} %Hochaufloesende Schrift
 	\selectlanguage{ngerman}
-	
-
 % TABELLEN-----------------------------------------------------------------------------------------------
 	\usepackage{multirow} % Tabellen-Zellen �ber mehrere Zeilen1
 	\usepackage{multicol} % mehre Spalten auf eine Seite
@@ -44,7 +42,8 @@
 	\setlength{\parindent}{0cm}	% Disable automatic parindent
 	\usepackage{placeins}
 	\sloppy
-	
+
+	\usepackage{wrapfig}
 	\usepackage{pdfpages}
 	\usepackage{enumitem}
 	\graphicspath{{_img/}}
@@ -95,55 +94,84 @@
 
 %\pagestyle{empty}
 
-
 \cleardoublepage
 
 % ----------------------------------------------------------------------------------------------------------
 % TITELSEITE -----------------------------------------------------------------------------------------------
 % ----------------------------------------------------------------------------------------------------------
 \begin{titlepage}
+	\thispagestyle{plain}
+	\markright{Zusammenfassung}
 	\singlespacing
 	
 %----------------Einzelnes Logo	
-	\begin{center}
-		\includegraphics[width=0.5\textwidth]{logo}
-	\end{center}
+%	\begin{center}
+%		\includegraphics[width=0.5\textwidth]{logo}
+%	\end{center}
 
 %----------------Zwei Logo		
-%	\begin{figure}
-%		\centering
-%		\begin{minipage}[b]{0.5\textwidth}
-%			\includegraphics[width=\textwidth]{_img/Logo_Smart_RGB}
-%		\end{minipage}
-%		\hfill
-%		\begin{minipage}[b]{0.4\textwidth}
-%			\includegraphics[width=\textwidth]{_img/logo}
-%		\end{minipage}
-%	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{minipage}[b]{0.5\textwidth}
+			\includegraphics[width=\textwidth]{logo2}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{logo}
+		\end{minipage}
+	\end{figure}
 	
 	\begin{center}
-		\vspace*{3cm}
-		\Huge
-		\textbf{Entwicklungsprojekt}\\
-		\vspace*{0.5cm}
+		\vspace*{0cm}
+	%	\Huge
+		%\textbf{Entwicklungsprojekt}\\
+	%	\vspace*{0cm}
 		\large
-		zur Erlangung des akademischen Grades\\
-		Bachelor of Engineering (B.Eng.)\\
-		\vspace*{1cm}
-		\huge
-		\textbf{Entwicklung der eingebetteten Hardware einer modularen Antriebsplattform }\\
-		\vspace*{2cm}
-		\vfill
+	%	zur Erlangung des akademischen Grades\\
+	%	Bachelor of Engineering (B.Eng.)\\
+	%	\vspace*{0cm}
+	%	\huge
+		\textbf{Implementierung einer Schlupfregelung per Model-Based Design sowie einer SLAM-Kartografierung für ein autonomes Logistik-Fahrzeug }\\
+		\vspace*{0.8cm}
+		%\vfill
 		\normalsize
 		\newcolumntype{x}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}p{#1}}
+\end{center}	
+Im Rahmen dieser Bachelorarbeit wurde eine Schlupfregelung und eine Beispielanwendung für autonomes Fahren konzipiert, integriert und verifiziert. Das autonome Logistik-Fahrzeug aus Abbildung \ref{fig: alf} galt hierbei als Versuchs-
+
+\begin{wrapfigure}{l}{7.5cm}
+	\includegraphics[width=0.5\columnwidth]{alf2}
+	\caption{Darstellung des autonomen Logistik-Fahrzeugs.}
+	\label{fig: alf}
+\end{wrapfigure}
+
+ fahrzeug. Das Roboter dient als Plattform für aufeinander aufbauende Projekte, so auch für diese Bachelorarbeit. Mithilfe der \textit{Conceptual Design Specification Technique for the Engineering of Mechatronic Systems} (CONSENS) Methode wurde das in der Bachelorarbeit entwickelte System vollständig konzeptioniert. Durch vier am Fahrzeug angebrachte Mecanumräder, kam es im Grundzustand des Roboters zu unerwünschten Rotationen des Fahrzeugs und somit zu einer unkontrollierten Fahrweise. Diese sogenannten Drifts beruhen auf losgelagerten Rollen, die entlang des Umfangs der Mecanumräder im 45$^\circ$ Winkel angebracht sind und Schlupf erzeugen. Die Kompensation des Schlupfes erfolgt durch eine Drehzahlregelung und einer übergeordneten Lageregelung. Für die Umsetzung der Drehzahlregelung wurde eine Simulation eines Reglers mithilfe von Matlab/Simulink durchgeführt und anschließend im System implementiert. Die Lageregelung wird mithilfe eines aus Umgebungsdaten generierten Posenwinkels realisiert. Das autonome Logistik-Fahrzeug kann durch manuelle Eingaben am Joystick oder durch autonome Fahrfunktionen gesteuert werden. Letzteres erfordert Informationen über das Einsatzumfeld des Roboters. Aufgrunddessen ist das Fahrzeug mit einem LiDAR-Sensor und zwei Tiefensensoren ausgestattet, dessen Daten kombiniert ausgewertet werden (Abb. \ref{fig: match}).
+
+\begin{figure}[H]
+	\includegraphics[width=\columnwidth]{match.pdf}
+	\centering
+	
+	\caption{Die aufgenommenen Informationen der Sensoren werden aufgenommen und kombiniert ausgewertet. Die schwarzen Punkte zeigen Messungen der Tiefensensoren. Die Daten des LiDAR-Sensors sind blau markiert. }
+	\label{fig: match}
+\end{figure}
+
+
+ Dabei kartografiert das autonome Logistik-Fahrzeug die Umgebung durch einen \textit{Simultaneous Localization and Mapping} (SLAM) Algorithmus und bewertet die Bereiche um die erkannten Hindernisse in einer sogenannten Costmap. Weiterhin können Navigationsziele manuell oder automatisch in die zuvor erstellte Umgebungskarte eingegeben werden (Abb. \ref{fig: trajektorie}). Hierbei verfolgt der Roboter diverse Bewegungsziele, die mathematisch generiert und durch die Antriebseinheit ausgeführt werden. Für eine autonome Bewegung des Roboters ist keine Veränderung der Umgebung notwendig.\newline
+  
+
+
+\begin{figure}[H]
+	\includegraphics[width=\columnwidth]{trajektorie}
+	\centering
+	
+	\caption{In der Mitte der Abbildung ist das autonome Logistik-Fahrzeug aus der Draufsicht in der Costmap dargestellt. Kollisionsbereiche sind um die erkannten Hindernisse entsprechend der Roboter Geometrien in der Karte eingezeichnet.}
+	\label{fig: trajektorie}
+\end{figure}
+
+
+
+
 		
-		\begin{tabular}{x{6cm}p{7.5cm}}
-			\rule{0mm}{5ex}\textbf{Autor:} & Sean William Dalton\newline sean.dalton@hs-bochum.de\newline Matrikelnummer: 013208208\\
-			\rule{0mm}{5ex}\textbf{Erstgutachter:} & Prof.\ Dr.-Ing.\ Arno Bergmann \\
-			\rule{0mm}{2ex}\textbf{Zweitgutachter:} &  \\ 
-			\rule{0mm}{5ex}\textbf{Abgabedatum:} & tt.mm.jjjj\\ 
-		\end{tabular} 
-	\end{center}
 \end{titlepage}
 \onehalfspacing
 \cleardoublepage
@@ -154,49 +182,15 @@
 % ----------------------------------------------------------------------------------------------------------
  \pagenumbering{roman}
  
- \tableofcontents
- \addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+% \tableofcontents
+ %\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
  \cleardoublepage
 
-\chapter*{Abkürzungsverzeichnis}
-\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
-\begin{acronym}[PMSM]	% längste Abkürzung
-	\acro{ASM}{Asynchronmaschine}
-	\acro{GSM}{Gleichstrommaschine}
-	\acro{PMSM}{Permanentmagneterregte Synchronmaschine}	
-\end{acronym}
-\cleardoublepage
-
-\pagestyle{plain}
-
-\chapter*{Symbolverzeichnis}
-\addcontentsline{toc}{chapter}{Symbolverzeichnis}
-
-\begin{longtable}{p{3cm}p{8cm}p{2cm}}
-	\setlength\tabcolsep{9pt}
-Symbol & Bedeutung                & Einheit               \\ \hline
-	\endfirsthead
-Symbol             & Bedeutung                & Einheit               \\ \hline
-	\endhead
-	\toprule
-	$B$			& magnetische Flussdichte				& \si{\tesla} \\
-	$D$			& Elektrische Flussdichte				& \si{\ampere\second\per\square\meter} \\
-$E$			& Elektrische Feldstärke				& \si{\volt\per\meter} \\
-$H$			& magnetische Feldstärke				& \si{\ampere\per\meter} \\
-
-\bottomrule
-\end{longtable}
+%\chapter*{Abkürzungsverzeichnis}
+%\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 
 
-\cleardoublepage
-\pagestyle{headings}
-\pagenumbering{arabic}
-\setlength{\parskip}{0.1em}
-% ----------------------------------------------------------------------------------------------------------
-% INHALT ---------------------------------------------------------------------------------------------------
-% ----------------------------------------------------------------------------------------------------------
-
-\input{_content/_template}
+%\input{_content/_template}
 %\input{_content/einleitung}
 %\input{_content/grundlagen}
 %\input{_content/systemkonzipierung}
@@ -212,14 +206,7 @@ $H$			& magnetische Feldstärke				& \si{\ampere\per\meter} \\
 
 % ----------------------------------------------------------------------------------------------------------
 % REFERENZEN -----------------------------------------------------------------------------------------------
-% ----------------------------------------------------------------------------------------------------------
-\listoffigures
-\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
-\clearpage
-
-\listoftables
-\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
-\clearpage
+% -------------------------------------------------------------------------------------------
 
 %\printbibliography
 \clearpage
