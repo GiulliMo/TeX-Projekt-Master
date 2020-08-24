@@ -1,0 +1,75 @@
+
+\documentclass[tikz,margin=5mm]{standalone}
+\usetikzlibrary{circuits.ee.IEC}
+
+\begin{document}
+	\begin{tikzpicture}[circuit ee IEC, circuit symbol lines/.style={draw,thick}]
+	
+	%Matrix
+	\def\spaltenabstand{1.5cm}
+	\def\zeilenabstand{0.5cm}
+	\def\zeilenzahl{15}
+	\def\spaltenzahl{7}
+	\foreach \i in {1,...,\zeilenzahl}
+	\foreach \j in {1,...,\spaltenzahl}
+	{
+		\coordinate (S-\i-\j) at ({(\j-1)*\spaltenabstand},{-(\i-1)*\zeilenabstand});
+		%\node at (S-\i-\j){+}; % Orientierungshilfe
+	}
+	
+	%Schaltung
+	\draw (S-8-2) to  [resistor={info=$R_1$}](S-10-2); 
+
+	
+	\draw (S-8-3) to  [resistor={info=$R_2$}](S-10-3); 
+
+	
+	 \draw (S-8-4) to  [resistor={info=$R_3$}](S-10-4); 
+
+	 
+	 
+	%\draw (S-4-2)[fill=white] circle [radius=15pt];
+
+	\node[] at (1.5,-1.0) {U2};
+	\node[] at (3.0,-1.0) {V2};
+	\node[] at (4.5,-1.0) {W2};
+	\node[] at (0,-2.5) {A0+};
+	\node[] at (0,-4.5) {A0-};
+	\node[] at (6,-2.5) {A1+};
+	\node[] at (6,-4.5) {A1-};
+	
+%	\node[draw] at (0,0) {test}
+	%Leiterbahnen
+	
+	\draw 
+	(S-8-2)--(S-7-2)--(S-4-2)
+	(S-14-2)--(S-10-2)
+	%(S-3-1)--(S-3-5)
+	
+	(S-8-3)--(S-7-3)--(S-4-3)
+	(S-14-3)--(S-10-3)
+%	(S-4-1)--(S-4-5)
+	
+	(S-8-4)--(S-7-4)--(S-4-4)
+	(S-14-4)--(S-10-4)
+	%(S-5-1)--(S-5-5)
+	
+	(S-7-2)--(S-7-1)
+	
+	(S-11-2)--(S-11-1)
+	
+	(S-7-4)--(S-7-5)
+	
+	(S-11-4)--(S-11-5);
+	
+
+	
+	Knotenpunkte, Klemmen (extra zeichnen, so keine Überschneidungen)
+	\foreach \p in {S-11-2,S-11-4,S-7-2,S-7-4,S-7-1,S-11-1,S-11-5,S-7-5}
+	\draw[fill=white] (\p) circle [radius=2pt];
+	
+	\foreach \p in {S-4-2,S-4-3,S-4-4,S-14-2,S-14-3,S-14-4}
+	\draw[fill] (\p) circle [radius=2pt];
+	
+	\end{tikzpicture}
+\end{document}

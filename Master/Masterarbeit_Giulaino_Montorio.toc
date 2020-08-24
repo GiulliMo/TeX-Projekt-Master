@@ -1,0 +1,31 @@
+\babel@toc {ngerman}{}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\contentsline {chapter}{Abkürzungsverzeichnis}{iv}{chapter*.5}%
+\contentsline {chapter}{Symbolverzeichnis}{v}{chapter*.6}%
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation durch bestehende Bachelorarbeit}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Zielsetzung des Projekts}{1}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Grundlagen}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Eigenschaften von neuronalen Netzen}{2}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Lernprozess}{2}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Unterscheidung verschiedener Netze}{2}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Evaluation neuronaler Netze}{2}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Objekterkennung durch neuronale Netze}{2}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Datensätze}{2}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Statemachine}{2}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Bestimmung von Positionskoordinaten}{2}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Konzeptionierung}{3}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Anforderungserhebung mit CONSENS}{3}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Konzept und Aufbau der Personenerkennung}{3}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Wirkstruktur der Personenerkennung}{3}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Auswahl und Training der verwendeten neuronalen Netze}{3}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Schnittstelle zwischen Python und ROS}{3}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Erstellung von Objektinformationen}{3}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Funktionsweise des Gesamtsystems}{3}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Verifikation}{4}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{5}{chapter.5}%
+\contentsline {chapter}{\nonumberline Quellenverzeichnis}{7}{chapter*.7}%
+\contentsline {chapter}{\numberline {A}Anhang}{9}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Abbildungen}{9}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{14}{section.A.2}%

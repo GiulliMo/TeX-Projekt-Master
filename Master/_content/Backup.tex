@@ -1,0 +1,46 @@
+ 
+
+\section{CAN-Bus}
+\label{sec: CAN-Bus}
+
+Beim vorliegenden Fahrzeug sind für die Umsetzung eines Antriebs vier bürstenlosen Gleichstrommotoren (engl. BLDC) verbaut.	
+Für die Ansteuerung der Motoren werden am ALF die im Entwicklungsplattform Ortsfrequenzfilter-Sensor Projekt (EPOS) entwickelten MotorController Modul (MCM) eingesetzt. Das MCM ist für den Betrieb von zwei BLDC-Motoren samt Auswertung der Hall-Sensorik ausgelegt. Die Verwendung der Controller wurde im Projekt ALF festgelegt. Die Module verfügen über eine CAN-Schnittstelle um mit anderen Komponenten des Fahrzeugs kommunizieren zu können.\newline
+Am ALF werden Drehmomentanforderungen, Drehzahlen und diverse Statusmeldungen mithilfe des CAN-Busses übertragen. CAN ist ein Bitstrom Orientiertes Protokoll, in der jede Botschaft durch eine eindeutige Kennung, Message Identifier genanannt, markiert ist.
+Mithilfe des Message Identifiers entscheidet jedes Steuergerät ob die Botschaft weiterverarbeitet oder ignoriert wird. Sobald der Bus für mindestens drei Bitzeiten frei ist, kann das Steuergerät senden. Die Tabellen \ref{tab: CAN-Tabelle des MCM vorne} und \ref{tab: CAN-Tabelle des MCM hinten} zeigen die im Rahmen des Projektes RALF genutzten Message Identifier und deren Funktion. \cite{schmidgall,alf}
+
+\begin{table}[H]
+	\centering
+	\caption{CAN-Tabelle des MCM's vorne}
+	\label{tab: CAN-Tabelle des MCM vorne}
+	\begin{tabular}{c|c|c|c|c}
+		\hline
+		Ident       &       Funktion       &           T       &  Byte & Beschreibung  \\ \hline \hline
+		101h		&		$M1_{soll}$		&			$10\ \milli\second$ & 0-1 & Soll Drehmoment Motor 1 \\
+		111h		&		$M2_{soll}$		&			$10\ \milli\second$ & 0-1 & Soll Drehmoment Motor 2 \\
+		103h		&		$n1_{ist}$		&			$10\ \milli\second$ & 0-1 & Ist Drehzahl Motor 1 \\
+		113h		&		$n2_{ist}$		&			$10\ \milli\second$ & 0-1 & st Drehzahl Motor 2 \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+	\centering
+	\caption{CAN-Tabelle des MCM's hinten}
+	\label{tab: CAN-Tabelle des MCM hinten}
+	\begin{tabular}{c|c|c|c|c}
+		\hline
+		Ident       &       Funktion       &           T       &  Byte & Beschreibung  \\ \hline \hline
+		121h		&		$M1_{soll}$		&			$10\ \milli\second$ & 0-1 & Soll Drehmoment Motor 1 \\
+		123h		&		$M2_{soll}$		&			$10\ \milli\second$ & 0-1 & Soll Drehmoment Motor 2 \\
+		103h		&		$n1_{ist}$		&			$10\ \milli\second$ & 0-1 & Ist Drehzahl Motor 1 \\
+		133h		&		$n2_{ist}$		&			$10\ \milli\second$ & 0-1 & st Drehzahl Motor 2 \\ \hline
+	\end{tabular}
+	
+\end{table}
+
+
+Kommt es zur „Kollision“ zweier Nachrichten, entscheidet der Message Identifier, welche Botschaft Priorität hat, wobei die niedrigere Zahl eine höhere Priorität besitzt.
+Das Prinzip der Kollisionserkennung wird als Arbitrierung bezeichnet \cite{schmidgall}.\newline
+Zusätzlich zu den 0 bis 8 Bytes großen Nachrichten wird eine 15 bit lange Prüfsumme mitgesendet. Die teilnehmenden Steuergeräte überprüfen das Botschaftsformat und senden eine positive Empfangsbestätigung oder eine Fehlermeldung. Tritt eine Fehlermeldung auf, so wird die Nachricht von allen Teilnehmern des Netzwerks ignoriert. Der Sender, der die fehlerhaften Nachricht erhält, startet automatisch einen neuen Sendeversuch. \cite{schmidgall}
+				   		
+

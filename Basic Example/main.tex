@@ -1,0 +1,222 @@
+%	Autor:		Sean Dalton	
+%	Datum:		tt.mm.jjjj
+%	Short:		Bachelorarbeit
+% DOCUMENTCLASS -----------------------------------------------------------------------------------------
+%\documentclass[12pt,a4paper,oneside,numbers=noenddot,headsepline,captions=tableheading,toc=bibliography,openany]{article}
+\documentclass[12pt,a4paper,oneside,numbers=noenddot,headsepline,captions=tableheading,toc=bibliography,openany,tikz,margin=5mm]{scrbook}
+\setcounter{secnumdepth}{5}
+\renewcommand{\arraystretch}{1.4} 
+
+\usepackage[scaled=.90]{helvet}
+\usepackage{geometry}
+\geometry{a4paper,left=25mm,right=25mm, top=25mm, bottom=25mm, includeheadfoot}
+%\usepackage{geometry}
+%\geometry{a4paper,left=30mm,right=30mm, top=25mm, bottom=25mm, includeheadfoot}
+
+
+% SPRACHE------------------------------------------------------------------------------------------------
+	\usepackage[utf8]{inputenc}
+	\usepackage[autostyle,babel,german=guillemets,style=german]{csquotes}
+	\usepackage[USenglish,ngerman]{babel} 
+	\usepackage{lmodern} %Hochaufloesende Schrift
+	\selectlanguage{ngerman}
+% TABELLEN-----------------------------------------------------------------------------------------------
+	\usepackage{multirow} % Tabellen-Zellen �ber mehrere Zeilen1
+	\usepackage{multicol} % mehre Spalten auf eine Seite
+	\usepackage{tabularx} % F�r Tabellen mit vorgegeben Gr��en
+	\usepackage{array}
+	\usepackage{float}
+	\usepackage{booktabs}
+	\usepackage{longtable} % Tabellen �ber mehrere Seiten
+	\usepackage{rotating}
+	\usepackage[table,xcdraw]{xcolor}
+	
+
+	\usepackage{pdflscape}
+	
+% BILDER-------------------------------------------------------------------------------------------------
+	\usepackage{graphicx}
+	\usepackage{color}
+
+
+% ALLGEMEINES--------------------------------------------------------------------------------------------
+	\usepackage{amsmath,amssymb} % Mathesachen
+	\usepackage[T1]{fontenc} % Ligaturen, richtige Umlaute im PDF
+	\usepackage[hyphens,obeyspaces,spaces]{url}		% bricht lange URLs ?sch�n? um
+	\usepackage[decimalsymbol=comma]{siunitx}
+	\usepackage[onehalfspacing]{setspace}
+	\setlength{\parindent}{0cm}	% Disable automatic parindent
+	\usepackage{placeins}
+	\sloppy
+
+	\usepackage{wrapfig}
+	\usepackage{pdfpages}
+	\usepackage{enumitem}
+	\graphicspath{{_img/}}
+% PDF-----------------------------------------------------------------------------------------------------
+	\usepackage{pdfpages}
+	\usepackage[ngerman,%
+	pdfauthor={Sean Dalton},%
+	pdftitle={Entwicklung der eingebetteten Hardware einer modularen Antriebsplattform},%
+	colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black%
+	]{hyperref}
+
+% ABKÜRZUNGEN --------------------------------------------------------------------------------------------
+	\usepackage[nohyperlinks]{acronym}
+
+
+% BIBLATEX -----------------------------------------------------------------------------------------------
+	\usepackage[backend=bibtex,%
+	style=IEEEtran,%
+	bibstyle=numeric,%
+	citestyle=numeric,%
+	sorting=none,%
+	]{biblatex}
+	\bibliography{_bib/biblio}
+	
+% QUELLCODE -------------------------------------------------------------------
+\usepackage{listings}
+\definecolor{mygreen}{RGB}{28,172,0} 		% color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\lstset{language=Matlab,%
+	basicstyle=\footnotesize\ttfamily,
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}	
+	
+% DOCUMENT ------------------------------------------------------------------------------------------------
+\begin{document}
+
+%\pagestyle{empty}
+
+\cleardoublepage
+
+% ----------------------------------------------------------------------------------------------------------
+% TITELSEITE -----------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------
+\begin{titlepage}
+	\thispagestyle{plain}
+	\markright{Zusammenfassung}
+	\singlespacing
+	
+%----------------Einzelnes Logo	
+%	\begin{center}
+%		\includegraphics[width=0.5\textwidth]{logo}
+%	\end{center}
+
+%----------------Zwei Logo		
+	\begin{figure}
+		\centering
+		\begin{minipage}[b]{0.5\textwidth}
+			\includegraphics[width=\textwidth]{logo2}
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{logo}
+		\end{minipage}
+	\end{figure}
+	
+	\begin{center}
+		\vspace*{0cm}
+	%	\Huge
+		%\textbf{Entwicklungsprojekt}\\
+	%	\vspace*{0cm}
+		\large
+	%	zur Erlangung des akademischen Grades\\
+	%	Bachelor of Engineering (B.Eng.)\\
+	%	\vspace*{0cm}
+	%	\huge
+		\textbf{Implementierung einer Schlupfregelung per Model-Based Design sowie einer SLAM-Kartografierung für ein autonomes Logistik-Fahrzeug }\\
+		\vspace*{0.8cm}
+		%\vfill
+		\normalsize
+		\newcolumntype{x}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}p{#1}}
+\end{center}	
+Im Rahmen dieser Bachelorarbeit wurde eine Schlupfregelung und eine Beispielanwendung für autonomes Fahren konzipiert, integriert und verifiziert. Das autonome Logistik-Fahrzeug aus Abbildung \ref{fig: alf} galt hierbei als Versuchs-
+
+\begin{wrapfigure}{l}{7.5cm}
+	\includegraphics[width=0.5\columnwidth]{alf2}
+	\caption{Darstellung des autonomen Logistik-Fahrzeugs.}
+	\label{fig: alf}
+\end{wrapfigure}
+
+ fahrzeug. Das Roboter dient als Plattform für aufeinander aufbauende Projekte, so auch für diese Bachelorarbeit. Mithilfe der \textit{Conceptual Design Specification Technique for the Engineering of Mechatronic Systems} (CONSENS) Methode wurde das in der Bachelorarbeit entwickelte System vollständig konzeptioniert. Durch vier am Fahrzeug angebrachte Mecanumräder, kam es im Grundzustand des Roboters zu unerwünschten Rotationen des Fahrzeugs und somit zu einer unkontrollierten Fahrweise. Diese sogenannten Drifts beruhen auf losgelagerten Rollen, die entlang des Umfangs der Mecanumräder im 45$^\circ$ Winkel angebracht sind und Schlupf erzeugen. Die Kompensation des Schlupfes erfolgt durch eine Drehzahlregelung und einer übergeordneten Lageregelung. Für die Umsetzung der Drehzahlregelung wurde eine Simulation eines Reglers mithilfe von Matlab/Simulink durchgeführt und anschließend im System implementiert. Die Lageregelung wird mithilfe eines aus Umgebungsdaten generierten Posenwinkels realisiert. Das autonome Logistik-Fahrzeug kann durch manuelle Eingaben am Joystick oder durch autonome Fahrfunktionen gesteuert werden. Letzteres erfordert Informationen über das Einsatzumfeld des Roboters. Aufgrunddessen ist das Fahrzeug mit einem LiDAR-Sensor und zwei Tiefensensoren ausgestattet, dessen Daten kombiniert ausgewertet werden (Abb. \ref{fig: match}).
+
+\begin{figure}[H]
+	\includegraphics[width=\columnwidth]{match.pdf}
+	\centering
+	
+	\caption{Die aufgenommenen Informationen der Sensoren werden aufgenommen und kombiniert ausgewertet. Die schwarzen Punkte zeigen Messungen der Tiefensensoren. Die Daten des LiDAR-Sensors sind blau markiert. }
+	\label{fig: match}
+\end{figure}
+
+
+ Dabei kartografiert das autonome Logistik-Fahrzeug die Umgebung durch einen \textit{Simultaneous Localization and Mapping} (SLAM) Algorithmus und bewertet die Bereiche um die erkannten Hindernisse in einer sogenannten Costmap. Weiterhin können Navigationsziele manuell oder automatisch in die zuvor erstellte Umgebungskarte eingegeben werden (Abb. \ref{fig: trajektorie}). Hierbei verfolgt der Roboter diverse Bewegungsziele, die mathematisch generiert und durch die Antriebseinheit ausgeführt werden. Für eine autonome Bewegung des Roboters ist keine Veränderung der Umgebung notwendig.\newline
+  
+
+
+\begin{figure}[H]
+	\includegraphics[width=\columnwidth]{trajektorie}
+	\centering
+	
+	\caption{In der Mitte der Abbildung ist das autonome Logistik-Fahrzeug aus der Draufsicht in der Costmap dargestellt. Kollisionsbereiche sind um die erkannten Hindernisse entsprechend der Roboter Geometrien in der Karte eingezeichnet.}
+	\label{fig: trajektorie}
+\end{figure}
+
+
+
+
+		
+\end{titlepage}
+\onehalfspacing
+\cleardoublepage
+%\input{_vermerke/erklaerung}
+\cleardoublepage
+% ----------------------------------------------------------------------------------------------------------
+% VERZEICHNISSE --------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------
+ \pagenumbering{roman}
+ 
+ \tableofcontents
+ %\addcontentsline{toc}{chapter}{Inhaltsverzeichnis}
+ \cleardoublepage
+
+\chapter*{Abkürzungsverzeichnis}
+%\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+
+
+%\input{_content/_template}
+%\input{_content/einleitung}
+%\input{_content/grundlagen}
+%\input{_content/systemkonzipierung}
+%\input{_content/implementierung}
+%\input{_content/verifikation}
+%\input{_content/fazit}
+\clearpage
+
+   
+%Almost done
+\pagenumbering{Roman}
+\clearpage
+
+% ----------------------------------------------------------------------------------------------------------
+% REFERENZEN -----------------------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------------
+
+%\printbibliography
+\clearpage
+
+
+%Ende der Arbeit -----------------------------------------------------------------------
+\end{document}

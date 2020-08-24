@@ -1,0 +1,397 @@
+%	Autor:		Giuliano Montorio & Hannes Dittmann
+%	Datum:		28.08.2018
+%	Short:		Entwicklungsprojekt
+% DOCUMENTCLASS -----------------------------------------------------------------------------------------
+\documentclass[12pt,a4paper,oneside,numbers=noenddot,headsepline,captions=tableheading,toc=bibliography,openany,tikz,margin=5mm]{scrbook}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\renewcommand{\arraystretch}{1.4} 
+
+\usepackage[scaled=.90]{helvet}
+\usepackage{geometry}
+\geometry{a4paper,left=25mm,right=25mm, top=25mm, bottom=25mm, includeheadfoot}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% SPRACHE------------------------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[autostyle,babel,german=guillemets,style=german]{csquotes}
+\usepackage[USenglish,ngerman]{babel}
+\usepackage{lmodern} %Hochaufloesende Schrift 
+\selectlanguage{ngerman}
+
+
+% TABELLEN-----------------------------------------------------------------------------------------------
+\usepackage{multirow} % Tabellen-Zellen �ber mehrere Zeilen1
+\usepackage{multicol} % mehre Spalten auf eine Seite
+\usepackage{tabularx} % F�r Tabellen mit vorgegeben Gr��en
+\usepackage{array}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{longtable} % Tabellen �ber mehrere Seiten
+\usepackage{rotating}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{circuits.ee.IEC}
+\usepackage{pgfplots}
+\pgfplotsset{
+	dirac/.style={
+		mark=triangle*,
+		mark options={scale=2},
+		ycomb,
+		scatter,
+		visualization depends on={y/abs(y)-1 \as \sign},
+		scatter/@pre marker code/.code={\scope[rotate=90*\sign,yshift=-2pt]}
+	}
+}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\usepackage{pdflscape}
+
+% BILDER-------------------------------------------------------------------------------------------------
+\usepackage{graphicx}
+
+\usepackage{color}
+\usepackage{svg}
+
+
+
+% ALLGEMEINES--------------------------------------------------------------------------------------------
+\usepackage{amsmath,amssymb} % Mathesachen
+\usepackage[T1]{fontenc} % Ligaturen, richtige Umlaute im PDF
+\usepackage[hyphens,obeyspaces,spaces]{url}		% bricht lange URLs ?sch�n? um
+\usepackage[decimalsymbol=comma]{siunitx}
+\usepackage[onehalfspacing]{setspace}
+\setlength{\parindent}{0cm}	% Disable automatic parindent
+\usepackage{placeins}
+\sloppy
+\usepackage{mathrsfs}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\graphicspath{{_img/}}
+% PDF-----------------------------------------------------------------------------------------------------
+\usepackage{pdfpages}
+\usepackage[ngerman,%
+pdfauthor={Giuliano Montorio},%
+pdftitle={Masterarbeit G. Montorio},%
+colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black%
+]{hyperref}
+
+% ABKÜRZUNGEN --------------------------------------------------------------------------------------------
+\usepackage[nohyperlinks]{acronym}
+
+
+% BIBLATEX -----------------------------------------------------------------------------------------------
+\usepackage[backend=bibtex,%
+style=IEEEtran,%
+bibstyle=numeric,%
+citestyle=numeric,%
+sorting=none,%
+]{biblatex}
+\bibliography{_bib/biblio}
+
+% QUELLCODE -------------------------------------------------------------------
+\usepackage{listings}
+\definecolor{mygreen}{RGB}{28,172,0} 		% color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\lstset{language=Matlab,%
+	basicstyle=\footnotesize\ttfamily,
+	breaklines=true,%
+	morekeywords={matlab2tikz},
+	keywordstyle=\color{blue},%
+	morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+	identifierstyle=\color{black},%
+	stringstyle=\color{mylilas},
+	commentstyle=\color{mygreen},%
+	showstringspaces=false,%without this there will be a symbol in the places where there is a space
+	numbers=left,%
+	numberstyle={\tiny \color{black}},% size of the numbers
+	numbersep=9pt, % this defines how far the numbers are from the text
+	emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}		
+% DOCUMENT ------------------------------------------------------------------------------------------------
+\begin{document}
+	
+	%\pagestyle{empty}
+	
+	
+	\cleardoublepage
+	
+	% ----------------------------------------------------------------------------------------------------------
+	% TITELSEITE -----------------------------------------------------------------------------------------------
+	% ----------------------------------------------------------------------------------------------------------
+\begin{titlepage}
+	\singlespacing
+	
+	
+	\begin{figure}
+		\centering
+		\begin{minipage}[b]{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Bilder/Logo_Smart_RGB}
+			
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{Bilder/logo}
+			
+		\end{minipage}
+	\end{figure}
+	
+	\begin{center}
+		\vspace*{2cm}
+		\Huge
+		\textbf{Masterarbeit}\\
+		\vspace*{0.5cm}
+		\large
+		zur Erlangung des akademischen Grades\\
+		Master of Science (M.Sc.)\\
+		\vspace*{2cm}
+		\huge
+		\textbf{Entwicklung einer Bildverarbeitung mit dem Schwerpunkt Personenerkennung für ein autonomes Logistik-Fahrzeug}\\
+		\vspace*{1cm}
+		\vfill
+		\normalsize
+		\newcolumntype{x}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}p{#1}}
+		
+		\begin{tabular}{x{6cm}p{7.5cm}}
+			\rule{0mm}{5ex}
+			\textbf{Autor:} & Giuliano Montorio
+			\newline giuliano.montorio@hs-bochum.de
+			\newline Matrikelnummer: 015202887
+			\newline\\
+			
+			
+			\rule{0mm}{5ex}\textbf{Erstgutachter:} & Prof.\ Dr.-Ing.\ Arno Bergmann\\
+			\rule{0mm}{2ex}\textbf{Zweitgutachter:} & M.Sc. \ Bernd Möllenbeck \\
+			\rule{0mm}{5ex}\textbf{Abgabedatum:} & tt.mm.jjjj\\ 
+		\end{tabular} 
+	\end{center}
+\end{titlepage}
+
+	\onehalfspacing
+	\cleardoublepage
+	\cleardoublepage
+	
+	
+	
+	\chapter*{\textbf{Eidesstattliche Erklärung}}
+	%\LARGE
+	\textbf{Eidesstattliche Erklärung zur Abschlussarbeit:}
+	\newline
+	\newline
+	\newline
+	\flqq Entwicklung einer Bildverarbeitung mit dem Schwerpunkt Personenerkennung für ein autonomes Logistik-Fahrzeug\frqq
+	\newline
+	\newline
+	\newline
+	%\large
+	Ich versichere, die von mir vorgelegte Arbeit selbstständig verfasst zu haben. Alle
+	Stellen, die wörtlich oder sinngemäß aus veröffentlichten oder nicht veröffentlichten
+	Arbeiten anderer entnommen sind, habe ich als entnommen kenntlich gemacht.
+	Sämtliche Quellen und Hilfsmittel, die ich für die Arbeit benutzt habe, sind angegeben.
+	Die Arbeit hat mit gleichem Inhalt bzw. in wesentlichen Teilen noch keiner anderen
+	Prüfungsbehörde vorgelegen.
+	\newline
+	\newline
+	\newline
+	\newline
+	\newline
+	\newline
+	\newline
+	\newline
+	\begin{center}
+		\begin{tabular}[h]{lp{2cm}p{5.5cm}}
+			Bochum, \today & & \\
+			\cline{1-1}\cline{3-3}
+			Ort, Datum& & Giuliano Montorio\\
+		\end{tabular}
+	\end{center}
+	
+	
+	\chapter*{\textbf{Danksagung}}
+	
+	
+	%\large
+	Ein großes Dankeschön gilt all jenen Personen, die uns im Rahmen dieser Bachelorarbeit
+	begleitet und geholfen haben. Ganz besonders möchten wir Herrn Prof. Dr.-Ing. Arno Bergmann, Herrn Dr.-Ing. Christoph Krimpmann und Herrn Stefan Beumler, M.Sc. danken, die unsere Arbeit durch ihre fachliche und persönliche Unterstützung begleitet haben. Auch beim Fachbereich Elektrotechnik und Informatik der Hochschule
+	Bochum, insbesondere Herrn Dipl.-Ing. Thorsten Bartsch möchten wir uns bedanken. Für die Bereitstellung von Informationen und Dokumente sind wir Herrn Dennis Hotze, M.Sc. und der Smart Mechatronics GmbH sehr dankbar, ohne deren Hilfe und finanzielle Unterstützung dieses Projekt nicht möglich gewesen wäre. 
+	
+	
+	% ----------------------------------------------------------------------------------------------------------
+	% VERZEICHNISSE --------------------------------------------------------------------------------------------
+	% ----------------------------------------------------------------------------------------------------------
+	\pagenumbering{roman}
+	\tableofcontents
+	\cleardoublepage
+	
+	
+	
+	\chapter*{Abkürzungsverzeichnis}
+	\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+	\begin{acronym}[CONSENS]% längste Abkürzung
+		\acro{ALF}{Autonomes Logistik Fahrzeug}		%\acro{Kuerzel}{Langform}
+		\acro{BLDC}{Brushless Direct Current}	
+		\acro{CAN}{Controlled Area Network}
+		\acro{CONSENS}{Conceptual Design Specification Technique for the Engineering of Complex Systems}
+		\acro{EPOS}{Entwicklungsplattform Ortsfrequenzfilter-Sensor}		
+		\acro{FMEA}{Failure Mode and Effects Analysis}
+		\acro{LIDAR}{Light Detection and Ranging}
+		\acro{LTI}{Linear, zeitinvariantes System}
+		\acro{MCM}{MotorController Module}	
+		\acro{RALF}{Regelung eines Autonomen Logistik Fahrzeugs}
+		\acro{ROS}{Robot Operating System}
+		\acro{RVIZ}{ROS Visualization}
+		\acro{SLAM}{Simultaneous Localization and Mapping}
+		\acro{TEB}{Timed Elastic Band}	
+		\acro{TFEST}{Transfer Function Estimation}
+		\acro{URDF}{Unified Robot Description Format}
+		\acro{USBFS}{Universal Serial Bus Filesystem}
+			
+	\end{acronym}
+	\cleardoublepage
+	%
+	\pagestyle{plain}
+	
+	\chapter*{Symbolverzeichnis}
+	\addcontentsline{toc}{chapter}{Symbolverzeichnis}
+	
+	\begin{longtable}{p{3cm}p{8cm}}
+		\setlength\tabcolsep{9pt}
+		Symbol & Bedeutung \\ \hline
+		\endfirsthead
+		Symbol & Bedeutung \\ \hline
+		
+		\endhead
+		\toprule
+		$D$&Dämpfung der Übertragungsfunktion\\
+		$G$&Übertragungsfunktion\\
+		$\underline{H}$&Hilfsmatrix\\
+		$K_{P}$&Verstärkungsfaktor\\
+		$K_{s}$&Streckenverstärkung\\
+		$\mathcal{L}$&Laplace-Transformation\\
+		$M$&Momentanpol\\
+		$\mathcal{{O}_{T}}$&Menge aller Odometriedaten\\
+		$P_a$&Skalierungsfaktor für manuellen Betrieb\\
+		$P_m$&Skalierungsfaktor für automatischen Betrieb \\
+		$R_{c}$&Circumscribed Radius\\
+		$R_{i}$&Inscribed Radius\\
+		$T$&Abklingzeitkonstante\\
+		$T_{g}$&Anstiegszeit\\
+		$T_{n}$&Nachstellzeit\\
+		$T_{u}$&Verzugszeit\\
+		$T_{v}$&Vorhaltezeit\\
+		$U$&Laplacetransformierte Eingangsgröße\\
+		$\mathcal{X_{T}}$&Menge aller Positionsvektoren\\
+		$\mathcal{Z_{T}}$&Menge aller Umgebungsmessungen\\
+		$Y$&Laplacetransformierte Ausgangsgröße\\
+		$\vec{a}$&Umrechnungsvektor\\
+		$a_{i}$&Koeffizienten der Differentialgleichung der Ausgangsgröße\\
+		$b_{j}$&Koeffizienten der Differentialgleichung der Eingangsgröße\\
+		$\vec{b}$&Allgemeines Bewegungsziel\\
+		$c$& Rotatorischer Bewegungsbefehl \\
+		$d_{i}$&Reelle Zahl\\
+		$f$&Cost Scaling Factor\\
+		$g$& Impulsantwort\\
+		$h$&Übergangsfunktion	\\
+		$\vec{h}$& Hilfsvektor \\
+		$i$&imaginäre Einheit $i=\sqrt{-1}$\\
+		$j$&Komplexe Zahl $j=\sqrt{-1}$\\
+		$k$&Komplexe Zahl $k=\sqrt{-1}$\\
+		$m$&Karte der Umgebung\\
+		$m_{i}$&Landmarken\\
+		$o$&Odometrie\\
+		$p$&Wahrscheinlichkeitsfunktion\\
+		$\vec{p}$&Orientierungsvektor\\
+		$q$&Quaternion\\
+		$r$&Distanz\\
+		$\vec{r}_a$	&Rotatorisches Bewegungsziel aus automatischen Betrieb \\
+		$\vec{r}_m$	&Rotatorisches Bewegungsziel aus manuellen Betrieb \\
+		$s$&Komplexe Frequenz\\
+		$t$	&Zeit \\
+		$\vec{t}_{ma}$	&Translatorisches Bewegungsziel aus manuellen oder automatischen Betrieb \\
+		$u$& Eingangsgröße		\\
+		$\hat{u}$&Sprunghöhe	\\
+		$\vec{v}$&Geschwindigkeitsvektor\\
+		$w$&Führungsgröße		\\
+		$\vec{x}_{t}$&Positionsvektor\\
+		$\vec{x}_{0}$&Startpositionsvektor\\
+		$y$& Ausgangsgröße eines Systems 				\\
+		$z$&Messwert der Umgebung\\
+		$\alpha$&Fahrtwinkel	\\
+		$\beta$&Posenwinkel		\\ 
+		$\delta$&Impulsfunktion\\
+		$\sigma$&Sprungfunktion	\\ \hline
+		%-----------------------------Tabelle--------------------
+		\bottomrule
+	\end{longtable}
+	
+	
+	
+	\cleardoublepage
+	\pagestyle{headings}
+	\pagenumbering{arabic}
+	\setlength{\parskip}{0.1em}
+	% ----------------------------------------------------------------------------------------------------------
+	% INHALT steht in "Inhaltsverzeichnis" ---------------------------------------------------------------------------------------------------
+	% ----------------------------------------------------------------------------------------------------------
+	\input{_content/Einleitung}
+	\input{_content/Grundlagen}
+	\input{_content/Konzeptionierung}
+	\input{_content/Verifikation}
+	\input{_content/Zusammenfassung}
+	\clearpage
+	
+	\printbibliography[title={Quellenverzeichnis}]
+	\clearpage
+	
+	\begin{appendix}
+			\chapter{Anhang} 
+			\section{Abbildungen} 
+			\label{Abbildungen}
+					\newpage 
+					
+					\begin{figure}[H]
+						\centering
+					\includegraphics[angle=90,width=0.8\textwidth]{Bilder/rosgraph}
+						\caption{Darstellung des im Projekt erstellten ROS-Netzwerks. Knoten sind in dieser Abbildung oval und Topics viereckig dargestellt. Die Pfeile symbolisieren den Datenfluss der veröffentlichten und abonnierten Nachrichten.Die ineinander verschachtelten Vierecke repräsentieren gruppierte Topics.}
+						\label{fig: Rosnetwork}
+					\end{figure}
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[angle=90,width=0.76\textwidth]{Bilder/umfeldralf.png}
+						\caption{Darstellung des in diesem Projekt konzipierten Umfeldmodells. Der Informationsfluss ist in dieser Abbildung mit blauen, gestrichelten Pfeilen abgebildet. Mit roten, gestrichelten Pfeilen werden Störeinflüsse, die auf das entwickelte System einwirken.}
+						\label{fig: umfeldmodell}
+					\end{figure}
+					
+					\begin{figure}[H]
+						\centering
+						\includegraphics[angle=90,width=0.55\textwidth]{Bilder/wirkregelung.png}
+						\caption{Darstellung einer Wirkstruktur der in diesem Projekt konzipierten Schlupfregelung. Der Informationsfluss ist in dieser Abbildung mit blauen, gestrichelten Pfeilen abgebildet. Mit roten, gestrichelten Pfeilen werden Störeinflüsse, die auf die entwickelte Regelung einwirken.}
+						\label{fig: Wirkstruktur Schlupfregelung}
+					\end{figure}
+				
+					\begin{figure}[H]
+						\centering
+						\includegraphics[angle=90,width=0.605\textwidth]{Bilder/wirknavi.png}
+						\caption{Wirkstruktur Navigation}
+						\label{fig: Wirkstruktur Navigation}
+					\end{figure} 
+					
+					\section{Inhalt Datenträger} 
+					\label{dataCD}
+					\begin{enumerate}[label=\textbf{\arabic*},ref=A.1.\arabic*]
+						\item Datenblätter
+						\label{it: Datenblätter}
+						\item Programm
+						\label{it: Programm}
+						\item Lastenheft
+						\label{it: Lastenheft}
+					\end{enumerate}
+				
+		
+	\end{appendix}
+	
+	
+\end{document}

@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Masterarbeit_Giulaino_Montorio.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: biblatex.bst
+Reallocating 'name_of_file' (item size: 1) to 35 items.
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: Masterarbeit_Giulaino_Montorio-blx.bib
+Database file #2: _bib/biblio.bib
+Biblatex version: 3.13
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+You've used 26 entries,
+            6365 wiz_defined-function locations,
+            1304 strings with 12061 characters,
+and the built_in function-call counts, 133162 in all, are:
+= -- 10144
+> -- 2530
+< -- 1201
++ -- 2379
+- -- 512
+* -- 7230
+:= -- 10752
+add.period$ -- 0
+call.type$ -- 26
+change.case$ -- 991
+chr.to.int$ -- 60
+cite$ -- 50
+duplicate$ -- 12548
+empty$ -- 12917
+format.name$ -- 1027
+if$ -- 30183
+int.to.chr$ -- 0
+int.to.str$ -- 72
+missing$ -- 0
+newline$ -- 518
+num.names$ -- 1726
+pop$ -- 8796
+preamble$ -- 1
+purify$ -- 1063
+quote$ -- 0
+skip$ -- 5506
+stack$ -- 0
+substring$ -- 16796
+swap$ -- 3203
+text.length$ -- 436
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 872
+warning$ -- 0
+while$ -- 1129
+width$ -- 0
+write$ -- 493
