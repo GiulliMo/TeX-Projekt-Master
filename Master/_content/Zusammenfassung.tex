@@ -2,19 +2,7 @@
 \label{Fazit und Ausblick}
 	
 
-	Im Rahmen dieser Bachelorarbeit wurde eine Schlupfregelung und eine Beispielanwendung
-	für autonomes Fahren konzipiert, integriert und verifiziert. Für die Umsetzung der Ziele bezüglich der Drehzahlregelung wurde eine Simulation des Reglers vorgenommen. Die integrierte, zur Drehzahlregelung übergeordnete Lageregelung verhindert die in Kapitel \ref{ch: Einleitung} erwähnten Rotationen des Fahrzeugs. Diese werden durch einem aus Umgebungsdaten generierten Posenwinkel ausgeregelt. Eine Modusumschlatung an dem Joystick realisiert durch Betätigen eines Knopfes den Wechsel zwischen zwei Betriebsmodi. Das ALF kann durch manuelle Eingaben am Joystick oder durch autonome Fahrfunktionen gesteuert werden. Die vorhandene Sensorik wird zur Erfassung der Umgebung verwendet. Dabei kartografiert das ALF die Umgebung durch den SLAM-Algorithmus. Die integrierte Anwendung für autonomes Fahren realisiert die eigenständige Erkundung und Kartografierung der Umgebung durch das Fahrzeug. Aufgrund des Komplexität dieses Projekts und der damit verbundenen Zeitvorgabe konnten folgende Problemstellungen nicht untersucht werden. Jedoch können diese als Thema für Folgeprojekte dienen.    \\
-	
-	Die gegebenen Hardwareeigenschaften des Roboters ermöglichen die Einbindung der Schlupfregelung und der Fähigkeit des autonomen Fahrens, wobei die Rechenleistung des installierten Rechners bei vollumfänglichen Betrieb nahezu ausgelastet ist. Diese Problematik hat bei einer Erweiterung der Software beziehungsweise bei höherer Auslastung Auswirkungen auf den in \textit{Simulink} verbauten Regler. Ein mögliches Folgeprojekt kann die Implementierung des Reglers in eine andere Hardwarestruktur beinhalten.\\
-	
-	Der Lidar-Sensor erfasst die Umgebung und reproduziert mit \textit{Rviz} ein Abbild dieser. Aufgrund der in Kapitel \ref{subsubsec: Kinect-Sensor} beschriebenen Bauhöhe des Sensors und der damit verbundenen Komplikationen ist eine Erweiterung der Sensorik zur Erfassung der Umgebung zu empfehlen. Erfasst der Roboter seine Umgebung vollständig ist eine omnidirektionale Fahrweise im automatisierten Betrieb möglich.\\
-	
-	Wie im Namen des in diesem Projekt verwendeten Roboters enthalten handelt es sich um ein Logistikfahrzeug, somit ist die Ladefläche und der Umriss des Fahrzeugs nicht zu ändern. Aufgrund des in Kapitel \ref{subsec: Einfluss der Umgebung auf die Planung einer Trajektorie} beschriebenen \textit{Costmap} wird der Roboter wegen seiner Größe und Form in der Bewegungsplanung eingeschränkt.\\
-	
-	Der Posenwinkel wird mithilfe von \textit{Hector Slam} erfasst. Während der Entwicklungsphase der Schlupfregelung zeigte eine Auswertung des auf dem \textit{Raspberry Pi} montierten Gyrosensor fehlerhafte Daten durch eine Integration der Winkelgeschwindigkeit und des sich darauf befindlichen Rauschens. Die Untersuchung und Einbindung eines geeigneten Filters kann als Folgeprojekt behandelt werden.\\
-	
-	Aktuell werden Personen, die sich in der zu kartografierenden Umgebung befinden auf der zu erstellenden Karte als Objekt markiert. Eine Untersuchung und Implementierung eines sogenannten \textit{Social Layers} könnte das Problem beheben. Wenn sich das Fahrzeug in unbekanntem Gebiet befindet und eine Zielpose autonom anfahren soll, werden Fahrmanöver anfänglich nur unregelmäßig durchgeführt. Das Fahrzeug ist für eine Fahrt ohne Kollisionen konzipiert und verfährt nur in bereits bekannte Gebiete, womit die eben erwähnte Problematik begründet wird. Das Hinzufügen einer statischen Karte, die den Operationsbereich des Fahrzeugs enthält, in das bereits vorhandene System würde das Ansprechverhalten des ALFs optimieren.\\
-	
+
 
 
 

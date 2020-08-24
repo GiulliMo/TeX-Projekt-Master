@@ -3,21 +3,23 @@
 %	Short:		Entwicklungsprojekt
 % DOCUMENTCLASS -----------------------------------------------------------------------------------------
 \documentclass[12pt,a4paper,oneside,numbers=noenddot,headsepline,captions=tableheading,toc=bibliography,openany,tikz,margin=5mm]{scrbook}
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
+\usepackage{amsmath} 
+\setcounter{secnumdepth}{5}
 \renewcommand{\arraystretch}{1.4} 
 
-\usepackage[scaled=.90]{helvet}
-\usepackage{geometry}
-\geometry{a4paper,left=25mm,right=25mm, top=25mm, bottom=25mm, includeheadfoot}
+% alles in helvetica
 \renewcommand{\familydefault}{\sfdefault}
 
+
+
+\usepackage{geometry}
+\geometry{a4paper,left=25mm,right=25mm, top=25mm, bottom=25mm, includeheadfoot}
+\usepackage[scaled = 0.9]{helvet}
 
 % SPRACHE------------------------------------------------------------------------------------------------
 \usepackage[utf8]{inputenc}
 \usepackage[autostyle,babel,german=guillemets,style=german]{csquotes}
-\usepackage[USenglish,ngerman]{babel}
-\usepackage{lmodern} %Hochaufloesende Schrift 
+\usepackage[USenglish,ngerman]{babel} 
 \selectlanguage{ngerman}
 
 
@@ -45,20 +47,23 @@
 		scatter/@pre marker code/.code={\scope[rotate=90*\sign,yshift=-2pt]}
 	}
 }
-\usetikzlibrary{arrows.meta,positioning,calc}
+\usetikzlibrary{arrows.meta,positioning,calc,scopes}
+\def\iangle{0} % Angle of the inclined plane
+
+\def\down{0}
+\def\arcr{0.5cm} % Radius of the arc used to indicate angles
 \usepackage{pdflscape}
 
 % BILDER-------------------------------------------------------------------------------------------------
 \usepackage{graphicx}
-
 \usepackage{color}
 \usepackage{svg}
-
 
 
 % ALLGEMEINES--------------------------------------------------------------------------------------------
 \usepackage{amsmath,amssymb} % Mathesachen
 \usepackage[T1]{fontenc} % Ligaturen, richtige Umlaute im PDF
+\usepackage[scaled = 0.9]{helvet}
 \usepackage[hyphens,obeyspaces,spaces]{url}		% bricht lange URLs ?sch�n? um
 \usepackage[decimalsymbol=comma]{siunitx}
 \usepackage[onehalfspacing]{setspace}
@@ -163,7 +168,7 @@ sorting=none,%
 			
 			
 			\rule{0mm}{5ex}\textbf{Erstgutachter:} & Prof.\ Dr.-Ing.\ Arno Bergmann\\
-			\rule{0mm}{2ex}\textbf{Zweitgutachter:} & M.Sc. \ Bernd Möllenbeck \\
+			\rule{0mm}{2ex}\textbf{Zweitgutachter:} & M.Sc.\ Bernd Möllenbeck \\
 			\rule{0mm}{5ex}\textbf{Abgabedatum:} & tt.mm.jjjj\\ 
 		\end{tabular} 
 	\end{center}
@@ -213,8 +218,8 @@ sorting=none,%
 	
 	
 	%\large
-	Ein großes Dankeschön gilt all jenen Personen, die uns im Rahmen dieser Bachelorarbeit
-	begleitet und geholfen haben. Ganz besonders möchten wir Herrn Prof. Dr.-Ing. Arno Bergmann, Herrn Dr.-Ing. Christoph Krimpmann und Herrn Stefan Beumler, M.Sc. danken, die unsere Arbeit durch ihre fachliche und persönliche Unterstützung begleitet haben. Auch beim Fachbereich Elektrotechnik und Informatik der Hochschule
+	Ein großes Dankeschön gilt all jenen Personen, die mich im Rahmen dieser Masterarbeit
+	begleitet und geholfen haben. Insbesondere möchte ich Herrn Prof. Dr.-Ing. Arno Bergmann, Herrn Bernd Möllenbeck, M.Sc. und Herrn Dr.-Ing. Christoph Krimpmann danken, die unsere Arbeit durch ihre fachliche und persönliche Unterstützung begleitet haben. Auch beim Fachbereich Elektrotechnik und Informatik der Hochschule
 	Bochum, insbesondere Herrn Dipl.-Ing. Thorsten Bartsch möchten wir uns bedanken. Für die Bereitstellung von Informationen und Dokumente sind wir Herrn Dennis Hotze, M.Sc. und der Smart Mechatronics GmbH sehr dankbar, ohne deren Hilfe und finanzielle Unterstützung dieses Projekt nicht möglich gewesen wäre. 
 	
 	
@@ -351,33 +356,7 @@ sorting=none,%
 			\label{Abbildungen}
 					\newpage 
 					
-					\begin{figure}[H]
-						\centering
-					\includegraphics[angle=90,width=0.8\textwidth]{Bilder/rosgraph}
-						\caption{Darstellung des im Projekt erstellten ROS-Netzwerks. Knoten sind in dieser Abbildung oval und Topics viereckig dargestellt. Die Pfeile symbolisieren den Datenfluss der veröffentlichten und abonnierten Nachrichten.Die ineinander verschachtelten Vierecke repräsentieren gruppierte Topics.}
-						\label{fig: Rosnetwork}
-					\end{figure}
-					
-					\begin{figure}[H]
-						\centering
-						\includegraphics[angle=90,width=0.76\textwidth]{Bilder/umfeldralf.png}
-						\caption{Darstellung des in diesem Projekt konzipierten Umfeldmodells. Der Informationsfluss ist in dieser Abbildung mit blauen, gestrichelten Pfeilen abgebildet. Mit roten, gestrichelten Pfeilen werden Störeinflüsse, die auf das entwickelte System einwirken.}
-						\label{fig: umfeldmodell}
-					\end{figure}
-					
-					\begin{figure}[H]
-						\centering
-						\includegraphics[angle=90,width=0.55\textwidth]{Bilder/wirkregelung.png}
-						\caption{Darstellung einer Wirkstruktur der in diesem Projekt konzipierten Schlupfregelung. Der Informationsfluss ist in dieser Abbildung mit blauen, gestrichelten Pfeilen abgebildet. Mit roten, gestrichelten Pfeilen werden Störeinflüsse, die auf die entwickelte Regelung einwirken.}
-						\label{fig: Wirkstruktur Schlupfregelung}
-					\end{figure}
 				
-					\begin{figure}[H]
-						\centering
-						\includegraphics[angle=90,width=0.605\textwidth]{Bilder/wirknavi.png}
-						\caption{Wirkstruktur Navigation}
-						\label{fig: Wirkstruktur Navigation}
-					\end{figure} 
 					
 					\section{Inhalt Datenträger} 
 					\label{dataCD}
