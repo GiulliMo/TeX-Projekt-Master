@@ -1,6 +1,6 @@
 \chapter{Grundlagen}
 \label{ch: Grundlagen}
-	
+	Für ein besseres Verständnis, der in Kapitel Konzept... angewandten Methoden, werden anbei die Grundlagen behandelt. Informationen zu der verwendeten Hard- und Software wurden bereits in der vorangegangenen Bachelorarbeit vermittelt. Aufgrund Anforderung A... ist während der praktischen Anwendung keine Änderung der Hardware vorgesehen.
  
 	
  	\section{Eigenschaften von neuronalen Netzen}
@@ -20,7 +20,7 @@
 		
 		\subsection{Evaluation neuronaler Netze}
 			
-			Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen.  
+			Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. 
 		
 	\section{Objekterkennung durch neuronale Netze}
 	\label{sec: Mecanumräder}
@@ -30,13 +30,13 @@
 	
 
 			
-	\section{Statemachine}
-	\label{sec: Regelung}
+	\section{Zustandsautomat}
+	\label{sec: Zustandautomat}
 	
 	
 		
 		
 	\section{Bestimmung von Positionskoordinaten}
-	
+		Während der Durchführung autonomer Fahr- bzw. Logistikaufgaben können diverse Probleme auftreten, die eine erfolgreiche Bearbeitung verhindern können. Beispielsweise können Türen geschlossen sein oder Gegenstände die geplante Route blockieren. Da das ALF nicht über die technischen Möglichkeiten besitzt derartige Problemstellungen zu lösen, müssen Menschen Abhilfe schaffen. Für diese Zwecke ist die Kenntnis über die letzte Position der erfassten Personen realtiv zur statischen Karte  notwendig. Anstehende Fahraufgaben werden, bedingt durch das Vorgängerprojekt, mithilfe des Robot Operating Systems gelöst. Personen können folglich als Position in das ROS Netzwerk veröffentlicht. Dies ermöglicht dem Roboter die veröffentlichten Positionen anzufahren. Die Eintragung der Position in die statische Karte setzt die Beschreibung der Position als Koordinaten vorraus. Für die Bestimmung der Positionskoordinaten wird ein zweidimensionales Bild und die dazugehörigen Tiefeninformationen genutzt. Die Koordinate xloc beschreibt hier die longitudinale Entfernung von der Kamera zur Person. Eingehende laterale Distanzen werden durch die Koordinate yloc dargestellt.
 	
 
