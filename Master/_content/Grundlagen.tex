@@ -45,13 +45,30 @@
 	
 	Seit dem Bestehen der endlichen Automaten haben sich in der Praxis zwei Typen durchgesetzt. Mealy und Moore Automaten unterscheiden sich grundlegend in ihrem Verhalten und können durch folgende Gleichungen beschrieben werden.\\
 	
-	Gleichung Mealy...\\
-	
+	\begin{equation}
+		\alpha_{t+1}=\phi(\zeta_t,\alpha_t)\text{    mit    t}\in\mathbb{N}
+		\label{eq: transferfct}
+	\end{equation}
+
+	\begin{equation}
+		\gamma_t=\psi(\zeta_t,\alpha_t)\text{    mit    t}\in\mathbb{N}
+		\label{eq: transferfct}
+	\end{equation}
+	\\
 	In den Gleichung ... beschreibt $\varphi$ die Transitionsfunktion und $\psi$ die Ausgabefunktion des Mooreautomats. Die Transition steht in Abhängigkeit von $\zeta_t $, die aktuelle Eingabe, und $\alpha_t$, der aktuelle Zustand selbst. Mithilfe der Transitionsfunktion lässt sich der Zustand bestimmen, der im folgenden Zeitschritt $t$ angestrebt werden soll. Der Ausgang des Moore Automaten wird durch die Ausgangsfunktion $psiup$ berechnet. Diese hängt genau wie die Transitionsfunktion von der Eingabe und dem Zustand zum Zeitpunkt $t$ ab. \\
 	
-	Gleichuing Moore...\\
+	\begin{equation}
+		\alpha_{t+1}=\phi(\zeta_t,\alpha_t)\text{    mit    t}\in\mathbb{N}
+		\label{eq: transferfct}
+	\end{equation}
 	
-	Beim Vergleich der beiden Gleichungen ... und ... stellt sich heraus, dass die Ausgangsfunktion $psi$ in der Beschreibung des Verhaltens eines endlichen Automaten durch Moore lediglich vom Ausgang zum Zeitpunkt $t$ abhängig ist. Zur Veranschaulichung 
+	\begin{equation}
+		\gamma_t=\psi(\alpha_t)\text{    mit    t}\in\mathbb{N}
+		\label{eq: transferfct}
+	\end{equation}
+	\\
+	
+	Beim Vergleich der beiden Gleichungen ... und ... stellt sich heraus, dass die Ausgangsfunktion $psi$ in der Beschreibung des Verhaltens eines endlichen Automaten durch Moore lediglich vom Ausgang zum Zeitpunkt $t$ abhängig ist.
 	
 	Eine Unterkategorie der Finiten Automaten ist der Hierarchische Zustandsautomat. Die Besonderheit hierbei ist die Zusammensetzung aller vorangegangenen Zustände eines aktiven Zustands. Diese sind bei der hier beschriebenen hierarchisch aufgebauten Maschine nämlich ebenfalls aktiv. So besteht die Möglichkeit eines aufeinander aufbauenden Endzustands. 
 	

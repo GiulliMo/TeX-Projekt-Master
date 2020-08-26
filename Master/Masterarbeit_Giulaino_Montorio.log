@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  26 AUG 2020 14:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  26 AUG 2020 14:47
 entering extended mode
 **./Masterarbeit_Giulaino_Montorio.tex
 (Masterarbeit_Giulaino_Montorio.tex
@@ -1464,7 +1464,17 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 LaTeX Warning: Unused global option(s):
     [tikz,margin=5mm].
 
-(Masterarbeit_Giulaino_Montorio.aux)
+(Masterarbeit_Giulaino_Montorio.aux
+
+LaTeX Warning: Label `eq: transferfct' multiply defined.
+
+
+LaTeX Warning: Label `eq: transferfct' multiply defined.
+
+
+LaTeX Warning: Label `eq: transferfct' multiply defined.
+
+)
 \openout1 = `Masterarbeit_Giulaino_Montorio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
@@ -1864,13 +1874,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 49.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 5.39996pt on input line 49.
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
  []
 
@@ -1879,25 +1888,29 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
 
  []
 
-) (_content/Konzeptionierung.tex
+
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[6]
+[6]) (_content/Konzeptionierung.tex
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[7]
 chapter 3.
-) (_content/Verifikation.tex [7
+) (_content/Verifikation.tex [8
 
 ]
 chapter 4.
-) (_content/Zusammenfassung.tex [8
+) (_content/Zusammenfassung.tex [9
 
 ]
 chapter 5.
-) [9
+) [10
 
 ]
 
@@ -1918,7 +1931,7 @@ Class scrbook Warning: You are using `\begin{appendix}...\end{appendix}'.
 (scrbook)              `\appendix' on input line 353.
 
 chapter A.
-[10
+[11
 
 
 
@@ -1926,7 +1939,7 @@ chapter A.
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[11]
+[12]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 376.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 376.
  (Masterarbeit_Giulaino_Montorio.aux)
@@ -1935,29 +1948,34 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 376.
 Package rerunfilecheck Info: File `Masterarbeit_Giulaino_Montorio.out' has not 
 changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'Masterarbeit_Giulaino_Montorio.run.xm
 l'.
 \openout1 = `Masterarbeit_Giulaino_Montorio.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49605 strings out of 481212
- 1112077 string characters out of 2922283
+ 49613 strings out of 481212
+ 1112181 string characters out of 2922283
  1931649 words of memory out of 3000000
- 64287 multiletter control sequences out of 15000+200000
- 563091 words of font info for 71 fonts, out of 3000000 for 9000
+ 64290 multiletter control sequences out of 15000+200000
+ 566563 words of font info for 73 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  64i,10n,103p,10647b,2642s stack positions out of 5000i,500n,10000p,200000b,50000s
 {Y:/Miktex/fonts/enc/dvips/base/8r.enc}<Y:/Miktex/fonts/type1/public/amsfonts
 /cm/cmmi12.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><Y:/Miktex/f
 onts/type1/public/amsfonts/cm/cmr12.pfb><Y:/Miktex/fonts/type1/public/amsfonts/
 cm/cmr8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><Y:/Miktex/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvb8
-a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvr8a.pfb><Y:/Miktex/fonts/type1/urw
-/helvetic/uhvro8a.pfb>
-Output written on Masterarbeit_Giulaino_Montorio.pdf (20 pages, 244251 bytes).
+ts/type1/public/amsfonts/cm/cmsy8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvb8a.pfb><Y:/Miktex/font
+s/type1/urw/helvetic/uhvr8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvro8a.pfb
+>
+Output written on Masterarbeit_Giulaino_Montorio.pdf (21 pages, 250297 bytes).
 PDF statistics:
- 304 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
+ 317 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
  263 words of extra memory for PDF output out of 10000 (max. 10000000)
 
