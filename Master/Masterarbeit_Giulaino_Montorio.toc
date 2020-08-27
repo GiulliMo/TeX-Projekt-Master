@@ -16,19 +16,19 @@
 \contentsline {subsection}{\numberline {2.2.1}Bildklassifikation}{6}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Objektlokalisierung}{6}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Objekterkennung durch neuronale Netze}{6}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Zustandsautomat}{6}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Bestimmung von Positionskoordinaten}{8}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Konzeptionierung}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Anforderungserhebung mit CONSENS}{9}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Konzept und Aufbau der Personenerkennung}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Wirkstruktur der Personenerkennung}{9}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Auswahl und Training der verwendeten neuronalen Netze}{9}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Schnittstelle zwischen Python und ROS}{9}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Erstellung von Objektinformationen}{9}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Funktionsweise des Gesamtsystems}{9}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Verifikation}{10}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{11}{chapter.5}%
-\contentsline {chapter}{\nonumberline Quellenverzeichnis}{12}{chapter*.7}%
-\contentsline {chapter}{\numberline {A}Anhang}{13}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Abbildungen}{13}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{14}{section.A.2}%
+\contentsline {section}{\numberline {2.3}Zustandsautomat}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Bestimmung von Positionskoordinaten}{9}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Konzeptionierung}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Anforderungserhebung mit CONSENS}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Konzept und Aufbau der Personenerkennung}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Wirkstruktur der Personenerkennung}{10}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Auswahl und Training der verwendeten neuronalen Netze}{10}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Schnittstelle zwischen Python und ROS}{10}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Erstellung von Objektinformationen}{10}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Funktionsweise des Gesamtsystems}{10}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Verifikation}{11}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{12}{chapter.5}%
+\contentsline {chapter}{\nonumberline Quellenverzeichnis}{13}{chapter*.7}%
+\contentsline {chapter}{\numberline {A}Anhang}{14}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Abbildungen}{14}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{15}{section.A.2}%

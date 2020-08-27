@@ -14,7 +14,7 @@
 		
 		/Bild Neuron
 		
-		Der grundlegende Aufbau eines neuronalen Netzes besteht aus miteinander verbundenen Schichten bestehend aus Neuronen. Jedes Neuron verarbeitet im wesentlichen eingehende Zahlenwerte und gibt diese aus. Hierbei wird eine gewichtete Summe gebildet, die dann auf eine Aktivierungsfunktion angewendet wird.
+		Der grundlegende Aufbau eines neuronalen Netzes besteht aus miteinander verbundenen Schichten, die häufig aus Neuronen bestehen. Jedes Neuron verarbeitet im wesentlichen eingehende Zahlenwerte und gibt diese aus. Hierbei wird eine gewichtete Summe gebildet, die dann auf eine Aktivierungsfunktion angewendet wird.
 		
 		\begin{equation}
 		s=\sum_{j=1}^n w_{ij}x_j
@@ -38,9 +38,12 @@
 		
 		\subsection{Unterscheidung von neuronalen Netzen}
 		/handbuch ki
+		
+	
+		
 		\subsection{Evaluation neuronaler Netze}
 			
-			Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. 
+		Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. 
 		
 	\section{Objekterkennung}
 	\label{sec: Mecanumräder}
@@ -54,6 +57,15 @@
 	
 		\subsection{Objekterkennung durch neuronale Netze}
 		
+		Die bisher besten Ergebnisse in der Bildverarbeitung im Zusammenspiel mit neuronalen Netzen wurden durch \textit{Convolutional Neural Network} (CNN) ermöglicht. Anders als bei den bereits erwähnten Methoden geschieht die Merkmalsextraktion hierbei innerhalb des Netzes. Derartige Netzwerke nutzen bestimmte Zwischenschichten zur Verarbeitung der Eingangsdaten. Grundlegend wird hier zwischen der Klassifikation durch eine vorangegangene Merkmalsextraktion unterschieden.\\ 
+		
+		/bild merkmalsextraktion\\
+		
+		Die Reihenfolge der Schichten der merkmalsextraktion setzt sich aus einer Konvolutionsschicht und einer weiteren Schicht zusammen, die mithilfe von Pooling eine nichtlineare Optimierung der Daten vornimmt. Dabei kann sich die genannte Reihenfolge beliebig oft wiederholen. Während der Konvolution, oder auch Faltung genannt, werden eingehende Daten in Filter, sogenannte Kernels, eingegeben. Diese extrahieren bestimmte Merkmale, dabei können sich die Filter je Schicht ändern. So können verschiedenee Schichten diverse Merkmale extrahieren. Zu einer Konvolutionsschicht gehört auch die \textit{Rectified linear unit} (ReLU) Funktion. Durch sie werden negative Werte zu Null korrigiert und positive Werte erhalten. Dies ermöglicht schnelleres und effektiveres Training. Beim Pooling werden eingehende Matrizen minimiert. Gleichzeitig gehen die aussagekräftigsten Merkmale jedoch nicht verloren. \\
+		
+		/bild Klassifikation\\
+		
+		Für die Klassifikation der Daten setzten sich die letzten Schichten aus einer Glättungsschicht, einer vollständig verbundnen Schicht und einer Softmax Schicht. Durch die Glättungsschicht werden die matrizen aus der letzten Poolingschicht zu einem Vektor geformt. Nur so können die Daten in die vollständig verbundene schicht eingegeben werden. Diese gibt einen $K$-dimensionalen Vektor aus, wobei $K$ für die Anzahl der ausgegebenen Klassen steht. Durch die folgende Softmax-Schicht wird der Vektor in einem Zahlenbereich von Null bis Eins transformiert. An dieser Stelle sind alle Daten vollständig bearbeitet und werden als Vektor aus dem CNN ausgegeben. Jedes Element wird als Konfidenz der Jeweiligen Klasse interpretiert. 
 	
 
 			

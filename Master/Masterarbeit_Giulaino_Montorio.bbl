@@ -19,15 +19,15 @@
 \datalist[entry]{none/global//global/global}
   \entry{Kriesel}{book}{}
     \name{author}{1}{}{%
-      {{hash=KD}{%
-         family={Kriesel},
-         familyi={K\bibinitperiod},
-         given={David},
-         giveni={D\bibinitperiod},
+      {{hash=DK}{%
+         family={D.},
+         familyi={D\bibinitperiod},
+         given={{Kriesel,}},
+         giveni={K\bibinitperiod},
       }}%
     }
-    \strng{namehash}{KD1}
-    \strng{fullhash}{KD1}
+    \strng{namehash}{DK1}
+    \strng{fullhash}{DK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Ein kleiner Überblick über Neuronale Netze}
