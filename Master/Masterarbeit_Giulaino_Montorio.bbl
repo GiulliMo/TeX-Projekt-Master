@@ -16,5 +16,43 @@
   {}
 \endgroup
 
-\datalist[entry]{none/global//global/global}\enddatalist
+\datalist[entry]{none/global//global/global}
+  \entry{Kriesel}{book}{}
+    \name{author}{1}{}{%
+      {{hash=KD}{%
+         family={Kriesel},
+         familyi={K\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KD1}
+    \strng{fullhash}{KD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Ein kleiner Überblick über Neuronale Netze}
+    \field{year}{2005}
+  \endentry
+
+  \entry{Ertel}{book}{}
+    \name{author}{1}{}{%
+      {{hash=EW}{%
+         family={Ertel},
+         familyi={E\bibinitperiod},
+         given={Wolfgang},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer Vieweg}%
+    }
+    \strng{namehash}{EW1}
+    \strng{fullhash}{EW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{3. Auflage}
+    \field{title}{Grundkurs Künstliche Intelligenz}
+    \field{year}{2013}
+  \endentry
+\enddatalist
 \endinput
