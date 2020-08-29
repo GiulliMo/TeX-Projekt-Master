@@ -61,11 +61,13 @@
 		
 		/bild merkmalsextraktion\\
 		
-		Die Reihenfolge der Schichten der merkmalsextraktion setzt sich aus einer Konvolutionsschicht und einer weiteren Schicht zusammen, die mithilfe von Pooling eine nichtlineare Optimierung der Daten vornimmt. Dabei kann sich die genannte Reihenfolge beliebig oft wiederholen. Während der Konvolution, oder auch Faltung genannt, werden eingehende Daten in Filter, sogenannte Kernels, eingegeben. Diese extrahieren bestimmte Merkmale, dabei können sich die Filter je Schicht ändern. So können verschiedenee Schichten diverse Merkmale extrahieren. Zu einer Konvolutionsschicht gehört auch die \textit{Rectified linear unit} (ReLU) Funktion. Durch sie werden negative Werte zu Null korrigiert und positive Werte erhalten. Dies ermöglicht schnelleres und effektiveres Training. Beim Pooling werden eingehende Matrizen minimiert. Gleichzeitig gehen die aussagekräftigsten Merkmale jedoch nicht verloren. \\
+		Die Reihenfolge der Schichten der Merkmalsextraktion setzt sich aus einer Konvolutionsschicht und einer weiteren Schicht zusammen, die mithilfe von Pooling eine nichtlineare Optimierung der Daten vornimmt. Dabei kann sich die genannte Reihenfolge beliebig oft wiederholen. Während der Konvolution, oder auch Faltung genannt, werden eingehende Daten in Filter, sogenannte Kernels, eingegeben. Diese extrahieren bestimmte Merkmale, dabei können sich die Filter je Schicht ändern. So können verschiedenee Schichten diverse Merkmale extrahieren. Zu einer Konvolutionsschicht gehört auch die \textit{Rectified linear unit} (ReLU) Funktion. Durch sie werden negative Werte zu Null korrigiert und positive Werte erhalten. Dies ermöglicht schnelleres und effektiveres Training. Beim Pooling werden eingehende Matrizen minimiert. Gleichzeitig gehen die aussagekräftigsten Merkmale jedoch nicht verloren. \\
 		
 		/bild Klassifikation\\
 		
-		Für die Klassifikation der Daten setzten sich die letzten Schichten aus einer Glättungsschicht, einer vollständig verbundnen Schicht und einer Softmax Schicht. Durch die Glättungsschicht werden die matrizen aus der letzten Poolingschicht zu einem Vektor geformt. Nur so können die Daten in die vollständig verbundene schicht eingegeben werden. Diese gibt einen $K$-dimensionalen Vektor aus, wobei $K$ für die Anzahl der ausgegebenen Klassen steht. Durch die folgende Softmax-Schicht wird der Vektor in einem Zahlenbereich von Null bis Eins transformiert. An dieser Stelle sind alle Daten vollständig bearbeitet und werden als Vektor aus dem CNN ausgegeben. Jedes Element wird als Konfidenz der Jeweiligen Klasse interpretiert. 
+		Für die Klassifikation der Daten setzten sich die letzten Schichten aus einer Glättungsschicht, einer vollständig verbundnen Schicht und einer Softmax Schicht. Durch die Glättungsschicht werden die matrizen aus der letzten Poolingschicht zu einem Vektor geformt. Nur so können die Daten in die vollständig verbundene schicht eingegeben werden. Diese gibt einen $K$-dimensionalen Vektor aus, wobei $K$ für die Anzahl der ausgegebenen Klassen steht. Durch die folgende Softmax-Schicht wird der Vektor in einem Zahlenbereich von Null bis Eins transformiert. An dieser Stelle sind alle Daten vollständig bearbeitet und werden als Vektor aus dem CNN ausgegeben. Jedes Element wird als Konfidenz der jeweiligen Klasse interpretiert. 
+		
+		Die Artenvielfalt der CNNs ist sehr breit gefächert. Jedes Netzwerk unterscheidet sich in der jeweiligen Architektur der Schichten. Durch die Änderung verschiedener Parameter, beispielsweise bei der Faltung oder beim Pooling, können CNNs im Einsatz jeweils anders reagieren. Hierbei entscheidet man bei der Auswahl des Modells häufig unter den Gesichtspunkten Bearbeitungszeit, Genauigkeit und je nach Anwendungsfall spielt der Speicherplatz ebenfalls eine große Rolle.
 	
 
 			
@@ -109,5 +111,27 @@
 		
 	\section{Bestimmung von Positionskoordinaten}
 		Während der Durchführung autonomer Fahr- bzw. Logistikaufgaben können diverse Probleme auftreten, die eine erfolgreiche Bearbeitung verhindern können. Beispielsweise können Türen geschlossen sein oder Gegenstände die geplante Route blockieren. Da das ALF nicht über die technischen Möglichkeiten besitzt derartige Problemstellungen zu lösen, müssen Menschen Abhilfe schaffen. Für diese Zwecke ist die Kenntnis über die letzte Position der erfassten Personen realtiv zur statischen Karte  notwendig. Anstehende Fahraufgaben werden, bedingt durch das Vorgängerprojekt, mithilfe des Robot Operating Systems gelöst. Personen können folglich als Position in das ROS Netzwerk veröffentlicht. Dies ermöglicht dem Roboter die veröffentlichten Positionen anzufahren. Die Eintragung der Position in die statische Karte setzt die Beschreibung der Position als Koordinaten vorraus. Für die Bestimmung der Positionskoordinaten wird ein zweidimensionales Bild und die dazugehörigen Tiefeninformationen genutzt. Die Koordinate xloc beschreibt hier die longitudinale Entfernung von der Kamera zur Person. Eingehende laterale Distanzen werden durch die Koordinate yloc dargestellt.
+		
+	\begin{figure}[H]
+		\centering
+			\begin{tikzpicture}[]
+				\draw[<->] (-5,0) -- (5,0) node[right] {$y$};
+				\draw[->] (0,-1.2) -- (0,7) node[above] {$x$};
+				\draw[thin,-] (0,0) -- (4,6) node[above] {$f_{r}$};
+				\draw[thin,-] (0,0) -- (-4,6) node[above] {$f_{l}$} ;
+				\draw[densely dotted] (1,1.5) -- (-1,1.5) node[left] {$Bild$};
+				\filldraw [black] (1.5,4.5) circle (2pt);
+				\draw[dashed] (0,0) -- (1.5,4.5) node[above] {$Objekt$};
+				\draw[very thick] (0,4.5) -- (1.5,4.5) node[left] {};
+				\draw[very thick] (0,0) -- (0,4.5) node[left] {};
+				\draw[very thick]  (0,3) node[left] {$x_{loc}$};
+				\draw[very thick]  (0.75,4.0) node[above] {$y_{loc}$};
+				\draw[very thick]  (0,1) node[left] {$x_{f}$};
+			\end{tikzpicture}
+		
+		\caption{(a) Die Abbildung zeigt die Übergangsfunktion $h(t)$ eines Verzögerungsglieds erster Ordnung als Antwort auf die sprungförmige Eingangsgröße $u(t)$ mit $\hat{u}=1$. (b) Die Impulsantwort auf das Eingangssignal $\delta(t)$. Zwischen den Funktionen $h(t)$ und $g(t)$ besteht der Zusammenhang \mbox{$g(t)=\frac{\mathrm d}{\mathrm d t}\:h(t)$}.}
+		\label{fig: antworten}
+	\end{figure}
+	     
 	
 
