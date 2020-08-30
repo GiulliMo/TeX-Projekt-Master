@@ -18,6 +18,40 @@
 		\subsection{Erstellung von Objektinformationen}
 	
 	\section{Funktionsweise des Gesamtsystems}
+	\newpage
+	\begin{figure}[H]
+	\begin{tikzpicture}[node distance = 2cm, auto]
+		
+		% Place nodes
+		\node [papStart] (Start1){Start};
+		\node [papProcess, below of = Start1,label={[shift={(5,-0.6)}]\footnotesize\textit{Aktuelles Bild wird mit KNN analysiert}}] (pro1){Prozess};
+		\node [papDecision, below of = pro1, yshift= -9mm,label={[shift={(2.7,-0.6)}]\footnotesize\textit{Menschen im Bild?}}](dec1){Entscheidung};
+		\node [papProcess, right of = dec1,xshift=25mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesichter im Interessensbereich detektieren}}](pro3){Prozess};
+		\node [papDecision, below of = pro3, yshift= -9mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesicht im Interessenbereich?}}](dec2){Entscheidung};
+		\node [papProcess, below of = dec2, yshift= -9mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Merkmalsextraktion des Gesichts}}](pro4){Prozess};
+		\node [papDecision, below of = pro4, yshift= -9mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesicht bekannt?}}](dec3){Entscheidung};
+		\node [papDecision, below of = dec3, yshift= -18mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Dasselbe unbekannte Gesicht oft genug hintereinander erkannt?}}](dec4){Entscheidung};
+		\node [papProcess, below of = dec4, yshift= -9mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Eigenschaften des Objekts vom Typ Mensch aktualisieren}}](pro5){Prozess};
+		%\node [papData, right of = dec3, xshift= 25mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesicht bekannt?}}](dat1){I/O};
+		\node [papEnd, below of = dec1, yshift= -40mm] (End) {Ende};
+		
+		% Place joins
+		\coordinate [below of = dec1, yshift= -9mm] (join1);
+		
+		% Draw edges
+		\path [papLine] (Start1) -- (pro1);
+		\path [papLine] (pro1) -- (dec1);
+		\path [papLine] (dec1) -- node [above] {\papYes} (pro3);
+		\draw (dec1) -- node [right] {\papNo} (join1);
+		\path [papLine] (pro3) -- (dec2);
+	%	\path [papLine] (dec2) -- node [above] {\papYes} (pro4)
+		\draw (dec2) -- node [above] {\papNo} (join1);
+		
+		\path [papLine] (join1) -- (End);
+		
+	\end{tikzpicture}
+	\end{figure}
+	
 		%vektor statemachine
 	
 		

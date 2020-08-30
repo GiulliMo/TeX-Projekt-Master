@@ -116,7 +116,8 @@
 		\centering
 			\begin{tikzpicture}[]
 				\draw[<->] (-5,0) -- (5,0) node[right] {$y$};
-				\draw[->] (0,-1.2) -- (0,7) node[above] {$x$};
+				\draw[->] (0,-1.2) -- (0,7) node[above] {$x$};
+
 				\draw[thin,-] (0,0) -- (4,6) node[above] {$f_{r}$};
 				\draw[thin,-] (0,0) -- (-4,6) node[above] {$f_{l}$} ;
 				\draw[densely dotted] (1,1.5) -- (-1,1.5) node[left] {$Bild$};
@@ -132,6 +133,8 @@
 		\caption{(a) Die Abbildung zeigt die Übergangsfunktion $h(t)$ eines Verzögerungsglieds erster Ordnung als Antwort auf die sprungförmige Eingangsgröße $u(t)$ mit $\hat{u}=1$. (b) Die Impulsantwort auf das Eingangssignal $\delta(t)$. Zwischen den Funktionen $h(t)$ und $g(t)$ besteht der Zusammenhang \mbox{$g(t)=\frac{\mathrm d}{\mathrm d t}\:h(t)$}.}
 		\label{fig: antworten}
 	\end{figure}
+
+	\section{Schnittstelle zwischen ROS und Python}
 	     
 	
 
