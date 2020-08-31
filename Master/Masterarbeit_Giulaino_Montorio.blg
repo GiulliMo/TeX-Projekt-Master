@@ -22,47 +22,90 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Masterarbeit_Giulaino_Montorio-blx.bib
 Database file #2: _bib/biblio.bib
+Repeated entry---line 42 of file _bib/biblio.bib
+ : @book{fastercnn
+ :                ,
+I'm skipping whatever remains of this entry
 Biblatex version: 3.13
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2689 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2689 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2689 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2689 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2693 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2699 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2703 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2703 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2707 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2713 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2717 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2717 of file biblatex.bst
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 3 entries,
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2805 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2805 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2805 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2805 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2805 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2805 of file biblatex.bst
+Name 1 in "{Goodfellow,} I. {, Bengio,} Y., and {Courville,} A." has a comma at the end for entry deeplearning
+while executing---line 2805 of file biblatex.bst
+You've used 8 entries,
             6365 wiz_defined-function locations,
-            1205 strings with 9121 characters,
-and the built_in function-call counts, 8797 in all, are:
-= -- 501
-> -- 228
-< -- 50
-+ -- 180
-- -- 70
-* -- 426
-:= -- 974
+            1226 strings with 10125 characters,
+and the built_in function-call counts, 49303 in all, are:
+= -- 3874
+> -- 740
+< -- 168
++ -- 795
+- -- 261
+* -- 3846
+:= -- 5295
 add.period$ -- 0
-call.type$ -- 3
-change.case$ -- 30
-chr.to.int$ -- 42
-cite$ -- 4
-duplicate$ -- 865
-empty$ -- 843
-format.name$ -- 89
-if$ -- 1931
+call.type$ -- 8
+change.case$ -- 75
+chr.to.int$ -- 45
+cite$ -- 14
+duplicate$ -- 3603
+empty$ -- 4891
+format.name$ -- 405
+if$ -- 10597
 int.to.chr$ -- 0
-int.to.str$ -- 5
+int.to.str$ -- 16
 missing$ -- 0
-newline$ -- 58
-num.names$ -- 94
-pop$ -- 709
+newline$ -- 179
+num.names$ -- 296
+pop$ -- 2447
 preamble$ -- 1
-purify$ -- 36
+purify$ -- 111
 quote$ -- 0
-skip$ -- 416
+skip$ -- 1262
 stack$ -- 0
-substring$ -- 682
-swap$ -- 208
-text.length$ -- 56
+substring$ -- 8479
+swap$ -- 784
+text.length$ -- 174
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 90
+type$ -- 260
 warning$ -- 0
-while$ -- 149
+while$ -- 504
 width$ -- 0
-write$ -- 56
+write$ -- 172
+(There were 20 error messages)

@@ -54,5 +54,142 @@
     \field{title}{Grundkurs Künstliche Intelligenz}
     \field{year}{2013}
   \endentry
+
+  \entry{deeplearning}{book}{}
+    \name{author}{2}{}{%
+      {{hash=YGIB}{%
+         family={Y.},
+         familyi={Y\bibinitperiod},
+         given={{Goodfellow,} I.\bibnamedelima {, Bengio,}},
+         giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim
+  B\bibinitperiod},
+      }}%
+      {{hash=AC}{%
+         family={A.},
+         familyi={A\bibinitperiod},
+         given={{Courville,}},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{YGIBAC1}
+    \strng{fullhash}{YGIBAC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{\url{http://www.deeplearningbook.org}}
+    \field{title}{Deep Learning}
+    \field{year}{2016}
+  \endentry
+
+  \entry{mobilenets}{book}{}
+    \name{author}{2}{}{%
+      {{hash=MHAGZMBDWT}{%
+         family={M.},
+         familyi={M\bibinitperiod},
+         given={{Howard,} A. G. {, Zhu,} M.{, Chen,} B.{, Kalenichenko,} D.{,
+  Wang,} W.{, Weyand,}\bibnamedelima T.{, Andreetto,}},
+         giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  G\bibinitperiod\bibinitdelim Z\bibinitperiod\bibinitdelim
+  M\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
+  D\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={H.},
+         familyi={H\bibinitperiod},
+         given={{Adam,}},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MHAGZMBDWTHA1}
+    \strng{fullhash}{MHAGZMBDWTHA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{MobileNets: Efficient Convolutional Neural Networks for
+  Mobile Vision Applications}
+    \field{month}{04}
+    \field{year}{2017}
+  \endentry
+
+  \entry{embedded}{book}{}
+    \name{author}{2}{}{%
+      {{hash=MZYS}{%
+         family={M.},
+         familyi={M\bibinitperiod},
+         given={{Zhang,} Y.{, Bi,}\bibnamedelima S.{, Dong,}},
+         giveni={Z\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim
+  S\bibinitperiod},
+      }}%
+      {{hash=YL}{%
+         family={Y.},
+         familyi={Y\bibinitperiod},
+         given={{Liu,}},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MZYSYL1}
+    \strng{fullhash}{MZYSYL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{The Implementation of CNN-based Object Detector of ARM
+  Embedded Platforms. 2018 IEEE 16th Int. Conf. on Dependable, Autonomic \&
+  Secure Comp., 16th Int. Conf. on Pervasive Intelligence \& Comp., 4th Int.
+  Conf. on Big Data Intelligence \& Comp., and 3rd Cyber Sci. and Tech. Cong.}
+    \field{year}{2018}
+  \endentry
+
+  \entry{ssd}{book}{}
+    \name{author}{2}{}{%
+      {{hash=CYLWADDCS}{%
+         family={C.-Y.},
+         familyi={C\bibinithyphendelim Y\bibinitperiod},
+         given={{Liu,} W. {, Anguelov,} D.{, Erhan,} D.{, Szegedy,} C.{,
+  Reed,}\bibnamedelima S.{, Fu,}},
+         giveni={L\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
+  A\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  D\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=CBA}{%
+         family={C.},
+         familyi={C\bibinitperiod},
+         given={{Berg,}\bibnamedelima A.},
+         giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CYLWADDCSCBA1}
+    \strng{fullhash}{CYLWADDCSCBA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{pp. 21-37}
+    \field{title}{SSD: Single Shot MultiBox Detector. European conference on
+  computer vision}
+    \field{year}{2016}
+  \endentry
+
+  \entry{fastercnn}{book}{}
+    \name{author}{2}{}{%
+      {{hash=RRSHK}{%
+         family={R.},
+         familyi={R\bibinitperiod},
+         given={{Ren,} S. {, He,}\bibnamedelima K.{, Girshick,}},
+         giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim
+  H\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=JS}{%
+         family={J.},
+         familyi={J\bibinitperiod},
+         given={{Sun,}},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RRSHKJS1}
+    \strng{fullhash}{RRSHKJS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Faster R-CNN: Towards real-time object detection with region
+  proposal networks. NIPS}
+    \field{year}{2016}
+  \endentry
 \enddatalist
 \endinput
