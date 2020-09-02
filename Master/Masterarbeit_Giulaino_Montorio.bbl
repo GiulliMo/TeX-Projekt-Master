@@ -55,6 +55,27 @@
     \field{year}{2013}
   \endentry
 
+  \entry{precisionandrecall}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CB}{%
+         family={Carterette},
+         familyi={C\bibinitperiod},
+         given={Ben},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer US}%
+    }
+    \strng{namehash}{CB1}
+    \strng{fullhash}{CB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{2126\bibrangedash 2127}
+    \field{title}{Encyclopedia of Database Systems - Precision and Recall}
+    \field{year}{2009}
+  \endentry
+
   \entry{bildundobjekt}{book}{}
     \name{author}{1}{}{%
       {{hash=uRASH}{%
@@ -76,27 +97,6 @@
     \field{title}{Bildverarbeitung und Objekterkennung - Computer Vision in
   Industrie und Medizin}
     \field{year}{2014}
-  \endentry
-
-  \entry{precisionandrecall}{book}{}
-    \name{author}{1}{}{%
-      {{hash=CB}{%
-         family={Carterette},
-         familyi={C\bibinitperiod},
-         given={Ben},
-         giveni={B\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Springer US}%
-    }
-    \strng{namehash}{CB1}
-    \strng{fullhash}{CB1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{pages}{2126\bibrangedash 2127}
-    \field{title}{Encyclopedia of Database Systems - Precision and Recall}
-    \field{year}{2009}
   \endentry
 
   \entry{deeplearning}{book}{}

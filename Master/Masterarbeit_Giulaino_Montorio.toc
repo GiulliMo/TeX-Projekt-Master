@@ -26,9 +26,11 @@
 \contentsline {subsection}{\numberline {3.2.3}Schnittstelle zwischen Python und ROS}{12}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Erstellung von Objektinformationen}{12}{subsection.3.2.4}%
 \contentsline {section}{\numberline {3.3}Funktionsweise des Gesamtsystems}{12}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Verifikation}{15}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{16}{chapter.5}%
-\contentsline {chapter}{\nonumberline Quellenverzeichnis}{17}{chapter*.9}%
-\contentsline {chapter}{\numberline {A}Anhang}{18}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Abbildungen}{18}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{19}{section.A.2}%
+\contentsline {section}{\numberline {3.4}Umsetzung der Statemachine}{16}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Auslegung des Zustandsautomats}{16}{subsection.3.4.1}%
+\contentsline {chapter}{\numberline {4}Verifikation}{18}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{19}{chapter.5}%
+\contentsline {chapter}{\nonumberline Quellenverzeichnis}{20}{chapter*.10}%
+\contentsline {chapter}{\numberline {A}Anhang}{21}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Abbildungen}{21}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{22}{section.A.2}%

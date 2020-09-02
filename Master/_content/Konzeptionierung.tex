@@ -16,13 +16,33 @@
 		\subsection{Schnittstelle zwischen Python und ROS}
 		
 		\subsection{Erstellung von Objektinformationen}
+		\label{subsec: Erstellung von Objektinformationen}
 	
 	\section{Funktionsweise des Gesamtsystems}
 	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des im Kapitel ... beschriebenen autonomen Logistikfahrzeugs. Aufgrund dessen sind einzelne Programme nicht als abgeschlossenes System zu betrachten. In Kapitel .../consens wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung und der Aufbau des entwickelten, endlichen Automats wird im folgenden Kapitel erklärt.\\
 	
 	Die Personenerkennung am ALF wird mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben. In Kapitel.../rospython wurden bereits zwei Lösungsansätze in der Softwarentwicklung in Zusammenspiel mit ROS und Python präsentiert. Aufgrund einer starken Belastung der im Roboter verbauten Recheneinheit während der parallelen Bildverarbeitung beider eingehender Bilder, wurde das Programm auf eine serielle Verarbeitung umgestellt. Der Befehl der parallelen Verarbeitung erzwingt Berechnungsprozesse mit derselben Frequenz, die durch den Eingang der Bilder beider Kameras vorgegeben wird. Mithilfe der seriellen Abarbeitung  war es ebenfalls möglich die Häufigkeit der Berechnungen zu steuern und damit verbundene Programmoptimierungen vorzunehmen. Auslastungen des verbauten Computers können so eingespart werden und für weitere, parallel laufende Prozesse genutzt werden. Dies wird zum Beispiel durch eine gezielte Verzögerung der Personenerkennung erreicht. Hierbei werden Pausen mit der gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt bis ein relevantes Bild erkannt wird. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Als relevant werden Bilder eingestuft, die eine Person enthalten.\\
 	
-	In Abbildung \ref{fig: Personenerkennung} wird der Ablauf der Personenerkennung in Form eines Programmablaufplans dargestellt. Die Darstellung zeigt die Funktionsweise des Programms ab dem Zeitpunkt, an dem eine Person vor der jeweiligen Kamera detektiert wird. Weiterhin zeigt die Abbildung den Informationsfluss eines Bildes von einer Kamera durch die Personenerkennung. Zu Beginn der Analyse gelangt jedes Bild zunächst in das eingestellte künstliche neuronale Netz. Je nach Anzahl der erkannten Person werden korrespondierende Koordinaten ausgegeben, die die Position des Interessensbereich beschreiben. Anhand dieser Informationen kann an eine Aussage darüber getroffen werden, ob eine Person im Bild zu sehen ist und wo sich diese befindet. Wird keine Person erkannt arbeitet das Programm wieder langsam wie bereits beschrieben. Sollten jedoch Personen erkannt worden sein, wird versucht ein Gesicht zu erkennen. In den meisten Fällen sitzen und stehen Menschen aufrecht. So kann davon ausgegangen werden, dass sich das Gesicht einer Person im oberen Teil des Bereichs befindet. Dafür wird der Interessensbereich verkleinert, um Rechenkapazitäten einzusparen. 
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}
+			\node[circle,fill,gray,minimum size=15mm] (head) {};
+			\node[rounded corners=2pt,minimum height=5cm,gray,minimum width=1.5cm,fill,below = 1pt of head] (body) {};
+			\draw[line width=3.8mm,gray,round cap-round cap] ([shift={(6pt,-1pt)}]body.north east) --++(-90:19mm);
+			\draw[line width=3.8mm,gray,round cap-round cap] ([shift={(-6pt,-1pt)}]body.north west)--++(-90:19mm);
+			\draw[thick,white,-round cap] (body.south) --++(90:18mm);
+			\node at (0,-2.5) [thick,dashed,rectangle,minimum height=7cm,minimum width=4cm,draw] (v100) {};
+			\node at (0,-0.6) [thick,dashdotted,rectangle,minimum height=3cm,minimum width=3.8cm,draw] (v100) {};
+			\node at (0,-0.0) [thick,rectangle,minimum height=1.6cm,minimum width=1.6cm,draw] (v100) {};
+			
+		\end{tikzpicture}
+		\caption{test}
+	\end{figure}
+
+	In Abbildung \ref{fig: Personenerkennung} wird der Ablauf der Personenerkennung in Form eines Programmablaufplans dargestellt. Die Darstellung zeigt die Funktionsweise des Programms ab dem Zeitpunkt, an dem eine Person vor der jeweiligen Kamera detektiert wird. Weiterhin zeigt die Abbildung den Informationsfluss eines Bildes von einer Kamera durch die Personenerkennung. Zu Beginn der Analyse gelangt jedes Bild zunächst in das eingestellte künstliche neuronale Netz. Je nach Anzahl der erkannten Person werden korrespondierende Koordinaten ausgegeben, die die Position des Interessensbereich beschreiben. Anhand dieser Informationen kann an eine Aussage darüber getroffen werden, ob eine Person im Bild zu sehen ist und wo sich diese befindet. Wird keine Person erkannt arbeitet das Programm wieder reduziert, wie bereits beschrieben. Sollten jedoch Personen erkannt worden sein, wird versucht ein Gesicht zu erkennen. In den meisten Fällen sitzen und stehen Menschen aufrecht. So kann davon ausgegangen werden, dass sich das Gesicht einer Person im oberen Teil des Bereichs befindet. Dafür wird der Interessensbereich verkleinert, um Rechenkapazitäten einzusparen. Sollte sich kein Gesicht im relevanten Bereich befinden, wird davon ausgegangen, dass die Person stark von der Kamera abgewandt ist. Somit ist keine eindeutige Identifikation möglich und das Programm schaltet in den reduzierten Modus. Detektiert das Netz ein Gesicht wird eine Merkmalsextraktion durchgeführt.\\
+	
+	Im Anschluss werden die extrahierten Merkmale mit den der bereits abgespeicherten Gesichtern verglichen. Wird kein übereinstimmendes Gesicht gefunden versucht die Software das Gesicht zu registrieren. Je nach Einstellung wird ein Gesicht registriert, wenn es entsprechend oft hintereinander erkannt worden ist. Der Registrierungsprozess und die Sammlung von Bildinformationen wird in Kapitel \ref{subsec: Erstellung von Objektinformationen} behandelt. Im Falle der Erkennung eines bekannten Gesichts wird die Informationen der erkannten Person wie im bereits erwähnten Kapitel aktualisiert.\\ 
+	
 	  
 	\newpage
 	\begin{figure}[H]
@@ -59,7 +79,53 @@
 	\label{fig: Personenerkennung}
 	\end{figure}
 	
-		%vektor statemachine
+	\section{Umsetzung der Statemachine}
+	\label{sec: Umsetzung der Statemachine}
+	Für die Steuerung des autonomen Logistikfahrzeugs durch eine Spracherkennung wurde ein endlicher Automat entwickelt. Die Entwicklung der Spracherkennung wird in der Masterarbeit von Hannes Dittmann erläutert. In der vorangegangenen Bachelorarbeit werden die Fahrfunktionen des Roboters erklärt. Der Grundgedanke und die daraus resultierende Auswahl des Zustandsautomats wird im folgendem Kapitel näher ausgeführt.\\	
+	
+		\subsection{Auslegung des Zustandsautomats}
+		Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes. In der Masterarbeit von Hannes Dittmann werden aufgrund dessen Sprachbefehle kategorisiert. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Eingabeparameter für den EA genutzt. Weiterhin wird zwischen einer manuellen und einer autonomen Fahraufgabe unterschieden und als zweiten Parameter für den Zustandsautomaten genutzt. Anhand der technischen Fähigkeiten des Roboters wurden die Kategorienamen so gewählt, dass alle möglichen Handlungen abgedeckt sind. Der Zustandsautomat wurde so entworfen, dass er trotz der vielen Handlungsmöglichkeiten des Roboters mit möglichst wenig Zuständen arbeitet. Für die größtmögliche Effizienz hinsichtlich der Dimension des EAs wurde ein mathematisches Modell entworfen.\\
+		
+		\begin{equation}
+			\vec{z}=\sum_{z=0}^{z_f} \left[ \begin{array}{r}
+				k_n  \\
+				k_{n+1}  \\
+				.  \\
+				.  \\
+			\end{array}\right] \circ
+			\left[ \begin{array}{r}
+				b_n(z)  \\
+				b_{n+1}(z)  \\
+				.  \\
+				.  \\
+			\end{array}\right]  \circ
+			\left[ \begin{array}{r}
+				1  \\
+				1  \\
+				l(z_f)  \\
+				l(z_f)  \\
+				1  \\
+				f_m  \\
+				f_a  \\
+				l(z_f)\cdot f_a  \\
+				l(z_f)\cdot f_a \\
+			\end{array}\right] 
+			\label{eq: statemachine}
+		\end{equation}\\
+	
+		\begin{equation}
+			b_n(z)=\left\{\begin{array}{ll} 1 \text{ für } z=n \\
+				0 \text{ für }z\neq n\end{array}\right. .
+			\label{eq: Binärfunktion}
+		\end{equation}\\
+	
+		Dies ermöglicht einen sich aufbauenden Endzustand in Form eines Zustandsvektors $\vec{z}$ und wird im folgenden Beispiel anhand der Gleichung \ref{eq: statemachine} und \ref{eq: Binärfunktion} erläutert. Es wird angenommen, dass der Endzustand $z_f=6$ erreicht werden soll. Der sechste, finale Zustand ist die manuelle Steuerung des Roboters über den Controller. Durch die Variable $z$ werden Zustände beschrieben, die vor Erreichen des Endzustands durchlaufen werden müssen. Jeder Zustand $z$ verfügt über eine eigene Knotenmenge $k_n$, die in Form von ROS-Knoten aufgerufen werden. Die Hilfssunktion $b_n(z)$ ist eine binäre Funktion und aktiviert im jeweiligen Index der Summe die benötige Knotenmenge $k_n$
+	
+		
+		
+		
+		In diesem Zusammenhang kam während der Entwicklung die Idee einer Fusion der Personen- und Spracherkennung in der Praxis auf.  
+		
 	
 		
 		
