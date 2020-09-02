@@ -10,26 +10,25 @@
 \contentsline {section}{\numberline {2.1}Neuronale Netze}{3}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Eigenschaften von neuronalen Netzen}{3}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Lernprozess}{4}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Unterscheidung von neuronalen Netzen}{5}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Evaluation neuronaler Netze}{5}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Objekterkennung}{5}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Bildklassifikation}{6}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Objektlokalisierung}{6}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Objekterkennung durch neuronale Netze}{6}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Zustandsautomat}{8}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Bestimmung von Positionskoordinaten}{9}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Schnittstelle zwischen ROS und Python}{10}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Konzeptionierung}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Anforderungserhebung mit CONSENS}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Konzept und Aufbau der Personenerkennung}{11}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Wirkstruktur der Personenerkennung}{11}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Auswahl und Training der verwendeten neuronalen Netze}{11}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Schnittstelle zwischen Python und ROS}{11}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Erstellung von Objektinformationen}{11}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Funktionsweise des Gesamtsystems}{11}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Verifikation}{14}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{15}{chapter.5}%
-\contentsline {chapter}{\nonumberline Quellenverzeichnis}{16}{chapter*.9}%
-\contentsline {chapter}{\numberline {A}Anhang}{17}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Abbildungen}{17}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{18}{section.A.2}%
+\contentsline {subsection}{\numberline {2.1.3}Evaluation neuronaler Netze}{5}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Objekterkennung}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Bildklassifikation}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Objektlokalisierung}{7}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Objekterkennung durch neuronale Netze}{7}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Zustandsautomat}{9}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Bestimmung von Positionskoordinaten}{10}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Schnittstelle zwischen ROS und Python}{11}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Konzeptionierung}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Anforderungserhebung mit CONSENS}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Konzept und Aufbau der Personenerkennung}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Wirkstruktur der Personenerkennung}{12}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Auswahl und Training der verwendeten neuronalen Netze}{12}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Schnittstelle zwischen Python und ROS}{12}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Erstellung von Objektinformationen}{12}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Funktionsweise des Gesamtsystems}{12}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Verifikation}{15}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{16}{chapter.5}%
+\contentsline {chapter}{\nonumberline Quellenverzeichnis}{17}{chapter*.9}%
+\contentsline {chapter}{\numberline {A}Anhang}{18}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Abbildungen}{18}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{19}{section.A.2}%

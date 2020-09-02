@@ -22,7 +22,7 @@
 		\end{equation}
 		\\
 		
-		Gleichung \ref{eq: Gewichtete Summe} zeigt das mathematische Modell der gewichteten Summe $s$. Das jeweilige Gewicht $w$ wird mit dem Index $j$ inkrementiert und mit dem dazugehörigen Eingang des Neurons $i$ multipliziert. Alle Produkte werden aufsummiert und ergeben die gewichtete Summe. Es gibt verschiedene Varianten der Aktivierungsfunktion, die je nach Netzart zur Anwendung kommen können. In welchen Eigenschaften sich neuronale Netze unterscheiden können, wird in Kapitel... beschrieben. Häufig werden für Aktivierungsfunktion Schwellwertfunktionen angewendet. \\
+		Gleichung \ref{eq: Gewichtete Summe} zeigt das mathematische Modell der gewichteten Summe $s$. Das jeweilige Gewicht $w$ wird mit dem Index $j$ inkrementiert und mit dem dazugehörigen Eingang des Neurons $i$ multipliziert. Alle Produkte werden aufsummiert und ergeben die gewichtete Summe. Es gibt verschiedene Varianten der Aktivierungsfunktion, die je nach Netzart zur Anwendung kommen können. Häufig werden für Aktivierungsfunktion Schwellwertfunktionen angewendet. \\
 		
 		/Bild neuronales netz
 		\\
@@ -30,29 +30,47 @@
 		In Abbildung... ist Grundstruktur eines neuronalen Netzes veranschaulicht. Neuronen sind hier als Kreise dargestellt und bilden in den beispielhaft vertikal veranschaulichten Formationen einzelne Schichten. Hierbei wird zwischen Eingabe-, Zwischen- und Ausgabeschichten unterschieden. Die Eingabeschicht nimmt Informationen in Form von Daten auf und gibt diese an die erste Zwischenschicht weiter. Die Anzahl der Zwischenschichten, oder auch verdeckte Schichten, ist in der Anwendung der neuronalen Netzen variabel. Am rechten Bildrand ist die Ausgabeschicht gezeigt, die die entsprechende Ausgabe des Netzes generiert.  
 	
 		\subsection{Lernprozess}
-		Der Lernprozess von neuronalen Netzen zielt darauf hinaus, einer Netzstruktur ein gewünschtes Verhalten beizubringen. Genauer sollen die in Kapitel... beschriebenen Gewichte modifiziert werden. Dafür ist vor dem Lernprozess eine Trainingsmenge nötig. Im Falle einer Personenerkennung wäre beispielsweise ein Datensatz aus Bildern von Personen ein geeignete Trainingsmenge.\\
+		Der Lernprozess von neuronalen Netzen zielt darauf hinaus, einer Netzstruktur ein gewünschtes Verhalten beizubringen. Genauer sollen die in Kapitel... beschriebenen Gewichte modifiziert werden.\\
 		
-		Zunächst wird zwischen drei Lernverfahren unterschieden, dem unüberwachten Lernen, dem bestärkenden Lernen und dem überwachten Lernen. Beim unüberwachten Lernen erkennt das Netz selbst Muster und Klassen aus der eingegebenen Menge. Anders als beim unüberwachten Lernen, lernt das Netz beim bestärkten Lernen mit einer Rückmeldung. Diese enthält Informationen darüber, ob ein errechnetes Ergebnis einer Trainingseinheit richtig oder falsch ist. Das überwachte Lernen setzt eine Trainingsmenge voraus, die neben der Eingabedaten auch das dazugehörige korrekte Ergebnis enthält. So wird in der Vorwärtspropagation durch eine Eingabe eine entsprechende Ausgabe erzeugt und diese mit dem korrekten Ergebnis verglichen. Das KNN wird dann mithilfe des aus dem vorangegangenen Vergleich entstandenen Fehler korrigiert.\cite{Kriesel}\\
+		Zunächst wird zwischen drei Lernverfahren unterschieden, dem unüberwachten, dem bestärkenden und dem überwachten Lernen. Beim unüberwachten Lernen erkennt das Netz selbst Muster und Klassen aus der eingegebenen Menge. Anders als beim unüberwachten Lernen, lernt das Netz beim bestärkten Lernen mit einer Rückmeldung. Diese enthält Informationen darüber, ob ein errechnetes Ergebnis einer Trainingseinheit richtig oder falsch ist. Das überwachte Lernen setzt eine Trainingsmenge voraus, die neben der Eingabedaten auch das dazugehörige korrekte Ergebnis enthält. So wird in der Vorwärtspropagation durch eine Eingabe eine entsprechende Ausgabe erzeugt und diese mit dem korrekten Ergebnis verglichen. Das KNN wird dann mithilfe des aus dem vorangegangenen Vergleich entstandenen Fehler korrigiert.\cite{Kriesel}\\
 		
-		Die meist genutzte Form des überwachten Lernens ist die Rückwärtspropagierung (engl. Backpropagation) oder Fehlerrückführung genannt \cite{Ertel}. Die mathematische Grundlage für dieses Lernverfahren sind Gradientenabstiegsverfahren. Durch die Fehlerrückführung werden Gewichte durch die Ausgabeschicht, die dann als Eingabeschicht interpretiert wird, mithilfe des Fehlervektors optimiert.\cite{Kriesel}
-		
-		\subsection{Unterscheidung von neuronalen Netzen}
-		/handbuch ki
+		Die meist genutzte Form des überwachten Lernens ist die Rückwärtspropagierung (engl. Backpropagation) oder Fehlerrückführung genannt \cite{Ertel}. Auch in dieser Masterarbeit werden Netze mithilfe der Rückwärtspropagierung trainiert und in diesem Kapitel genauer erläutert. Die mathematische Grundlage für dieses Lernverfahren sind Gradientenabstiegsverfahren \cite{Kriesel}. Durch die Fehlerrückführung werden Gewichte durch die Ausgabeschicht, die dann als Eingabeschicht genutzt wird, mithilfe des Fehlervektors optimiert \cite{Kriesel}. Dafür ist eine Trainingsmenge in Form eines Datensatzes nötig. Im Falle einer Personenerkennung wäre beispielsweise ein Datensatz aus Bildern von Personen eine geeignete Trainingsmenge. Jedes enthaltene Bild verfügt die Trainingsmenge\\
 		
 	
 		
 		\subsection{Evaluation neuronaler Netze}
 			
-		Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. 
+		Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. Im Rahmen dieser Masterarbeit wird die Methode \textit{Precision and Recall} verwendet. Da die Erkennung von Personen auf ein Klassifikationsproblem binärer Natur reduziert werden kann, eignet sich die genannte Herangehensweise. Da die genannte Metrik für diese Arbeit auf ein Bildverarbeitungsproblem angewendet wird, werden die Grundlagen im Folgenden im entsprechenden Kontext vermittelt.\\
+		
+		\textit{Precision and Recall} ist ein traditionelles Werkzeug zur Evaluation und Leistungsmessung \cite{precisionandrecall}. Der \textit{Recall}-Wert $r(t)$, oder $TPR(t)$ für \textit{Truepositiverate}, beschreibt die Fähigkeit eines System, tatsächlich positive Stichproben zu erkennen. Angewandt auf die Personenerkennung sind Bilder, auf denen Personen zu sehen sind, als tatsächlich positive Stichproben einzustufen. In Gleichung \ref{eq: recall} wird der \textit{Recall}-Wert durch eine Division von allen wahren positiven Werten $TP(t)$ und die Anzahl aller tatsächlich positiven Werte $n_{pos}$ berechnet. Die Variable $t$ definiert den eingestellten Schwellwert. Im Sachkontext ist der Wert als Konfidenz zu betrachten, bei der eine Person als solche klassifiziert wird. Für die Anwendung dieser Methode ist die Kenntnis über negativen Beispielen der Stichprobe nicht notwendig \cite{bildundobjekt}.\\ 
+		
+		\begin{equation}
+		r(t)=TPR(t)=\frac{TP(t)}{TP(t)+FN(t)}
+		\label{eq: recall}
+		\end{equation}\\
+		
+		Der \textit{Precision}-Wert $p(t)$ berechnet sich durch das Verhältnis von allen wahren positiven Werten $TP(t)$ durch alle als positiv bewerteten Beispielen $TP(t)$ und $FP(t)$. Durch diesen Wert wird verdeutlicht, wie gut ein System in der Lage ist tatsächlich wahre Werte von tatsächlich falschen Werten zu unterscheiden.\\
+		
+		\begin{equation}
+		p(t)=\frac{TP(t)}{TP(t)+FP(t)}
+		\label{eq: precision}
+		\end{equation}\\
+		
+		Häufig muss in der Praxis ein Kompromiss zwischen \textit{Precision} und \textit{Recall} gefunden werden. Dies lässt sich anhand eines Beispiel in der Personenerkennung veranschaulichen. Das System zur Erkennung wird beispielhaft mit einem hohen \textit{Precision}-Wert betrieben. Ein damit verbundener, niedriger \textit{Recall}-Wert ist in der Praxis üblich. Dies führt dazu, dass irrelevanter Bildinhalt selten als Person klassifiert wird. Jedoch kommt es eher häufig vor, dass keine Person detektiert wird obwohl eine zu sehen ist. Legt man nun den Fokus auf einen hohen \textit{Recall}, sinkt der \textit{Precision}-Wert. Personen würden dann zwar häufiger als Person klassifiziert werden, jedoch wird irrelevanter Bildinhalt ebenfalls häufig als Person klassifiziert.
+		
+		
+		
+		
+		
 		
 	\section{Objekterkennung}
 	\label{sec: Mecanumräder}
-	Bei der visuellen Objekterkennung wird ein Objekt, das auf einem Bild gezeigt ist, mit einer gewissen Wahrscheinlichkeit inklusive der Position in der Abbildung erkannt. Die drei Abstraktionsebenen einer solchen Erkennung unterteilen sich in Bildklassifikation, Objektlokalisierung und semantische Segmentierung ...2014Bild. Letzteres kommt in dieser Arbeit nicht zur Anwendung und wird aufgrunddessen im Folgenden nicht behandelt. Weiterhin wird ebenfalls die Objekterkennung durch neuronale Netze betrachtet und in Kapitel... verglichen.
+	Bei der visuellen Objekterkennung wird ein Objekt, das auf einem Bild gezeigt ist, mit einer gewissen Wahrscheinlichkeit inklusive der Position in der Abbildung erkannt. Die drei Abstraktionsebenen einer solchen Erkennung unterteilen sich in Bildklassifikation, Objektlokalisierung und semantische Segmentierung ...2014Bild. Letzteres kommt in dieser Arbeit nicht zur Anwendung und wird aufgrund dessen im Folgenden nicht behandelt. Weiterhin wird ebenfalls die Objekterkennung durch neuronale Netze betrachtet und in Kapitel... verglichen.
 	
 	/Bild Bildaufnahme und Digitalisierung-->Segmentierung-->Bildverarbeitung-->merkmalsextraktion-->Klassifikation
 	
 		\subsection{Bildklassifikation}
-		Die Bildklassifikation beschreibt eine Zuweisung von Objektkategorien zu einem gegebenen Bild. Mithilfe einer Merkmalsextraktion werden Merkmalsvektoren extrahiert und können so in einem Klassifikator berechnet werden. Ein Gängiges Verfahren zur Merkmalsgewinnung ist das sogenannte Histogram of oriented gradients (HOG). Bei diesem Verfahren werden in einem Bild auftretende Intensitäten geprüft und so Kanten und Ecken als Histogramm gespeichert. Die Support Vektor Maschine ist ein typischer Funktionsapproximator für eine Objektklassifikation. Es handelt sich hierbei um ein Verfahren, das Klassen durch eine sogenannte Hyperebene voneinander trennt. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt.
+		Die Bildklassifikation beschreibt eine Zuweisung von Objektkategorien zu einem gegebenen Bild. Mithilfe einer Merkmalsextraktion werden Merkmalsvektoren extrahiert und können so in einem Klassifikator berechnet werden. Ein Gängiges Verfahren zur Merkmalsextraktion ist das sogenannte Histogram of oriented gradients (HOG). Bei diesem Verfahren werden in einem Bild auftretende Intensitäten geprüft und so Kanten und Ecken als Histogramm gespeichert. Die Support Vektor Maschine ist ein typischer Funktionsapproximator für eine Objektklassifikation. Es handelt sich hierbei um ein Verfahren, das Klassen durch eine sogenannte Hyperebene voneinander trennt. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt.
 			
 		\subsection{Objektlokalisierung}
 		Wie in Kapitel... beschrieben, soll die Ausgabe einer Objekterkennung auch den Ort eines Objektes enthalten. Für jedes erkannte Objekt wird ein Rechteck in Form von Pixelkoordinaten erzeugt, das den Interessensbereich beschreibt.

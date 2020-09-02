@@ -55,27 +55,67 @@
     \field{year}{2013}
   \endentry
 
-  \entry{deeplearning}{book}{}
-    \name{author}{2}{}{%
-      {{hash=YGIB}{%
-         family={Y.},
-         familyi={Y\bibinitperiod},
-         given={{Goodfellow,} I.\bibnamedelima {, Bengio,}},
-         giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim
-  B\bibinitperiod},
+  \entry{bildundobjekt}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uRASH}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Rodner,}\bibnamedelima A.},
+         familyi={R\bibinitperiod\bibinitdelim A\bibinitperiod},
+         given={{Süße,}\bibnamedelima H.},
+         giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod},
       }}%
-      {{hash=AC}{%
-         family={A.},
-         familyi={A\bibinitperiod},
-         given={{Courville,}},
-         giveni={C\bibinitperiod},
+    }
+    \list{publisher}{1}{%
+      {Springer Vieweg}%
+    }
+    \strng{namehash}{RASHu1}
+    \strng{fullhash}{RASHu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Bildverarbeitung und Objekterkennung - Computer Vision in
+  Industrie und Medizin}
+    \field{year}{2014}
+  \endentry
+
+  \entry{precisionandrecall}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CB}{%
+         family={Carterette},
+         familyi={C\bibinitperiod},
+         given={Ben},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer US}%
+    }
+    \strng{namehash}{CB1}
+    \strng{fullhash}{CB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{2126\bibrangedash 2127}
+    \field{title}{Encyclopedia of Database Systems - Precision and Recall}
+    \field{year}{2009}
+  \endentry
+
+  \entry{deeplearning}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uCAGIBY}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Courville,}\bibnamedelima A.},
+         familyi={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+         given={{Goodfellow,} I. {, Bengio,}\bibnamedelima Y.},
+         giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim
+  B\bibinitperiod\bibinitdelim Y\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {MIT Press}%
     }
-    \strng{namehash}{YGIBAC1}
-    \strng{fullhash}{YGIBAC1}
+    \strng{namehash}{CAGIBYu1}
+    \strng{fullhash}{CAGIBYu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{\url{http://www.deeplearningbook.org}}
@@ -84,26 +124,23 @@
   \endentry
 
   \entry{mobilenets}{book}{}
-    \name{author}{2}{}{%
-      {{hash=MHAGZMBDWT}{%
-         family={M.},
-         familyi={M\bibinitperiod},
+    \name{author}{1}{}{%
+      {{hash=uAHHAGZMBDWTM}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Adam,}\bibnamedelima H.},
+         familyi={A\bibinitperiod\bibinitdelim H\bibinitperiod},
          given={{Howard,} A. G. {, Zhu,} M.{, Chen,} B.{, Kalenichenko,} D.{,
-  Wang,} W.{, Weyand,}\bibnamedelima T.{, Andreetto,}},
+  Wang,} W.{, Weyand,} T.{, Andreetto,}\bibnamedelima M.},
          giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
   G\bibinitperiod\bibinitdelim Z\bibinitperiod\bibinitdelim
   M\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
-  D\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim T\bibinitperiod},
-      }}%
-      {{hash=HA}{%
-         family={H.},
-         familyi={H\bibinitperiod},
-         given={{Adam,}},
-         giveni={A\bibinitperiod},
+  D\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
+  T\bibinitperiod\bibinitdelim M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{MHAGZMBDWTHA1}
-    \strng{fullhash}{MHAGZMBDWTHA1}
+    \strng{namehash}{AHHAGZMBDWTMu1}
+    \strng{fullhash}{AHHAGZMBDWTMu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{MobileNets: Efficient Convolutional Neural Networks for
@@ -140,25 +177,23 @@
   \endentry
 
   \entry{ssd}{book}{}
-    \name{author}{2}{}{%
-      {{hash=CYLWADDCS}{%
-         family={C.-Y.},
-         familyi={C\bibinithyphendelim Y\bibinitperiod},
-         given={{Liu,} W. {, Anguelov,} D.{, Erhan,} D.{, Szegedy,} C.{,
-  Reed,}\bibnamedelima S.{, Fu,}},
+    \name{author}{1}{}{%
+      {{hash=uBACLWADDCSCY}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Berg,} A.\bibnamedelima C.},
+         familyi={B\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  C\bibinitperiod},
+         given={{Liu,} W. {, Anguelov,} D.{, Erhan,} D.{, Szegedy,} C.{, Reed,}
+  S.{, Fu,} C.-Y.},
          giveni={L\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
   A\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  D\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim S\bibinitperiod},
-      }}%
-      {{hash=CBA}{%
-         family={C.},
-         familyi={C\bibinitperiod},
-         given={{Berg,}\bibnamedelima A.},
-         giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+  D\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  S\bibinitperiod\bibinitdelim C\bibinithyphendelim Y\bibinitperiod},
       }}%
     }
-    \strng{namehash}{CYLWADDCSCBA1}
-    \strng{fullhash}{CYLWADDCSCBA1}
+    \strng{namehash}{BACLWADDCSCYu1}
+    \strng{fullhash}{BACLWADDCSCYu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{pp. 21-37}
