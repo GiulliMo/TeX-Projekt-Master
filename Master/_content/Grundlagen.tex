@@ -9,7 +9,7 @@
 	Das Neuronennetz des menschlichen Gehirns dient als Vorbild für künstliche, neuronale Netze (KNN). Diese werden heutzutage als Lösung diverser Anwendungsprobleme angewendet, in denen komplexe Strukturen und Muster aus großen Datenmengen erkannt werden sollen. Das in diesem Projekt zugrundeliegende Bildverarbeitungsproblem besitzt die beschriebenen Eigenschaften und eignet sich somit für den Einsatz zur Erkennung von Personen. Anders als bei den meisten programmierten Applikationen ist die Ausgabe von KNN's lediglich probabilistisch. Beim vorliegenden, autonomen Logistikfahrzeug werden zur Personenerkennung derartige neuronale Netze verwendet.
 	
 		\subsection{Eigenschaften von neuronalen Netzen}
-		
+		\label{subsec: Eigenschaften von neuronalen Netzen}
 		Das Grundlage für die Eingabe in ein neuronales Netz ist die Skalierung der vorliegenden Daten auf eine definierte Größe. Diese wäre beispielsweise bei einem Anwendungsfall mit einer Audiospur die Frequenzspektren oder bei einem Bildverarbeitungsproblem die Pixel eines Bildes. Die skalierten Daten werden in einem Tensor gegeben der die Dimensionen der Eingabe hat. Somit unterteilt sich ein Bild in die drei Dimensionen, die Höhe, die Weite und die Farbwerte der Primärfarben pro Pixel.\\
 		
 		\begin{figure}[H]
@@ -204,7 +204,7 @@
 	
 		\subsection{Objekterkennung durch neuronale Netze}
 		
-		Die bisher besten Ergebnisse in der Bildverarbeitung im Zusammenspiel mit neuronalen Netzen wurden durch \textit{Convolutional Neural Network} (CNN) ermöglicht \cite{deeplearning}. Anders als bei den bereits erwähnten Methoden geschieht die Merkmalsextraktion hierbei innerhalb des Netzes. Derartige Netzwerke nutzen Faltung zur Verarbeitung der Eingangsdaten statt der üblichen Matritzenmultiplikation \cite{deeplearning}. Grundlegend besteht der Aufbau eines CNNs aus der Klassifikation durch eine vorangegangene Merkmalsextraktion.\\ 
+		Die bisher besten Ergebnisse in der Bildverarbeitung im Zusammenspiel mit neuronalen Netzen wurden durch \textit{Convolutional Neural Network} (CNN) ermöglicht \cite{deeplearning}. Anders als bei den bereits erwähnten Methoden geschieht die Merkmalsextraktion hierbei innerhalb des Netzes. Derartige Netzwerke nutzen Faltung zur Verarbeitung der Eingangsdaten statt der üblichen Matritzenmultiplikation \cite{deeplearning}. Der Aufbau eines CNNs setzt sich aus zwei Hauptbestandteilen zusammen. Eine Merkmalsextraktion mit den entsprechenden Konvolutionsschichten und die darauffolgende Klassifikation.\\ 
 	
 		\begin{figure}[H]
 			\centering
@@ -212,7 +212,181 @@
 		\end{figure}
 	 	
 	
-		Die Merkmalsextraktion setzten sich im grundlegenden Fall aus drei Stufen zusammen. Dabei kann sich die Zusammensetzung beliebig oft hintereinander wiederholen. Die erste, sogenannte Konvolutionsschicht führt Faltungsprozesse mit den Eingangsdaten durch \cite{deeplearning}. Während der Konvolution, oder auch Faltung genannt, werden eingehende Daten in Filter, sogenannte Kernels, eingegeben. Diese extrahieren bestimmte Merkmale, dabei können sich die Filter je Schicht ändern. So können verschiedene Schichten diverse Merkmale extrahieren. Im zweiten Schritt wird eine nichtlineare Aktivierungsfunktion wie der \textit{Rectified Linear Unit} (ReLU) Funktion auf die Ausgangsdaten der Kovolutionsschicht angewendet. Beim Pooling werden eingehende Matrizen minimiert \cite{deeplearning}. Gleichzeitig gehen die aussagekräftigsten Merkmale jedoch nicht verloren. In einigen Fällen wird die Zusammensetzung der drei Stufen als Kovolutionsschicht bezeichnet \cite{deeplearning}. \\
+		Die Konvolutionschichten bestehen im grundlegenden Fall aus drei Unterschichten. Dabei können sich diese innerhalb einer Konvolutionsschicht hintereinander wiederholen. Dies hat jedoch Einfluss auf die Eigenschaften eines Netzes. Die erste Unterschicht führt Faltungsprozesse mit den Eingangsdaten durch \cite{deeplearning}. Es gibt drei Motivationen für die Nutzung einer Faltung in einem neuronalen Netz. Hierzu gehören die eingeschränkte Konnektivität, die Parameterverteilung und die äguivariante Darstellung \cite{deeplearning}. Im folgenden Abschnitt werden diese punkte näher erläutert.\\
+		
+			\tikzset{%
+			every neuron/.style={
+				rectangle,
+				draw,
+				minimum size=1cm
+			},
+			neuron missing/.style={
+				draw=none, 
+				%scale=4,
+				%rotate=90,
+				%yshift=1,
+				%text height=0.333cm,
+				%execute at begin node=\color{black}$\cdots$
+			},
+		}
+		\begin{figure}[H]
+			\centering
+			
+			
+			\begin{tikzpicture}[x=1.5cm, y=1.2cm, >=stealth]
+			
+			\foreach \m/\l [count=\y] in {1,2,3}
+			\node [every neuron/.try, neuron \m/.try] (input-\m) at (0,2.5-\y) {};
+			
+			\foreach \m [count=\y] in {1,2,3}
+			\node [every neuron/.try, neuron \m/.try ] (hidden1-\m) at (0.8,2.5-\y) {};
+			
+			\foreach \m [count=\y] in {1,2,3}
+			\node [every neuron/.try, neuron \m/.try ] (hidden2-\m) at (1.6,2.5-\y) {};
+			
+			\foreach \m [count=\y] in {1,2,3}
+			\node [every neuron/.try, neuron \m/.try ] (output-\m) at (2.4,2.5-\y) {};
+			
+			\foreach \m [count=\y] in {1,2}
+			\node [every neuron/.try, neuron \m/.try ] (output-\m) at (4,2.5-\y) {};
+			
+			\foreach \m [count=\y] in {1,2}
+			\node [every neuron/.try, neuron \m/.try ] (output-\m) at (4.8,2.5-\y) {};
+			
+			
+			
+			
+			
+			\foreach \m/\l [count=\y] in {0,1.6,3.2}
+			\node[draw,rectangle,minimum width=2.2cm,minimum height=2.2cm] at (0.4+\m,-2.5) {};
+			\foreach \m/\l [count=\y] in {0,1.6,3.2}
+			\node[draw,rectangle,minimum width=2.2cm,minimum height=2.2cm] at (0.4+\m,-4.5) {};
+			
+			\node[] at (0.4,-2.5) {\Umbruch{$aw + bx + ey + fz$}};
+			\node[] at (2,-2.5) {\Umbruch{$bw + cx + fy + gz$}};
+			\node[] at (3.6,-2.5) {\Umbruch{$cw + dx + gy + hz$}};
+			\node[] at (0.4,-4.5) {\Umbruch{$ew + fx + iy + jz$}};
+			\node[] at (2,-4.5) {\Umbruch{$fw + gx + jy + kz$}};
+			\node[] at (3.6,-4.5) {\Umbruch{$gw + hx + ky + lz$}};
+			
+			
+			\node[] at (0,1.5) {$a$};
+			\node[] at (0.8,1.5) {$b$};
+			\node[] at (1.6,1.5) {$c$};
+			\node[] at (2.4,1.5) {$d$};
+			\node[] at (0,0.5) {$e$};
+			\node[] at (0.8,0.5) {$f$};
+			\node[] at (1.6,0.5) {$g$};
+			\node[] at (2.4,0.5) {$h$};
+			\node[] at (0,-0.5) {$i$};
+			\node[] at (0.8,-0.5) {$j$};
+			\node[] at (1.6,-0.5) {$k$};
+			\node[] at (2.4,-0.5) {$l$};
+			\node[] at (4,1.5) {$w$};
+			\node[] at (4.8,1.5) {$x$};
+			\node[] at (4,0.5) {$y$};
+			\node[] at (4.8,0.5) {$z$};
+			
+			\node[rotate=90] at (-0.6,0.5) {Eingabe};
+			\node[rotate=90] at (-0.6,-3.5) {Ausgabe};
+			\node[] at (4.4,2.2) {Kernel};
+			
+			\node[] (S1) at (3.6,2){};
+			\node[] (S2) at (1.2,2){};
+			\node[] (S3) at (-0.4,-0.0){};
+			\node[] (S4) at (-0.4,-1.5){};
+			\node[very thick,draw,rectangle,minimum width=2.4cm,minimum height=2.4cm] at (0.4,-2.5) {};
+			\node[very thick,draw,rectangle,minimum width=2.4cm,minimum height=2.4cm] at (4.4,1) {};
+			\node[very thick,draw,rectangle,minimum width=2.4cm,minimum height=2.4cm] at (0.4,1) {};
+			\draw [->, bend angle=45, bend right]  (S1) to (S2);
+			\draw [->, bend angle=45, bend right]  (S3) to (S4);
+		
+			
+			
+			
+			
+		
+			\end{tikzpicture}
+			\caption{Prinzipielle Darstellung des Faltungsprozess. Adaptiert aus \cite{deeplearning}}
+			\label{fig: faltung }
+		\end{figure}
+		
+		Während der Konvolution, oder auch Faltung genannt, werden eingehende Daten in Filter, sogenannte Kernels, eingegeben. Abbildung \ref{fig: faltung } zeigt den prinzipiellen Vorgang der Faltung. Die Konfiguration des Kernels ist beispielhaft mit $w$, $x$, $y$ und $z$ dargestellt. Eingehend Datenpunkte sind hier mit den Buchstaben $a$ bis $l$ gekennzeichnet. Die Filter extrahieren bestimmte Merkmale je nach Konfiguration, wie im unteren Teil der Abbildung als Ausgabe dargestellt. So können verschiedene Schichten diverse Merkmale extrahieren. Die Ausgänge der Schichten üblicher, neuronaler Netzen sind mit jedem Eingang der folgenden Schicht verknüpft. Ein typischer Aufbau wurde bereits in Kapitel \ref{subsec: Eigenschaften von neuronalen Netzen} in Abbildung \ref{fig: neuronales netz } gezeigt. Wird bei derartigen Netzen eine Schicht mit $n$ Ausgaben und eine mit $m$ Eingaben verknüpft, werden $m \cdot n$ Parameter benötigt \cite{deeplearning}. Durch den Faltungsprozess wird diese Konnektivität eingeschränkt. Beispielsweise wird der Datenpunkt $b$ der Eingabe aus der Darstellung \ref{fig: faltung } lediglich in zwei von sechs Datenpunkten der Ausgabe berücksichtigt. Die Ausmaße der eingeschränkten Konnektivität lassen sich in der folgenden Abbildung \ref{fig: eingeschränkte konnektivität} verdeutlichen. Die Eingabepunkte $x_n$ geben je nach Netzart ihre Informationen an alle oder benachbarten Ausgabepunkte $s_n$ weiter. Die Einschränkung der Konnektivität hängt von der Dimension des Kernels ab. Folglich nehmen CNNs deutlich weniger Speicher ein im Vergleich zu herkömmlichen KNNs \cite{deeplearning}. Gleichzeitig wird durch die Faltung eine höhere Statistische Effizient erreicht \cite{deeplearning}.\\
+		
+	
+			\tikzset{%
+			every neuron/.style={
+				circle,
+				draw,
+				minimum size=1cm
+			},
+			neuron missing/.style={
+				draw=none, 
+				%scale=4,
+				%rotate=90,
+				%yshift=1,
+				%text height=0.333cm,
+				%execute at begin node=\color{black}$\cdots$
+			},
+		}
+		\begin{figure}[H]
+			\centering
+			
+			
+			\begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+			
+			\foreach \m/\l [count=\y] in {1,2,3,4,5}
+			\draw[gray,fill=gray](0+\y,2.5)circle(14pt);
+			
+			\foreach \m/\l [count=\y] in {2,3,4}
+			\draw[gray,fill=gray](0+\m,-0.8)circle(14pt);
+			
+			\draw[gray,fill=gray](3,0.8)circle(14pt);
+			\draw[gray,fill=gray](3,-2.5)circle(14pt);
+			
+			\foreach \m/\l [count=\y] in {1,2,3,4,5}
+			\node [every neuron/.try, neuron \m/.try] (eins-\m) at (0+\y,2.5) {$s_\y$};
+			
+			\foreach \m/\l [count=\y] in {1,2,3,4,5}
+			\node [every neuron/.try, neuron \m/.try] (zwei-\m) at (0+\y,0.8) {$x_\y$};
+			
+			\foreach \m/\l [count=\y] in {1,2,3,4,5}
+			\node [every neuron/.try, neuron \m/.try] (drei-\m) at (0+\y,-0.8) {$s_\y$};
+			
+			\foreach \m/\l [count=\y] in {1,2,3,4,5}
+			\node [every neuron/.try, neuron \m/.try] (vier-\m) at (0+\y,-2.5) {$x_\y$};
+			
+		
+			\foreach \m [count=\x] in {1,2,3,4,5}
+			\foreach \l [count=\i] in {1,2,3,4,5}
+			\draw [<-] (eins-\i) -- (zwei-\x)
+			node [] {};
+			
+			
+			\draw [<-] (drei-1) -- (vier-1);
+			\draw [<-] (drei-1) -- (vier-2);
+			\draw [<-] (drei-2) -- (vier-1);
+			\draw [<-] (drei-2) -- (vier-2);
+			\draw [<-] (drei-2) -- (vier-3);
+			\draw [<-] (drei-3) -- (vier-2);
+			\draw [<-] (drei-3) -- (vier-3);
+			\draw [<-] (drei-3) -- (vier-4);
+			\draw [<-] (drei-4) -- (vier-3);
+			\draw [<-] (drei-4) -- (vier-4);
+			\draw [<-] (drei-4) -- (vier-5);
+			\draw [<-] (drei-5) -- (vier-4);
+			\draw [<-] (drei-5) -- (vier-5);
+			
+		
+			\end{tikzpicture}
+			\caption{deep learning}
+			\label{fig: eingeschränkte konnektivität}
+		\end{figure}
+		
+		
+		
+		
+		Im zweiten Schritt wird eine nichtlineare Aktivierungsfunktion wie der \textit{Rectified Linear Unit} (ReLU) Funktion auf die Ausgangsdaten der Kovolutionsschicht angewendet. Beim Pooling werden eingehende Matrizen minimiert \cite{deeplearning}. Gleichzeitig gehen die aussagekräftigsten Merkmale jedoch nicht verloren. In einigen Fällen wird die Zusammensetzung der drei Stufen als Kovolutionsschicht bezeichnet \cite{deeplearning}. \\
 		
 		/bild Klassifikation\\
 		
