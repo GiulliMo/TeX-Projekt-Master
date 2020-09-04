@@ -10,11 +10,63 @@
 	
 		\subsection{Eigenschaften von neuronalen Netzen}
 		
-		Das Grundlage für die Eingabe in ein neuronales Netz ist die Skalierung der vorliegenden Daten auf eine definierte Größe. Diese wäre beispielsweise bei einem Anwendungsfall mit einer Audiospur die Frequenzspektren oder bei einem Bildverarbeitungsproblem die Pixel eines Bildes. Die skalierten Daten werden in einem Tensor gegeben der die Dimensionen der Eingabe hat. Somit unterteilt sich ein Bild in die drei Dimensionen, die Höhe, die Weite und die Farbwerte der Primärfarben pro Pixel.  
+		Das Grundlage für die Eingabe in ein neuronales Netz ist die Skalierung der vorliegenden Daten auf eine definierte Größe. Diese wäre beispielsweise bei einem Anwendungsfall mit einer Audiospur die Frequenzspektren oder bei einem Bildverarbeitungsproblem die Pixel eines Bildes. Die skalierten Daten werden in einem Tensor gegeben der die Dimensionen der Eingabe hat. Somit unterteilt sich ein Bild in die drei Dimensionen, die Höhe, die Weite und die Farbwerte der Primärfarben pro Pixel.\\
 		
-		/Bild Neuron
-		
-		Der grundlegende Aufbau eines neuronalen Netzes besteht aus miteinander verbundenen Schichten, die häufig aus Neuronen bestehen. Jedes Neuron verarbeitet im wesentlichen eingehende Zahlenwerte und gibt diese aus. Hierbei wird eine gewichtete Summe gebildet, die dann auf eine Aktivierungsfunktion angewendet wird.
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[
+				init/.style={
+					draw,
+					circle,
+					inner sep=2pt,
+					font=\Huge,
+					join = by -latex
+				},
+				squa/.style={
+					draw,
+					inner sep=2pt,
+					font=\Large,
+					join = by -latex
+				},
+				start chain=2,node distance=13mm
+				]
+				\node[on chain=2] 
+				(x2) {$x_2$};
+				\node[on chain=2,join=by o-latex] 
+				{$w_2$};
+				\node[on chain=2,init] (sigma) 
+				{$\displaystyle\Sigma$};
+				\node[on chain=2,squa,label=above:{\parbox{2cm}{\centering Aktivierungs-funktion}}] 
+				{$f$};
+				\node[on chain=2,label=above:Ausgabe,join=by -latex] 
+				{$y$};
+				\draw[fill=black](1,-0.425)circle(1pt);
+				\draw[fill=black](1,-0.75)circle(1pt);
+				\draw[fill=black](1,-1.075)circle(1pt);
+				\begin{scope}[start chain=1]
+					\node[on chain=1] at (0,1.5cm) 
+					(x1) {$x_1$};
+					\node[on chain=1,join=by o-latex] 
+					(w1) {$w_1$};
+				\end{scope}
+				\begin{scope}[start chain=3]
+					\node[on chain=3] at (0,-1.5cm) 
+					(x3) {$x_n$};
+					\node[on chain=3,label=below:Gewichte,join=by o-latex] 
+					(w3) {$w_n$};
+				\end{scope}
+				%\node[label=above:\parbox{2cm}{\centering Bias \\ $b$}] at (sigma|-w1) (b) {};
+				
+				\draw[-latex] (w1) -- (sigma);
+				\draw[-latex] (w3) -- (sigma);
+				%\draw[o-latex] (b) -- (sigma);
+				
+				\draw[decorate,decoration={brace,mirror}] (x1.north west) -- node[left=10pt] {Eingabe} (x3.south west);
+			\end{tikzpicture}
+			\caption{https://tex.stackexchange.com/questions/132444/diagram-of-an-artificial-neural-network}
+			\label{fig: neuron}
+		\end{figure}
+		Der grundlegende Aufbau eines neuronalen Netzes besteht aus miteinander verbundenen Schichten, die häufig aus Neuronen bestehen. Die typische Struktur eine Neuron ist Abbildung \ref{fig: neuron} zu sehen. Es verarbeitet im wesentlichen eingehende Zahlenwerte $x_n$ und gibt diese durch die Ausgabe $y$ aus. Genauer wird mit den eingehenden Zahlenwerten eine gewichtete Summe gebildet. Diese wird dann auf eine Aktivierungsfunktion angewendet.\\
 		
 		\begin{equation}
 		s=\sum_{j=1}^n w_{ij}x_j
@@ -24,10 +76,87 @@
 		
 		Gleichung \ref{eq: Gewichtete Summe} zeigt das mathematische Modell der gewichteten Summe $s$. Das jeweilige Gewicht $w$ wird mit dem Index $j$ inkrementiert und mit dem dazugehörigen Eingang des Neurons $i$ multipliziert. Alle Produkte werden aufsummiert und ergeben die gewichtete Summe. Es gibt verschiedene Varianten der Aktivierungsfunktion, die je nach Netzart zur Anwendung kommen können. Häufig werden für Aktivierungsfunktion Schwellwertfunktionen angewendet. \\
 		
-		/Bild neuronales netz
-		\\
+		\tikzset{%
+			every neuron/.style={
+				circle,
+				draw,
+				minimum size=1cm
+			},
+			neuron missing/.style={
+				draw=none, 
+				%scale=4,
+				%rotate=90,
+				%yshift=1,
+				%text height=0.333cm,
+				%execute at begin node=\color{black}$\cdots$
+			},
+		}
+		\begin{figure}[H]
+			\centering
+			
+			
+			\begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+				
+				\foreach \m/\l [count=\y] in {1,2,3,missing,4}
+				\node [every neuron/.try, neuron \m/.try] (input-\m) at (0,2.5-\y) {};
+				
+				\foreach \m [count=\y] in {1,missing,2}
+				\node [every neuron/.try, neuron \m/.try ] (hidden1-\m) at (2,2-\y*1.25) {};
+				
+				\foreach \m [count=\y] in {1,missing,2}
+				\node [every neuron/.try, neuron \m/.try ] (hidden1-\m) at (2,2-\y*1.25) {};
+				
+				\foreach \m [count=\y] in {1,missing,2}
+				\node [every neuron/.try, neuron \m/.try ] (hidden2-\m) at (4,2-\y*1.25) {};
+				
+				\foreach \m [count=\y] in {1,missing,2}
+				\node [every neuron/.try, neuron \m/.try ] (output-\m) at (6,1.5-\y) {};
+				
+				\foreach \l [count=\i] in {1,2,3,n}
+				\draw [<-] (input-\i) -- ++(-1,0)
+				node [above, midway] {$I_\l$};
+				
+				\foreach \l [count=\i] in {1,n}
+				\node [above] at (hidden1-\i.north) {$H_\l$};
+				
+				\foreach \l [count=\i] in {1,n}
+				\node [above] at (hidden2-\i.north) {$H_\l$};
+				
+				\foreach \l [count=\i] in {1,n}
+				\draw [->] (output-\i) -- ++(1,0)
+				node [above, midway] {$O_\l$};
+				
+				\foreach \i in {1,...,4}
+				\foreach \j in {1,...,2}
+				\draw [->] (input-\i) -- (hidden1-\j);
+				
+				\foreach \i in {1,...,2}
+				\foreach \j in {1,...,2}
+				\draw [->] (hidden1-\i) -- (hidden2-\j);
+				
+				\foreach \i in {1,...,2}
+				\foreach \j in {1,...,2}
+				\draw [->] (hidden2-\i) -- (output-\j);
+				
+				\foreach \l [count=\x from 0] in {Input, Hidden, Hidden, Ouput}
+				\node [align=center, above] at (\x*2,2) {\l \\ layer};
+				
+				\draw[fill=black](0,-1.3)circle(1pt);
+				\draw[fill=black](0,-1.5)circle(1pt);
+				\draw[fill=black](0,-1.7)circle(1pt);
+				\draw[fill=black](2,-0.3)circle(1pt);
+				\draw[fill=black](2,-0.5)circle(1pt);
+				\draw[fill=black](2,-0.7)circle(1pt);
+				\draw[fill=black](4,-0.3)circle(1pt);
+				\draw[fill=black](4,-0.5)circle(1pt);
+				\draw[fill=black](4,-0.7)circle(1pt);
+				\end{tikzpicture}
+				\caption{https://newbiettn.github.io/2016/12/16/tikz/}
+				\label{fig: neuronales netz }
+		\end{figure}
+	
 		
-		In Abbildung... ist Grundstruktur eines neuronalen Netzes veranschaulicht. Neuronen sind hier als Kreise dargestellt und bilden in den beispielhaft vertikal veranschaulichten Formationen einzelne Schichten. Hierbei wird zwischen Eingabe-, Zwischen- und Ausgabeschichten unterschieden. Die Eingabeschicht nimmt Informationen in Form von Daten auf und gibt diese an die erste Zwischenschicht weiter. Die Anzahl der Zwischenschichten, oder auch verdeckte Schichten, ist in der Anwendung der neuronalen Netzen variabel. Am rechten Bildrand ist die Ausgabeschicht gezeigt, die die entsprechende Ausgabe des Netzes generiert.  
+		In Abbildung \ref{fig: neuronales netz } ist Grundstruktur eines neuronalen Netzes veranschaulicht. Neuronen sind hier als Kreise dargestellt und bilden in den beispielhaft vertikal veranschaulichten Formationen einzelne Schichten. Hierbei wird zwischen Eingabe-, Zwischen- und Ausgabeschichten unterschieden. Die Eingabeschicht nimmt Informationen in Form von Daten auf und gibt diese an die erste Zwischenschicht weiter. Die Anzahl der Zwischenschichten, oder auch verdeckte Schichten, ist in der Anwendung der neuronalen Netzen variabel. Am rechten Bildrand ist die Ausgabeschicht gezeigt, die die entsprechende Ausgabe des Netzes generiert.  
 	
 		\subsection{Lernprozess}
 		Der Lernprozess von neuronalen Netzen zielt darauf hinaus, einer Netzstruktur ein gewünschtes Verhalten beizubringen. Genauer sollen die in Kapitel... beschriebenen Gewichte modifiziert werden.\\
@@ -65,22 +194,24 @@
 		
 	\section{Objekterkennung}
 	\label{sec: Mecanumräder}
-	Bei der visuellen Objekterkennung wird ein Objekt, das auf einem Bild gezeigt ist, mit einer gewissen Wahrscheinlichkeit inklusive der Position in der Abbildung erkannt. Die drei Abstraktionsebenen einer solchen Erkennung unterteilen sich in Bildklassifikation, Objektlokalisierung und semantische Segmentierung ...2014Bild. Letzteres kommt in dieser Arbeit nicht zur Anwendung und wird aufgrund dessen im Folgenden nicht behandelt. Weiterhin wird ebenfalls die Objekterkennung durch neuronale Netze betrachtet und in Kapitel... verglichen.
+	Bei der visuellen Objekterkennung wird ein Objekt, das auf einem Bild gezeigt ist, mit einer gewissen Wahrscheinlichkeit inklusive der Position in der Abbildung erkannt. Die drei Abstraktionsebenen einer solchen Erkennung unterteilen sich in Bildklassifikation, Objektlokalisierung und semantische Segmentierung ...2014Bild. Letzteres kommt in dieser Arbeit nicht zur Anwendung und wird aufgrund dessen im Folgenden nicht behandelt. Die Bildklassifikation beschreibt eine Zuweisung von Objektkategorien zu einem gegebenen Bild. Mithilfe einer Merkmalsextraktion werden Merkmalsvektoren extrahiert und können so in einem Klassifikator berechnet werden. In den folgenden Kapiteln wird auf die in dieser Arbeit eingesetzten Methoden zur Objekterkennung eingegangen. 
 	
-	/Bild Bildaufnahme und Digitalisierung-->Segmentierung-->Bildverarbeitung-->merkmalsextraktion-->Klassifikation
 	
-		\subsection{Bildklassifikation}
-		Die Bildklassifikation beschreibt eine Zuweisung von Objektkategorien zu einem gegebenen Bild. Mithilfe einer Merkmalsextraktion werden Merkmalsvektoren extrahiert und können so in einem Klassifikator berechnet werden. Ein Gängiges Verfahren zur Merkmalsextraktion ist das sogenannte Histogram of oriented gradients (HOG). Bei diesem Verfahren werden in einem Bild auftretende Intensitäten geprüft und so Kanten und Ecken als Histogramm gespeichert. Die Support Vektor Maschine ist ein typischer Funktionsapproximator für eine Objektklassifikation. Es handelt sich hierbei um ein Verfahren, das Klassen durch eine sogenannte Hyperebene voneinander trennt. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt.
+		\subsection{Objekterkennung durch alternative Verfahren}		
+		Ein gängiges Verfahren zur Merkmalsextraktion ist das sogenannte Histogram of oriented gradients (HoG). Bei diesem Verfahren werden in einem Bild auftretende Intensitäten geprüft und so Kanten und Ecken als Histogramm gespeichert. Die Support Vektor Maschine ist ein typischer Funktionsapproximator für eine Objektklassifikation. Es handelt sich hierbei um ein Verfahren, das Klassen durch eine sogenannte Hyperebene voneinander trennt. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt.
 			
-		\subsection{Objektlokalisierung}
 		Wie in Kapitel... beschrieben, soll die Ausgabe einer Objekterkennung auch den Ort eines Objektes enthalten. Für jedes erkannte Objekt wird ein Rechteck in Form von Pixelkoordinaten erzeugt, das den Interessensbereich beschreibt.
 	
 		\subsection{Objekterkennung durch neuronale Netze}
 		
 		Die bisher besten Ergebnisse in der Bildverarbeitung im Zusammenspiel mit neuronalen Netzen wurden durch \textit{Convolutional Neural Network} (CNN) ermöglicht \cite{deeplearning}. Anders als bei den bereits erwähnten Methoden geschieht die Merkmalsextraktion hierbei innerhalb des Netzes. Derartige Netzwerke nutzen Faltung zur Verarbeitung der Eingangsdaten statt der üblichen Matritzenmultiplikation \cite{deeplearning}. Grundlegend besteht der Aufbau eines CNNs aus der Klassifikation durch eine vorangegangene Merkmalsextraktion.\\ 
-		
-		/bild merkmalsextraktion\\
-		
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics{Bilder/cnn.pdf}
+		\end{figure}
+	 	
+	
 		Die Merkmalsextraktion setzten sich im grundlegenden Fall aus drei Stufen zusammen. Dabei kann sich die Zusammensetzung beliebig oft hintereinander wiederholen. Die erste, sogenannte Konvolutionsschicht führt Faltungsprozesse mit den Eingangsdaten durch \cite{deeplearning}. Während der Konvolution, oder auch Faltung genannt, werden eingehende Daten in Filter, sogenannte Kernels, eingegeben. Diese extrahieren bestimmte Merkmale, dabei können sich die Filter je Schicht ändern. So können verschiedene Schichten diverse Merkmale extrahieren. Im zweiten Schritt wird eine nichtlineare Aktivierungsfunktion wie der \textit{Rectified Linear Unit} (ReLU) Funktion auf die Ausgangsdaten der Kovolutionsschicht angewendet. Beim Pooling werden eingehende Matrizen minimiert \cite{deeplearning}. Gleichzeitig gehen die aussagekräftigsten Merkmale jedoch nicht verloren. In einigen Fällen wird die Zusammensetzung der drei Stufen als Kovolutionsschicht bezeichnet \cite{deeplearning}. \\
 		
 		/bild Klassifikation\\
@@ -89,7 +220,7 @@
 		
 		Die Artenvielfalt der CNNs ist sehr breit gefächert. Jedes Netzwerk unterscheidet sich in der jeweiligen Architektur der Schichten. Durch die Änderung verschiedener Parameter, beispielsweise bei der Faltung oder beim Pooling, können CNNs im Einsatz jeweils anders reagieren. Hierbei entscheidet man bei der Auswahl des Modells häufig unter den Gesichtspunkten Bearbeitungszeit, Genauigkeit und je nach Anwendungsfall spielt der Speicherplatz ebenfalls eine große Rolle. Die Anforderungen ... und ... beschreiben die Geschwindigkeit und die Genauigkeit der Personenerkennung. Außerdem soll laut Anforderung ... das neuronale Netz für eine mögliche Auslagerung auf einem eingebettetem System entwickelt werden. Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for  Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
 		
-		Die \textit{MobileNet} Architektur ermöglicht im Vergleich zu anderen Lösung zur Merkmalsextraktion den gesuchten Spagat zwischen Schnelligkeit, Genauigkeit und Größe des Netzes \cite{mobilenets}. Das Hauptmerkmal von MobileNet ist der Aufbau der Konvolutionsschichten, der zu den genannten Eigenschaften in der Praxis führen \cite{mobilenets} \cite{embedded}. Vergleichsmessungen zu anderen Architekturen werden in den erwähnten Paper durchgeführt. Der \textit{Single Shot Detector} dient als Klassifikator und zeichnet sich besonders durch seine Schnelligkeit aus \cite{ssd}. Er erreicht eine höhere Genauigkeit als andere state-of-the-art Lösungen wie zum Beispiel \textit{Faster R-CNN} \cite{fastercnn} und ist zudem dreimal schneller\cite{ssd}.		
+		Die \textit{MobileNet} Architektur ermöglicht im Vergleich zu anderen Lösung zur Merkmalsextraktion den gesuchten Spagat zwischen Schnelligkeit, Genauigkeit und Größe des Netzes \cite{mobilenets}. Das Hauptmerkmal ist der Aufbau der Konvolutionsschichten, der zu den genannten Eigenschaften in der Praxis führt \cite{mobilenets} \cite{embedded}. Vergleichsmessungen zu anderen Architekturen werden in den erwähnten Paper durchgeführt. Der \textit{Single Shot Detector} dient als Klassifikator und zeichnet sich besonders durch seine Schnelligkeit aus \cite{ssd}. Er erreicht eine höhere Genauigkeit als andere state-of-the-art Lösungen wie zum Beispiel \textit{Faster R-CNN} \cite{fastercnn} und ist zudem dreimal schneller\cite{ssd}.		
 		
 		
 	

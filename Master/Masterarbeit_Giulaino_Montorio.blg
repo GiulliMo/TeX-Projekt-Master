@@ -26,6 +26,10 @@ Repeated entry---line 42 of file _bib/biblio.bib
  : @book{fastercnn
  :                ,
 I'm skipping whatever remains of this entry
+Illegal end of database file---line 74 of file _bib/biblio.bib
+ :  note        =""
+ :                 
+I'm skipping whatever remains of this entry
 Biblatex version: 3.13
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
@@ -70,4 +74,4 @@ warning$ -- 0
 while$ -- 564
 width$ -- 0
 write$ -- 201
-(There was 1 error message)
+(There were 2 error messages)

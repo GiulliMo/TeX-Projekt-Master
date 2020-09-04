@@ -14,7 +14,7 @@
 
 \usepackage{geometry}
 \geometry{a4paper,left=25mm,right=25mm, top=25mm, bottom=25mm, includeheadfoot}
-\usepackage[scaled = 0.9]{helvet}
+%\usepackage[scaled = 0.9]{helvet}
 
 % SPRACHE------------------------------------------------------------------------------------------------
 \usepackage[utf8]{inputenc}
@@ -60,6 +60,8 @@
 \usepackage{color}
 \usepackage{svg}
 
+\usepackage{lipsum}
+\usepackage{docmute}
 
 % ALLGEMEINES--------------------------------------------------------------------------------------------
 \usepackage{amsmath,amssymb} % Mathesachen
@@ -115,8 +117,11 @@ sorting=none,%
 	numbersep=9pt, % this defines how far the numbers are from the text
 	emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
 	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
-}	
+}
+\usepackage{nicematrix}
 
+	
+%Anfang PAP
 \tikzset{
 	papDecision/.style = {
 		diamond,
@@ -206,8 +211,10 @@ sorting=none,%
 }
 \newcommand{\papYes}{ja}
 \newcommand{\papNo}{nein}
-
+%Ende PAP
 	
+\usepackage{tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
 % DOCUMENT ------------------------------------------------------------------------------------------------
 \begin{document}
 	

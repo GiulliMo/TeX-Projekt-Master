@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  2 SEP 2020 12:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  3 SEP 2020 12:21
 entering extended mode
 **./Masterarbeit_Giulaino_Montorio.tex
 (Masterarbeit_Giulaino_Montorio.tex
@@ -223,13 +223,12 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutvoffset=\dimen151
 \Gm@dimlist=\toks21
  (Y:\Miktex\tex/latex/geometry\geometry.cfg))
-(Y:\Miktex\tex/latex/psnfss\helvet.sty
-Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
-) (Y:\Miktex\tex/latex/base\inputenc.sty
+(Y:\Miktex\tex/latex/base\inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks22
 \inpenc@posthook=\toks23
-) (Y:\Miktex\tex/latex/csquotes\csquotes.sty
+)
+(Y:\Miktex\tex/latex/csquotes\csquotes.sty
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
 
 (Y:\Miktex\tex/latex/etoolbox\etoolbox.sty
@@ -1011,32 +1010,7 @@ Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
 (Y:\Miktex\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ))
-(Y:\Miktex\tex/latex/amsfonts\amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(Y:\Miktex\tex/latex/amsfonts\amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(Y:\Miktex\tex/latex/base\fontenc.sty
-Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 11
-2.
- (Y:\Miktex\tex/latex/psnfss\t1phv.fd
-File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
-)
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 112.
-)
-(Y:\Miktex\tex/latex/url\url.sty
-\Urlmuskip=\muskip17
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (Y:\Miktex\tex/latex/siunitx\siunitx.sty
-(Y:\Miktex\tex/latex/l3kernel\expl3.sty
+(Y:\Miktex\tex/latex/lipsum\lipsum.sty (Y:\Miktex\tex/latex/l3kernel\expl3.sty
 Package: expl3 2020-08-07 L3 programming layer (loader) 
 
 (Y:\Miktex\tex/latex/l3backend\l3backend-pdfmode.def
@@ -1053,6 +1027,39 @@ Package: xparse 2020-05-15 L3 Experimental document command parser
 \l__xparse_m_args_int=\count330
 \l__xparse_v_nesting_int=\count331
 ))
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
+
+(Y:\Miktex\tex/latex/lipsum\lipsum.ltd.tex
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
+))
+(Y:\Miktex\tex/latex/docmute\docmute.sty
+Package: docmute 2012/03/22 v1.4 Input stand-alone documents
+)
+(Y:\Miktex\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(Y:\Miktex\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(Y:\Miktex\tex/latex/base\fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
+12.
+ (Y:\Miktex\tex/latex/base\t1cmss.fd
+File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+))
+(Y:\Miktex\tex/latex/psnfss\helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+) (Y:\Miktex\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(Y:\Miktex\tex/latex/siunitx\siunitx.sty
 Package: siunitx 2020/02/25 v2.8b A comprehensive (SI) units package
 
 (Y:\Miktex\tex/latex/l3packages/l3keys2e\l3keys2e.sty
@@ -1523,6 +1530,50 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 (Y:\Miktex\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
+(Y:\Miktex\tex/latex/nicematrix\nicematrix.sty
+Package: nicematrix 2020/08/19 v5.2 Enhanced arrays with the help of PGF/TikZ
+\g__nicematrix_env_int=\count500
+\g__nicematrix_NiceMatrixBlock_int=\count501
+\l__nicematrix_columns_width_dim=\dimen344
+\l__nicematrix_tabular_width_dim=\dimen345
+\l__nicematrix_old_iRow_int=\count502
+\l__nicematrix_old_jCol_int=\count503
+\l__nicematrix_x_initial_dim=\dimen346
+\l__nicematrix_y_initial_dim=\dimen347
+\l__nicematrix_x_final_dim=\dimen348
+\l__nicematrix_y_final_dim=\dimen349
+\l_tmpc_dim=\dimen350
+\l_tmpd_dim=\dimen351
+\__nicematrix_old_arraycolsep_dim=\dimen352
+\g__nicematrix_width_last_col_dim=\dimen353
+\g__nicematrix_width_first_col_dim=\dimen354
+\g__nicematrix_static_num_of_col_int=\count504
+\l__nicematrix_first_row_int=\count505
+\l__nicematrix_first_col_int=\count506
+\l__nicematrix_last_row_int=\count507
+\l__nicematrix_last_col_int=\count508
+\c@tabularnote=\count509
+\l__nicematrix_number_of_notes_int=\count510
+\l__nicematrix_cell_space_top_limit_dim=\dimen355
+\l__nicematrix_cell_space_bottom_limit_dim=\dimen356
+\l__nicematrix_inter_dots_dim=\dimen357
+\l__nicematrix_xdots_shorten_dim=\dimen358
+\l__nicematrix_radius_dim=\dimen359
+\l__nicematrix_notes_above_space_dim=\dimen360
+\l__nicematrix_left_margin_dim=\dimen361
+\l__nicematrix_right_margin_dim=\dimen362
+\l__nicematrix_extra_left_margin_dim=\dimen363
+\l__nicematrix_extra_right_margin_dim=\dimen364
+\c__nicematrix_max_l_dim=\dimen365
+)
+(Y:\Miktex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarymatrix.code.
+tex
+File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(Y:\Miktex\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarychains.code.
+tex
+File: tikzlibrarychains.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
 
 LaTeX Warning: Unused global option(s):
     [tikz,margin=5mm].
@@ -1540,22 +1591,29 @@ LaTeX Warning: Label `eq: transferfct' multiply defined.
 )
 \openout1 = `Masterarbeit_Giulaino_Montorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 212.
-LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 219.
+LaTeX Font Info:    ... okay on input line 219.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 219.
+LaTeX Font Info:    ... okay on input line 219.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 219.
+LaTeX Font Info:    ... okay on input line 219.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 219.
+LaTeX Font Info:    ... okay on input line 219.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 219.
+LaTeX Font Info:    ... okay on input line 219.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 219.
+LaTeX Font Info:    ... okay on input line 219.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 219.
+LaTeX Font Info:    ... okay on input line 219.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 219.
+LaTeX Font Info:    ... okay on input line 219.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 21
+9.
+ (Y:\Miktex\tex/latex/psnfss\t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 219.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1593,16 +1651,16 @@ LaTeX Font Info:    ... okay on input line 212.
 
 (Y:\Miktex\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count500
-\scratchdimen=\dimen344
+\scratchcounter=\count511
+\scratchdimen=\dimen366
 \scratchbox=\box150
-\nofMPsegments=\count501
-\nofMParguments=\count502
+\nofMPsegments=\count512
+\nofMParguments=\count513
 \everyMPshowfont=\toks53
-\MPscratchCnt=\count503
-\MPscratchDim=\dimen345
-\MPnumerator=\count504
-\makeMPintoPDFobject=\count505
+\MPscratchCnt=\count514
+\MPscratchDim=\dimen367
+\MPnumerator=\count515
+\makeMPintoPDFobject=\count516
 \everyMPtoPDFconversion=\toks54
 ) (Y:\Miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1619,7 +1677,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 212.
+ on input line 219.
 
 (Y:\Miktex\tex/latex/translator\translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1628,7 +1686,7 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
 \AtBeginShipoutBox=\box151
-Package hyperref Info: Link coloring ON on input line 212.
+Package hyperref Info: Link coloring ON on input line 219.
 
 (Y:\Miktex\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1639,11 +1697,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (Y:\Miktex\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count506
+\c@section@level=\count517
 )
-LaTeX Info: Redefining \ref on input line 212.
-LaTeX Info: Redefining \pageref on input line 212.
-LaTeX Info: Redefining \nameref on input line 212.
+LaTeX Info: Redefining \ref on input line 219.
+LaTeX Info: Redefining \pageref on input line 219.
+LaTeX Info: Redefining \nameref on input line 219.
 
 (Masterarbeit_Giulaino_Montorio.out) (Masterarbeit_Giulaino_Montorio.out)
 \@outlinefile=\write5
@@ -1656,7 +1714,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 212.
+(scrbook)           before \begin{document} on input line 219.
 
 (Y:\Miktex\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
@@ -1666,7 +1724,7 @@ File: bkm-pdftex.def 2019/12/03 v1.28 bookmark driver for pdfTeX (HO)
 Package auxhook Info: \AddLineBeginMainAux comes a little late,
 (auxhook)             because the main .aux file is already opened on input lin
 e 168.
-\BKM@id=\count507
+\BKM@id=\count518
 ))
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
@@ -1724,43 +1782,48 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Masterarbeit_Giulaino_Montorio.bbl' found.
 
 (Masterarbeit_Giulaino_Montorio.bbl)
-Package biblatex Info: Reference section=0 on input line 212.
-Package biblatex Info: Reference segment=0 on input line 212.
-\c@lstlisting=\count508
-LaTeX Font Info:    Trying to load font information for U+msa on input line 212
+Package biblatex Info: Reference section=0 on input line 219.
+Package biblatex Info: Reference segment=0 on input line 219.
+\c@lstlisting=\count519
+\c@tabularnotesi=\count520
+\enitdp@tabularnotes=\count521
+\c@tabularnotes*i=\count522
+\enitdp@tabularnotes*=\count523
+\docmute@nestinglevel=\count524
+LaTeX Font Info:    Trying to load font information for U+msa on input line 219
 .
  (Y:\Miktex\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 212
+LaTeX Font Info:    Trying to load font information for U+msb on input line 219
 .
 
 (Y:\Miktex\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 21
-2.
+9.
  (Y:\Miktex\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 <Bilder/Logo_Smart_RGB.jpg, id=6, 606.5862pt x 129.3633pt>
 File: Bilder/Logo_Smart_RGB.jpg Graphic file (type jpg)
 <use Bilder/Logo_Smart_RGB.jpg>
-Package pdftex.def Info: Bilder/Logo_Smart_RGB.jpg  used on input line 229.
+Package pdftex.def Info: Bilder/Logo_Smart_RGB.jpg  used on input line 236.
 (pdftex.def)             Requested size: 227.62206pt x 48.54268pt.
 <Bilder/logo.pdf, id=7, 93.5773pt x 23.3761pt>
 File: Bilder/logo.pdf Graphic file (type pdf)
 <use Bilder/logo.pdf>
-Package pdftex.def Info: Bilder/logo.pdf  used on input line 234.
+Package pdftex.def Info: Bilder/logo.pdf  used on input line 241.
 (pdftex.def)             Requested size: 182.09486pt x 45.49506pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 22.39185pt on input line 241.
+(Font)              scaled to size 22.39185pt on input line 248.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 242.
+(Font)              scaled to size 22.39185pt on input line 249.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 12.9599pt on input line 244.
+(Font)              scaled to size 12.9599pt on input line 251.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 257.
+(Font)              scaled to size 10.79993pt on input line 264.
 
 [1
 
@@ -1770,62 +1833,62 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 
 {C:/Users/giull/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Bilder/Logo_S
 mart_RGB.jpg> <./Bilder/logo.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--301
+Underfull \hbox (badness 10000) in paragraph at lines 285--308
 
  []
 
@@ -1844,7 +1907,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--301
 \openout6 = `Masterarbeit_Giulaino_Montorio.toc'.
 
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 324.
+(Font)              scaled to size 10.79993pt on input line 331.
 
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
@@ -1854,7 +1917,7 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 ]
-Underfull \vbox (badness 10000) detected at line 385
+Underfull \vbox (badness 10000) detected at line 392
  []
 
 [5
@@ -1862,12 +1925,12 @@ Underfull \vbox (badness 10000) detected at line 385
 
 
 ]
-Underfull \hbox (badness 3557) in paragraph at lines 406--407
+Underfull \hbox (badness 3557) in paragraph at lines 413--414
 []|\T1/phv/m/n/12 Rotatorisches Be-we-gungs-ziel aus au-to-ma-ti-
  []
 
 
-Underfull \hbox (badness 1412) in paragraph at lines 407--408
+Underfull \hbox (badness 1412) in paragraph at lines 414--415
 []|\T1/phv/m/n/12 Rotatorisches Be-we-gungs-ziel aus ma-nu-el-len
  []
 
@@ -1916,30 +1979,38 @@ l.1 \chapter
 chapter 2.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 11.
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 15.55188pt on input line 40.
+
+Overfull \hbox (5.6685pt too wide) in paragraph at lines 40--40
+ []\T1/phv/m/n/12 Aktivierungs- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
+[][][]|\T1/phv/m/n/12 https://tex.stackexchange.com/questions/132444/diagram-of
+-an-artificial-neural-
+ []
+
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 22--24
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Underfull \hbox (badness 10000) in paragraph at lines 74--76
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 27--29
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--36
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
@@ -1948,21 +2019,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
-
- []
-
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 43.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 43.
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--44
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
@@ -1971,24 +2033,22 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 172.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 10.79993pt on input line 172.
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
-[]\T1/phv/m/n/12 /Bild Bild-auf-nah-me und Digitalisierung-->Segmentierung-->Bi
-ldverarbeitung--
  []
 
 
@@ -1996,17 +2056,17 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
+Underfull \hbox (badness 10000) in paragraph at lines 181--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
@@ -2015,18 +2075,18 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
+<Bilder/cnn.pdf, id=178, 470.21974pt x 293.67918pt>
+File: Bilder/cnn.pdf Graphic file (type pdf)
+<use Bilder/cnn.pdf>
+Package pdftex.def Info: Bilder/cnn.pdf  used on input line 211.
+(pdftex.def)             Requested size: 470.2186pt x 293.67845pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
+Overfull \hbox (14.97449pt too wide) in paragraph at lines 211--212
+ [][] 
  []
 
 
@@ -2034,35 +2094,17 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
-
- []
-
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 107.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 107.
-
-Overfull \vbox (1.76944pt too high) has occurred while \output is active []
-
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 114--117
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
 
  []
 
@@ -2070,66 +2112,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--128
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[10]) (_content/Konzeptionierung.tex
+[9 <./Bilder/cnn.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
+
+ []
+
+
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 238.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 5.39996pt on input line 238.
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--248
+
+ []
+
+
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [11]
+Underfull \hbox (badness 10000) in paragraph at lines 257--259
+
+ []
+
+
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[12]) (_content/Konzeptionierung.tex
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[13]
 chapter 3.
 
-Underfull \hbox (badness 1152) in paragraph at lines 22--23
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
+[][][]|\T1/phv/m/n/12 https://tex.stackexchange.com/questions/132444/diagram-of
+-an-artificial-neural-
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 101--102
 \T1/phv/m/n/12 be-schrie-be-nen au-to-no-men Lo-gis-tik-fahr-zeugs. Auf-grund d
 es-sen sind ein-zel-ne Pro-gram-me
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-
- []
-
-[12
+[14
 
 ]
-
-Package caption Warning: \label without proper reference on input line 79.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig: Personenerkennung' on page 13 undefined on input
- line 42.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
-
- []
-
-
-Overfull \vbox (1.76944pt too high) has occurred while \output is active []
-
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 44--45
-
- []
-
-
-Overfull \vbox (1.76944pt too high) has occurred while \output is active []
-
-
-[14]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 53.
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 53.
-LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 8.99994pt on input line 53.
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
@@ -2138,7 +2193,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
@@ -2147,12 +2207,41 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[17]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 134.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 134.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 134.
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
@@ -2160,27 +2249,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--121
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[17]
+[20]
 chapter 4.
-) (_content/Zusammenfassung.tex [18
+) (_content/Zusammenfassung.tex [21
 
 ]
 chapter 5.
-) [19
+) [22
 
 ]
 chapter without number
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
-43.
+50.
 (Y:\Miktex\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 2269) in paragraph at lines 443--443
+Underfull \hbox (badness 2269) in paragraph at lines 450--450
 []\T1/phv/m/n/12 Goodfellow, I. , Ben-gio, Y. und Cour-ville, A. \T1/phv/m/sl/1
 2 De-ep Lear-ning\T1/phv/m/n/12 . [][]$\T1/cmtt/m/n/12 http : / / www .
  []
 
-[20
+[23
 
 
 ]
@@ -2196,28 +2285,25 @@ Class scrbook Warning: You are using `\begin{appendix}...\end{appendix}'.
 (scrbook)              inconsistent.
 (scrbook)              Because of this, you should remove `\end{appendix}'
 (scrbook)              and replace `\begin{appendix}' by command
-(scrbook)              `\appendix' on input line 446.
+(scrbook)              `\appendix' on input line 453.
 
 chapter A.
-[21
+[24
 
 
 ]
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
+[25]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 476.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 476.
  (Masterarbeit_Giulaino_Montorio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 476.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 476.
 Package rerunfilecheck Info: File `Masterarbeit_Giulaino_Montorio.out' has not 
 changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2228,26 +2314,29 @@ l'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52000 strings out of 481212
- 1177376 string characters out of 2922283
- 2014680 words of memory out of 3000000
- 66602 multiletter control sequences out of 15000+200000
- 571628 words of font info for 77 fonts, out of 3000000 for 9000
+ 53863 strings out of 481212
+ 1231716 string characters out of 2922283
+ 2110312 words of memory out of 3000000
+ 68427 multiletter control sequences out of 15000+200000
+ 581738 words of font info for 111 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 64i,10n,103p,10647b,2642s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,10n,103p,10647b,2640s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\giull\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
 1200.pk>{Y:/Miktex/fonts/enc/dvips/base/8r.enc}<Y:/Miktex/fonts/type1/public/am
-sfonts/cm/cmex10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><Y:/M
-iktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><Y:/Miktex/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><Y:/Mik
-tex/fonts/type1/public/amsfonts/cm/cmr8.pfb><Y:/Miktex/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><Y:/Mikte
-x/fonts/type1/public/amsfonts/symbols/msbm10.pfb><Y:/Miktex/fonts/type1/urw/hel
-vetic/uhvb8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvr8a.pfb><Y:/Miktex/font
-s/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Masterarbeit_Giulaino_Montorio.pdf (31 pages, 320414 bytes).
+sfonts/cm/cmex10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><Y:/M
+iktex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><Y:/Miktex/fonts/type1/public/a
+msfonts/cm/cmmi6.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><Y:/Mi
+ktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><Y:/Miktex/fonts/type1/public/ams
+fonts/cm/cmr17.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmr7.pfb><Y:/Mikte
+x/fonts/type1/public/amsfonts/cm/cmr8.pfb><Y:/Miktex/fonts/type1/public/amsfont
+s/cm/cmss10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><Y:/Miktex
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb><Y:/Miktex/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvb8a.pfb><Y:/Miktex/
+fonts/type1/urw/helvetic/uhvr8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvro8a
+.pfb>
+Output written on Masterarbeit_Giulaino_Montorio.pdf (34 pages, 368567 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 498 PDF objects out of 1000 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
+ 292 words of extra memory for PDF output out of 10000 (max. 10000000)
 
