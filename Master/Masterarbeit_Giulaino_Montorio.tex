@@ -121,6 +121,40 @@ sorting=none,%
 \usepackage{nicematrix}
 \usepackage{varwidth}
 \newcommand\Umbruch[2][2cm]{\begin{varwidth}{#1}\centering#2\end{varwidth}}
+
+
+\usepackage{eqparbox}
+\usetikzlibrary{matrix,positioning,arrows.meta,bending}
+\newbox\matrixcellbox
+\tikzset{math center align per column/.style={nodes={execute at begin
+			node={\setbox\matrixcellbox=\hbox\bgroup$},
+			execute at end
+			node={$\egroup\eqmakebox[\tikzmatrixname\the\pgfmatrixcurrentcolumn][c]{\copy\matrixcellbox}}}},
+	math center align per matrix/.style={nodes={execute at begin
+			node={\setbox\matrixcellbox=\hbox\bgroup$},
+			execute at end
+			node={$\egroup\eqmakebox[\tikzmatrixname][c]{\copy\matrixcellbox}}}},
+	3d matrix/.style={matrix of nodes,nodes in empty cells,math center align per
+		matrix,nodes={draw,anchor=center,outer sep=0pt,inner sep=1pt,
+			text height={height("\raisebox{0.2ex}{A}")},text depth={depth("g")}},
+		column sep=-\pgflinewidth,row sep=-\pgflinewidth,execute at end matrix={
+			\foreach \XX in {1,...,\the\pgfmatrixcurrentcolumn}
+			{\draw (\tikzmatrixname-1-\XX.north east) -- ++ (#1,#1);}
+			\ifnum\the\pgfmatrixcurrentrow>1
+			\foreach \XX in {1,...,\the\numexpr\the\pgfmatrixcurrentrow-1}
+			{\draw (\tikzmatrixname-\XX-\the\pgfmatrixcurrentcolumn.south east) -- ++ (#1,#1);}
+			\fi
+			\draw (\tikzmatrixname-1-1.north west) -- ++ (#1,#1) -- 
+			([xshift=1ex,yshift=1ex]\tikzmatrixname-1-\the\pgfmatrixcurrentcolumn.north east) --
+			([xshift=1ex,yshift=1ex]\tikzmatrixname-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn.south east)  --
+			(\tikzmatrixname-\the\pgfmatrixcurrentrow-\the\pgfmatrixcurrentcolumn.south east); 
+	}},3d matrix/.default=1ex,
+	Rightarrow/.style={double,double
+		distance=#1,>={Implies[bend]},shorten <=0.4ex},Rightarrow/.default=1ex}
+
+
+
+
 	
 %Anfang PAP
 \tikzset{

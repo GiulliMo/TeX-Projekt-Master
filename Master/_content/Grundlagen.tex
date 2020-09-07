@@ -204,15 +204,14 @@
 	
 		\subsection{Objekterkennung durch neuronale Netze}
 		
-		Die bisher besten Ergebnisse in der Bildverarbeitung im Zusammenspiel mit neuronalen Netzen wurden durch \textit{Convolutional Neural Network} (CNN) ermöglicht \cite{deeplearning}. Anders als bei den bereits erwähnten Methoden geschieht die Merkmalsextraktion hierbei innerhalb des Netzes. Derartige Netzwerke nutzen Faltung zur Verarbeitung der Eingangsdaten statt der üblichen Matritzenmultiplikation \cite{deeplearning}. Der Aufbau eines CNNs setzt sich aus zwei Hauptbestandteilen zusammen. Eine Merkmalsextraktion mit den entsprechenden Konvolutionsschichten und die darauffolgende Klassifikation.\\ 
+		Die bisher besten Ergebnisse in der Bildverarbeitung im Zusammenspiel mit neuronalen Netzen wurden durch \textit{Convolutional Neural Network} (CNN) ermöglicht \cite{deeplearning}. Anders als bei den bereits erwähnten Methoden geschieht die Merkmalsextraktion hierbei innerhalb des Netzes. Derartige Netzwerke nutzen Faltung zur Verarbeitung der Eingangsdaten statt der üblichen Matritzenmultiplikation \cite{deeplearning}. Der Aufbau eines CNNs setzt sich aus einer Merkmalsextraktion und die darauffolgende Klassifikation zusammen.\\ 
 	
-		\begin{figure}[H]
-			\centering
-			\includegraphics{Bilder/cnn.pdf}
-		\end{figure}
+		...Bild aufbau cnn schicht
 	 	
 	
-		Die Konvolutionschichten bestehen im grundlegenden Fall aus drei Unterschichten. Dabei können sich diese innerhalb einer Konvolutionsschicht hintereinander wiederholen. Dies hat jedoch Einfluss auf die Eigenschaften eines Netzes. Die erste Unterschicht führt Faltungsprozesse mit den Eingangsdaten durch \cite{deeplearning}. Es gibt drei Motivationen für die Nutzung einer Faltung in einem neuronalen Netz. Hierzu gehören die eingeschränkte Konnektivität, die Parameterverteilung und die äguivariante Darstellung \cite{deeplearning}. Im folgenden Abschnitt werden diese punkte näher erläutert.\\
+		Eine Einheit der Merkmalsextraktion besteht im grundlegenden Fall aus drei Unterschichten. Dabei können sich diese innerhalb der Merkmalsextraktion hintereinander wiederholen. Dies hat jedoch Einfluss auf die Eigenschaften eines Netzes. Die erste Unterschicht führt Faltungsprozesse mit den Eingangsdaten durch \cite{deeplearning}. Im zweiten Schritt wird eine nichtlineare Aktivierungsfunktion wie der \textit{Rectified Linear Unit} (ReLU) Funktion auf die Ausgangsdaten der Kovolutionsschicht angewendet. In der dritten Unterschicht wird das sogenannte \textit{Pooling} durchgeführt. In einigen Fällen wird die Zusammensetzung der drei Stufen als Kovolutionsschicht bezeichnet \cite{deeplearning}. Im Laufe dieses Kapitels wird auf die Motivationen und der Funktionsweise eines CNNs eingegangen.\\
+		
+		Es gibt drei Motivationen für die Nutzung von Faltung in einem neuronalen Netz. Hierzu gehören die eingeschränkte Konnektivität, die Parameterverteilung und die äquivariante Darstellung \cite{deeplearning}. Im folgenden Abschnitt werden diese Punkte näher erläutert.\\
 		
 			\tikzset{%
 			every neuron/.style={
@@ -383,19 +382,194 @@
 			\label{fig: eingeschränkte konnektivität}
 		\end{figure}
 		
+		Als Parameterverteilung bezeichnet man die Nutzung eines Parameters pro Funktion eines Netzes \cite{deeplearning}. Bei grundlegenden künstlichen neuronalen Netzen wird jede Eingabe eines Neurons, wie in Kapitel \ref{subsec: Eigenschaften von neuronalen Netzen}, mit einem Gewicht verrechnet  \cite{deeplearning}. Wie bereits beschrieben, wird bei CNNs ein Kernel pro Schicht für die Merkmalsextraktion verwendet. Dies führt zu deutlich weniger Speicheraufwand, da das Netz lediglich die Kernels abspeichert statt aller Gewichte pro Neuron.\\
+		
+		Die äquivariante Darstellung bezieht sich auf die Auswirkung der Ausgabe bei einer Änderung der Eingabedaten. Die Konvolution erzeugt eine zweidimensionale Karte, die sogenannte \textit{Featuremap} in der Merkmale eines Bildes eingetragen sind. Wird ein Objekt in dem eingegebenen Bild des CNNs bewegt, verändert sich die Merkmalskarte im selben Maße. ...\\
 		
 		
+		Beim \textit{Pooling} werden die stärksten Merkmale der eingehende Daten weitergegeben \cite{deeplearning}. Kleine Änderungen der Eingabewerte haben durch \textit{Pooling} keinen oder einen kleinen Einfluss auf die Ausgabe. Ein Beispiel hierfür liefert die folgende Darstellung \ref{fig: Pooling}.\\
 		
-		Im zweiten Schritt wird eine nichtlineare Aktivierungsfunktion wie der \textit{Rectified Linear Unit} (ReLU) Funktion auf die Ausgangsdaten der Kovolutionsschicht angewendet. Beim Pooling werden eingehende Matrizen minimiert \cite{deeplearning}. Gleichzeitig gehen die aussagekräftigsten Merkmale jedoch nicht verloren. In einigen Fällen wird die Zusammensetzung der drei Stufen als Kovolutionsschicht bezeichnet \cite{deeplearning}. \\
+				\tikzset{%
+			every neuron/.style={
+				circle,
+				draw,
+				minimum size=1cm
+			},
+			neuron missing/.style={
+				draw=none, 
+				%scale=4,
+				%rotate=90,
+				%yshift=1,
+				%text height=0.333cm,
+				%execute at begin node=\color{black}$\cdots$
+			},
+		}
+		\begin{figure}[H]
+			\centering
+			
+			
+			\begin{tikzpicture}[x=1.5cm, y=1.5cm, >=stealth]
+			
+			%\foreach \m/\l [count=\y] in {1,2,3,4}
+			%\draw[gray,fill=gray](0+\y,2.5)circle(14pt);
+			
+			%\foreach \m/\l [count=\y] in {2,3,4}
+			%\draw[gray,fill=gray](0+\m,-0.8)circle(14pt);
+			
+			%\draw[gray,fill=gray](3,0.8)circle(14pt);
+			%\draw[gray,fill=gray](3,-2.5)circle(14pt);
+			
+			\foreach \m/\l [count=\y] in {1,2,3,4}
+			\node [every neuron/.try, neuron \m/.try] (eins-\m) at (0+\y,2.5) {};
+			
+			\foreach \m/\l [count=\y] in {1,2,3,4}
+			\node [every neuron/.try, neuron \m/.try] (zwei-\m) at (0+\y,0.8) {};
+			
+			\foreach \m/\l [count=\y] in {1,2,3,4}
+			\node [every neuron/.try, neuron \m/.try] (drei-\m) at (0+\y,-0.8) {};
+			
+			\foreach \m/\l [count=\y] in {1,2,3,4}
+			\node [every neuron/.try, neuron \m/.try] (vier-\m) at (0+\y,-2.5) {};
+			
+			
+%			\foreach \m [count=\x] in {1,2,3,4}
+%			\foreach \l [count=\i] in {1,2,3,4}
+%			\draw [<-] (eins-\i) -- (zwei-\x)
+%			node [] {};
+			
+			\node[] (1) at (1,2.5){$1$};
+			\node[] (1) at (2,2.5){$1$};
+			\node[] (1) at (3,2.5){$1$};
+			\node[] (1) at (4,2.5){$0.2$};
+			
+			\node[] (1) at (1,0.8){$0.1$};
+			\node[] (1) at (2,0.8){$1$};
+			\node[] (1) at (3,0.8){$0.2$};
+			\node[] (1) at (4,0.8){$0.1$};
+			
+			\node[] (1) at (1,-0.8){$0.3$};
+			\node[] (1) at (2,-0.8){$1$};
+			\node[] (1) at (3,-0.8){$1$};
+			\node[] (1) at (4,-0.8){$1$};
+			
+			\node[] (1) at (1,-2.5){$0.3$};
+			\node[] (1) at (2,-2.5){$0.1$};
+			\node[] (1) at (3,-2.5){$1$};
+			\node[] (1) at (4,-2.5){$0.2$};
+			
+			\node[] (1) at (2.5,3){Pooling};
+			\node[] (1) at (2.5,0.3){Eingabe};
+			\node[] (1) at (2.5,-0.3){Pooling};
+			\node[] (1) at (2.5,-3){Eingabe};
+			
+			\node[] (S1) at (5,2.5){...};
+			\node[] (S2) at (0,2.5){...};
+			\node[] (S3) at (5,0.8){...};
+			\node[] (S4) at (0,0.8){...};
+			\node[] (S5) at (5,-0.8){...};
+			\node[] (S6) at (0,-0.8){...};
+			\node[] (S7) at (5,-2.5){...};
+			\node[] (S8) at (0,-2.5){...};
+			\draw [<-] (eins-1) -- (zwei-1);
+			\draw [<-] (eins-1) -- (zwei-2);
+			\draw [<-] (eins-2) -- (zwei-1);
+			\draw [<-] (eins-2) -- (zwei-2);
+			\draw [<-] (eins-2) -- (zwei-3);
+			\draw [<-] (eins-3) -- (zwei-2);
+			\draw [<-] (eins-3) -- (zwei-3);
+			\draw [<-] (eins-3) -- (zwei-4);
+			\draw [<-] (eins-4) -- (zwei-3);
+			\draw [<-] (eins-4) -- (zwei-4);
+			\draw [<-,dashed] (S1) -- (zwei-4);
+			\draw [<-,dashed] (S2) -- (zwei-1);
+			\draw [<-,dashed] (eins-1) -- (S4);
+			\draw [<-,dashed] (eins-4) -- (S3);
+			
+			\draw [<-] (drei-1) -- (vier-1);
+			\draw [<-] (drei-1) -- (vier-2);
+			\draw [<-] (drei-2) -- (vier-1);
+			\draw [<-] (drei-2) -- (vier-2);
+			\draw [<-] (drei-2) -- (vier-3);
+			\draw [<-] (drei-3) -- (vier-2);
+			\draw [<-] (drei-3) -- (vier-3);
+			\draw [<-] (drei-3) -- (vier-4);
+			\draw [<-] (drei-4) -- (vier-3);
+			\draw [<-] (drei-4) -- (vier-4);
+			\draw [<-,dashed] (S5) -- (vier-4);
+			\draw [<-,dashed] (S6) -- (vier-1);
+			\draw [<-,dashed] (drei-1) -- (S8);
+			\draw [<-,dashed] (drei-4) -- (S7);
+			
+			
+			
+			\end{tikzpicture}
+			\caption{deep learning}
+			\label{fig: Pooling}
+		\end{figure}
+		
+		In Abbildung \ref{fig: Pooling}a werden beispielhaft die stärksten Merkmale der Eingangsdaten durch das \textit{Pooling} weitergeleitet. Obwohl in der unteren Darstellung alle Eingangsdaten um eine Stelle nach rechts verschoben wurden, hält das Verfahren zwei Merkmale konstant. Dies untermauert die Motivation der äquivrianten Darstellung.
 		
 		/bild Klassifikation\\
 		
-		Für die Klassifikation der Daten setzen sich die letzten Schichten meistens aus einer vollständig verbundenen Schicht und einer Softmax Schicht \cite{deeplearning}. Diese gibt einen $K$-dimensionalen Vektor aus, wobei $K$ für die Anzahl der ausgegebenen Klassen steht. Durch die folgende Softmax-Schicht wird der Vektor in einem Zahlenbereich von Null bis Eins transformiert. Die Summe aller Elemente des Vektors ergeben 1. An dieser Stelle sind alle Daten vollständig bearbeitet und werden als Vektor aus dem CNN ausgegeben. Jedes Element wird als Konfidenz der jeweiligen Klasse interpretiert. \\
+		Für die Klassifikation der Daten setzen sich die letzten Schichten meist aus einer oder mehrerer vollständig verbundenen Schichten und einer \textit{Softmax}-Schicht zusammen \cite{deeplearning}. Die vollständig verbundene Schicht gibt einen Vektor mit $K$ Elementen aus, wobei $K$ für die Anzahl der ausgegebenen Klassen steht. Eine \textit{Softmax}-Funktion repräsentiert grundlegend eine Wahrscheinlichkeitsverteilung des Eingabevektors $K$. Durch die \textit{Softmax}-Schicht wird der Vektor in einem Zahlenbereich von Null bis Eins transformiert. Die Summe aller Elemente des Vektors ergeben 1. Jedes Element wird als Konfidenz der jeweiligen Klasse interpretiert. An dieser Stelle sind alle Daten vollständig bearbeitet und werden als Vektor aus dem CNN ausgegeben. In Abbildung \ref{fig: cnn easy} wird die Funktionsweise eines Faltungsnetzwerks anhand eines Minimalbeispiels dargestellt.\\
 		
-		Die Artenvielfalt der CNNs ist sehr breit gefächert. Jedes Netzwerk unterscheidet sich in der jeweiligen Architektur der Schichten. Durch die Änderung verschiedener Parameter, beispielsweise bei der Faltung oder beim Pooling, können CNNs im Einsatz jeweils anders reagieren. Hierbei entscheidet man bei der Auswahl des Modells häufig unter den Gesichtspunkten Bearbeitungszeit, Genauigkeit und je nach Anwendungsfall spielt der Speicherplatz ebenfalls eine große Rolle. Die Anforderungen ... und ... beschreiben die Geschwindigkeit und die Genauigkeit der Personenerkennung. Außerdem soll laut Anforderung ... das neuronale Netz für eine mögliche Auslagerung auf einem eingebettetem System entwickelt werden. Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for  Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[node distance=4em]
+			\node[3d matrix] (mat1){ 
+				0 & 0 & 1 & 1 & 0 & 0 & -1 & -1 & 0 & 0 \\
+			};
+			\node[3d matrix,above=of mat1] (mat2){ 
+				0 & 0 & 1 & 1 & 0 & 0 & -1 & -1 & 0 & 0\\
+				0 & 0 & -1 & -1 & 0 & 0 & 1 & 1 & 0 & 0\\
+			};
+			\node[3d matrix,above=of mat2] (mat3){ 
+				0 & 1 & 0 & -1 & 0 \\
+				0 & -1 & 0 & 1 & 0 \\
+			};
+			\node[3d matrix,above=of mat3] (mat4){ 0 & -4 & 0 \\};
+			\node[3d matrix,above=of mat4] (mat5){ 4 & -4 \\};
+			\node[3d matrix,above=of mat5] (mat6){ 0.99 & 0.01 \\};
+			\node[] (S1) at (-4,0) {Eingabe};
+			\node[] (S2) at (-4,1.1) {Faltung};
+			\draw[dashed](S2)--(0.5,1.1);
+			\node[] (S3) at (-4,3.9) {Pooling};
+			\draw[dashed](S3)--(0.5,3.9);
+			\node[] (S4) at (-4,6.6) {Faltung};
+			\draw[dashed](S4)--(0.5,6.6);
+			\node[] (S5) at (-4,8.8) {Vollständig verbundene Schicht};
+			\draw[dashed](S5)--(0.5,8.8);
+			\node[] (S6) at (-4,11.1) {Softmax};
+			\draw[dashed](S6)--(0.5,11.1);
+			\draw[-{Latex[bend]}] (mat1.east) to[out=0,in=0] 
+			coordinate[near end](aux1) ([xshift=1ex]mat2-1-10.east);
+			\path (aux1) node[right,above right,3d matrix]{-1 & 0 & 1\\}; 
+			\draw[-{Latex[bend]}] (mat1.east) to[out=0,in=0] ([xshift=1ex]mat2-2-10.east);
+			\draw[very thick,-Latex] (mat1) -- coordinate[midway,right=2em] (aux2) (mat2);
+			\path (aux2) node[right,3d matrix] (mat1a){1 & 0 & -1 \\};
+			\draw[very thick,-Latex] (mat2) -- (mat3);
+			\draw[very thick,-Latex] (mat3) -- (mat4)
+			coordinate[midway,right=1em] (aux3);
+			\path (aux3) node[right,3d matrix] (mat3a){-1 & 0 & 1 \\
+				1 & 0 & -1\\};
+			\foreach \X in {1,2,3} {\foreach \Y in {1,2}
+				{\draw[-latex] (mat4-1-\X) -- (mat5-1-\Y);}}
+			\draw[very thick,-Latex] (mat5) -- (mat6);
+			\end{tikzpicture}
+			\caption{https://tex.stackexchange.com/questions/519268/write-convolutional-neural-networks-using-tikzg}
+			\label{fig: cnn easy}		
+		\end{figure}
 		
-		Die \textit{MobileNet} Architektur ermöglicht im Vergleich zu anderen Lösung zur Merkmalsextraktion den gesuchten Spagat zwischen Schnelligkeit, Genauigkeit und Größe des Netzes \cite{mobilenets}. Das Hauptmerkmal ist der Aufbau der Konvolutionsschichten, der zu den genannten Eigenschaften in der Praxis führt \cite{mobilenets} \cite{embedded}. Vergleichsmessungen zu anderen Architekturen werden in den erwähnten Paper durchgeführt. Der \textit{Single Shot Detector} dient als Klassifikator und zeichnet sich besonders durch seine Schnelligkeit aus \cite{ssd}. Er erreicht eine höhere Genauigkeit als andere state-of-the-art Lösungen wie zum Beispiel \textit{Faster R-CNN} \cite{fastercnn} und ist zudem dreimal schneller\cite{ssd}.		
+		Die Artenvielfalt der CNNs ist sehr breit gefächert. Jedes Netzwerk unterscheidet sich in der jeweiligen Architektur der Schichten. Durch die Änderung verschiedener Parameter, beispielsweise bei der Faltung oder beim Pooling, können CNNs im Einsatz jeweils anders reagieren. Hierbei entscheidet man bei der Auswahl des Modells häufig unter den Gesichtspunkten Bearbeitungszeit, Genauigkeit und je nach Anwendungsfall spielt der Speicherplatz ebenfalls eine große Rolle.\\
 		
+			
+		
+		Auf dem ALF werden je Kamera 10 Bilder in der Sekunde eingelesen. Folglich wird eine Netzarchitektur verwendet, die in der Lage ist mindestens 20 Bilder zu verarbeiten. Für eine zukünftige Auslagerung auf ein eingebettetes System soll das neuronale Netz nach den dafür notwendigen Aspekten entwickelt werden. Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for  Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
+		
+		Die \textit{MobileNet} Architektur ermöglicht im Vergleich zu anderen Lösung zur Merkmalsextraktion den gesuchten Spagat zwischen Schnelligkeit, Genauigkeit und Größe des Netzes \cite{mobilenets}. Das Hauptmerkmal ist der Aufbau der Konvolutionsschichten, der zu den genannten Eigenschaften in der Praxis führt \cite{mobilenets} \cite{embedded}. Vergleichsmessungen zu anderen Architekturen werden in den erwähnten Paper durchgeführt. Der \textit{Single Shot Detector} dient als Klassifikator und zeichnet sich besonders durch seine Schnelligkeit aus \cite{ssd}. Er erreicht eine höhere Genauigkeit als andere state-of-the-art Lösungen wie zum Beispiel \textit{Faster R-CNN} \cite{fastercnn} und ist zudem dreimal schneller\cite{ssd}.
+		
+	
+	
 		
 	
 
