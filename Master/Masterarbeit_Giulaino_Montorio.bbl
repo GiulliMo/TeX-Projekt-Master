@@ -123,6 +123,36 @@
     \field{year}{2016}
   \endentry
 
+  \entry{cnnvergleich}{book}{}
+    \name{author}{3}{}{%
+      {{hash=CA}{%
+         family={Canziani},
+         familyi={C\bibinitperiod},
+         given={Alfredo},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Paszke},
+         familyi={P\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CE}{%
+         family={Culurciello},
+         familyi={C\bibinitperiod},
+         given={Eugenio},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CAPACE1}
+    \strng{fullhash}{CAPACE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{An Analysis of Deep Neural Network Models for Practical
+  Applications}
+    \field{year}{2016}
+  \endentry
+
   \entry{mobilenets}{book}{}
     \name{author}{1}{}{%
       {{hash=uAHHAGZMBDWTM}{%
@@ -147,6 +177,118 @@
   Mobile Vision Applications}
     \field{month}{04}
     \field{year}{2017}
+  \endentry
+
+  \entry{vgg}{book}{}
+    \name{author}{1}{}{%
+      {{hash=g}{%
+         family={g},
+         familyi={g},
+      }}%
+    }
+    \strng{namehash}{g1}
+    \strng{fullhash}{g1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{g}
+    \field{year}{2015}
+  \endentry
+
+  \entry{alexnet}{book}{}
+    \name{author}{3}{}{%
+      {{hash=KA}{%
+         family={Krizhevsky},
+         familyi={K\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SI}{%
+         family={Sutskever},
+         familyi={S\bibinitperiod},
+         given={Ilya},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=HGE}{%
+         family={Hinton},
+         familyi={H\bibinitperiod},
+         given={Geoffrey\bibnamedelima E},
+         giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Curran Associates, Inc.}%
+    }
+    \strng{namehash}{KASIHGE1}
+    \strng{fullhash}{KASIHGE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1097\bibrangedash 1105}
+    \field{title}{ImageNet Classification with Deep Convolutional Neural
+  Networks - Advances in Neural Information Processing Systems 25}
+    \field{year}{2012}
+  \endentry
+
+  \entry{inception}{book}{}
+    \name{author}{9}{}{%
+      {{hash=SC}{%
+         family={{Szegedy}},
+         familyi={S\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=W}{%
+         family={{Wei Liu}},
+         familyi={W\bibinitperiod},
+      }}%
+      {{hash=Y}{%
+         family={{Yangqing Jia}},
+         familyi={Y\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={{Sermanet}},
+         familyi={S\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={{Reed}},
+         familyi={R\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AD}{%
+         family={{Anguelov}},
+         familyi={A\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=ED}{%
+         family={{Erhan}},
+         familyi={E\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=VV}{%
+         family={{Vanhoucke}},
+         familyi={V\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={{Rabinovich}},
+         familyi={R\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SC+1}
+    \strng{fullhash}{SCWYSPRSADEDVVRA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1\bibrangedash 9}
+    \field{title}{Going deeper with convolutions - 2015 IEEE Conference on
+  Computer Vision and Pattern Recognition (CVPR)}
+    \field{year}{2015}
   \endentry
 
   \entry{embedded}{book}{}

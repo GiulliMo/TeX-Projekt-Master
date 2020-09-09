@@ -168,7 +168,7 @@
 	
 		
 		\subsection{Evaluation neuronaler Netze}
-			
+		TOP-5 ERROR	
 		Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. Im Rahmen dieser Masterarbeit wird die Methode \textit{Precision and Recall} verwendet. Da die Erkennung von Personen auf ein Klassifikationsproblem binärer Natur reduziert werden kann, eignet sich die genannte Herangehensweise. Da die genannte Metrik für diese Arbeit auf ein Bildverarbeitungsproblem angewendet wird, werden die Grundlagen im Folgenden im entsprechenden Kontext vermittelt.\\
 		
 		\textit{Precision and Recall} ist ein traditionelles Werkzeug zur Evaluation und Leistungsmessung \cite{precisionandrecall}. Der \textit{Recall}-Wert $r(t)$, oder $TPR(t)$ für \textit{Truepositiverate}, beschreibt die Fähigkeit eines System, tatsächlich positive Stichproben zu erkennen. Angewandt auf die Personenerkennung sind Bilder, auf denen Personen zu sehen sind, als tatsächlich positive Stichproben einzustufen. In Gleichung \ref{eq: recall} wird der \textit{Recall}-Wert durch eine Division von allen wahren positiven Werten $TP(t)$ und die Anzahl aller tatsächlich positiven Werte $n_{pos}$ berechnet. Die Variable $t$ definiert den eingestellten Schwellwert. Im Sachkontext ist der Wert als Konfidenz zu betrachten, bei der eine Person als solche klassifiziert wird. Für die Anwendung dieser Methode ist die Kenntnis über negativen Beispielen der Stichprobe nicht notwendig \cite{bildundobjekt}.\\ 
@@ -562,9 +562,87 @@
 		
 		Die Artenvielfalt der CNNs ist sehr breit gefächert. Jedes Netzwerk unterscheidet sich in der jeweiligen Architektur der Schichten. Durch die Änderung verschiedener Parameter, beispielsweise bei der Faltung oder beim Pooling, können CNNs im Einsatz jeweils anders reagieren. Hierbei entscheidet man bei der Auswahl des Modells häufig unter den Gesichtspunkten Bearbeitungszeit, Genauigkeit und je nach Anwendungsfall spielt der Speicherplatz ebenfalls eine große Rolle.\\
 		
-			
+		Auf dem ALF werden je Kamera 10 Bilder in der Sekunde eingelesen. Folglich wird eine Netzarchitektur verwendet, die in der Lage ist mindestens 20 Bilder in der Sekunde zu verarbeiten. Für eine zukünftige Auslagerung auf ein eingebettetes System soll das neuronale Netz nach den dafür notwendigen Aspekten entwickelt werden. Für die Auswahl der für diese Masterarbeit entsprechenden Architektur werden state-of-the-art Lösungen hinzugezogen. In \textit{Canzianis} Paper \cite{cnnvergleich} werden bekannte CNNs nach der Genauigkeit über die Anzahl der Rechenoperationen pro eingegebenes Bild auf einer Grafik aufgetragen. Als dritte Eigenschaft ist dort ebenfalls die Größe der Architekturen als Parameteranzahl gezeigt. Die höchsten Genauigkeiten erzielten hierbei die \textit{ResNet}, \textit{Inception} und \textit{VGG} Architekturen. \textit{Canziani} veröffentlichte sein Paper im Jahr 2016. Ein Jahr später entwickelte \textit{Howard} \cite{mobilenets} die \textit{Mobilenet} Architektur. Sie zeichnet sich durch die ihre Schnelligkeit bei teilweise höherer Genauigkeit im Vergleich zu bekannten Architekturen aus. Im diesem Kapitel werden Vergleiche zwischen den genannten Netzen gezogen und eine Auswahl für die praktische Anwendung am ALF getroffen.\\
 		
-		Auf dem ALF werden je Kamera 10 Bilder in der Sekunde eingelesen. Folglich wird eine Netzarchitektur verwendet, die in der Lage ist mindestens 20 Bilder zu verarbeiten. Für eine zukünftige Auslagerung auf ein eingebettetes System soll das neuronale Netz nach den dafür notwendigen Aspekten entwickelt werden. Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for  Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
+		
+		Die VGG Architektur wurde im Jahr 2015 von \textit{Simonyan} und \textit{Zisserman} \cite{vgg} vorgestellt. Oft wird die die Bezeichnung \textit{VGG-xx} verwendet, wobei \textit{xx} für die Anzahl der Konvolutionsschichten in Addition mit den vollständig verbundenen Schichten steht. Im Vergleich zur \textit{Alexnet} Architektur werden hierbei ausschließlich sehr kleine $3 \times 3$ Filter genutzt \cite{alexnet} \cite{vgg}. Im Gegenzug wurde die Tiefe der Netze erhöht. In dem Paper sind Netze bis zu einer Tiefe von 19 Schichten untersucht worden\cite{vgg}. Es hat sich herausgestellt, dass die Veränderung der Tiefe eines Netzes über die Genauigkeit der Klassifikation bestimmt. So ist das Netz in der Lage sehr hohe Genauigkeiten zu erzielen. Wiederum hängt die Anzahl der Schichten direkt mit dem Speicher- und dem Rechenaufwand eines Netzes zusammen. Ein typisches \textit{VGG-16} Netz benötigt circa 530 MB wegen seiner 138 Millionen Parameter und ist aufgrund dessen für die bereits erwähnte Anwendung an dem ALF nicht geeignet.\\
+		
+		\textit{ResNet} steht für \textit{residual network} und wurde erstmals im Jahr 2015 durch das Paper von \textit{He} veröffentlicht. Diese Architektur fällt besonders durch Verbindungen auf, die es Bildinformationen ermöglicht Schichten zu überspringen. So sind tiefe Zwischenschichten nicht nur von der Ausgabe der vorherigen Schicht abhängig. In Abbildung \ref{fig: residual} ist eine Prinzipdarstellung der Architektur gezeigt. Hierbei wird eine allgemeine Eingabe $x$ in beliebig viele Zwischenschichten eingegeben, die eine Ausgabe $F(x)$ erzeugt. Außerdem wird $x$ durch eine Verbindung mit $F(x)$ addiert.
+		
+			\tikzset{%
+			every neuron/.style={
+				rectangle,
+				draw,
+				minimum size=1cm
+			},
+			neuron missing/.style={
+				draw=none, 
+				%scale=4,
+				%rotate=90,
+				%yshift=1,
+				%text height=0.333cm,
+				%execute at begin node=\color{black}$\cdots$
+			},
+		}
+		\begin{figure}[H]
+			\centering
+			
+			
+			\begin{tikzpicture}[x=1.5cm, y=1.2cm, >=stealth]
+			
+
+
+			\node[draw,rectangle,minimum width=4cm,minimum height=1cm] (S1) at (0,-0.2) {Zwischenschicht};
+			\node[draw,rectangle,minimum width=4cm,minimum height=1cm] (S2) at (0,-1.8) {Zwischenschicht};
+			\node[draw,circle] (S3) at (0,-3) {+};
+			\node[] (S4) at (-2,-1) {$F(x)$};
+			\node[] (S4) at (-0.2,1) {$x$};
+			\node[] (S4) at (-0.9,-3) {$F(x) + x$};
+			\draw [->,thick]  (S1) to (S2);
+			\draw [thick]  (0,1) -- (2,1);
+			\draw [thick]  (2,1) to (2,-3);
+			\draw [->,thick]  (2,-3) to (S3);
+			\draw [->,thick]  (0,1.5) to (S1);
+			\draw [->,thick]  (S2) to (S3);
+			\draw [->,thick]  (S3) to (0,-3.5);
+			
+			
+			
+			\end{tikzpicture}
+			\caption{Prinzipielle Darstellung des Faltungsprozess. Adaptiert aus \cite{deeplearning}}
+			\label{fig: residual }
+		\end{figure}
+	
+		\textit{ResNet} Netze erreichen je nach Größe eine höhere Genauigkeit als die bereits erwähnten \textit{VGG} Architekturen. Die Größe der Netze erreichen hierbei 152 Schichten. Trotz der entsprechenden Tiefe enthält eine derartiges CNN circa die Hälfte der Parameter im Vergleich zu \textit{VGG} Netzen. Dementsprechend liegt der Speicherbedarf bei circa 230 MB. Für den Einsatz auf eingebetteten Systeme würde ein Netz dieser Größe zu viel Rechenkapazität in Anspruch nehmen, sodass die verarbeitung eines Bildes unter Umständen mehrere Sekunden dauern könnte. \\
+		
+		Gemessen an der Genauigkeit liegen \textit{Inception/GoogLeNet} Netze höher als \textit{VGG} und \textit{ResNet} Architekturen. \textit{Szegedy} veröffentlichte die erste Version der \textit{Inception} CNNs in seinem Paper \cite{inception} im Jahr 2015. Die Besonderheit hierbei ist der Einsatz von multiplen Kernels auf die jeweiligen Schichten. Durch diesen Aufbau benötigt ein solches Netz keine vollständig verbundene Schicht zur Klassikation, da die Genauigkeit nur geringfügig beeinträchtigt wird. Gleichzeitig wird ein Großteil der Parameter eingespart. Bei \textit{VGG} Architekturen befinden sich beispielsweise circa 90\percent\text{ }aller Parameter in den vollständig verbundenen Schichten am Ende des Netzes. Somit sind übliche \textit{Inception} Netze circa 90 MB groß und verfügen über 23 Millionen Parameter.\\ 
+		
+		\begin{table}[H]
+			\centering
+			\caption{Umsetzungstabelle mit $d \times (v+1)$ Einträgen, wobei $a_{v+1,d} \in \mathbb{R}$}
+			\begin{tabular}{l|l|l|lll|l}
+				VGG-16 					& ResNet-152 & Inception & MobileNet \\ \hline
+				conv[3$\times$3,64]/2	& conv[7$\times$7,64]-2 & $a_{1,2}$ & $\cdots$  \\
+				Pooling					&Pooling				 & $\ddots$  \\
+				conv[3$\times$3]-128/2	&conv[1$\times$1,64|3$\times$3,64|1$\times$1,256]-3 & $a_{v+1,2}$ & $\cdots$ \\ 
+				Pooling					&conv[1$\times$1,128|3$\times$3,128|1$\times$1,512]-3 & $a_{v+1,2}$ & $\cdots$ \\ 
+				conv[3$\times$3]-256/3	&conv[1$\times$1,256|3$\times$3,256|1$\times$1,1024]-3 & $a_{v+1,2}$ & $\cdots$ \\ 
+				Pooling					&conv[1$\times$1,512|3$\times$3,512|1$\times$1,2048]-3 & $a_{v+1,2}$ & $\cdots$ \\ 
+				conv[3$\times$3]-512/3	&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ 
+				Pooling					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ 
+				conv[3$\times$3]-512/3	&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ 
+				Pooling					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ 
+				FC-4096					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ 
+				FC-4096					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ 
+				FC-1000					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ 
+				Softmax					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ \hline
+				%-----------------------------Tabelle--------------------
+				\bottomrule
+			\end{tabular}
+			\label{tab: embeddedmatrix}
+		\end{table}
+		
+		Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for  Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
 		
 		Die \textit{MobileNet} Architektur ermöglicht im Vergleich zu anderen Lösung zur Merkmalsextraktion den gesuchten Spagat zwischen Schnelligkeit, Genauigkeit und Größe des Netzes \cite{mobilenets}. Das Hauptmerkmal ist der Aufbau der Konvolutionsschichten, der zu den genannten Eigenschaften in der Praxis führt \cite{mobilenets} \cite{embedded}. Vergleichsmessungen zu anderen Architekturen werden in den erwähnten Paper durchgeführt. Der \textit{Single Shot Detector} dient als Klassifikator und zeichnet sich besonders durch seine Schnelligkeit aus \cite{ssd}. Er erreicht eine höhere Genauigkeit als andere state-of-the-art Lösungen wie zum Beispiel \textit{Faster R-CNN} \cite{fastercnn} und ist zudem dreimal schneller\cite{ssd}.
 		
