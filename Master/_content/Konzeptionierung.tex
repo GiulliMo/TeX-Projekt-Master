@@ -13,6 +13,14 @@
 		
 		\subsection{Auswahl und Training der verwendeten neuronalen Netze}
 		
+		Im diesem Kapitel werden Vergleiche zwischen den genannten Netzen gezogen und eine Auswahl für die praktische Anwendung am ALF getroffen.
+		
+		\input{Bilder/cnnvergleich}	
+		
+		Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for  Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
+		
+		Die \textit{MobileNet} Architektur ermöglicht im Vergleich zu anderen Lösung zur Merkmalsextraktion den gesuchten Spagat zwischen Schnelligkeit, Genauigkeit und Größe des Netzes \cite{mobilenets}. Das Hauptmerkmal ist der Aufbau der Konvolutionsschichten, der zu den genannten Eigenschaften in der Praxis führt \cite{mobilenets} \cite{embedded}. Vergleichsmessungen zu anderen Architekturen werden in den erwähnten Paper durchgeführt. Der \textit{Single Shot Detector} dient als Klassifikator und zeichnet sich besonders durch seine Schnelligkeit aus \cite{ssd}. Er erreicht eine höhere Genauigkeit als andere state-of-the-art Lösungen wie zum Beispiel \textit{Faster R-CNN} \cite{fasterrcnn} und ist zudem dreimal schneller\cite{ssd}.
+		
 		\subsection{Entwickeltes neuronales Netz}
 		\tikzset{%
 			every neuron/.style={

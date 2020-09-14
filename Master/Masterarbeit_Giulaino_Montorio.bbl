@@ -99,6 +99,31 @@
     \field{year}{2014}
   \endentry
 
+  \entry{hogsvm}{book}{}
+    \name{author}{2}{}{%
+      {{hash=ND}{%
+         family={N.},
+         familyi={N\bibinitperiod},
+         given={{Dalal,}},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={B.},
+         familyi={B\bibinitperiod},
+         given={{Triggs,}},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NDBT1}
+    \strng{fullhash}{NDBT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Histograms of Oriented Gradients for Human Detection - 2005
+  IEEE Computer Society Conference on Computer Vision and Pattern Recognition
+  (CVPR'05)}
+    \field{year}{2005}
+  \endentry
+
   \entry{deeplearning}{book}{}
     \name{author}{1}{}{%
       {{hash=uCAGIBY}{%
@@ -291,6 +316,105 @@
     \field{year}{2015}
   \endentry
 
+  \entry{rcnn}{book}{}
+    \field{pages}{1\bibrangedash 9}
+    \field{year}{2015}
+  \endentry
+
+  \entry{fastrcnn}{book}{}
+    \name{author}{1}{}{%
+      {{hash=GR}{%
+         family={Girshick},
+         familyi={G\bibinitperiod},
+         given={Ross},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GR1}
+    \strng{fullhash}{GR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Fast R-CNN - Proceedings of the IEEE International Conference
+  on Computer Vision (ICCV)}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{fasterrcnn}{book}{}
+    \name{author}{4}{}{%
+      {{hash=RS}{%
+         family={Ren},
+         familyi={R\bibinitperiod},
+         given={Shaoqing},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HK}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Kaiming},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=GR}{%
+         family={Girshick},
+         familyi={G\bibinitperiod},
+         given={Ross},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Jian},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Curran Associates, Inc.}%
+    }
+    \strng{namehash}{RS+1}
+    \strng{fullhash}{RSHKGRSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{91\bibrangedash 99}
+    \field{title}{Faster R-CNN: Towards Real-Time Object Detection with Region
+  Proposal Networks - Advances in Neural Information Processing Systems 28}
+    \field{year}{2015}
+  \endentry
+
+  \entry{multibox}{book}{}
+    \name{author}{4}{}{%
+      {{hash=SC}{%
+         family={Szegedy},
+         familyi={S\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Reed},
+         familyi={R\bibinitperiod},
+         given={Scott},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=ED}{%
+         family={Erhan},
+         familyi={E\bibinitperiod},
+         given={Dumitru},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=AD}{%
+         family={Anguelov},
+         familyi={A\bibinitperiod},
+         given={Dragomir},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SC+2}
+    \strng{fullhash}{SCRSEDAD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Scalable, high-quality object detection}
+    \field{year}{2015}
+  \endentry
+
   \entry{embedded}{book}{}
     \name{author}{2}{}{%
       {{hash=MZYS}{%
@@ -341,31 +465,6 @@
     \field{note}{pp. 21-37}
     \field{title}{SSD: Single Shot MultiBox Detector. European conference on
   computer vision}
-    \field{year}{2016}
-  \endentry
-
-  \entry{fastercnn}{book}{}
-    \name{author}{2}{}{%
-      {{hash=RRSHK}{%
-         family={R.},
-         familyi={R\bibinitperiod},
-         given={{Ren,} S. {, He,}\bibnamedelima K.{, Girshick,}},
-         giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim
-  H\bibinitperiod\bibinitdelim K\bibinitperiod},
-      }}%
-      {{hash=JS}{%
-         family={J.},
-         familyi={J\bibinitperiod},
-         given={{Sun,}},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{RRSHKJS1}
-    \strng{fullhash}{RRSHKJS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Faster R-CNN: Towards real-time object detection with region
-  proposal networks. NIPS}
     \field{year}{2016}
   \endentry
 \enddatalist

@@ -168,8 +168,7 @@
 	
 		
 		\subsection{Evaluation neuronaler Netze}
-		TOP-5 ERROR	
-		Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. Im Rahmen dieser Masterarbeit wird die Methode \textit{Precision and Recall} verwendet. Da die Erkennung von Personen auf ein Klassifikationsproblem binärer Natur reduziert werden kann, eignet sich die genannte Herangehensweise. Da die genannte Metrik für diese Arbeit auf ein Bildverarbeitungsproblem angewendet wird, werden die Grundlagen im Folgenden im entsprechenden Kontext vermittelt.\\
+		Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. Im Rahmen dieser Masterarbeit wird die Methode \textit{Precision and Recall} verwendet. Da die Erkennung von Personen auf ein Klassifikationsproblem binärer Natur reduziert werden kann, eignet sich die genannte Herangehensweise. Außerdem werden die neuronalen Netze anhand des Top-5 und Top-1 Fehlers verglichen. Die Grundlagen der entsprechenden Metriken werden im Folgenden vermittelt.\\
 		
 		\textit{Precision and Recall} ist ein traditionelles Werkzeug zur Evaluation und Leistungsmessung \cite{precisionandrecall}. Der \textit{Recall}-Wert $r(t)$, oder $TPR(t)$ für \textit{Truepositiverate}, beschreibt die Fähigkeit eines System, tatsächlich positive Stichproben zu erkennen. Angewandt auf die Personenerkennung sind Bilder, auf denen Personen zu sehen sind, als tatsächlich positive Stichproben einzustufen. In Gleichung \ref{eq: recall} wird der \textit{Recall}-Wert durch eine Division von allen wahren positiven Werten $TP(t)$ und die Anzahl aller tatsächlich positiven Werte $n_{pos}$ berechnet. Die Variable $t$ definiert den eingestellten Schwellwert. Im Sachkontext ist der Wert als Konfidenz zu betrachten, bei der eine Person als solche klassifiziert wird. Für die Anwendung dieser Methode ist die Kenntnis über negativen Beispielen der Stichprobe nicht notwendig \cite{bildundobjekt}.\\ 
 		
@@ -185,7 +184,9 @@
 		\label{eq: precision}
 		\end{equation}\\
 		
-		Häufig muss in der Praxis ein Kompromiss zwischen \textit{Precision} und \textit{Recall} gefunden werden. Dies lässt sich anhand eines Beispiel in der Personenerkennung veranschaulichen. Das System zur Erkennung wird beispielhaft mit einem hohen \textit{Precision}-Wert betrieben. Ein damit verbundener, niedriger \textit{Recall}-Wert ist in der Praxis üblich. Dies führt dazu, dass irrelevanter Bildinhalt selten als Person klassifiert wird. Jedoch kommt es eher häufig vor, dass keine Person detektiert wird obwohl eine zu sehen ist. Legt man nun den Fokus auf einen hohen \textit{Recall}, sinkt der \textit{Precision}-Wert. Personen würden dann zwar häufiger als Person klassifiziert werden, jedoch wird irrelevanter Bildinhalt ebenfalls häufig als Person klassifiziert.
+		Häufig muss in der Praxis ein Kompromiss zwischen \textit{Precision} und \textit{Recall} gefunden werden. Dies lässt sich anhand eines Beispiel in der Personenerkennung veranschaulichen. Das System zur Erkennung wird beispielhaft mit einem hohen \textit{Precision}-Wert betrieben. Ein damit verbundener, niedriger \textit{Recall}-Wert ist in der Praxis üblich. Dies führt dazu, dass irrelevanter Bildinhalt selten als Person klassifiert wird. Jedoch kommt es eher häufig vor, dass keine Person detektiert wird obwohl eine zu sehen ist. Legt man nun den Fokus auf einen hohen \textit{Recall}, sinkt der \textit{Precision}-Wert. Personen würden dann zwar häufiger als Person klassifiziert werden, jedoch wird irrelevanter Bildinhalt ebenfalls häufig als Person klassifiziert. Je nach Anwendungsfall eines Netzes wird dann der entsprechende Betriebspunkt zwischen \textit{Precision} und \textit{Recall} gewählt.\\
+		
+		Eine einfache Betrachtung zur Evaluierung der Qualität hinsichtlich der Genauigkeit eines Netzes liefert der Top-$x$ Fehler. Der Platzhalter $x$ kann zunächst durch eine beliebige Zahl ersetzt werden. In der Praxis hat sich jedoch der Top-5 und der Top-1 Fehler als Vergleich durchgesetzt. Hierbei wird zunächst ein Bild durch ein beliebiges KNN analysiert und über die Ausgabeschicht extrahiert. Als Beispiel sollte sich im optimalen Fall die tatsächliche Klasse des Bildes unter den $x$ wahrscheinlichsten Klassen befinden, die über das Netz ausgegeben wurden. Folglich sagt der Top-1 Fehler aus, wie oft ein Netz ein eingegebenes Bild falsch klassifiziert hat. In vielen Paper zu neuen, künstlichen, neuronalen Netzen wird so die Genauigkeit mit bereits bestehenden Netzen verglichen.
 		
 		
 		
@@ -193,20 +194,35 @@
 		
 		
 	\section{Objekterkennung}
-	\label{sec: Mecanumräder}
-	Bei der visuellen Objekterkennung wird ein Objekt, das auf einem Bild gezeigt ist, mit einer gewissen Wahrscheinlichkeit inklusive der Position in der Abbildung erkannt. Die drei Abstraktionsebenen einer solchen Erkennung unterteilen sich in Bildklassifikation, Objektlokalisierung und semantische Segmentierung ...2014Bild. Letzteres kommt in dieser Arbeit nicht zur Anwendung und wird aufgrund dessen im Folgenden nicht behandelt. Die Bildklassifikation beschreibt eine Zuweisung von Objektkategorien zu einem gegebenen Bild. Mithilfe einer Merkmalsextraktion werden Merkmalsvektoren extrahiert und können so in einem Klassifikator berechnet werden. In den folgenden Kapiteln wird auf die in dieser Arbeit eingesetzten Methoden zur Objekterkennung eingegangen. 
+	\label{sec: Objekterkennung}
+	Bei der visuellen Objekterkennung wird ein Objekt, das auf einem Bild gezeigt ist, mit einer gewissen Wahrscheinlichkeit inklusive der Position in der Abbildung erkannt. Die drei Abstraktionsebenen einer solchen Erkennung unterteilen sich in Bildklassifikation, Objektlokalisierung und semantische Segmentierung ...2014Bild. Letzteres kommt in dieser Arbeit nicht zur Anwendung und wird aufgrund dessen im Folgenden nicht behandelt. Die Bildklassifikation beschreibt eine Zuweisung von Objektkategorien zu einem gegebenen Bild. Mithilfe einer Merkmalsextraktion werden Merkmalsvektoren extrahiert und können so in einem Klassifikator berechnet werden. In den folgenden Kapiteln wird auf die in dieser Arbeit eingesetzten Methoden zur Objekterkennung eingegangen. Hierbei werden insbesondere alternative Verfahren mit modernen state-of-the-art Lösungen zur Objekterkennung gegenübergestellt.  
 	
 	
-		\subsection{Objekterkennung durch alternative Verfahren}		
-		Ein gängiges Verfahren zur Merkmalsextraktion ist das sogenannte Histogram of oriented gradients (HoG). Bei diesem Verfahren werden in einem Bild auftretende Intensitäten geprüft und so Kanten und Ecken als Histogramm gespeichert. Die Support Vektor Maschine ist ein typischer Funktionsapproximator für eine Objektklassifikation. Es handelt sich hierbei um ein Verfahren, das Klassen durch eine sogenannte Hyperebene voneinander trennt. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt.
+		\subsection{Objekterkennung durch alternative Verfahren}
+		\label{subsec: Objekterkennung durch alternative Verfahren}	
+		
+		
+		Neben der neuronalen Netzen gibt weitere Methoden zur Objekterkennung. Ein gängiges Verfahren zur Merkmalsextraktion ist das sogenannte Histogram of oriented gradients (HoG) von \textit{Dalal} in Verbindung mit der \textit{Linear Support Vector Machine} (SVM).\\
+		
+		Bei diesem Verfahren wird ein Bild in kleine Bereiche, sogenannte Zellen, aufgeteilt \cite{hogsvm}. Für jede Zelle wird ein eindimensionales Histogram extrahiert. Dieses enthält Gradienten die aus den Informationen der Pixel enstehen, wie zum Beispiel durch der Lichtintensität oder der Farbe. Hieraus lassen sich Kanten und Ecken und somit auch Konturen und Muster aus einem Bild erkennen.\\
+		
+		\input{Bilder/hog}
+		
+		Die \textit{SVM} ist ein typischer Funktionsapproximator für eine Objektklassifikation. Es handelt sich hierbei um ein mathematisches Verfahren, das Klassen durch Trennungsebenen, die sogenannten Hyperebenen, voneinander trennt. Auch hierbei gibt es ein Lernprozess in Form des überwachten Lernens. Ziel der Algorhitmen des Trainings einer \textit{SVM} ist es, die Hyperebenen so zu konstruieren, dass Objekte sicher klassifiziert werden können. In der Realität lassen sich Objekte rein mathematisch häufig nicht linear trennen. Nicht-lineare Trennbarkeit bedeutet oft einen höheren Rechenaufwand. Somit verwendet die Methode der \textit{SVM} den sogenannten \textit{Kernel-Trick}. Dieser transformiert Daten in eine höhere Dimension, um eine lineare Trennbarkeit zu erreichen. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt.\\
 			
-		Wie in Kapitel... beschrieben, soll die Ausgabe einer Objekterkennung auch den Ort eines Objektes enthalten. Für jedes erkannte Objekt wird ein Rechteck in Form von Pixelkoordinaten erzeugt, das den Interessensbereich beschreibt.
+		Die \textit{HoG} Methode in Verbindung mit der \textit{SVM} bringt jedoch auch Nachteile mit sich. Einerseits könnten Objekte problemlos als Person klassifiziert werden, die dieselben Richtungen der Gradienten aufweisen. Anderseits unterscheidet sich das Histogramm einer sitzenden Person zu einer stehenden und würde dann falsch oder gar nicht klassifiert werden.
 	
 		\subsection{Objekterkennung durch neuronale Netze}
-		
+		\label{subsec: Objekterkennung durch neuronale Netze}
 		Die bisher besten Ergebnisse in der Bildverarbeitung im Zusammenspiel mit neuronalen Netzen wurden durch \textit{Convolutional Neural Network} (CNN) ermöglicht \cite{deeplearning}. Anders als bei den bereits erwähnten Methoden geschieht die Merkmalsextraktion hierbei innerhalb des Netzes. Derartige Netzwerke nutzen Faltung zur Verarbeitung der Eingangsdaten statt der üblichen Matritzenmultiplikation \cite{deeplearning}. Der Aufbau eines CNNs setzt sich aus einer Merkmalsextraktion und die darauffolgende Klassifikation zusammen.\\ 
-	
-		...Bild aufbau cnn schicht
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.3]{Bilder/cnn.png}
+			\label{fiq: normal cnn}
+			\caption{bla}
+		\end{figure}
+		
 	 	
 	
 		Eine Einheit der Merkmalsextraktion besteht im grundlegenden Fall aus drei Unterschichten. Dabei können sich diese innerhalb der Merkmalsextraktion hintereinander wiederholen. Dies hat jedoch Einfluss auf die Eigenschaften eines Netzes. Die erste Unterschicht führt Faltungsprozesse mit den Eingangsdaten durch \cite{deeplearning}. Im zweiten Schritt wird eine nichtlineare Aktivierungsfunktion wie der \textit{Rectified Linear Unit} (ReLU) Funktion auf die Ausgangsdaten der Kovolutionsschicht angewendet. In der dritten Unterschicht wird das sogenannte \textit{Pooling} durchgeführt. In einigen Fällen wird die Zusammensetzung der drei Stufen als Kovolutionsschicht bezeichnet \cite{deeplearning}. Im Laufe dieses Kapitels wird auf die Motivationen und der Funktionsweise eines CNNs eingegangen.\\
@@ -560,17 +576,17 @@
 			\label{fig: cnn easy}		
 		\end{figure}
 		
-		\section{Arten von Konvolutionsnetzen}
+		\section{Vergleich möglicher Konvolutionsnetze}
 		\label{sec: cnns}
 		Die Artenvielfalt der CNNs ist sehr breit gefächert. Jedes Netzwerk unterscheidet sich in der jeweiligen Architektur der Schichten. Durch die Änderung verschiedener Parameter, beispielsweise bei der Faltung oder beim Pooling, können CNNs im Einsatz jeweils anders reagieren. Hierbei entscheidet man bei der Auswahl des Modells häufig unter den Gesichtspunkten Bearbeitungszeit, Genauigkeit und je nach Anwendungsfall spielt der Speicherplatz ebenfalls eine große Rolle.\\
 		
-		Auf dem ALF werden je Kamera 10 Bilder in der Sekunde eingelesen. Folglich wird eine Netzarchitektur verwendet, die in der Lage ist mindestens 20 Bilder in der Sekunde zu verarbeiten. Für eine zukünftige Auslagerung auf ein eingebettetes System soll das neuronale Netz nach den dafür notwendigen Aspekten entwickelt werden. Für die Auswahl der für diese Masterarbeit entsprechenden Architektur werden state-of-the-art Lösungen hinzugezogen. In \textit{Canzianis} Paper \cite{cnnvergleich} werden bekannte CNNs nach der Genauigkeit über die Anzahl der Rechenoperationen pro eingegebenes Bild auf einer Grafik aufgetragen. Als dritte Eigenschaft ist dort ebenfalls die Größe der Architekturen als Parameteranzahl gezeigt. Die höchsten Genauigkeiten erzielten hierbei die \textit{ResNet}, \textit{Inception} und \textit{VGG} Architekturen. \textit{Canziani} veröffentlichte sein Paper im Jahr 2016. Ein Jahr später entwickelte \textit{Howard} \cite{mobilenets} die \textit{Mobilenet} Architektur. Sie zeichnet sich durch die ihre Schnelligkeit bei teilweise höherer Genauigkeit im Vergleich zu bekannten Architekturen aus. Im diesem Kapitel werden Vergleiche zwischen den genannten Netzen gezogen und eine Auswahl für die praktische Anwendung am ALF getroffen.\\
+		Auf dem ALF werden je Kamera 10 Bilder in der Sekunde eingelesen. Folglich wird eine Netzarchitektur verwendet, die in der Lage ist mindestens 20 Bilder in der Sekunde zu verarbeiten. Für eine zukünftige Auslagerung auf ein eingebettetes System soll das neuronale Netz nach den dafür notwendigen Aspekten entwickelt werden. Für die Auswahl der für diese Masterarbeit entsprechenden Architektur werden state-of-the-art Lösungen hinzugezogen. In \textit{Canzianis} Paper \cite{cnnvergleich} werden bekannte CNNs nach der Genauigkeit über die Anzahl der Rechenoperationen pro eingegebenes Bild auf einer Grafik aufgetragen. Als dritte Eigenschaft ist dort ebenfalls die Größe der Architekturen als Parameteranzahl gezeigt. Die höchsten Genauigkeiten erzielten hierbei die \textit{ResNet}, \textit{Inception} und \textit{VGG} Architekturen. \textit{Canziani} veröffentlichte sein Paper im Jahr 2016. Ein Jahr später entwickelte \textit{Howard} \cite{mobilenets} die \textit{Mobilenet} Architektur. Sie zeichnet sich durch die ihre Schnelligkeit bei teilweise höherer Genauigkeit im Vergleich zu bekannten Architekturen aus. Insbesondere soll das ALF Personen auf Bildern erkennen und lokalisieren können. Die genannten Konvolutionsnetze sind in ihrer Grundform lediglich in der Lage Bilder zu klassifieren. Für die Umsetzung einer vollständige Objekterkennung werden die gängigen Lösungen \textit{R-CNN} und \textit{SSD} präsentiert.\\
 		
-		\subsection{VGG}
+		\section*{VGG}
 		\label{subsec: vgg}
 		Die VGG Architektur wurde im Jahr 2015 von \textit{Simonyan} und \textit{Zisserman} \cite{vgg} vorgestellt. Oft wird die die Bezeichnung \textit{VGG-xx} verwendet, wobei \textit{xx} für die Anzahl der Konvolutionsschichten in Addition mit den vollständig verbundenen Schichten steht. Im Vergleich zur \textit{Alexnet} Architektur werden hierbei ausschließlich sehr kleine $3 \times 3$ Filter genutzt \cite{alexnet} \cite{vgg}. Im Gegenzug wurde die Tiefe der Netze erhöht. In dem Paper sind Netze bis zu einer Tiefe von 19 Schichten untersucht worden\cite{vgg}. Es hat sich herausgestellt, dass die Veränderung der Tiefe eines Netzes über die Genauigkeit der Klassifikation bestimmt. So ist das Netz in der Lage sehr hohe Genauigkeiten zu erzielen. Wiederum hängt die Anzahl der Schichten direkt mit dem Speicher- und dem Rechenaufwand eines Netzes zusammen. Ein typisches \textit{VGG-16} Netz benötigt circa 530 MB wegen seiner 138 Millionen Parameter und ist aufgrund dessen für die bereits erwähnte Anwendung an dem ALF nicht geeignet.\\
 		
-		\subsection{ResNet}
+		\section*{ResNet}
 		\label{subsec: resnet}
 		\textit{ResNet} steht für \textit{residual network} und wurde erstmals im Jahr 2015 durch das Paper von \textit{He} veröffentlicht. Diese Architektur fällt besonders durch Verbindungen auf, die es Bildinformationen ermöglicht Schichten zu überspringen. So sind tiefe Zwischenschichten nicht nur von der Ausgabe der vorherigen Schicht abhängig. In Abbildung \ref{fig: residual} ist eine Prinzipdarstellung der Architektur gezeigt. Hierbei wird eine allgemeine Eingabe $x$ in beliebig viele Zwischenschichten eingegeben, die eine Ausgabe $F(x)$ erzeugt. Außerdem wird $x$ durch eine Verbindung mit $F(x)$ addiert.
 		
@@ -620,59 +636,67 @@
 	
 		\textit{ResNet} Netze erreichen je nach Größe eine höhere Genauigkeit als die bereits erwähnten \textit{VGG} Architekturen. Die Größe der Netze erreichen hierbei 152 Schichten. Trotz der entsprechenden Tiefe enthält eine derartiges CNN circa die Hälfte der Parameter im Vergleich zu \textit{VGG} Netzen. Dementsprechend liegt der Speicherbedarf bei circa 230 MB. Für den Einsatz auf eingebetteten Systeme würde ein Netz dieser Größe zu viel Rechenkapazität in Anspruch nehmen, sodass die verarbeitung eines Bildes unter Umständen mehrere Sekunden dauern könnte. \\
 		
-		\subsection{Inception/GoogleNet}
+		\section*{Inception/GoogleNet}
 		\label{subsec: inception}
 		Gemessen an der Genauigkeit liegen \textit{Inception/GoogLeNet} Netze höher als \textit{VGG} und \textit{ResNet} Architekturen. \textit{Szegedy} veröffentlichte die erste Version der \textit{Inception} CNNs in seinem Paper \cite{inception} im Jahr 2015. Die Besonderheit hierbei ist der Einsatz von multiplen Kernels auf die jeweiligen Schichten. Durch diesen Aufbau benötigt ein solches Netz keine vollständig verbundene Schicht zur Klassikation, da die Genauigkeit nur geringfügig beeinträchtigt wird. Gleichzeitig wird ein Großteil der Parameter eingespart. Bei \textit{VGG} Architekturen befinden sich beispielsweise circa 90\percent\text{ }aller Parameter in den vollständig verbundenen Schichten am Ende des Netzes. Das klassische \textit{Inception} Architektur enthält insgesamt 27 Schichten, 22 davon enthalten Parameter \cite{inception}. Somit sind übliche \textit{Inception} Netze circa 90 MB groß und verfügen über 23 Millionen Parameter.\\ 
 		
-		\begin{table}[H]
-			\centering
-			\caption{Umsetzungstabelle mit $d \times (v+1)$ Einträgen, wobei $a_{v+1,d} \in \mathbb{R}$}
-			\begin{tabular}{l|l|l|lll|l}
-				VGG-16 					& ResNet-152 & Inception & MobileNet \\ \Xhline{4\arrayrulewidth}
-				conv[3$\times$3,64]/2	& conv[7$\times$7,64]-2 & $a_{1,2}$ & $\cdots$  \\ \Xhline{1\arrayrulewidth}
-				Pooling					&Pooling				 & $\ddots$  \\ \Xhline{1\arrayrulewidth}
-				c[3$\times$3]-128/2	&c[1$\times$1,64|3$\times$3,64|1$\times$1,256]$\times$3 & c[3$\times$3-r,64|3$\times$3,64] & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				Pooling					&$\left[ \begin{array}{r}\text{conv[1$\times$1,128]}\\\text{conv[3$\times$3,128]}\\\text{conv[1$\times$1,512]}\\\end{array}\right]$& $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				conv[3$\times$3]-256/3	&$\left[ \begin{array}{r}\text{conv[1$\times$1,128]}\\\text{conv[3$\times$3,128]}\\\text{conv[1$\times$1,512]}\\\end{array}\right]$ & $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				Pooling					&$\left[ \begin{array}{r}\text{conv[1$\times$1,128]}\\\text{conv[3$\times$3,128]}\\\text{conv[1$\times$1,512]}\\\end{array}\right]$ & $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				conv[3$\times$3]-512/3	&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				Pooling					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				conv[3$\times$3]-512/3	&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				Pooling					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				FC-4096					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				FC-4096					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				FC-1000					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ \Xhline{1\arrayrulewidth}
-				Softmax					&$a_{v+1,1}$ & $a_{v+1,2}$ & $\cdots$ \\ \hline
-				%-----------------------------Tabelle--------------------
-				\bottomrule
-			\end{tabular}
-			\label{tab: embeddedmatrix}
-		\end{table}
+
 		
-		\subsection{Mobilenets}
+		\section*{Mobilenets}
 		\label{subsec: mobilenets}
-		Zu den bekanntesten state-of-the-art Lösungen gehört die \textit{MobileNet} Architektur aus dem Jahr 2017. \textit{Howard} beschreibt in seiner Paper, dass das Netz effizient hinsichtlich des Zusammenspiels zwischen Geschwindigkeit und Genauigkeit agiert. Anders als bei den bisher genannten Methoden besitzen einige Kernels der Konvolutionsschichten eine dritte Dimension. Diese sind somit in der Lage tiefenorientierte Faltungsprozesse durchzuführen. Weiterhin wird der Rechenaufwand durch sogenannte Weiten- und Auslösungsmultiplikatoren reduziert. In diesem Kapitel wird näher auf die Funktionsweise eines \textit{MobileNet} CNNs eingegangen.\\
+		Zu den bekanntesten state-of-the-art Lösungen gehört die \textit{MobileNet} Architektur aus dem Jahr 2017. \textit{Howard} beschreibt in seiner Paper, dass das Netz effizient hinsichtlich des Zusammenspiels zwischen Geschwindigkeit und Genauigkeit agiert. Anders als bei den bisher genannten Methoden besitzen einige Kernels der Konvolutionsschichten eine dritte Dimension. Diese sind somit in der Lage tiefenorientierte Faltungsprozesse durchzuführen. Weiterhin wird der Rechenaufwand durch sogenannte Weiten- und Auflösungsmultiplikatoren reduziert. In diesem Kapitel wird näher auf die Funktionsweise eines \textit{MobileNet} CNNs eingegangen.\\
 		
-		Ein \textit{MobileNet} Modell basiert grundlegend auf tiefenorientierte, trennbare Konvolution \cite{mobilenets}. Diese setzt sich aus einer Tiefenkonvolution und einer $1\times1$ Faltung, auch punktuelle Konvolution genannt, zusammen \cite{mobilenets}. Der Rechenaufwand $R$ einer konventionellen Konvolutionsschicht kann mit Gleichung \ref{eq: rechenaufwand} beschrieben werden. Hierbei wird die Dimension der Eingangsdaten durch $D_F$ und die Tiefe durch $M$ ausgedrückt. Ein übliches RGB-Bild besitzt beispielsweise die Tiefe 3. Die Größe des Kernels wird in der Gleichung durch die Variable $D_K$, sowie die Tiefe der Ausgangsdaten mit $N$ dargestellt. Im Gegensatz zu üblichen Faltungsprozessen werden die Eingangskanäle während einer tiefenorientierten Konvolution lediglich gefiltert und nicht zusammengeführt \cite{mobilenets}. Somit ist die Tiefe der Ausgangsdaten für die Berechnung des Rechenaufwands bei einer tiefenorientierten Faltung irrelevant und ist in Gleichung \ref{eq: rechenaufwand t} gezeigt. \\
+		Ein \textit{MobileNet} Modell basiert grundlegend auf tiefenorientierte, trennbare Konvolution \cite{mobilenets}. Diese setzt sich aus einer Tiefenkonvolution und einer $1\times1$ Faltung, auch punktuelle Konvolution genannt, zusammen \cite{mobilenets}. Der Rechenaufwand $R$ einer konventionellen Konvolutionsschicht kann mit Gleichung \ref{eq: rechenaufwand} beschrieben werden. Hierbei wird die Dimension der Eingangsdaten durch $D_F$ und die Tiefe durch $M$ ausgedrückt. Ein übliches RGB-Bild besitzt beispielsweise die Tiefe .... Die Größe des Kernels wird in der Gleichung durch die Variable $D_K$, sowie die Tiefe der Ausgangsdaten mit $N$ dargestellt. Im Gegensatz zu üblichen Faltungsprozessen werden die Eingangskanäle während einer tiefenorientierten Konvolution lediglich gefiltert und nicht zusammengeführt \cite{mobilenets}. Somit ist die Tiefe der Ausgangsdaten für die Berechnung des Rechenaufwands bei einer tiefenorientierten Faltung zu vernachlässigen und ist in Gleichung \ref{eq: rechenaufwand t} gezeigt. \\
 		
 		\begin{equation}
-			R=D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F
+			R_p=D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F
 			\label{eq: rechenaufwand}
 		\end{equation}
 		\begin{equation}
-		R=D_K \cdot D_K \cdot M \cdot D_F \cdot D_F
+		R_d=D_K \cdot D_K \cdot M \cdot D_F \cdot D_F
 		\label{eq: rechenaufwand t}
 		\end{equation}\\
 	
+		Durch die Zusammensetzung einer tiefenorientierten und einer punktuellen Faltung wird die Rechenbelastung der tiefenorientierte, trennbare Konvolution durch die in Gleichung \ref{eq: rechenaufwand dw} gezeigte Addition errechnet. Die Kombination der beiden Methoden reduziert den Rechenaufwand um den in Gleichung \ref{eq: rechenersparnis} dargestellten Faktor $\frac{1}{N}+\frac{1}{D^2_K}$ \cite{mobilenets}. In Zahlen ausgedrückt erreicht die \textit{MobileNet} Architektur eine Reduktion der Rechenoperationen um den Faktor 8 bis 9 gegenüber konventionellen Faltungsmethoden \cite{mobilenets}.  \\
+	
+		\begin{equation}
+			R_{dp}=D_K \cdot D_K \cdot M \cdot D_F \cdot D_F + M \cdot N \cdot D_F \cdot D_F
+			\label{eq: rechenaufwand dw}
+		\end{equation}
+		\begin{equation}
+			R_{rdp}=\frac{D_K \cdot D_K \cdot M \cdot D_F \cdot D_F + M \cdot N \cdot D_F \cdot D_F}{D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F}=\frac{1}{N}+\frac{1}{D^2_K}
+			\label{eq: rechenersparnis}
+		\end{equation}\\
 		\input{Bilder/depthwiseconv}
 		
-		Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for  Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
+		Weiterhin nutzt \textit{MobileNet} Weiten- und Auflösungsmultiplikatoren für die Optimierung des Netzes. Der Weitenmultiplikator $\alpha$ reduziert sowohl die Tiefe $M$ der Eingangsdaten durch $\alpha M$, als auch die Tiefe $N$ der Ausgangsdaten durch $\alpha N$. Eine Minimierung der Dimension $D_F$ der Eingangsdaten erfolgt durch den Auflösungsmultiplikator $\rho$ durch $\rho D_F$. Beide Multiplikatoren reduzieren den Rechenaufwand nochmals um $\alpha^2$ und $\rho^2$. Dieser kann somit mit folgender Gleichung dargestellt werden. \\
 		
-		Die \textit{MobileNet} Architektur ermöglicht im Vergleich zu anderen Lösung zur Merkmalsextraktion den gesuchten Spagat zwischen Schnelligkeit, Genauigkeit und Größe des Netzes \cite{mobilenets}. Das Hauptmerkmal ist der Aufbau der Konvolutionsschichten, der zu den genannten Eigenschaften in der Praxis führt \cite{mobilenets} \cite{embedded}. Vergleichsmessungen zu anderen Architekturen werden in den erwähnten Paper durchgeführt. Der \textit{Single Shot Detector} dient als Klassifikator und zeichnet sich besonders durch seine Schnelligkeit aus \cite{ssd}. Er erreicht eine höhere Genauigkeit als andere state-of-the-art Lösungen wie zum Beispiel \textit{Faster R-CNN} \cite{fastercnn} und ist zudem dreimal schneller\cite{ssd}.
+		\begin{equation}
+			R_{dpm}=D_K \cdot D_K \cdot \alpha M \cdot \rho D_F \cdot \rho D_F + \alpha M \cdot \alpha N \cdot \rho D_F \cdot \rho D_F \text{  }\text{mit}\text{  } \alpha \in (0,1] ; \rho \in (0,1]
+			\label{eq: rechenaufwand dw}
+		\end{equation}\\
+	
+		\textit{Howard} vergleicht in seinem Paper die \textit{MobileNet} Architektur mit anderen Netztypen, wie zum Beispiel \textit{Inception} oder \textit{VGG 16}. Bei dem Vergleich ist zu erkennen, dass die verwendeten \textit{MobileNet} CNNS deutlich weniger Parameter nutzen als übliche Netze. Trotzdem wurden lediglich minimale negative Auswirkung bezüglich der Genaiugkeit festgestellt. Gleichzeit ist das Netz um ein Vielfaches schneller als herkömmliche Architekturen mit hoher Genauigkeit. Zudem bewirkt die Einsparung der enthaltenen Parameter einen geringeren Speicheraufwand.
 		
 	
-	
+		\section*{R-CNN}
 		
+		In Kapitel \ref{sec: Objekterkennung} wurde die Aufgabe der Objekterkennung mit damit verbundenen Ausgabe diskutiert. Die bisher präsentierten Lösungen sind ledglich in der Lage eine entsprechende Einghabe zu klassifizieren. Sie können jedoch nicht Objekte in einem Bild lokalisieren. \text{R-CNN} steht für \textit{Region-based Convolutional Neural Network} und wurde 2014 im Paper von \textit{Girshick} erstmals vorgestellt \cite{rcnn}. \textit{R-CNN} bietet die Komplettlösung zur vollständigen Objekterkennung eines Bildes. Mittlerweile gibt es durch diverse Modifikationen dieser Methode die Erweiterungen \textit{fast R-CNN} und \textit{faster R-CNN} \cite{fastrcnn} \cite{fasterrcnn}. Alle zielen darauf hinaus eine Echtzeitanalyse durchzuführen.\\
+		
+		In der grundlegendsten Form besteht ein derartiges Netz aus drei Modulen. Das erste Modul stellt kategorieunabhängige Lokalisierungsvorschläge bereit in denen sich Objekte befinden könnten. Danach folgt ein Faltungsnetzwerk zur Merkmalsextraktion. In den drei Entwicklungsstufen des \textit{R-CNN} wird die \textit{VGG} Architektur verwendet. Die extrahierten Merkmale werden dann im dritten Modul mithilfe des in Kapitel \ref{subsec: Objekterkennung durch alternative Verfahren} erwähnten, linearen SVM klassifiziert.
+		
+		/eventuell Bild des Prozesses wie im Paper rcnn
+		
+		\section*{SSD}
+		
+		Der \textit{Single Shot Multibox Detector} (SSD) bietet ebenfalls eine Komplettlösung zur Objekterkennung. Anders als bei \textit{R-CNN} wird beim \textit{SSD} kein herkömmlicher Detektor als letztes Modul verwendet. Vielmehr handelt es sich hierbei um ein vollständiges CNN.\\
+		
+		Im November 2016 präsentierte \textit{Liu} in seinem Paper den \textit{SSD}, modifiziertes \textit{VGG-16} Netzwerk. Hierbei wurden die vollständig verbundenen Schichten des \textit{VGG-16} Netzes entfernt und durch Konvolutionsschichten ersetzt. Im erwähnten Paper wird ausdrücklich darauf hingewiesen, dass es nicht ausgeschlossen sei andere Architekturen als Basis zu nutzen. Der Name unterteilt sich in \textit{Single Shot}, \textit{Multibox} und \textit{Detector}. Anhand dessen lässt sich die Funktionsweise dieser Methode erklären. \textit{Single Shot} drückt aus, dass die Architektur mit nur einer Bildanalyse auskommt und die Objekterkennung durchführen kann. Die \textit{Multibox} Methode wurde von \textit{Szegedy} entwickelt \cite{multibox}. Diese gibt klassenbasierte Vorschläge zur Objekterkennung in Form von Begrenzungsrahmen aus. Der Aufbau ähnelt in der Grundidee der bereits erwähnten \textit{Inception} Architektur. Die \textit{Multibox} Methode hat einen großen Einfluss auf die Schnelligkeit der gesamten \textit{SSD} Architektur. 
+		
+		
+		
+		
+		  			
 	
 
 			
