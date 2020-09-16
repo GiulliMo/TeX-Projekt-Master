@@ -1,23 +1,35 @@
 \chapter{Konzeptionierung}
 \label{ch: Konzeptionierung}
 
+In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der Statemachine für das autonome Logistikfahrzeug erläutert. Wie auch in der vorangegangenen Bachelorarbeit geschah die Anforderungserhebung mit der Methode des \textit{Conceptual design specification technique for the engineering of complex Systems} (CONSENS). Am Institut für Systemtechnik der Hochschule Bochum wird zur systematischen Spezifikation von komplexen Systemen die \textit{CONSENS} Methode geschult. Die Anforderungen an die beschriebenen Teilsysteme wurden im Lastenheft als Anforderungsliste ... festgehalten. Die Komponenten für die Entwicklung sind im Umfeldmodell und den entsprechenden Wirkstrukturen dargestellt.
 	
 	
 	\section{Anforderungserhebung mit CONSENS}
 	\label{sec: Anforderungserhebung}
-			
+	
+	In Abbildung \ref{fig: consensenv} ist das erweiterte Umfeldmodell des ALFs zu sehen. Das ursprüngliche Umfeldmodell ist in der entsprechenden Bachelorarbeit wiederzufinden \cite{Bachelorarbeit}. Der Aufbau des Entwurfs besteht im Allgemeinen aus hellblauen und gelben Hexagons, die Wirk- und Umfeldelemente repräsentieren. Der Informationsfluss zwischen den Elementen ist durch gestrichelte Pfeile gekennzeichnet. Das ALF gilt als Kern des Gesamtsystems und ist deswegen im Modell mittig dargestellt. Es interagiert sowohl mit Wirk- als auch mit Umfeldelementen, wie in Abbildung \ref{fig: consensenv} gezeigt. Der Zustandsautomat ist ein Teilsystem, das als Erweiterung des Umfelds gilt. Die von Herrn Dittmann entwickelte kann Sprachverarbeitung sowohl auf dem Rechner des ALFs als auch auf dem integrierten \textit{Raspberry Pi} ausgeführt werden \cite{Dittmann}. Transitionsbedingungen können dementsprechend je nach Anwendungsfall durch beide Hardwarekomponenten intern über das \textit{ROS}-Netzwerk an den EA gesendet.       \\
+	
+	\input{Bilder/umfeldmodell}	
+	
+	Die Erweiterung um die Peronenerkennung ist in der in Abbildung \ref{fig: consensctrl} gezeigten Wirkstruktur dargestellt. Eine Wirkstruktur repräsentiert den Inhalt eines Wirkelements und dient zum besseren Verständnis komplexer Zusammenhänge. In diesem Fall wird das Wirkelement mit dem Titel ALF aus dem vorangegangenem Umfeldmodell \ref{fig: consensenv} aufgeschlüsselt. Die hier gezeigt Wirkstruktur wurde um die Personenerkennung und die Sprachverarbeitung erweitert. Elemente mit blassen Farben sind für diese Masterarbeit eher unwichtig und werden weiterhin nicht behandelt. Für den Betrieb der Personenerkennung sind die Bildinformationen der integrierten \textit{Kinect}-Kameras notwendig. Als Ausgabe werden zweidimensionale Positionen von erkannten Personen für das Visualisierungsprogramm \textit{RViz} veröffentlicht. Für eine mögliche Interaktion mit anwesenden Personen können Statusinformationen, wie oben links in Abbildung \ref{fig: consensctrl} dargestellt, asugegeben werden. Die Ausgabe der Sprachverarbeitung hat durch die Klassifikation der Sprache einen Einfluss auf den Zustandsautomaten und ist somit für das Projekt relevant. Im Umfeldmodell wird die Klassifikation als Transitionsbedingung interpretiert und ist dort als solche gekennzeichnet. \\
+		
+	\input{Bilder/wirknav}
+	
+	\input{Bilder/wirkpers}
 	
 	\section{Konzept und Aufbau der Personenerkennung}
+	\label{sec: Konzept Personenerkennung}
+	
 	
 		\subsection{Wirkstruktur der Personenerkennung}
 		
 		\subsection{Auswahl und Training der verwendeten neuronalen Netze}
 		
-		Im diesem Kapitel werden Vergleiche zwischen den genannten Netzen gezogen und eine Auswahl für die praktische Anwendung am ALF getroffen.
+		Im diesem Kapitel werden Vergleiche zwischen den in Kapitel \ref{subsec: Objekterkennung durch neuronale Netze} genannten künstlichen neuronalen Netzen gezogen. Weiterhin wird eine Auswahl für die praktische Anwendung am ALF getroffen. 
 		
 		\input{Bilder/cnnvergleich}	
 		
-		Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for  Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
+		Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
 		
 		Die \textit{MobileNet} Architektur ermöglicht im Vergleich zu anderen Lösung zur Merkmalsextraktion den gesuchten Spagat zwischen Schnelligkeit, Genauigkeit und Größe des Netzes \cite{mobilenets}. Das Hauptmerkmal ist der Aufbau der Konvolutionsschichten, der zu den genannten Eigenschaften in der Praxis führt \cite{mobilenets} \cite{embedded}. Vergleichsmessungen zu anderen Architekturen werden in den erwähnten Paper durchgeführt. Der \textit{Single Shot Detector} dient als Klassifikator und zeichnet sich besonders durch seine Schnelligkeit aus \cite{ssd}. Er erreicht eine höhere Genauigkeit als andere state-of-the-art Lösungen wie zum Beispiel \textit{Faster R-CNN} \cite{fasterrcnn} und ist zudem dreimal schneller\cite{ssd}.
 		

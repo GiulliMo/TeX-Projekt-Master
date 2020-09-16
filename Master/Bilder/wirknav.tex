@@ -1,0 +1,64 @@
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+%\node[CONSENSsys] (env3) at (0,0) {ROS system for manual and autonomous driving};
+\node[CONSENSsysc] (sys1) at (0,0) {Depthimage\\Laserscan(2)};
+\node[CONSENSsysc] (sys2) at (3.5,2) {Laserscan\\Merger};
+\node[CONSENSsysc] (sys3) at (3.5,-2) {Hector\\SLAM};
+\node[CONSENSsysc] (sys4) at (7,-2) {Map\\Server};
+\node[CONSENSsysc] (sys5) at (7,2) {Lokalisierung};
+\node[CONSENSsysc] (sys6) at (0,2) {RPLidar};
+\node[CONSENSsysc] (sys7) at (0,4) {Depthimage\\Laserscan(1)};
+\node[CONSENSsys] (sys8) at (0,6) {Personen-\\erkennung};
+\node[CONSENSsys] (sys9) at (0,-2) {Sprach-\\verarbeitung};
+\node[CONSENSsysc] (sys10) at (7,6) {RViz};
+\node[CONSENSsysc] (sys11) at (10.5,6) {Move Base};
+\node[CONSENSsysc] (sys12) at (10.5,4) {RALFMain};
+
+\draw[CSarrowc,dashed] (sys10) -- node[midway,right,align=center,font=\scriptsize]{Initial-\\pose}(sys5);
+\draw[CSarrowc,dashed] (sys2) -- (sys5) node[above,font=\scriptsize,align=center] at (4.2,4.5){Zusammen-\\geführte\\Messung};
+\draw[CSarrow,dashed] (sys8) -- node[above,font=\scriptsize]{Position der Personen}(sys10);
+\draw[CSarrowc,dashed] (sys3) -- (sys4) node[above,align=center,font=\scriptsize] at (5.9,-1.5){Aktuelle\\Karte};
+\draw[CSarrowc,dashed] (sys10) -- (sys11) node[above] at (8.75,6){\scriptsize \Umbruch{Zielpose}};
+\draw[CSarrowc,dashed] (sys11.153) -- node[above,font=\scriptsize]{Costmap}(sys10.27);
+\draw[CSarrowc,dashed] (sys11) -- node[right,font=\scriptsize]{}(sys12);
+\draw[CSarrowc,dashed] (sys5.east) -| node[align=center,right,font=\scriptsize]{Ist-Pose\\Partikel-\\filter}(sys12.207);
+\draw[CSarrowc,dashed] (sys3.333) -- (4.48,-3) -- (11.5,-3) -- (sys12.333) node[above,font=\scriptsize] at (8,-3){Ist-Pose SLAM};
+\draw[CSarrowc,dashed] (7,0) -- (8.6,0) -- (8.6,5.5) -- (sys10.333);
+\draw[CSarrowc,dashed] (13,4.5) -- node[above,align=center,font=\scriptsize]{\scriptsize Drehzahl\\\scriptsize Drehmoment}(sys12.27);
+\draw[CSarrowc,dashed] (13,3.5) -- node[align=center,above,font=\scriptsize]{Gier-\\winkel}(sys12.333);
+\draw[CSarrow,dashed] (sys8.north) -- node[align=center,left,font=\scriptsize]{Status-\\informationen}(0,8);
+\draw[CSarrow,dashed] (-2.5,4) -- (sys7) node[align=center,font=\scriptsize] at (-0.8,5){Bild-\\informationen};
+\draw[CSarrowc,dashed] (6.02,8) -- node[align=center,left,font=\scriptsize]{Benutzer-\\eingaben}(sys10.153);
+\draw[CSarrowc,dashed] (sys10.27) -- node[align=center,left,font=\scriptsize]{Visua-\\lisierung}(7.98,8);
+\draw[CSarrow,dashed] (-2.5,0) -- (sys1) node[align=center,font=\scriptsize] at (-1.8,-0.5){Bild-\\informationen};
+\draw[CSarrowc,dashed] (-2.5,2) -- (sys6) node[align=center,font=\scriptsize] at (-1.6,2.4){2D\\Laser};
+\draw[CSarrowc,dashed] (-2.5,-2) -- (sys9) node[align=center,font=\scriptsize] at (-1.8,-2.5){Audio-\\signal};
+\draw[CSarrowc,dashed] (sys9.207) -- (-1,-4) node[align=right,font=\scriptsize] at (-0.5,-3.1){Audio-\\stream};
+\draw[CSarrow,dashed] (sys9) -- (0,-4) node[align=center,font=\scriptsize] at (0.5,-3.1){Klassifi-\\kation};
+\draw[CSarrowc,dashed] (5.4,-2) -- (5.4,4) -- (6,4) -- (sys10.207);
+\draw[CSarrow,dashed] (-1.8,4) -- (-1.8,5.5) -- (sys8.207);
+\draw[CSarrow,dashed] (-2,0) -- (-2,6.5) -- (sys8.153);
+%\draw[CSarrow,dashed] (sys10.207) -| (5.25,5) -- (5.25,-1.5) -- (sys3.27);
+\draw[CSarrowc,dashed] (sys3.27) -| (5.1,-1.5) -- (5.1,5.5) -- (sys10.207) node[above,font=\scriptsize] at (4.8,-1.5){};
+\draw[CSarrowc,dashed] (4.6,-1.5) -- (sys3.27);
+\draw[CSarrowc,dashed] (sys1.east) -| (sys2.south) node[align=center,above,font=\scriptsize] at (1.8,0){Messung\\hinten};
+\draw[CSarrowc,dashed] (sys6.east) -- (sys2.west) node[align=center,above,font=\scriptsize] at (1.8,2){Messung\\Lidar};
+\draw[CSarrowc,dashed] (sys7.east) -| (sys2.north) node[align=center,above,font=\scriptsize] at (1.8,4){Messung\\vorne};
+\draw[CSarrowc,dashed] (sys4.north) -- node[align=center,left,font=\scriptsize]{Statische\\Karte}(sys5.south);
+\node[draw=black!40,circle,fill=black!40,scale=0.4] (S1) at (7,0){};
+\node[draw=black!40,circle,fill=black!40,scale=0.4] (S1) at (5.4,-2){};
+\node[draw=black,circle,fill=black,scale=0.4] (S1) at (-1.8,4){};
+\node[draw=black,circle,fill=black,scale=0.4] (S1) at (-2,0){};
+\node[draw=black!40,circle,fill=black!40,scale=0.4] (S1) at (5.1,2){};
+\draw[CSarrowc,dashed] (sys9.27) -- (1,-0.7) -- (8.9,-0.7) -- (8.9,5.5) -- (sys11.207) node[above,font=\scriptsize] at (3,-0.8){Zielpose};
+\draw[CSarrowc,dashed] (sys9.0) -- (1.75,-2) -- (1.75,-4) node[align=left,right,font=\scriptsize] at (1.75,-3.1){Status-\\informationen};
+%\draw[CSarrow,dashed] (-4,1) -| node[above]{\footnotesize \Umbruch{$\vec{x}_{t}$}}(sys2);
+%\draw[CSarrow,dashed] (sys3) -- node[above]{\footnotesize \Umbruch{$\vec{M}_{t+1}$}}(4.8,0);
+%\draw[CSarrow,dashed] (4.8,-1) -| node[below]{\footnotesize \Umbruch{$\vec{\omega}_{t}$}}(sys3.270);
+%\draw[CSarrow,dashed] (-4,-1) -| node[below]{\footnotesize \Umbruch{$\vec{u}_{t+1}$}}(sys1);
+\end{tikzpicture}
+\caption{The system model of the ALV motion control structure. The input of this control is shown on left of this figure. On the right hand sight, the output torque $\vec{M}_{t+1}$ of the described system is illustrated.}
+\label{fig: consensctrl}
+\end{center}
+\end{figure}

@@ -204,7 +204,7 @@
 		
 		Neben der neuronalen Netzen gibt weitere Methoden zur Objekterkennung. Ein gängiges Verfahren zur Merkmalsextraktion ist das sogenannte Histogram of oriented gradients (HoG) von \textit{Dalal} in Verbindung mit der \textit{Linear Support Vector Machine} (SVM).\\
 		
-		Bei diesem Verfahren wird ein Bild in kleine Bereiche, sogenannte Zellen, aufgeteilt \cite{hogsvm}. Für jede Zelle wird ein eindimensionales Histogram extrahiert. Dieses enthält Gradienten die aus den Informationen der Pixel enstehen, wie zum Beispiel durch der Lichtintensität oder der Farbe. Hieraus lassen sich Kanten und Ecken und somit auch Konturen und Muster aus einem Bild erkennen.\\
+		Bei diesem Verfahren wird ein Bild in kleine Bereiche, sogenannte Zellen, aufgeteilt \cite{hogsvm}. Für jede Zelle wird ein eindimensionales Histogram extrahiert. Dieses enthält Gradienten die aus den Informationen der Pixel enstehen, wie zum Beispiel durch der Lichtintensität oder der Farbe. Hieraus lassen sich Kanten und Ecken und somit auch Konturen und Muster aus einem Bild erkennen. In den Abbildungen \ref{fiq: hog} lässt sich die Umwandlung des \textit{HoGs} beobachten. Die Realität, so wie sie eine übliche Fotokamera wiederspiegeln würde, ist in \ref{fiq: hog}b zu erkennen. Die entsprechenden Richtungen der Gradienten werden in \ref{fiq: hog} dargestellt. \\
 		
 		\input{Bilder/hog}
 		
@@ -588,7 +588,7 @@
 		
 		\section*{ResNet}
 		\label{subsec: resnet}
-		\textit{ResNet} steht für \textit{residual network} und wurde erstmals im Jahr 2015 durch das Paper von \textit{He} veröffentlicht. Diese Architektur fällt besonders durch Verbindungen auf, die es Bildinformationen ermöglicht Schichten zu überspringen. So sind tiefe Zwischenschichten nicht nur von der Ausgabe der vorherigen Schicht abhängig. In Abbildung \ref{fig: residual} ist eine Prinzipdarstellung der Architektur gezeigt. Hierbei wird eine allgemeine Eingabe $x$ in beliebig viele Zwischenschichten eingegeben, die eine Ausgabe $F(x)$ erzeugt. Außerdem wird $x$ durch eine Verbindung mit $F(x)$ addiert.
+		\textit{ResNet} steht für \textit{residual network} und wurde erstmals im Jahr 2015 durch das Paper von \textit{He} veröffentlicht. Diese Architektur fällt besonders durch Verbindungen auf, die es Bildinformationen ermöglicht Schichten zu überspringen \cite{resnet}. So sind tiefe Zwischenschichten nicht nur von der Ausgabe der vorherigen Schicht abhängig. In Abbildung \ref{fig: residual} ist eine Prinzipdarstellung der Architektur gezeigt. Hierbei wird eine allgemeine Eingabe $x$ in beliebig viele Zwischenschichten eingegeben, die eine Ausgabe $F(x)$ erzeugt. Außerdem wird $x$ durch eine Verbindung mit $F(x)$ addiert.
 		
 			\tikzset{%
 			every neuron/.style={

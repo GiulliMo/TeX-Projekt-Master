@@ -1,0 +1,47 @@
+\begin{figure}[H]
+	\begin{center}
+		\begin{tikzpicture}
+			%\node[CONSENSsys] (env3) at (0,0) {ROS system for manual and autonomous driving};
+			\node[CONSENSenv] (env1) at (-7,2) {Kinect\\Sensor(1)};
+			\node[CONSENSenv] (env2) at (-7,-2) {Kinect\\Sensor(2)};
+			\node[CONSENSsys] (sys1) at (-2,0) {ALF};
+			\node[CONSENSsys] (sys2) at (-4,4) {Raspberry\\Pi};
+			\node[CONSENSenv] (env3) at (0,4) {Bildschirm};
+		%	\node[CONSENSenv] (env4) at (3,-2) {Bildschirm};
+			\node[CONSENSenv] (env5) at (0,-4) {Fern-\\bedienung};
+			\node[CONSENSenv] (env6) at (-4,-4) {Laut-\\sprecher};
+			\node[CONSENSenv] (env8) at (3,0) {Antriebs-\\einheit};
+			\node[CONSENSenv] (env7) at (-7,0) {Lidar\\Sensor};
+			\node[CONSENSenv] (env9) at (3,2) {Zustands-\\automat};
+			
+			%27 grad von der ebene
+			
+			\draw[CSarrow,dashed] (env1.0) -| (sys1.153) node[align = left, font = \scriptsize] at (-4.25,2.4) {Audio Signal,\\Bildinformationen};
+			\draw[CSarrow,dashed] (env2.0) -| (sys1.207) node[align = left, font = \scriptsize] at (-4.25,-1.6) {Audio Signal,\\Bildinformationen};
+			\draw[CSarrow,dashed] (env7) -- (sys1) node[align = left, font = \scriptsize] at (-4.5,0.4) {Umfeld-\\informationen};
+			\draw[CSarrow,dashed] (sys2.0) -| node[above,align=center,font=\scriptsize]{Winkel\\Daten}(sys1.90);
+			\draw[CSarrow,dashed] (sys1.58) |- (env3.180) node[align = left, font = \scriptsize] at (-1,3) {Visuali-\\sierung};
+			\draw[CSarrow,dashed] (sys1.0) -- node[above,font=\scriptsize]{$4$ x Drehzahlen}(env8.180) ;
+			\draw[CSarrow,dashed] (env5.90) |- node[right,align=center,font=\scriptsize]{Benutzer-\\eingaben}(sys1.333);
+			\draw[CSarrow,dashed] (sys1.270) |- (env6.0) node[align = left, font = \scriptsize] at (-1,-1.7) {Status-\\informationen};	
+			\draw[CSarrow,dashed] (sys1.270) |- (env6.0) node[align = left, font = \scriptsize] at (-1,-1.7) {Status-\\informationen};
+			\draw[CSarrow,dashed] (sys1.40) |- (env9.153) node[align = left, font = \scriptsize] at (1.25,3) {Transitions-\\bedingung};
+			\draw[CSarrow,dashed] (env9.180) -| (sys1.27) node[align = left, font = \scriptsize] at (-0.4,1.5) {Zustand};
+			\draw[CSarrow,dashed] (sys1.122) |- (sys2.333) node[align = left, font = \scriptsize] at (-2.9,2.8) {Audio\\Signal};
+			\draw[CSarrow,dashed] (sys2.90) |- (3,5)--(env9.90) node[align = left, font = \scriptsize] at (0,5.2) {Transitionsbedingung};
+			%% legende
+			
+			\node (rect) at (3,-2.0) [draw,thick,minimum width=4.5cm,minimum height=1.75cm] {};
+			\node [CONSENSlegendenv] [minimum width=3.8mm,minimum height=6.35mm] (env4) at (1.25,-1.4) {};
+			\node [CONSENSlegendsys] [minimum width=3.8mm,minimum height=6.35mm] (sys4) at (1.25,-2.0) {};
+			\draw[CSarrow,dashed] (1.0,-2.6) -- node[right]{\footnotesize \Umbruch{}}(1.6,-2.6);
+			\node [align=left,font=\footnotesize] (txt1) at (3.35,-1.4) {Umfeldelement};
+			\node [align=left,font=\footnotesize] (txt2) at (3.35,-2.0) {Wirkelement};
+			\node [align=left,font=\footnotesize] (txt3) at (3.35,-2.6) {Information};
+			
+
+			\end{tikzpicture}
+			\caption{Abbildung des aus der vorangegangenen Arbeit mit der CONSENS Methode weiterentwickelten Umfeldmodell. Besondere Bedeutung bekommt der Informationsfluss der Wirkelemente \textit{Raspberry Pi} und \textit{ALF} zu dem Umfeldelement \textit{Zustandsautomat}, dieser beinhaltet die Transitionsbedingungen um die Betriebsmodi des ALF zu steuern. Adaptiert aus \cite{ralf}.}
+			\label{fig: consensenv}
+	\end{center}
+\end{figure}

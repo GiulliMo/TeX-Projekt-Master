@@ -35,40 +35,47 @@
   \endentry
 
   \entry{Ertel}{book}{}
-    \name{author}{1}{}{%
-      {{hash=EW}{%
-         family={Ertel},
-         familyi={E\bibinitperiod},
-         given={Wolfgang},
-         giveni={W\bibinitperiod},
+    \name{author}{2}{}{%
+      {{hash=WBW}{%
+         family={W.},
+         familyi={W\bibinitperiod},
+         given={{Bibel,}\bibnamedelima W.{, Ertel,}},
+         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=RK}{%
+         family={R.},
+         familyi={R\bibinitperiod},
+         given={Kruse},
+         giveni={K\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Springer Vieweg}%
     }
-    \strng{namehash}{EW1}
-    \strng{fullhash}{EW1}
+    \strng{namehash}{WBWRK1}
+    \strng{fullhash}{WBWRK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{3. Auflage}
-    \field{title}{Grundkurs Künstliche Intelligenz}
+    \field{title}{Grundkurs Künstliche Intelligenz - Eine praxisorientierte
+  Einführung}
     \field{year}{2013}
   \endentry
 
   \entry{precisionandrecall}{book}{}
     \name{author}{1}{}{%
-      {{hash=CB}{%
-         family={Carterette},
-         familyi={C\bibinitperiod},
-         given={Ben},
-         giveni={B\bibinitperiod},
+      {{hash=BC}{%
+         family={B.},
+         familyi={B\bibinitperiod},
+         given={{Carterette,}},
+         giveni={C\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Springer US}%
     }
-    \strng{namehash}{CB1}
-    \strng{fullhash}{CB1}
+    \strng{namehash}{BC1}
+    \strng{fullhash}{BC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{2126\bibrangedash 2127}
@@ -137,40 +144,30 @@
       }}%
     }
     \list{publisher}{1}{%
-      {MIT Press}%
+      {The MIT Press}%
     }
     \strng{namehash}{CAGIBYu1}
     \strng{fullhash}{CAGIBYu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{\url{http://www.deeplearningbook.org}}
     \field{title}{Deep Learning}
     \field{year}{2016}
   \endentry
 
   \entry{cnnvergleich}{book}{}
-    \name{author}{3}{}{%
-      {{hash=CA}{%
-         family={Canziani},
+    \name{author}{1}{}{%
+      {{hash=CAPuCE}{%
+         prefix={{Canziani,} A.{, Adam,} P.\bibnamedelima und},
+         prefixi={C\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  P\bibinitperiod\bibinitdelim u\bibinitperiod},
+         family={{Culurciello}},
          familyi={C\bibinitperiod},
-         given={Alfredo},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=PA}{%
-         family={Paszke},
-         familyi={P\bibinitperiod},
-         given={Adam},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=CE}{%
-         family={Culurciello},
-         familyi={C\bibinitperiod},
-         given={Eugenio},
+         given={E.},
          giveni={E\bibinitperiod},
       }}%
     }
-    \strng{namehash}{CAPACE1}
-    \strng{fullhash}{CAPACE1}
+    \strng{namehash}{CECAPu1}
+    \strng{fullhash}{CECAPu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{An Analysis of Deep Neural Network Models for Practical
@@ -206,51 +203,65 @@
 
   \entry{vgg}{book}{}
     \name{author}{1}{}{%
-      {{hash=g}{%
-         family={g},
-         familyi={g},
+      {{hash=uZSK}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Zisserman, A.}},
+         familyi={Z\bibinitperiod},
+         given={{Simonyan,}\bibnamedelima K.},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
       }}%
     }
-    \strng{namehash}{g1}
-    \strng{fullhash}{g1}
+    \strng{namehash}{ZSKu1}
+    \strng{fullhash}{ZSKu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{g}
-    \field{year}{2015}
+    \field{title}{Very Deep Convolutional Networks for Large-Scale Image
+  Recognition}
+    \field{year}{2014}
   \endentry
 
   \entry{alexnet}{book}{}
-    \name{author}{3}{}{%
-      {{hash=KA}{%
-         family={Krizhevsky},
-         familyi={K\bibinitperiod},
-         given={Alex},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=SI}{%
-         family={Sutskever},
-         familyi={S\bibinitperiod},
-         given={Ilya},
-         giveni={I\bibinitperiod},
-      }}%
-      {{hash=HGE}{%
-         family={Hinton},
+    \name{author}{1}{}{%
+      {{hash=uHKAI}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Hinton, G.}},
          familyi={H\bibinitperiod},
-         given={Geoffrey\bibnamedelima E},
-         giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod},
+         given={{Krizhevsky,} A.{, Sutskever, }\bibnamedelima I.},
+         giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  I\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Curran Associates, Inc.}%
     }
-    \strng{namehash}{KASIHGE1}
-    \strng{fullhash}{KASIHGE1}
+    \strng{namehash}{HKAIu1}
+    \strng{fullhash}{HKAIu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{1097\bibrangedash 1105}
     \field{title}{ImageNet Classification with Deep Convolutional Neural
   Networks - Advances in Neural Information Processing Systems 25}
     \field{year}{2012}
+  \endentry
+
+  \entry{resnet}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HZRuS}{%
+         family={{He, K.}},
+         familyi={H\bibinitperiod},
+         given={{Zhang, X.,} {Ren, S.} und\bibnamedelima {Sun, J.}},
+         giveni={Z\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
+  u\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HZRuS1}
+    \strng{fullhash}{HZRuS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Deep Residual Learning for Image Recognition}
+    \field{year}{2015}
   \endentry
 
   \entry{inception}{book}{}
@@ -317,61 +328,64 @@
   \endentry
 
   \entry{rcnn}{book}{}
-    \field{pages}{1\bibrangedash 9}
-    \field{year}{2015}
+    \name{author}{2}{}{%
+      {{hash=DGD}{%
+         family={{Darrell, T.}},
+         familyi={D\bibinitperiod},
+         given={{Girshick, R.,}\bibnamedelima {Donahue, J.,}},
+         giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=M}{%
+         family={{Malik, J.}},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DGDM1}
+    \strng{fullhash}{DGDM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{580\bibrangedash 587}
+    \field{title}{Rich Feature Hierarchies for Accurate Object Detection and
+  Semantic Segmentation - 2014 IEEE Conference on Computer Vision and Pattern
+  Recognition (CVPR)}
+    \field{month}{06}
+    \field{year}{2014}
   \endentry
 
   \entry{fastrcnn}{book}{}
     \name{author}{1}{}{%
-      {{hash=GR}{%
-         family={Girshick},
+      {{hash=G}{%
+         family={{Girshick, R.}},
          familyi={G\bibinitperiod},
-         given={Ross},
-         giveni={R\bibinitperiod},
       }}%
     }
-    \strng{namehash}{GR1}
-    \strng{fullhash}{GR1}
+    \strng{namehash}{G1}
+    \strng{fullhash}{G1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Fast R-CNN - Proceedings of the IEEE International Conference
   on Computer Vision (ICCV)}
+    \field{month}{12}
     \field{year}{2015}
-    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{fasterrcnn}{book}{}
-    \name{author}{4}{}{%
-      {{hash=RS}{%
-         family={Ren},
-         familyi={R\bibinitperiod},
-         given={Shaoqing},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=HK}{%
-         family={He},
-         familyi={H\bibinitperiod},
-         given={Kaiming},
-         giveni={K\bibinitperiod},
-      }}%
-      {{hash=GR}{%
-         family={Girshick},
-         familyi={G\bibinitperiod},
-         given={Ross},
-         giveni={R\bibinitperiod},
-      }}%
-      {{hash=SJ}{%
-         family={Sun},
+    \name{author}{1}{}{%
+      {{hash=uSRHG}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Sun, J.}},
          familyi={S\bibinitperiod},
-         given={Jian},
-         giveni={J\bibinitperiod},
+         given={{Ren, S.,} {He, K.,}\bibnamedelima {Girshick, R.}},
+         giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
+  G\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Curran Associates, Inc.}%
     }
-    \strng{namehash}{RS+1}
-    \strng{fullhash}{RSHKGRSJ1}
+    \strng{namehash}{SRHGu1}
+    \strng{fullhash}{SRHGu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{91\bibrangedash 99}
@@ -381,38 +395,62 @@
   \endentry
 
   \entry{multibox}{book}{}
-    \name{author}{4}{}{%
-      {{hash=SC}{%
-         family={Szegedy},
-         familyi={S\bibinitperiod},
-         given={Christian},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=RS}{%
-         family={Reed},
-         familyi={R\bibinitperiod},
-         given={Scott},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=ED}{%
-         family={Erhan},
-         familyi={E\bibinitperiod},
-         given={Dumitru},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=AD}{%
-         family={Anguelov},
+    \name{author}{1}{}{%
+      {{hash=uASRE}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Anguelov, D.}},
          familyi={A\bibinitperiod},
-         given={Dragomir},
-         giveni={D\bibinitperiod},
+         given={{Szegedy, C.,} {Reed, S.,}\bibnamedelima {Erhan, D.}},
+         giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
+  E\bibinitperiod},
       }}%
     }
-    \strng{namehash}{SC+2}
-    \strng{fullhash}{SCRSEDAD1}
+    \strng{namehash}{ASREu1}
+    \strng{fullhash}{ASREu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Scalable, high-quality object detection}
     \field{year}{2015}
+  \endentry
+
+  \entry{Bachelorarbeit}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uDM}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Dittmann, H.}},
+         familyi={D\bibinitperiod},
+         given={{Montorio, G.}},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DMu1}
+    \strng{fullhash}{DMu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Implementierung einer Schlupfregelung per Model-Based Design
+  sowie einer SLAM-Kartografierung für ein autonomes Logistik-Fahrzeug}
+    \field{month}{02}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Dittmann}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HD}{%
+         family={H.},
+         familyi={H\bibinitperiod},
+         given={{Dittman,}},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HD1}
+    \strng{fullhash}{HD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Entwicklung und Verfikation einer Sprachverarbeitung für das
+  autonome Logistik-Fahrzeug ALF}
+    \field{year}{2020}
   \endentry
 
   \entry{embedded}{book}{}

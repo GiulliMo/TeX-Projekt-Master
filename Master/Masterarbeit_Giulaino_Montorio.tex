@@ -76,6 +76,7 @@
 \usepackage{placeins}
 \sloppy
 \usepackage{mathrsfs}
+\usepackage{xcolor}
 \usepackage{pdfpages}
 \usepackage{enumitem}
 \graphicspath{{_img/}}
@@ -100,6 +101,21 @@ sorting=none,%
 ]{biblatex}
 \bibliography{_bib/biblio}
 
+%CONSENS--------------------------------------------------------------------------
+\usetikzlibrary{shapes.symbols}
+\definecolor{CSblueColor}{rgb}{0.8,.92549,1}
+\definecolor{CSyellowColor}{rgb}{1,1,0.6}
+\tikzstyle{CONSENSc} = [double arrow,text=black!40,draw=black!40,thick,double arrow head extend=.0cm,align=center,font=\scriptsize,double arrow tip angle= 120,minimum width=10mm,minimum height=25mm]
+\tikzstyle{CONSENS} = [double arrow,text=black,draw=black,thick,double arrow head extend=.0cm,align=center,font=\scriptsize,double arrow tip angle= 120,minimum width=10mm,minimum height=25mm]
+\tikzstyle{CONSENSlegend} = [double arrow,text=black, draw=black,thick,double arrow head extend=.0cm,double arrow tip angle= 120,minimum width=8.8mm,minimum height=4.35mm]
+\tikzstyle{CONSENSsysc} = [CONSENSc,fill=CSblueColor!40]
+\tikzstyle{CONSENSenvc} = [CONSENSc,fill=CSyellowColor!40]
+\tikzstyle{CONSENSsys} = [CONSENS,fill=CSblueColor]
+\tikzstyle{CONSENSenv} = [CONSENS,fill=CSyellowColor]
+\tikzstyle{CONSENSlegendenv}=[CONSENSlegend,fill=CSyellowColor]
+\tikzstyle{CONSENSlegendsys} = [CONSENSlegend,fill=CSblueColor]
+\tikzstyle{CSarrowc} = [-{triangle 45},text=black!40,draw=black!40]
+\tikzstyle{CSarrow} = [-{triangle 45},text=black,draw=black]
 % QUELLCODE -------------------------------------------------------------------
 \usepackage{listings}
 \definecolor{mygreen}{RGB}{28,172,0} 		% color values Red, Green, Blue
@@ -122,6 +138,7 @@ sorting=none,%
 }
 \usepackage{nicematrix}
 \usepackage{varwidth}
+\newcommand\UmbruchConsens[2][2cm]{\begin{varwidth}{#1}\centering#2\end{varwidth}}
 \newcommand\Umbruch[2][2cm]{\begin{varwidth}{#1}\centering#2\end{varwidth}}
 \usepackage{makecell}
 
