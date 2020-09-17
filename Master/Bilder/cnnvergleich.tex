@@ -1,15 +1,18 @@
-\begin{table}[htbp]
-	\caption{Default Table}
-	\label{Tab:SRNRValues}
+\begin{table}[H]
+	\caption{Vergleich verschiedener Netzarchitekturen in den Eigenschaften Parameter, Speicherplatz, Tiefe, Top-5 Fehler und Top-1 Fehler. Es ist zu beachten, dass die Informationen teilweise je nach Trainings- und Testdatensatz variieren können. Die Top-$x$ Genauigkeit wurde anhand der \textit{ImageNet}-Datenbank festgestellt \cite{keras}. Die Tiefe beschreibt hierbei die topologische Tiefe des Netzes einschließlich jedes Layertyps\cite{keras}.}
 	\begin{center}
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
-			\multirow{2}{1.5cm}{Eigen-schaften}& \multicolumn{4}{p{5cm}|}{\centering Netze} \\
-			\cline{2-5} & \multicolumn{1}{c|}{VGG-16} & \multicolumn{1}{c|}{ResNet} & \multicolumn{1}{c|}{Inecption} & \multicolumn{1}{c|}{MobileNet} \\ \hline
-			Parameter & 27.54 & 13.23 & 6.80 & 6.80 \\
-			Eingabe & 29.55 & 9.61 & 6 & 6.80 \\
-			Top-5 error & 25.99 & 11.49 & 6.15 & 6.80 \\
+			\multirow{2}{*}{Eigenschaften}& \multicolumn{4}{c|}{\centering Netze} \\
+			\cline{2-5} & \multicolumn{1}{c|}{VGG-16} & \multicolumn{1}{c|}{ResNet50} & \multicolumn{1}{c|}{InceptionV3} & \multicolumn{1}{c|}{MobileNet} \\ \hline
+			Parameter (in Millionen)	& 138.357 	& 25.636 	& 23.851 	& 4.253 \\
+			Speicherplatz (in MB)		& 528 		& 98 		& 92 		& 16 \\
+			Tiefe (in Layer) 			& 23 		& -			& 159 		& 88 \\
+			Top-5 Fehler (in \percent)	& 0.901 	& 0.921 	& 0.937		& 0.895 \\
+			Top-1 fehler (in \percent) 	& 0.713 	& 0.749 	& 0.779		& 0.704 \\
 			\hline
 		\end{tabular}
 	\end{center}
+
+	\label{fig: cnnvergleich}
 \end{table}

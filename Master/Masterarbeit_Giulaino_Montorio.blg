@@ -22,49 +22,53 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Masterarbeit_Giulaino_Montorio-blx.bib
 Database file #2: _bib/biblio.bib
+"{" immediately follows a field part---line 134 of file _bib/biblio.bib
+ : title = \url
+ :             {https://keras.io/api/applications/},
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "ralf"
 Biblatex version: 3.13
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 21 entries,
+You've used 22 entries,
             6365 wiz_defined-function locations,
-            1281 strings with 12193 characters,
-and the built_in function-call counts, 125360 in all, are:
-= -- 9736
+            1282 strings with 12198 characters,
+and the built_in function-call counts, 126648 in all, are:
+= -- 9770
 > -- 1801
-< -- 458
-+ -- 2127
+< -- 466
++ -- 2128
 - -- 562
-* -- 9259
-:= -- 13017
+* -- 9273
+:= -- 13039
 add.period$ -- 0
-call.type$ -- 21
+call.type$ -- 22
 change.case$ -- 242
 chr.to.int$ -- 57
-cite$ -- 40
-duplicate$ -- 10378
-empty$ -- 12500
+cite$ -- 42
+duplicate$ -- 10562
+empty$ -- 12723
 format.name$ -- 1056
-if$ -- 26836
+if$ -- 27155
 int.to.chr$ -- 0
-int.to.str$ -- 46
+int.to.str$ -- 47
 missing$ -- 0
-newline$ -- 473
+newline$ -- 476
 num.names$ -- 874
-pop$ -- 6909
+pop$ -- 7244
 preamble$ -- 1
 purify$ -- 330
 quote$ -- 0
-skip$ -- 3408
+skip$ -- 3468
 stack$ -- 0
-substring$ -- 20088
-swap$ -- 2220
-text.length$ -- 408
+substring$ -- 20089
+swap$ -- 2255
+text.length$ -- 416
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 702
+type$ -- 736
 warning$ -- 0
-while$ -- 1357
+while$ -- 1358
 width$ -- 0
-write$ -- 453
-(There was 1 warning)
+write$ -- 455
+(There was 1 error message)

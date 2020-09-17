@@ -22,16 +22,14 @@
 \contentsline {section}{\numberline {3.1}Anforderungserhebung mit CONSENS}{24}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Konzept und Aufbau der Personenerkennung}{27}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Wirkstruktur der Personenerkennung}{27}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Auswahl und Training der verwendeten neuronalen Netze}{27}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Entwickeltes neuronales Netz}{28}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Schnittstelle zwischen Python und ROS}{29}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Erstellung von Objektinformationen}{29}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Funktionsweise des Gesamtsystems}{29}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Umsetzung der Statemachine}{33}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Auslegung des Zustandsautomats}{33}{subsection.3.4.1}%
-\contentsline {chapter}{\numberline {4}Verifikation}{35}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{36}{chapter.5}%
-\contentsline {chapter}{\nonumberline Quellenverzeichnis}{37}{chapter*.31}%
-\contentsline {chapter}{\numberline {A}Anhang}{39}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Abbildungen}{39}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{40}{section.A.2}%
+\contentsline {subsection}{\numberline {3.2.2}Konzept der Bildverarbeitung}{28}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Entwickeltes neuronales Netz}{30}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Konzept und Aufbau des Zustandsautomaten}{31}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Auslegung des Zustandsautomats}{31}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Funktionsweise des Gesamtsystems}{33}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Verifikation}{37}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{38}{chapter.5}%
+\contentsline {chapter}{\nonumberline Quellenverzeichnis}{39}{chapter*.31}%
+\contentsline {chapter}{\numberline {A}Anhang}{41}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Abbildungen}{41}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{42}{section.A.2}%

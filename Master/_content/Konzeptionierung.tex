@@ -11,23 +11,43 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 	
 	\input{Bilder/umfeldmodell}	
 	
-	Die Erweiterung um die Peronenerkennung ist in der in Abbildung \ref{fig: consensctrl} gezeigten Wirkstruktur dargestellt. Eine Wirkstruktur repräsentiert den Inhalt eines Wirkelements und dient zum besseren Verständnis komplexer Zusammenhänge. In diesem Fall wird das Wirkelement mit dem Titel ALF aus dem vorangegangenem Umfeldmodell \ref{fig: consensenv} aufgeschlüsselt. Die hier gezeigt Wirkstruktur wurde um die Personenerkennung und die Sprachverarbeitung erweitert. Elemente mit blassen Farben sind für diese Masterarbeit eher unwichtig und werden weiterhin nicht behandelt. Für den Betrieb der Personenerkennung sind die Bildinformationen der integrierten \textit{Kinect}-Kameras notwendig. Als Ausgabe werden zweidimensionale Positionen von erkannten Personen für das Visualisierungsprogramm \textit{RViz} veröffentlicht. Für eine mögliche Interaktion mit anwesenden Personen können Statusinformationen, wie oben links in Abbildung \ref{fig: consensctrl} dargestellt, asugegeben werden. Die Ausgabe der Sprachverarbeitung hat durch die Klassifikation der Sprache einen Einfluss auf den Zustandsautomaten und ist somit für das Projekt relevant. Im Umfeldmodell wird die Klassifikation als Transitionsbedingung interpretiert und ist dort als solche gekennzeichnet. \\
+	Die Erweiterung um die Peronenerkennung ist in der in Abbildung \ref{fig: consensctrl} gezeigten Wirkstruktur dargestellt. Eine Wirkstruktur repräsentiert den Inhalt eines Wirkelements und dient zum besseren Verständnis komplexer Zusammenhänge. In diesem Fall wird das Wirkelement mit dem Titel ALF aus dem vorangegangenem Umfeldmodell \ref{fig: consensenv} aufgeschlüsselt. Die hier gezeigte Wirkstruktur wurde um die Personenerkennung und die Sprachverarbeitung erweitert. Elemente mit blassen Farben sind für diese Masterarbeit eher unwichtig und werden weiterhin nicht behandelt.\\
+	
+	ür den Betrieb der Personenerkennung sind die Bildinformationen der integrierten \textit{Kinect}-Kameras notwendig. Als Ausgabe werden zweidimensionale Positionen von erkannten Personen für das Visualisierungsprogramm \textit{RViz} veröffentlicht. Für eine mögliche Interaktion mit anwesenden Personen werden Statusinformationen, wie oben links in Abbildung \ref{fig: consensctrl} dargestellt, ausgegeben werden. Die Ausgabe der Sprachverarbeitung hat durch die Klassifikation der Sprache einen Einfluss auf den Zustandsautomaten und ist somit für das Projekt relevant. Im Umfeldmodell wird die Klassifikation als Transitionsbedingung interpretiert und ist dort als solche gekennzeichnet. Die Sprachverarbeitung analysiert vom Benutzer gesprochene Sätze und extrahiert die Intention des Benutzers. Beispielsweise würde der Satz "Drive to position Alpha" die Transitionsbedingungen \textit{drive} und \textit{autonomous} hervorrufen. \\
 		
 	\input{Bilder/wirknav}
 	
-	\input{Bilder/wirkpers}
+	
 	
 	\section{Konzept und Aufbau der Personenerkennung}
 	\label{sec: Konzept Personenerkennung}
 	
+	Die Personenerkennung gilt als eine von zwei in dieser Masterarbeit entwickelten Erweiterungen und gleichzeitig als Hauptthema. Grundlegend werden Personen eindeutig unterschieden und wiedererkannt. Dies stellt die Grundlage einer optischen Interaktion sowie einer Kommunikation mit dem Menschen dar. In diesem Kapitel wird die Personenerkennung in ihrer Struktur und Umsetzung näher erläutert. Weiterhin wird die Auswahl entsprechender Softwarekomponenten gegenübergestellt und somit begründet.\\
+	
+	Grundlage für eine Personenerkennung ist die eindeutige Identifikation. Folglich muss ein System in der Lage sein äußerliche Merkmale festzustellen, die langfristig wiederzuerkennen sind. Wie bereits in Kapitel \ref{sec: Zielsetzung} beschrieben, sollen Personen über Jahre hinweg wiedererkannt werden. Aufgrund dessen konnte das generelle äußere Erscheinungsbild der Person wie zum Beispiel die Kleidung oder die Körperhaltung einer Person als Identifikationsmerkmal ausgeschlossen werden. Derartige Merkmale ändern sich täglich oder sogar minütlich und können somit nicht sicher zugeordnet werden. Das Gesicht eines Menschen kann sich je nach Alter schnell oder langsam verändern. Wird die Benutzergruppe des ALFs auf Menschen zwischen 20 und 70 Jahren beschränkt könnten individuelle Personen schätzungsweise mindestens 5 Jahre durch das Gesicht erkannt werden. Die eindeutige Erkennung setzt also vorraus, dass der Kopf einer Personen mit dem Gesicht zur Kamera des ALFs gerichtet ist. \\ 
 	
 		\subsection{Wirkstruktur der Personenerkennung}
+		\label{subsec: Wirkstrukur Personenerkennung}
 		
-		\subsection{Auswahl und Training der verwendeten neuronalen Netze}
+		In Abbildung \ref{fig: consenspers} ist die Wirkstruktur der Personenerkennung dargestellt. Die Bildinformationen der \textit{Kinect}-Kameras korrespondieren mit den im Umfeldmodell \ref{fig: consensenv} gezeigten Pfeilen. Eine der Gesichtserkennung vorangegangene Personenerkennung spart Rechenleistung ein. Dies wird in Kapitel \ref{sec: Funktionsweise des Gesamtsystems} genauer erläutert.\\
 		
-		Im diesem Kapitel werden Vergleiche zwischen den in Kapitel \ref{subsec: Objekterkennung durch neuronale Netze} genannten künstlichen neuronalen Netzen gezogen. Weiterhin wird eine Auswahl für die praktische Anwendung am ALF getroffen. 
+		\input{Bilder/wirkpers}
+	
+		
+		In den Bildinformationen der integrierten \textit{Kinect}-Kameras befinden sich unter Anderem auch Tiefeninformationen passend zum gelieferten Farbbild. Somit wird die Distanz und die daraus resultierende Position einer Person ebenfalls errechnet. Das Grundlagenkapitel \ref{sec: Bestimmung der Positionskoordinaten} und der Abschnitt \ref{sec: Funktionsweise des Gesamtsystems} führt die Berechnung und die Methodik genauer aus. Eine Datenverarbeitung sorgt letztendlich für das Abspeichern möglichst vieler Information einer erkannten Person. Zukünftige Projekte am ALF können diese Eigenschaften für weitere Entwicklung nutzen.\\   
+		
+		\subsection{Konzept der Bildverarbeitung}
+		\label{subsec: Auswahl und Training der verwendeten neuronalen Netze}
+		
+		In Kapitel \ref{subsec: Objekterkennung durch neuronale Netze} wurde bereits erwähnt, dass state-of-the-art Lösung in den meisten Fällen auf künstliche, neuronale Netze zurückgreifen. Insbesondere werden Konvolutionsnetze bevorzugt, wenn es um eine Umsetzung einer Objekterkennung geht. Auch in dieser Masterarbeit liegt das Hauptaugenmerk auf CNNs. Jedoch werden die in Kapitel \ref{subsec: Objekterkennung durch alternative Verfahren} beschrieben Methoden weiterhin berücksichtigt, indem ihre Leistung mit der der Faltungsnetze verglichen wird. Im Folgenden werden Vergleiche zwischen den in Kapitel \ref{subsec: Objekterkennung durch neuronale Netze} genannten künstlichen neuronalen Netzen gezogen. Weiterhin wird eine Auswahl für die praktische Anwendung am ALF getroffen. \\
+		
+		
 		
 		\input{Bilder/cnnvergleich}	
+		
+		Tabelle \ref{fig: cnnvergleich} zeigt den Vergleich unterschiedlicher Netzarchitekturen. Hierbei ist zu beachten, dass die Angaben je nach Trainings- und Testdatensatz variieren können. Die nähere Auswahl der gezeigten CNNs \textit{VGG-16}, \textit{ResNet50}, \textit{InceptionV3} und \textit{MobileNet} wurde bereits in Kapitel \ref{sec: cnns} begründet. Die Gegenüberstellung der Parameteranzahl und des daraus resultiernden Speicherplatzes zeigt deutlich, dass die \textit{MobileNet}-Architektur hierbei die kleinsten Werte aufweist. Bei der Betrachtung der Genauigkeiten im Hinblick auf die Tiefe der Netze fällt auf, dass sich hierbei offensichtlich keinerlei Relation beschrieben lässt. \textit{InceptionV3} weist bei den Top-$x$ Fehlern die höchsten Werte auf und hat somit die höchste Genauigkeit.\\
+		
+		Im Bezug auf die entwickelte Wirkstruktur \ref{fig: consenspers} zielt der Anwendungsfall darauf hinaus Personen sicher und schnell zu erkennen. Die reine Personendetektion fordert jedoch keine sicherheitsrelevanten Eigenschaften für die Auswahl des Netzes, sodass Abstriche bei der Genauigkeit in Kauf genommen werden können. Für zukünftige Anwendungen auf einem eingebettetem System eignet sich im Vergleich zu den anderen dargestellten Netzarchitekturen \textit{MobileNet} am besten. \\
 		
 		Hinsichtlich der genannten Aspekte wird im Zuge dieser Arbeit ein KNN mit der MobileNet Architektur und dem \textit{Single Shot Detector} (SSD) Framwork verwendet. Die Grundlage der Auswahl wird mithilfe der Paper \textit{MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications} \cite{mobilenets} und \textit{The Implementation of CNN-based Object Detector on ARM Embedded Platforms} \cite{embedded} begründet.\\
 		
@@ -112,13 +132,61 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 		
 		\caption{https://tex.stackexchange.com/questions/132444/diagram-of-an-artificial-neural-network}
 		\end{figure}
-		\subsection{Schnittstelle zwischen Python und ROS}
 		
-		\subsection{Erstellung von Objektinformationen}
-		\label{subsec: Erstellung von Objektinformationen}
+		
+		\section{Konzept und Aufbau des Zustandsautomaten}
+	\label{sec: Umsetzung der Statemachine}
+	Für die Steuerung des autonomen Logistikfahrzeugs durch eine Spracherkennung wurde ein endlicher Automat entwickelt. Die Entwicklung der Spracherkennung wird in der Masterarbeit von Hannes Dittmann erläutert. In der vorangegangenen Bachelorarbeit werden die Fahrfunktionen des Roboters erklärt. Der Grundgedanke und die daraus resultierende Auswahl des Zustandsautomats wird im folgendem Kapitel näher ausgeführt.\\	
+	
+	\subsection{Auslegung des Zustandsautomats}
+	Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes. In der Masterarbeit von Hannes Dittmann werden aufgrund dessen Sprachbefehle kategorisiert. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Eingabeparameter für den EA genutzt. Weiterhin wird zwischen einer manuellen und einer autonomen Fahraufgabe unterschieden und als zweiten Parameter für den Zustandsautomaten genutzt. Anhand der technischen Fähigkeiten des Roboters wurden die Kategorienamen so gewählt, dass alle möglichen Handlungen abgedeckt sind. Der Zustandsautomat wurde so entworfen, dass er trotz der vielen Handlungsmöglichkeiten des Roboters mit möglichst wenig Zuständen arbeitet. Für die größtmögliche Effizienz hinsichtlich der Dimension des EAs wurde ein mathematisches Modell entworfen.\\
+	
+	\begin{equation}
+	\vec{z}=\sum_{z=0}^{z_f} \left[ \begin{array}{r}
+	k_n  \\
+	k_{n+1}  \\
+	.  \\
+	.  \\
+	\end{array}\right] \circ
+	\left[ \begin{array}{r}
+	b_n(z)  \\
+	b_{n+1}(z)  \\
+	.  \\
+	.  \\
+	\end{array}\right]  \circ
+	\left[ \begin{array}{r}
+	1  \\
+	1  \\
+	l(z_f)  \\
+	l(z_f)  \\
+	1  \\
+	f_m  \\
+	f_a  \\
+	l(z_f)\cdot f_a  \\
+	l(z_f)\cdot f_a \\
+	\end{array}\right] 
+	\label{eq: statemachine}
+	\end{equation}\\
+	
+	\begin{equation}
+	b_n(z)=\left\{\begin{array}{ll} 1 \text{ für } z=n \\
+	0 \text{ für }z\neq n\end{array}\right. .
+	\label{eq: Binärfunktion}
+	\end{equation}\\
+	
+	Dies ermöglicht einen sich aufbauenden Endzustand in Form eines Zustandsvektors $\vec{z}$ und wird im folgenden Beispiel anhand der Gleichung \ref{eq: statemachine} und \ref{eq: Binärfunktion} erläutert. Es wird angenommen, dass der Endzustand $z_f=6$ erreicht werden soll. Der sechste, finale Zustand ist die manuelle Steuerung des Roboters über den Controller. Durch die Variable $z$ werden Zustände beschrieben, die vor Erreichen des Endzustands durchlaufen werden müssen. Jeder Zustand $z$ verfügt über eine eigene Knotenmenge $k_n$, die in Form von ROS-Knoten aufgerufen werden. Die Hilfssunktion $b_n(z)$ ist eine binäre Funktion und aktiviert im jeweiligen Index der Summe die benötige Knotenmenge $k_n$
+	
+	
+	
+	
+	In diesem Zusammenhang kam während der Entwicklung die Idee einer Fusion der Personen- und Spracherkennung in der Praxis auf.  
 	
 	\section{Funktionsweise des Gesamtsystems}
-	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des im Kapitel ... beschriebenen autonomen Logistikfahrzeugs. Aufgrund dessen sind einzelne Programme nicht als abgeschlossenes System zu betrachten. In Kapitel .../consens wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung und der Aufbau des entwickelten, endlichen Automats wird im folgenden Kapitel erklärt.\\
+	\label{sec: Funktionsweise des Gesamtsystems}
+	
+	warum erst personenerkenung dan gesicht-- Unter Anderem wird die extrahierte \textit{Feature Map} des Gesichts, die Bildkoordinaten der Person und die tatsächliche globale Position einer Person abgespeichert.
+	
+	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des im Kapitel ... beschriebenen autonomen Logistikfahrzeugs. In Kapitel .../consens wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung und der Aufbau des entwickelten, endlichen Automats wird im folgenden Kapitel erklärt.\\
 	
 	Die Personenerkennung am ALF wird mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben. In Kapitel.../rospython wurden bereits zwei Lösungsansätze in der Softwarentwicklung in Zusammenspiel mit ROS und Python präsentiert. Aufgrund einer starken Belastung der im Roboter verbauten Recheneinheit während der parallelen Bildverarbeitung beider eingehender Bilder, wurde das Programm auf eine serielle Verarbeitung umgestellt. Der Befehl der parallelen Verarbeitung erzwingt Berechnungsprozesse mit derselben Frequenz, die durch den Eingang der Bilder beider Kameras vorgegeben wird. Mithilfe der seriellen Abarbeitung  war es ebenfalls möglich die Häufigkeit der Berechnungen zu steuern und damit verbundene Programmoptimierungen vorzunehmen. Auslastungen des verbauten Computers können so eingespart werden und für weitere, parallel laufende Prozesse genutzt werden. Dies wird zum Beispiel durch eine gezielte Verzögerung der Personenerkennung erreicht. Hierbei werden Pausen mit der gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt bis ein relevantes Bild erkannt wird. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Als relevant werden Bilder eingestuft, die eine Person enthalten.\\
 	
@@ -180,52 +248,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 		\label{fig: Personenerkennung}
 	\end{figure}
 	
-	\section{Umsetzung der Statemachine}
-	\label{sec: Umsetzung der Statemachine}
-	Für die Steuerung des autonomen Logistikfahrzeugs durch eine Spracherkennung wurde ein endlicher Automat entwickelt. Die Entwicklung der Spracherkennung wird in der Masterarbeit von Hannes Dittmann erläutert. In der vorangegangenen Bachelorarbeit werden die Fahrfunktionen des Roboters erklärt. Der Grundgedanke und die daraus resultierende Auswahl des Zustandsautomats wird im folgendem Kapitel näher ausgeführt.\\	
-	
-		\subsection{Auslegung des Zustandsautomats}
-		Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes. In der Masterarbeit von Hannes Dittmann werden aufgrund dessen Sprachbefehle kategorisiert. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Eingabeparameter für den EA genutzt. Weiterhin wird zwischen einer manuellen und einer autonomen Fahraufgabe unterschieden und als zweiten Parameter für den Zustandsautomaten genutzt. Anhand der technischen Fähigkeiten des Roboters wurden die Kategorienamen so gewählt, dass alle möglichen Handlungen abgedeckt sind. Der Zustandsautomat wurde so entworfen, dass er trotz der vielen Handlungsmöglichkeiten des Roboters mit möglichst wenig Zuständen arbeitet. Für die größtmögliche Effizienz hinsichtlich der Dimension des EAs wurde ein mathematisches Modell entworfen.\\
-		
-		\begin{equation}
-			\vec{z}=\sum_{z=0}^{z_f} \left[ \begin{array}{r}
-				k_n  \\
-				k_{n+1}  \\
-				.  \\
-				.  \\
-			\end{array}\right] \circ
-			\left[ \begin{array}{r}
-				b_n(z)  \\
-				b_{n+1}(z)  \\
-				.  \\
-				.  \\
-			\end{array}\right]  \circ
-			\left[ \begin{array}{r}
-				1  \\
-				1  \\
-				l(z_f)  \\
-				l(z_f)  \\
-				1  \\
-				f_m  \\
-				f_a  \\
-				l(z_f)\cdot f_a  \\
-				l(z_f)\cdot f_a \\
-			\end{array}\right] 
-			\label{eq: statemachine}
-		\end{equation}\\
-	
-		\begin{equation}
-			b_n(z)=\left\{\begin{array}{ll} 1 \text{ für } z=n \\
-				0 \text{ für }z\neq n\end{array}\right. .
-			\label{eq: Binärfunktion}
-		\end{equation}\\
-	
-		Dies ermöglicht einen sich aufbauenden Endzustand in Form eines Zustandsvektors $\vec{z}$ und wird im folgenden Beispiel anhand der Gleichung \ref{eq: statemachine} und \ref{eq: Binärfunktion} erläutert. Es wird angenommen, dass der Endzustand $z_f=6$ erreicht werden soll. Der sechste, finale Zustand ist die manuelle Steuerung des Roboters über den Controller. Durch die Variable $z$ werden Zustände beschrieben, die vor Erreichen des Endzustands durchlaufen werden müssen. Jeder Zustand $z$ verfügt über eine eigene Knotenmenge $k_n$, die in Form von ROS-Knoten aufgerufen werden. Die Hilfssunktion $b_n(z)$ ist eine binäre Funktion und aktiviert im jeweiligen Index der Summe die benötige Knotenmenge $k_n$
-	
-		
-		
-		
-		In diesem Zusammenhang kam während der Entwicklung die Idee einer Fusion der Personen- und Spracherkennung in der Praxis auf.  
+
 		
 	
 		
