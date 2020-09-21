@@ -17,19 +17,18 @@
 \contentsline {section}{\numberline {2.3}Vergleich möglicher Konvolutionsnetze}{14}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Zustandsautomat}{21}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Bestimmung von Positionskoordinaten}{22}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Schnittstelle zwischen ROS und Python}{23}{section.2.6}%
 \contentsline {chapter}{\numberline {3}Konzeptionierung}{24}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Anforderungserhebung mit CONSENS}{24}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Konzept und Aufbau der Personenerkennung}{27}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Wirkstruktur der Personenerkennung}{27}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Konzept der Bildverarbeitung}{28}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Entwickeltes neuronales Netz}{30}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Konzept und Aufbau des Zustandsautomaten}{31}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Auslegung des Zustandsautomats}{31}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Funktionsweise des Gesamtsystems}{33}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Verifikation}{37}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{38}{chapter.5}%
-\contentsline {chapter}{\nonumberline Quellenverzeichnis}{39}{chapter*.31}%
-\contentsline {chapter}{\numberline {A}Anhang}{41}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Abbildungen}{41}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{42}{section.A.2}%
+\contentsline {subsection}{\numberline {3.2.3}Entwickeltes neuronales Netz}{31}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Konzept und Aufbau des Zustandsautomaten}{32}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Auslegung des Zustandsautomats}{32}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Funktionsweise des Gesamtsystems}{35}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Verifikation}{39}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{40}{chapter.5}%
+\contentsline {chapter}{\nonumberline Quellenverzeichnis}{41}{chapter*.34}%
+\contentsline {chapter}{\numberline {A}Anhang}{43}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Abbildungen}{43}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{44}{section.A.2}%

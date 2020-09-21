@@ -456,6 +456,28 @@
   \entry{keras}{book}{}
   \endentry
 
+  \entry{leightweight}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uLLLL}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Li, Jianguo}},
+         familyi={L\bibinitperiod},
+         given={{Li, Y.,} {Li, J.,}\bibnamedelima {Lin, W.,}},
+         giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim
+  L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LLLLu1}
+    \strng{fullhash}{LLLLu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Tiny-DSOD: Lightweight Object Detection for
+  Resource-Restricted Usages}
+    \field{month}{07}
+    \field{year}{2018}
+  \endentry
+
   \entry{embedded}{book}{}
     \name{author}{2}{}{%
       {{hash=MZYS}{%
@@ -481,32 +503,6 @@
   Secure Comp., 16th Int. Conf. on Pervasive Intelligence \& Comp., 4th Int.
   Conf. on Big Data Intelligence \& Comp., and 3rd Cyber Sci. and Tech. Cong.}
     \field{year}{2018}
-  \endentry
-
-  \entry{ssd}{book}{}
-    \name{author}{1}{}{%
-      {{hash=uBACLWADDCSCY}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={{Berg,} A.\bibnamedelima C.},
-         familyi={B\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
-  C\bibinitperiod},
-         given={{Liu,} W. {, Anguelov,} D.{, Erhan,} D.{, Szegedy,} C.{, Reed,}
-  S.{, Fu,} C.-Y.},
-         giveni={L\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
-  A\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
-  D\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
-  S\bibinitperiod\bibinitdelim C\bibinithyphendelim Y\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{BACLWADDCSCYu1}
-    \strng{fullhash}{BACLWADDCSCYu1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{pp. 21-37}
-    \field{title}{SSD: Single Shot MultiBox Detector. European conference on
-  computer vision}
-    \field{year}{2016}
   \endentry
 \enddatalist
 \endinput

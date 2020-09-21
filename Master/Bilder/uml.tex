@@ -1,0 +1,53 @@
+\begin{figure}[H]
+	\centering
+
+\begin{tikzpicture}[round/.style={rounded corners=1.5mm,minimum width=3cm,inner sep=2mm,above right,draw,align=left}]
+
+\node[round] (stop) at (1,10) {Stop 0};
+\node[round] (wait) at (1,8) {Warten 1};
+\node[round] (localization) at (3.5,6) {Statische Karte 3};
+\node[round] (slam) at (-1.5,6) {SLAM 2};
+\node[] (autonomname) at (5,2) {Autonom 6};
+\node[round] (explore) at (6,0) {Ziel 8};
+\node[round,align=center] (goal) at (1,0) {Erkunden 7};
+\node[round,above,fit=(explore)(goal)(autonomname)] (autonom) {};
+\node[round,align=center] (manual) at (-4,0) {Manuell 5};
+\node[] (drivename) at (2.5,4) {Fahre 4};
+\node[round,fit=(manual)(autonom)(drivename)] (drive) {};
+
+\draw[-latex] ($(stop.north) + (-0,0.5)$) coordinate (temp) to (stop);
+\fill (temp) circle (0.1);
+\draw[-latex]  (stop) to (wait);
+\draw[-latex,bend left]  (wait.333) to (localization.north);
+\draw[-latex,bend right]  (wait.207) to (slam.north);
+\draw[-latex,bend left]  (slam.south) to (drive.north);
+\draw[-latex,bend right]  (localization.south) to (drive.north);
+\draw[-latex,bend right] ($(autonom.north) + (-2.5,1)$) coordinate (temp2) to (manual.north);
+\draw[-latex,bend left] ($(autonom.north) + (-2.5,1)$) coordinate (temp2) to (autonom.110);
+\fill (temp2) circle (0.1);
+\draw[-latex,bend right] ($(goal.north) + (2.5,0.8)$) coordinate (temp3) to (goal.north east);
+\draw[-latex,bend left] ($(goal.north) + (2.5,0.8)$) coordinate (temp3) to (explore.north west);
+\fill (temp3) circle (0.1);
+%\draw[-latex, bend left] ($(neutral.north east) + (-0.5,0.3)$) coordinate (temp3) to (neutral);
+%\fill (temp3) circle (0.1);
+%\draw[-latex, bend left] (left) to (right);
+%\draw[-latex, bend left] (right) to (left); 
+%\draw[-latex, bend left] (left) to (neutral);
+%\draw[-latex, bend left] (neutral) to (right);
+%\draw[-latex, bend left] (neutral) to (left);
+%\draw[-latex, bend left] (right) to (neutral);
+%
+%\draw[-latex, bend left] (pause) to (running);
+%\draw[-latex, bend left] (pause) to[in=-135,out=-90] (ident);
+%\draw[-latex, bend left] (pause) to (observe);
+%\draw[-latex, bend left] (observe) to (origin);
+%%\draw[-latex, bend left] (origin) to (origin);
+%\draw[-latex, bend left] (origin) to (pause);
+%\draw[-latex, bend left] (running) to (origin);
+%\draw[-latex, bend left] (ident) to[out=-60,in=-90] (origin);
+%\draw[-latex, bend left] (rotLeft) to (rotRight);
+%\draw[-latex, bend left] (rotRight) to (rotLeft);
+\end{tikzpicture}
+\caption{Konzept eines Hierarchischen Zustandsautomats in Form eines UML-Diagram. Zustände sind als Boxen mit Abrundungen dargstellt. Ineinander verschachtelte Zustände erben Funktionen von dem jeweils größeren Zustand. Pfeile deuten mögliche Transitionen an. Startzustände werden durch schwarze Punkte gezeigt.}
+\label{fig: uml}
+\end{figure}

@@ -168,7 +168,7 @@
 	
 		
 		\subsection{Evaluation neuronaler Netze}
-		Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. Im Rahmen dieser Masterarbeit wird die Methode \textit{Precision and Recall} verwendet. Da die Erkennung von Personen auf ein Klassifikationsproblem binärer Natur reduziert werden kann, eignet sich die genannte Herangehensweise. Außerdem werden die neuronalen Netze anhand des Top-5 und Top-1 Fehlers verglichen. Die Grundlagen der entsprechenden Metriken werden im Folgenden vermittelt.\\
+		Die Ausgabe von neuronalen Netzen ist probabilistisch und nicht vorhersehbar. Folglich bestehen diverse Metriken für Evaluationen, die derartige Systeme messbar machen. Im Rahmen dieser Masterarbeit wird die Methode \textit{Precision and Recall} verwendet. Da die Erkennung von Personen auf ein Klassifikationsproblem binärer Natur reduziert werden kann, eignet sich die genannte Herangehensweise. Außerdem werden die neuronalen Netze anhand des Top-5 und Top-1 Fehlers sowie anhand der \textit{mean average precision} (mAP) verglichen. Die Grundlagen der entsprechenden Metriken werden im Folgenden vermittelt.\\
 		
 		\textit{Precision and Recall} ist ein traditionelles Werkzeug zur Evaluation und Leistungsmessung \cite{precisionandrecall}. Der \textit{Recall}-Wert $r(t)$, oder $TPR(t)$ für \textit{Truepositiverate}, beschreibt die Fähigkeit eines System, tatsächlich positive Stichproben zu erkennen. Angewandt auf die Personenerkennung sind Bilder, auf denen Personen zu sehen sind, als tatsächlich positive Stichproben einzustufen. In Gleichung \ref{eq: recall} wird der \textit{Recall}-Wert durch eine Division von allen wahren positiven Werten $TP(t)$ und die Anzahl aller tatsächlich positiven Werte $n_{pos}$ berechnet. Die Variable $t$ definiert den eingestellten Schwellwert. Im Sachkontext ist der Wert als Konfidenz zu betrachten, bei der eine Person als solche klassifiziert wird. Für die Anwendung dieser Methode ist die Kenntnis über negativen Beispielen der Stichprobe nicht notwendig \cite{bildundobjekt}.\\ 
 		
@@ -179,12 +179,14 @@
 		
 		Der \textit{Precision}-Wert $p(t)$ berechnet sich durch das Verhältnis von allen wahren positiven Werten $TP(t)$ durch alle als positiv bewerteten Beispielen $TP(t)$ und $FP(t)$. Durch diesen Wert wird verdeutlicht, wie gut ein System in der Lage ist tatsächlich wahre Werte von tatsächlich falschen Werten zu unterscheiden.\\
 		
-		\begin{equation}
-		p(t)=\frac{TP(t)}{TP(t)+FP(t)}
-		\label{eq: precision}
-		\end{equation}\\
 		
 		Häufig muss in der Praxis ein Kompromiss zwischen \textit{Precision} und \textit{Recall} gefunden werden. Dies lässt sich anhand eines Beispiel in der Personenerkennung veranschaulichen. Das System zur Erkennung wird beispielhaft mit einem hohen \textit{Precision}-Wert betrieben. Ein damit verbundener, niedriger \textit{Recall}-Wert ist in der Praxis üblich. Dies führt dazu, dass irrelevanter Bildinhalt selten als Person klassifiert wird. Jedoch kommt es eher häufig vor, dass keine Person detektiert wird obwohl eine zu sehen ist. Legt man nun den Fokus auf einen hohen \textit{Recall}, sinkt der \textit{Precision}-Wert. Personen würden dann zwar häufiger als Person klassifiziert werden, jedoch wird irrelevanter Bildinhalt ebenfalls häufig als Person klassifiziert. Je nach Anwendungsfall eines Netzes wird dann der entsprechende Betriebspunkt zwischen \textit{Precision} und \textit{Recall} gewählt.\\
+		
+		\begin{equation}
+		mAP = \frac{1}{N}\sum_{i=1}^{N}\frac{TP_i}{TP+FP}
+		\end{equation}\\
+		
+		Der \textit{mAP}-Wert oder auch die mittlere druchschnittliche Genauigkeit hat in der Berechnung Ähnlichkeiten zum bereits vorgestellten \textit{Precision} und \textit{Recall}. \\
 		
 		Eine einfache Betrachtung zur Evaluierung der Qualität hinsichtlich der Genauigkeit eines Netzes liefert der Top-$x$ Fehler. Der Platzhalter $x$ kann zunächst durch eine beliebige Zahl ersetzt werden. In der Praxis hat sich jedoch der Top-5 und der Top-1 Fehler als Vergleich durchgesetzt. Hierbei wird zunächst ein Bild durch ein beliebiges KNN analysiert und über die Ausgabeschicht extrahiert. Als Beispiel sollte sich im optimalen Fall die tatsächliche Klasse des Bildes unter den $x$ wahrscheinlichsten Klassen befinden, die über das Netz ausgegeben wurden. Folglich sagt der Top-1 Fehler aus, wie oft ein Netz ein eingegebenes Bild falsch klassifiziert hat. In vielen Paper zu neuen, künstlichen, neuronalen Netzen wird so die Genauigkeit mit bereits bestehenden Netzen verglichen.
 		
@@ -680,10 +682,10 @@
 		
 	
 		\section*{R-CNN}
+		überarbeiten
+		... \text{R-CNN} steht für \textit{Region-based Convolutional Neural Network} und wurde 2014 im Paper von \textit{Girshick} erstmals vorgestellt \cite{rcnn}. \textit{R-CNN} bietet die Komplettlösung zur vollständigen Objekterkennung eines Bildes. Mittlerweile gibt es durch diverse Modifikationen dieser Methode die Erweiterungen \textit{fast R-CNN} und \textit{faster R-CNN} \cite{fastrcnn} \cite{fasterrcnn}. Alle zielen darauf hinaus eine Echtzeitanalyse durchzuführen.\\
 		
-		In Kapitel \ref{sec: Objekterkennung} wurde die Aufgabe der Objekterkennung mit damit verbundenen Ausgabe diskutiert. Die bisher präsentierten Lösungen sind ledglich in der Lage eine entsprechende Einghabe zu klassifizieren. Sie können jedoch nicht Objekte in einem Bild lokalisieren. \text{R-CNN} steht für \textit{Region-based Convolutional Neural Network} und wurde 2014 im Paper von \textit{Girshick} erstmals vorgestellt \cite{rcnn}. \textit{R-CNN} bietet die Komplettlösung zur vollständigen Objekterkennung eines Bildes. Mittlerweile gibt es durch diverse Modifikationen dieser Methode die Erweiterungen \textit{fast R-CNN} und \textit{faster R-CNN} \cite{fastrcnn} \cite{fasterrcnn}. Alle zielen darauf hinaus eine Echtzeitanalyse durchzuführen.\\
-		
-		In der grundlegendsten Form besteht ein derartiges Netz aus drei Modulen. Das erste Modul stellt kategorieunabhängige Lokalisierungsvorschläge bereit in denen sich Objekte befinden könnten. Danach folgt ein Faltungsnetzwerk zur Merkmalsextraktion. In den drei Entwicklungsstufen des \textit{R-CNN} wird die \textit{VGG} Architektur verwendet. Die extrahierten Merkmale werden dann im dritten Modul mithilfe des in Kapitel \ref{subsec: Objekterkennung durch alternative Verfahren} erwähnten, linearen SVM klassifiziert.
+		In der grundlegendsten Form besteht ein derartiges Netz aus drei Modulen. Das erste Modul stellt kategorieunabhängige Lokalisierungsvorschläge bereit in denen sich Objekte befinden könnten. Danach folgt ein Faltungsnetzwerk zur Merkmalsextraktion. In den drei Entwicklungsstufen des \textit{R-CNN} wird die \textit{VGG} Architektur zur Merkmalsextraktion verwendet. Die extrahierten Merkmale werden dann im dritten Modul mithilfe des in Kapitel \ref{subsec: Objekterkennung durch alternative Verfahren} erwähnten, linearen SVM klassifiziert.
 		
 		/eventuell Bild des Prozesses wie im Paper rcnn
 		
@@ -691,7 +693,7 @@
 		
 		Der \textit{Single Shot Multibox Detector} (SSD) bietet ebenfalls eine Komplettlösung zur Objekterkennung. Anders als bei \textit{R-CNN} wird beim \textit{SSD} kein herkömmlicher Detektor als letztes Modul verwendet. Vielmehr handelt es sich hierbei um ein vollständiges CNN.\\
 		
-		Im November 2016 präsentierte \textit{Liu} in seinem Paper den \textit{SSD}, modifiziertes \textit{VGG-16} Netzwerk. Hierbei wurden die vollständig verbundenen Schichten des \textit{VGG-16} Netzes entfernt und durch Konvolutionsschichten ersetzt. Im erwähnten Paper wird ausdrücklich darauf hingewiesen, dass es nicht ausgeschlossen sei andere Architekturen als Basis zu nutzen. Der Name unterteilt sich in \textit{Single Shot}, \textit{Multibox} und \textit{Detector}. Anhand dessen lässt sich die Funktionsweise dieser Methode erklären. \textit{Single Shot} drückt aus, dass die Architektur mit nur einer Bildanalyse auskommt und die Objekterkennung durchführen kann. Die \textit{Multibox} Methode wurde von \textit{Szegedy} entwickelt \cite{multibox}. Diese gibt klassenbasierte Vorschläge zur Objekterkennung in Form von Begrenzungsrahmen aus. Der Aufbau ähnelt in der Grundidee der bereits erwähnten \textit{Inception} Architektur. Die \textit{Multibox} Methode hat einen großen Einfluss auf die Schnelligkeit der gesamten \textit{SSD} Architektur. 
+		Im November 2016 präsentierte \textit{Liu} in seinem Paper den \textit{SSD}, modifiziertes \textit{VGG-16} Netzwerk. Hierbei wurden die vollständig verbundenen Schichten des \textit{VGG-16} Netzes entfernt und durch Konvolutionsschichten ersetzt. Im erwähnten Paper wird ausdrücklich darauf hingewiesen, dass es nicht ausgeschlossen sei andere Architekturen für die Merkmalsextraktion zu nutzen. Der Name unterteilt sich in \textit{Single Shot}, \textit{Multibox} und \textit{Detector}. Anhand dessen lässt sich die Funktionsweise dieser Methode erklären. \textit{Single Shot} drückt aus, dass die Architektur mit nur einer Bildanalyse auskommt und die Objekterkennung durchführen kann. Die \textit{Multibox} Methode wurde von \textit{Szegedy} entwickelt \cite{multibox}. Diese gibt klassenbasierte Vorschläge zur Objekterkennung in Form von Begrenzungsrahmen aus. Der Aufbau ähnelt in der Grundidee der bereits erwähnten \textit{Inception} Architektur. Die \textit{Multibox} Methode hat einen großen Einfluss auf die Schnelligkeit der gesamten \textit{SSD} Architektur. 
 		
 		
 		
@@ -733,7 +735,7 @@
 	
 	Beim Vergleich der beiden Gleichungen ... und ... stellt sich heraus, dass die Ausgangsfunktion $psi$ in der Beschreibung des Verhaltens eines endlichen Automaten durch Moore lediglich vom Ausgang zum Zeitpunkt $t$ abhängig ist.
 	
-	Eine Unterkategorie der Finiten Automaten ist der Hierarchische Zustandsautomat. Die Besonderheit hierbei ist die Zusammensetzung aller vorangegangenen Zustände eines aktiven Zustands. Diese sind bei der hier beschriebenen hierarchisch aufgebauten Maschine nämlich ebenfalls aktiv. So besteht die Möglichkeit eines aufeinander aufbauenden Endzustands. 
+	Eine Unterkategorie der Finiten Automaten ist der Hierarchische Zustandsautomat. Die Besonderheit hierbei ist, dass mehr als nur ein Zustand aktiv sein kann. Genauer sind alle Zustände aktiv, die bis zur Aktivierung des aktuellen Zustands aufgerufen worden sind. Diese sind bei der hier beschriebenen hierarchisch aufgebauten Maschine nämlich ebenfalls aktiv. So besteht die Möglichkeit eines aufeinander aufbauenden Endzustands. 
 	
 	
 		
@@ -764,7 +766,7 @@
 		\label{fig: antworten}
 	\end{figure}
 
-	\section{Schnittstelle zwischen ROS und Python}
+
 	     
 	
 
