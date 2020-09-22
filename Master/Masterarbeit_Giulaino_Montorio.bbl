@@ -17,6 +17,99 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{sopra}{book}{}
+    \name{author}{1}{}{%
+      {{hash=GSS}{%
+         family={GmbH},
+         familyi={G\bibinitperiod},
+         given={Sopra\bibnamedelima Steria},
+         giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GSS1}
+    \strng{fullhash}{GSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Potenzialanalyse Künstliche Intelligenz}
+    \field{month}{02}
+    \field{year}{2017}
+  \endentry
+
+  \entry{Bachelorarbeit}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uDM}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Dittmann, H.}},
+         familyi={D\bibinitperiod},
+         given={{Montorio, G.}},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DMu1}
+    \strng{fullhash}{DMu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Implementierung einer Schlupfregelung per Model-Based Design
+  sowie einer SLAM-Kartografierung für ein autonomes Logistik-Fahrzeug}
+    \field{month}{02}
+    \field{year}{2019}
+  \endentry
+
+  \entry{Dittmann}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HD}{%
+         family={H.},
+         familyi={H\bibinitperiod},
+         given={{Dittman,}},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HD1}
+    \strng{fullhash}{HD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Entwicklung und Verfikation einer Sprachverarbeitung für das
+  autonome Logistik-Fahrzeug ALF}
+    \field{year}{2020}
+  \endentry
+
+  \entry{saeorg}{book}{}
+    \name{author}{1}{}{%
+      {{hash=IS}{%
+         family={International},
+         familyi={I\bibinitperiod},
+         given={SAE},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IS1}
+    \strng{fullhash}{IS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{https://www.sae.org/about - zugegriffen am 22.09.2020}
+    \field{title}{About SAE International}
+    \field{year}{2020}
+  \endentry
+
+  \entry{sae}{book}{}
+    \name{author}{1}{}{%
+      {{hash=IS}{%
+         family={International},
+         familyi={I\bibinitperiod},
+         given={SAE},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IS1}
+    \strng{fullhash}{IS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Automated Driving - Levels of driving are edfined in new SAE
+  International standard J3016}
+    \field{year}{2014}
+  \endentry
+
   \entry{Kriesel}{book}{}
     \name{author}{1}{}{%
       {{hash=DK}{%
@@ -150,6 +243,7 @@
     \strng{fullhash}{CAGIBYu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{note}{http://www.deeplearningbook.org - zugegriffen am 21.09.2020}
     \field{title}{Deep Learning}
     \field{year}{2016}
   \endentry
@@ -414,46 +508,11 @@
     \field{year}{2015}
   \endentry
 
-  \entry{Bachelorarbeit}{book}{}
-    \name{author}{1}{}{%
-      {{hash=uDM}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={{Dittmann, H.}},
-         familyi={D\bibinitperiod},
-         given={{Montorio, G.}},
-         giveni={M\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{DMu1}
-    \strng{fullhash}{DMu1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Implementierung einer Schlupfregelung per Model-Based Design
-  sowie einer SLAM-Kartografierung für ein autonomes Logistik-Fahrzeug}
-    \field{month}{02}
-    \field{year}{2019}
-  \endentry
-
-  \entry{Dittmann}{book}{}
-    \name{author}{1}{}{%
-      {{hash=HD}{%
-         family={H.},
-         familyi={H\bibinitperiod},
-         given={{Dittman,}},
-         giveni={D\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{HD1}
-    \strng{fullhash}{HD1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Entwicklung und Verfikation einer Sprachverarbeitung für das
-  autonome Logistik-Fahrzeug ALF}
-    \field{year}{2020}
-  \endentry
-
   \entry{keras}{book}{}
+    \field{labeltitlesource}{title}
+    \field{note}{https://keras.io/api/applications/ - zugegriffen am
+  17.09.2020}
+    \field{title}{Keras Applications}
   \endentry
 
   \entry{leightweight}{book}{}

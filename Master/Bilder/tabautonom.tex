@@ -1,0 +1,25 @@
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\begin{table}[H]
+	\caption{Übersicht über die sechs Automatisierungsstufen nach SAE Standard J3016. Die Angaben wurde von der Quelle übernommen und sind sinngemäß übersetzt. \cite{sae}  }
+	\begin{center}
+		\begin{tabular}{|M{10mm}|M{48mm}|M{20mm}|M{20mm}|M{15mm}|M{20mm}|}
+			\hline
+			SAE Level  & Name & Ausführung von Fahrbefehlen & Erfassung der Umgebung& Fallback Performance& System-auswirkung\\ \hline
+			\multicolumn{6}{|c|}{Benutzer überwacht die Fahrumgebung}\\ \hline
+			
+			0	& Keine Automatisiering			&Benutzer   &Benutzer &Benutzer & k.A.	 \\ \hline
+			1	& Assisitiert					& Benutzer \& System &Benutzer &Benutzer & Einige Fahrmodi	 \\ \hline
+			2	& Teilautomatisiert				& System 	 &Benutzer&Benutzer&Einige Fahrmodi	 \\ \hline
+			\multicolumn{6}{|c|}{Automatisiertes System - System überwacht Fahrumgebung}\\ \hline
+			3	& Bedingte Automatisierung		& System &System&Benutzer&Einige Fahrmodi	 \\ \hline
+			4	& Hochautomatsisiert			& System &System&System&Einige Fahrmodi	 \\ \hline
+			5	& Vollautomatisiert (autonom)	& System&System&System&Alle Fahrmodi	 \\
+		
+			
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\label{fig: tabautonom}
+\end{table}

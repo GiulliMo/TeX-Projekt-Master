@@ -69,7 +69,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 	Bisher wurden für den Aufruf der Fahrfunktionen in \textit{ROS} ausführbare Dateien aufgerufen \cite{Bachelorarbeit}. Hierbei mussten der Benutzer darauf achten, diese Dateien nicht im geringen Zeitabstand und vor allem in der richtigen Reihenfolge aufzurufen. Zu jedem Anwendungsfall gehörten entsprechende Dateien. Ein hierarchischer Zustandsautomat unterbindet die Probleme indem sich der Endzustand durch zuvor aufgerufene Zustände zusammensetzt. Der Aufruf verschiedner \textit{ROS}-Knoten in der korrekten Reihenfolge wird somit autark geregelt. Für die Steuerung des EAs wird eine Spracherkennung verwendet. Die Auswahl der Spracherkennung zur Steuerung des Zustandsautomats wird in Kapitel \ref{sec: Motivation} begründet. Die Entwicklung der Spracherkennung wird in der Masterarbeit von Hannes Dittmann erläutert. Die Auswahl des Zustandsautomats wird im folgendem Kapitel näher ausgeführt.\\	
 	
 	\subsection{Auslegung des Zustandsautomats}
-	Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes. In der Masterarbeit von Hannes Dittmann werden aufgrund dessen Sprachbefehle kategorisiert \cite{Dittmann}. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Eingabeparameter für den EA genutzt. Weiterhin wird zwischen einer manuellen und einer autonomen Fahraufgabe unterschieden und als zweiten Parameter für den Zustandsautomaten genutzt. Anhand der technischen Fähigkeiten des Roboters wurden die Kategorienamen so gewählt, dass alle möglichen Handlungen abgedeckt sind. Der Zustandsautomat wurde so entworfen, dass er trotz der umfangreichen Fahrfunktionen des Roboters mit möglichst wenig Zuständen arbeitet. Für die größtmögliche Effizienz hinsichtlich der Dimension und Funktionsweise des EAs wurde ein mathematisches Modell entworfen.\\
+	Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes. In der Masterarbeit von Hannes Dittmann werden aufgrund dessen Sprachbefehle kategorisiert \cite{Dittmann}. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Eingabeparameter für den EA genutzt. Weiterhin wird zwischen einer manuellen und einer autonomen Fahraufgabe unterschieden und als zweiten Parameter für den Zustandsautomaten genutzt. Anhand der technischen Fähigkeiten des Roboters wurden die Kategorienamen so gewählt, dass alle möglichen Handlungen abgedeckt sind. Der Zustandsautomat wurde so entworfen, dass er trotz der umfangreichen Fahrfunktionen des Roboters mit möglichst wenig Zuständen arbeitet. Außerdem deckt der Automat teilweise die Richtlinien nach Level 4 der in Kapitel \ref{sec: Motivation} gezeigten Tabelle ... . Für die größtmögliche Effizienz hinsichtlich der Dimension und Funktionsweise des EAs wurde ein mathematisches Modell entworfen.\\
 	
 	\begin{equation}
 	\vec{z}=\sum_{z_0}^{z_f} \left[ \begin{array}{r}
@@ -87,29 +87,79 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 	\left[ \begin{array}{r}
 	1  \\
 	1  \\
-	m_{2}  \\
-	m_{3}   \\
+	m_{2}(z_f)  \\
+	m_{3}(z_f)   \\
 	1  \\
-	m_{5}   \\
-	...   \\
-	m_{8}  \\
+	m_{5}(z_f)  \\
+	1   \\
+	m_{7}(z_f)   \\
+	m_8(z_f)  \\
 	\end{array}\right]
 	\text{ für }z_f\in[0;8] \text{ und }z_0=0 oder 1
 	\label{eq: statemachine}
 	\end{equation}\\
 	
-		Anhand der Gleichungen \ref{eq: statemachine} und \ref{eq: Binärfunktion} wird der mathematische Hintergrund des EAs erläutert. Der hierarchische Zustandsautomat ermöglicht einen finalen, sich aufbauenden Zustand $\vec{z}$. Dieser wird anhand der in Gleichung \ref{eq: statemachine} dargestellten Summe berechnet. Beginnend vom Anfangszustand $z_0$ wird jeder mögliche $z$ bis zum finalen Zustand $z_f$ addiert. Bei der Addition geht es hauptsächlich darum, dem Anwendungsfall entsprechende \textit{ROS}-Knoten aufzurufen. Zu einem Zustand fest zugehörige Knotengruppen werden in Gleichung \ref{eq: statemachine} mit $k$ bezeichnet. Dessen Index deutet auf die Zugehörigkeit des Knotens zum jeweiligen Zustand. Hierbei werden die drei möglichen Endzustände wie im UML-Diagram \ref{fiq: uml} nummeriert.\\
+		Anhand der Gleichungen \ref{eq: statemachine} und \ref{eq: Binärfunktion} wird der mathematische Hintergrund des EAs erläutert. Der hierarchische Zustandsautomat ermöglicht einen finalen, sich aufbauenden Zustand $\vec{z}$. Dieser wird anhand der in Gleichung \ref{eq: statemachine} dargestellten Summe berechnet. Beginnend vom Anfangszustand $z_0$ wird jeder mögliche $z$ bis zum finalen Zustand $z_f$ addiert. Bei der Addition geht es hauptsächlich darum, dem Anwendungsfall entsprechende \textit{ROS}-Knoten aufzurufen. Zu einem Zustand fest zugehörige Knotengruppen werden in Gleichung \ref{eq: statemachine} mit $k$ bezeichnet. Dessen Index deutet auf die Zugehörigkeit des Knotens zum jeweiligen Zustand. Hierbei werden die möglichen Endzustände wie in Abbildung \ref{fig: uml} nummeriert.\\
+		
+		Die Knotengruppe $k_0$ gehört zu dem Zustand \textit{Stop} und leitet den risikominalen Zustand ein. Dieser wird erreicht, indem alle \textit{ROS}-Knoten inklusive des des \textit{ROS}-Netzwerks heruntergefahren werden. So kann sichergestellt werden, dass keine Nachrichten an die Motorsteuergeräte der vier verbauten Motoren gesendet werden. Der Zustand \textit{Stop} kann nur verlassen werden, indem ein sicherer Wechsel in den Folgezustand \textit{Warten} durch den Benutzer zugesichert wird. Die Abfrage erfolgt sowohl über die Tastatur, als auch über Sprache. Alle folgenden Zustände enthalten der jeweiligen Anwendung entsprechende Knottengruppen. Eine Auflistung aller Zustände in im Anhang ... aufgeführt.\\ 
 	
 	\begin{equation}
 	b(z)=\left\{\begin{array}{ll} 1 \text{ für } z=n \\
-	0 \text{ für }z\neq n\end{array}\right. .
+	0 \text{ für }z\neq n\end{array}\right. 
 	\label{eq: Binärfunktion}
 	\end{equation}\\
 		
 		Gleichung \ref{eq: Binärfunktion} zeigt die verwendete Binärfunktion $b(z)$. Je nach Iterationsschritt de- und aktiviert die Funktion $b(z)$ rein binär die korrekte Zeile in Gleichung \ref{eq: statemachine}. Nicht aktive Zustände werden mit 0 multipliziert sowie aktive mit einer einfachen Verstärkung beaufschlagt. \\
 		
-		Der ebenfalls binäre Vektor $m$ ist in seiner Ausführung softwaretechnisch von der Zusammensetzung des Endzustands abhängig. Dieser Sachverhalt wird beispielsweise mithilfe der manuellen Fahrfunktion erklärt. Diese wird automatisiert mit einer statischen Karte gestartet, in der sich der Roboter durch einen Partikelfilter selbst findet. Hat der Benutzer jedoch zuvor eine Lokalisierung mithilfe der \textit{SLAM}-Methode gefordert, kann dieselbe Fahraufgabe mit einer sich aufbauenden Karte vollzogen werden. Widerrum schließen sich diverse Zustände gegenseitig aus. Eine bestimmte Zielpose ist von dem Ursprung einer statischen Karte abhängig. Diese ist beim \textit{SLAM}-Algorhitmus jeodch nicht vorhanden. So kann folglich kein Ziel angefahren werden, wenn zuvor die Lokalisierung mithilfe von \textit{SLAM} abgeschlossen wurde. Die Vektorelemente $m_2$ und $m_3$ sind davon abhängig, ob eine Fahraufgabe...
-	
+		Die ebenfalls binären Vektorelemente $m_n(z_f)$ sind mathematisch von der Zusammensetzung des Endzustands abhängig. Dieser Sachverhalt wird beispielsweise mithilfe der manuellen Fahrfunktion erklärt. Diese wird automatisiert mit einer statischen Karte gestartet, in der sich der Roboter durch einen Partikelfilter selbst findet. Hat der Benutzer jedoch zuvor eine Lokalisierung mithilfe der \textit{SLAM}-Methode gefordert, kann dieselbe Fahraufgabe mit einer sich aufbauenden Karte vollzogen werden. Widerrum schließen sich diverse Zustände gegenseitig aus. Eine bestimmte Zielpose ist von dem Ursprung einer statischen Karte abhängig. Diese ist beim \textit{SLAM}-Algorhitmus jeodch nicht vorhanden. So kann folglich kein Ziel angefahren werden, wenn zuvor die Lokalisierung mithilfe von \textit{SLAM} abgeschlossen wurde.\\
+		
+		\begin{figure}[H]
+			\centering
+			\begin{minipage}[b]{0.4\textwidth}
+				\begin{equation}
+					m_2(z_f)=\left\{\begin{array}{ll} 1 \text{ für } z_f=2,7 \\
+					0 \text{ für }z_f\neq 2,7\end{array}\right. 
+					\label{eq: m2}
+				\end{equation}\\
+			\end{minipage}
+			\hfill
+			\begin{minipage}[b]{0.55\textwidth}
+				\begin{equation}
+					m_3(z_f)=\left\{\begin{array}{ll} 1 \text{ für } z_f\neq2,7 \wedge m_2(z_f) = 0 \\
+					0 \text{ für }z_f= 2,7\end{array}\right.
+					\label{eq: m3}
+				\end{equation}\\
+			\end{minipage}
+		\end{figure}
+		
+		Nur einer der Vektorelemente $m_2(z_f)$ und $m_3(z_f)$ kann aktiv sein. Der Modus entspricht auch hier dem Index und sagt aus, ob die Fahraufgabe mit einer statischen oder einer sich aufbauenden Karte bearbeitet werden soll. Hierfür gelten die bereits angesprochenen Restriktionen. Die drei fahrfähigen Endzustände \textit{Manuell}, \textit{Erkunden} und \textit{Ziel} werden durch $m_5$, $m_7$ und $m_8$ aktiviert. Der Zustandsautomat besitzt die Fähigkeit diverse Zwischenzustände als temporäre Endzustände $z_f$ auszuführen. Somit kann sich das ALF beispielsweise im Modus \textit{Statische Karte} $z_f=3$ ohne eine bestimmte Fahraufgabe selbst lokalisieren. In einem weiteren Schritt ist es dem Benutzer erlaubt vollständige und fahrfähige Endzustände auszuwählen wie zum Beispiel den Modus \textit{Ziel} $z_f=8$.\\
+		
+		
+				\begin{equation}
+					m_5(z_f)=\left\{\begin{array}{ll} 1 \text{ für } z_f=5 \\
+						0 \text{ für }z_f\neq 5\end{array}\right. 
+					\label{eq: m5}
+				\end{equation}\\
+			
+		Auch bei den genannten, fahrfähigen Endzuständen gibt es diverse Einschränkungen. So kann der Manuelle Fahrmodus nur ausgewählt werden, wenn er als Endzustand $z_f$ definiert wurde. Die entsprechende Logik ist in Gleichung \ref{eq: m5} gezeigt.\\
+		
+				\begin{equation}
+					m_7(z_f)=\left\{\begin{array}{ll} 1 \text{ für } z_f=7 \wedge m_2(z_f)=1 \wedge m_5(z_f)=0 \\
+						0 \text{ für }z_f\neq 7\end{array}\right.
+					\label{eq: m7}
+				\end{equation}\\
+				
+		Gleichung \ref{eq: m7} stellt die Restriktionen des Zustands \textit{Erkunden} dar. Wenn der Modus als Endzustand gewählt wurde, die Lokalisierung ausschließlich durch die \textit{SLAM}-Methode realisiert wird und zuvor kein fahrfähiger Endzustand aktiviert wurde, darf der Zustand \textit{Erkunden} in Kraft treten. Für den Zustand \textit{Ziel} gilt grundlegend diesselbe Logik für die Aktivierung. Jedoch verlangt der Fahrmodus eine statische Karte. In Gleichung \ref{eq: m8} sind die Abhängigkeiten genauer verdeutlicht.\\
+		
+		
+				\begin{equation}
+					m_8(z_f)=\left\{\begin{array}{ll} 1 \text{ für } z_f=8 \wedge m_3(z_f)=1 \wedge m_5(z_f)=0 \wedge m_7(z_f)=0 \\
+						0 \text{ für }z_f\neq 8\end{array}\right.
+					\label{eq: m8}
+				\end{equation}\\
+		
+		Für eine übersichtliche Darstellung eines Zustandsautomats eignet sich ein \textit{Unified Modeling Language} (UML) Diagramm. Das zum entworfenen Zustandsautomaten entsprechende UML-Diagramm ist in Abbildung \ref{fig: uml} gezeigt. Zustände sind als Boxen mit Abrundungen dargestellt und durch den Namen sowie den dazugehörigegen Index kennzeichnet. Pfeile stehen für Transitionen zwischen den Zuständen. Je nach Hierachieebene legen schwarze Punkte den Startpunkt fest, der durchlaufen werden muss. 
+		
 	
 	
 	
@@ -120,9 +170,11 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 	
 	warum erst personenerkenung dan gesicht-- Unter Anderem wird die extrahierte \textit{Feature Map} des Gesichts, die Bildkoordinaten der Person und die tatsächliche globale Position einer Person abgespeichert.
 	
-	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des im Kapitel ... beschriebenen autonomen Logistikfahrzeugs. In Kapitel .../consens wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung und der Aufbau des entwickelten, endlichen Automats wird im folgenden Kapitel erklärt.\\
+	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des im Kapitel \ref{ch: Einleitung} beschriebenen autonomen Logistikfahrzeugs. In Kapitel \ref{sec: Anforderungserhebung} wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung und der Aufbau des entwickelten Zustandautomats wird in diesem Kapitel erklärt.\\
 	
-	Die Personenerkennung am ALF wird mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben. In Kapitel.../rospython wurden bereits zwei Lösungsansätze in der Softwarentwicklung in Zusammenspiel mit ROS und Python präsentiert. Aufgrund einer starken Belastung der im Roboter verbauten Recheneinheit während der parallelen Bildverarbeitung beider eingehender Bilder, wurde das Programm auf eine serielle Verarbeitung umgestellt. Der Befehl der parallelen Verarbeitung erzwingt Berechnungsprozesse mit derselben Frequenz, die durch den Eingang der Bilder beider Kameras vorgegeben wird. Mithilfe der seriellen Abarbeitung  war es ebenfalls möglich die Häufigkeit der Berechnungen zu steuern und damit verbundene Programmoptimierungen vorzunehmen. Auslastungen des verbauten Computers können so eingespart werden und für weitere, parallel laufende Prozesse genutzt werden. Dies wird zum Beispiel durch eine gezielte Verzögerung der Personenerkennung erreicht. Hierbei werden Pausen mit der gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt bis ein relevantes Bild erkannt wird. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Als relevant werden Bilder eingestuft, die eine Person enthalten.\\
+	Wie bereits in Kapitel \ref{ch: Einleitung} beschrieben, wird die Personenerkennung am ALF mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben. Als Programmiersprache wird im Zuge dieser Masterarbeit \textit{Python} verwendet. Es bietet eine großes Spektrum an Softwarelösungen, wenn um das Thema Bildverarbeitung geht. Viele bekannte Frameworks wie \textit{Tensorflow} oder \textit{Keras} unterstützen \textit{Python}.\\
+	
+	Wie auch im Projekt der Bachelorarbeit, liefert das integrierte \textit{ROS}-Netzwerk die Bildinformation der Kameras. Die Schnittstelle zwischen \textit{ROS} und \textit{Python} bietet die Möglichkeit eingehende Bilder sowohl parallel, als auch seriell zu bearbeiten. Jedoch ist zu beachten, dass die Recheneinheit eines Computers durchaus mit der Bildverarbeitung eines Bildes mit bis zu über 50 \percent Rechenkapazität belastet sein kann. Demzufolge ist auf einem eingebettetem System eine deutlich höhere Belastung zu erwarten. Aufgrunddessen wird bei der Bildverarbeitung der Personenerkennung auf eine serielle Bearbeitung gesetzt.  Hierbei werden Pausen mit der gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt bis ein relevantes Bild erkannt wird. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Als relevant werden Bilder eingestuft, die eine Person enthalten.\\
 	
 	\begin{figure}[H]
 		\centering

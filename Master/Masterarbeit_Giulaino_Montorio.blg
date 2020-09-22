@@ -22,53 +22,54 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: Masterarbeit_Giulaino_Montorio-blx.bib
 Database file #2: _bib/biblio.bib
-"{" immediately follows a field part---line 134 of file _bib/biblio.bib
- : title = \url
- :             {https://keras.io/api/applications/},
+I was expecting a `,' or a `}'---line 137 of file _bib/biblio.bib
+ : 
+ : author = "{Szegedy, C.,} {Reed, S.,} {Erhan, D.}  und {Anguelov, D.}"
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "ralf"
 Biblatex version: 3.13
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 22 entries,
+You've used 25 entries,
             6365 wiz_defined-function locations,
-            1282 strings with 12146 characters,
-and the built_in function-call counts, 122234 in all, are:
-= -- 9273
-> -- 1808
-< -- 470
-+ -- 2122
-- -- 563
-* -- 8777
-:= -- 12548
+            1294 strings with 12538 characters,
+and the built_in function-call counts, 133513 in all, are:
+= -- 9940
+> -- 2039
+< -- 522
++ -- 2302
+- -- 629
+* -- 9490
+:= -- 13554
 add.period$ -- 0
-call.type$ -- 22
-change.case$ -- 242
-chr.to.int$ -- 60
-cite$ -- 42
-duplicate$ -- 10569
-empty$ -- 12229
-format.name$ -- 1056
-if$ -- 26170
+call.type$ -- 25
+change.case$ -- 265
+chr.to.int$ -- 63
+cite$ -- 48
+duplicate$ -- 11796
+empty$ -- 13417
+format.name$ -- 1194
+if$ -- 28632
 int.to.chr$ -- 0
-int.to.str$ -- 47
+int.to.str$ -- 55
 missing$ -- 0
-newline$ -- 476
-num.names$ -- 874
-pop$ -- 7245
+newline$ -- 533
+num.names$ -- 994
+pop$ -- 8230
 preamble$ -- 1
-purify$ -- 330
+purify$ -- 362
 quote$ -- 0
-skip$ -- 3470
+skip$ -- 3923
 stack$ -- 0
-substring$ -- 18609
-swap$ -- 2258
-text.length$ -- 419
+substring$ -- 19620
+swap$ -- 2564
+text.length$ -- 473
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 736
+type$ -- 838
 warning$ -- 0
-while$ -- 1362
+while$ -- 1494
 width$ -- 0
-write$ -- 455
+write$ -- 509
 (There was 1 error message)
