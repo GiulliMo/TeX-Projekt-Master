@@ -22,11 +22,11 @@
 \contentsline {subsection}{\numberline {3.2.2}Konzept der Bildverarbeitung}{30}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Entwickeltes neuronales Netz}{33}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Konzept und Aufbau des Zustandsautomaten}{34}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Auslegung des Zustandsautomats}{34}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Funktionsweise des Gesamtsystems}{38}{section.3.4}%
+\contentsline {subsection}{\numberline {3.3.1}Auslegung des Zustandsautomats}{35}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Funktionsweise des Gesamtsystems}{39}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Verifikation}{43}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{44}{chapter.5}%
-\contentsline {chapter}{\nonumberline Quellenverzeichnis}{45}{chapter*.36}%
-\contentsline {chapter}{\numberline {A}Anhang}{47}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Abbildungen}{47}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{48}{section.A.2}%
+\contentsline {chapter}{\nonumberline Quellenverzeichnis}{45}{chapter*.38}%
+\contentsline {chapter}{\numberline {A}Anhang}{48}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Abbildungen}{48}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{49}{section.A.2}%

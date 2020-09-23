@@ -1,0 +1,33 @@
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[
+	]
+	\begin{axis}[
+	width=12cm,
+	height=7cm,
+	axis y line*=left,
+	ticklabel style={% gilt für x und y
+		/pgf/number format/.cd,
+		use comma,% Komma als Dezimaltrenner
+		1000 sep = {}% keine Tausendertrennung 
+	},
+	xlabel={$\text{Zeit } \textit{t} \text{ in Sekunden}$},
+	ylabel={Drehmoment $M_{soll}$ in \%M$_{\mathrm{max}}$},
+	axis x line*=bottom,
+	xmin=0, xmax=1, 
+	ymin=0, ymax=1.2,
+	%every axis plot/.append style={line width=1.0pt}
+	legend pos=north east,
+	]
+	
+	\addlegendentry{Soll-Drehmoment}; % legende1
+	\addplot[gray, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ssdmobilenetv2tflite.csv};
+	\addlegendimage{/pgfplots/refstyle=plotbrr};				
+	\addlegendentry{Ist-Drehzahl} ;%legende 2;
+	%\addlegendentry{plot 1}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{https://github.com/kaka-lin/object-detection}
+	\label{fig: brr}
+\end{figure}

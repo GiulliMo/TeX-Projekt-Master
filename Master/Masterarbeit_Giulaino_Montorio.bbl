@@ -17,6 +17,24 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{bvdw}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uG}{%
+         family={{ und Schaeffler Thomas}},
+         familyi={u\bibinitperiod},
+         given={{Gründinger, W., }{Hofmann, D.,}{Klett, D.,}{ Knoll, M.,}},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{uG1}
+    \strng{fullhash}{uG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Sprachassistenzen im Smart Home}
+    \field{month}{04}
+    \field{year}{2019}
+  \endentry
+
   \entry{sopra}{book}{}
     \name{author}{1}{}{%
       {{hash=GSS}{%
@@ -562,6 +580,29 @@
   Secure Comp., 16th Int. Conf. on Pervasive Intelligence \& Comp., 4th Int.
   Conf. on Big Data Intelligence \& Comp., and 3rd Cyber Sci. and Tech. Cong.}
     \field{year}{2018}
+  \endentry
+
+  \entry{frameworks}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uPPCKD}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Pathak, V.}},
+         familyi={P\bibinitperiod},
+         given={{Parvat, A.,} { Chavan, J., } {Kadam, S., }\bibnamedelima {Dev,
+  S., }},
+         giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
+  K\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PPCKDu1}
+    \strng{fullhash}{PPCKDu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1\bibrangedash 7}
+    \field{title}{A survey of deep-learning frameworks - 2017 International
+  Conference on Inventive Systems and Control (ICISC)}
+    \field{year}{2017}
   \endentry
 \enddatalist
 \endinput

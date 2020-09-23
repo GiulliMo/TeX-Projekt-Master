@@ -31,45 +31,45 @@ Warning--I didn't find a database entry for "ralf"
 Biblatex version: 3.13
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 25 entries,
+You've used 27 entries,
             6365 wiz_defined-function locations,
-            1294 strings with 12538 characters,
-and the built_in function-call counts, 133513 in all, are:
-= -- 9940
-> -- 2039
-< -- 522
-+ -- 2302
-- -- 629
-* -- 9490
-:= -- 13554
+            1301 strings with 12850 characters,
+and the built_in function-call counts, 145689 in all, are:
+= -- 10906
+> -- 2188
+< -- 558
++ -- 2446
+- -- 672
+* -- 10460
+:= -- 14771
 add.period$ -- 0
-call.type$ -- 25
-change.case$ -- 265
-chr.to.int$ -- 63
-cite$ -- 48
-duplicate$ -- 11796
-empty$ -- 13417
-format.name$ -- 1194
-if$ -- 28632
+call.type$ -- 27
+change.case$ -- 279
+chr.to.int$ -- 66
+cite$ -- 52
+duplicate$ -- 12665
+empty$ -- 14707
+format.name$ -- 1283
+if$ -- 31280
 int.to.chr$ -- 0
-int.to.str$ -- 55
+int.to.str$ -- 59
 missing$ -- 0
-newline$ -- 533
-num.names$ -- 994
-pop$ -- 8230
+newline$ -- 571
+num.names$ -- 1070
+pop$ -- 8899
 preamble$ -- 1
-purify$ -- 362
+purify$ -- 382
 quote$ -- 0
-skip$ -- 3923
+skip$ -- 4218
 stack$ -- 0
-substring$ -- 19620
-swap$ -- 2564
-text.length$ -- 473
+substring$ -- 21806
+swap$ -- 2763
+text.length$ -- 510
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 838
+type$ -- 906
 warning$ -- 0
-while$ -- 1494
+while$ -- 1598
 width$ -- 0
-write$ -- 509
+write$ -- 545
 (There was 1 error message)

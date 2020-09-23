@@ -1,31 +1,64 @@
-		\begin{figure}[H]
-		\centering
-		\begin{tikzpicture}[
-			]
-			\begin{axis}[
-				width=12cm,
-				height=7cm,
-				grid = both,
-				grid style={line width=.1pt, draw=gray!10},
-				%axis y line*=right,
-				ylabel near ticks, %ylabel pos
-				%yticklabel pos=left,
-				%	xmin=4.5, xmax=7.5, 
-				%ymin=-250, ymax=5500,
-				%ticklabel style={% gilt für x und y
-				%	/pgf/number format/.cd,
-				%	use comma,% Komma als Dezimaltrenner
-				%	1000 sep = {}% keine Tausendertrennung 
-				%},
-				ylabel={Drehzahl \textit{n} in min$^{\mathrm{-1}}$},
-				%axis x line*=bottom,
-				%every axis plot/.append style={line width=1.0pt}
-				]
-				\addplot[smooth,black, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/data.csv};
-				\label{plotbrr}
-			\end{axis}
-			
-		\end{tikzpicture}
-		\caption{Sprungantwort des Motors vorne rechts und maximale  sprungförmige Drehmomentvorgabe. Bei der Sollwertvorgabe handelt es sich um einen prozentualen Anteil des maximal möglichen Drehmoment. Die Stufe an dem sprungförmigen Eingangssignal entsteht durch die Eingabe des Sollwerts über den Joystick. Mit diesem Eingabegerät ist es nicht möglich einen idealen Einheitssprung zu erzeugen, wie die Sprungfunktion $u(t)$ aus Kapitel \ref{sec: Regelung} vorsieht. Für weitere Analysen wird dieser Fehler vernachlässigt.}
-		\label{fig: brr}
-	\end{figure}
+%		\begin{figure}[H]
+%		\centering
+%		\begin{tikzpicture}[
+%			]
+%			\begin{axis}[
+%				width=12cm,
+%				height=7cm,
+%				grid = both,
+%				grid style={line width=.1pt, draw=gray!10},
+%				%axis y line*=right,
+%				ylabel near ticks, %ylabel pos
+%				%yticklabel pos=left,
+%				%	xmin=4.5, xmax=7.5, 
+%				%ymin=-250, ymax=5500,
+%				%ticklabel style={% gilt für x und y
+%				%	/pgf/number format/.cd,
+%				%	use comma,% Komma als Dezimaltrenner
+%				%	1000 sep = {}% keine Tausendertrennung 
+%				%},
+%				ylabel={Drehzahl \textit{n} in min$^{\mathrm{-1}}$},
+%				%axis x line*=bottom,
+%				%every axis plot/.append style={line width=1.0pt}
+%				]
+%				\addplot[smooth,black, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/data.csv};
+%				\label{plotbrr}
+%			\end{axis}
+%			
+%		\end{tikzpicture}
+%		\caption{Sprungantwort des Motors vorne rechts und maximale  sprungförmige Drehmomentvorgabe. Bei der Sollwertvorgabe handelt es sich um einen prozentualen Anteil des maximal möglichen Drehmoment. Die Stufe an dem sprungförmigen Eingangssignal entsteht durch die Eingabe des Sollwerts über den Joystick. Mit diesem Eingabegerät ist es nicht möglich einen idealen Einheitssprung zu erzeugen, wie die Sprungfunktion $u(t)$ aus Kapitel \ref{sec: Regelung} vorsieht. Für weitere Analysen wird dieser Fehler vernachlässigt.}
+%		\label{fig: brr}
+%	\end{figure}#
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[
+	]
+	\begin{axis}[
+	width=12cm,
+	height=7cm,
+	axis y line*=left,
+	ticklabel style={% gilt für x und y
+		/pgf/number format/.cd,
+		use comma,% Komma als Dezimaltrenner
+		1000 sep = {}% keine Tausendertrennung 
+	},
+	xlabel={$\text{Zeit } \textit{t} \text{ in Sekunden}$},
+	ylabel={Drehmoment $M_{soll}$ in \%M$_{\mathrm{max}}$},
+	axis x line*=bottom,
+	xmin=0, xmax=1, 
+	ymin=0, ymax=1.2,
+	%every axis plot/.append style={line width=1.0pt}
+	legend pos=north east,
+	]
+	
+	\addlegendentry{Soll-Drehmoment}; % legende1
+	\addplot[gray, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ssdmobilenetv2tflite.csv};
+	\addlegendimage{/pgfplots/refstyle=plotbrr};				
+	\addlegendentry{Ist-Drehzahl} ;%legende 2;
+	%\addlegendentry{plot 1}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Sprungantwort des Motors vorne rechts und maximale  sprungförmige Drehmomentvorgabe. Bei der Sollwertvorgabe handelt es sich um einen prozentualen Anteil des maximal möglichen Drehmoment. Die Stufe an dem sprungförmigen Eingangssignal entsteht durch die Eingabe des Sollwerts über den Joystick. Mit diesem Eingabegerät ist es nicht möglich einen idealen Einheitssprung zu erzeugen, wie die Sprungfunktion $u(t)$ aus Kapitel \ref{sec: Regelung} vorsieht. Für weitere Analysen wird dieser Fehler vernachlässigt.}
+	\label{fig: brr}
+\end{figure}
