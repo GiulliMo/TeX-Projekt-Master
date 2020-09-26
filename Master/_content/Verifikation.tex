@@ -1,9 +1,27 @@
-\chapter{Verifikation}
+\chapter{Evaluation}
 \label{ch: Verifikation}
+Zur Evaluation der künstlichen neuronalen Netze wird eine anwendungsorientierte \textit{Benchmark} durchgeführt. Hierbei wird anhand der in Kapitel \ref{subsec: Entwickeltes neuronales Netz} beschriebenen Datensätze die \textit{Precision} und \textit{Recall} Methode angewendet. Weiterhin werden die Benchmarks auf einer Grafikkarte, dem integrierten Computer des ALFs und einem eingebettem System ausgeführt. Die Eckdaten des Grafikkarte sowie des ALFs sind in Anhang ... präsentiert. Als eingebettetes System wird ein \textit{Raspberry Pi 3 Model B+} verwendet. Es ist keine Veränderung der Genauigkeit je Netz auf den jeweiligen Geräten zu erwarten. Jedoch können so die Bearbeitungszeiten pro Bild für unterschiedliche Hardware verglichen werden. \\
+
+Insgesamt werden für den Test durch \textit{COCO-Datensatz} 12755 Bilder aus dem Trainingsdatensatz verwendet. Der technische Hintergrund hierfür ist in Kapitel \ref{subsec: Entwickeltes neuronales Netz} zu finden. Als Vergleich analysiert jedes Netz auch den eigenen Datensatz. So kann die Performance am Einsatzort des ALFs an der Hochschule Bochum evaluiert werden. Jedes Bild wird für die verwendeten, neuronalen Netze auf eine Pixelgröße von $300 \times 300$ skaliert. Für die Evaluation des HoGs wird eine höhere Auflösung gewählt. Hierbei wird eine Seite des Bildes softwareseitig auf 400 Pixel begrenzt.\\
+
+Auf den drei Hardwareplattformen herrschen keine optimalen Bedingungen. Ein neu aufgesetztes System bei dem keine Software versteckte Auslastung erzeugt wird hierbei als optimal bezeichnet. Aufgrundessen wird bei der Evaluation ein Verlust der Geschwindigkeit im Hinblick auf die in Kapitel \ref{subsec: Auswahl und Training der verwendeten neuronalen Netze} gezeigten Werte erwartet.   \\
+ 
+\input{Bilder/hog1}
+
+Der Kombination aus HoG und SVM erfüllt laut Abbildung ... die Erwartungen aus dem Grundlagenkapitel ... . Vor allem der anspruchsvolle \textit{COCO}-Datensatz 
+
+
+\input{Bilder/cocossdmobilenetv1tflite}
+
+Eine deutliche Steigerung hinsichtlich der Geschwindigkeit wird durch das \textit{Tensorflow Lite SSD MobileNet V1} Modell erreicht. Die Genauigkeit scheint zunächst niedriger auszufallen als erwartet. Jedoch spielt die Komplexität eines Datensatzes eine große Rolle. Im Paper von \textit{Huang} werden die Genauigkeitswerte verschiedener KNNs gegenübergestellt \cite{maxssdmobilenet}. Die dort präsentierte, mittlere Durchschnittsgenauigkeit (\textit{Overall mAP}) basierend auf den \textit{COCO}-Datensatz liegt bei circa 0,2 \cite{maxssdmobilenet}. 
 
 \input{Bilder/ssdmobilenetv2tflite}
 
-\input{Bilder/cocossdmobilenetv1tflite}
+Abbildung \ref{fig: ssdmobilenetv2} zeigt die \textit{Precision} und \textit{Recall} Kurve des \textit{Tensorflow Lite} Modells mit der \textit{SSD MobileNet V2} Architektur. Auch in diesem Fall erreicht das Netz erwartungsgemäß bei der Analyse durch den \textit{COCO}-Datensatz geringere Werte als durch den eigenen Datensatz.    
+
+\input{Bilder/gesamtvergleich}
+
+\input{Bilder/zeitenvergleich}
 
 
 

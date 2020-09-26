@@ -12,8 +12,8 @@
 		use comma,% Komma als Dezimaltrenner
 		1000 sep = {}% keine Tausendertrennung 
 	},
-	xlabel={$\text{Zeit } \textit{t} \text{ in Sekunden}$},
-	ylabel={Drehmoment $M_{soll}$ in \%M$_{\mathrm{max}}$},
+	xlabel={$\text{Recall } \textit{r(t)}$},
+	ylabel={$\text{Precision } \textit{p(t)}$},
 	axis x line*=bottom,
 	xmin=0, xmax=1, 
 	ymin=0, ymax=1.2,
@@ -21,13 +21,14 @@
 	legend pos=north east,
 	]
 	
-	\addlegendentry{Soll-Drehmoment}; % legende1
+	\addlegendentry{Eigener Datensatz}; % legende1
 	\addplot[gray, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1tflite.csv};
+	\addplot[black, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1cocotest.csv};
 	\addlegendimage{/pgfplots/refstyle=plotbrr};				
-	\addlegendentry{Ist-Drehzahl} ;%legende 2;
+	\addlegendentry{\textit{COCO}-Datensatz} ;%legende 2;
 	%\addlegendentry{plot 1}
 	\end{axis}
 	\end{tikzpicture}
-	\caption{Tensorflow starter}
-	\label{fig: brr}
+	\caption{Gegenüberstellung der \textit{Precision} und \textit{Recall} Kurven eines quantisierten \textit{Tensorflow Lite SSD MobileNet V1} Netzes. Durch die schwarze Kurve wird das Testergebnis durch den \textit{COCO}-Datensatz gezeigt. Die graue Kurve zeigt das \textit{Precision} und \textit{Recall} Verhältnis für die Analyse des eigenen Datensatzes. Tensorflow starter}
+	\label{fig: ssdmobilenetv1}
 \end{figure}

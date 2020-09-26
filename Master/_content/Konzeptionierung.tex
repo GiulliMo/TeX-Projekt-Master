@@ -55,8 +55,8 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 		
 		Das Kapitel \ref{ch: Verifikation} wird sich mit der tatsächlich gemessenen Leistung der behandelten Netze im Feld beschäftigen. Hierbei wird sowohl der Einsatz am ALF als auch auf einem \textit{Raspberry Pi} berücksichtigt. Die durch die wissenschaftlichen Paper erlangten Informationen zeigen jedoch, welche Netzarten und -architekturen hierfür in Betracht gezogen werden können.
 		
-		\subsection{Entwickeltes neuronales Netz}
-		\label{seubsec: Entwickeltes neuronales Netz}
+		\subsection{Entwicklung eines neuronales Netz}
+		\label{subsec: Entwickeltes neuronales Netz}
 		
 		Die in Kapitel \ref{subsec: Auswahl und Training der verwendeten neuronalen Netze} behandelten neuronalen Netze wurden auf dessen Leistungsfähigkeit passend zum Anwendungsfall am ALF untersucht. Mittlerweile gibt es auf Seiten wie zum Beispiel \textit{Tensorflow.org} oder \textit{Keras.io} viele Möglichkeiten zum Download unterschiedlicher Netze. Viele der angebotenen KNNs sind in je nach Anwendungsfall in diversen Kategorien eingeteilt. Unter Anderem finden sich dort auch KNNs zur Objekterkennung. Die meisten sind darauf ausgelegt multiple Objekte zu erkennen. Somit lassen sich beispielsweise mit einem Netz nicht nur Personen sondern auch Flugzeuge, Autos und viele weitere Gegenstände des Alltags erkennen. \\ 
 		
@@ -64,9 +64,11 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 		
 		Für den Einsatz am ALF ist die Erkennung anderer Objekte jedoch unerheblich. Somit gibt es unter Anderem zwei Möglichkeiten diesen Sachverhalt zu lösen. Für den ersten Lösungsansatz wird das entsprechende KNN unverändert eingesetzt. Ein Sortieralgorhitmus beschäftigt sich nach der Analyse des Bildes damit, nicht relevante Klassen auszusortieren. In Abbildung \ref{fig: ownnet} ist eine weitere Lösung dargestellt. Die Ausgabeschicht eines Netzes wird so verändert, dass lediglich ein Ausgangsneuron vorhanden ist. Dieser ist bekanntlich in der Lage auf eine Klasse trainiert zu werden. Die restlichen Klassen werden somit verworfen und das Neuron wird ausschließlich auf die Klasse "Person" trainiert. Diese Vorgehensweise spart nicht nur die Einbindung eines Sortieralgorhitmus sondern auch Speicherplatz ein. Durch die Elimination der unbedeutsamen Neuronen werden folglich auch Parameter gelöscht, die gewissen Speicher einnehmen. Somit wird auch eine schnellere Rechenzeit erwartet. \\
 		
-		Für die Umsetzung des KNNs wird \textit{Tensorflow} der Firma \textit{Google} verwendet. \textit{Tensorflow} bietet neben der Möglichkeit des Trainings vortrainierter Netze, Lösungen zur Implementierung auf eingebetteten Systemen \cite{frameworks}. Weiterhin unterstützt der Framework die \textit{NVIDIA CUDA Deep Neural Network} (cuDNN) Bibliothek \cite{frameworks}. \textit{NVIDIA cuDNN} ist für Grafikprozessoren und der Arbeit mit künstlichen neuronalen Netzen optimiert \cite{frameworks}. Außerdem unterstützt \textit{Tensorflow} die Betriebssysteme \textit{Linux}, \textit{Mac OS X} und \textit{Windows} \cite{frameworks}. Somit kann der integrierte Computer des autonomen Logistikfahrzeugs als ausführende Instanz verwendet werden. Für Trainingsprozesse oder der Erstellung von Datensätzen eignet sich ein Rechner mit einer leistungsstarken Grafikeinheit. \\
+		Zur Umsetzung des KNNs wird \textit{Tensorflow} der Firma \textit{Google} verwendet. \textit{Tensorflow} bietet neben der Möglichkeit des Trainings vortrainierter Netze, Lösungen zur Implementierung auf eingebetteten Systemen \cite{frameworks}. Diesbezüglich haben die Entwickler einen eigenen Framework Namens \textit{Tensorflow Lite} ins Leben gerufen. Dieser Framework ist insbesondere für die Entwicklung mobiler Applikationen ausgelegt \cite{tflite}. \textit{Xus} Paper zeigt, dass \textit{Tensorflow} und \textit{Tensorflow Lite} die meistgenutzten Frameworks sind wenn es um mobile Applikationen geht. Weiterhin unterstützt der \textit{Tensorflow} die \textit{NVIDIA CUDA Deep Neural Network} (cuDNN) Bibliothek \cite{frameworks}. \textit{NVIDIA cuDNN} ist für Grafikprozessoren und der Arbeit mit künstlichen neuronalen Netzen optimiert \cite{frameworks}. Außerdem unterstützt \textit{Tensorflow} die Betriebssysteme \textit{Linux}, \textit{Mac OS X} und \textit{Windows} \cite{frameworks}. Somit kann der integrierte Computer des autonomen Logistikfahrzeugs als ausführende Instanz verwendet werden. Für Trainingsprozesse eignet sich in vielen Fällen ein Rechner mit einer leistungsstarken Grafikeinheit. Die Praxiserfahrung dieser Masterarbeit zeigte, dass eine Grafikkarte den Trainingsprozess um den Faktor 12 beschleunigt. Jedoch gibt es Anwendungsfälle, die durch die Verwendung der zentralen Recheneinheit des Computers beschleunigt werden \cite{cpugpu}. \\
 		
-		Als Datensatz für das Training des veränderten Netzes wird der \textit{Common Objects in Context} (COCO) Datensatz verwendet.
+		Als Datensatz für das Training der Netze wird der \textit{Common Objects in Context} (COCO) Datensatz der Firma \textit{Microsoft} verwendet. Dieser Datensatz enthält circa 330000 Bilder mit diversen alltäglichen Objekten \cite{coco, cocopaper}. Davon sind laut eigener Aussagen über 200000 Bilder mit sogenannten \textit{Annotations} oder auch \textit{Labels} (deutsch: Anmerkungen/Etiketten) versehen \cite{coco}. Die Daten sind in Trainings-, Evaluations- und Testdaten unterteilt. Letzteres ist jedoch nicht etikettiert und domit für dieses Masterarbeit nicht relevant. Die Trainingsdaten von dem \textit{COCO}-Datensatz aus dem Jahr 2017 stellt knapp 65000 etikettierte Bilder von Personen bereit. Circa 5000 Bilder sind im Evalutaionsdatensatz enthalten.\\
+		
+		Für den Lernprozess wird somit der Trainingsdatensatz in Trainings- und Testdaten unterteilt. So kann ein Teil der eigentlichen Trainingsdaten durch die vorhandenen Etiketten als Testdatensatz verwendet werden. Als zweiten Test wird ein eigener Datensatz erstellt. Hierbei werden 160 Bilder aus dem Einsatzumfeld des ALFs aufgenommen und etikettiert. In Kapitel \ref{ch: Verifikation} werden bereits besprochene Netze mit dem eigenen und dem \textit{COCO}-Datensatz evaluiert.
 		
 	\section{Konzept und Aufbau des Zustandsautomaten}
 	\label{sec: Umsetzung der Statemachine}
@@ -172,11 +174,11 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 	\section{Funktionsweise des Gesamtsystems}
 	\label{sec: Funktionsweise des Gesamtsystems}
 	
-	warum erst personenerkenung dan gesicht-- Unter Anderem wird die extrahierte \textit{Feature Map} des Gesichts, die Bildkoordinaten der Person und die tatsächliche globale Position einer Person abgespeichert.
+	warum erst personenerkenung dan gesicht-- Unter Anderem wird die extrahierte \textit{Feature Map} des Gesichts, die Bildkoordinaten der Person und die tatsächliche globale Position einer Person abgespeichert. Gesichterkennungspaket was es kann und warum wir es nutzen
 	
-	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des im Kapitel \ref{ch: Einleitung} beschriebenen autonomen Logistikfahrzeugs. In Kapitel \ref{sec: Anforderungserhebung} wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung und der Aufbau des entwickelten Zustandautomats wird in diesem Kapitel erklärt.\\
+	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des im Kapitel \ref{ch: Einleitung} beschriebenen autonomen Logistikfahrzeugs. In Kapitel \ref{sec: Anforderungserhebung} wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung und der Aufbau des entwickelten Zustandautomats wird im folgenden erklärt.\\
 	
-	Wie bereits in Kapitel \ref{ch: Einleitung} beschrieben, wird die Personenerkennung am ALF mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben. Als Programmiersprache wird im Zuge dieser Masterarbeit \textit{Python} verwendet. Es bietet eine großes Spektrum an Softwarelösungen, wenn um das Thema Bildverarbeitung geht. Viele bekannte Frameworks wie \textit{Tensorflow} oder \textit{Keras} unterstützen \textit{Python}.\\
+	Wie bereits in der Einleitung \ref{ch: Einleitung} dieser Masterarbeit beschrieben, wird die Personenerkennung am ALF mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben. Als Programmiersprache wird im Zuge dieser Masterarbeit \textit{Python} verwendet. Mit Softwarepaketen wie beispielsweise \textit{OpenCV} oder \textins{Pillow} bietet \textit{Python} ein großes Spektrum an Softwarelösungen für die Bildverarbeitung \cite{opencv}\cite{pillow}. Viele bekannte Frameworks wie \textit{Tensorflow} oder \textit{Keras} unterstützen \textit{Python}.\\
 	
 	Wie auch im Projekt der Bachelorarbeit, liefert das integrierte \textit{ROS}-Netzwerk die Bildinformation der Kameras. Die Schnittstelle zwischen \textit{ROS} und \textit{Python} bietet die Möglichkeit eingehende Bilder sowohl parallel, als auch seriell zu bearbeiten. Jedoch ist zu beachten, dass die Recheneinheit eines Computers durchaus mit der Bildverarbeitung eines Bildes mit bis zu über 50 \percent Rechenkapazität belastet sein kann. Demzufolge ist auf einem eingebettetem System eine deutlich höhere Belastung zu erwarten. Aufgrunddessen wird bei der Bildverarbeitung der Personenerkennung auf eine serielle Bearbeitung gesetzt.  Hierbei werden Pausen mit der gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt bis ein relevantes Bild erkannt wird. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Als relevant werden Bilder eingestuft, die eine Person enthalten.\\
 	
@@ -205,36 +207,58 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 	\newpage
 	\begin{figure}[H]
 		\centering
-		\begin{tikzpicture}[node distance = 2cm, auto]
+		\begin{tikzpicture}[node distance = 1.2cm, auto]
 			
 			% Place nodes
 			\node [papStart] (Start1){Start};
-			\node [papProcess, below of = Start1,label={[shift={(5,-0.6)}]\footnotesize\textit{Aktuelles Bild wird mit KNN analysiert}}] (pro1){Prozess};
-			\node [papDecision, below of = pro1, yshift= -9mm,label={[shift={(2.7,-0.6)}]\footnotesize\textit{Menschen im Bild?}}](dec1){Entscheidung};
-			\node [papProcess, right of = dec1,xshift=25mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesichter im Interessensbereich detektieren}}](pro3){Prozess};
-			\node [papDecision, below of = pro3, yshift= -9mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesicht im Interessenbereich?}}](dec2){Entscheidung};
-			\node [papProcess, below of = dec2, yshift= -9mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Merkmalsextraktion des Gesichts}}](pro4){Prozess};
-			\node [papDecision, below of = pro4, yshift= -9mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesicht bekannt?}}](dec3){Entscheidung};
-			\node [papDecision, below of = dec3, yshift= -18mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Dasselbe unbekannte Gesicht oft genug hintereinander erkannt?}}](dec4){Entscheidung};
-			\node [papProcess, below of = dec4, yshift= -9mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Eigenschaften des Objekts vom Typ Mensch aktualisieren}}](pro5){Prozess};
-			%\node [papData, right of = dec3, xshift= 25mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesicht bekannt?}}](dat1){I/O};
-			\node [papEnd, below of = dec1, yshift= -40mm] (End) {Ende};
+			\node [papProcess, below of = Start1] (pro1){Prozess};
+			\node [papDecision, below of = pro1, yshift= -9mm,label={[align=left,anchor=west,shift={(1.2,-0.3)}]\footnotesize\textit{Menschen im Bild?}}](dec1){Entscheidung};
+			\node [papProcess, right of = dec1,xshift=25mm](pro3){Prozess};
+			\node [papDecision, below of = pro3, yshift= -9mm](dec2){Entscheidung};
+			\node [papProcess, below of = dec2, yshift= -9mm](pro4){Prozess};
+			\node [papDecision, below of = pro4, yshift= -9mm,label={[align=left,anchor=west,shift={(1.2,-0.3)}]\footnotesize\textit{Gesicht bekannt?}}](dec3){Entscheidung};
+			\node [papDecision, below of = dec3, yshift= -18mm,label={[align=left,anchor=west,shift={(1.2,-0.3)}]\footnotesize\textit{\makecell[l]{Registrierungs-\\prozess\\einleiten?}}}](dec4){Entscheidung};
+			%\node [papData, right of = dec3, xshift= 25mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesicht bekannt?}}](dat1){I/O};		
+			\node [papProcess, below of = dec4,yshift= -9mm](pro6){Prozess};
+			\node [papProcess, below of = pro6](pro5){Prozess};
+			\node [papEnd, below of = pro5,xshift=-37mm] (End) {Ende};
+			
+			\node[right of = pro1,xshift=0.5cm,align=left,anchor=west] (P1) {\footnotesize\textit{\makecell[l]{Personendetektion\\durch KNN}}};
+			\node[right of = pro3,xshift=0.5cm,align=left,anchor=west] (P2) {\footnotesize\textit{\makecell[l]{Gesichtsdetektion\\durch KNN}}};
+			\node[right of = dec2,xshift=0.5cm,align=left,anchor=west] (D2) {\footnotesize\textit{\makecell[l]{Gesicht im\\Interessenbereich?}}};
+			\node[right of = pro4,xshift=0.5cm,align=left,anchor=west] (P3) {\footnotesize\textit{\makecell[l]{Merkmalsextraktion\\des Gesichts}}};
+			\node[right of = pro6,xshift=0.5cm,align=left,anchor=west] (P1) {\footnotesize\textit{\makecell[l]{Person\\registrieren}}};
+			\node[right of = pro5,xshift=0.5cm,align=left,anchor=west] (P1) {\footnotesize\textit{\makecell[l]{Person\\aktualisieren}}};
 			
 			% Place joins
 			\coordinate [below of = dec1, yshift= -9mm] (join1);
+			\coordinate [right of = dec3,xshift=25mm] (join2);
+			\coordinate [left of = dec4, xshift= -25mm] (join3);
+			\coordinate [right of = pro5,xshift=25mm] (join4);
+			\coordinate [left of = pro5,xshift=-25mm] (join5);
 			
 			% Draw edges
 			\path [papLine] (Start1) -- (pro1);
 			\path [papLine] (pro1) -- (dec1);
 			\path [papLine] (dec1) -- node [above] {\papYes} (pro3);
-			\draw (dec1) -- node [right] {\papNo} (join1);
+			\draw (dec1) -- node [left] {\papNo} (join1);
 			\path [papLine] (pro3) -- (dec2);
 		%	\path [papLine] (dec2) -- node [above] {\papYes} (pro4)
 			\draw (dec2) -- node [above] {\papNo} (join1);
-			
+			\path [papLine] (dec3) -- node [left] {\papNo} (dec4);
+			\draw (dec3) -- node [above] {\papYes} (join2);
 			\path [papLine] (join1) -- (End);
+			\draw (dec4) -- node [above] {\papNo} (join3);
+			\draw (join2) -- (join4);
+			\path [papLine] (join4) -- (pro5);
+			\draw (pro5) -- (join5);
+			\path [papLine] (dec4) -- node [left] {\papYes} (pro6);
+			\path [papLine] (pro6) -- (pro5);
+			\path [papLine] (dec2) -- node [left] {\papYes} (pro4);
+			\path [papLine] (pro4) -- (dec3);
 			
 		\end{tikzpicture}
+		\caption{Prozessablaufplan der Personenerkennung. Der Start sowie das Ende des Programms sind als Boxen mit Abrundungen dargestellt. Rechtecke zeigen Prozesse und Parallelogramme deuten eine Entscheidung im Programmablauf an. Die Flussrichtung der entsprechenden Informationen werden durch Pfeile präsentiert.}
 		\label{fig: Personenerkennung}
 	\end{figure}
 	

@@ -1,0 +1,16 @@
+\begin{table}[H]
+	\caption{Vergleich der Rechenzeiten pro Bild auf verschiedenen Hardwareplattformen. Die präsentierten Zeiten wurden für alle Analyseschritte addiert und durch die Anzahl aller Bilder geteilt. Ein Analyseschritt bedeutet in diesem Fall die reine Berechnung des Netzes und exkludiert beispielsweise die Zeit für eine Anpassung des Bildes für das entsprechende Netz.  }
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\multicolumn{1}{|c|}{Hardware} & \multicolumn{1}{c|}{Hog \& SVM} & \multicolumn{1}{c|}{SSD MobileNet V1} & \multicolumn{1}{c|}{SSD MobileNet V2} \\ \hline
+			Computer ALF	&73.2 	&69 ms		& 600 $\times$ 1000 	 \\
+			Grafikkarte			&77.2 	&46		& 	300 $\times$ 300  	 \\
+			Raspberry Pi Model B+			&68.0	&59		& 300 $\times$ 300 \\
+			
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\label{fig: mobilessdtab}
+\end{table}

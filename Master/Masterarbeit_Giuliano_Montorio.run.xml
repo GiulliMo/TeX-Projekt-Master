@@ -44,11 +44,11 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Masterarbeit_Giulaino_Montorio.aux</file>
-      <file>Masterarbeit_Giulaino_Montorio-blx.bib</file>
+      <file>Masterarbeit_Giuliano_Montorio.aux</file>
+      <file>Masterarbeit_Giuliano_Montorio-blx.bib</file>
     </provides>
     <requires type="dynamic">
-      <file>Masterarbeit_Giulaino_Montorio.bbl</file>
+      <file>Masterarbeit_Giuliano_Montorio.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -71,20 +71,20 @@
     <cmdline>
       <binary>bibtex</binary>
       <option>-min-crossrefs 2</option>
-      <infile>Masterarbeit_Giulaino_Montorio</infile>
+      <infile>Masterarbeit_Giuliano_Montorio</infile>
     </cmdline>
     <input>
-      <file>Masterarbeit_Giulaino_Montorio.aux</file>
+      <file>Masterarbeit_Giuliano_Montorio.aux</file>
     </input>
     <output>
-      <file>Masterarbeit_Giulaino_Montorio.bbl</file>
+      <file>Masterarbeit_Giuliano_Montorio.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>Masterarbeit_Giulaino_Montorio.bbl</file>
+      <file>Masterarbeit_Giuliano_Montorio.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Masterarbeit_Giulaino_Montorio.aux</file>
-      <file>Masterarbeit_Giulaino_Montorio-blx.bib</file>
+      <file>Masterarbeit_Giuliano_Montorio.aux</file>
+      <file>Masterarbeit_Giuliano_Montorio-blx.bib</file>
     </requires>
     <requires type="editable">
       <file>_bib/biblio.bib</file>

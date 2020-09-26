@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: Masterarbeit_Giulaino_Montorio.aux
+The top-level auxiliary file: Masterarbeit_Giuliano_Montorio.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: biblatex.bst
 Reallocating 'name_of_file' (item size: 1) to 35 items.
@@ -20,56 +20,51 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-Database file #1: Masterarbeit_Giulaino_Montorio-blx.bib
+Database file #1: Masterarbeit_Giuliano_Montorio-blx.bib
 Database file #2: _bib/biblio.bib
-I was expecting a `,' or a `}'---line 137 of file _bib/biblio.bib
- : 
- : author = "{Szegedy, C.,} {Reed, S.,} {Erhan, D.}  und {Anguelov, D.}"
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "ralf"
 Biblatex version: 3.13
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 27 entries,
+You've used 33 entries,
             6365 wiz_defined-function locations,
-            1301 strings with 12850 characters,
-and the built_in function-call counts, 145689 in all, are:
-= -- 10906
-> -- 2188
-< -- 558
-+ -- 2446
-- -- 672
-* -- 10460
-:= -- 14771
+            1322 strings with 13673 characters,
+and the built_in function-call counts, 178020 in all, are:
+= -- 13316
+> -- 2719
+< -- 678
++ -- 2810
+- -- 823
+* -- 12891
+:= -- 17849
 add.period$ -- 0
-call.type$ -- 27
-change.case$ -- 279
-chr.to.int$ -- 66
-cite$ -- 52
-duplicate$ -- 12665
-empty$ -- 14707
-format.name$ -- 1283
-if$ -- 31280
+call.type$ -- 33
+change.case$ -- 334
+chr.to.int$ -- 72
+cite$ -- 64
+duplicate$ -- 15113
+empty$ -- 18106
+format.name$ -- 1594
+if$ -- 38430
 int.to.chr$ -- 0
-int.to.str$ -- 59
+int.to.str$ -- 74
 missing$ -- 0
-newline$ -- 571
-num.names$ -- 1070
-pop$ -- 8899
+newline$ -- 679
+num.names$ -- 1354
+pop$ -- 10893
 preamble$ -- 1
-purify$ -- 382
+purify$ -- 458
 quote$ -- 0
-skip$ -- 4218
+skip$ -- 5225
 stack$ -- 0
-substring$ -- 21806
-swap$ -- 2763
-text.length$ -- 510
+substring$ -- 26931
+swap$ -- 3336
+text.length$ -- 623
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 906
+type$ -- 1110
 warning$ -- 0
-while$ -- 1598
+while$ -- 1856
 width$ -- 0
-write$ -- 545
-(There was 1 error message)
+write$ -- 647
+(There was 1 warning)
