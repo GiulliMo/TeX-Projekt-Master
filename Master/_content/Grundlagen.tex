@@ -14,9 +14,11 @@
 		
 		\begin{figure}[H]
 			\centering
+			
 			\begin{tikzpicture}[
 				init/.style={
 					draw,
+					scale=1.5,
 					circle,
 					inner sep=2pt,
 					font=\Huge,
@@ -63,7 +65,8 @@
 				
 				\draw[decorate,decoration={brace,mirror}] (x1.north west) -- node[left=10pt] {Eingabe} (x3.south west);
 			\end{tikzpicture}
-			\caption{https://tex.stackexchange.com/questions/132444/diagram-of-an-artificial-neural-network}
+		
+			\caption{Darstellung der prinzipiellen Funktion eines Neurons in einem neuronalen Netz. Drei aufeinander folgende Punkte deuten eine Fortsetzung an. \cite{neuron}}
 			\label{fig: neuron}
 		\end{figure}
 		Der grundlegende Aufbau eines neuronalen Netzes besteht aus miteinander verbundenen Schichten, die häufig aus Neuronen bestehen. Die typische Struktur eine Neuron ist Abbildung \ref{fig: neuron} zu sehen. Es verarbeitet im wesentlichen eingehende Zahlenwerte $x_n$ und gibt diese durch die Ausgabe $y$ aus. Genauer wird mit den eingehenden Zahlenwerten eine gewichtete Summe gebildet. Diese wird dann auf eine Aktivierungsfunktion angewendet.\\
@@ -150,8 +153,11 @@
 				\draw[fill=black](4,-0.3)circle(1pt);
 				\draw[fill=black](4,-0.5)circle(1pt);
 				\draw[fill=black](4,-0.7)circle(1pt);
+				\draw[fill=black](6,-0.3)circle(1pt);
+				\draw[fill=black](6,-0.5)circle(1pt);
+				\draw[fill=black](6,-0.7)circle(1pt);
 				\end{tikzpicture}
-				\caption{https://newbiettn.github.io/2016/12/16/tikz/}
+				\caption{Prinzipielle Darstellung eines künstlichen, neuronalen Netzwerks. Neuronen werden als Kreise dargestellt. Drei aufeinander folgende Punkt deuten eine Fortsetzung an. Adaptiert aus \cite{neuron}.}
 				\label{fig: neuronales netz }
 		\end{figure}
 	
@@ -224,12 +230,7 @@
 		\label{subsec: Objekterkennung durch neuronale Netze}
 		Die bisher besten Ergebnisse in der Bildverarbeitung im Zusammenspiel mit neuronalen Netzen wurden durch \textit{Convolutional Neural Network} (CNN) ermöglicht \cite{deeplearning}. Anders als bei den bereits erwähnten Methoden geschieht die Merkmalsextraktion hierbei innerhalb des Netzes. Derartige Netzwerke nutzen Faltung zur Verarbeitung der Eingangsdaten statt der üblichen Matritzenmultiplikation \cite{deeplearning}. Der Aufbau eines CNNs setzt sich aus einer Merkmalsextraktion und die darauffolgende Klassifikation zusammen.\\ 
 		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale=0.3]{Bilder/cnn.png}
-			\label{fiq: normal cnn}
-			\caption{bla}
-		\end{figure}
+		\input{Bilder/towadatacnn}
 		
 	 	
 	
@@ -330,10 +331,12 @@
 			
 		
 			\end{tikzpicture}
-			\caption{Prinzipielle Darstellung des Faltungsprozess. Adaptiert aus \cite{deeplearning}}
+			\caption{Prinzipielle Darstellung des Faltungsprozess. Mit einem Quadrat umrandete Buchstaben stellen Daten wie zum Beispiel ein Pixel dar. Der Kernel fasst in dieser Abbildung beispielsweise vier Daten zu einer Information zusammen und gibt diese aus. Adaptiert aus \cite{deeplearning}}
 			\label{fig: faltung }
 		\end{figure}
 		
+	
+				
 		Während der Konvolution, oder auch Faltung genannt, werden eingehende Daten in Filter, sogenannte Kernels, eingegeben. Abbildung \ref{fig: faltung } zeigt den prinzipiellen Vorgang der Faltung. Die Konfiguration des Kernels ist beispielhaft mit $w$, $x$, $y$ und $z$ dargestellt. Eingehend Datenpunkte sind hier mit den Buchstaben $a$ bis $l$ gekennzeichnet. Die Filter extrahieren bestimmte Merkmale je nach Konfiguration, wie im unteren Teil der Abbildung als Ausgabe dargestellt. So können verschiedene Schichten diverse Merkmale extrahieren. Die Ausgänge der Schichten üblicher, neuronaler Netzen sind mit jedem Eingang der folgenden Schicht verknüpft. Ein typischer Aufbau wurde bereits in Kapitel \ref{subsec: Eigenschaften von neuronalen Netzen} in Abbildung \ref{fig: neuronales netz } gezeigt. Wird bei derartigen Netzen eine Schicht mit $n$ Ausgaben und eine mit $m$ Eingaben verknüpft, werden $m \cdot n$ Parameter benötigt \cite{deeplearning}. Durch den Faltungsprozess wird diese Konnektivität eingeschränkt. Beispielsweise wird der Datenpunkt $b$ der Eingabe aus der Darstellung \ref{fig: faltung } lediglich in zwei von sechs Datenpunkten der Ausgabe berücksichtigt. Die Ausmaße der eingeschränkten Konnektivität lassen sich in der folgenden Abbildung \ref{fig: eingeschränkte konnektivität} verdeutlichen. Die Eingabepunkte $x_n$ geben je nach Netzart ihre Informationen an alle oder benachbarten Ausgabepunkte $s_n$ weiter. Die Einschränkung der Konnektivität hängt von der Dimension des Kernels ab. Folglich nehmen CNNs deutlich weniger Speicher ein im Vergleich zu herkömmlichen KNNs \cite{deeplearning}. Gleichzeitig wird durch die Faltung eine höhere Statistische Effizient erreicht \cite{deeplearning}.\\
 		
 	
@@ -352,6 +355,8 @@
 				%execute at begin node=\color{black}$\cdots$
 			},
 		}
+	
+		
 		\begin{figure}[H]
 			\centering
 			
@@ -399,10 +404,11 @@
 			\draw [<-] (drei-4) -- (vier-5);
 			\draw [<-] (drei-5) -- (vier-4);
 			\draw [<-] (drei-5) -- (vier-5);
-			
+			\node[] (a) at (1,0) {(a)};
+			\node[] (a) at (1,-3.3) {(b)};
 		
 			\end{tikzpicture}
-			\caption{deep learning}
+			\caption{(a) Abbildung eines herkömmlichen, künstlichen, neuronalen Netzes. Die Flussrichtung der Bildinformationen ist mit Pfeilen angedeutet. Horizintal ausgerichtete Kreise stellen eine Schicht dar. Graue Kreise zeigen Neuronen die voneinander abhängig sind. (b) Grundlegende Darstellung eines Faltungsnetzes. Es gelten dieselben Darstellungsprinzipien wie in Abbildung (a) \cite{deeplearning}.}
 			\label{fig: eingeschränkte konnektivität}
 		\end{figure}
 		
@@ -481,10 +487,10 @@
 			\node[] (1) at (3,-2.5){$1$};
 			\node[] (1) at (4,-2.5){$0.2$};
 			
-			\node[] (1) at (2.5,3){Pooling};
-			\node[] (1) at (2.5,0.3){Eingabe};
-			\node[] (1) at (2.5,-0.3){Pooling};
-			\node[] (1) at (2.5,-3){Eingabe};
+			\node[] (1) at (2.5,3.1){Pooling};
+			\node[] (1) at (2.5,0.2){Eingabe};
+			\node[] (1) at (2.5,-0.2){Pooling};
+			\node[] (1) at (2.5,-3.1){Eingabe};
 			
 			\node[] (S1) at (5,2.5){...};
 			\node[] (S2) at (0,2.5){...};
@@ -523,11 +529,12 @@
 			\draw [<-,dashed] (S6) -- (vier-1);
 			\draw [<-,dashed] (drei-1) -- (S8);
 			\draw [<-,dashed] (drei-4) -- (S7);
-			
+			\node[] (a) at (0,0) {(a)};
+			\node[] (a) at (0,-3.3) {(b)};
 			
 			
 			\end{tikzpicture}
-			\caption{deep learning}
+			\caption{(a) Beispielhafter Poolingprozess. Horizontal angeordnete Kreise stellen sinngemäß eine Schicht dar. Die Zahlenwerte deuten Bildinformationen als Fallbeispiel an. (b) Es gelten dieselben darstellungsprinzipien wie in Abbildung (a). Die Eingansdaten wurden hierbei um ein neuron nach rechts versetzt. \cite{deep learning}}
 			\label{fig: Pooling}
 		\end{figure}
 		
@@ -580,7 +587,7 @@
 				{\draw[-latex] (mat4-1-\X) -- (mat5-1-\Y);}}
 			\draw[very thick,-Latex] (mat5) -- (mat6);
 			\end{tikzpicture}
-			\caption{https://tex.stackexchange.com/questions/519268/write-convolutional-neural-networks-using-tikzg}
+			\caption{Fallbeispiel eines Faltungsnetzwerk. Dreidimensional dargestellte Boxen stellen Datenpunkte dar und bilden in der horinzontalen Anordnung jeweils eine Schicht. Die Prozesse der Faltung und Pooling sind beispielhaft dargestellt. Die Flussrichtung der Bildinformationen ist durch Pfeile gekennzeichnet. \cite{cnnhor}}
 			\label{fig: cnn easy}		
 		\end{figure}
 		
@@ -638,8 +645,8 @@
 			
 			
 			\end{tikzpicture}
-			\caption{Prinzipielle Darstellung des Faltungsprozess. Adaptiert aus \cite{deeplearning}}
-			\label{fig: residual }
+			\caption{Markantes Merkmal eines \textit{ResNets}. Die Flussrichtung der Bildinformationen ist als Pfeil dargestellt. \cite{resnet}}
+			\label{fig: residual}
 		\end{figure}
 	
 		\textit{ResNet} Netze erreichen je nach Größe eine höhere Genauigkeit als die bereits erwähnten \textit{VGG} Architekturen. Die Größe der Netze erreichen hierbei 152 Schichten. Trotz der entsprechenden Tiefe enthält eine derartiges CNN circa die Hälfte der Parameter im Vergleich zu \textit{VGG} Netzen. Dementsprechend liegt der Speicherbedarf bei circa 230 MB. Für den Einsatz auf eingebetteten Systeme würde ein Netz dieser Größe zu viel Rechenkapazität in Anspruch nehmen, sodass die verarbeitung eines Bildes unter Umständen mehrere Sekunden dauern könnte. \\
@@ -745,34 +752,89 @@
 	
 	
 		
-		
+	\newpage	
 	\section{Bestimmung von Positionskoordinaten}
 	\label{sec: Bestimmung der Positionskoordinaten}
 		Während der Durchführung autonomer Fahr- bzw. Logistikaufgaben können diverse Probleme auftreten, die eine erfolgreiche Bearbeitung verhindern können. Beispielsweise können Türen geschlossen sein oder Gegenstände die geplante Route blockieren. Da das ALF nicht über die technischen Möglichkeiten besitzt derartige Probleme selbstständig zu lösen, müssen umstehende Personen um Unterstützung gebeten werden. Für diese Zwecke ist die Kenntnis über die Position von erfassten Personen notwendig.\\
 		
-		Anstehende Fahraufgaben werden, bedingt durch das Vorgängerprojekt, mithilfe des Robot Operating Systems gelöst. Personen können folglich als Position in das ROS Netzwerk veröffentlicht. Dies ermöglicht dem Roboter die veröffentlichten Positionen anzufahren. Die Eintragung der Position in die statische Karte setzt die Beschreibung der Position als Koordinaten vorraus. Für die Bestimmung der Positionskoordinaten wird ein zweidimensionales Bild und die dazugehörigen Tiefeninformationen genutzt. Die Koordinate xloc beschreibt hier die longitudinale Entfernung von der Kamera zur Person. Eingehende laterale Distanzen werden durch die Koordinate yloc dargestellt.
+	
+		Anstehende Fahraufgaben werden, bedingt durch das Vorgängerprojekt, mithilfe des Robot Operating Systems gelöst. Personen können folglich als Position in das ROS Netzwerk veröffentlicht werden. Dies ermöglicht dem Roboter die veröffentlichten Positionen anzufahren. Die Eintragung der Position von Personen in die statische Karte setzt die Beschreibung der Position als Koordinaten vorraus. Für die Bestimmung der Positionskoordinaten wird ein zweidimensionales Bild und die dazugehörigen Tiefeninformationen genutzt. Die Kenntnis über die Pixelposition des Objekts im Bild und den horinzontalen Sichtwinkel der Kamera ist für die Positionsbestimmung relevant.\\
 		
-	\begin{figure}[H]
-		\centering
+		Abbildung \ref{fig: positionsbestimmung} zeigt ein Fallbeispiel für die Positionserkennung. Die $z$-Koordinate ist als Höhenkoordinate zu interpretieren. Der Bildsensor der Kamera befindet sich im Ursprung des gezeigten Koordinatensystems. Zwischen der Objektivebene und dem Bildsensor besteht eine absolute Distanz $x_f$. Diese wird auch als Brennweite bezeichnet. Der Sichtwinkel $\gamma$ der Kamera spannt sich zwischen den Begrenzungslinien $f_l$ und $f_r$ auf. Das Objekt, dessen longitudinalen $x_loc$ und lateralen $y_loc$ Positionskoordinaten im Bezug zum Bildsensor bestimmt werden sollen, ist in der Abbildung mit einem Punkt gekennzeichnet und entsprechend beschrieben. Durch die Variable $d$ wird die absolute Distanz des Bildsensors zum Objekt beschrieben.\\
+		
+			\begin{figure}[H]
+			\centering
 			\begin{tikzpicture}[]
 				\draw[<->] (-5,0) -- (5,0) node[right] {$y$};
 				\draw[->] (0,-1.2) -- (0,7) node[above] {$x$};
-
+				
 				\draw[thin,-] (0,0) -- (4,6) node[above] {$f_{r}$};
 				\draw[thin,-] (0,0) -- (-4,6) node[above] {$f_{l}$} ;
-				\draw[densely dotted] (1,1.5) -- (-1,1.5) node[left] {$Bild$};
+				\draw[densely dotted] (1,1.5) -- (-1,1.5) node[anchor=east,left] {Objektivebene};
 				\filldraw [black] (1.5,4.5) circle (2pt);
-				\draw[dashed] (0,0) -- (1.5,4.5) node[above] {$Objekt$};
+				\draw[dashed] (0,0) -- (1.5,4.5) node[above] {Objekt};
 				\draw[very thick] (0,4.5) -- (1.5,4.5) node[left] {};
 				\draw[very thick] (0,0) -- (0,4.5) node[left] {};
 				\draw[very thick]  (0,3) node[left] {$x_{loc}$};
 				\draw[very thick]  (0.75,4.0) node[above] {$y_{loc}$};
 				\draw[very thick]  (0,1) node[left] {$x_{f}$};
+				\node[] (a) at (0.5,2.25) {$d$};
+				\draw [] (-5,0.5) circle [radius = 1.5mm];
+				\filldraw [black] (-5,0.5) circle (2pt);
+				\node[] (x) at (-5,0.9) {$z$};
 			\end{tikzpicture}
+			
+			\caption{Funktionsprinzip der Positionsbestimmung durch ein zweidimensionales Bild und Tiefeninformationen von oben betrachtet. Der Bildsensor der Kamera befindet sich im Ursprung des Koordinatensystems. Somit ist die Brennweite der Abstand zwischen der als gepunktete Linie dargestellte Objektivebene und des Bildsensors. Diese ist hier mit $x_f$ gekennzeichnet. Der aufgespannte Bereich zwischen den Geraden $f_l$ und $f_r$ stellt den Sichtbereich der Kamera dar. Durch eine gestrichelte Linie ist hier die absolute Distanz der Kamera zum Objekt gezeigt.}
+			\label{fig: positionsbestimmung}
+		\end{figure}
 		
-		\caption{(a) Die Abbildung zeigt die Übergangsfunktion $h(t)$ eines Verzögerungsglieds erster Ordnung als Antwort auf die sprungförmige Eingangsgröße $u(t)$ mit $\hat{u}=1$. (b) Die Impulsantwort auf das Eingangssignal $\delta(t)$. Zwischen den Funktionen $h(t)$ und $g(t)$ besteht der Zusammenhang \mbox{$g(t)=\frac{\mathrm d}{\mathrm d t}\:h(t)$}.}
-		\label{fig: antworten}
-	\end{figure}
+		Zur Berechnung der longitudinalen Positionskoordinate $x_loc$ wird das mathematische Verhältnis aus Gleichung \ref{eq: verhaeltnis} definiert. Der Teil der Distanz $d$, der durch den Bildsensor und der Objektivebene begrenzt wird, wird mit der Variable $d'$ besetzt. Dieser wird aus Darstellungsgründen nicht in der vorangegangenen Abbildung berücksichtigt. \\
+		
+		
+		\begin{figure}[H]
+			\centering
+			\begin{minipage}[b]{0.49\textwidth}
+				\begin{equation}
+					\frac{x_{loc}}{x_f}=\frac{d}{d'}
+					\label{eq: verhaeltnis}
+				\end{equation}\\
+			\end{minipage}
+			\hfill
+			\begin{minipage}[b]{0.49\textwidth}
+				\begin{equation}
+					d'=\sqrt{x_f^2+y_p^2}
+					\label{eq: dstrich}
+				\end{equation}\\
+			\end{minipage}
+		\end{figure}
+		
+		Die Brennweite kann bei vielen Kamera´modellen häufig aus dem Datenblatt entnommen werden. Jedoch lässt sich ebenfalls durch ihre Lage zu der Objektivebene beschreiben. Hierfür wird der Sichtwinkel $\gamma$ und die Breite des Bildes $b$ verwendet. Gleichung \ref{eq: focal} zeigt das bereits nach der Brennweite umgestellte Verhältnis. 
+		
+		\begin{equation}
+			x_f=\frac{b}{2\cdot\tan\left(\frac{\gamma}{2}\right)}
+			\label{eq: focal}
+		\end{equation}\\
+		
+		Gleichung \ref{eq: dstrich} zeigt die Berechnung von $d'$. Die Kenntnis über die Position des Objekts als Pixelkoordintane des Bildes ist dafür notwendig. Somit ergibt sich für die Positionskoordinaten.
+		
+			\begin{figure}[H]
+			\centering
+			\begin{minipage}[b]{0.49\textwidth}
+				\begin{equation}
+					x_lox=y_{p0}
+					\label{eq: xloc}
+				\end{equation}\\
+			\end{minipage}
+			\hfill
+			\begin{minipage}[b]{0.49\textwidth}
+				\begin{equation}
+					d'=\sqrt{x_f^2+y_p^2}
+					\label{eq: yloc}
+				\end{equation}\\
+			\end{minipage}
+		\end{figure}
+	
+		
 
 
 	     

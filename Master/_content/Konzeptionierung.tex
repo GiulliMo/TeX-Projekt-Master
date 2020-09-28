@@ -184,18 +184,8 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 	
 	\begin{figure}[H]
 		\centering
-		\begin{tikzpicture}
-			\node[circle,fill,gray,minimum size=15mm] (head) {};
-			\node[rounded corners=2pt,minimum height=5cm,gray,minimum width=1.5cm,fill,below = 1pt of head] (body) {};
-			\draw[line width=3.8mm,gray,round cap-round cap] ([shift={(6pt,-1pt)}]body.north east) --++(-90:19mm);
-			\draw[line width=3.8mm,gray,round cap-round cap] ([shift={(-6pt,-1pt)}]body.north west)--++(-90:19mm);
-			\draw[thick,white,-round cap] (body.south) --++(90:18mm);
-			\node at (0,-2.5) [thick,dashed,rectangle,minimum height=7cm,minimum width=4cm,draw] (v100) {};
-			\node at (0,-0.6) [thick,dashdotted,rectangle,minimum height=3cm,minimum width=3.8cm,draw] (v100) {};
-			\node at (0,-0.0) [thick,rectangle,minimum height=1.6cm,minimum width=1.6cm,draw] (v100) {};
-			
-		\end{tikzpicture}
-		\caption{test}
+		\includegraphics[width=1\textwidth]{Bilder/person.pdf}
+		\caption{Konzeptionelles Fallbeispiel der Personenerkennung. Zu sehen sind zwei Personen im Labor für Antriebstechnik aus der Hochschule Bochum. Rote Rechtecke zeigen den Interessenbereich der Personendetektion. Der Begrenzungsrahmen der Gesichtsdetektion ist gestrichelt dargestellt. Das als Strichpunkt präsentierte Rechteck deutet den Bereich der Distanzmessung an.}
 		\label{fig: bbox}
 	\end{figure}
 
@@ -258,7 +248,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die der 
 			\path [papLine] (pro4) -- (dec3);
 			
 		\end{tikzpicture}
-		\caption{Prozessablaufplan der Personenerkennung. Der Start sowie das Ende des Programms sind als Boxen mit Abrundungen dargestellt. Rechtecke zeigen Prozesse und Parallelogramme deuten eine Entscheidung im Programmablauf an. Die Flussrichtung der entsprechenden Informationen werden durch Pfeile präsentiert.}
+		\caption{Prozessablaufplan der Personenerkennung. Der Start sowie das Ende des Programms sind als Boxen mit Abrundungen dargestellt. Rechtecke zeigen Prozesse und Parallelogramme deuten eine Entscheidung im Programmablauf an. Die Flussrichtung der entsprechenden Informationen werden durch Pfeile präsentiert. Adaptiert aus \cite{texwelt}.}
 		\label{fig: Personenerkennung}
 	\end{figure}
 	

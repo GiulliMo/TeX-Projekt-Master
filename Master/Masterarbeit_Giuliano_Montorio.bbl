@@ -128,6 +128,21 @@
     \field{year}{2014}
   \endentry
 
+  \entry{neuron}{book}{}
+    \name{author}{1}{}{%
+      {{hash=G}{%
+         family={{Gonzalo Medina}},
+         familyi={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{G2}
+    \strng{fullhash}{G2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{note}{https://tex.stackexchange.com/questions/132444/diagram-of-an-artificial-neural-network}
+    \field{title}{Diagram of an artificial neural network}
+  \endentry
+
   \entry{Kriesel}{book}{}
     \name{author}{1}{}{%
       {{hash=DK}{%
@@ -242,6 +257,22 @@
     \field{year}{2005}
   \endentry
 
+  \entry{inria1}{book}{}
+    \name{author}{1}{}{%
+      {{hash=s}{%
+         family={{simongeek}},
+         familyi={s\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{s1}
+    \strng{fullhash}{s1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{https://github.com/Ermlab/hog-svm-inria}
+    \field{title}{Pedestrian classification from photos using the Linear SVM
+  and HOG features}
+  \endentry
+
   \entry{deeplearning}{book}{}
     \name{author}{1}{}{%
       {{hash=uCAGIBY}{%
@@ -255,15 +286,61 @@
       }}%
     }
     \list{publisher}{1}{%
-      {The MIT Press}%
+      {{The MIT Press}}%
     }
     \strng{namehash}{CAGIBYu1}
     \strng{fullhash}{CAGIBYu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{http://www.deeplearningbook.org - zugegriffen am 21.09.2020}
-    \field{title}{Deep Learning}
+    \field{note}{{http://www.deeplearningbook.org - zugegriffen am 21.09.2020}}
+    \field{title}{{Deep Learning}}
     \field{year}{2016}
+  \endentry
+
+  \entry{carpng}{book}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{SVG Repo}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S2}
+    \strng{fullhash}{S2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{https://www.svgrepo.com/svg/178/car-compact}
+    \field{title}{Car Compact SVG Vector}
+  \endentry
+
+  \entry{todasc}{book}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Sumit Saha}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{note}{https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53}
+    \field{title}{A Comprehensive Guide to Convolutional Neural Networks —
+  the ELI5 way}
+  \endentry
+
+  \entry{cnnhor}{book}{}
+    \name{author}{1}{}{%
+      {{hash=e}{%
+         family={{estamos}},
+         familyi={e\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{e2}
+    \strng{fullhash}{e2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{note}{https://tex.stackexchange.com/questions/519268/write-convolutional-neural-networks-using-tikz}
+    \field{title}{Write Convolutional Neural network using TikZ}
   \endentry
 
   \entry{cnnvergleich}{book}{}
@@ -412,6 +489,22 @@
     \field{title}{Going deeper with convolutions - 2015 IEEE Conference on
   Computer Vision and Pattern Recognition (CVPR)}
     \field{year}{2015}
+  \endentry
+
+  \entry{depthwiseconv}{book}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={{Sik-Ho Tsang}},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{note}{https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69}
+    \field{title}{Review: MobileNetV1 — Depthwise Separable Convolution
+  (Light Weight Model)}
   \endentry
 
   \entry{rcnn}{book}{}
@@ -668,6 +761,21 @@
     \field{year}{2014}
   \endentry
 
+  \entry{texex}{book}{}
+    \name{author}{1}{}{%
+      {{hash=Z}{%
+         family={{Zarko}},
+         familyi={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{Z1}
+    \strng{fullhash}{Z1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{note}{https://tex.stackexchange.com/questions/288589/how-to-depict-hierarchical-state-machines-in-latex}
+    \field{title}{How to depict Hierarchical State Machines in Latex}
+  \endentry
+
   \entry{opencv}{book}{}
     \name{author}{1}{}{%
       {{hash=s}{%
@@ -675,8 +783,8 @@
          familyi={s\bibinitperiod},
       }}%
     }
-    \strng{namehash}{s1}
-    \strng{fullhash}{s1}
+    \strng{namehash}{s2}
+    \strng{fullhash}{s2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{https://pypi.org/project/opencv-python/ - zugegriffen am
@@ -697,6 +805,21 @@
     \field{labeltitlesource}{title}
     \field{note}{https://pypi.org/project/Pillow/ - zugegriffen am 24.09.2020}
     \field{title}{Python Imaging Library (Fork)}
+  \endentry
+
+  \entry{texwelt}{book}{}
+    \name{author}{1}{}{%
+      {{hash=e}{%
+         family={{esdd}},
+         familyi={e\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{e1}
+    \strng{fullhash}{e1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{note}{https://texwelt.de/fragen/18787/wie-erstelle-ich-einen-programmablaufplan}
+    \field{title}{Wie erstelle ich einen Programmablaufplan?}
   \endentry
 
   \entry{maxssdmobilenet}{book}{}
