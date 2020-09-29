@@ -8,18 +8,20 @@ Auf den drei Hardwareplattformen herrschen keine optimalen Bedingungen. Ein neu 
  
 \input{Bilder/hog1}
 
-Der Kombination aus HoG und SVM erfüllt laut Abbildung ... die Erwartungen aus dem Grundlagenkapitel ... . Vor allem der anspruchsvolle \textit{COCO}-Datensatz 
+Der Kombination aus \textit{HoG} und \textit{SVM} erreicht trotz der höheren Auflösung der eingehenden Bilder geringe Werte Laut der \textit{Precision-Recall}-Kurve \ref{fig: hog1}. Der \textit{Recall}-Wert liegt für den Test mit dem \textit{COCO}-Datensatz konstant unter 0,1 bei einem maximalen \textit{Precision}-Wert von knapp unter 0,2.
 
 
 \input{Bilder/cocossdmobilenetv1tflite}
 
-Eine deutliche Steigerung hinsichtlich der Geschwindigkeit wird durch das \textit{Tensorflow Lite SSD MobileNet V1} Modell erreicht. Die Genauigkeit scheint zunächst niedriger auszufallen als erwartet. Jedoch spielt die Komplexität eines Datensatzes eine große Rolle. Im Paper von \textit{Huang} werden die Genauigkeitswerte verschiedener KNNs gegenübergestellt \cite{maxssdmobilenet}. Die dort präsentierte, mittlere Durchschnittsgenauigkeit (\textit{Overall mAP}) basierend auf den \textit{COCO}-Datensatz liegt bei circa 0,2 \cite{maxssdmobilenet}. 
+Eine deutliche Steigerung hinsichtlich der Geschwindigkeit wird durch das \textit{Tensorflow Lite SSD MobileNet V1} Modell erreicht. Eine präzise Auslistung aller gemessenen Analysezeiten ist in Tabelle \ref{fig: zeitentab} präsentiert. Die Genauigkeit scheint bei diesem Netz zunächst niedriger auszufallen als erwartet. Jedoch spielt die Komplexität eines Datensatzes eine große Rolle. Im Paper von \textit{Huang} werden die Genauigkeitswerte verschiedener KNNs gegenübergestellt \cite{maxssdmobilenet}. Die dort präsentierte, mittlere Durchschnittsgenauigkeit (\textit{Overall mAP}) basierend auf den \textit{COCO}-Datensatz liegt bei circa 0,2 \cite{maxssdmobilenet}. 
 
 \input{Bilder/ownssdmobilenetv1}
 
 \input{Bilder/ssdmobilenetv2tflite}
 
-Abbildung \ref{fig: ssdmobilenetv2} zeigt die \textit{Precision} und \textit{Recall} Kurve des \textit{Tensorflow Lite} Modells mit der \textit{SSD MobileNet V2} Architektur. Auch in diesem Fall erreicht das Netz erwartungsgemäß bei der Analyse durch den \textit{COCO}-Datensatz geringere Werte als durch den eigenen Datensatz.    
+Abbildung \ref{fig: ssdmobilenetv2} zeigt die \textit{Precision} und \textit{Recall} Kurve des \textit{Tensorflow Lite} Modells mit der \textit{SSD MobileNet V2} Architektur. Auch in diesem Fall erreicht das Netz erwartungsgemäß bei der Analyse durch den \textit{COCO}-Datensatz geringere Werte als durch den eigenen Datensatz. 
+
+\input{Bilder/ownnetv2}   
 
 \input{Bilder/gesamtvergleich}
 

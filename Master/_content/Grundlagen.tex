@@ -192,13 +192,14 @@
 		\label{eq: precision}
 		\end{equation}\\
 		
-		Häufig muss in der Praxis ein Kompromiss zwischen \textit{Precision} und \textit{Recall} gefunden werden. Dies lässt sich anhand eines Beispiel in der Personenerkennung veranschaulichen. Das System zur Erkennung wird beispielhaft mit einem hohen \textit{Precision}-Wert betrieben. Ein damit verbundener, niedriger \textit{Recall}-Wert ist in der Praxis üblich. Dies führt dazu, dass irrelevanter Bildinhalt selten als Person klassifiert wird. Jedoch kommt es eher häufig vor, dass keine Person detektiert wird obwohl eine zu sehen ist. Legt man nun den Fokus auf einen hohen \textit{Recall}, sinkt der \textit{Precision}-Wert. Personen würden dann zwar häufiger als Person klassifiziert werden, jedoch wird irrelevanter Bildinhalt ebenfalls häufig als Person klassifiziert. Je nach Anwendungsfall eines Netzes wird dann der entsprechende Betriebspunkt zwischen \textit{Precision} und \textit{Recall} gewählt.\\
+		Häufig muss in der Praxis ein Kompromiss zwischen \textit{Precision} und \textit{Recall} gefunden werden. Dies lässt sich anhand eines Beispiel in der Personenerkennung veranschaulichen. Das System zur Erkennung wird beispielhaft mit einen hohen \textit{Precision}- und einen niedrigen \textit{Recall}-Wert betrieben. Dies führt dazu, dass irrelevanter Bildinhalt selten als Person klassifiert wird. Jedoch kommt es eher häufig vor, dass keine Person detektiert wird obwohl eine zu sehen ist. Legt man den Fokus auf einen hohen \textit{Recall}- und einen niedrigen \textit{Precision}-Wert würden Personen dann häufiger als Person klassifiziert werden. Jedoch wird irrelevanter Bildinhalt ebenfalls häufig als Person klassifiziert. Je nach Anwendungsfall eines Netzes wird dann der entsprechende Betriebspunkt zwischen \textit{Precision} und \textit{Recall} gewählt.\\
 		
 		\begin{equation}
-		mAP = \frac{1}{N}\sum_{i=1}^{N}\frac{TP_i}{TP+FP}
+		mAP = \frac{1}{N}\sum_{i=1}^{N}p(r(t))
+		\label{eq: map}
 		\end{equation}\\
 		
-		Der \textit{mAP}-Wert oder auch die mittlere druchschnittliche Genauigkeit hat in der Berechnung Ähnlichkeiten zum bereits vorgestellten \textit{Precision} und \textit{Recall}. \\
+		Der \textit{mAP}-Wert oder auch die mittlere druchschnittliche Genauigkeit ist ein Indiz dafür, wie genau die Objekterkennung klassübergreifend arbeitet. Die Berechnung dieses Wertes beinhaltet hierbei die bereits vorgestellten \textit{Precision} und \textit{Recall} Werte. Dieser Messwert ist besonders aussagekräftig, wenn Systeme lediglich eine Objektklasse erkennen können. Gleichung \ref{eq: map} zeigt die Berechnung der mittleren durchschnittlichen Genauigkeit. Die Variable $N$ ist die Menge aller untersuchten Objekte, die durch das Netz erkannt werden können.  \\
 		
 		Eine einfache Betrachtung zur Evaluierung der Qualität hinsichtlich der Genauigkeit eines Netzes liefert der Top-$x$ Fehler. Der Platzhalter $x$ kann zunächst durch eine beliebige Zahl ersetzt werden. In der Praxis hat sich jedoch der Top-5 und der Top-1 Fehler als Vergleich durchgesetzt. Hierbei wird zunächst ein Bild durch ein beliebiges KNN analysiert und über die Ausgabeschicht extrahiert. Als Beispiel sollte sich im optimalen Fall die tatsächliche Klasse des Bildes unter den $x$ wahrscheinlichsten Klassen befinden, die über das Netz ausgegeben wurden. Folglich sagt der Top-1 Fehler aus, wie oft ein Netz ein eingegebenes Bild falsch klassifiziert hat. In vielen Paper zu neuen, künstlichen, neuronalen Netzen wird so die Genauigkeit mit bereits bestehenden Netzen verglichen.
 		
@@ -760,79 +761,97 @@
 	
 		Anstehende Fahraufgaben werden, bedingt durch das Vorgängerprojekt, mithilfe des Robot Operating Systems gelöst. Personen können folglich als Position in das ROS Netzwerk veröffentlicht werden. Dies ermöglicht dem Roboter die veröffentlichten Positionen anzufahren. Die Eintragung der Position von Personen in die statische Karte setzt die Beschreibung der Position als Koordinaten vorraus. Für die Bestimmung der Positionskoordinaten wird ein zweidimensionales Bild und die dazugehörigen Tiefeninformationen genutzt. Die Kenntnis über die Pixelposition des Objekts im Bild und den horinzontalen Sichtwinkel der Kamera ist für die Positionsbestimmung relevant.\\
 		
-		Abbildung \ref{fig: positionsbestimmung} zeigt ein Fallbeispiel für die Positionserkennung. Die $z$-Koordinate ist als Höhenkoordinate zu interpretieren. Der Bildsensor der Kamera befindet sich im Ursprung des gezeigten Koordinatensystems. Zwischen der Objektivebene und dem Bildsensor besteht eine absolute Distanz $x_f$. Diese wird auch als Brennweite bezeichnet. Der Sichtwinkel $\gamma$ der Kamera spannt sich zwischen den Begrenzungslinien $f_l$ und $f_r$ auf. Das Objekt, dessen longitudinalen $x_loc$ und lateralen $y_loc$ Positionskoordinaten im Bezug zum Bildsensor bestimmt werden sollen, ist in der Abbildung mit einem Punkt gekennzeichnet und entsprechend beschrieben. Durch die Variable $d$ wird die absolute Distanz des Bildsensors zum Objekt beschrieben.\\
+		Abbildung \ref{fig: positionsbestimmung} zeigt ein Fallbeispiel für die Positionserkennung. Die $z$-Koordinate ist als Höhenkoordinate zu interpretieren. Der Bildsensor der Kamera befindet sich im Ursprung des gezeigten Koordinatensystems. Zwischen der Objektivebene und dem Bildsensor besteht eine absolute Distanz ${p_y}'$. Der horizontale Sichtwinkel $\gamma$ der Kamera spannt sich wie dargestellt auf. Das Objekt, dessen longitudinalen $p_y$ und lateralen $p_x$ Positionskoordinaten im Bezug zum Bildsensor bestimmt werden sollen, ist in der Abbildung mit einem Punkt gekennzeichnet und entsprechend beschrieben. Durch die Variable $d$ wird die absolute Distanz des Bildsensors zum Objekt beschrieben.\\
 		
 			\begin{figure}[H]
 			\centering
 			\begin{tikzpicture}[]
-				\draw[<->] (-5,0) -- (5,0) node[right] {$y$};
-				\draw[->] (0,-1.2) -- (0,7) node[above] {$x$};
-				
-				\draw[thin,-] (0,0) -- (4,6) node[above] {$f_{r}$};
-				\draw[thin,-] (0,0) -- (-4,6) node[above] {$f_{l}$} ;
+				\draw[<->] (-5,0) -- (5,0) node[right] {$x$};
+				\draw[->] (0,-1.2) -- (0,7) node[above] {$y$};
+				\draw (3.5,5.25) arc (56.3:123.7:6.309cm);
+				\draw[thin,-] (0,0) -- (4,6) node[above] {};
+				\draw[thin,-] (0,0) -- (-4,6) node[above] {} ;
 				\draw[densely dotted] (1,1.5) -- (-1,1.5) node[anchor=east,left] {Objektivebene};
 				\filldraw [black] (1.5,4.5) circle (2pt);
 				\draw[dashed] (0,0) -- (1.5,4.5) node[above] {Objekt};
 				\draw[very thick] (0,4.5) -- (1.5,4.5) node[left] {};
 				\draw[very thick] (0,0) -- (0,4.5) node[left] {};
-				\draw[very thick]  (0,3) node[left] {$x_{loc}$};
-				\draw[very thick]  (0.75,4.0) node[above] {$y_{loc}$};
-				\draw[very thick]  (0,1) node[left] {$x_{f}$};
+				\draw[very thick]  (0,3) node[left] {$p_y$};
+				\draw[very thick]  (0.75,4.0) node[above] {$p_x$};
+				\draw[very thick]  (0,1) node[left] {$p_y'$};
 				\node[] (a) at (0.5,2.25) {$d$};
+				\draw[very thick]  (-1.3,5.3) node[left] {$\gamma$};
 				\draw [] (-5,0.5) circle [radius = 1.5mm];
 				\filldraw [black] (-5,0.5) circle (2pt);
 				\node[] (x) at (-5,0.9) {$z$};
+				
+				\coordinate (T) at (0cm, 1cm) {};
+				\coordinate (A) at (0cm, 0cm) {};
+				\coordinate (D) at (3cm,-2cm) {};
+				%\draw (T) -- (A) -- (D) pic [draw, "$\alpha_Z$",angle radius=.8cm,angle eccentricity=.4] {angle=T--A--D};
 			\end{tikzpicture}
 			
-			\caption{Funktionsprinzip der Positionsbestimmung durch ein zweidimensionales Bild und Tiefeninformationen von oben betrachtet. Der Bildsensor der Kamera befindet sich im Ursprung des Koordinatensystems. Somit ist die Brennweite der Abstand zwischen der als gepunktete Linie dargestellte Objektivebene und des Bildsensors. Diese ist hier mit $x_f$ gekennzeichnet. Der aufgespannte Bereich zwischen den Geraden $f_l$ und $f_r$ stellt den Sichtbereich der Kamera dar. Durch eine gestrichelte Linie ist hier die absolute Distanz der Kamera zum Objekt gezeigt.}
+			\caption{Funktionsprinzip der Positionsbestimmung durch ein zweidimensionales Bild und Tiefeninformationen von oben betrachtet. Der Bildsensor der Kamera befindet sich im Ursprung des Koordinatensystems. Der Abstand zwischen der als gepunktete Linie dargestellte Objektivebene und des Bildsensors wird mit ${p_y}'$ bezeichnet. Der Sichtwinkel der Kamera wird mit $\gamma$ beschrieben. Durch eine gestrichelte Linie ist hier die absolute Distanz $d$ der Kamera zum Objekt gezeigt.}
 			\label{fig: positionsbestimmung}
 		\end{figure}
 		
-		Zur Berechnung der longitudinalen Positionskoordinate $x_loc$ wird das mathematische Verhältnis aus Gleichung \ref{eq: verhaeltnis} definiert. Der Teil der Distanz $d$, der durch den Bildsensor und der Objektivebene begrenzt wird, wird mit der Variable $d'$ besetzt. Dieser wird aus Darstellungsgründen nicht in der vorangegangenen Abbildung berücksichtigt. \\
+		Zur Berechnung der longitudinalen Positionskoordinate $p_y$ wird das mathematische Verhältnis aus Gleichung \ref{eq: verhaeltnis} mithilfe des zweiten Strahlensatzes definiert. Der Teil der Distanz $d$, der durch den Bildsensor und der Objektivebene begrenzt wird, wird durch die Variable $d'$ beschrieben. Da die Objektivebene im rechten Winkel zur $y$-Achse steht kann $d'$ durch Gleichung \ref{eq: dstrich} beschrieben werden. Die Variable ${p_x}'$ steht für den Teil der Objektivebene, der durch die $y$-Achse und $d$ eingegrenzt wird. \\
 		
 		
 		\begin{figure}[H]
 			\centering
 			\begin{minipage}[b]{0.49\textwidth}
 				\begin{equation}
-					\frac{x_{loc}}{x_f}=\frac{d}{d'}
+					\frac{p_x}{d}=\frac{{p_x}'}{d'}
 					\label{eq: verhaeltnis}
 				\end{equation}\\
 			\end{minipage}
 			\hfill
 			\begin{minipage}[b]{0.49\textwidth}
 				\begin{equation}
-					d'=\sqrt{x_f^2+y_p^2}
+					d'=\sqrt{({p_y}')^2+({p_x}')^2}
 					\label{eq: dstrich}
 				\end{equation}\\
 			\end{minipage}
 		\end{figure}
 		
-		Die Brennweite kann bei vielen Kamera´modellen häufig aus dem Datenblatt entnommen werden. Jedoch lässt sich ebenfalls durch ihre Lage zu der Objektivebene beschreiben. Hierfür wird der Sichtwinkel $\gamma$ und die Breite des Bildes $b$ verwendet. Gleichung \ref{eq: focal} zeigt das bereits nach der Brennweite umgestellte Verhältnis. 
+		Das Verhältnis der halben Bildbreite $\frac{b}{2}$ zur Distanz ${p_y}'$ wird über den Tangens des halben Sichtwinkels der Kamera ausgedrückt. Gleichung \ref{eq: tangens} beschreibt das beschriebene mathematische Verhältnis. Durch die in Gleichung \ref{eq: pystrich} aufgeführte Umstellung lässt sich die Distanz ${p_y}'$ berechnen. Diese wird in Gleichung \ref{eq: final} zur Berechnung der lateralen Positionskoordintae $p_x$ eingesetzt.\\
 		
-		\begin{equation}
-			x_f=\frac{b}{2\cdot\tan\left(\frac{\gamma}{2}\right)}
-			\label{eq: focal}
-		\end{equation}\\
-		
-		Gleichung \ref{eq: dstrich} zeigt die Berechnung von $d'$. Die Kenntnis über die Position des Objekts als Pixelkoordintane des Bildes ist dafür notwendig. Somit ergibt sich für die Positionskoordinaten.
-		
-			\begin{figure}[H]
+		\begin{figure}[H]
 			\centering
 			\begin{minipage}[b]{0.49\textwidth}
 				\begin{equation}
-					x_lox=y_{p0}
-					\label{eq: xloc}
+					\tan\left(\frac{\gamma}{2}\right)=\frac{\frac{b}{2}}{{p_y}'}
+					\label{eq: tangens}
 				\end{equation}\\
 			\end{minipage}
 			\hfill
 			\begin{minipage}[b]{0.49\textwidth}
 				\begin{equation}
-					d'=\sqrt{x_f^2+y_p^2}
-					\label{eq: yloc}
+					{p_y}'=\frac{b}{2\cdot \tan\left(\frac{\gamma}{2}\right)}
+					\label{eq: pystrich}
 				\end{equation}\\
 			\end{minipage}
 		\end{figure}
+	
+		Gleichung \ref{eq: final} zeigt die Zusammensetzung der Berechnungen \ref{eq: verhaeltnis}, \ref{eq: dstrich} und \ref{eq: pystrich}. Die Zusammensetzung der Gleichungen erfolgte aufgrund der einzusetzenden Werte. Diese sind in der Praxis häufig bekannt oder können mit grundlegenden Mitteln berechnet oder ermittelt werden. Über den Hypptenusensatz erfolgt die Berechnung der longitudinalen Positionskoordinate $p_y$ wie in Gleichung \ref{eq: ypos}.\\		
+	
+		
+		\begin{equation}
+			p_x=\frac{{p_x}'}{d'}\cdot d=\frac{{p_x}'\cdot d}{\sqrt{({p_y}')^2+({p_x}')^2}}=\frac{{p_x}'\cdot d}{\sqrt{\left(\frac{b}{2\cdot \tan(\frac{\gamma}{2})}\right)^2+({p_x}')^2}}
+			\label{eq: final}
+		\end{equation}\\
+	
+		\begin{equation}
+			p_y=\sqrt{d^2-(p_x)^2}
+			\label{eq: ypos}
+		\end{equation}\\
+		
+	
+		
+	
+		
+			
 	
 		
 

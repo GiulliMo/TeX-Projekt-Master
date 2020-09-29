@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  28 SEP 2020 16:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  29 SEP 2020 14:46
 entering extended mode
 **./Masterarbeit_Giuliano_Montorio.tex
 (Masterarbeit_Giuliano_Montorio.tex
@@ -1654,9 +1654,6 @@ LaTeX Warning: Label `fig: ssdmobilenetv2' multiply defined.
 
 LaTeX Warning: Label `fig: ssdmobilenetv2' multiply defined.
 
-
-LaTeX Warning: Label `fig: mobilessdtab' multiply defined.
-
 )
 \openout1 = `Masterarbeit_Giuliano_Montorio.aux'.
 
@@ -1850,7 +1847,26 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Masterarbeit_Giuliano_Montorio.bbl' found.
 
-(Masterarbeit_Giuliano_Montorio.bbl)
+(Masterarbeit_Giuliano_Montorio.bbl
+! Illegal parameter number in definition of \NewValue.
+<to be read again> 
+                   s
+l.869 ...in/object-detection#ssdlite-mobilenet-v2}
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \abx@field@note.
+<to be read again> 
+                   s
+l.871   \endentry
+                 
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+)
 Package biblatex Info: Reference section=0 on input line 274.
 Package biblatex Info: Reference segment=0 on input line 274.
 \c@lstlisting=\count521
@@ -1866,13 +1882,12 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 274
 .
-
-(Y:\Miktex\tex/latex/amsfonts\umsb.fd
+ (Y:\Miktex\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 27
 4.
- (Y:\Miktex\tex/latex/jknappen\ursfs.fd
+(Y:\Miktex\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 <Bilder/Logo_Smart_RGB.jpg, id=6, 606.5862pt x 129.3633pt>
@@ -1893,8 +1908,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 12.9599pt on input line 306.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 319.
-
-[1
+ [1
 
 
 
@@ -2029,12 +2043,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
 
-<Bilder/oben.pdf, id=125, 443.39801pt x 204.72536pt>
+<Bilder/oben.pdf, id=123, 443.39801pt x 204.72536pt>
 File: Bilder/oben.pdf Graphic file (type pdf)
 <use Bilder/oben.pdf>
 Package pdftex.def Info: Bilder/oben.pdf  used on input line 11.
 (pdftex.def)             Requested size: 200.76353pt x 92.69722pt.
-<Bilder/seite.pdf, id=126, 443.36952pt x 284.92664pt>
+<Bilder/seite.pdf, id=124, 443.36952pt x 284.92664pt>
 File: Bilder/seite.pdf Graphic file (type pdf)
 <use Bilder/seite.pdf>
 Package pdftex.def Info: Bilder/seite.pdf  used on input line 15.
@@ -2214,12 +2228,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
@@ -2228,22 +2242,22 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--222
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 (Bilder/hog.tex
-<Bilder/hog1crop.png, id=222, 560.8453pt x 447.92343pt>
+<Bilder/hog1crop.png, id=221, 560.8453pt x 447.92343pt>
 File: Bilder/hog1crop.png Graphic file (type png)
 <use Bilder/hog1crop.png>
 Package pdftex.def Info: Bilder/hog1crop.png  used on input line 5.
 (pdftex.def)             Requested size: 204.85846pt x 163.61029pt.
-<Bilder/hog2crop.jpg, id=223, 560.0925pt x 447.92343pt>
+<Bilder/hog2crop.jpg, id=222, 560.0925pt x 447.92343pt>
 File: Bilder/hog2crop.jpg Graphic file (type jpg)
 <use Bilder/hog2crop.jpg>
 Package pdftex.def Info: Bilder/hog2crop.jpg  used on input line 10.
@@ -2253,12 +2267,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
@@ -2267,13 +2281,13 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [12 <./Bilder/hog1crop.png> <./Bilder/hog2crop.jpg>] (Bilder/towadatacnn.tex
-<Bilder/png.png, id=242, 1069.596pt x 1069.596pt>
+<Bilder/png.png, id=241, 1069.596pt x 1069.596pt>
 File: Bilder/png.png Graphic file (type png)
 <use Bilder/png.png>
 Package pdftex.def Info: Bilder/png.png  used on input line 49.
 (pdftex.def)             Requested size: 42.67862pt x 85.35725pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
@@ -2282,12 +2296,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [13 <./Bilder/png.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
@@ -2296,7 +2310,7 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
@@ -2305,21 +2319,21 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 417--418
+Underfull \hbox (badness 10000) in paragraph at lines 418--419
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
 
-LaTeX Warning: Citation 'deep learning' on page 16 undefined on input line 537.
+LaTeX Warning: Citation 'deep learning' on page 16 undefined on input line 538.
 
 
 
-LaTeX Warning: Citation 'deep learning' on page 16 undefined on input line 537.
+LaTeX Warning: Citation 'deep learning' on page 16 undefined on input line 538.
 
 
 
@@ -2327,12 +2341,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 543--544
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 545--546
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
 
  []
 
@@ -2341,7 +2355,7 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 596--597
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
 
  []
 
@@ -2350,12 +2364,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--603
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
 
  []
 
@@ -2364,12 +2378,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 652--653
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 656--657
+Underfull \hbox (badness 10000) in paragraph at lines 657--658
 
  []
 
@@ -2378,12 +2392,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 662--663
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 664--665
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
 
  []
 
@@ -2392,17 +2406,17 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 673--674
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--676
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
 
  []
 
 (Bilder/depthwiseconv.tex
-Underfull \hbox (badness 10000) in paragraph at lines 684--1
+Underfull \hbox (badness 10000) in paragraph at lines 685--1
 
  []
 
@@ -2411,16 +2425,16 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 687--688
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.19995pt on input line 690.
+(Font)              scaled to size 7.19995pt on input line 691.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 690.
+(Font)              scaled to size 5.39996pt on input line 691.
 
-Underfull \hbox (badness 10000) in paragraph at lines 692--693
+Underfull \hbox (badness 10000) in paragraph at lines 693--694
 
  []
 
@@ -2429,12 +2443,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 698--700
+Underfull \hbox (badness 10000) in paragraph at lines 699--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--708
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
 
  []
 
@@ -2443,17 +2457,17 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 720--721
+Underfull \hbox (badness 10000) in paragraph at lines 721--722
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 724--725
+Underfull \hbox (badness 10000) in paragraph at lines 725--726
 
  []
 
@@ -2462,12 +2476,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 734--737
+Underfull \hbox (badness 10000) in paragraph at lines 735--738
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 746--748
+Underfull \hbox (badness 10000) in paragraph at lines 747--749
 
  []
 
@@ -2476,17 +2490,17 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 758--759
+Underfull \hbox (badness 10000) in paragraph at lines 759--760
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 761--762
+Underfull \hbox (badness 10000) in paragraph at lines 762--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 763--764
+Underfull \hbox (badness 10000) in paragraph at lines 764--765
 
  []
 
@@ -2495,12 +2509,7 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 791--792
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 800--801
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 
  []
 
@@ -2509,29 +2518,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 807--808
 
  []
 
-LaTeX Info: Symbol \textasciiacute not provided by
-            font family phv in TS1 encoding.
-            Default family used instead on input line 811.
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-811.
-(Y:\Miktex\tex/latex/base\ts1cmss.fd
-File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 816--817
+Underfull \hbox (badness 10000) in paragraph at lines 814--815
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 818--819
+
+ []
+
+
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 826--827
 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 833--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 837--838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 843--844
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 848--849
 
  []
 
@@ -2792,7 +2814,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--184
 
 pdfTeX warning: pdflatex.exe (file ./Bilder/person.pdf): PDF inclusion: found P
 DF version <1.7>, but at most version <1.5> allowed
-<Bilder/person.pdf, id=573, 963.6pt x 542.025pt>
+<Bilder/person.pdf, id=576, 963.6pt x 542.025pt>
 File: Bilder/person.pdf Graphic file (type pdf)
 <use Bilder/person.pdf>
 Package pdftex.def Info: Bilder/person.pdf  used on input line 187.
@@ -2898,23 +2920,14 @@ Package pgfplots Warning: Table 'Bilder/ownssdmobilenetv1.csv' has non-unique c
 olumn name 'a'. Only the first occurence can be accessed via column names. on i
 nput line 25.
 
+PGFPlots: reading {Bilder/ownnetv1coco.csv}
+
+Package pgfplots Warning: Table 'Bilder/ownnetv1coco.csv' has non-unique column
+ name 'a'. Only the first occurence can be accessed via column names. on input 
+line 26.
+
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-
-LaTeX Warning: Reference `plotbrr' on page 50 undefined on input line 29.
-
-
-Underfull \hbox (badness 2042) in paragraph at lines 31--31
-\T1/phv/m/n/12 ze Kur-ve be-schreibt die Ana-ly-se durch den \T1/phv/m/sl/12 CO
--CO\T1/phv/m/n/12 -Datensatz. Der Test
- []
-
-
-Underfull \hbox (badness 3525) in paragraph at lines 31--31
-\T1/phv/m/n/12 mit-hil-fe des ei-ge-nen Da-ten-satz wir durch die graue Kur-ve 
-prä-sen-tiert.
- []
-
 ) (Bilder/ssdmobilenetv2tflite.tex
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Bilder/ssdmobilenetv2tflite.csv}
@@ -2932,6 +2945,53 @@ s. on input line 26.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
+! Illegal parameter number in definition of \abx@field@note.
+<to be read again> 
+                   s
+l.32 ...tit{SSD MobileNet V2} Netz \cite{ssdv2}. }
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \abx@field@note.
+<to be read again> 
+                   s
+l.32 ...tit{SSD MobileNet V2} Netz \cite{ssdv2}. }
+                                                  
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+) (Bilder/ownnetv2.tex
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {Bilder/ownnetv2.csv}
+
+
+Package pgfplots Warning: Table 'Bilder/ownnetv2.csv' has non-unique column nam
+e 'a'. Only the first occurence can be accessed via column names. on input line
+ 25.
+
+PGFPlots: reading {Bilder/ownnetv2coco.csv}
+
+Package pgfplots Warning: Table 'Bilder/ownnetv2coco.csv' has non-unique column
+ name 'a'. Only the first occurence can be accessed via column names. on input 
+line 26.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Underfull \hbox (badness 2042) in paragraph at lines 33--33
+\T1/phv/m/n/12 ze Kur-ve be-schreibt die Ana-ly-se durch den \T1/phv/m/sl/12 CO
+-CO\T1/phv/m/n/12 -Datensatz. Der Test
+ []
+
+
+Underfull \hbox (badness 3525) in paragraph at lines 33--33
+\T1/phv/m/n/12 mit-hil-fe des ei-ge-nen Da-ten-satz wir durch die graue Kur-ve 
+prä-sen-tiert.
+ []
+
 )
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
@@ -2994,83 +3054,6 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [54]
-chapter without number
-
-Underfull \hbox (badness 10000) in paragraph at lines 505--505
-[]\T1/phv/m/n/12 Gonzalo Me-di-na. \T1/phv/m/sl/12 Dia-gram of an ar-ti-fi-ci-a
-l neural net-work\T1/phv/m/n/12 .
- []
-
-[55
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 505--505
-[]\T1/phv/m/n/12 Goodfellow, I. , Ben-gio, Y. und Cour-ville, A. \T1/phv/m/sl/1
-2 De-ep Lear-ning\T1/phv/m/n/12 .
- []
-
-
-Underfull \hbox (badness 8056) in paragraph at lines 505--505
-[]\T1/phv/m/n/12 Sumit Sa-ha. \T1/phv/m/sl/12 A Com-pre-hen-si-ve Gui-de to Con
--vo-lu-tio-nal Neural Net-works 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 505--505
-[]\T1/phv/m/n/12 estamos. \T1/phv/m/sl/12 Wri-te Con-vo-lu-tio-nal Neural net-w
-ork using TikZ\T1/phv/m/n/12 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 505--505
-\T1/phv/m/n/12 https://tex.stackexchange.com/questions/519268/write-convolution
-al-neural-networks-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 505--505
-\T1/phv/m/sl/12 Mo-del)\T1/phv/m/n/12 . https://towardsdatascience.com/review-m
-obilenetv1-depthwise-separable-
- []
-
-
-Overfull \vbox (1.76944pt too high) has occurred while \output is active []
-
-
-[56]
-Underfull \hbox (badness 4805) in paragraph at lines 505--505
-[]\T1/phv/m/n/12 Szegedy, C., Reed, S., Erhan, D. und An-gue-lov, D. \T1/phv/m/
-sl/12 Ke-ras Ap-p-li-ca-ti-ons\T1/phv/m/n/12 . htt-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 505--505
-[]\T1/phv/m/n/12 Zarko. \T1/phv/m/sl/12 How to de-pict Hier-ar-chi-cal State Ma
--chi-nes in La-tex\T1/phv/m/n/12 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 505--505
-\T1/phv/m/n/12 https://tex.stackexchange.com/questions/288589/how-to-depict-hie
-rarchical-state-
- []
-
-
-Underfull \hbox (badness 6708) in paragraph at lines 505--505
-[]\T1/phv/m/n/12 aclark, hu-govk, ra-dar-he-re und wi-red-fool. \T1/phv/m/sl/12
- Py-thon Ima-ging Li-bra-ry (Fork)\T1/phv/m/n/12 . htt-
- []
-
-
-Overfull \vbox (1.76944pt too high) has occurred while \output is active []
-
-
-[57]
-Overfull \vbox (1.76944pt too high) has occurred while \output is active []
-
-
-[58]
 
 Class scrbook Warning: You are using `\begin{appendix}...\end{appendix}'.
 (scrbook)              You should note, that `\appendix' is a mostly globally
@@ -3086,14 +3069,15 @@ Class scrbook Warning: You are using `\begin{appendix}...\end{appendix}'.
 (scrbook)              `\appendix' on input line 508.
 
 chapter A.
-[59
+[55
+
 
 
 ]
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[60]
+[56]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 531.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 531.
  (Masterarbeit_Giuliano_Montorio.aux)
@@ -3120,40 +3104,156 @@ l'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56717 strings out of 481212
- 1292354 string characters out of 2922283
- 2138437 words of memory out of 3000000
- 71058 multiletter control sequences out of 15000+200000
- 590231 words of font info for 127 fonts, out of 3000000 for 9000
+ 56678 strings out of 481212
+ 1290292 string characters out of 2922283
+ 2143248 words of memory out of 3000000
+ 71019 multiletter control sequences out of 15000+200000
+ 589888 words of font info for 126 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 64i,21n,106p,10647b,2789s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{figure.caption.33} has been referenced but does n
-ot exist, replaced by a fixed one
+ 64i,21n,106p,10647b,2640s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{cite.0@ssdv2} has been referenced but does not ex
+ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{table.caption.43} has been referenced but does not 
+pdfTeX warning (dest): name{cite.0@maxssdmobilenet} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@tensorflowstarter} has been referenced but d
+oes not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@hogcode} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@texwelt} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@pillow} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@opencv} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@texex} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@cocopaper} has been referenced but does not 
 exist, replaced by a fixed one
 
-pdfTeX warning (dest): name{table.caption.31} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.44} has been referenced but does not exist
+pdfTeX warning (dest): name{cite.0@coco} has been referenced but does not exist
 , replaced by a fixed one
 
- <C:\Users\giull\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss12
-00.pk>{Y:/Miktex/fonts/enc/dvips/base/8r.enc}<Y:/Miktex/fonts/type1/public/amsf
-onts/cm/cmex10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><Y:/Mik
-tex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><Y:/Miktex/fonts/type1/public/amsf
-onts/cm/cmmi8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><Y:/Mikte
-x/fonts/type1/public/amsfonts/cm/cmr17.pfb><Y:/Miktex/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><Y:/Miktex/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><Y:/Mikt
-ex/fonts/type1/urw/helvetic/uhvb8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvr
-8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Masterarbeit_Giuliano_Montorio.pdf (69 pages, 1641552 bytes).
+pdfTeX warning (dest): name{cite.0@cpugpu} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@tflite} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@frameworks} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@embedded} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@leightweight} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@keras} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@multibox} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@fasterrcnn} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@fastrcnn} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@rcnn} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@depthwiseconv} has been referenced but does 
+not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@inception} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@resnet} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@vgg} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@mobilenets} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@cnnvergleich} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@cnnhor} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@todasc} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@carpng} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@deeplearning} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@inria1} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@hogsvm} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@bildundobjekt} has been referenced but does 
+not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@precisionandrecall} has been referenced but 
+does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@Ertel} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@Kriesel} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@neuron} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@sae} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@saeorg} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@Dittmann} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@Bachelorarbeit} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@sopra} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{cite.0@bvdw} has been referenced but does not exist
+, replaced by a fixed one
+
+{Y:/Miktex/fonts/enc/dvips/base/8r.enc}<Y:/Miktex/fonts/type1/public/amsfonts/c
+m/cmex10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><Y:/Miktex/fo
+nts/type1/public/amsfonts/cm/cmmi6.pfb><Y:/Miktex/fonts/type1/public/amsfonts/c
+m/cmmi8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><Y:/Miktex/font
+s/type1/public/amsfonts/cm/cmr17.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/
+cmr6.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><Y:/Miktex/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cms
+y8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><Y:/Miktex/fon
+ts/type1/urw/helvetic/uhvb8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvr8a.pfb
+><Y:/Miktex/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on Masterarbeit_Giuliano_Montorio.pdf (65 pages, 1635304 bytes).
 
 PDF statistics:
- 862 PDF objects out of 1000 (max. 8388607)
- 212 named destinations out of 1000 (max. 500000)
- 285 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 851 PDF objects out of 1000 (max. 8388607)
+ 208 named destinations out of 1000 (max. 500000)
+ 277 words of extra memory for PDF output out of 10000 (max. 10000000)
 
