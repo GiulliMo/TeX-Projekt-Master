@@ -5,14 +5,6 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: biblatex.bst
 Reallocating 'name_of_file' (item size: 1) to 35 items.
 Reallocating 'name_of_file' (item size: 1) to 12 items.
-White space in argument---line 254 of file Masterarbeit_Giuliano_Montorio.aux
- : \citation{deep
- :                learning}
-I'm skipping whatever remains of this command
-White space in argument---line 257 of file Masterarbeit_Giuliano_Montorio.aux
- : \citation{deep
- :                learning}
-I'm skipping whatever remains of this command
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
 Reallocating 'global_strs' (item size: 1) to 4000000 items.
@@ -28,51 +20,56 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'field_info' (item size: 4) to 11116 items.
+Reallocating 'field_info' (item size: 4) to 12923 items.
 Database file #1: Masterarbeit_Giuliano_Montorio-blx.bib
 Database file #2: _bib/biblio.bib
+I was expecting a `,' or a `}'---line 279 of file _bib/biblio.bib
+ : 
+ : @book{tensorflowstarter,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Biblatex version: 3.13
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 44 entries,
+You've used 57 entries,
             6365 wiz_defined-function locations,
-            1363 strings with 15208 characters,
-and the built_in function-call counts, 207548 in all, are:
-= -- 14703
-> -- 3402
-< -- 837
-+ -- 3153
-- -- 1020
-* -- 14430
-:= -- 19977
+            1411 strings with 16999 characters,
+and the built_in function-call counts, 264913 in all, are:
+= -- 18583
+> -- 4416
+< -- 1069
++ -- 3906
+- -- 1309
+* -- 18432
+:= -- 25279
 add.period$ -- 0
-call.type$ -- 44
-change.case$ -- 392
-chr.to.int$ -- 72
-cite$ -- 86
-duplicate$ -- 18547
-empty$ -- 21537
-format.name$ -- 2005
-if$ -- 45170
+call.type$ -- 57
+change.case$ -- 478
+chr.to.int$ -- 102
+cite$ -- 112
+duplicate$ -- 23682
+empty$ -- 27652
+format.name$ -- 2593
+if$ -- 57766
 int.to.chr$ -- 0
-int.to.str$ -- 102
+int.to.str$ -- 134
 missing$ -- 0
-newline$ -- 826
-num.names$ -- 1720
-pop$ -- 14513
+newline$ -- 1053
+num.names$ -- 2232
+pop$ -- 18827
 preamble$ -- 1
-purify$ -- 543
+purify$ -- 668
 quote$ -- 0
-skip$ -- 6676
+skip$ -- 8619
 stack$ -- 0
-substring$ -- 28426
-swap$ -- 4188
-text.length$ -- 792
+substring$ -- 35905
+swap$ -- 5411
+text.length$ -- 1027
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1484
+type$ -- 1926
 warning$ -- 0
-while$ -- 2118
+while$ -- 2676
 width$ -- 0
-write$ -- 783
-(There were 2 error messages)
+write$ -- 997
+(There was 1 error message)

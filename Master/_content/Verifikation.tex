@@ -1,21 +1,23 @@
 \chapter{Evaluation}
 \label{ch: Verifikation}
-Zur Evaluation der künstlichen neuronalen Netze wird eine anwendungsorientierte \textit{Benchmark} durchgeführt. Hierbei wird anhand der in Kapitel \ref{subsec: Entwickeltes neuronales Netz} beschriebenen Datensätze die \textit{Precision} und \textit{Recall} Methode angewendet. Weiterhin werden die Benchmarks auf einer Grafikkarte, dem integrierten Computer des ALFs und einem eingebettem System ausgeführt. Die Eckdaten des Grafikkarte sowie des ALFs sind in Anhang ... präsentiert. Als eingebettetes System wird ein \textit{Raspberry Pi 3 Model B+} verwendet. Es ist keine Veränderung der Genauigkeit je Netz auf den jeweiligen Geräten zu erwarten. Jedoch können so die Bearbeitungszeiten pro Bild für unterschiedliche Hardware verglichen werden. \\
+Zur Evaluation der künstlichen neuronalen Netze wird eine anwendungsorientierte \textit{Benchmark} durchgeführt. Hierbei wird anhand der in Kapitel \ref{subsec: Entwickeltes neuronales Netz} beschriebenen Datensätze die \textit{Precision} und \textit{Recall} Methode angewendet. Weiterhin werden die Benchmarks auf einer Grafikkarte, dem integrierten Computer des ALFs und einem eingebettem System ausgeführt. Die Eckdaten des Grafikkarte sowie des ALFs sind in Anhang \ref{a: } präsentiert. Als eingebettetes System wird ein \textit{Raspberry Pi 3 Model B+} verwendet. Es ist keine Veränderung der Genauigkeit je Netz auf den jeweiligen Geräten zu erwarten. Jedoch können so die Bearbeitungszeiten pro Bild für unterschiedliche Hardware verglichen werden. \\
 
 Insgesamt werden für den Test durch \textit{COCO-Datensatz} 12755 Bilder aus dem Trainingsdatensatz verwendet. Der technische Hintergrund hierfür ist in Kapitel \ref{subsec: Entwickeltes neuronales Netz} zu finden. Als Vergleich analysiert jedes Netz auch den eigenen Datensatz. So kann die Performance am Einsatzort des ALFs an der Hochschule Bochum evaluiert werden. Jedes Bild wird für die verwendeten, neuronalen Netze auf eine Pixelgröße von $300 \times 300$ skaliert. Für die Evaluation des HoGs wird eine höhere Auflösung gewählt. Hierbei wird eine Seite des Bildes softwareseitig auf 400 Pixel begrenzt.\\
 
-Auf den drei Hardwareplattformen herrschen keine optimalen Bedingungen. Ein neu aufgesetztes System bei dem keine Software versteckte Auslastung erzeugt wird hierbei als optimal bezeichnet. Aufgrundessen wird bei der Evaluation ein Verlust der Geschwindigkeit im Hinblick auf die in Kapitel \ref{subsec: Auswahl und Training der verwendeten neuronalen Netze} gezeigten Werte erwartet.   \\
+Der in Grundlagenkapitel \ref{subsec: evaluation neuronaler netze} beschriebene mAP-Wert wird häufig auf Objekterkennungssystemen mit multiplen Klassen angewendet. Die hier entwickelte Personenerkennung soll jedoch lediglich die Klasse \textit{Person} erkennen. Somit ist der mAP-Wert in diesem Fall der Mittelwert eines Messwerts und kann als Integral der \textit{Precision-Recall}-Kurve angesehen werden. Im Verlauf der Evaluation der angewendeten Systeme wird mithilfe einer Berechnungssoftware jeweils der mAP-Wert berechnet.
  
 \input{Bilder/hog1}
 
-Der Kombination aus \textit{HoG} und \textit{SVM} erreicht trotz der höheren Auflösung der eingehenden Bilder geringe Werte Laut der \textit{Precision-Recall}-Kurve \ref{fig: hog1}. Der \textit{Recall}-Wert liegt für den Test mit dem \textit{COCO}-Datensatz konstant unter 0,1 bei einem maximalen \textit{Precision}-Wert von knapp unter 0,2.
+Der Kombination aus \textit{HoG} und \textit{SVM} erreicht trotz der höheren Auflösung der eingehenden Bilder geringe Werte laut den in Abbildung \ref{fig: hog1} präsentierten Ergebnisse. Der \textit{Recall}-Wert liegt für den Test mit dem eigenen Datensatz konstant unter 0,35 bei einem maximalen \textit{Precision}-Wert von knapp unter 0,55. Bei der Durchsicht der eingetragenen Begrenzungsrahmen ist aufgefallen, dass diese verhältnismäßig groß ausfallen. Somit könnte der \textit{IoU}-Wert entsprechend niedrig sein un zu diesem Ergebnis führen.
 
 
 \input{Bilder/cocossdmobilenetv1tflite}
 
-Eine deutliche Steigerung hinsichtlich der Geschwindigkeit wird durch das \textit{Tensorflow Lite SSD MobileNet V1} Modell erreicht. Eine präzise Auslistung aller gemessenen Analysezeiten ist in Tabelle \ref{fig: zeitentab} präsentiert. Die Genauigkeit scheint bei diesem Netz zunächst niedriger auszufallen als erwartet. Jedoch spielt die Komplexität eines Datensatzes eine große Rolle. Im Paper von \textit{Huang} werden die Genauigkeitswerte verschiedener KNNs gegenübergestellt \cite{maxssdmobilenet}. Die dort präsentierte, mittlere Durchschnittsgenauigkeit (\textit{Overall mAP}) basierend auf den \textit{COCO}-Datensatz liegt bei circa 0,2 \cite{maxssdmobilenet}. 
+Eine deutliche Steigerung hinsichtlich der Geschwindigkeit wird durch das \textit{Tensorflow Lite SSD MobileNet V1} Modell erreicht. Eine präzise Auslistung aller gemessenen Analysezeiten ist in Tabelle \ref{fig: zeitentab} präsentiert. Die Genauigkeit scheint bei diesem Netz zunächst niedriger auszufallen als erwartet. Jedoch spielt die Komplexität des Datensatzes eine große Rolle. Im Paper von \textit{Huang} werden die Genauigkeitswerte verschiedener KNNs gegenübergestellt \cite{maxssdmobilenet}. Die dort präsentierte, mittlere Durchschnittsgenauigkeit (\textit{Overall mAP}) basierend auf den \textit{COCO}-Datensatz liegt bei circa 0,2 \cite{maxssdmobilenet}. 
 
 \input{Bilder/ownssdmobilenetv1}
+
+Das entwickelte \textit{SSD-MobileNet V1}...Die Trainingskonfigurationen dieses sowie des entwickelten \textit{SSD MobileNet V2} Netzes sind in Anhang ... gezeigt.
 
 \input{Bilder/ssdmobilenetv2tflite}
 
@@ -25,7 +27,13 @@ Abbildung \ref{fig: ssdmobilenetv2} zeigt die \textit{Precision} und \textit{Rec
 
 \input{Bilder/gesamtvergleich}
 
+Im Gesamtvergleich der Genauigkeit in Anwendung auf den eigenen Datensatz aller Untersuchten Systeme sticht die ... Architektur als das Verfahren mit den höchsten \textit{Precision-Recall} Werten heraus. 
+
 \input{Bilder/zeitenvergleich}
+
+Die Berechnungszeit pro Bild des eigenen Datensatzes aller untersuchten Objekterkennungssysteme ist in der Tabelle in Abbildung \ref{fig: zeitenvergleich} präsentiert. \\
+
+Die Auswahl der entsprechenden Systeme ist nach wie vor abhängig vond er verwendeten Hardware. Das Ziel in diesem Projekt ist der Einsatz am integrierten Computer des ALFs sowie eine mögliche AUslagerung auf ein eingebettetes System. 
 
 
 

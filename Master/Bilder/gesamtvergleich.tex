@@ -18,16 +18,24 @@
 	xmin=0, xmax=1, 
 	ymin=0, ymax=1.2,
 	%every axis plot/.append style={line width=1.0pt}
-	legend pos=north east,
+	%legend pos=north east,
+	legend style={at={(axis cs:0.5,1)},anchor=south west} ,
 	]
 	
-	\addlegendentry{Eigener Datensatz}; % legende1
+	\addlegendentry{SSD-MobileNet V2 (H)}; % legende1
 	\addplot[gray, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ssdmobilenetv2tflite.csv};
+	\addplot[line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/hog.csv};
+	\addplot[dashed,line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ownnetv2.csv};
+	\addplot[dotted,line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ownssdmobilenetv1.csv};
+	\addplot[dash dot,line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1tflite.csv};
 	\addlegendimage{/pgfplots/refstyle=plotbrr};				
-	\addlegendentry{\textit{COCO}-Datensatz} ;%legende 2;
+	\addlegendentry{HoG \& SVM (H)} ;
+	\addlegendentry{SSD-MobileNet V2 (E)} ;%legende 2;
+	\addlegendentry{SSD-MobileNet V1 (E)} ;%legende 2;
+	\addlegendentry{quant. SSD-MobileNet V1 (H)} ;%legende 2;
 	%\addlegendentry{plot 1}
 	\end{axis}
 	\end{tikzpicture}
-	\caption{\textit{Precision-Recall}-Kurven des \textit{SSD MobileNet V2} Netz. Die schwarze Kurve beschreibt die Analyse durch den \textit{COCO}-Datensatz. Der Test mithilfe des eigenen Datensatz wir durch die graue Kurve präsentiert. https://github.com/kaka-lin/object-detection}
-	\label{fig: ssdmobilenetv2}
+	\caption{\textit{Precision-Recall}-Kurven aller Objekterkennungssysteme in Anwendung auf den eigenen Datensatz.}
+	\label{fig: zeitenvergleich}
 \end{figure}
