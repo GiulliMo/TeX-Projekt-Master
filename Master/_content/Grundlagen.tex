@@ -1,16 +1,18 @@
 \chapter{Grundlagen}
 \label{ch: Grundlagen}
-	Für ein besseres Verständnis, der in Kapitel \ref{ch: Konzeptionierung} angewandten Methoden, werden anbei die Grundlagen behandelt. Informationen zu der verwendeten Hard- und Software wurden bereits in der vorangegangenen Bachelorarbeit vermittelt. Die in Kapitel \ref{ch: Grundlagen} erwähnte Personenerkennung ist eine Abwandlung der Objekterkennung. Im folgenden werden sowohl herkömmliche als auch state-of-the-art Lösungen zur Objekterkennung präsentiert. Letzteres beinhaltet das Thema der neuronalen Netze. Somit werden zunächst die neuronalen Netze und ihre Eigenschaften besprochen bevor die Grundlagen der Objekterkennung erläutert werden.  
+	Für ein besseres Verständnis, der in Kapitel \ref{ch: Konzeptionierung} angewandten Methoden, werden anbei die Grundlagen behandelt. Informationen zu der verwendeten Hard- und Software wurden bereits in der vorangegangenen Bachelorarbeit vermittelt. Die in Kapitel \ref{ch: Grundlagen} erwähnte Personenerkennung ist eine Abwandlung der Objekterkennung. Im Folgenden werden sowohl herkömmliche als auch state-of-the-art Lösungen zur Objekterkennung präsentiert. Letzteres beinhaltet das Thema der neuronalen Netze. Somit werden zunächst die neuronalen Netze und ihre Eigenschaften besprochen bevor die Grundlagen der Objekterkennung erläutert werden.  
  
 	
  	\section{Neuronale Netze}
 	\label{sec: ROS}
 	
-	Das Neuronennetz des menschlichen Gehirns dient als Vorbild für künstliche, neuronale Netze (KNN) \cite{neuronennetz}. KNNs werden heutzutage als Lösung diverser Anwendungsprobleme angewendet, in denen komplexe Strukturen und Muster aus großen Datenmengen erkannt werden sollen \cite{neuronennetz}. Das in diesem Projekt zugrundeliegende Bildverarbeitungsproblem besitzt jene Eigenschaften und eignet sich für den Einsatz eines neuronales Netzes als Problemlösung. Anders als bei regelbasierten System verhalten KNNs grundlegend verschieden \cite{proba}. Sie lernen Verhaltensmuster basierend auf den entsprechenden Eingang \cite{proba}. Dies führt unter Umständen zu unverhersehbaren Ergebnissen. Am vorliegenden, autonomen Logistikfahrzeug werden zur Personenerkennung derartige neuronale Netze untersucht.
+	Das Neuronennetz des menschlichen Gehirns dient als Vorbild für künstliche, neuronale Netze (KNN) \cite{neuronennetz}. KNNs werden heutzutage verwendet, um diverse Anwendungsprobleme zu lösen.
+	Sie ermöglichen es komplexe Strukturen und Muster aus großen Datenmengen zu erkennen.
+	\cite{neuronennetz}. Das in diesem Projekt zugrundeliegende Bildverarbeitungsproblem besitzt jene Eigenschaften und eignet sich für den Einsatz eines neuronalen Netzes als Problemlösung. Anders als bei regelbasierten Systemen verhalten sich KNNs grundlegend verschieden \cite{proba}. Sie lernen Verhaltensmuster basierend auf den entsprechenden Trainingsdaten \cite{proba}. Dies führt unter Umständen zu unverhersehbaren Ergebnissen. Am vorliegenden, autonomen Logistikfahrzeug werden zur Personenerkennung derartige neuronale Netze untersucht.
 	
 		\subsection{Eigenschaften von neuronalen Netzen}
 		\label{subsec: Eigenschaften von neuronalen Netzen}
-		Die Grundlage für die Eingabe in ein neuronales Netz sind entsprechende, zu analysierende Daten. Bei einem Anwendungsfall, in dem ein Audiospur analysiert werden soll können beispielsweise Frequenzspektren eingegeben werden. Ein klassisches Bildverarbeitungsproblem arbeitet mit den Pixeln eines Bildes. Grundlegend werden Daten über eine Eingabeschicht in die darin enthaltenen Neuronen gegeben. \\
+		Die Grundlage für die Eingabe in ein neuronales Netz sind entsprechende, zu analysierende Daten. Bei einem Anwendungsfall, in dem eine Audiospur analysiert werden soll, können beispielsweise Frequenzspektren eingegeben werden. Ein klassisches Bildverarbeitungsproblem arbeitet mit den Pixeln eines Bildes. Grundlegend werden Daten über eine Eingabeschicht in die darin enthaltenen Neuronen gegeben. \\
 		
 		\begin{figure}[H]
 			\centering
@@ -78,7 +80,7 @@
 		\end{equation}
 		\\
 		
-		 Es verarbeitet im wesentlichen eingehende Zahlenwerte $x_n$ und gibt diese durch die Ausgabe $y$ aus. Genauer wird mit den eingehenden Zahlenwerten eine gewichtete Summe $s$ gebildet. Diese wird dann auf eine Aktivierungsfunktion angewendet und ausgegeben \cite{bildv2020}. Diese aktiviert bzw. reizt das Neuron ab einen Schwellwert \cite{Kriesel}. Es gibt verschiedene Varianten der Aktivierungsfunktion, die je nach Netzart zur Anwendung kommen können. Gleichung \ref{eq: Gewichtete Summe} zeigt das mathematische Modell der gewichteten Summe $s$.\\
+		 Es verarbeitet im Wesentlichen eingehende Bildinformationen $x_n$ und gibt diese durch die Ausgabe $y$ aus. Genauer wird mit den eingehenden Zahlenwerten eine gewichtete Summe $s$ gebildet. Diese wird dann auf eine Aktivierungsfunktion angewendet und ausgegeben \cite{bildv2020}. Diese aktiviert bzw. reizt das Neuron ab einen Schwellwert \cite{Kriesel}. Es gibt verschiedene Varianten der Aktivierungsfunktion, die je nach Netzart zur Anwendung kommen können. Gleichung \ref{eq: Gewichtete Summe} zeigt das mathematische Modell der gewichteten Summe $s$.\\
 		
 		
 				
@@ -144,7 +146,7 @@
 				\foreach \j in {1,...,2}
 				\draw [->] (hidden2-\i) -- (output-\j);
 				
-				\foreach \l [count=\x from 0] in {Input, Hidden, Hidden, Ouput}
+				\foreach \l [count=\x from 0] in {Input, Hidden, Hidden, Output}
 				\node [align=center, above] at (\x*2,2) {\l \\ layer};
 				
 				\draw[fill=black](0,-1.3)circle(1pt);
@@ -160,19 +162,19 @@
 				\draw[fill=black](6,-0.5)circle(1pt);
 				\draw[fill=black](6,-0.7)circle(1pt);
 				\end{tikzpicture}
-				\caption{Prinzipielle Darstellung eines künstlichen, neuronalen Netzwerks. Neuronen werden als Kreise dargestellt. Drei aufeinander folgende Punkt deuten eine Fortsetzung an. Adaptiert aus \cite{neuron}.}
+				\caption{Prinzipielle Darstellung eines künstlichen, neuronalen Netzwerks. Neuronen werden als Kreise dargestellt. Drei aufeinander folgende Punkte deuten eine Fortsetzung an. Adaptiert aus \cite{neuron}.}
 				\label{fig: neuronales netz }
 		\end{figure}
 	
 		
-		In Abbildung \ref{fig: neuronales netz } ist Grundstruktur eines neuronalen Netzes veranschaulicht. Neuronen sind hier als Kreise dargestellt und bilden in den beispielhaft vertikal dargestellten Formationen einzelne Schichten. Hierbei wird zwischen Eingabe-, Zwischen- und Ausgabeschichten unterschieden. Die Eingabeschicht nimmt Informationen in Form von Daten auf und gibt diese an die erste Zwischenschicht weiter. Die Anzahl der Zwischenschichten, oder auch verdeckte Schichten, ist in der Anwendung der neuronalen Netzen variabel. Am rechten Bildrand ist die Ausgabeschicht gezeigt, die die entsprechende Ausgabe des Netzes generiert.  
+		In Abbildung \ref{fig: neuronales netz } ist die Grundstruktur eines neuronalen Netzes veranschaulicht. Neuronen sind hier als Kreise dargestellt und bilden in den beispielhaft vertikal dargestellten Formationen einzelne Schichten. Hierbei wird zwischen Eingabe-, Zwischen- und Ausgabeschichten unterschieden. Entsprechende Neuronen sind mit $I_n$, $H_n$ und $O_n$ bezeichnet. Die Eingabeschicht nimmt Informationen in Form von Daten auf und gibt diese an die erste Zwischenschicht weiter. Die Anzahl der Zwischenschichten, oder auch verdeckte Schichten, ist in der Anwendung neuronaler Netze variabel. Am rechten Bildrand ist die Ausgabeschicht gezeigt, die die entsprechende Ausgabe des Netzes generiert.  
 	
 		\subsection{Lernprozess}
 		Der Lernprozess von neuronalen Netzen zielt darauf ab, einer Netzstruktur ein gewünschtes Verhalten beizubringen \cite{proba}. Genauer sollen die in Kapitel \ref{subsec: Eigenschaften von neuronalen Netzen} beschriebenen Gewichte so modifiziert werden, dass sie eine bestimmte Ausgabe erzeugen.\\
 		
-		Es wird zwischen drei wesentlichen Lernverfahren unterschieden, dem unüberwachten, dem bestärkenden und dem überwachten Lernen \cite{Kriesel}. Beim unüberwachten Lernen erkennt das Netz selbst Muster und versucht diese aus der eingegebenen Menge in Klassen zu unterteilen \cite{Kriesel}. Anders als beim unüberwachten Lernen, lernt das Netz beim bestärkten Lernen mit einer Rückmeldung. Diese enthält Informationen darüber, ob ein errechnetes Ergebnis einer Trainingseinheit richtig oder falsch ist \cite{Kriesel}. Das überwachte Lernen setzt eine Trainingsmenge voraus, die neben der Eingabedaten auch das dazugehörige korrekte Ergebnis enthält \cite{Kriesel}\cite{bildv2020}. Im Falle einer Personenerkennung wäre beispielsweise ein Datensatz aus Bildern von Personen eine geeignete Trainingsmenge. In der sogenannten Vorwärtspropagation wird durch eine Eingabe eine entsprechende Ausgabe erzeugt und diese mit dem korrekten Ergebnis verglichen \cite{bildv2020}. Ausgehend von einem KNN mit lediglich einer Schicht werden die Gewichte dann mithilfe des aus dem vorangegangenen Vergleichs entstandenen Fehler korrigiert \cite{bildv2020}.\\
+		Es wird zwischen drei wesentlichen Lernverfahren unterschieden, dem unüberwachten, dem bestärkenden und dem überwachten Lernen \cite{Kriesel}. Beim unüberwachten Lernen erkennt das Netz selbst Muster und versucht diese aus der eingegebenen Menge in Klassen zu unterteilen \cite{Kriesel}. Anders als beim unüberwachten Lernen lernt das Netz beim bestärkten Lernen mit einer Rückmeldung. Diese enthält Informationen darüber, ob ein errechnetes Ergebnis einer Trainingseinheit richtig oder falsch ist \cite{Kriesel}. Das überwachte Lernen setzt eine Trainingsmenge voraus, die neben der Eingabedaten auch das dazugehörige korrekte Ergebnis enthält \cite{Kriesel}\cite{bildv2020}. Im Falle einer Personenerkennung wäre beispielsweise ein Datensatz aus Bildern von Personen eine geeignete Trainingsmenge. In der sogenannten Vorwärtspropagation wird durch eine Eingabe eine entsprechende Ausgabe erzeugt und diese mit dem korrekten Ergebnis verglichen \cite{bildv2020}. Ausgehend von einem KNN mit lediglich einer Schicht werden die Gewichte dann mithilfe des aus dem vorangegangenen Vergleich entstandenen Fehlers korrigiert \cite{bildv2020}.\\
 		
-		Die meist genutzte Form des überwachten Lernens ist die Rückwärtspropagierung (engl. Backpropagation) oder Fehlerrückführung genannt \cite{Ertel}. Wie bereits beschrieben bestehen Neuronale Netze häufig aus mehreren verdeckten Schichten. Für diese liegt beim Training jedoch kein Korrekturwert vor \cite{bildv2020}. Der Algorhitmus der Rückwärtspropagation ist ein mögliche Lösung dieses Problems. Die mathematische Grundlage für dieses Lernverfahren sind Gradientenabstiegsverfahren \cite{Kriesel} \cite{bildv2020}. Nach der beschrieben Vorwärtspropagierung wird die Ausgabe des Netzes mit Sollwerten verglichen \cite{bildv2020}. Beim darauffolgenden Rückwärtsschritt wird durch die Fehlerrückwführung für jede verdeckte Schicht ein Korrekturwert errechnet \cite{bildv2020}. Auch in dieser Masterarbeit werden Netze mithilfe der Rückwärtspropagierung trainiert und in diesem Kapitel \ref{ch: Verifikation} genauer erläutert.\\
+		Die meist genutzte Form des überwachten Lernens ist die Rückwärtspropagierung (engl. Backpropagation) oder Fehlerrückführung genannt \cite{Ertel}. Wie bereits beschrieben bestehen neuronale Netze häufig aus mehreren verdeckten Schichten. Für diese liegt beim Training jedoch kein Korrekturwert vor \cite{bildv2020}. Der Algorhitmus der Rückwärtspropagation ist eine mögliche Lösung dieses Problems. Die mathematische Grundlage für dieses Lernverfahren sind Gradientenabstiegsverfahren \cite{Kriesel} \cite{bildv2020}. Nach der beschrieben Vorwärtspropagierung wird die Ausgabe des Netzes mit Sollwerten verglichen \cite{bildv2020}. Beim darauffolgenden Rückwärtsschritt wird durch die Fehlerrückwführung für jede verdeckte Schicht ein Korrekturwert errechnet \cite{bildv2020}. Auch in dieser Masterarbeit werden Netze mithilfe der Rückwärtspropagierung trainiert und in diesem Kapitel \ref{ch: Verifikation} genauer erläutert.\\
 		
 	
 		
@@ -182,7 +184,7 @@
 		
 		\input{Bilder/pr}
 		
-		\textit{Precision} und \textit{Recall} ist ein traditionelles Werkzeug zur Evaluation und Leistungsmessung \cite{precisionandrecall}. In Tabelle \ref{fig: pr} werden zum besseren Verständnis die Begrifflichkeiten \textit{True Positive} (TP), \textit{False Positive}(FP), \textit{False Negative} (FN) und \textit{True Negative} (TN) näher erläutert. Der \textit{Recall}-Wert $r(t)$ beschreibt die Fähigkeit eines System, tatsächlich positive Stichproben zu erkennen. Angewandt auf die Personenerkennung sind Bilder, auf denen Personen zu sehen sind, als tatsächlich positive Stichproben einzustufen. In Gleichung \ref{eq: recall} wird der \textit{Recall}-Wert durch eine Division von allen wahren positiven Werten $TP(t)$ und die Anzahl aller tatsächlich positiven Werte $n_{pos}$ berechnet. Die Variable $t$ definiert den eingestellten Schwellwert. Im Sachkontext ist der Wert als Konfidenz zu betrachten, bei der eine Person als solche klassifiziert wird. Für die Anwendung dieser Methode ist die Kenntnis über negativen Beispielen der Stichprobe nicht notwendig \cite{bildundobjekt}.\\ 
+		\textit{Precision} und \textit{Recall} ist ein traditionelles Werkzeug zur Evaluation und Leistungsmessung \cite{precisionandrecall}. In Tabelle \ref{fig: pr} werden zum besseren Verständnis die Begrifflichkeiten \textit{True Positive} (TP), \textit{False Positive}(FP), \textit{False Negative} (FN) und \textit{True Negative} (TN) näher erläutert. Der \textit{Recall}-Wert $r(t)$ beschreibt die Fähigkeit eines Systems, tatsächlich positive Stichproben zu erkennen. Angewandt auf die Personenerkennung sind Bilder, auf denen Personen zu sehen sind, als tatsächlich positive Stichproben einzustufen. In Gleichung \ref{eq: recall} wird der \textit{Recall}-Wert durch eine Division von allen wahren positiven Werten $TP(t)$ und die Anzahl aller tatsächlich positiven Werte $n_{pos}$ berechnet. Die Variable $t$ definiert den eingestellten Schwellwert. Im Sachkontext ist der Wert als Konfidenz zu betrachten, bei der eine Person als solche klassifiziert wird. Für die Anwendung dieser Methode ist die Kenntnis über negativen Beispielen der Stichprobe nicht notwendig \cite{bildundobjekt}.\\ 
 		
 		\begin{equation}
 		r(t)=\frac{TP(t)}{TP(t)+FN(t)}
@@ -196,16 +198,16 @@
 		\label{eq: precision}
 		\end{equation}\\
 		
-		Häufig muss in der Praxis ein Kompromiss zwischen \textit{Precision} und \textit{Recall} gefunden werden. Dies lässt sich anhand eines Beispiel in der Personenerkennung veranschaulichen. Das System zur Erkennung wird beispielhaft mit einen hohen \textit{Precision}- und einen niedrigen \textit{Recall}-Wert betrieben. Dies führt dazu, dass irrelevanter Bildinhalt selten als Person klassifiert wird. Jedoch kommt es eher häufig vor, dass keine Person detektiert wird obwohl eine zu sehen ist. Legt man den Fokus auf einen hohen \textit{Recall}- und einen niedrigen \textit{Precision}-Wert würden Personen dann häufiger als Person klassifiziert werden. Jedoch wird irrelevanter Bildinhalt ebenfalls häufig als Person klassifiziert. Je nach Anwendungsfall eines Netzes wird dann der entsprechende Betriebspunkt zwischen \textit{Precision} und \textit{Recall} gewählt.\\
+		Häufig muss in der Praxis ein Kompromiss zwischen \textit{Precision} und \textit{Recall} gefunden werden. Dies lässt sich anhand eines Beispiels in der Personenerkennung veranschaulichen. Das System zur Erkennung wird beispielhaft mit einem hohen \textit{Precision}- und einen niedrigen \textit{Recall}-Wert betrieben. Dies führt dazu, dass irrelevanter Bildinhalt selten als Person klassifiert wird. Jedoch kommt es häufiger vor, dass keine Person detektiert wird, obwohl eine zu sehen ist. Legt man den Fokus auf einen hohen \textit{Recall}- und einen niedrigen \textit{Precision}-Wert würden Personen dann häufiger als Person klassifiziert werden. Jedoch wird irrelevanter Bildinhalt ebenfalls häufig als Person klassifiziert. Je nach Anwendungsfall eines Netzes wird dann der entsprechende Betriebspunkt zwischen \textit{Precision} und \textit{Recall} gewählt.\\
 		
-		Objekterkennungssysteme geben erkannte Objekt mithilfe eines Begrenzungsrahmen aus.  Der \textit{Intersection over Union} (IoU) Wert sagt aus, ob die Lokalisierung eines Objekts in einem Bild entsprechend genau ist. Als Grundlage dient hierfür ein Testdatensatz mit verschiedenen Bildern und grundwahren Begrenzungsrahmen für enthaltene Objekte. Zur Ermittlung des \textit{IoU}-Werts werden von einem Objekterkennungssystem ausgegebenen Bregenzungsrahmen werden mit den grundwahren verglichen. Hierbei lässt sich die überlappende und die zusammengesetzte Fläche beider Rahmen im Verhältnis setzen. Das Ergebnis ist der \textit{IoU}-Wert.    \\
+		Objekterkennungssysteme geben erkannte Objekt mithilfe eines Begrenzungsrahmen aus.  Der \textit{Intersection over Union} (IoU) Wert sagt aus, ob die Lokalisierung eines Objekts in einem Bild entsprechend genau ist. Als Grundlage dient hierfür ein Testdatensatz mit verschiedenen Bildern und grundwahren Begrenzungsrahmen für enthaltene Objekte. Zur Ermittlung des \textit{IoU}-Werts werden von einem Objekterkennungssystem ausgegebene mit grundwahren Begrenzungsrahmen verglichen. Hierbei lässt sich die überlappende und die zusammengesetzte Fläche beider Rahmen im Verhältnis setzen. Das Ergebnis ist der \textit{IoU}-Wert.    \\
 		
 		\begin{equation}
-		mAP = \frac{1}{N}\sum_{i=1}^{N}\int_{0}^{1}p(r)dr
+		mAP = \frac{1}{N}\sum_{i=1}^{K}\int_{0}^{1}p(r)dr
 		\label{eq: map}
 		\end{equation}\\
 		
-		Der \textit{mAP}-Wert oder auch die mittlere druchschnittliche Genauigkeit ist ein Indiz dafür, wie genau die Objekterkennung klassenübergreifend arbeitet. Die Berechnung dieses Wertes beinhaltet hierbei die bereits vorgestellten \textit{Precision} und \textit{Recall} Werte. Dieser Messwert ist besonders aussagekräftig, wenn Systeme lediglich eine Objektklasse erkennen können. Gleichung \ref{eq: map} zeigt die Berechnung der mittleren durchschnittlichen Genauigkeit. Die Variable $N$ ist die Menge aller untersuchten Objekte, die durch das Netz erkannt werden können.  \\
+		Der \textit{mAP}-Wert oder auch die mittlere druchschnittliche Genauigkeit ist ein Indiz dafür, wie genau die Objekterkennung klassenübergreifend arbeitet. Die Berechnung dieses Wertes beinhaltet hierbei die bereits vorgestellten \textit{Precision} und \textit{Recall} Werte. Dieser Messwert ist besonders aussagekräftig, wenn Systeme lediglich eine Objektklasse erkennen können. Gleichung \ref{eq: map} zeigt die Berechnung der mittleren durchschnittlichen Genauigkeit. Die Variable $K$ ist die Menge aller Klassen, die durch das Netz erkannt werden kann.  \\
 		
 		Eine einfache Betrachtung zur Evaluierung der Qualität hinsichtlich der Genauigkeit eines Netzes liefert der Top-$x$ Fehler. Der Platzhalter $x$ kann zunächst durch eine beliebige Zahl ersetzt werden. In der Praxis hat sich jedoch der Top-5 und der Top-1 Fehler als Vergleich durchgesetzt. Hierbei wird zunächst ein Bild durch ein beliebiges KNN analysiert und über die Ausgabeschicht extrahiert. Als Beispiel sollte sich im optimalen Fall die tatsächliche Klasse des Bildes unter den $x$ wahrscheinlichsten Klassen befinden, die über das Netz ausgegeben wurden. Folglich sagt der Top-1 Fehler aus, wie oft ein Netz ein eingegebenes Bild falsch klassifiziert hat. In vielen Paper zu neuen, künstlichen, neuronalen Netzen wird so die Genauigkeit mit bereits bestehenden Netzen verglichen.
 		
@@ -223,13 +225,13 @@
 		\label{subsec: Objekterkennung durch alternative Verfahren}	
 		
 		
-		Neben der neuronalen Netzen gibt weitere Methoden zur Objekterkennung. Ein gängiges Verfahren zur Merkmalsextraktion ist das sogenannte Histogram of oriented gradients (HoG) von \textit{Dalal} in Verbindung mit der \textit{Linear Support Vector Machine} (SVM).\\
+		Neben der neuronalen Netze gibt weitere Methoden zur Objekterkennung. Ein gängiges Verfahren zur Merkmalsextraktion ist das sogenannte Histogram of oriented gradients (HoG) von \textit{Dalal} in Verbindung mit der \textit{Linear Support Vector Machine} (SVM).\\
 		
-		Bei diesem Verfahren wird ein Bild in kleine Bereiche, sogenannte Zellen, aufgeteilt \cite{hogsvm}. Für jede Zelle wird ein eindimensionales Histogram extrahiert \cite{hogsvm}. Dieses enthält Gradienten, die aus den Informationen der Pixel enstehen, wie zum Beispiel durch der Lichtintensität oder der Farbe. Hieraus lassen sich Kanten und Ecken und somit auch Konturen und Muster aus einem Bild erkennen. In den Abbildungen \ref{fiq: hog} a und b lässt sich die Umwandlung des \textit{HoGs} beobachten. Die Realität, so wie sie eine übliche Fotokamera wiederspiegeln würde, ist in \ref{fiq: hog}a zu erkennen. Die entsprechenden Richtungen der Gradienten werden in \ref{fiq: hog}b dargestellt. \\
+		Bei diesem Verfahren wird ein Bild in kleine Bereiche, sogenannte Zellen, aufgeteilt \cite{hogsvm}. Für jede Zelle wird ein eindimensionales Histogram extrahiert \cite{hogsvm}. Dieses enthält Gradienten, die aus den Informationen der Pixel enstehen, wie zum Beispiel durch die Lichtintensität oder der Farbe. Hieraus lassen sich Kanten und Ecken und somit auch Konturen und Muster aus einem Bild erkennen. In den Abbildungen \ref{fiq: hog} a und b lässt sich die Umwandlung des \textit{HoGs} beobachten. Die Realität, so wie sie eine übliche Fotokamera wiederspiegeln würde, ist in \ref{fiq: hog}a zu erkennen. Die entsprechenden Richtungen der Gradienten werden in \ref{fiq: hog}b dargestellt. \\
 		
 		\input{Bilder/hog}
 		
-		Die \textit{SVM} ist ein Funktionsapproximator für eine Objektklassifikation. Häufig wird dieser auf die Ausgangsdaten des \textit{HoGs} angewendet. Hierbei wird ein mathematisches Verfahren angewendet, das Klassen durch Trennungsebenen, sogenannte Hyperebenen, voneinander trennt. Wie auch bei den KNNs gibt es für \textit{SVMs} ein Lernprozess in Form des überwachten Lernens. Ziel der Algorhitmen des Trainings einer \textit{SVM} ist es, die Hyperebenen so zu konstruieren, dass Objekte sicher klassifiziert werden können. In der Realität lassen sich Objekte rein mathematisch häufig nicht linear trennen. Nicht-lineare Trennbarkeit bedeutet oft einen höheren Rechenaufwand. Somit verwendet die Methode der \textit{SVM} den sogenannten \textit{Kernel-Trick} \cite{svmalt}. Dieser transformiert Daten in eine höhere Dimension, um eine lineare Trennbarkeit zu erreichen \cite{svmalt}. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt. In Abbildung \ref{fig: kerneltrick} a und b ist das Funktionsprinzip prinzipiell dargestellt. Darstellung \ref{fig: kerneltrick}a zeigt Objektklassen, die jeweils als Formen dargestellt sind. Eine lineare Trennbrakeit mit eine Hyperebene ist in diesem Beispiel nicht möglich. Ein dritte Dimension wird in der Darstellung \ref{fig: kerneltrick}b verwendet, um die dargestellte, lineare Trennbarkeit zu erreichen.\\
+		Die \textit{SVM} ist ein Funktionsapproximator für eine Objektklassifikation. Häufig wird dieser auf die Ausgangsdaten des \textit{HoGs} angewendet. Hierbei wird ein mathematisches Verfahren angewendet, das Klassen durch Trennungsebenen, sogenannte Hyperebenen, voneinander trennt. Wie auch bei den KNNs gibt es für \textit{SVMs} ein Lernprozess in Form des überwachten Lernens. Ziel der Algorhitmen des Trainings einer \textit{SVM} ist es, die Hyperebenen so zu konstruieren, dass Objekte sicher klassifiziert werden können. In der Realität lassen sich Objekte rein mathematisch häufig nicht linear trennen. Nicht-lineare Trennbarkeit bedeutet oft einen höheren Rechenaufwand. Somit verwendet die Methode der \textit{SVM} den sogenannten \textit{Kernel-Trick} \cite{svmalt}. Dieser transformiert Daten in eine höhere Dimension, um eine lineare Trennbarkeit zu erreichen \cite{svmalt}. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt. In Abbildung \ref{fig: kerneltrick} a und b ist das Funktionsprinzip prinzipiell dargestellt. Darstellung \ref{fig: kerneltrick}a zeigt Objektklassen, die jeweils als Formen dargestellt sind. Eine lineare Trennbrakeit mit eine Hyperebene ist in diesem Beispiel nicht möglich. Eine dritte Dimension wird in der Darstellung \ref{fig: kerneltrick}b verwendet, um die dargestellte, lineare Trennbarkeit zu erreichen.\\
 		
 		\input{Bilder/kerneltrick}
 			
@@ -237,13 +239,13 @@
 	
 		\subsection{Objekterkennung durch neuronale Netze}
 		\label{subsec: Objekterkennung durch neuronale Netze}
-		Die bisher besten Ergebnisse in der Bildverarbeitung wurden durch die Abwandlung der neuronalen Netzen, der sogenannten \textit{Convolutional Neural Networks} (CNN) erreicht \cite{deeplearning}. Derartige Netzwerke nutzen zur Verarbeitung der Eingangsdaten statt der üblichen Matritzenmultiplikation Faltung, oder auch Konvolution genannt \cite{deeplearning}. Der Aufbau eines CNNs setzt sich aus einer Merkmalsextraktion und die darauffolgende Klassifikation zusammen.\\ 
+		Die bisher besten Ergebnisse in der Bildverarbeitung wurden durch die Abwandlung der neuronalen Netze, der sogenannten \textit{Convolutional Neural Networks} (CNN) erreicht \cite{deeplearning}. Derartige Netzwerke nutzen zur Verarbeitung der Eingangsdaten statt der üblichen Matritzenmultiplikation Faltung, oder auch Konvolution genannt \cite{deeplearning}. Der Aufbau eines CNNs setzt sich aus einer Merkmalsextraktion einer Bildes und die darauffolgende Klassifikation zusammen.\\ 
 		
 		\input{Bilder/towadatacnn}
 		
 	 	
 	
-		Eine Einheit der Merkmalsextraktion besteht im grundlegenden Fall aus drei Unterschichten. Dabei können sich diese innerhalb der Merkmalsextraktion hintereinander wiederholen. Dies hat jedoch Einfluss auf die Eigenschaften eines Netzes. Die erste Unterschicht führt Faltungsprozesse mit den Eingangsdaten durch \cite{deeplearning}. Im zweiten Schritt wird eine nichtlineare Aktivierungsfunktion wie zum Beispiel der \textit{Rectified Linear Unit} (ReLU) Funktion auf die Ausgangsdaten der Konvolutionsschicht angewendet. In der dritten Unterschicht wird das sogenannte \textit{Pooling} durchgeführt. In einigen Fällen wird die Zusammensetzung der drei Stufen als Konvolutionsschicht bezeichnet obwohl lediglich die erste Unterschicht die Konvolution vollzieht \cite{deeplearning}. Im Laufe dieses Kapitels wird auf die Motivation der Nutzung und der Funktionsweise eines CNNs eingegangen.\\
+		Eine Einheit der Merkmalsextraktion besteht im grundlegenden Fall aus drei Unterschichten. Dabei können sich diese innerhalb der Merkmalsextraktion hintereinander wiederholen. Dies hat jedoch Einfluss auf die Eigenschaften eines Netzes. Die erste Unterschicht führt Faltungsprozesse mit den Eingangsdaten durch \cite{deeplearning}. Im zweiten Schritt wird eine nichtlineare Aktivierungsfunktion wie zum Beispiel der \textit{Rectified Linear Unit} (ReLU) Funktion auf die Ausgangsdaten der Konvolutionsschicht angewendet. In der dritten Unterschicht wird das sogenannte \textit{Pooling} durchgeführt. In einigen Fällen wird die Zusammensetzung der drei Stufen als Konvolutionsschicht bezeichnet, obwohl lediglich die erste Unterschicht die Konvolution vollzieht \cite{deeplearning}. Im Laufe dieses Kapitels wird auf die Motivation der Nutzung und der Funktionsweise eines CNNs eingegangen.\\
 		
 		Es gibt drei Grundsätze für die Nutzung von Faltung in einem neuronalen Netz. Hierzu gehören die eingeschränkte Konnektivität, die Parameterverteilung und die äquivariante Darstellung \cite{deeplearning}. Im folgenden Abschnitt werden diese Punkte näher erläutert.\\
 		
@@ -346,7 +348,7 @@
 		
 	
 				
-		Während der Konvolution werden eingehende Daten in Filter, sogenannte Kernels, eingegeben. Abbildung \ref{fig: faltung } zeigt den prinzipiellen Vorgang der Faltung. Die Konfiguration des Kernels ist beispielhaft mit $w$, $x$, $y$ und $z$ dargestellt. Eingehende Datenpunkte sind hier mit den Buchstaben $a$ bis $l$ gekennzeichnet. Die Filter extrahieren bestimmte Merkmale je nach Konfiguration, wie im unteren Teil der Abbildung als Ausgabe dargestellt. So können verschiedene Schichten diverse Merkmale extrahieren. Die Ausgänge der Schichten üblicher, neuronaler Netzen sind mit jedem Eingang der folgenden Schicht verknüpft. Ein typischer Aufbau wurde bereits in Kapitel \ref{subsec: Eigenschaften von neuronalen Netzen} in Abbildung \ref{fig: neuronales netz } gezeigt. Wird bei derartigen Netzen eine Schicht mit $n$ Ausgaben und eine mit $m$ Eingaben verknüpft, werden $m \cdot n$ Parameter benötigt \cite{deeplearning}. Durch den Faltungsprozess wird diese Konnektivität eingeschränkt. Beispielsweise wird der Datenpunkt $b$ der Eingabe aus der Darstellung \ref{fig: faltung } lediglich in zwei von sechs Datenpunkten der Ausgabe berücksichtigt. Die Ausmaße der eingeschränkten Konnektivität lassen sich in der folgenden Abbildung \ref{fig: eingeschränkte konnektivität} verdeutlichen. Die Eingabepunkte $x_n$ geben je nach Netzart ihre Informationen an alle oder benachbarten Ausgabepunkte $s_n$ weiter. Die Einschränkung der Konnektivität hängt von der Dimension des Kernels ab. Folglich nehmen CNNs deutlich weniger Speicher ein im Vergleich zu herkömmlichen KNNs \cite{deeplearning}. Gleichzeitig wird durch die Faltung eine höhere statistische Effizienz erreicht \cite{deeplearning}.\\
+		Während der Konvolution werden eingehende Daten in Filter, sogenannte Kernels, eingegeben. Abbildung \ref{fig: faltung } zeigt den prinzipiellen Vorgang der Faltung. Die Konfiguration des Kernels ist beispielhaft mit $w$, $x$, $y$ und $z$ dargestellt. Eingehende Datenpunkte sind hier mit den Buchstaben $a$ bis $l$ gekennzeichnet. Die Filter extrahieren bestimmte Merkmale je nach Konfiguration, wie im unteren Teil der Abbildung als Ausgabe dargestellt. So können verschiedene Schichten diverse Merkmale extrahieren. Die Ausgänge der Schichten üblicher, neuronaler Netzen sind mit jedem Eingang der folgenden Schicht verknüpft. Ein typischer Aufbau wurde bereits in Kapitel \ref{subsec: Eigenschaften von neuronalen Netzen} in Abbildung \ref{fig: neuronales netz } gezeigt. Wird bei derartigen Netzen eine Schicht mit $n$ Ausgaben und eine mit $m$ Eingaben verknüpft, werden $m \cdot n$ Parameter benötigt \cite{deeplearning}. Durch den Faltungsprozess wird diese Konnektivität eingeschränkt. Beispielsweise wird der Datenpunkt $b$ der Eingabe aus der Darstellung \ref{fig: faltung } lediglich in zwei von sechs Datenpunkten der Ausgabe berücksichtigt. Die Ausmaße der eingeschränkten Konnektivität lassen sich in der folgenden Abbildung \ref{fig: eingeschränkte konnektivität} verdeutlichen. Die Eingabepunkte $I_n$ geben je nach Netzart ihre Informationen an alle oder benachbarten Ausgabepunkte $O_n$ weiter. Die Einschränkung der Konnektivität hängt von der Dimension des Kernels ab. Folglich nehmen CNNs deutlich weniger Speicher ein im Vergleich zu herkömmlichen KNNs \cite{deeplearning}. Gleichzeitig wird durch die Faltung eine höhere statistische Effizienz erreicht \cite{deeplearning}.\\
 		
 	
 			\tikzset{%
@@ -382,16 +384,16 @@
 			\draw[gray,fill=gray](3,-2.5)circle(14pt);
 			
 			\foreach \m/\l [count=\y] in {1,2,3,4,5}
-			\node [every neuron/.try, neuron \m/.try] (eins-\m) at (0+\y,2.5) {$s_\y$};
+			\node [every neuron/.try, neuron \m/.try] (eins-\m) at (0+\y,2.5) {$O_\y$};
 			
 			\foreach \m/\l [count=\y] in {1,2,3,4,5}
-			\node [every neuron/.try, neuron \m/.try] (zwei-\m) at (0+\y,0.8) {$x_\y$};
+			\node [every neuron/.try, neuron \m/.try] (zwei-\m) at (0+\y,0.8) {$I_\y$};
 			
 			\foreach \m/\l [count=\y] in {1,2,3,4,5}
-			\node [every neuron/.try, neuron \m/.try] (drei-\m) at (0+\y,-0.8) {$s_\y$};
+			\node [every neuron/.try, neuron \m/.try] (drei-\m) at (0+\y,-0.8) {$O_\y$};
 			
 			\foreach \m/\l [count=\y] in {1,2,3,4,5}
-			\node [every neuron/.try, neuron \m/.try] (vier-\m) at (0+\y,-2.5) {$x_\y$};
+			\node [every neuron/.try, neuron \m/.try] (vier-\m) at (0+\y,-2.5) {$I_\y$};
 			
 		
 			\foreach \m [count=\x] in {1,2,3,4,5}
@@ -417,7 +419,7 @@
 			\node[] (a) at (1,-3.3) {(b)};
 		
 			\end{tikzpicture}
-			\caption{(a) Abbildung zweier Schichten eines herkömmlichen, künstlichen, neuronalen Netzes. Die Flussrichtung der Bildinformationen ist mit Pfeilen angedeutet. Horizintal ausgerichtete Kreise stellen eine Schicht dar. Graue Kreise zeigen Neuronen die voneinander abhängig sind. (b) Grundlegende Darstellung zweier Schichten eines Faltungsnetzes. Es gelten dieselben Darstellungsprinzipien wie in Abbildung (a) \cite{deeplearning}.}
+			\caption{(a) Abbildung zweier Schichten eines herkömmlichen, künstlichen, neuronalen Netzes. Die Flussrichtung der Bildinformationen ist mit Pfeilen angedeutet. Horizontal ausgerichtete Kreise stellen eine Schicht dar. Graue Kreise zeigen Neuronen, die voneinander abhängig sind. (b) Grundlegende Darstellung zweier Schichten eines Faltungsnetzes. Es gelten dieselben Darstellungsprinzipien wie in Abbildung (a) \cite{deeplearning}.}
 			\label{fig: eingeschränkte konnektivität}
 		\end{figure}
 		
@@ -425,7 +427,7 @@
 		
 		Die äquivariante Darstellung bezieht sich auf die Auswirkung der Ausgabe eines Netzes bei einer Änderung der Eingabedaten. Die Merkmalsextraktion eines Netzes erzeugt eine zweidimensionale Karte, die sogenannte \textit{Feature Map}. In dieser werden Merkmale eines Bildes eingetragen. Wird ein Objekt in dem eingegebenen Bild des CNNs bewegt, verändert sich die Merkmalskarte im selben Maße wie das Objekt im Bild \cite{deeplearning}.\\		
 		
-		Beim \textit{Pooling} werden die stärksten Merkmale der eingehende Daten weitergegeben \cite{deeplearning}. Kleine Änderungen der Eingabewerte haben durch \textit{Pooling} keinen oder einen kleinen Einfluss auf die Ausgabe. Ein Beispiel hierfür liefert die folgende Darstellung \ref{fig: Pooling}. Hierbei werden die stärksten Merkmale der Eingangsdaten durch das \textit{Pooling} weitergeleitet. Obwohl in der unteren Darstellung alle Eingangsdaten um eine Stelle nach rechts verschoben wurden, hält das Verfahren zwei Merkmale konstant.\\
+		Beim \textit{Pooling} werden die stärksten Merkmale der eingehenden Daten weitergegeben \cite{deeplearning}. Kleine Änderungen der Eingabewerte haben durch \textit{Pooling} keinen oder einen kleinen Einfluss auf die Ausgabe. Ein Beispiel hierfür liefert die folgende Darstellung \ref{fig: Pooling}. Hierbei werden die stärksten Merkmale der Eingangsdaten durch das \textit{Pooling} weitergeleitet. Obwohl in der unteren Darstellung alle Eingangsdaten um eine Stelle nach rechts verschoben wurden, hält das Verfahren zwei Merkmale konstant.\\
 		
 				\tikzset{%
 			every neuron/.style={
@@ -542,7 +544,7 @@
 			
 			
 			\end{tikzpicture}
-			\caption{(a) Beispielhafter Poolingprozess. Die Zahlenwerte deuten Bildinformationen als Fallbeispiel an. (b) Es gelten dieselben Darstellungsprinzipien wie in Abbildung (a). Die Eingansdaten wurden hierbei um ein neuron nach rechts versetzt. \cite{deeplearning}}
+			\caption{(a) Beispielhafter Poolingprozess. Die Zahlenwerte deuten Bildinformationen als Fallbeispiel an. (b) Es gelten dieselben Darstellungsprinzipien wie in Abbildung (a). Die Eingansdaten wurden hierbei um ein Neuron nach rechts versetzt. \cite{deeplearning}}
 			\label{fig: Pooling}
 		\end{figure}
 		
@@ -592,17 +594,17 @@
 				{\draw[-latex] (mat4-1-\X) -- (mat5-1-\Y);}}
 			\draw[very thick,-Latex] (mat5) -- (mat6);
 			\end{tikzpicture}
-			\caption{Fallbeispiel eines Faltungsnetzwerk. Dreidimensional dargestellte Boxen stellen Datenpunkte dar und bilden in der horinzontalen Anordnung jeweils eine Schicht. Die Prozesse der Faltung und Pooling sind beispielhaft dargestellt. Die Flussrichtung der Bildinformationen ist durch Pfeile gekennzeichnet. \cite{cnnhor}}
+			\caption{Fallbeispiel eines Faltungsnetzwerk. Dreidimensional dargestellte Boxen stellen Datenpunkte dar und bilden in der horizontalen Anordnung jeweils eine Schicht. Die Prozesse der Faltung und des Poolings sind beispielhaft dargestellt. Die Flussrichtung der Bildinformationen ist durch Pfeile gekennzeichnet. \cite{cnnhor}}
 			\label{fig: cnn easy}		
 		\end{figure}
 		
-		Durch die \textit{Softmax}-Schicht wird der Vektor in einem Zahlenbereich von Null bis Eins transformiert. Die Summe aller Elemente des Vektors ergeben 1. Jedes Element wird als Konfidenz der jeweiligen Klasse interpretiert. An dieser Stelle sind alle Daten vollständig bearbeitet und werden als Vektor aus dem CNN ausgegeben. In Abbildung \ref{fig: cnn easy} wird die Funktionsweise eines Faltungsnetzwerks anhand eines Minimalbeispiels dargestellt.\\
+		Durch die \textit{Softmax}-Schicht wird der Vektor in einem Zahlenbereich von null bis eins transformiert. Die Summe aller Elemente des Vektors ergeben 1. Jedes Element wird als Konfidenz der jeweiligen Klasse interpretiert. An dieser Stelle sind alle Daten vollständig bearbeitet und werden als Vektor aus dem CNN ausgegeben. In Abbildung \ref{fig: cnn easy} wird die Funktionsweise eines Faltungsnetzwerks anhand eines Minimalbeispiels dargestellt.\\
 		
 		\section{Vergleich möglicher Konvolutionsnetze}
 		\label{sec: cnns}
-		Die Artenvielfalt der CNNs ist sehr breit gefächert. Jedes Netzwerk unterscheidet sich in der jeweiligen Architektur der Schichten. Durch die Änderung verschiedener Parameter, beispielsweise bei der Faltung oder beim Pooling, können CNNs im Einsatz jeweils anders reagieren. Hierbei entscheidet man bei der Auswahl des Modells häufig unter den Gesichtspunkten Bearbeitungszeit, Genauigkeit und je nach Anwendungsfall spielt der Speicherplatz ebenfalls eine große Rolle.\\
+		Die Artenvielfalt der CNNs ist sehr breit gefächert. Jedes Netzwerk unterscheidet sich in der jeweiligen Architektur der Schichten. Durch die Änderung verschiedener Parameter, beispielsweise bei der Faltung oder bei dem Pooling, können CNNs im Einsatz jeweils anders reagieren. Hierbei entscheidet man bei der Auswahl des Modells häufig unter den Gesichtspunkten Bearbeitungszeit, Genauigkeit und je nach Anwendungsfall spielt der Speicherplatz ebenfalls eine große Rolle.\\
 		
-		Die \textit{Kinect}-Kameras des ALFs sind in der Lage bis zu 30 Bilder in der Sekunde aufzunehmen. Folglich wird eine Netzarchitektur verwendet, die Bilder möglichst schnell mit einer hohen Genauigkeit verarbeitet. Für eine zukünftige Auslagerung auf ein eingebettetes System ist der Speicherplatz des Netzes sowie seine Rechenzeit von Bedeutung. Für die Auswahl der für diese Masterarbeit entsprechenden Architektur werden state-of-the-art Lösungen hinzugezogen. In \textit{Canzianis} Paper \cite{cnnvergleich} werden bekannte CNNs nach der Genauigkeit über die Anzahl der Rechenoperationen pro eingegebenes Bild in einem Diagram aufgetragen. Als dritte Eigenschaft ist dort ebenfalls die Größe der Architekturen als Parameteranzahl gezeigt. Die höchsten Genauigkeiten erzielten hierbei die \textit{ResNet}, \textit{Inception} und \textit{VGG} Architekturen. \textit{Canziani} veröffentlichte sein Paper im Jahr 2016. Ein Jahr später entwickelte \textit{Howard} \cite{mobilenets} die \textit{Mobilenet} Architektur. Sie zeichnet sich durch die ihre Schnelligkeit bei teilweise höherer Genauigkeit im Vergleich zu bekannten Architekturen aus. Weiterhin im diesem Kapitel werden die gängigen Lösungen \textit{R-CNN} und \textit{SSD} als optionale Klassifikatoren präsentiert.\\
+		Die \textit{Kinect}-Kameras des ALFs sind in der Lage bis zu 30 Bilder in der Sekunde aufzunehmen. Folglich wird eine Netzarchitektur verwendet, die Bilder möglichst schnell mit einer hohen Genauigkeit verarbeitet. Für eine zukünftige Auslagerung auf ein eingebettetes System ist der Speicherplatz des Netzes sowie seine Rechenzeit von Bedeutung. Für die Auswahl der für diese Masterarbeit entsprechenden Architektur werden state-of-the-art Lösungen hinzugezogen. In \textit{Canzianis} Paper \cite{cnnvergleich} werden bekannte CNNs nach der Genauigkeit über die Anzahl der Rechenoperationen pro eingegebenem Bild in einem Diagramm aufgetragen. Als dritte Eigenschaft ist dort ebenfalls die Größe der Architekturen als Parameteranzahl gezeigt. Die höchsten Genauigkeiten erzielten hierbei die \textit{ResNet}, \textit{Inception} und \textit{VGG} Architekturen. \textit{Canziani} veröffentlichte sein Paper im Jahr 2016. Ein Jahr später entwickelte \textit{Howard} \cite{mobilenets} die \textit{Mobilenet} Architektur. Sie zeichnet sich durch die Schnelligkeit bei teilweise höherer Genauigkeit im Vergleich zu bekannten Architekturen aus. Weiterhin werden in diesem Kapitel die gängigen Lösungen \textit{R-CNN} und \textit{SSD} als optionale Klassifikatoren präsentiert.\\
 		
 		\section*{VGG}
 		\label{subsec: vgg}
@@ -660,7 +662,7 @@
 		
 		\section*{Inception/GoogleNet}
 		\label{subsec: inception}
-		Gemessen an der Top-1 Genauigkeit liegen \textit{Inception/GoogLeNet} Netze höher als \textit{VGG} und \textit{ResNet} Architekturen \cite{cnnvergleich}. \textit{Szegedy} veröffentlichte die erste Version der \textit{Inception} CNNs in seinem Paper \cite{inception} im Jahr 2015. Die Besonderheit hierbei ist der Einsatz von multiplen Kernels auf die jeweiligen Schichten \cite{inception}. Durch diesen Aufbau benötigt ein solches Netz keine vollständig verbundene Schicht zur Klassikation, da die Genauigkeit nur geringfügig beeinträchtigt wird \cite{inception}. Gleichzeitig erfolgt eine Einsparung eines Großteil der Parameter \cite{inception}. Bei \textit{VGG} Architekturen befinden sich beispielsweise circa 90\percent\text{ }aller Parameter in den vollständig verbundenen Schichten am Ende des Netzes. Die klassische \textit{Inception} Architektur enthält insgesamt 27 Schichten, 22 davon enthalten Parameter \cite{inception}. Übliche \textit{Inception} Netze sind circa 90 MB groß und verfügen über 23 Millionen Parameter \cite{keras}.\\ 
+		Gemessen an der Top-1 Genauigkeit liegen \textit{Inception/GoogLeNet} Netze höher als \textit{VGG} und \textit{ResNet} Architekturen \cite{cnnvergleich}. \textit{Szegedy} veröffentlichte die erste Version der \textit{Inception} CNNs in seinem Paper \cite{inception} im Jahr 2015. Die Besonderheit hierbei ist der Einsatz von multiplen Kernels auf die jeweiligen Schichten \cite{inception}. Durch diesen Aufbau benötigt ein solches Netz keine vollständig verbundene Schicht zur Klassikation, da die Genauigkeit nur geringfügig beeinträchtigt wird \cite{inception}. Gleichzeitig erfolgt eine Einsparung eines Großteils der Parameter \cite{inception}. Bei \textit{VGG} Architekturen befinden sich beispielsweise circa 90\percent\text{ }aller Parameter in den vollständig verbundenen Schichten am Ende des Netzes. Die klassische \textit{Inception} Architektur enthält insgesamt 27 Schichten, 22 davon enthalten Parameter \cite{inception}. Übliche \textit{Inception} Netze sind circa 90 MB groß und verfügen über 23 Millionen Parameter \cite{keras}.\\ 
 		
 
 		
@@ -672,7 +674,7 @@
 		
 		\input{Bilder/depthwiseconv}
 		
-		Der Rechenaufwand $R_p$ einer konventionellen Konvolutionsschicht kann mit Gleichung \ref{eq: rechenaufwand} beschrieben werden. Hierbei wird die Dimension der Eingangsdaten durch $D_F$ und die Tiefe durch $M$ ausgedrückt. Die Größe des Kernels wird in der Gleichung durch die Variable $D_K$, sowie die Tiefe der Ausgangsdaten mit $N$ dargestellt. Im Gegensatz zu üblichen Faltungsprozessen werden die Eingangskanäle während einer tiefenorientierten Konvolution lediglich gefiltert und nicht zusammengeführt \cite{mobilenets}. Somit ist die Tiefe der Ausgangsdaten für die Berechnung des Rechenaufwands $R_d$ bei einer tiefenorientierten Faltung zu vernachlässigen und ist in Gleichung \ref{eq: rechenaufwand t} gezeigt. \\
+		Der Rechenaufwand $R_p$ einer konventionellen Konvolutionsschicht kann mit Gleichung \ref{eq: rechenaufwand} beschrieben werden \cite{mobilenets}. Hierbei wird die Dimension der Eingangsdaten durch $D_F$ und die Tiefe durch $M$ ausgedrückt. Die Größe des Kernels wird in der Gleichung durch die Variable $D_K$, sowie die Tiefe der Ausgangsdaten mit $N$ dargestellt. Im Gegensatz zu üblichen Faltungsprozessen werden die Eingangskanäle während einer tiefenorientierten Konvolution lediglich gefiltert und nicht zusammengeführt \cite{mobilenets}. Somit ist die Tiefe der Ausgangsdaten für die Berechnung des Rechenaufwands $R_d$ bei einer tiefenorientierten Faltung zu vernachlässigen und ist in Gleichung \ref{eq: rechenaufwand t} gezeigt. \\
 		
 		\begin{equation}
 			R_p=D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F
@@ -683,7 +685,7 @@
 		\label{eq: rechenaufwand t}
 		\end{equation}\\
 	
-		Durch die Zusammensetzung einer tiefenorientierten und einer punktuellen Faltung wird die Rechenbelastung der tiefenorientierten, trennbaren Konvolution durch die in Gleichung \ref{eq: rechenaufwand dw} gezeigte Addition errechnet. Die Kombination der beiden Methoden reduziert den Rechenaufwand um den in Gleichung \ref{eq: rechenersparnis} dargestellten Faktor $\frac{1}{N}+\frac{1}{D^2_K}$ \cite{mobilenets}. In Zahlen ausgedrückt erreicht die \textit{MobileNet} Architektur eine Reduktion der Rechenoperationen um den Faktor 8 bis 9 gegenüber konventionellen Faltungsmethoden \cite{mobilenets}.  \\
+		Durch die Zusammensetzung einer tiefenorientierten und einer punktuellen Faltung kann die Rechenbelastung der tiefenorientierten, trennbaren Konvolution durch die in Gleichung \ref{eq: rechenaufwand dw} gezeigte Addition errechnet werden. Die Kombination der beiden Methoden reduziert den Rechenaufwand um den in Gleichung \ref{eq: rechenersparnis} dargestellten Faktor $\frac{1}{N}+\frac{1}{D^2_K}$ \cite{mobilenets}. In Zahlen ausgedrückt erreicht die \textit{MobileNet} Architektur eine Reduktion der Rechenoperationen um den Faktor 8 bis 9 gegenüber konventionellen Faltungsmethoden \cite{mobilenets}.  \\
 	
 		\begin{equation}
 			R_{dp}=D_K \cdot D_K \cdot M \cdot D_F \cdot D_F + M \cdot N \cdot D_F \cdot D_F
@@ -695,24 +697,26 @@
 		\end{equation}\\
 		
 		
-		Weiterhin nutzt \textit{MobileNet} Weiten- und Auflösungsmultiplikatoren für die Optimierung des Netzes. Der Weitenmultiplikator $\alpha$ reduziert sowohl die Tiefe $M$ der Eingangsdaten durch $\alpha M$, als auch die Tiefe $N$ der Ausgangsdaten durch $\alpha N$. Eine Minimierung der Dimension $D_F$ der Eingangsdaten erfolgt durch den Auflösungsmultiplikator $\rho$ durch $\rho D_F$. Beide Multiplikatoren reduzieren den Rechenaufwand nochmals um $\alpha^2$ und $\rho^2$. Dieser kann somit mit folgender Gleichung dargestellt werden. \\
+		Weiterhin nutzt \textit{MobileNet} Weiten- und Auflösungsmultiplikatoren für die Optimierung des Netzes \cite{mobilenets}. Der Weitenmultiplikator $\alpha$ reduziert sowohl die Tiefe $M$ der Eingangsdaten durch $\alpha M$, als auch die Tiefe $N$ der Ausgangsdaten durch $\alpha N$ \cite{mobilenets}. Eine Minimierung der Dimension $D_F$ der Eingangsdaten erfolgt durch den Auflösungsmultiplikator $\rho$ durch $\rho D_F$ \cite{mobilenets}. Beide Multiplikatoren reduzieren den Rechenaufwand nochmals um $\alpha^2$ und $\rho^2$ \cite{mobilenets}. Dieser kann somit mit folgender Gleichung dargestellt werden. \\
 		
 		\begin{equation}
 			R_{dpm}=D_K \cdot D_K \cdot \alpha M \cdot \rho D_F \cdot \rho D_F + \alpha M \cdot \alpha N \cdot \rho D_F \cdot \rho D_F \text{  }\text{mit}\text{  } \alpha \in (0,1] ; \rho \in (0,1]
-			\label{eq: rechenaufwand dw}
+			\label{eq: rechenaufwand w}
 		\end{equation}\\
 	
-		\textit{Howard} vergleicht in seinem Paper die \textit{MobileNet} Architektur mit anderen Netztypen, wie zum Beispiel \textit{Inception} oder \textit{VGG 16}. Bei dem Vergleich ist zu erkennen, dass die verwendeten \textit{MobileNet} CNNs deutlich weniger Parameter nutzen als übliche Netze. Trotzdem wurden lediglich minimale negative Auswirkung bezüglich der Genauigkeit festgestellt. Gleichzeit ist das Netz um ein Vielfaches schneller als herkömmliche Architekturen mit hoher Genauigkeit. Zudem bewirkt die Einsparung der enthaltenen Parameter einen geringeren Speicheraufwand.
+		\textit{Howard} vergleicht in seinem Paper die \textit{MobileNet} Architektur mit anderen Netztypen, wie zum Beispiel \textit{Inception} oder \textit{VGG 16}. Bei dem Vergleich ist zu erkennen, dass die verwendeten \textit{MobileNet} CNNs deutlich weniger Parameter nutzen als übliche Netze. Trotzdem wurden lediglich minimale negative Auswirkung bezüglich der Genauigkeit festgestellt. Gleichzeit ist das Netz um ein Vielfaches schneller als herkömmliche Architekturen mit hoher Genauigkeit. Zudem bewirkt die Einsparung der enthaltenen Parameter einen geringeren Speicheraufwand. \\
+		
+		Wie auch das bereits vorgestellte \textit{Inception}-Netz wurde auch die \textit{MobileNet}-Architektur weiterentwickelt. \textit{MobileNet V2} kombiniert die tiefenorientierte, trennbare Konvolution mit der Technik des \textit{ResNet}-Netzes \cite{mobilenetv2}. Bildinformationen werden etappenweise von verschiedenen Zwischenschichten analysiert und das Ergebnis mit den bestehenden Daten addiert \cite{mobilenetv2}. Abbildung \ref{fig: residual} zeigt die Technik beispielhaft. \textit{MobileNet V2} arbeitet 2,5 Mal schneller als die Grundversion dieser Architektur bei minimaler Einsparung in der Genauigkeit \cite{mobilenetv2}.
 		
 	
 		\section*{R-CNN}
 		\text{R-CNN} steht für \textit{Region-based Convolutional Neural Network} und wurde 2014 im Paper von \textit{Girshick} erstmals vorgestellt \cite{rcnn}. Diese Netzarchitektur kann sowohl als vollständiges Objekterkennungssystem als auch als Klassifikator eingesetzt werden \cite{rcnn}\cite{rcnnarchitektur}. Mittlerweile gibt es durch diverse Modifikationen dieser Methode die Erweiterungen \textit{fast R-CNN} und \textit{faster R-CNN} \cite{fastrcnn} \cite{fasterrcnn}. Alle zielen darauf hinaus eine Echtzeitanalyse durchzuführen.\\
 		
-		In der grundlegendsten Form besteht ein derartiges Netz aus drei Modulen \cite{rcnn}. Das erste Modul definiert bezüglich die Bildinformationen kategorieunabhängige Bereichsvorschläge, in denen sich Objekte befinden könnten \cite{rcnn}. Danach folgt ein Faltungsnetzwerk zur Merkmalsextraktion je Bereichsvorschlag \cite{rcnn}. Im dritten Modul wird erfolgt eine Klassifikation der Merkmale mithilfe eines \textit{SVMs} \cite{rcnn}. Häufig wird für die drei Entwicklungsstufen des \textit{R-CNN} die \textit{VGG} Architektur zur Merkmalsextraktion verwendet \cite{fastrcnn}. In \textit{Rens} Paper über das \textit{Faster R-CNN} wird eine Genauigkeit von 78,8$\percent$ mAP für die Analyse auf den \textit{PASCAL VOC 2017} Testdatensatz angegeben. Jedoch beläuft sich die Bearbeitungszeit pro Bild auf im Schnitt 200 ms bei einem Einsatz auf einer Grafikkarte \cite{fasterrcnn}.
+		In der grundlegendsten Form besteht ein derartiges Netz aus drei Modulen \cite{rcnn}. Das erste Modul definiert bezüglich der Bildinformationen kategorieunabhängige Bereichsvorschläge, in denen sich Objekte befinden könnten \cite{rcnn}. Danach folgt ein Faltungsnetzwerk zur Merkmalsextraktion je Bereichsvorschlag \cite{rcnn}. Im dritten Modul wird erfolgt eine Klassifikation der Merkmale mithilfe eines \textit{SVMs} \cite{rcnn}. Häufig wird für die drei Entwicklungsstufen des \textit{R-CNN} die \textit{VGG} Architektur zur Merkmalsextraktion verwendet \cite{fastrcnn}. In \textit{Rens} Paper über das \textit{Faster R-CNN} wird eine Genauigkeit von 78,8$\percent$ mAP für die Analyse auf den \textit{PASCAL VOC 2017} Testdatensatz angegeben. Jedoch beläuft sich die Bearbeitungszeit pro Bild auf im Schnitt 200 ms bei einem Einsatz auf einer Grafikkarte \cite{fasterrcnn}.
 		
 		\section*{SSD}
 		
-		Der \textit{Single Shot Multibox Detector} (SSD) ist zunächst ein reiner Klassifikator. Dieser lässt sich beispielsweise mit einem \textit{VGG-16} Netz für die Merkmalsextraktion zu einem Objekterekennungssystem kombinieren \cite{ssd}. Anders als bei \textit{R-CNN} wird beim \textit{SSD} kein herkömmlicher Detektor als letztes Modul verwendet. Vielmehr handelt es sich hierbei um ein vollständiges Faltungsnetzwerk.\\
+		Der \textit{Single Shot Multibox Detector} (SSD) ist zunächst ein reiner Klassifikator. Dieser lässt sich beispielsweise mit einem \textit{VGG-16} Netz für die Merkmalsextraktion zu einem Objekterkennungssystem kombinieren \cite{ssd}. Anders als bei \textit{R-CNN} wird beim \textit{SSD} kein herkömmlicher Detektor als letztes Modul verwendet. Vielmehr handelt es sich hierbei um ein vollständiges Faltungsnetzwerk.\\
 		
 		Im November 2016 präsentierte \textit{Liu} in seinem Paper den \textit{SSD}, ein modifiziertes \textit{VGG-16} Netzwerk \cite{ssd}. Hierbei wurden die vollständig verbundenen Schichten des \textit{VGG-16} Netzes entfernt und durch Konvolutionsschichten ersetzt \cite{ssd}. Der Name \textit{SSD} unterteilt sich in \textit{Single Shot}, \textit{Multibox} und \textit{Detector}. Anhand dessen lässt sich die Funktionsweise dieser Methode erklären. \textit{Single Shot} drückt aus, dass die Architektur mit nur einer Bildanalyse auskommt und die Objekterkennung durchführen kann. Die \textit{Multibox} Methode wurde von \textit{Szegedy} entwickelt \cite{multibox}. Diese gibt klassenbasierte Vorschläge zur Objekterkennung in Form von Begrenzungsrahmen aus \cite{multibox}. Der Aufbau ähnelt in der Grundidee der bereits erwähnten \textit{Inception} Architektur. Die \textit{Multibox} Methode hat einen großen Einfluss auf die Schnelligkeit der gesamten \textit{SSD} Architektur. Die \textit{SSD300} Netzarchitektur erreicht im \text{PASCAL VOC} Test aus \textit{Lius} Veröffentlichung einen mAP-Wert von 74.3 bei 59 FPS \cite{ssd}.
 		
@@ -727,29 +731,29 @@
 	\label{sec: Zustandautomat}
 	In der vorangegangenen Bachelorarbeit werden diverse Modi beschrieben, die den Aufruf von unterschiedlichen ROS-Knoten vorraussetzen \cite{Bachelorarbeit}. Aufgrund der Analogie zwischen den beschriebenen Modi und der Zustände eines Zustandsautomaten wird die Nutzung eines solchen Automaten begründet. Im Folgenden wird auf die Eigenschaften eines endlichen Automats eingegangen.\\
 	
-	Im Allgemeinen geht es bei einem Zustandsautomaten um die Beschreibung von Zuständen (engl. States) eines Objekts \cite{uml}. Dabei stellt das Objekt meist das Gesamtsystem dar, etwa ein Getränkeautomat oder wie in dieser Masterarbeit ein autonomes Fahrzeug \cite{uml}. States sind durch Bedingungen verknüpft und lösen während sogenannter Ereignisse eine Transition aus, die den Wechsel des Zustands nach sich zieht \cite{uml}. Weiterhin bilden die Zustände in ihrer Gesamtheit den Lebenszyklus des Objekts \cite{uml}. Ein Getränkeautomat befindet sich bekanntermaßen beim Eintreffen eines Kunden in einer Art Bereitschaft. Übertragen auf die Theorie eines Zustandsautomaten wäre dies ein Bereitschaftszustand. Die Auswahl des Getränks und die Eingabe des entsprechenden Geldbetrags können beispielhaft als Ereignisse interpretiert werden. Somit wird ein Transition durchgeführt und der Zustand der Getränkeausgabe wird losgetreten. Wurde das Getränk ausgegeben und entnommen, geschieht der Wechsel in den Bereitschaftszustand und der beschriebene Zyklus ist komplettiert.\\
+	Im Allgemeinen geht es bei einem Zustandsautomaten um die Beschreibung von Zuständen (engl. States) eines Objekts \cite{uml}. Dabei stellt das Objekt meist das Gesamtsystem dar, etwa ein Getränkeautomat oder wie in dieser Masterarbeit ein autonomes Fahrzeug \cite{uml}. States sind durch Bedingungen verknüpft und lösen während sogenannter Ereignisse eine Transition aus, die den Wechsel des Zustands nach sich zieht \cite{uml}. Weiterhin bilden die Zustände in ihrer Gesamtheit den Lebenszyklus des Objekts \cite{uml}. Ein Getränkeautomat befindet sich bekanntermaßen beim Eintreffen eines Kunden in einer Art Bereitschaft. Übertragen auf die Theorie eines Zustandsautomaten wäre dies ein Bereitschaftszustand. Die Auswahl des Getränks und die Eingabe des entsprechenden Geldbetrags können beispielhaft als Ereignisse interpretiert werden. Somit wird eine Transition durchgeführt und der Zustand der Getränkeausgabe wird losgetreten. Wurde das Getränk ausgegeben und entnommen, geschieht der Wechsel in den Bereitschaftszustand und der beschriebene Zyklus ist komplettiert.\\
 	
 	Seit dem Bestehen der endlichen Automaten haben sich in der Praxis zwei Typen durchgesetzt \cite{mooremealy}. \textit{Mealy}- und \textit{Moore}-Automaten unterscheiden sich grundlegend in ihrem Verhalten und können durch folgende Gleichungen beschrieben werden.\\
 	
 	\begin{equation}
-		\alpha_{t+1}=\phi(\zeta_t,\alpha_t)\text{    mit    t}\in\mathbb{N}
+		\epsilon_{t+1}=\phi(\zeta_t,\epsilon_t)\text{    mit    t}\in\mathbb{N}
 		\label{eq: Moore1}
 	\end{equation}
 
 	\begin{equation}
-		\gamma_t=\psi(\zeta_t,\alpha_t)\text{    mit    t}\in\mathbb{N}
+		\gamma_t=\psi(\zeta_t,\epsilon_t)\text{    mit    t}\in\mathbb{N}
 		\label{eq: Moore2}
 	\end{equation}
 	\\
-	Durch die Gleichungen \ref{eq: Moore1} und \ref{eq: Moore2} wird das Verhalten eines Mealy Zustandsautomaten beschrieben. Die Transitionsfunktion $\phi$ und die Ausgabefunktion $\psi$ des Mooreautomats stehen jeweils in Abhängigkeit von $\zeta_t $, die aktuelle Eingabe, und $\alpha_t$, dem aktuellen Zustand. Mithilfe der Transitionsfunktion lässt sich der Zustand $\alpha_{t+1}$ bestimmen, der im folgenden Zeitschritt $t+1$ angestrebt wird. Der Ausgang des \textit{Mealy}-Automaten wird durch die Ausgangsfunktion $\gamma_t$ berechnet. Dieser hängt genau wie die Transitionsfunktion von der Eingabe und dem Zustand zum Zeitpunkt $t$ ab. Das Verhalten eines \textit{Moore}-Automaten wird mathematiusch durch die Gleichungen \ref{eq: Mealy1} und \ref{eq: Mealy2} ausgedrückt. Im Vergleich zum Verhalten eines \textit{Mealy}-Automaten ist zu erkennen, dass die Ausgangsfunktion $psi$ lediglich vom Ausgang zum Zeitpunkt $t$ abhängig ist.  \cite{mooremealy}\\
+	Durch die Gleichungen \ref{eq: Moore1} und \ref{eq: Moore2} wird das Verhalten eines Mealy Zustandsautomaten beschrieben. Die Transitionsfunktion $\phi$ und die Ausgabefunktion $\psi$ des Mooreautomats stehen jeweils in Abhängigkeit von $\zeta_t $, der aktuellen Eingabe, und $\epsilon_t$, dem aktuellen Zustand. Mithilfe der Transitionsfunktion lässt sich der Zustand $\epsilon_{t+1}$ bestimmen, der im folgenden Zeitschritt $t+1$ angestrebt wird. Der Ausgang des \textit{Mealy}-Automaten wird durch $\gamma_t$ ausgedrückt. Dieser hängt genau wie die Transitionsfunktion von der Eingabe und dem Zustand zum Zeitpunkt $t$ ab. Das Verhalten eines \textit{Moore}-Automaten wird mathematisch durch die Gleichungen \ref{eq: Mealy1} und \ref{eq: Mealy2} ausgedrückt. Im Vergleich zum Verhalten eines \textit{Mealy}-Automaten ist zu erkennen, dass die Ausgangsfunktion $\psi$ lediglich vom Ausgang zum Zeitpunkt $t$ abhängig ist.  \cite{mooremealy}\\
 	
 	\begin{equation}
-		\alpha_{t+1}=\phi(\zeta_t,\alpha_t)\text{    mit    t}\in\mathbb{N}
+		\epsilon_{t+1}=\phi(\zeta_t,\epsilon_t)\text{    mit    t}\in\mathbb{N}
 		\label{eq: Mealy1}
 	\end{equation}
 	
 	\begin{equation}
-		\gamma_t=\psi(\alpha_t)\text{    mit    t}\in\mathbb{N}
+		\gamma_t=\psi(\epsilon_t)\text{    mit    t}\in\mathbb{N}
 		\label{eq: Mealy2}
 	\end{equation}
 	\\
@@ -767,7 +771,7 @@
 	
 		Anstehende Fahraufgaben werden, bedingt durch das Vorgängerprojekt, mithilfe des Robot Operating Systems gelöst. Personen können folglich als Position in das ROS Netzwerk veröffentlicht werden. Dies ermöglicht dem Roboter die veröffentlichten Positionen anzufahren. Die Eintragung der Position von Personen in die statische Karte setzt die Beschreibung der Position als Koordinaten vorraus. Für die Bestimmung der Positionskoordinaten wird ein zweidimensionales Bild und die dazugehörigen Tiefeninformationen genutzt. Die Kenntnis über die Pixelposition des Objekts im Bild und den horinzontalen Sichtwinkel der Kamera ist für die Positionsbestimmung relevant.\\
 		
-		Abbildung \ref{fig: positionsbestimmung} zeigt ein Fallbeispiel für die Positionserkennung. Die $z$-Koordinate ist als Höhenkoordinate zu interpretieren. Der Bildsensor der Kamera befindet sich im Ursprung des gezeigten Koordinatensystems. Zwischen der Objektivebene und dem Bildsensor besteht eine absolute Distanz ${p_y}'$. Der horizontale Sichtwinkel $\gamma$ der Kamera spannt sich wie dargestellt auf. Das Objekt, dessen longitudinalen $p_y$ und lateralen $p_x$ Positionskoordinaten im Bezug zum Bildsensor bestimmt werden sollen, ist in der Abbildung mit einem Punkt gekennzeichnet und entsprechend beschrieben. Durch die Variable $d$ wird die absolute Distanz des Bildsensors zum Objekt beschrieben.\\
+		Abbildung \ref{fig: positionsbestimmung} zeigt ein Fallbeispiel für die Positionserkennung. Die $z$-Koordinate ist als Höhenkoordinate zu interpretieren. Der Bildsensor der Kamera befindet sich im Ursprung des gezeigten Koordinatensystems. Zwischen der Objektivebene und dem Bildsensor besteht eine absolute Distanz ${p_y}'$. Der horizontale Sichtwinkel $\beta$ der Kamera spannt sich wie dargestellt auf. Das Objekt, dessen longitudinalen $p_y$ und lateralen $p_x$ Positionskoordinaten im Bezug zum Bildsensor bestimmt werden sollen, ist in der Abbildung mit einem Punkt gekennzeichnet und entsprechend beschrieben. Durch die Variable $d$ wird die absolute Distanz des Bildsensors zum Objekt beschrieben.\\
 		
 			\begin{figure}[H]
 			\centering
@@ -786,7 +790,7 @@
 				\draw[very thick]  (0.75,4.0) node[above] {$p_x$};
 				\draw[very thick]  (0,1) node[left] {$p_y'$};
 				\node[] (a) at (0.5,2.25) {$d$};
-				\draw[very thick]  (-1.3,5.3) node[left] {$\gamma$};
+				\draw[very thick]  (-1.3,5.3) node[left] {$\beta$};
 				\draw [] (-5,0.5) circle [radius = 1.5mm];
 				\filldraw [black] (-5,0.5) circle (2pt);
 				\node[] (x) at (-5,0.9) {$z$};
@@ -797,11 +801,11 @@
 				%\draw (T) -- (A) -- (D) pic [draw, "$\alpha_Z$",angle radius=.8cm,angle eccentricity=.4] {angle=T--A--D};
 			\end{tikzpicture}
 			
-			\caption{Funktionsprinzip der Positionsbestimmung durch ein zweidimensionales Bild und Tiefeninformationen von oben betrachtet. Der Bildsensor der Kamera befindet sich im Ursprung des Koordinatensystems. Der Abstand zwischen der als gepunktete Linie dargestellte Objektivebene und des Bildsensors wird mit ${p_y}'$ bezeichnet. Der Sichtwinkel der Kamera wird mit $\gamma$ beschrieben. Durch eine gestrichelte Linie ist hier die absolute Distanz $d$ der Kamera zum Objekt gezeigt.}
+			\caption{Funktionsprinzip der Positionsbestimmung durch ein zweidimensionales Bild und Tiefeninformationen von oben betrachtet. Der Bildsensor der Kamera befindet sich im Ursprung des Koordinatensystems. Der Abstand zwischen der als gepunktete Linie dargestellte Objektivebene und des Bildsensors wird mit ${p_y}'$ bezeichnet. Der Sichtwinkel der Kamera wird mit $\beta$ beschrieben. Durch eine gestrichelte Linie ist hier die absolute Distanz $d$ der Kamera zum Objekt gezeigt.}
 			\label{fig: positionsbestimmung}
 		\end{figure}
 		
-		Zur Berechnung der longitudinalen Positionskoordinate $p_y$ wird das mathematische Verhältnis aus Gleichung \ref{eq: verhaeltnis} mithilfe des zweiten Strahlensatzes definiert. Der Teil der Distanz $d$, der durch den Bildsensor und der Objektivebene begrenzt wird, wird durch die Variable $d'$ beschrieben. Da die Objektivebene im rechten Winkel zur $y$-Achse steht kann $d'$ durch Gleichung \ref{eq: dstrich} beschrieben werden. Die Variable ${p_x}'$ steht für den Teil der Objektivebene, der durch die $y$-Achse und $d$ eingegrenzt wird. \\
+		Zur Berechnung der longitudinalen Positionskoordinate $p_y$ wird das mathematische Verhältnis aus Gleichung \ref{eq: verhaeltnis} mithilfe des zweiten Strahlensatzes definiert. Der Teil der Distanz $d$, der durch den Bildsensor und der Objektivebene begrenzt wird, wird durch die Variable $d'$ beschrieben. Da die Objektivebene im rechten Winkel zur $y$-Achse steht, kann $d'$ durch Gleichung \ref{eq: dstrich} beschrieben werden. Die Variable ${p_x}'$ steht für den Teil der Objektivebene, der durch die $y$-Achse und $d$ eingegrenzt wird. \\
 		
 		
 		\begin{figure}[H]

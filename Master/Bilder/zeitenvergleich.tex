@@ -1,11 +1,11 @@
 \begin{table}[H]
-	\caption{Vergleich der Rechenzeiten pro Bild auf verschiedenen Hardwareplattformen. Die präsentierten Zeiten wurden für alle Analyseschritte addiert und durch die Anzahl aller Bilder geteilt. Ein Analyseschritt bedeutet in diesem Fall die reine Berechnung des Netzes und exkludiert beispielsweise die Zeit für eine Anpassung des Bildes für das entsprechende Netz.  }
+	\caption{Vergleich der Rechenzeiten pro Bild auf verschiedenen Hardwareplattformen gemessen an dne 12755 Bildern des \textit{COCO}-Datensatzes. Die präsentierten Zeiten wurden für alle Analyseschritte addiert und durch die Anzahl aller Bilder geteilt. Ein Analyseschritt bedeutet in diesem Fall die reine Berechnung der Klassifikation und exkludiert beispielsweise die Zeit für eine Anpassung des Bildes für das entsprechende Netz.  }
 	\begin{center}
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
-			\multicolumn{1}{|c|}{Hardware} & \multicolumn{1}{c|}{Hog \& SVM} & \multicolumn{1}{c|}{SSD MobileNet V1} & \multicolumn{1}{c|}{SSD MobileNet V2} \\ \hline
-			Computer ALF	&- 	&69 ms		& - 	 \\
-			Grafikkarte			&-	&-		& 	-  	 \\
+			\multicolumn{1}{|c|}{Hardware} & \multicolumn{1}{c|}{HoG \& SVM} & \multicolumn{1}{c|}{SSD MobileNet V1 quant. H/E} & \multicolumn{1}{c|}{SSD MobileNet V2 H/E} \\ \hline
+			Computer ALF	&37 ms 	&63 ms/25 ms		& 28.5/26 ms 	 \\
+			Grafikkarte			&36 ms	&-		& 	-  	 \\
 			Raspberry Pi 3 Model B+			&-	&-		&- \\
 			
 			\hline

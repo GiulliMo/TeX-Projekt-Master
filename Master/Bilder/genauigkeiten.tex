@@ -1,0 +1,15 @@
+\begin{table}[H]
+	\caption{Vergleich der Rechenzeiten pro Bild auf verschiedenen Hardwareplattformen. Die präsentierten Zeiten wurden für alle Analyseschritte addiert und durch die Anzahl aller Bilder geteilt. Ein Analyseschritt bedeutet in diesem Fall die reine Berechnung des Netzes und exkludiert beispielsweise die Zeit für eine Anpassung des Bildes für das entsprechende Netz.  }
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{HoG \& SVM} & \multicolumn{1}{c|}{SSD MobileNet quant V1 H/E} & \multicolumn{1}{c|}{SSD MobileNet V2 H/E} \\ \hline 
+			Eigener Datensatz	&0,16 	&0,61 / 0,57		& 0,77 / 0,47	 \\
+			\textit{COCO} Datensatz	& 	&0,5 / 0,42		&  0,5 / 0,34	 \\
+			
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\label{fig: genauigkeiten}
+\end{table}

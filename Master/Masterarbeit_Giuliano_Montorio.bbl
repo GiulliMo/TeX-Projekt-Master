@@ -619,6 +619,32 @@
   (Light Weight Model)}
   \endentry
 
+  \entry{mobilenetv2}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SHAZMZAuCLM}{%
+         family={{Sandler}},
+         familyi={S\bibinitperiod},
+         suffix={M.},
+         suffixi={M\bibinitperiod},
+         given={{Howard} A. {Zhu} M. {Zhmoginov} A. und {Chen}\bibnamedelima
+  L.},
+         giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  Z\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+  Z\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  u\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SMHAZMZAuCL1}
+    \strng{fullhash}{SMHAZMZAuCL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{4510\bibrangedash 4520}
+    \field{title}{MobileNetV2: Inverted Residuals and Linear Bottlenecks - 2018
+  IEEE/CVF Conference on Computer Vision and Pattern Recognition}
+    \field{year}{2018}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{rcnn}{book}{}
     \name{author}{2}{}{%
       {{hash=DGD}{%
