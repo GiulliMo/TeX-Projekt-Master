@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  4 OCT 2020 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  6 OCT 2020 13:57
 entering extended mode
 **./Masterarbeit_Giuliano_Montorio.tex
 (Masterarbeit_Giuliano_Montorio.tex
@@ -1629,14 +1629,7 @@ File: tikzlibrarychains.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 LaTeX Warning: Unused global option(s):
     [tikz,margin=5mm].
 
-(Masterarbeit_Giuliano_Montorio.aux
-
-LaTeX Warning: Label `fig: ssdmobilenetv2' multiply defined.
-
-
-LaTeX Warning: Label `fig: ssdmobilenetv2' multiply defined.
-
-)
+(Masterarbeit_Giuliano_Montorio.aux)
 \openout1 = `Masterarbeit_Giuliano_Montorio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 274.
@@ -2248,12 +2241,6 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [12 <./Bilder/hog1crop.png> <./Bilder/hog2crop.jpg>]
-Underfull \hbox (badness 1077) in paragraph at lines 242--243
-\T1/phv/m/n/12 neu-ro-na-len Net-ze, der so-ge-nann-ten \T1/phv/m/sl/12 Con-vo-
-lu-tio-nal Neural Net-works \T1/phv/m/n/12 (CNN) er-reicht [[][]19[][]].
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
@@ -2435,21 +2422,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 719--720
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 721--722
+
+ []
+
+
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 732--733
+Underfull \hbox (badness 10000) in paragraph at lines 733--734
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 734--735
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 736--737
+Underfull \hbox (badness 10000) in paragraph at lines 735--736
 
  []
 
@@ -2458,12 +2445,17 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 746--749
+Underfull \hbox (badness 10000) in paragraph at lines 737--738
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 758--760
+Underfull \hbox (badness 10000) in paragraph at lines 747--750
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 759--761
 
  []
 
@@ -2472,41 +2464,21 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 769--770
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 772--773
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 774--775
-
- []
-
-
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 808--809
+Underfull \hbox (badness 10000) in paragraph at lines 770--771
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 817--818
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 824--825
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 828--829
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
 
  []
 
@@ -2515,27 +2487,51 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 836--837
+Underfull \hbox (badness 10000) in paragraph at lines 809--810
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 843--844
+Underfull \hbox (badness 10000) in paragraph at lines 818--819
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--848
+Underfull \hbox (badness 10000) in paragraph at lines 825--826
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 853--854
+Underfull \hbox (badness 10000) in paragraph at lines 829--830
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 858--859
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 837--838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 844--845
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 848--849
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 854--855
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--860
 
  []
 
@@ -2543,7 +2539,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 858--859
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[29]
+[30]
 chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 10--11
@@ -2553,7 +2549,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 (Bilder/umfeldmodell.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 37.
-) [30
+) [31
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 14--15
@@ -2575,7 +2571,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[31] (Bilder/wirknav.tex)
+[32] (Bilder/wirknav.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
@@ -2584,7 +2580,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[32]
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
@@ -2598,7 +2594,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[33]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
@@ -2612,7 +2608,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[34]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
@@ -2622,11 +2618,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
-
+(Bilder/mobilessd.tex)
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[35] (Bilder/mobilessd.tex)
+[36]
 Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
@@ -2640,7 +2636,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[36] (Bilder/ownnet.tex)
+[37] (Bilder/ownnet.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
@@ -2649,7 +2645,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[37]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
@@ -2663,7 +2659,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[38]
+[39]
 Underfull \hbox (badness 1122) in paragraph at lines 76--77
 \T1/phv/m/n/12 ent-spre-chen-de Da-tei-en. Ein hier-ar-chi-scher Zu-stands-au-t
 o-mat nach Mea-ly un-ter-bin-det die
@@ -2683,7 +2679,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[39]
+[40]
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
@@ -2702,7 +2698,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[40]
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
@@ -2736,7 +2732,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--143
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[41]
+[42]
 Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
@@ -2765,7 +2761,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[42] (Bilder/uml.tex
+[43] (Bilder/uml.tex
 Underfull \hbox (badness 4954) in paragraph at lines 51--51
 [][][]|\T1/phv/m/n/12 Kon-zept ei-nes hier-ar-chi-schen Zu-stands-au-to-ma-ten 
 in Form ei-nes UML-
@@ -2780,7 +2776,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--179
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[43]
+[44]
 Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
@@ -2799,7 +2795,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--186
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[44]
+[45]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 195.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
@@ -2808,7 +2804,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 
 pdfTeX warning: pdflatex.exe (file ./Bilder/person.pdf): PDF inclusion: found P
 DF version <1.7>, but at most version <1.5> allowed
-<Bilder/person.pdf, id=688, 963.6pt x 542.025pt>
+<Bilder/person.pdf, id=696, 963.6pt x 542.025pt>
 File: Bilder/person.pdf Graphic file (type pdf)
 <use Bilder/person.pdf>
 Package pdftex.def Info: Bilder/person.pdf  used on input line 247.
@@ -2817,7 +2813,7 @@ Package pdftex.def Info: Bilder/person.pdf  used on input line 247.
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[45]
+[46]
 Underfull \hbox (badness 1005) in paragraph at lines 252--253
 \T1/phv/m/n/12 der Per-so-ne-ner-ken-nung, ist ei-ne ho-he Ge-nau-ig-keit not-w
 en-dig. Nach ei-ge-ner Re-cher-che
@@ -2838,7 +2834,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 252--253
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[46 <./Bilder/person.pdf>]
+[47 <./Bilder/person.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
  []
@@ -2852,10 +2848,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 256--257
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[47]
+[48]
 chapter 4.
 
-LaTeX Warning: Reference `a: ' on page 48 undefined on input line 3.
+LaTeX Warning: Reference `a: ' on page 49 undefined on input line 3.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
@@ -2873,32 +2869,36 @@ PGFPlots: reading {Bilder/hog.csv}
 
 
 Package pgfplots Warning: Table 'Bilder/hog.csv' has non-unique column name 'a'
-. Only the first occurence can be accessed via column names. on input line 25.
+. Only the first occurence can be accessed via column names. on input line 26.
 
 PGFPlots: reading {Bilder/hogcoco.csv}
 
 Package pgfplots Warning: Table 'Bilder/hogcoco.csv' has non-unique column name
  'a'. Only the first occurence can be accessed via column names. on input line 
-26.
+27.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-) [48
+) [49
 
-] (Bilder/cocossdmobilenetv1tflite.tex
+]
+
+LaTeX Warning: Reference `hog1' on page 50 undefined on input line 11.
+
+(Bilder/cocossdmobilenetv1tflite.tex
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Bilder/cocossdmobilenetv1tflite.csv}
 
 
 Package pgfplots Warning: Table 'Bilder/cocossdmobilenetv1tflite.csv' has non-u
 nique column name 'a'. Only the first occurence can be accessed via column name
-s. on input line 25.
+s. on input line 26.
 
 PGFPlots: reading {Bilder/cocossdmobilenetv1cocotest.csv}
 
 Package pgfplots Warning: Table 'Bilder/cocossdmobilenetv1cocotest.csv' has non
 -unique column name 'a'. Only the first occurence can be accessed via column na
-mes. on input line 26.
+mes. on input line 27.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -2906,37 +2906,37 @@ Missing character: There is no ; in font nullfont!
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[49] (Bilder/ownssdmobilenetv1.tex
+[50] (Bilder/ownssdmobilenetv1.tex
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Bilder/ownssdmobilenetv1.csv}
 
 
 Package pgfplots Warning: Table 'Bilder/ownssdmobilenetv1.csv' has non-unique c
 olumn name 'a'. Only the first occurence can be accessed via column names. on i
-nput line 25.
+nput line 26.
 
 PGFPlots: reading {Bilder/ownnetv1coco.csv}
 
 Package pgfplots Warning: Table 'Bilder/ownnetv1coco.csv' has non-unique column
  name 'a'. Only the first occurence can be accessed via column names. on input 
-line 26.
+line 27.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-) (Bilder/ssdmobilenetv2tflite.tex
+) (Bilder/ownnetv2.tex
 Missing character: There is no ; in font nullfont!
-PGFPlots: reading {Bilder/ssdmobilenetv2tflite.csv}
+PGFPlots: reading {Bilder/ownnetv2.csv}
 
 
-Package pgfplots Warning: Table 'Bilder/ssdmobilenetv2tflite.csv' has non-uniqu
-e column name 'a'. Only the first occurence can be accessed via column names. o
-n input line 25.
+Package pgfplots Warning: Table 'Bilder/ownnetv2.csv' has non-unique column nam
+e 'a'. Only the first occurence can be accessed via column names. on input line
+ 26.
 
-PGFPlots: reading {Bilder/ssdmobilenetv2tflitecoco.csv}
+PGFPlots: reading {Bilder/ownnetv2coco.csv}
 
-Package pgfplots Warning: Table 'Bilder/ssdmobilenetv2tflitecoco.csv' has non-u
-nique column name 'a'. Only the first occurence can be accessed via column name
-s. on input line 26.
+Package pgfplots Warning: Table 'Bilder/ownnetv2coco.csv' has non-unique column
+ name 'a'. Only the first occurence can be accessed via column names. on input 
+line 27.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -2944,24 +2944,7 @@ Missing character: There is no ; in font nullfont!
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[50] (Bilder/ownnetv2.tex
-Missing character: There is no ; in font nullfont!
-PGFPlots: reading {Bilder/ownnetv2.csv}
-
-
-Package pgfplots Warning: Table 'Bilder/ownnetv2.csv' has non-unique column nam
-e 'a'. Only the first occurence can be accessed via column names. on input line
- 25.
-
-PGFPlots: reading {Bilder/ownnetv2coco.csv}
-
-Package pgfplots Warning: Table 'Bilder/ownnetv2coco.csv' has non-unique column
- name 'a'. Only the first occurence can be accessed via column names. on input 
-line 26.
-
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-) (Bilder/gesamtvergleich.tex
+[51] (Bilder/ssdmobilenetv2tflite.tex
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Bilder/ssdmobilenetv2tflite.csv}
 
@@ -2970,28 +2953,72 @@ Package pgfplots Warning: Table 'Bilder/ssdmobilenetv2tflite.csv' has non-uniqu
 e column name 'a'. Only the first occurence can be accessed via column names. o
 n input line 26.
 
-PGFPlots: reading {Bilder/hog.csv}
+PGFPlots: reading {Bilder/ssdmobilenetv2tflitecoco.csv}
 
-Package pgfplots Warning: Table 'Bilder/hog.csv' has non-unique column name 'a'
-. Only the first occurence can be accessed via column names. on input line 27.
+Package pgfplots Warning: Table 'Bilder/ssdmobilenetv2tflitecoco.csv' has non-u
+nique column name 'a'. Only the first occurence can be accessed via column name
+s. on input line 27.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+) (Bilder/ownnetv2ssdlite.tex
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {Bilder/ownnetv2ssdlite.csv}
+
+
+Package pgfplots Warning: Table 'Bilder/ownnetv2ssdlite.csv' has non-unique col
+umn name 'a'. Only the first occurence can be accessed via column names. on inp
+ut line 26.
+
+PGFPlots: reading {Bilder/ownnetv2ssdlitecoco.csv}
+
+Package pgfplots Warning: Table 'Bilder/ownnetv2ssdlitecoco.csv' has non-unique
+ column name 'a'. Only the first occurence can be accessed via column names. on
+ input line 27.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[52])
+Underfull \hbox (badness 10000) in paragraph at lines 34--35
+
+ []
+
+(Bilder/gesamtvergleich.tex
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {Bilder/ssdmobilenetv2tflite.csv}
+
+
+Package pgfplots Warning: Table 'Bilder/ssdmobilenetv2tflite.csv' has non-uniqu
+e column name 'a'. Only the first occurence can be accessed via column names. o
+n input line 27.
 
 PGFPlots: reading {Bilder/ownnetv2.csv}
 
 Package pgfplots Warning: Table 'Bilder/ownnetv2.csv' has non-unique column nam
 e 'a'. Only the first occurence can be accessed via column names. on input line
- 28.
+ 29.
+
+PGFPlots: reading {Bilder/ownnetv2ssdlite.csv}
+
+Package pgfplots Warning: Table 'Bilder/ownnetv2ssdlite.csv' has non-unique col
+umn name 'a'. Only the first occurence can be accessed via column names. on inp
+ut line 30.
 
 PGFPlots: reading {Bilder/ownssdmobilenetv1.csv}
 
 Package pgfplots Warning: Table 'Bilder/ownssdmobilenetv1.csv' has non-unique c
 olumn name 'a'. Only the first occurence can be accessed via column names. on i
-nput line 29.
+nput line 31.
 
 PGFPlots: reading {Bilder/cocossdmobilenetv1tflite.csv}
 
 Package pgfplots Warning: Table 'Bilder/cocossdmobilenetv1tflite.csv' has non-u
 nique column name 'a'. Only the first occurence can be accessed via column name
-s. on input line 30.
+s. on input line 32.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -3002,25 +3029,57 @@ Missing character: There is no ; in font nullfont!
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[51] (Bilder/zeitenvergleich.tex
-Overfull \hbox (29.32825pt too wide) in paragraph at lines 4--13
- [] 
- []
+[53] (Bilder/gesamtvergleichcoco.tex
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {Bilder/ssdmobilenetv2tflitecoco.csv}
 
+
+Package pgfplots Warning: Table 'Bilder/ssdmobilenetv2tflitecoco.csv' has non-u
+nique column name 'a'. Only the first occurence can be accessed via column name
+s. on input line 27.
+
+PGFPlots: reading {Bilder/ownnetv2coco.csv}
+
+Package pgfplots Warning: Table 'Bilder/ownnetv2coco.csv' has non-unique column
+ name 'a'. Only the first occurence can be accessed via column names. on input 
+line 29.
+
+PGFPlots: reading {Bilder/ownnetv2ssdlitecoco.csv}
+
+Package pgfplots Warning: Table 'Bilder/ownnetv2ssdlitecoco.csv' has non-unique
+ column name 'a'. Only the first occurence can be accessed via column names. on
+ input line 30.
+
+PGFPlots: reading {Bilder/ownnetv1coco.csv}
+
+Package pgfplots Warning: Table 'Bilder/ownnetv1coco.csv' has non-unique column
+ name 'a'. Only the first occurence can be accessed via column names. on input 
+line 31.
+
+PGFPlots: reading {Bilder/cocossdmobilenetv1cocotest.csv}
+
+Package pgfplots Warning: Table 'Bilder/cocossdmobilenetv1cocotest.csv' has non
+-unique column name 'a'. Only the first occurence can be accessed via column na
+mes. on input line 32.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 )
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
-
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[52] (Bilder/genauigkeiten.tex)) (_content/Zusammenfassung.tex
+[54] (Bilder/zeitenvergleich.tex) (Bilder/genauigkeiten.tex)
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[53]
+[55]) (_content/Zusammenfassung.tex
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[56]
 chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
@@ -3048,15 +3107,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-[54
+[57
 
 ]
-Underfull \hbox (badness 1028) in paragraph at lines 14--15
-[]\T1/phv/m/n/12 Zukünftige Ent-wick-lungs-ar-bei-ten am Alf kön-nen sich an ei
--nem brei-ten The-men-spek-trum
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
@@ -3070,7 +3123,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[55]
+[58]
 chapter without number
 
 Underfull \hbox (badness 10000) in paragraph at lines 498--498
@@ -3078,7 +3131,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 498--498
 l neural net-work\T1/phv/m/n/12 .
  []
 
-[56
+[59
 
 
 ]
@@ -3115,7 +3168,7 @@ sl/12 Ke-ras Ap-p-li-ca-ti-ons\T1/phv/m/n/12 . htt-
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[57]
+[60]
 Underfull \hbox (badness 10000) in paragraph at lines 498--498
 \T1/phv/m/sl/12 Mo-del)\T1/phv/m/n/12 . https://towardsdatascience.com/review-m
 obilenetv1-depthwise-separable-
@@ -3125,7 +3178,7 @@ obilenetv1-depthwise-separable-
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[58]
+[61]
 Underfull \hbox (badness 10000) in paragraph at lines 498--498
 []\T1/phv/m/n/12 Zarko. \T1/phv/m/sl/12 How to de-pict Hier-ar-chi-cal State Ma
 -chi-nes in La-tex\T1/phv/m/n/12 .
@@ -3147,7 +3200,7 @@ Underfull \hbox (badness 6708) in paragraph at lines 498--498
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[59]
+[62]
 Underfull \hbox (badness 10000) in paragraph at lines 498--498
 []\T1/phv/m/sl/12 SSDLite-MobileNet v2 (tfli-te)\T1/phv/m/n/12 . https://github
 .com/kaka-lin/object-detection#sdlite-
@@ -3157,7 +3210,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 498--498
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[60]
+[63]
 
 Class scrbook Warning: You are using `\begin{appendix}...\end{appendix}'.
 (scrbook)              You should note, that `\appendix' is a mostly globally
@@ -3173,14 +3226,14 @@ Class scrbook Warning: You are using `\begin{appendix}...\end{appendix}'.
 (scrbook)              `\appendix' on input line 501.
 
 chapter A.
-[61
+[64
 
 
 ]
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[62]
+[65]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 524.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 524.
  (Masterarbeit_Giuliano_Montorio.aux)
@@ -3193,19 +3246,16 @@ changed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package logreq Info: Writing requests to 'Masterarbeit_Giuliano_Montorio.run.xm
 l'.
 \openout1 = `Masterarbeit_Giuliano_Montorio.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56873 strings out of 481212
- 1295974 string characters out of 2922283
- 2166902 words of memory out of 3000000
- 71184 multiletter control sequences out of 15000+200000
+ 56922 strings out of 481212
+ 1297017 string characters out of 2922283
+ 2167569 words of memory out of 3000000
+ 71219 multiletter control sequences out of 15000+200000
  591624 words of font info for 127 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  64i,21n,106p,10647b,2791s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -3219,10 +3269,10 @@ type1/public/amsfonts/cm/cmsy10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/c
 msy8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><Y:/Miktex/f
 onts/type1/urw/helvetic/uhvb8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvr8a.p
 fb><Y:/Miktex/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Masterarbeit_Giuliano_Montorio.pdf (72 pages, 1679286 bytes).
+Output written on Masterarbeit_Giuliano_Montorio.pdf (75 pages, 1688145 bytes).
 
 PDF statistics:
- 999 PDF objects out of 1000 (max. 8388607)
- 232 named destinations out of 1000 (max. 500000)
+ 1022 PDF objects out of 1200 (max. 8388607)
+ 237 named destinations out of 1000 (max. 500000)
  285 words of extra memory for PDF output out of 10000 (max. 10000000)
 

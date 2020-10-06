@@ -1,11 +1,16 @@
 \begin{table}[H]
-	\caption{Vergleich der Rechenzeiten pro Bild auf verschiedenen Hardwareplattformen. Die präsentierten Zeiten wurden für alle Analyseschritte addiert und durch die Anzahl aller Bilder geteilt. Ein Analyseschritt bedeutet in diesem Fall die reine Berechnung des Netzes und exkludiert beispielsweise die Zeit für eine Anpassung des Bildes für das entsprechende Netz.  }
+	\caption{Gegenüberstellung der errechneten \textit{mean Average Precision}-Werte. Die Hardwareplattformen sind für die Genauigkeit eines Netzes nicht relevant, da diese auf jeder Plattform denselben Wert hat.  }
 	\begin{center}
+		
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
-			\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{HoG \& SVM} & \multicolumn{1}{c|}{SSD MobileNet quant V1 H/E} & \multicolumn{1}{c|}{SSD MobileNet V2 H/E} \\ \hline 
-			Eigener Datensatz	&0,16 	&0,61 / 0,57		& 0,77 / 0,47	 \\
-			\textit{COCO} Datensatz	& 	&0,5 / 0,42		&  0,5 / 0,34	 \\
+			\multicolumn{1}{|c|}{Objekterkennungssystem} & \multicolumn{1}{c|}{Eigener Datensatz} & \multicolumn{1}{c|}{COCO-Datensatz} \\ \hline
+			HoG \& SVM (1)	& 0,16	& 0,07		 \\
+			MobileNet V1 SSD quant. (90)			&0,68	&0,46	 	 \\
+			MobileNet V1 SSD mod. (1)		&0,79	&0,56	 \\
+			MobileNet V2 SSD mod. (1)	&0,78 &0,54  \\
+			MobileNet V2 SSDLite (90)			&0,77	& 0,54	 \\
+			MobileNet V2 SSDLite mod. (1)			&0,74	&0,47	 \\
 			
 			\hline
 		\end{tabular}

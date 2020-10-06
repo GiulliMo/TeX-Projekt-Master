@@ -23,13 +23,14 @@
 	]
 	
 	\addlegendentry{Eigener Datensatz}; % legende1
-	\addplot[gray, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ssdmobilenetv2tflite.csv};
-	\addplot[black, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ssdmobilenetv2tflitecoco.csv};
+	\addplot[gray, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ownnetv2ssdlite.csv};
+	\addplot[line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ownnetv2ssdlitecoco.csv};
+	
 	\addlegendimage{/pgfplots/refstyle=plotbrr};				
 	\addlegendentry{\textit{COCO}-Datensatz} ;%legende 2;
 	%\addlegendentry{plot 1}
 	\end{axis}
 	\end{tikzpicture}
-	\caption{\textit{Precision-Recall}-Kurven eines \textit{MobileNet V2 SSDLite} Netzes \cite{ssdv2}. }
-	\label{fig: ssdmobilenetv2}
+	\caption{Darstellung der \textit{Precision-Recall}-Verläufe des enwtickelten \textit{MobileNet V2 SSDLite} Netz.}
+	\label{fig: ownnetv2ssdlite}
 \end{figure}

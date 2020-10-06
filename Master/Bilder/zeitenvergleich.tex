@@ -1,15 +1,19 @@
 \begin{table}[H]
-	\caption{Vergleich der Rechenzeiten pro Bild auf verschiedenen Hardwareplattformen gemessen an dne 12755 Bildern des \textit{COCO}-Datensatzes. Die präsentierten Zeiten wurden für alle Analyseschritte addiert und durch die Anzahl aller Bilder geteilt. Ein Analyseschritt bedeutet in diesem Fall die reine Berechnung der Klassifikation und exkludiert beispielsweise die Zeit für eine Anpassung des Bildes für das entsprechende Netz.  }
+	\caption{Vergleich der Rechenzeiten pro Bild auf verschiedenen Hardwareplattformen gemessen an 12755 Bildern des \textit{COCO}-Datensatzes. Die präsentierten Zeiten wurden für alle Analyseschritte addiert und durch die Anzahl aller Bilder geteilt. Ein Analyseschritt bedeutet in diesem Fall die reine Berechnung der Klassifikation und exkludiert beispielsweise die Zeit für eine Anpassung des Bildes für das entsprechende Netz. Die Abkürzung \textit{mod.} steht für ein modifiziertes Netz. Eine quantisierte Architektur wir dmit \textit{quant.} gekennzeichnet. In runden Klammern wird die Anzahl der verschiedenen Klassen beziffert, die das jeweilige Netz erkennen kann.    }
 	\begin{center}
-		\begin{tabular}{|c|c|c|c|c|}
-			\hline
-			\multicolumn{1}{|c|}{Hardware} & \multicolumn{1}{c|}{HoG \& SVM} & \multicolumn{1}{c|}{SSD MobileNet V1 quant. H/E} & \multicolumn{1}{c|}{SSD MobileNet V2 H/E} \\ \hline
-			Computer ALF	&37 ms 	&63 ms/25 ms		& 28.5/26 ms 	 \\
-			Grafikkarte			&36 ms	&-		& 	-  	 \\
-			Raspberry Pi 3 Model B+			&-	&-		&- \\
-			
-			\hline
-		\end{tabular}
+		
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{Hardware} & \multicolumn{1}{c|}{Computer ALF}  & \multicolumn{1}{c|}{Raspberry Pi 3 Model B} \\ \hline
+		HoG \& SVM (1)					&37 ms 				& 37 ms 	 \\
+		MobileNet V1 SSD quant. (90)	&39	ms				&47	ms	 	 \\
+		MobileNet V1 SSD mod. (1)		&25 ms				& 54 ms \\
+		MobileNet V2 SSD mod. (1)		&24 ms 		 		&47 ms \\
+		MobileNet V2 SSDLite (90)		&20 ms	 		&42 ms	 \\
+		MobileNet V2 SSDLite mod. (1)	&18 ms					&39 ms \\
+		
+		\hline
+	\end{tabular}
 	\end{center}
 
 	\label{fig: zeitentab}
