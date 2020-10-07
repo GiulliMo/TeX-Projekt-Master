@@ -22,11 +22,11 @@
 	legend cell align={left},
 	]
 	
-	\addlegendentry{Eigener Datensatz}; % legende1
+	\addlegendentry{\footnotesize Eigener Datensatz}; % legende1
 	\addplot[gray, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1tflite.csv};
 	\addplot[black, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1cocotest.csv};
 	\addlegendimage{/pgfplots/refstyle=plotbrr};				
-	\addlegendentry{\textit{COCO}-Datensatz} ;%legende 2;
+	\addlegendentry{\footnotesize \textit{COCO}-Datensatz} ;%legende 2;
 	%\addlegendentry{plot 1}
 	\end{axis}
 	\end{tikzpicture}

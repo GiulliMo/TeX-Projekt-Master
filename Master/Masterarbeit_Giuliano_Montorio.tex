@@ -373,6 +373,7 @@ sorting=none,%
 	
 	
 	%\large
+	...smart erwähnen
 	Ein großes Dankeschön gilt all jenen Personen, die mich im Rahmen dieser Masterarbeit
 	unterstützt und motiviert haben. Insbesondere möchte ich Herrn Prof. Dr.-Ing. Arno Bergmann, Herrn M.Sc. Bernd Möllenbeck und Herrn Dr.-Ing. Christoph Krimpmann danken, die meine Arbeit durch ihre fachliche und persönliche Unterstützung begleitet haben. Auch beim Fachbereich Elektrotechnik und Informatik der Hochschule
 	Bochum insbesondere Herrn Dipl.-Ing. Thorsten Bartsch möchte ich mich bedanken. Meiner Familie spreche ich meinen Dank aus, da sie mir mein Studium durch finanzieller doch vor allem mentaler Unterstützung ermöglicht haben. Bei meinem Bruder bedanke ich mich für die Bereitstellung seiner Räumlichkeiten für eine fortlaufende Entwicklung am autonomen Logistikfahrzeug während der Coronapandemie.  
@@ -500,8 +501,49 @@ sorting=none,%
 	
 	\begin{appendix}
 			\chapter{Anhang} 
+			
+			
+			
 			\section{Abbildungen} 
 			\label{Abbildungen}
+			
+					
+					\begin{table}[H]
+						\caption{Auflistung der Zustände und der dazugehörigen Knotenmengen. Die Funktion der aufgerufenen Knoten wird in deskriptiver Form wiedergegeben.}
+						\begin{center}
+							
+							\begin{tabular}{|m{0.2\textwidth}<{\centering}|m{0.8\textwidth}<{\centering}|}
+								\hline
+								
+								Zustand und Knotengruppe & Deskriptive Funktion  \\ \hline \hline
+								Stop ($k_0$)					&Risikominimaler Zustand. Ausschalten des \textit{ROS}-Netzwerks. Wechsel in den Zustand \textit{Warten} erfolgt nur nach manueller Quittierung. 				 \\ \cline{0-1}
+								Warten ($k_1$)					&Grundfunktionen werden hochgefahren. Der \textit{LiDAR}-Sensor, die \textit{Kinect}-Sensoren, die \textit{ROS} Visualisierungssoftware und die Sprachausgabe wird eingeschaltet.				 \\ \cline{0-1}
+								SLAM ($k_2$)					&Knoten für den \textit{SLAM}-Algorithmus und Statische Koordintanesysteme werden aufgerufen.  				 \\ \cline{0-1}
+								Statische Karte ($k_3$)			&Einschalten des Partikelfilters für die Posenfindung durch gegebene Sensoren. 				 \\ \cline{0-1} 
+								Fahren ($k_4$)					&Übergeordneter Zustand				 \\ \cline{0-1}
+								Manuell ($k_5$)					&Das aus der Bachelorarbeit entwickelte Fahrprogramm wird im manuellen Modus ausgeführt \cite{Bachelorarbeit}. 				 \\ \cline{0-1}
+								Autonom ($k_6$)					&Übergeordneter Zustand	 				 \\ \cline{0-1}
+								Erkunden ($k_7$)				&Das aus der Bachelorarbeit entwickelte Fahrprogramm wird im autonomen Modus ausgeführt \cite{Bachelorarbeit}. Außerdem setzt eine entsprechende Applikation eine Erkundungsanwendung um. 	 				 \\ \cline{0-1}
+								Ziel ($k_8$)					&Das aus der Bachelorarbeit entwickelte Fahrprogramm wird im autonomen Modus ausgeführt \cite{Bachelorarbeit}. Wird ein Ziel im \textit{ROS}-Netzwerk veröffentlicht, fährt der Roboter dieses an.					 \\
+								
+								
+								\hline
+							\end{tabular}
+						\end{center}
+						
+						\label{fig: knotenmengen}
+					\end{table}
+				
+					\begin{figure}[H]
+						\centering
+						\includegraphics[angle=90,width=0.9\textwidth]{Bilder/Bild.jpeg}
+						\caption{Abbildung des autonomen Logistikfahrzeugs ALF.}
+						\label{fig: Wirkstruktur Schlupfregelung}
+					\end{figure}
+					
+				
+				
+				
 					\newpage 
 					
 				
@@ -509,10 +551,8 @@ sorting=none,%
 					\section{Inhalt Datenträger} 
 					\label{dataCD}
 					\begin{enumerate}[label=\textbf{\arabic*},ref=A.1.\arabic*]
-						\item Datenblätter
-						\label{it: Datenblätter}
 						\item Programm
-						\label{it: Programm}
+						\label{it: Software}
 						\item Lastenheft
 						\label{it: Lastenheft}
 					\end{enumerate}

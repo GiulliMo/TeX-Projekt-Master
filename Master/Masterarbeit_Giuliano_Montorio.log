@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  6 OCT 2020 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  7 OCT 2020 14:11
 entering extended mode
 **./Masterarbeit_Giuliano_Montorio.tex
 (Masterarbeit_Giuliano_Montorio.tex
@@ -1952,7 +1952,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 340--363
 \openout6 = `Masterarbeit_Giuliano_Montorio.toc'.
 
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 386.
+(Font)              scaled to size 10.79993pt on input line 387.
 
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
@@ -1966,7 +1966,7 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [5]
-Underfull \vbox (badness 10000) detected at line 456
+Underfull \vbox (badness 10000) detected at line 457
  []
 
 [6
@@ -2010,9 +2010,9 @@ File: Bilder/seite.pdf Graphic file (type pdf)
 Package pdftex.def Info: Bilder/seite.pdf  used on input line 15.
 (pdftex.def)             Requested size: 200.76353pt x 129.0201pt.
 
-Underfull \hbox (badness 1147) in paragraph at lines 22--23
-\T1/phv/m/n/12 ist es ein Fahr-zeug zu ent-wi-ckeln, das nach sei-ner Fer-tig-s
-tel-lung Lo-gis-ti-k-auf-ga-ben am
+Underfull \hbox (badness 1087) in paragraph at lines 22--23
+\T1/phv/m/n/12 Eick-mann ent-wi-ckel-ten in ih-rem Mas-ter-pro-jekt das Fahr-ze
+ug und konn-ten Fahr-auf-ga-ben
  []
 
 
@@ -2085,6 +2085,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
+[5
+
+]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 15.55188pt on input line 44.
 
@@ -2092,9 +2095,7 @@ Overfull \hbox (5.6685pt too wide) in paragraph at lines 44--44
  []\T1/phv/m/n/12 Aktivierungs- 
  []
 
-[5
 
-]
 Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
@@ -2178,6 +2179,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 201--202
  []
 
 
+Underfull \hbox (badness 8019) in paragraph at lines 203--204
+[]\T1/phv/m/n/12 Objekterkennungssysteme ge-ben er-kann-te Ob-jekt mit-hil-fe e
+i-nes Be-gren-zungs-rah-men
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
@@ -2241,6 +2248,12 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [12 <./Bilder/hog1crop.png> <./Bilder/hog2crop.jpg>]
+Underfull \hbox (badness 1077) in paragraph at lines 242--243
+\T1/phv/m/n/12 neu-ro-na-len Net-ze, der so-ge-nann-ten \T1/phv/m/sl/12 Con-vo-
+lu-tio-nal Neural Net-works \T1/phv/m/n/12 (CNN) er-reicht [[][]19[][]].
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
@@ -2270,7 +2283,7 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [14 <./Bilder/png.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 351--352
+Underfull \hbox (badness 10000) in paragraph at lines 350--352
 
  []
 
@@ -2298,6 +2311,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 430--431
  []
 
 
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
@@ -2306,8 +2323,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 552--553
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[17]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 601--602
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
 
  []
 
@@ -2315,12 +2337,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 601--602
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
-
- []
-
-
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 607--608
 
  []
@@ -2334,8 +2351,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 611--612
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[19]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 661--662
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
 
  []
 
@@ -2343,12 +2365,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 661--662
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 665--666
-
- []
-
-
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 671--672
 
  []
@@ -2362,7 +2379,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 673--674
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[21]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 677--678
 
  []
@@ -2376,7 +2393,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 686--687
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[22]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 688--689
 
  []
@@ -2409,7 +2426,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 707--708
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[23]
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 713--714
 
  []
@@ -2430,7 +2447,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 721--722
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[24]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 733--734
 
  []
@@ -2444,7 +2461,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 735--736
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[25]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 737--738
 
  []
@@ -2463,11 +2480,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 759--761
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[26]
+[27]
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[27]
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 770--771
 
  []
@@ -2486,7 +2503,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 775--776
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[28]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 809--810
 
  []
@@ -2510,7 +2527,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 829--830
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[29]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 837--838
 
  []
@@ -2539,7 +2556,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 859--860
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[30]
+[31]
 chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 10--11
@@ -2549,7 +2566,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 (Bilder/umfeldmodell.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 37.
-) [31
+) [32
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 14--15
@@ -2571,7 +2588,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[32] (Bilder/wirknav.tex)
+[33] (Bilder/wirknav.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
@@ -2580,7 +2597,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[33]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
@@ -2594,7 +2611,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[34]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
@@ -2608,7 +2625,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[35]
+[36]
 Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
@@ -2622,7 +2639,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[36]
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
@@ -2636,7 +2653,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[37] (Bilder/ownnet.tex)
+[38] (Bilder/ownnet.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
@@ -2645,7 +2662,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[38]
+[39]
 Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
@@ -2659,7 +2676,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[39]
+[40]
 Underfull \hbox (badness 1122) in paragraph at lines 76--77
 \T1/phv/m/n/12 ent-spre-chen-de Da-tei-en. Ein hier-ar-chi-scher Zu-stands-au-t
 o-mat nach Mea-ly un-ter-bin-det die
@@ -2679,7 +2696,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[40]
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
@@ -2698,7 +2715,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[41]
+[42]
 Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
@@ -2732,7 +2749,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--143
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[42]
+[43]
 Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
@@ -2761,7 +2778,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[43] (Bilder/uml.tex
+[44] (Bilder/uml.tex
 Underfull \hbox (badness 4954) in paragraph at lines 51--51
 [][][]|\T1/phv/m/n/12 Kon-zept ei-nes hier-ar-chi-schen Zu-stands-au-to-ma-ten 
 in Form ei-nes UML-
@@ -2776,7 +2793,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--179
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[44]
+[45]
 Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
@@ -2795,7 +2812,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--186
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[45]
+[46]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 195.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
@@ -2804,7 +2821,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 
 pdfTeX warning: pdflatex.exe (file ./Bilder/person.pdf): PDF inclusion: found P
 DF version <1.7>, but at most version <1.5> allowed
-<Bilder/person.pdf, id=696, 963.6pt x 542.025pt>
+<Bilder/person.pdf, id=700, 963.6pt x 542.025pt>
 File: Bilder/person.pdf Graphic file (type pdf)
 <use Bilder/person.pdf>
 Package pdftex.def Info: Bilder/person.pdf  used on input line 247.
@@ -2813,7 +2830,7 @@ Package pdftex.def Info: Bilder/person.pdf  used on input line 247.
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[46]
+[47]
 Underfull \hbox (badness 1005) in paragraph at lines 252--253
 \T1/phv/m/n/12 der Per-so-ne-ner-ken-nung, ist ei-ne ho-he Ge-nau-ig-keit not-w
 en-dig. Nach ei-ge-ner Re-cher-che
@@ -2821,7 +2838,7 @@ en-dig. Nach ei-ge-ner Re-cher-che
 
 
 Underfull \hbox (badness 1231) in paragraph at lines 252--253
-\T1/phv/m/n/12 Pa-ra-me-ter [[][]52[][]]. Die Grö-ÿen-ord-nung äh-nelt folg-lic
+\T1/phv/m/n/12 Pa-ra-me-ter [[][]53[][]]. Die Grö-ÿen-ord-nung äh-nelt folg-lic
 h die ei-ner her-kömm-li-chen \T1/phv/m/sl/12 Mo-bi-le-Net\T1/phv/m/n/12 -
  []
 
@@ -2834,7 +2851,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 252--253
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[47 <./Bilder/person.pdf>]
+[48 <./Bilder/person.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 254--255
 
  []
@@ -2848,11 +2865,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 256--257
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[48]
+[49]
 chapter 4.
-
-LaTeX Warning: Reference `a: ' on page 49 undefined on input line 3.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
@@ -2879,13 +2893,9 @@ Package pgfplots Warning: Table 'Bilder/hogcoco.csv' has non-unique column name
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-) [49
+) [50
 
-]
-
-LaTeX Warning: Reference `hog1' on page 50 undefined on input line 11.
-
-(Bilder/cocossdmobilenetv1tflite.tex
+] (Bilder/cocossdmobilenetv1tflite.tex
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Bilder/cocossdmobilenetv1tflite.csv}
 
@@ -2906,7 +2916,7 @@ Missing character: There is no ; in font nullfont!
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[50] (Bilder/ownssdmobilenetv1.tex
+[51] (Bilder/ownssdmobilenetv1.tex
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Bilder/ownssdmobilenetv1.csv}
 
@@ -2944,7 +2954,7 @@ Missing character: There is no ; in font nullfont!
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[51] (Bilder/ssdmobilenetv2tflite.tex
+[52] (Bilder/ssdmobilenetv2tflite.tex
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Bilder/ssdmobilenetv2tflite.csv}
 
@@ -2961,7 +2971,11 @@ s. on input line 27.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-) (Bilder/ownnetv2ssdlite.tex
+)
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[53] (Bilder/ownnetv2ssdlite.tex
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Bilder/ownnetv2ssdlite.csv}
 
@@ -2978,11 +2992,7 @@ Package pgfplots Warning: Table 'Bilder/ownnetv2ssdlitecoco.csv' has non-unique
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-
-Overfull \vbox (1.76944pt too high) has occurred while \output is active []
-
-
-[52])
+)
 Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
@@ -3029,7 +3039,7 @@ Missing character: There is no ; in font nullfont!
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[53] (Bilder/gesamtvergleichcoco.tex
+[54] (Bilder/gesamtvergleichcoco.tex
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {Bilder/ssdmobilenetv2tflitecoco.csv}
 
@@ -3067,19 +3077,19 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-)
+
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[54] (Bilder/zeitenvergleich.tex) (Bilder/genauigkeiten.tex)
+[55]) (Bilder/zeitenvergleich.tex) (Bilder/genauigkeiten.tex)
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[55]) (_content/Zusammenfassung.tex
+[56]) (_content/Zusammenfassung.tex
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[56]
+[57]
 chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
@@ -3096,7 +3106,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
+[58
 
+]
 Underfull \hbox (badness 1924) in paragraph at lines 11--12
 []\T1/phv/m/n/12 Der ent-wi-ckel-te Zu-stands-au-to-mat steu-ert das Fahr-zeug 
 ALF durch die Aus-ga-be ei-ner
@@ -3107,9 +3119,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-[57
 
-]
 Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
@@ -3123,43 +3133,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[58]
+[59]
 chapter without number
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--498
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
 []\T1/phv/m/n/12 Gonzalo Me-di-na. \T1/phv/m/sl/12 Dia-gram of an ar-ti-fi-ci-a
 l neural net-work\T1/phv/m/n/12 .
  []
 
-[59
+[60
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 498--498
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
 []\T1/phv/m/n/12 Goodfellow, I. , Ben-gio, Y. und Cour-ville, A. \T1/phv/m/sl/1
 2 De-ep Lear-ning\T1/phv/m/n/12 .
  []
 
 
-Underfull \hbox (badness 8056) in paragraph at lines 498--498
+Underfull \hbox (badness 8056) in paragraph at lines 499--499
 []\T1/phv/m/n/12 Sumit Sa-ha. \T1/phv/m/sl/12 A Com-pre-hen-si-ve Gui-de to Con
 -vo-lu-tio-nal Neural Net-works 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--498
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
 []\T1/phv/m/n/12 estamos. \T1/phv/m/sl/12 Wri-te Con-vo-lu-tio-nal Neural net-w
 ork using TikZ\T1/phv/m/n/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--498
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
 \T1/phv/m/n/12 https://tex.stackexchange.com/questions/519268/write-convolution
 al-neural-networks-
  []
 
 
-Underfull \hbox (badness 4805) in paragraph at lines 498--498
+Underfull \hbox (badness 4805) in paragraph at lines 499--499
 []\T1/phv/m/n/12 Szegedy, C., Reed, S., Erhan, D. und An-gue-lov, D. \T1/phv/m/
 sl/12 Ke-ras Ap-p-li-ca-ti-ons\T1/phv/m/n/12 . htt-
  []
@@ -3168,8 +3178,8 @@ sl/12 Ke-ras Ap-p-li-ca-ti-ons\T1/phv/m/n/12 . htt-
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[60]
-Underfull \hbox (badness 10000) in paragraph at lines 498--498
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
 \T1/phv/m/sl/12 Mo-del)\T1/phv/m/n/12 . https://towardsdatascience.com/review-m
 obilenetv1-depthwise-separable-
  []
@@ -3178,20 +3188,20 @@ obilenetv1-depthwise-separable-
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[61]
-Underfull \hbox (badness 10000) in paragraph at lines 498--498
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
 []\T1/phv/m/n/12 Zarko. \T1/phv/m/sl/12 How to de-pict Hier-ar-chi-cal State Ma
 -chi-nes in La-tex\T1/phv/m/n/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 498--498
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
 \T1/phv/m/n/12 https://tex.stackexchange.com/questions/288589/how-to-depict-hie
 rarchical-state-
  []
 
 
-Underfull \hbox (badness 6708) in paragraph at lines 498--498
+Underfull \hbox (badness 6708) in paragraph at lines 499--499
 []\T1/phv/m/n/12 aclark, hu-govk, ra-dar-he-re und wi-red-fool. \T1/phv/m/sl/12
  Py-thon Ima-ging Li-bra-ry (Fork)\T1/phv/m/n/12 . htt-
  []
@@ -3200,8 +3210,8 @@ Underfull \hbox (badness 6708) in paragraph at lines 498--498
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[62]
-Underfull \hbox (badness 10000) in paragraph at lines 498--498
+[63]
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
 []\T1/phv/m/sl/12 SSDLite-MobileNet v2 (tfli-te)\T1/phv/m/n/12 . https://github
 .com/kaka-lin/object-detection#sdlite-
  []
@@ -3210,7 +3220,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 498--498
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[63]
+[64]
 
 Class scrbook Warning: You are using `\begin{appendix}...\end{appendix}'.
 (scrbook)              You should note, that `\appendix' is a mostly globally
@@ -3223,42 +3233,52 @@ Class scrbook Warning: You are using `\begin{appendix}...\end{appendix}'.
 (scrbook)              inconsistent.
 (scrbook)              Because of this, you should remove `\end{appendix}'
 (scrbook)              and replace `\begin{appendix}' by command
-(scrbook)              `\appendix' on input line 501.
+(scrbook)              `\appendix' on input line 502.
 
 chapter A.
-[64
+
+Overfull \hbox (25.19997pt too wide) in paragraph at lines 515--532
+ [] 
+ []
+
+<Bilder/Bild.jpeg, id=836, 1927.2pt x 1445.4pt>
+File: Bilder/Bild.jpeg Graphic file (type jpg)
+<use Bilder/Bild.jpeg>
+Package pdftex.def Info: Bilder/Bild.jpeg  used on input line 539.
+(pdftex.def)             Requested size: 1927.19533pt x 1445.39648pt.
+[65
 
 
 ]
 Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
-[65]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 524.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 524.
+[66 <./Bilder/Bild.jpeg>]
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[67]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 564.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 564.
  (Masterarbeit_Giuliano_Montorio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 524.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 524.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 564.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 564.
 Package rerunfilecheck Info: File `Masterarbeit_Giuliano_Montorio.out' has not 
 changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to 'Masterarbeit_Giuliano_Montorio.run.xm
 l'.
 \openout1 = `Masterarbeit_Giuliano_Montorio.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56922 strings out of 481212
- 1297017 string characters out of 2922283
- 2167569 words of memory out of 3000000
- 71219 multiletter control sequences out of 15000+200000
+ 56933 strings out of 481212
+ 1297181 string characters out of 2922283
+ 2170002 words of memory out of 3000000
+ 71225 multiletter control sequences out of 15000+200000
  591624 words of font info for 127 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 64i,21n,106p,10647b,2791s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,21n,106p,10647b,2794s stack positions out of 5000i,500n,10000p,200000b,50000s
 {Y:/Miktex/fonts/enc/dvips/base/8r.enc}<Y:/Miktex/fonts/type1/public/amsfonts
 /cm/cmex10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><Y:/Miktex/
 fonts/type1/public/amsfonts/cm/cmmi6.pfb><Y:/Miktex/fonts/type1/public/amsfonts
@@ -3269,10 +3289,10 @@ type1/public/amsfonts/cm/cmsy10.pfb><Y:/Miktex/fonts/type1/public/amsfonts/cm/c
 msy8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><Y:/Miktex/f
 onts/type1/urw/helvetic/uhvb8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvr8a.p
 fb><Y:/Miktex/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Masterarbeit_Giuliano_Montorio.pdf (75 pages, 1688145 bytes).
+Output written on Masterarbeit_Giuliano_Montorio.pdf (77 pages, 2455197 bytes).
 
 PDF statistics:
- 1022 PDF objects out of 1200 (max. 8388607)
- 237 named destinations out of 1000 (max. 500000)
- 285 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1040 PDF objects out of 1200 (max. 8388607)
+ 240 named destinations out of 1000 (max. 500000)
+ 290 words of extra memory for PDF output out of 10000 (max. 10000000)
 

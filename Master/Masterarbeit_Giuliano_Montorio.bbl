@@ -70,6 +70,9 @@
     \field{labeltitlesource}{title}
     \field{title}{Implementierung einer Schlupfregelung per Model-Based Design
   sowie einer SLAM-Kartografierung für ein autonomes Logistik-Fahrzeug}
+    \list{location}{1}{%
+      {Hochschule Bochum - Bochum University of Applied Sciences}%
+    }
     \field{month}{02}
     \field{year}{2019}
   \endentry
@@ -89,6 +92,9 @@
     \field{labeltitlesource}{title}
     \field{title}{Entwicklung und Verfikation einer Sprachverarbeitung für das
   autonome Logistik-Fahrzeug ALF}
+    \list{location}{1}{%
+      {Hochschule Bochum - Bochum University of Applied Sciences}%
+    }
     \field{year}{2020}
   \endentry
 
@@ -1026,6 +1032,21 @@
     \field{title}{Python Imaging Library (Fork)}
   \endentry
 
+  \entry{texwelt}{book}{}
+    \name{author}{1}{}{%
+      {{hash=e}{%
+         family={{esdd}},
+         familyi={e\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{e1}
+    \strng{fullhash}{e1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{note}{https://texwelt.de/fragen/18787/wie-erstelle-ich-einen-programmablaufplan}
+    \field{title}{Wie erstelle ich einen Programmablaufplan?}
+  \endentry
+
   \entry{facerecarticle}{book}{}
     \name{author}{1}{}{%
       {{hash=GA}{%
@@ -1078,19 +1099,29 @@
     \field{title}{Models and Accuracies}
   \endentry
 
-  \entry{texwelt}{book}{}
+  \entry{alf}{booklet}{}
     \name{author}{1}{}{%
-      {{hash=e}{%
-         family={{esdd}},
-         familyi={e\bibinitperiod},
+      {{hash=uDHDE}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={Dennis\bibnamedelima Hotze},
+         familyi={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={Dominik\bibnamedelima Eickmann},
+         giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
       }}%
     }
-    \strng{namehash}{e1}
-    \strng{fullhash}{e1}
+    \strng{namehash}{DHDEu1}
+    \strng{fullhash}{DHDEu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{https://texwelt.de/fragen/18787/wie-erstelle-ich-einen-programmablaufplan}
-    \field{title}{Wie erstelle ich einen Programmablaufplan?}
+    \field{note}{Masterthesis}
+    \field{title}{Entwicklung und Verfikation eines autonomen
+  Logistik-Fahrzeugs}
+    \list{location}{1}{%
+      {Hochschule Bochum - Bochum University of Applied Sciences}%
+    }
+    \field{month}{02}
+    \field{year}{2018}
   \endentry
 
   \entry{hogcode}{book}{}
@@ -1112,27 +1143,6 @@
     \field{labeltitlesource}{title}
   \field{note}{https://www.tensorflow.org/lite/models/object\_detection/overview}
     \field{title}{Object detection}
-  \endentry
-
-  \entry{maxssdmobilenet}{book}{}
-    \name{author}{1}{}{%
-      {{hash=uMH}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={{Murphy, K.}},
-         familyi={M\bibinitperiod},
-         given={{Huang, J., }{Rathod, V., }{Sun, C., }{Zhu, M., }{Korattikara,
-  A., }{Fathi, A., }{Fischer, I., }{Wojna, Z., }{Song, Y., }{Guadarrama, S.}},
-         giveni={H\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{MHu1}
-    \strng{fullhash}{MHu1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Speed/accuracy trade-offs for modern convolutional object
-  detectors}
-    \field{year}{2016}
   \endentry
 
   \entry{ssdv2}{book}{}

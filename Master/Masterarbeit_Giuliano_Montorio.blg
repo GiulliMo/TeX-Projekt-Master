@@ -23,7 +23,7 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'field_info' (item size: 4) to 13062 items.
 Database file #1: Masterarbeit_Giuliano_Montorio-blx.bib
 Database file #2: _bib/biblio.bib
-I was expecting a `,' or a `}'---line 279 of file _bib/biblio.bib
+I was expecting a `,' or a `}'---line 290 of file _bib/biblio.bib
  : 
  : @book{tensorflowstarter,
 (Error may have been on previous line)
@@ -573,43 +573,43 @@ Too many commas in name 1 of "{Sandler}, M., {Howard}, A., {Zhu}, M., {Zhmoginov
 while executing---line 2805 of file biblatex.bst
 You've used 58 entries,
             6365 wiz_defined-function locations,
-            1416 strings with 17217 characters,
-and the built_in function-call counts, 273292 in all, are:
-= -- 19318
-> -- 4490
-< -- 1086
-+ -- 3995
-- -- 1330
-* -- 19168
-:= -- 26151
+            1418 strings with 17148 characters,
+and the built_in function-call counts, 277575 in all, are:
+= -- 19799
+> -- 4675
+< -- 1261
++ -- 4174
+- -- 1332
+* -- 19012
+:= -- 26139
 add.period$ -- 0
 call.type$ -- 58
-change.case$ -- 485
-chr.to.int$ -- 103
+change.case$ -- 659
+chr.to.int$ -- 109
 cite$ -- 114
-duplicate$ -- 24148
-empty$ -- 28543
-format.name$ -- 2638
-if$ -- 59586
+duplicate$ -- 24706
+empty$ -- 28710
+format.name$ -- 2641
+if$ -- 60762
 int.to.chr$ -- 0
-int.to.str$ -- 136
+int.to.str$ -- 139
 missing$ -- 0
-newline$ -- 1074
-num.names$ -- 2270
-pop$ -- 19165
+newline$ -- 1085
+num.names$ -- 2450
+pop$ -- 19156
 preamble$ -- 1
-purify$ -- 678
+purify$ -- 852
 quote$ -- 0
-skip$ -- 8765
+skip$ -- 9287
 stack$ -- 0
-substring$ -- 37715
-swap$ -- 5518
-text.length$ -- 1044
+substring$ -- 37954
+swap$ -- 5722
+text.length$ -- 1046
 text.prefix$ -- 0
 top$ -- 1
 type$ -- 1960
 warning$ -- 0
-while$ -- 2735
+while$ -- 2743
 width$ -- 0
-write$ -- 1017
+write$ -- 1028
 (There were 271 error messages)
