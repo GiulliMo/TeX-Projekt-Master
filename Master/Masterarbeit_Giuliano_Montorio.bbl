@@ -111,7 +111,7 @@
     \strng{fullhash}{IS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{https://www.sae.org/about - zugegriffen am 22.09.2020}
+    \field{note}{\url{https://www.sae.org/about} - zugegriffen am 22.09.2020}
     \field{title}{About SAE International}
     \field{year}{2020}
   \endentry
@@ -183,7 +183,8 @@
     \strng{fullhash}{G2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{https://tex.stackexchange.com/questions/132444/diagram-of-an-artificial-neural-network}
+  \field{note}{\url{https://tex.stackexchange.com/questions/132444/diagram-of-an-artificial-neural-network}
+  - zugegriffen am 24.09.2020}
     \field{title}{Diagram of an artificial neural network}
   \endentry
 
@@ -330,7 +331,8 @@
     \strng{fullhash}{s1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{https://github.com/Ermlab/hog-svm-inria}
+    \field{note}{\url{https://github.com/Ermlab/hog-svm-inria} - zugegriffen am
+  24.09.2020}
     \field{title}{Pedestrian classification from photos using the Linear SVM
   and HOG features}
   \endentry
@@ -389,7 +391,8 @@
     \strng{fullhash}{CAGIBYu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{{http://www.deeplearningbook.org - zugegriffen am 21.09.2020}}
+    \field{note}{\url{http://www.deeplearningbook.org} - zugegriffen am
+  21.09.2020}
     \field{title}{{Deep Learning}}
     \field{year}{2016}
   \endentry
@@ -438,7 +441,8 @@
     \strng{fullhash}{e2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{https://tex.stackexchange.com/questions/519268/write-convolutional-neural-networks-using-tikz}
+  \field{note}{\url{https://tex.stackexchange.com/questions/519268/write-convolutional-neural-networks-using-tikz}
+  - zugegriffen am 24.09.2020}
     \field{title}{Write Convolutional Neural network using TikZ}
   \endentry
 
@@ -525,7 +529,7 @@
     \strng{fullhash}{ASREu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{https://keras.io/api/applications/ - zugegriffen am
+    \field{note}{\url{https://keras.io/api/applications/} - zugegriffen am
   17.09.2020}
     \field{title}{Keras Applications}
   \endentry
@@ -622,28 +626,23 @@
     \strng{fullhash}{S1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69}
+  \field{note}{\url{https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69}
+  - zugegriffen am 24.09.2020}
     \field{title}{Review: MobileNetV1 — Depthwise Separable Convolution
   (Light Weight Model)}
   \endentry
 
   \entry{mobilenetv2}{book}{}
     \name{author}{1}{}{%
-      {{hash=SHAZMZAuCLM}{%
-         family={{Sandler}},
-         familyi={S\bibinitperiod},
-         suffix={M.},
-         suffixi={M\bibinitperiod},
-         given={{Howard} A. {Zhu} M. {Zhmoginov} A. und {Chen}\bibnamedelima
-  L.},
-         giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
-  Z\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
-  Z\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
-  u\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim L\bibinitperiod},
+      {{hash=SC}{%
+         prefix={{Sandler, M., }{Howard, A., }{Zhu, M., }{Zhmoginov, A. }und},
+         prefixi={S\bibinitperiod},
+         family={{Chen, L.}},
+         familyi={C\bibinitperiod},
       }}%
     }
-    \strng{namehash}{SMHAZMZAuCL1}
-    \strng{fullhash}{SMHAZMZAuCL1}
+    \strng{namehash}{CS1}
+    \strng{fullhash}{CS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{4510\bibrangedash 4520}
@@ -959,7 +958,7 @@
     \strng{fullhash}{L1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{https://cocodataset.org/ - zugegriffen am 24.09.2020}
+    \field{note}{\url{https://cocodataset.org/} - zugegriffen am 24.09.2020}
     \field{title}{COCO - Common Objects in Context}
   \endentry
 
@@ -999,7 +998,8 @@
     \strng{fullhash}{Z1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{https://tex.stackexchange.com/questions/288589/how-to-depict-hierarchical-state-machines-in-latex}
+  \field{note}{\url{https://tex.stackexchange.com/questions/288589/how-to-depict-hierarchical-state-machines-in-latex}
+  - zugegriffen am 24.09.2020}
     \field{title}{How to depict Hierarchical State Machines in Latex}
   \endentry
 
@@ -1014,7 +1014,8 @@
     \strng{fullhash}{e1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{https://texwelt.de/fragen/18787/wie-erstelle-ich-einen-programmablaufplan}
+  \field{note}{\url{https://texwelt.de/fragen/18787/wie-erstelle-ich-einen-programmablaufplan}
+  - zugegriffen am 24.09.2020}
     \field{title}{Wie erstelle ich einen Programmablaufplan?}
   \endentry
 
@@ -1106,13 +1107,15 @@
     \strng{fullhash}{A1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{https://www.pyimagesearch.com/2015/\newline11/09/pedestrian-detection-opencv/}
+  \field{note}{\url{https://www.pyimagesearch.com/2015/\newline11/09/pedestrian-detection-opencv/}
+  - zugegriffen am 24.09.2020}
     \field{title}{Pedestrian Detection OpenCV}
   \endentry
 
   \entry{tensorflowstarter}{book}{}
     \field{labeltitlesource}{title}
-  \field{note}{https://www.tensorflow.org/lite/models/object\_detection/overview}
+  \field{note}{\url{https://www.tensorflow.org/lite/models/object\_detection/overview}
+  - zugegriffen am 24.09.2020}
     \field{title}{Object detection}
   \endentry
 

@@ -20,10 +20,11 @@
 		%every axis plot/.append style={line width=1.0pt}
 		%legend pos=north east,
 		legend cell align={left},
-		legend style={at={(axis cs:0.5,1)},anchor=south west} ,
+		legend style={at={(0.5,1)},anchor=north} ,
+		legend columns = 3,
 		]
 		
-		\addlegendentry{\footnotesize V2 SSDLite (90)}; % legende1
+		\addlegendentry{\scriptsize V2 SSDLite (90)}; % legende1
 		\addplot[gray!60, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ssdmobilenetv2tflitecoco.csv};
 		%	\addplot[line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/hog.csv};
 		\addplot[dashed,line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ownnetv2coco.csv};
@@ -32,14 +33,14 @@
 		\addplot[dash dot,line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1cocotest.csv};
 		\addlegendimage{/pgfplots/refstyle=plotbrr};				
 		%	\addlegendentry{HoG \& SVM (H)} ;
-		\addlegendentry{\footnotesize mod. V2 SSD (1)} ;%legende 2;
-		\addlegendentry{\footnotesize mod. V2 SSDLite (1)} ;%legende 2;
-		\addlegendentry{\footnotesize mod. V1 SSD (1)} ;%legende 2;
-		\addlegendentry{\footnotesize quant. V1 SSD (90)} ;%legende 2;
+		\addlegendentry{\scriptsize mod. V2 SSD (1)} ;%legende 2;
+		\addlegendentry{\scriptsize mod. V2 SSDLite (1)} ;%legende 2;
+		\addlegendentry{\scriptsize mod. V1 SSD (1)} ;%legende 2;
+		\addlegendentry{\scriptsize quant. V1 SSD (90)} ;%legende 2;
 		%\addlegendentry{plot 1}
 	\end{axis}
 \end{tikzpicture}
-	\caption{\textit{Precision-Recall}-Kurven aller Objekterkennungssysteme in Anwendung auf den eigenen Datensatz. Das Kürzel \textit{H} steht für heruntergeladene Systeme und das \textit{E} für entwickelte.}
+	\caption{\textit{Precision-Recall}-Kurven aller \textit{MobileNet}-Netze in Anwendung auf den \textit{COCO}-Datensatz. Die Abkürzungen \textit{mod.} und \textit{quant.} stehen für \textit{modifiziert} und \textit{quantisiert}.}
 	\label{fig: genauigkeitsvergleichcoco}
 	
 	

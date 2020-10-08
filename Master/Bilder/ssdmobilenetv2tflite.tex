@@ -22,14 +22,15 @@
 	legend cell align={left},
 	]
 	
-	\addlegendentry{\footnotesize Eigener Datensatz}; % legende1
+	\addlegendentry{\scriptsize Eigener Datensatz}; % legende1
 	\addplot[gray, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ssdmobilenetv2tflite.csv};
 	\addplot[black, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/ssdmobilenetv2tflitecoco.csv};
 	\addlegendimage{/pgfplots/refstyle=plotbrr};				
-	\addlegendentry{\footnotesize \textit{COCO}-Datensatz} ;%legende 2;
+	\addlegendentry{\scriptsize \textit{COCO}-Datensatz} ;%legende 2;
 	%\addlegendentry{plot 1}
 	\end{axis}
 	\end{tikzpicture}
 	\caption{\textit{Precision-Recall}-Kurven eines \textit{MobileNet V2 SSDLite} Netzes \cite{ssdv2}. }
 	\label{fig: ssdmobilenetv2}
 \end{figure}
+\newpage
