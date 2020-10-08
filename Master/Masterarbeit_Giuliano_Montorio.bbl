@@ -405,7 +405,8 @@
     \strng{fullhash}{S2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{https://www.svgrepo.com/svg/178/car-compact}
+    \field{note}{\url{https://www.svgrepo.com/svg/178/car-compact} -
+  zugegriffen am 24.09.2020}
     \field{title}{Car Compact SVG Vector}
   \endentry
 
@@ -420,7 +421,8 @@
     \strng{fullhash}{S1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53}
+  \field{note}{\url{https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53}
+  - zugegriffen am 24.09.2020}
     \field{title}{A Comprehensive Guide to Convolutional Neural Networks —
   the ELI5 way}
   \endentry
@@ -999,37 +1001,6 @@
     \field{labeltitlesource}{title}
   \field{note}{https://tex.stackexchange.com/questions/288589/how-to-depict-hierarchical-state-machines-in-latex}
     \field{title}{How to depict Hierarchical State Machines in Latex}
-  \endentry
-
-  \entry{opencv}{book}{}
-    \name{author}{1}{}{%
-      {{hash=s}{%
-         family={skvark},
-         familyi={s\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{s2}
-    \strng{fullhash}{s2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{https://pypi.org/project/opencv-python/ - zugegriffen am
-  24.09.2020}
-    \field{title}{OpenCV on Wheels}
-  \endentry
-
-  \entry{pillow}{book}{}
-    \name{author}{1}{}{%
-      {{hash=a}{%
-         family={{aclark, hugovk, radarhere und wiredfool}},
-         familyi={a\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{a1}
-    \strng{fullhash}{a1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{https://pypi.org/project/Pillow/ - zugegriffen am 24.09.2020}
-    \field{title}{Python Imaging Library (Fork)}
   \endentry
 
   \entry{texwelt}{book}{}

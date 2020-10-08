@@ -1,6 +1,6 @@
 \chapter{Grundlagen}
 \label{ch: Grundlagen}
-	Für ein besseres Verständnis, der in Kapitel \ref{ch: Konzeptionierung} angewandten Methoden, werden anbei die Grundlagen behandelt. Informationen zu der verwendeten Hard- und Software wurden bereits in der vorangegangenen Bachelorarbeit vermittelt. Die in Kapitel \ref{ch: Grundlagen} erwähnte Personenerkennung ist eine Abwandlung der Objekterkennung. Im Folgenden werden sowohl herkömmliche als auch state-of-the-art Lösungen zur Objekterkennung präsentiert. Letzteres beinhaltet unter anderem das Gebiet der neuronalen Netzwerke. Somit werden zunächst die neuronalen Netze und ihre Eigenschaften besprochen bevor die Grundlagen der Objekterkennung erläutert werden.  ... ros einführen
+	Für ein besseres Verständnis, der in Kapitel \ref{ch: Konzeptionierung} angewandten Methoden, werden anbei die Grundlagen behandelt. Informationen zu der verwendeten Hard- und Software wurden bereits in der vorangegangenen Bachelorarbeit vermittelt. Die in Kapitel \ref{ch: Grundlagen} erwähnte Personenerkennung ist eine Abwandlung der Objekterkennung. Im Folgenden werden sowohl herkömmliche als auch state-of-the-art Lösungen zur Objekterkennung präsentiert. Letzteres beinhaltet unter anderem das Gebiet der neuronalen Netzwerke. Somit werden zunächst die neuronalen Netze und ihre Eigenschaften besprochen bevor die Grundlagen der Objekterkennung erläutert werden. 
  
 	
  	\section{Neuronale Netze}
@@ -12,7 +12,7 @@
 	
 		\subsection{Eigenschaften von neuronalen Netzen}
 		\label{subsec: Eigenschaften von neuronalen Netzen}
-		Die Grundlage für die Eingabe in ein neuronales Netz sind entsprechende, zu analysierende Daten. Bei einem Anwendungsfall, in dem eine Audiospur analysiert werden soll, können beispielsweise Frequenzspektren eingegeben werden. Ein klassisches Bildverarbeitungsproblem arbeitet mit den Pixeln eines Bildes. Grundlegend werden Daten über eine Eingabeschicht in die darin enthaltenen Neuronen gegeben. \\
+		Die Grundlage für die Eingabe in ein neuronales Netz sind entsprechende, zu analysierende Daten. Bei einem Anwendungsfall, in dem eine Audiospur analysiert werden soll, können beispielsweise Frequenzspektren eingegeben werden. Ein klassisches Bildverarbeitungsproblem arbeitet mit den Pixeln eines Bildes. Hierbei werden Daten über eine Eingabeschicht in die darin enthaltenen Neuronen gegeben. \\
 		
 		\begin{figure}[H]
 			\centering
@@ -35,9 +35,9 @@
 				start chain=2,node distance=13mm
 				]
 				\node[on chain=2] 
-				(x2) {$x_2$};
+				(x2) {\text{ }\text{ }$x_{j+1}$};
 				\node[on chain=2,join=by o-latex] 
-				{$w_2$};
+				{$w_{j+1}$};
 				\node[on chain=2,init] (sigma) 
 				{$\displaystyle\Sigma$};
 				\node[on chain=2,squa,label=above:{\parbox{2cm}{\centering Aktivierungs-funktion}}] 
@@ -49,15 +49,15 @@
 				\draw[fill=black](1,-1.075)circle(1pt);
 				\begin{scope}[start chain=1]
 					\node[on chain=1] at (0,1.5cm) 
-					(x1) {$x_1$};
+					(x1) {$x_{j}$};
 					\node[on chain=1,join=by o-latex] 
-					(w1) {$w_1$};
+					(w1) {$w_{j}$};
 				\end{scope}
 				\begin{scope}[start chain=3]
 					\node[on chain=3] at (0,-1.5cm) 
-					(x3) {$x_n$};
+					(x3) {$x_{n}$};
 					\node[on chain=3,label=below:Gewichte,join=by o-latex] 
-					(w3) {$w_n$};
+					(w3) {$w_{n}$};
 				\end{scope}
 				%\node[label=above:\parbox{2cm}{\centering Bias \\ $b$}] at (sigma|-w1) (b) {};
 				
@@ -72,7 +72,7 @@
 			\label{fig: neuron}
 		\end{figure}
 		
-		Der grundlegende...(zuviel grundlegend) Aufbau eines neuronalen Netzes besteht aus verschiedenen, miteinander verbundenen Schichten \cite{bildv2020}. Ein Neuron $i$ einer Schicht ist jeweils mit dem Neuron $j$ der folgenden Schicht über das Gewicht $w_{ij}$ verbunden \cite{bildv2020}. Die typische Struktur eines Neurons ist Abbildung \ref{fig: neuron} zu sehen.\\
+		Der grundlegende Aufbau eines neuronalen Netzes besteht aus verschiedenen, miteinander verbundenen Schichten \cite{bildv2020}. Ein Neuron $i$ einer Schicht ist jeweils mit dem Neuron $j$ der folgenden Schicht über das Gewicht $w_{ij}$ verbunden \cite{bildv2020}. Die typische Struktur eines Neurons ist Abbildung \ref{fig: neuron} zu sehen.\\
 		
 		\begin{equation}
 			s=\sum_{j=1}^n w_{ij}x_j
@@ -120,17 +120,17 @@
 				\foreach \m [count=\y] in {1,missing,2}
 				\node [every neuron/.try, neuron \m/.try ] (output-\m) at (6,1.5-\y) {};
 				
-				\foreach \l [count=\i] in {1,2,3,n}
+				\foreach \l [count=\i] in {1,2,3,l}
 				\draw [<-] (input-\i) -- ++(-1,0)
 				node [above, midway] {$I_\l$};
 				
-				\foreach \l [count=\i] in {1,n}
+				\foreach \l [count=\i] in {1,m}
 				\node [above] at (hidden1-\i.north) {$H_\l$};
 				
 				\foreach \l [count=\i] in {1,n}
 				\node [above] at (hidden2-\i.north) {$H_\l$};
 				
-				\foreach \l [count=\i] in {1,n}
+				\foreach \l [count=\i] in {1,o}
 				\draw [->] (output-\i) -- ++(1,0)
 				node [above, midway] {$O_\l$};
 				
@@ -166,8 +166,8 @@
 				\label{fig: neuronales netz }
 		\end{figure}
 	
-		...(andere zählindizes)
-		In Abbildung \ref{fig: neuronales netz } ist die Grundstruktur eines neuronalen Netzes veranschaulicht. Neuronen sind hier als Kreise dargestellt und bilden in den beispielhaft vertikal dargestellten Formationen, einzelne Schichten. Hierbei wird zwischen Eingabe-, Zwischen- und Ausgabeschichten unterschieden. Entsprechende Neuronen sind mit $I_n$, $H_n$ und $O_n$ bezeichnet. Die Eingabeschicht nimmt Informationen in Form von Daten auf und gibt diese an die erste Zwischenschicht weiter. Die Anzahl der Zwischenschichten, oder auch verdeckte Schichten, ist in der Anwendung neuronaler Netze variabel. Am rechten Bildrand ist die Ausgabeschicht gezeigt, die die entsprechende Ausgabe des Netzes generiert.  
+		
+		In Abbildung \ref{fig: neuronales netz } ist die Grundstruktur eines neuronalen Netzes veranschaulicht. Neuronen sind hier mit Kreisen angedeutet und bilden einzelne Schichten in den beispielhaft vertikal dargestellten Formationen. Hierbei wird zwischen Eingabe-, Zwischen- und Ausgabeschichten unterschieden. Entsprechende Neuronen sind mit $I$, $H$ und $O$ bezeichnet. Die Eingabeschicht nimmt Informationen in Form von Daten auf und gibt diese an die erste Zwischenschicht weiter. Die Anzahl der Zwischenschichten, oder auch verdeckte Schichten, ist in der Anwendung neuronaler Netze variabel. Am rechten Bildrand ist die Ausgabeschicht gezeigt, die die entsprechende Ausgabe des Netzes generiert.  
 	
 		\subsection{Lernprozess}
 		Der Lernprozess von neuronalen Netzen zielt darauf ab, einer Netzstruktur ein gewünschtes Verhalten beizubringen \cite{proba}. Genauer sollen die in Kapitel \ref{subsec: Eigenschaften von neuronalen Netzen} beschriebenen Gewichte so modifiziert werden, dass sie eine bestimmte Ausgabe erzeugen.\\
