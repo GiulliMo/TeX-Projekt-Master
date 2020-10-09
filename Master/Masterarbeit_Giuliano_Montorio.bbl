@@ -19,15 +19,14 @@
 \datalist[entry]{none/global//global/global}
   \entry{bvdw}{book}{}
     \name{author}{1}{}{%
-      {{hash=uG}{%
-         family={{ und Schaeffler Thomas}},
-         familyi={u\bibinitperiod},
-         given={{Gründinger, W., }{Hofmann, D.,}{Klett, D.,}{ Knoll, M.,}},
-         giveni={G\bibinitperiod},
+      {{hash=G}{%
+         family={{Gründinger, W., }{Hofmann, D., }{Klett, D., }{Knoll, M.,}{
+  und Schaeffler, T.}},
+         familyi={G\bibinitperiod},
       }}%
     }
-    \strng{namehash}{uG1}
-    \strng{fullhash}{uG1}
+    \strng{namehash}{G3}
+    \strng{fullhash}{G3}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Sprachassistenzen im Smart Home}
@@ -95,6 +94,7 @@
     \list{location}{1}{%
       {Hochschule Bochum - Bochum University of Applied Sciences}%
     }
+    \field{month}{10}
     \field{year}{2020}
   \endentry
 
@@ -129,7 +129,7 @@
     \strng{fullhash}{IS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Automated Driving - Levels of driving are edfined in new SAE
+    \field{title}{Automated Driving - Levels of driving are defined in new SAE
   International standard J3016}
     \field{year}{2014}
   \endentry
@@ -141,8 +141,8 @@
          familyi={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{M3}
-    \strng{fullhash}{M3}
+    \strng{namehash}{M4}
+    \strng{fullhash}{M4}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{1\bibrangedash 3}
@@ -154,8 +154,8 @@
   \entry{proba}{book}{}
     \name{author}{1}{}{%
       {{hash=M}{%
-         family={{Manickam, M., }{ Mohanapriya, M., }{Kale, S., }{Uday,
-  M.,}{Kulkarni, P.,}{Khandagale, Y. }and{ Patil, S.P.}},
+         family={{Manickam, M., }{ Mohanapriya, M., }{Kale, S., }{Uday, M.,
+  }{Kulkarni, P., }{Khandagale, Y. }and{ Patil, S.P.}},
          familyi={M\bibinitperiod},
       }}%
     }
@@ -174,13 +174,13 @@
 
   \entry{neuron}{book}{}
     \name{author}{1}{}{%
-      {{hash=G}{%
-         family={{Gonzalo Medina}},
-         familyi={G\bibinitperiod},
+      {{hash=M}{%
+         family={{Medina, G.}},
+         familyi={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{G2}
-    \strng{fullhash}{G2}
+    \strng{namehash}{M3}
+    \strng{fullhash}{M3}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
   \field{note}{\url{https://tex.stackexchange.com/questions/132444/diagram-of-an-artificial-neural-network}
@@ -224,25 +224,22 @@
   \endentry
 
   \entry{Ertel}{book}{}
-    \name{author}{2}{}{%
-      {{hash=WBW}{%
-         family={W.},
-         familyi={W\bibinitperiod},
-         given={{Bibel,}\bibnamedelima W.{, Ertel,}},
-         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod},
-      }}%
-      {{hash=RK}{%
-         family={R.},
-         familyi={R\bibinitperiod},
-         given={Kruse},
-         giveni={K\bibinitperiod},
+    \name{author}{1}{}{%
+      {{hash=uKRBWW}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={Kruse\bibnamedelima R.},
+         familyi={K\bibinitperiod\bibinitdelim R\bibinitperiod},
+         given={{Bibel,} W.{, Ertel,}\bibnamedelima W.},
+         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
+  W\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Springer Vieweg}%
     }
-    \strng{namehash}{WBWRK1}
-    \strng{fullhash}{WBWRK1}
+    \strng{namehash}{KRBWWu1}
+    \strng{fullhash}{KRBWWu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{3. Auflage}
@@ -370,6 +367,8 @@
     \field{labeltitlesource}{title}
     \field{title}{An analysis of Feature extraction and Classification
   Algorithms for Dangerous Object Detection}
+    \field{month}{12}
+    \field{year}{2017}
   \endentry
 
   \entry{deeplearning}{book}{}
@@ -404,8 +403,8 @@
          familyi={S\bibinitperiod},
       }}%
     }
-    \strng{namehash}{S2}
-    \strng{fullhash}{S2}
+    \strng{namehash}{S3}
+    \strng{fullhash}{S3}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{\url{https://www.svgrepo.com/svg/178/car-compact} -
@@ -416,7 +415,7 @@
   \entry{todasc}{book}{}
     \name{author}{1}{}{%
       {{hash=S}{%
-         family={{Sumit Saha}},
+         family={{Saha, S.}},
          familyi={S\bibinitperiod},
       }}%
     }
@@ -448,18 +447,17 @@
 
   \entry{cnnvergleich}{book}{}
     \name{author}{1}{}{%
-      {{hash=CAPuCE}{%
-         prefix={{Canziani,} A.{, Adam,} P.\bibnamedelima und},
-         prefixi={C\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
-  P\bibinitperiod\bibinitdelim u\bibinitperiod},
-         family={{Culurciello}},
+      {{hash=uCC}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Culurciello, E.}},
          familyi={C\bibinitperiod},
-         given={E.},
-         giveni={E\bibinitperiod},
+         given={{Canziani, A., }{Adam, P.}},
+         giveni={C\bibinitperiod},
       }}%
     }
-    \strng{namehash}{CECAPu1}
-    \strng{fullhash}{CECAPu1}
+    \strng{namehash}{CCu1}
+    \strng{fullhash}{CCu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{An Analysis of Deep Neural Network Models for Practical
@@ -469,22 +467,16 @@
 
   \entry{mobilenets}{book}{}
     \name{author}{1}{}{%
-      {{hash=uAHHAGZMBDWTM}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={{Adam,}\bibnamedelima H.},
-         familyi={A\bibinitperiod\bibinitdelim H\bibinitperiod},
-         given={{Howard,} A. G. {, Zhu,} M.{, Chen,} B.{, Kalenichenko,} D.{,
-  Wang,} W.{, Weyand,} T.{, Andreetto,}\bibnamedelima M.},
-         giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
-  G\bibinitperiod\bibinitdelim Z\bibinitperiod\bibinitdelim
-  M\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim
-  D\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
-  T\bibinitperiod\bibinitdelim M\bibinitperiod},
+      {{hash=HA}{%
+         prefix={{Howard, A. G., }{Zhu, M., }{Chen, B., }{Kalenichenko, D.,
+  }{Wang, W., }{Weyand, T., }{Andreetto, M. }und},
+         prefixi={H\bibinitperiod},
+         family={{Adam, H.}},
+         familyi={A\bibinitperiod},
       }}%
     }
-    \strng{namehash}{AHHAGZMBDWTMu1}
-    \strng{fullhash}{AHHAGZMBDWTMu1}
+    \strng{namehash}{AH1}
+    \strng{fullhash}{AH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{MobileNets: Efficient Convolutional Neural Networks for
@@ -495,17 +487,15 @@
 
   \entry{vgg}{book}{}
     \name{author}{1}{}{%
-      {{hash=uZSK}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
+      {{hash=SZ}{%
+         prefix={{Simonyan, K. }und},
+         prefixi={S\bibinitperiod},
          family={{Zisserman, A.}},
          familyi={Z\bibinitperiod},
-         given={{Simonyan,}\bibnamedelima K.},
-         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
       }}%
     }
-    \strng{namehash}{ZSKu1}
-    \strng{fullhash}{ZSKu1}
+    \strng{namehash}{ZS1}
+    \strng{fullhash}{ZS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Very Deep Convolutional Networks for Large-Scale Image
@@ -514,20 +504,6 @@
   \endentry
 
   \entry{keras}{book}{}
-    \name{author}{1}{}{%
-      {{hash=uASRE}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={{Anguelov, D.}},
-         familyi={A\bibinitperiod},
-         given={{Szegedy, C.,} {Reed, S.,}\bibnamedelima {Erhan, D.}},
-         giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
-  E\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{ASREu1}
-    \strng{fullhash}{ASREu1}
-    \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{\url{https://keras.io/api/applications/} - zugegriffen am
   17.09.2020}
@@ -536,16 +512,15 @@
 
   \entry{resnet}{book}{}
     \name{author}{1}{}{%
-      {{hash=HZRuS}{%
-         family={{He, K.}},
-         familyi={H\bibinitperiod},
-         given={{Zhang, X.,} {Ren, S.} und\bibnamedelima {Sun, J.}},
-         giveni={Z\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim
-  u\bibinitperiod\bibinitdelim S\bibinitperiod},
+      {{hash=HS}{%
+         prefix={{He, K., }{Zhang, X., }{Ren, S. }und},
+         prefixi={H\bibinitperiod},
+         family={{Sun, J.}},
+         familyi={S\bibinitperiod},
       }}%
     }
-    \strng{namehash}{HZRuS1}
-    \strng{fullhash}{HZRuS1}
+    \strng{namehash}{SH1}
+    \strng{fullhash}{SH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Deep Residual Learning for Image Recognition}
@@ -553,60 +528,19 @@
   \endentry
 
   \entry{inception}{book}{}
-    \name{author}{9}{}{%
-      {{hash=SC}{%
-         family={{Szegedy}},
-         familyi={S\bibinitperiod},
-         given={C.},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=W}{%
-         family={{Wei Liu}},
-         familyi={W\bibinitperiod},
-      }}%
-      {{hash=Y}{%
-         family={{Yangqing Jia}},
-         familyi={Y\bibinitperiod},
-      }}%
-      {{hash=SP}{%
-         family={{Sermanet}},
-         familyi={S\bibinitperiod},
-         given={P.},
-         giveni={P\bibinitperiod},
-      }}%
-      {{hash=RS}{%
-         family={{Reed}},
+    \name{author}{1}{}{%
+      {{hash=uRS}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Rabinovich, A.}},
          familyi={R\bibinitperiod},
-         given={S.},
+         given={{Szegedy, C., }{Liu, W., }{Jia, Y., }{Sermanet, P., }{Reed, S.,
+  }{Anguelov, D., }{Erhan, D., }{Vanhoucke, V.}},
          giveni={S\bibinitperiod},
       }}%
-      {{hash=AD}{%
-         family={{Anguelov}},
-         familyi={A\bibinitperiod},
-         given={D.},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=ED}{%
-         family={{Erhan}},
-         familyi={E\bibinitperiod},
-         given={D.},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=VV}{%
-         family={{Vanhoucke}},
-         familyi={V\bibinitperiod},
-         given={V.},
-         giveni={V\bibinitperiod},
-      }}%
-      {{hash=RA}{%
-         family={{Rabinovich}},
-         familyi={R\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
-      }}%
     }
-    \strng{namehash}{SC+1}
-    \strng{fullhash}{SCWYSPRSADEDVVRA1}
+    \strng{namehash}{RSu1}
+    \strng{fullhash}{RSu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{1\bibrangedash 9}
@@ -617,13 +551,13 @@
 
   \entry{depthwiseconv}{book}{}
     \name{author}{1}{}{%
-      {{hash=S}{%
-         family={{Sik-Ho Tsang}},
-         familyi={S\bibinitperiod},
+      {{hash=T}{%
+         family={{Tsang, S.-H.}},
+         familyi={T\bibinitperiod},
       }}%
     }
-    \strng{namehash}{S1}
-    \strng{fullhash}{S1}
+    \strng{namehash}{T1}
+    \strng{fullhash}{T1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
   \field{note}{\url{https://towardsdatascience.com/review-mobilenetv1-depthwise-separable-convolution-light-weight-model-a382df364b69}
@@ -704,8 +638,8 @@
          familyi={G\bibinitperiod},
       }}%
     }
-    \strng{namehash}{G1}
-    \strng{fullhash}{G1}
+    \strng{namehash}{G2}
+    \strng{fullhash}{G2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Fast R-CNN - Proceedings of the IEEE International Conference
@@ -787,15 +721,13 @@
 
   \entry{uml}{book}{}
     \name{author}{1}{}{%
-      {{hash=SJL}{%
-         family={Staud},
+      {{hash=S}{%
+         family={{Staud, J. L.}},
          familyi={S\bibinitperiod},
-         given={J.\bibnamedelima L.},
-         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
       }}%
     }
-    \strng{namehash}{SJL1}
-    \strng{fullhash}{SJL1}
+    \strng{namehash}{S2}
+    \strng{fullhash}{S2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{2. Auflage}
@@ -805,15 +737,13 @@
 
   \entry{mooremealy}{article}{}
     \name{author}{1}{}{%
-      {{hash=SV}{%
-         family={Solov’ev},
+      {{hash=S}{%
+         family={{Solov’ev, V.}},
          familyi={S\bibinitperiod},
-         given={V.},
-         giveni={V\bibinitperiod},
       }}%
     }
-    \strng{namehash}{SV1}
-    \strng{fullhash}{SV1}
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Implementation of finite-state machines based on programmable
@@ -824,15 +754,13 @@
 
   \entry{hsm}{book}{}
     \name{author}{1}{}{%
-      {{hash=YM}{%
-         family={Yannakakis},
+      {{hash=Y}{%
+         family={{Yannakakis, M.}},
          familyi={Y\bibinitperiod},
-         given={M.},
-         giveni={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{YM1}
-    \strng{fullhash}{YM1}
+    \strng{namehash}{Y1}
+    \strng{fullhash}{Y1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{315\bibrangedash 330}
@@ -843,18 +771,18 @@
 
   \entry{leightweight}{book}{}
     \name{author}{1}{}{%
-      {{hash=uLLLL}{%
+      {{hash=uJLLL}{%
          prefix={und},
          prefixi={u\bibinitperiod},
-         family={{Li, Jianguo}},
-         familyi={L\bibinitperiod},
+         family={{Jianguo, L.}},
+         familyi={J\bibinitperiod},
          given={{Li, Y.,} {Li, J.,}\bibnamedelima {Lin, W.,}},
          giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim
   L\bibinitperiod},
       }}%
     }
-    \strng{namehash}{LLLLu1}
-    \strng{fullhash}{LLLLu1}
+    \strng{namehash}{JLLLu1}
+    \strng{fullhash}{JLLLu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Tiny-DSOD: Lightweight Object Detection for
@@ -892,19 +820,17 @@
 
   \entry{frameworks}{book}{}
     \name{author}{1}{}{%
-      {{hash=uPPCKD}{%
+      {{hash=uPP}{%
          prefix={und},
          prefixi={u\bibinitperiod},
          family={{Pathak, V.}},
          familyi={P\bibinitperiod},
-         given={{Parvat, A.,} { Chavan, J., } {Kadam, S., }\bibnamedelima {Dev,
-  S., }},
-         giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim
-  K\bibinitperiod\bibinitdelim D\bibinitperiod},
+         given={{Parvat, A.,}{ Chavan, J., }{Kadam, S., }{Dev, S.,}},
+         giveni={P\bibinitperiod},
       }}%
     }
-    \strng{namehash}{PPCKDu1}
-    \strng{fullhash}{PPCKDu1}
+    \strng{namehash}{PPu1}
+    \strng{fullhash}{PPu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{1\bibrangedash 7}
@@ -915,15 +841,13 @@
 
   \entry{tflite}{book}{}
     \name{author}{1}{}{%
-      {{hash=FA}{%
-         family={Farhoodfar},
+      {{hash=F}{%
+         family={{Farhoodfar, A.}},
          familyi={F\bibinitperiod},
-         given={A.},
-         giveni={A\bibinitperiod},
       }}%
     }
-    \strng{namehash}{FA1}
-    \strng{fullhash}{FA1}
+    \strng{namehash}{F1}
+    \strng{fullhash}{F1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Machine Learning for Mobile Developers: Tensorflow Lite
@@ -964,21 +888,17 @@
 
   \entry{cocopaper}{book}{}
     \name{author}{1}{}{%
-      {{hash=uLMBHPRD}{%
-         family={{und Zitnick, C. L.}},
-         familyi={u\bibinitperiod},
-         given={{Lin, T.-Y., } {Maire, M., } {Belongie, S., } {Hays, J., }
-  {Perona, P., } {Ramanan, D., }\bibnamedelima {Doll{\'a}r, P., }},
-         giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
-  B\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim
-  P\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim D\bibinitperiod},
+      {{hash=L}{%
+         family={{Lin, T.-Y., }{Maire, M., }{Belongie, S., }{Hays, J.,
+  }{Perona, P., }{Ramanan, D., }{Doll{\'a}r, P., }{und Zitnick, C. L.}},
+         familyi={L\bibinitperiod},
       }}%
     }
     \list{publisher}{1}{%
       {Springer International Publishing}%
     }
-    \strng{namehash}{uLMBHPRD1}
-    \strng{fullhash}{uLMBHPRD1}
+    \strng{namehash}{L2}
+    \strng{fullhash}{L2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{pages}{740\bibrangedash 755}
@@ -1021,72 +941,66 @@
 
   \entry{facerecarticle}{book}{}
     \name{author}{1}{}{%
-      {{hash=GA}{%
-         family={Geitgey},
+      {{hash=G}{%
+         family={{Geitgey, A.}},
          familyi={G\bibinitperiod},
-         given={Adam},
-         giveni={A\bibinitperiod},
       }}%
     }
-    \strng{namehash}{GA1}
-    \strng{fullhash}{GA1}
+    \strng{namehash}{G1}
+    \strng{fullhash}{G1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{https://cmusatyalab.github.io/openface/models-and-accuracies/}
+  \field{note}{\url{https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78}
+  - zugegriffen am 24.09.2020}
     \field{title}{Machine Learning is Fun! Part 4: Modern Face Recognition with
   Deep Learning}
   \endentry
 
   \entry{facerecognition}{book}{}
     \name{author}{1}{}{%
-      {{hash=GA}{%
-         family={Geitgey},
+      {{hash=G}{%
+         family={{Geitgey, A.}},
          familyi={G\bibinitperiod},
-         given={Adam},
-         giveni={A\bibinitperiod},
       }}%
     }
-    \strng{namehash}{GA1}
-    \strng{fullhash}{GA1}
+    \strng{namehash}{G1}
+    \strng{fullhash}{G1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{https://pypi.org/project/face-recognition/}
+    \field{note}{\url{https://pypi.org/project/face-recognition/} - zugegriffen
+  am 24.09.2020}
     \field{title}{Face Recognition}
   \endentry
 
   \entry{openface}{book}{}
     \name{author}{1}{}{%
-      {{hash=AB}{%
-         family={Amos},
+      {{hash=A}{%
+         family={{Amos, B.}},
          familyi={A\bibinitperiod},
-         given={Brandon},
-         giveni={B\bibinitperiod},
       }}%
     }
-    \strng{namehash}{AB1}
-    \strng{fullhash}{AB1}
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{https://cmusatyalab.github.io/openface/models-and-accuracies/}
+  \field{note}{\url{https://cmusatyalab.github.io/openface/models-and-accuracies/}
+  - zugegriffen am 24.09.2020}
     \field{title}{Models and Accuracies}
   \endentry
 
   \entry{alf}{booklet}{}
     \name{author}{1}{}{%
-      {{hash=uDHDE}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={Dennis\bibnamedelima Hotze},
-         familyi={D\bibinitperiod\bibinitdelim H\bibinitperiod},
-         given={Dominik\bibnamedelima Eickmann},
-         giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+      {{hash=EH}{%
+         prefix={{Eickmann, D. }und},
+         prefixi={E\bibinitperiod},
+         family={{Hotze, D.}},
+         familyi={H\bibinitperiod},
       }}%
     }
-    \strng{namehash}{DHDEu1}
-    \strng{fullhash}{DHDEu1}
+    \strng{namehash}{HE1}
+    \strng{fullhash}{HE1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{Masterthesis}
     \field{title}{Entwicklung und Verfikation eines autonomen
   Logistik-Fahrzeugs}
     \list{location}{1}{%
@@ -1098,16 +1012,16 @@
 
   \entry{hogcode}{book}{}
     \name{author}{1}{}{%
-      {{hash=A}{%
-         family={{Adrian Rosebrock}},
-         familyi={A\bibinitperiod},
+      {{hash=R}{%
+         family={{Rosebrock, A.}},
+         familyi={R\bibinitperiod},
       }}%
     }
-    \strng{namehash}{A1}
-    \strng{fullhash}{A1}
+    \strng{namehash}{R1}
+    \strng{fullhash}{R1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{\url{https://www.pyimagesearch.com/2015/\newline11/09/pedestrian-detection-opencv/}
+  \field{note}{\url{https://www.pyimagesearch.com/2015/11/09/pedestrian-detection-opencv/}
   - zugegriffen am 24.09.2020}
     \field{title}{Pedestrian Detection OpenCV}
   \endentry
@@ -1120,8 +1034,20 @@
   \endentry
 
   \entry{ssdv2}{book}{}
+    \name{author}{1}{}{%
+      {{hash=kl}{%
+         prefix={kaka},
+         prefixi={k\bibinitperiod},
+         family={lin},
+         familyi={l\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{lk1}
+    \strng{fullhash}{lk1}
+    \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-  \field{note}{https://github.com/kaka-lin/object-detection\#sdlite-mobilenet-v2}
+  \field{note}{\url{https://github.com/kaka-lin/object-detection\#sdlite-mobilenet-v2}
+  - zugegriffen am 24.09.2020}
     \field{title}{SSDLite-MobileNet v2 (tflite)}
   \endentry
 \enddatalist
