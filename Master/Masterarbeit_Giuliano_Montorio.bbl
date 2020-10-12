@@ -47,9 +47,32 @@
     \strng{fullhash}{GSS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+  \field{note}{\url{https://www.soprasteria.de/docs/librariesprovider2/sopra-steria-de/publikationen/studien/potenzialanalyse-kuenstliche-intelligenz-2017.pdf?sfvrsn=190f45dc_4}
+  - zugegriffen am 01.10.2020}
     \field{title}{Potenzialanalyse Künstliche Intelligenz}
     \field{month}{02}
     \field{year}{2017}
+  \endentry
+
+  \entry{alf}{booklet}{}
+    \name{author}{1}{}{%
+      {{hash=EH}{%
+         prefix={{Eickmann, D. }und},
+         prefixi={E\bibinitperiod},
+         family={{Hotze, D.}},
+         familyi={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HE1}
+    \strng{fullhash}{HE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Masterthesis}
+    \field{title}{Entwicklung und Verfikation eines autonomen
+  Logistik-Fahrzeugs. Hochschule Bochum - Bochum University of Applied
+  Sciences}
+    \field{month}{02}
+    \field{year}{2018}
   \endentry
 
   \entry{Bachelorarbeit}{book}{}
@@ -67,13 +90,57 @@
     \strng{fullhash}{DMu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{note}{Bachelorthesis}
     \field{title}{Implementierung einer Schlupfregelung per Model-Based Design
-  sowie einer SLAM-Kartografierung für ein autonomes Logistik-Fahrzeug}
-    \list{location}{1}{%
-      {Hochschule Bochum - Bochum University of Applied Sciences}%
-    }
+  sowie einer SLAM-Kartografierung für ein autonomes Logistik-Fahrzeug.
+  Hochschule Bochum - Bochum University of Applied Sciences}
     \field{month}{02}
     \field{year}{2019}
+  \endentry
+
+  \entry{mobilenets}{book}{}
+    \name{author}{1}{}{%
+      {{hash=HA}{%
+         prefix={{Howard, A. G., }{Zhu, M., }{Chen, B., }{Kalenichenko, D.,
+  }{Wang, W., }{Weyand, T., }{Andreetto, M. }und},
+         prefixi={H\bibinitperiod},
+         family={{Adam, H.}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AH1}
+    \strng{fullhash}{AH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{MobileNets: Efficient Convolutional Neural Networks for
+  Mobile Vision Applications - Computing Research Repository (CoRR)}
+    \field{month}{04}
+    \field{year}{2017}
+  \endentry
+
+  \entry{hogsvm}{book}{}
+    \name{author}{2}{}{%
+      {{hash=ND}{%
+         family={N.},
+         familyi={N\bibinitperiod},
+         given={{Dalal,}},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={B.},
+         familyi={B\bibinitperiod},
+         given={{Triggs,}},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NDBT1}
+    \strng{fullhash}{NDBT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Histograms of Oriented Gradients for Human Detection - 2005
+  IEEE Computer Society Conference on Computer Vision and Pattern Recognition
+  (CVPR'05)}
+    \field{year}{2005}
   \endentry
 
   \entry{Dittmann}{book}{}
@@ -89,11 +156,10 @@
     \strng{fullhash}{HD1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{note}{Masterthesis}
     \field{title}{Entwicklung und Verfikation einer Sprachverarbeitung für das
-  autonome Logistik-Fahrzeug ALF}
-    \list{location}{1}{%
-      {Hochschule Bochum - Bochum University of Applied Sciences}%
-    }
+  autonome Logistik-Fahrzeug ALF. Hochschule Bochum - Bochum University of
+  Applied Sciences}
     \field{month}{10}
     \field{year}{2020}
   \endentry
@@ -129,6 +195,8 @@
     \strng{fullhash}{IS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{note}{\url{https://saemobilus.sae.org/content/j3016\_201806} -
+  zugegriffen am 02.10.2020}
     \field{title}{Automated Driving - Levels of driving are defined in new SAE
   International standard J3016}
     \field{year}{2014}
@@ -141,20 +209,19 @@
          familyi={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{M4}
-    \strng{fullhash}{M4}
+    \strng{namehash}{M3}
+    \strng{fullhash}{M3}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{1\bibrangedash 3}
     \field{title}{A view of Artificial Neural Network - 2014 International
   Conference on Advances in Engineering Technology Research (ICAETR - 2014)}
-    \field{year}{2014}
+    \field{year}{2014. S. 1-3}
   \endentry
 
   \entry{proba}{book}{}
     \name{author}{1}{}{%
       {{hash=M}{%
-         family={{Manickam, M., }{ Mohanapriya, M., }{Kale, S., }{Uday, M.,
+         family={{Manickam, M., }{Mohanapriya, M., }{Kale, S., }{Uday, M.,
   }{Kulkarni, P., }{Khandagale, Y. }and{ Patil, S.P.}},
          familyi={M\bibinitperiod},
       }}%
@@ -163,13 +230,11 @@
     \strng{fullhash}{M1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{1422\bibrangedash 1432}
     \field{title}{Research study on applications of artificial neural networks
-  and e-learning personalization}
-    \field{journaltitle}{International Journal of Civil Engineering and
-  Technology}
+  and e-learning personalization - International Journal of Civil Engineering
+  and Technology}
     \field{month}{08}
-    \field{year}{2017}
+    \field{year}{2017. S. 1422-1432}
   \endentry
 
   \entry{neuron}{book}{}
@@ -179,8 +244,8 @@
          familyi={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{M3}
-    \strng{fullhash}{M3}
+    \strng{namehash}{M2}
+    \strng{fullhash}{M2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
   \field{note}{\url{https://tex.stackexchange.com/questions/132444/diagram-of-an-artificial-neural-network}
@@ -200,6 +265,7 @@
     \strng{fullhash}{N1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{note}{4. Auflage. Springer Vieweg.}
     \field{title}{Bildverarbeitung: Band II des Standardwerks Computergrafik
   und Bildverarbeitung}
     \field{month}{01}
@@ -219,30 +285,29 @@
     \strng{fullhash}{DK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+    \field{note}{\url{http://www.dkriesel.com/science/neural\_networks} -
+  zugegriffen am 01.10.2020}
     \field{title}{Ein kleiner Überblick über Neuronale Netze}
-    \field{year}{2005}
+    \field{year}{2007}
   \endentry
 
   \entry{Ertel}{book}{}
     \name{author}{1}{}{%
-      {{hash=uKRBWW}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={Kruse\bibnamedelima R.},
-         familyi={K\bibinitperiod\bibinitdelim R\bibinitperiod},
-         given={{Bibel,} W.{, Ertel,}\bibnamedelima W.},
-         giveni={B\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
-  W\bibinitperiod},
+      {{hash=BWWuKR}{%
+         prefix={{Bibel,} W.{, Ertel,} W.\bibnamedelima und},
+         prefixi={B\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim
+  W\bibinitperiod\bibinitdelim u\bibinitperiod},
+         family={Kruse},
+         familyi={K\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
       }}%
-    }
-    \list{publisher}{1}{%
-      {Springer Vieweg}%
     }
     \strng{namehash}{KRBWWu1}
     \strng{fullhash}{KRBWWu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{3. Auflage}
+    \field{note}{3. Auflage. Springer Vieweg}
     \field{title}{Grundkurs Künstliche Intelligenz - Eine praxisorientierte
   Einführung}
     \field{year}{2013}
@@ -257,16 +322,14 @@
          giveni={C\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {Springer US}%
-    }
     \strng{namehash}{BC1}
     \strng{fullhash}{BC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{2126\bibrangedash 2127}
-    \field{title}{Encyclopedia of Database Systems - Precision and Recall}
-    \field{year}{2009}
+    \field{pages}{S. 2779\bibrangedash 2779}
+    \field{title}{Encyclopedia of Database Systems - Precision and Recall.
+  Springer US}
+    \field{year}{2009. S. 2126-2127}
   \endentry
 
   \entry{bildundobjekt}{book}{}
@@ -280,41 +343,33 @@
          giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {Springer Vieweg}%
-    }
     \strng{namehash}{RASHu1}
     \strng{fullhash}{RASHu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Bildverarbeitung und Objekterkennung - Computer Vision in
-  Industrie und Medizin}
+  Industrie und Medizin. Springer Vieweg}
     \field{year}{2014}
   \endentry
 
-  \entry{hogsvm}{book}{}
-    \name{author}{2}{}{%
-      {{hash=ND}{%
-         family={N.},
-         familyi={N\bibinitperiod},
-         given={{Dalal,}},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=BT}{%
-         family={B.},
-         familyi={B\bibinitperiod},
-         given={{Triggs,}},
-         giveni={T\bibinitperiod},
+  \entry{cnnvergleich}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uCC}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Culurciello, E.}},
+         familyi={C\bibinitperiod},
+         given={{Canziani, A., }{Adam, P.}},
+         giveni={C\bibinitperiod},
       }}%
     }
-    \strng{namehash}{NDBT1}
-    \strng{fullhash}{NDBT1}
+    \strng{namehash}{CCu1}
+    \strng{fullhash}{CCu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Histograms of Oriented Gradients for Human Detection - 2005
-  IEEE Computer Society Conference on Computer Vision and Pattern Recognition
-  (CVPR'05)}
-    \field{year}{2005}
+    \field{title}{An Analysis of Deep Neural Network Models for Practical
+  Applications - Computing Research Repository (CoRR)}
+    \field{year}{2016}
   \endentry
 
   \entry{inria1}{book}{}
@@ -336,17 +391,20 @@
 
   \entry{svmalt}{book}{}
     \name{author}{1}{}{%
-      {{hash=M}{%
-         family={{Marti, M. A.}},
-         familyi={M\bibinitperiod},
+      {{hash=H}{%
+         family={{Hearst, M., }{Dumais, S.T., }{Osman, E., }{Platt, J. }und{
+  Scholkopf, B.}},
+         familyi={H\bibinitperiod},
       }}%
     }
-    \strng{namehash}{M2}
-    \strng{fullhash}{M2}
+    \strng{namehash}{H1}
+    \strng{fullhash}{H1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Support vector machines}
-    \field{month}{07}
+    \field{pages}{S. 18\bibrangedash 28}
+    \field{title}{Support vector machines - Intelligent Systems and their
+  Applications, IEEE}
+    \field{month}{08}
     \field{year}{1998}
   \endentry
 
@@ -366,7 +424,8 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{An analysis of Feature extraction and Classification
-  Algorithms for Dangerous Object Detection}
+  Algorithms for Dangerous Object Detection - 2017 2nd International Conference
+  on Electrical \& Electronic Engineering (ICEEE)}
     \field{month}{12}
     \field{year}{2017}
   \endentry
@@ -383,15 +442,12 @@
   B\bibinitperiod\bibinitdelim Y\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {{The MIT Press}}%
-    }
     \strng{namehash}{CAGIBYu1}
     \strng{fullhash}{CAGIBYu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{\url{http://www.deeplearningbook.org} - zugegriffen am
-  21.09.2020}
+  21.09.2020. The MIT Press}
     \field{title}{{Deep Learning}}
     \field{year}{2016}
   \endentry
@@ -445,46 +501,6 @@
     \field{title}{Write Convolutional Neural network using TikZ}
   \endentry
 
-  \entry{cnnvergleich}{book}{}
-    \name{author}{1}{}{%
-      {{hash=uCC}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={{Culurciello, E.}},
-         familyi={C\bibinitperiod},
-         given={{Canziani, A., }{Adam, P.}},
-         giveni={C\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{CCu1}
-    \strng{fullhash}{CCu1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{An Analysis of Deep Neural Network Models for Practical
-  Applications}
-    \field{year}{2016}
-  \endentry
-
-  \entry{mobilenets}{book}{}
-    \name{author}{1}{}{%
-      {{hash=HA}{%
-         prefix={{Howard, A. G., }{Zhu, M., }{Chen, B., }{Kalenichenko, D.,
-  }{Wang, W., }{Weyand, T., }{Andreetto, M. }und},
-         prefixi={H\bibinitperiod},
-         family={{Adam, H.}},
-         familyi={A\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{AH1}
-    \strng{fullhash}{AH1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{MobileNets: Efficient Convolutional Neural Networks for
-  Mobile Vision Applications}
-    \field{month}{04}
-    \field{year}{2017}
-  \endentry
-
   \entry{vgg}{book}{}
     \name{author}{1}{}{%
       {{hash=SZ}{%
@@ -499,8 +515,8 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{title}{Very Deep Convolutional Networks for Large-Scale Image
-  Recognition}
-    \field{year}{2014}
+  Recognition - Computing Research Repository (CoRR)}
+    \field{year}{2015}
   \endentry
 
   \entry{keras}{book}{}
@@ -523,7 +539,8 @@
     \strng{fullhash}{SH1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Deep Residual Learning for Image Recognition}
+    \field{title}{Deep Residual Learning for Image Recognition - Computing
+  Research Repository (CoRR)}
     \field{year}{2015}
   \endentry
 
@@ -543,10 +560,9 @@
     \strng{fullhash}{RSu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{1\bibrangedash 9}
     \field{title}{Going deeper with convolutions - 2015 IEEE Conference on
   Computer Vision and Pattern Recognition (CVPR)}
-    \field{year}{2015}
+    \field{year}{2015. S. 1-9}
   \endentry
 
   \entry{depthwiseconv}{book}{}
@@ -579,10 +595,9 @@
     \strng{fullhash}{CS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{4510\bibrangedash 4520}
     \field{title}{MobileNetV2: Inverted Residuals and Linear Bottlenecks - 2018
   IEEE/CVF Conference on Computer Vision and Pattern Recognition}
-    \field{year}{2018}
+    \field{year}{2018. S. 4510-4520}
     \warn{\item Invalid format of field 'month'}
   \endentry
 
@@ -603,12 +618,11 @@
     \strng{fullhash}{DGDM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{580\bibrangedash 587}
     \field{title}{Rich Feature Hierarchies for Accurate Object Detection and
   Semantic Segmentation - 2014 IEEE Conference on Computer Vision and Pattern
   Recognition (CVPR)}
     \field{month}{06}
-    \field{year}{2014}
+    \field{year}{2014. S. 580-587}
   \endentry
 
   \entry{rcnnarchitektur}{book}{}
@@ -660,17 +674,14 @@
   G\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {Curran Associates, Inc.}%
-    }
     \strng{namehash}{SRHGu1}
     \strng{fullhash}{SRHGu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{91\bibrangedash 99}
     \field{title}{Faster R-CNN: Towards Real-Time Object Detection with Region
-  Proposal Networks - Advances in Neural Information Processing Systems 28}
-    \field{year}{2015}
+  Proposal Networks - Advances in Neural Information Processing Systems 28.
+  Curran Associates, Inc.}
+    \field{year}{2015. S. 91-99}
   \endentry
 
   \entry{ssd}{book}{}
@@ -694,7 +705,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{note}{pp. 21-37}
-    \field{title}{SSD: Single Shot MultiBox Detector. European conference on
+    \field{title}{SSD: Single Shot MultiBox Detector - European conference on
   computer vision}
     \field{year}{2016}
   \endentry
@@ -715,8 +726,9 @@
     \strng{fullhash}{ASREu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{{Scalable,} {high-quality object detection}}
-    \field{year}{2015}
+    \field{title}{{Scalable,} {high-quality object detection - Computing
+  Research Repository (CoRR)}}
+    \field{year}{2014}
   \endentry
 
   \entry{uml}{book}{}
@@ -730,7 +742,7 @@
     \strng{fullhash}{S2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{2. Auflage}
+    \field{note}{2. Auflage. Springer Gabler}
     \field{title}{Unternehmensmodellierung - Objektorientierte Theorie und
   Praxis mit UML 2.5}
   \endentry
@@ -763,10 +775,9 @@
     \strng{fullhash}{Y1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{315\bibrangedash 330}
     \field{title}{Hierarchical State Machines}
     \field{month}{01}
-    \field{year}{2000}
+    \field{year}{2000. S. 315-330}
   \endentry
 
   \entry{leightweight}{book}{}
@@ -833,10 +844,9 @@
     \strng{fullhash}{PPu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{1\bibrangedash 7}
     \field{title}{A survey of deep-learning frameworks - 2017 International
   Conference on Inventive Systems and Control (ICISC)}
-    \field{year}{2017}
+    \field{year}{2017. S. 1-7}
   \endentry
 
   \entry{tflite}{book}{}
@@ -894,16 +904,12 @@
          familyi={L\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {Springer International Publishing}%
-    }
     \strng{namehash}{L2}
     \strng{fullhash}{L2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{pages}{740\bibrangedash 755}
-    \field{title}{Microsoft COCO: Common Objects in Context - Computer Vision
-  -- ECCV 2014}
+    \field{title}{Microsoft {COCO:} Common Objects in Context - Computing
+  Research Repository (CoRR)}
     \field{year}{2014}
   \endentry
 
@@ -954,28 +960,6 @@
   \field{note}{\url{https://cmusatyalab.github.io/openface/models-and-accuracies/}
   - zugegriffen am 24.09.2020}
     \field{title}{Models and Accuracies}
-  \endentry
-
-  \entry{alf}{booklet}{}
-    \name{author}{1}{}{%
-      {{hash=EH}{%
-         prefix={{Eickmann, D. }und},
-         prefixi={E\bibinitperiod},
-         family={{Hotze, D.}},
-         familyi={H\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{HE1}
-    \strng{fullhash}{HE1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Entwicklung und Verfikation eines autonomen
-  Logistik-Fahrzeugs}
-    \list{location}{1}{%
-      {Hochschule Bochum - Bochum University of Applied Sciences}%
-    }
-    \field{month}{02}
-    \field{year}{2018}
   \endentry
 
   \entry{hogcode}{book}{}

@@ -390,30 +390,30 @@ sorting=none,%
 	\chapter*{Abkürzungsverzeichnis}
 	\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 	\begin{acronym}[CONSENS]% längste Abkürzung
-		\acro{ALF}{Autonomes Logistik Fahrzeug}		%\acro{Kuerzel}{Langform}
-		\acro{CNN}{Convolutional Neural Networks}
-		\acro{COCO}{Common Objects in Context}
-		\acro{CONSENS}{Conceptual Design Specification Technique for the Engineering of Complex Systems}
-		\acro{cuDNN}{NVIDIA CUDA Deep Neural Network}
-		\acro{EA}{Endlicher Automat}
-		\acro{FN}{False Negative}
-		\acro{FP}{False Positive}
-		\acro{FPS}{frames per second}
-		\acro{HoG}{Histogram of oriented Gradients}
-		\acro{IoU}{Intersection over Union}
-		\acro{KI}{Künstliche Intelligenz}
-		\acro{KNN}{Künstliches neuronales Netz}
-		\acro{LiDAR}{Light Detection and Ranging}
-		\acro{mAP}{mean Average Precision}
-		\acro{MMI}{Mensch-Maschine-Interface}
-		\acro{ReLU}{Rectifier Linear Unit}
-		\acro{ROS}{Robot Operating System}
-		\acro{SAE}{Society of Automotive Engineers}
-		\acro{SSD}{Single Shot Detector}
-		\acro{SVM}{Support Vector Machine}
-		\acro{TN}{True Negative}
-		\acro{TP}{True Positive}
-		\acro{SLAM}{Simultaneous Localization and Mapping}
+		\acro{ALF}{\textbf{A}utonomes \textbf{L}ogistik \textbf{F}ahrzeug}		%\acro{Kuerzel}{Langform}
+		\acro{CNN}{\textbf{C}onvolutional \textbf{N}eural \textbf{N}etworks}
+		\acro{COCO}{\textbf{C}ommon \textbf{O}bjects in \textbf{Co}ntext}
+		\acro{CONSENS}{\textbf{Con}ceptual Design \textbf{S}pecification Technique for the \textbf{En}gineering of Complex \textbf{S}ystems}
+		\acro{cuDNN}{\textbf{CU}DA \textbf{D}eep \textbf{N}eural \textbf{N}etwork}
+		\acro{EA}{\textbf{E}ndlicher \textbf{A}utomat}
+		\acro{FN}{\textbf{F}alse \textbf{N}egative}
+		\acro{FP}{\textbf{F}alse \textbf{P}ositive}
+		\acro{FPS}{\textbf{F}rames \textbf{P}er \textbf{S}econd}
+		\acro{HOG}{\textbf{H}istogram of \textbf{O}riented \textbf{G}radients}
+		\acro{IoU}{\textbf{I}ntersection \textbf{o}ver \textbf{U}nion}
+		\acro{KI}{\textbf{K}ünstliche \textbf{I}ntelligenz}
+		\acro{KNN}{\textbf{K}ünstliches \textbf{N}euronales \textbf{N}etz}
+		\acro{LiDAR}{\textbf{Li}ght \textbf{D}etection \textbf{A}nd \textbf{R}anging}
+		\acro{mAP}{\textbf{M}ean \textbf{A}verage \textbf{P}recision}
+		\acro{MMI}{\textbf{M}ensch-\textbf{M}aschine-\textbf{I}nterface}
+		\acro{ReLU}{\textbf{Re}ctifier \textbf{L}inear \textbf{U}nit}
+		\acro{ROS}{\textbf{R}obot \textbf{O}perating \textbf{S}ystem}
+		\acro{SAE}{\textbf{S}ociety of \textbf{A}utomotive \textbf{E}ngineers}
+		\acro{SSD}{\textbf{S}ingle \textbf{S}hot Multibox \textbf{D}etector}
+		\acro{SVM}{\textbf{S}upport \textbf{V}ector \textbf{M}achine}
+		\acro{TN}{\textbf{T}rue \textbf{N}egative}
+		\acro{TP}{\textbf{T}rue \textbf{P}ositive}
+		\acro{SLAM}{\textbf{S}imultaneous \textbf{L}ocalization \textbf{A}nd \textbf{M}apping}
 
 			
 	\end{acronym}
@@ -517,8 +517,8 @@ sorting=none,%
 								
 								Zustand und Knotengruppe & Deskriptive Funktion  \\ \hline \hline
 								Stop ($k_0$)					&Risikominimaler Zustand. Ausschalten des \textit{ROS}-Netzwerks. Wechsel in den Zustand \textit{Warten} erfolgt nur nach manueller Quittierung. 				 \\ \cline{0-1}
-								Warten ($k_1$)					&Grundfunktionen werden hochgefahren. Der \textit{LiDAR}-Sensor, die \textit{Kinect}-Sensoren, die \textit{ROS} Visualisierungssoftware und die Sprachausgabe wird eingeschaltet.				 \\ \cline{0-1}
-								SLAM ($k_2$)					&Knoten für den \textit{SLAM}-Algorithmus und Statische Koordintanesysteme werden aufgerufen.  				 \\ \cline{0-1}
+								Warten ($k_1$)					&Grundfunktionen werden hochgefahren. Der \textit{LiDAR}-Sensor, die \textit{Kinect}-Sensoren, die \textit{ROS} Visualisierungssoftware und die Sprachausgabe werden eingeschaltet.				 \\ \cline{0-1}
+								SLAM ($k_2$)					&Knoten für den \textit{SLAM}-Algorithmus und statische Koordinatensysteme werden aufgerufen.  				 \\ \cline{0-1}
 								Statische Karte ($k_3$)			&Einschalten des Partikelfilters für die Posenfindung durch gegebene Sensoren. 				 \\ \cline{0-1} 
 								Fahren ($k_4$)					&Übergeordneter Zustand				 \\ \cline{0-1}
 								Manuell ($k_5$)					&Das aus der Bachelorarbeit entwickelte Fahrprogramm wird im manuellen Modus ausgeführt \cite{Bachelorarbeit}. 				 \\ \cline{0-1}
