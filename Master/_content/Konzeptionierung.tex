@@ -28,25 +28,27 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	\section{Konzept und Aufbau der Personenerkennung}
 	\label{sec: Konzept Personenerkennung}
 	
-	Die Personenerkennung gilt als eine von zwei in dieser Masterarbeit entwickelten Erweiterungen und gleichzeitig als Hauptthema. Personen werden eindeutig unterschieden und wiedererkannt. Dies stellt die Grundlage einer optischen Interaktion sowie einer Kommunikation mit dem Menschen dar. In diesem Abschnitt wird die Personenerkennung in ihrer Struktur und Umsetzung näher erläutert. Weiterhin werden konkurierende Softwarekomponenten gegenübergestellt und eine Auswahl getroffen.\\
+	Die Personenerkennung gilt als eine von zwei in dieser Masterarbeit entwickelten Erweiterungen und gleichzeitig als Hauptthema. Ziel hierbei ist die eindeutige Unterscheidung und Wiedererkennung von Personen durch das System. In diesem Abschnitt wird die Personenerkennung in ihrer Struktur und Umsetzung näher erläutert. Weiterhin werden konkurrierende Softwarekomponenten gegenübergestellt.\\
 	
-	Grundlage für eine Personenerkennung ist die eindeutige Identifikation. Folglich muss ein System in der Lage sein, äußerliche Merkmale festzustellen, die langfristig wiederzuerkennen sind. Wie bereits in Kapitel \ref{ch: Einleitung} beschrieben, sollen Personen langfristig identifiziert werden. Aufgrund dessen musste das äußere Erscheinungsbild der Person, wie zum Beispiel die Kleidung oder die Körperhaltung dieser als Identifikationsmerkmal ausgeschlossen werden. Derartige Merkmale ändern sich täglich oder sogar minütlich und können somit nicht sicher zugeordnet werden. Das Gesicht eines Menschen kann sich je nach Alter schnell oder langsam verändern. Wird die Benutzergruppe des ALFs auf Menschen zwischen 20 und 70 Jahren beschränkt, könnten individuelle Personen schätzungsweise mindestens 5 Jahre durch das Gesicht erkannt werden. Die eindeutige Erkennung setzt also voraus, dass der Kopf einer Person mit dem Gesicht zur Kamera des ALFs gerichtet ist. \\ 
+	Grundlage für eine Personenerkennung ist die eindeutige Identifikation eines Menschen. Folglich muss ein System in der Lage sein, äußerliche Merkmale festzustellen, die langfristig wiederzuerkennen sind. Wie bereits in Kapitel \ref{ch: Einleitung} beschrieben, sollen Personen langfristig identifiziert werden. Aufgrund dessen musste das äußere Erscheinungsbild der Person, wie zum Beispiel die Kleidung oder die Körperhaltung dieser als Identifikationsmerkmal ausgeschlossen werden. Derartige Merkmale ändern sich ständig und können somit nicht sicher zugeordnet werden. Das Gesicht eines Menschen verändert sich mit fortlaufendem Alter. Es wird angenommen, dass sich die Benutzergruppe des ALFs auf Studenten und Mitarbeiter des Hochschule Bochum beschränkt. Mit dieser Annahme besteht die Benutzergruppe des Fahrzeugs aus Personen mit einem Alter zwischen 20 und 65 Jahren. Durch diese Beschränkung könnten individuelle Personen schätzungsweise mindestens 5 Jahre durch das Gesicht erkannt werden. Die eindeutige Erkennung eines Menschen setzt also voraus, dass das Gesicht einer Person von der Kamera des ALFs erfasst wird. \\ 
 	
-		\subsection{Wirkstruktur der Personenerkennung}
-		\label{subsec: Wirkstrukur Personenerkennung}
+	\subsection{Wirkstruktur der Personenerkennung}
+	\label{subsec: Wirkstrukur Personenerkennung}
 		
 		
 		
-		\input{Bilder/wirkpers}
+	\input{Bilder/wirkpers}
 	
-		In Abbildung \ref{fig: consenspers} ist die Wirkstruktur der Personenerkennung dargestellt. Die Bildinformationen der \textit{Kinect}-Kameras korrespondieren mit den im Umfeldmodell \ref{fig: consensenv} gezeigten Pfeilen. Eine der Gesichtserkennung vorangegangene Personenerkennung spart Rechenleistung ein. Dies wird in Abschnitt \ref{sec: Funktionsweise des Gesamtsystems} genauer erläutert.\\
+	In Abbildung \ref{fig: consenspers} ist die Wirkstruktur der Personenerkennung dargestellt. Die Bildinformationen der \textit{Kinect}-Kameras korrespondieren mit den im Umfeldmodell \ref{fig: consensenv} gezeigten Pfeilen. Eine der Gesichtserkennung vorangegangene Personendetektion gibt die Bildkoordinaten der erkannten Menschen aus. Dies wird in Abschnitt \ref{sec: Funktionsweise des Gesamtsystems} näher erläutert.\\
 		
-		In den Bildinformationen der integrierten \textit{Kinect}-Kameras befinden sich unter anderem auch Tiefeninformationen passend zum gelieferten Farbbild. Somit wird die Distanz und die daraus resultierende Position einer Person ebenfalls errechnet. Die Abschnitte \ref{sec: Bestimmung der Positionskoordinaten} und \ref{sec: Funktionsweise des Gesamtsystems} führen die Berechnung und die Methodik genauer aus. Eine Datenverarbeitung sorgt letztendlich für das Abspeichern verwertbarer Informationen einer erkannten Person. Zukünftige Projekte am ALF können diese Eigenschaften für weitere Entwicklungen nutzen.\\   
+	In den Bildinformationen der integrierten \textit{Kinect}-Kameras befinden sich unter anderem auch Tiefeninformationen passend zum gelieferten Farbbild. Somit wird die Distanz und die daraus resultierende Position einer Person ebenfalls errechnet. Die Abschnitte \ref{sec: Bestimmung der Positionskoordinaten} und \ref{sec: Funktionsweise des Gesamtsystems} führen die Berechnung und die Methodik genauer aus.\\
 		
-		\subsection{Konzept der Bildverarbeitung}
-		\label{subsec: Auswahl und Training der verwendeten neuronalen Netze}
+	Eine Datenverarbeitung sorgt letztendlich für das Abspeichern verwertbarer Informationen einer erkannten Person. Zukünftige Projekte am ALF können diese Eigenschaften für weitere Entwicklungen nutzen.\\   
 		
-		In Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} wurde bereits erwähnt, dass state-of-the-art Lösungen häufig auf künstliche, neuronale Netze zurückgreifen. Insbesondere werden Konvolutionsnetze bevorzugt, wenn es um eine Umsetzung einer Objekterkennung geht. Auch in dieser Masterarbeit liegt das Hauptaugenmerk auf CNNs. Jedoch werden die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} beschrieben Methoden weiterhin berücksichtigt, indem ihre Leistung mit der der Faltungsnetze verglichen wird. Im Folgenden werden Vergleiche zwischen den in Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} genannten künstlichen neuronalen Netzen gezogen. Weiterhin wird eine Auswahl für die praktische Anwendung am ALF getroffen. \\
+	\subsection{Konzept der Bildverarbeitung}
+	\label{subsec: Auswahl und Training der verwendeten neuronalen Netze}
+		
+	In Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} wurde bereits erwähnt, dass state-of-the-art Lösungen häufig auf künstliche, neuronale Netze zurückgreifen. Insbesondere werden Konvolutionsnetze bevorzugt, wenn es um eine Umsetzung einer Objekterkennung geht. Auch in dieser Masterarbeit liegt das Hauptaugenmerk auf CNNs. Jedoch werden die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} beschrieben Methoden weiterhin berücksichtigt, indem ihre Leistung mit der der Faltungsnetze verglichen wird. Im Folgenden werden Vergleiche zwischen den in Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} genannten künstlichen neuronalen Netzen gezogen. Weiterhin wird eine Auswahl für die praktische Anwendung am ALF getroffen. \\
 		
 		
 		
@@ -78,6 +80,102 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		Als Datensatz für das Training der Netze wird der \textit{Common Objects in Context} (COCO) Datensatz der Firma \textit{Microsoft} verwendet. Dieser Datensatz enthält circa 330000 Bilder mit diversen alltäglichen Objekten \cite{coco, cocopaper}. Davon sind laut eigener Aussagen über 200000 Bilder mit sogenannten \textit{Annotations} oder auch \textit{Labels} (deutsch: Anmerkungen/Etiketten) versehen \cite{coco}. Die Daten sind in Trainings-, Evaluations- und Testdaten unterteilt. Letzteres ist jedoch nicht etikettiert und somit für diese Masterarbeit nicht relevant. Die Trainingsdaten von dem \textit{COCO}-Datensatz aus dem Jahr 2017 stellt knapp 65000 etikettierte Bilder von Personen bereit. Circa 5000 Bilder sind im Evalutaionsdatensatz enthalten.\\
 		
 		Für den Lernprozess wird somit der Trainingsdatensatz in Trainings- und Testdaten unterteilt. So kann ein Teil der eigentlichen Trainingsdaten durch die vorhandenen Etiketten als Testdatensatz verwendet werden. Als zweiten Test wird ein eigener Datensatz erstellt. Hierbei werden 160 Bilder aus dem Einsatzumfeld des ALFs aufgenommen und etikettiert. In Kapitel \ref{ch: Verifikation} werden bereits besprochene Netze mit dem eigenen und dem \textit{COCO}-Datensatz evaluiert.
+	
+		
+	\subsection{Funktionsweise der Personenerkennung}
+	\label{sec: Funktionsweise des Gesamtsystems}
+	
+	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des im Kapitel \ref{ch: Einleitung} beschriebenen autonomen Logistikfahrzeugs. In Abschnitt \ref{sec: Anforderungserhebung} wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung ist im Folgenden erklärt.\\
+	
+	Wie bereits in Kapitel \ref{ch: Einleitung} dieser Masterarbeit beschrieben, wird die Personenerkennung am ALF mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben. Als Programmiersprache wird im Zuge dieser Masterarbeit \textit{Python} verwendet. Mit Softwarepaketen wie beispielsweise \textit{OpenCV} oder \textit{Pillow} bietet \textit{Python} ein großes Spektrum an Softwarelösungen für die Bildverarbeitung. Bekannte Frameworks wie \textit{Tensorflow} oder \textit{Keras} unterstützen \textit{Python} \cite{tensorflow, keraspython}.\\
+	
+	Wie auch in dem Projekt der Bachelorarbeit liefert das integrierte \textit{ROS}-Netzwerk die Bildinformation der Kameras \cite{Bachelorarbeit}. Die Schnittstelle zwischen \textit{ROS} und \textit{Python} bietet die Möglichkeit, eingehende Bilder sowohl parallel als auch seriell zu bearbeiten. Jedoch ist zu beachten, dass die Recheneinheit eines Computers mit der Bildverarbeitung eines Bildes stark belastet sein kann. Der beschriebene Effekt variiert je nach verwendeter Hardwareplattform. Demzufolge ist auf einem eingebetteten System eine deutlich höhere Belastung zu erwarten als auf dem Computer des ALFs. Aufgrund dessen wird bei der Bildverarbeitung der Personenerkennung auf eine serielle Bearbeitung gesetzt. So wird ausgeschlossen, dass zwei eingehende Bilder gleichzeitig analysiert werden.\\
+	
+
+	
+	
+	
+	\newpage
+
+		Zu Beginn arbeitet das entwickelte System in einem reduzierten Modus.    Hierbei werden Pausen mit einer gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt, bis ein relevantes Bild erkannt wird. Als relevant werden Bilder eingestuft, die eine Person enthalten. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Der reduzierte Modus erspart weitere Rechenkapazität des Computers für parallel laufende Prozesse. 
+		
+
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\textwidth]{Bilder/person.pdf}
+		\caption{Konzept eines Fallbeispiels der Personenerkennung. Zu sehen sind zwei Personen im Labor für Antriebstechnik der Hochschule Bochum. Rote Rechtecke zeigen den Interessensbereich der Personendetektion. Der Begrenzungsrahmen der Gesichtsdetektion ist gestrichelt dargestellt. Das als Strichpunkt präsentierte Rechteck deutet den Bereich der Distanzmessung an.}
+		\label{fig: bbox}
+	\end{figure}
+		In Abbildung \ref{fig: Personenerkennung} wird der Ablauf der Personenerkennung in Form eines Programmablaufplans dargestellt. Zu Beginn der Analyse gelangt jedes Bild in das verwendete künstliche neuronale Netz. Je nach Anzahl der erkannten Person werden korrespondierende Begrenzungsrahmen ausgegeben, die die Position des Interessensbereichs im Bild beschreiben. Dieser Vorgang ist beispielhaft in Darstellung \ref{fig: bbox} präsentiert. Die dort abgebildeten Personen werden in diesem Fall von einem roten Begrenzungsrahmen umrandet. Wird keine Person erkannt, verfällt das Programm wieder in den bereits beschriebenen, reduzierten Modus. Die extrahierten Begrenzungsrahmen gelten im Falle einer Personendetektion als Interessensbereich für die Gesichtserkennung.\\
+		
+			\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[node distance = 1.2cm, auto]
+			
+			% Place nodes
+			\node [papStart] (Start1){Start};
+			\node [papProcess, below of = Start1] (pro1){Prozess};
+			\node [papDecision, below of = pro1, yshift= -9mm,label={[align=left,anchor=west,shift={(1.2,-0.3)}]\footnotesize\textit{Menschen im Bild?}}](dec1){Entscheidung};
+			\node [papProcess, right of = dec1,xshift=25mm](pro3){Prozess};
+			\node [papDecision, below of = pro3, yshift= -9mm](dec2){Entscheidung};
+			\node [papProcess, below of = dec2, yshift= -9mm](pro4){Prozess};
+			\node [papDecision, below of = pro4, yshift= -9mm,label={[align=left,anchor=west,shift={(1.2,-0.3)}]\footnotesize\textit{Gesicht bekannt?}}](dec3){Entscheidung};
+			\node [papDecision, below of = dec3, yshift= -18mm,label={[align=left,anchor=west,shift={(1.2,-0.3)}]\footnotesize\textit{\makecell[l]{Registrierungs-\\prozess\\einleiten?}}}](dec4){Entscheidung};
+			%\node [papData, right of = dec3, xshift= 25mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesicht bekannt?}}](dat1){I/O};		
+			\node [papProcess, below of = dec4,yshift= -9mm](pro6){Prozess};
+			\node [papProcess, below of = pro6](pro5){Prozess};
+			\node [papEnd, below of = pro5,xshift=-37mm] (End) {Ende};
+			
+			\node[right of = pro1,xshift=0.5cm,align=left,anchor=west] (P1) {\footnotesize\textit{\makecell[l]{Personendetektion\\durch KNN}}};
+			\node[right of = pro3,xshift=0.5cm,align=left,anchor=west] (P2) {\footnotesize\textit{\makecell[l]{Gesichtsdetektion\\durch KNN}}};
+			\node[right of = dec2,xshift=0.5cm,align=left,anchor=west] (D2) {\footnotesize\textit{\makecell[l]{Gesicht im\\Interessensbereich?}}};
+			\node[right of = pro4,xshift=0.5cm,align=left,anchor=west] (P3) {\footnotesize\textit{\makecell[l]{Merkmalsextraktion\\des Gesichts}}};
+			\node[right of = pro6,xshift=0.5cm,align=left,anchor=west] (P1) {\footnotesize\textit{\makecell[l]{Person\\registrieren}}};
+			\node[right of = pro5,xshift=0.5cm,align=left,anchor=west] (P1) {\footnotesize\textit{\makecell[l]{Person\\aktualisieren}}};
+			
+			% Place joins
+			\coordinate [below of = dec1, yshift= -9mm] (join1);
+			\coordinate [right of = dec3,xshift=25mm] (join2);
+			\coordinate [left of = dec4, xshift= -25mm] (join3);
+			\coordinate [right of = pro5,xshift=25mm] (join4);
+			\coordinate [left of = pro5,xshift=-25mm] (join5);
+			
+			% Draw edges
+			\path [papLine] (Start1) -- (pro1);
+			\path [papLine] (pro1) -- (dec1);
+			\path [papLine] (dec1) -- node [above] {\papYes} (pro3);
+			\draw (dec1) -- node [left] {\papNo} (join1);
+			\path [papLine] (pro3) -- (dec2);
+			%	\path [papLine] (dec2) -- node [above] {\papYes} (pro4)
+			\draw (dec2) -- node [above] {\papNo} (join1);
+			\path [papLine] (dec3) -- node [left] {\papNo} (dec4);
+			\draw (dec3) -- node [above] {\papYes} (join2);
+			\path [papLine] (join1) -- (End);
+			\draw (dec4) -- node [above] {\papNo} (join3);
+			\draw (join2) -- (join4);
+			\path [papLine] (join4) -- (pro5);
+			\draw (pro5) -- (join5);
+			\path [papLine] (dec4) -- node [left] {\papYes} (pro6);
+			\path [papLine] (pro6) -- (pro5);
+			\path [papLine] (dec2) -- node [left] {\papYes} (pro4);
+			\path [papLine] (pro4) -- (dec3);
+			
+			\end{tikzpicture}
+			\caption{Prozessablaufplan der Personenerkennung. Der Start sowie das Ende des Programms sind als Boxen mit Abrundungen dargestellt. Rechtecke zeigen Prozesse und Parallelogramme deuten eine Entscheidung im Programmablauf an. Die Flussrichtung der entsprechenden Informationen werden durch Pfeile präsentiert.}
+			\label{fig: Personenerkennung}
+		\end{figure}
+		\newpage
+		
+	Das Pythonpaket \textit{face-recognition} wird in diesem Projekt für die Gesichterkennung verwendet. Prinzipiell arbeitet das Paket in drei Schritten. Die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} erklärte \textit{HOG}-Methode wird zur Extraktion des Begrenzungsrahmens des jeweiligen Gesichts angewendet \cite{facerecarticle}. Damit eine Person nicht unbedingt gerade in das entsprechende Aufnahmegerät schauen muss, werden durch die Software sogenannte Landmarken auf dem Gesicht verteilt \cite{facerecarticle}. Diese werden zur Rotation des Gesichts im Bild verwendet \cite{facerecarticle}. Das bearbeitete Bild des Gesichts wird mit einem neuronalen Netz analysiert, das von den Entwicklern von \textit{OpenFace} bereitgestellt wird \cite{facerecarticle}. Entwickler \textit{Adam Geitgey} gibt für das im Paket verwendete Netz eine Genauigkeit von 99,38$\percent$ an \cite{facerecognition}. Hinsichtlich der in Kapitel \ref{ch: Grundlagen} besprochenen, möglichen Nutzungsszenarien der Personenerkennung ist eine hohe Genauigkeit notwendig. Nach eigener Recherche besitzen die von \textit{OpenFace} bereitgestellten, neuronalen Netze zwischen 3,7 - 7,4 Millionen Parameter \cite{openface}. Die Größenordnung ähnelt folglich der einer herkömmlichen \textit{MobileNet}-Architektur.\\
+	
+	Außerdem bietet das \textit{face-recognition} Paket eine Funktion zum Vergleichen und Unterscheiden von Gesichtsmerkmalen. Aufgrund der Genauigkeit und der verwendeten Netze wird das \textit{face-recognition} Paket in dieser Masterarbeit für die Gesichtserkennung eingesetzt.\\
+	
+	Es kann davon ausgegangen werden, dass sich das Gesicht einer Person im oberen Teil eines extrahierten Begrenzungsrahmens befindet. Aufgrund dessen wird der Interessensbereich entsprechend verkleinert. Somit muss die Gesichtserkennung nicht den vollständigen Bereich durchsuchen und es werden weitere Rechenoperationen eingespart. Sollte sich kein Gesicht im relevanten Bereich befinden, wird davon ausgegangen, dass die Person stark von der Kamera abgewandt ist. Somit ist keine eindeutige Identifikation möglich und es erfolgt ein Neustart des Programms.\\
+	
+	Detektiert das Netz jedoch ein Gesicht, wird eine Merkmalsextraktion durchgeführt. Im Anschluss werden die extrahierten Merkmale mit denen der bereits abgespeicherten Gesichter verglichen. Wird kein übereinstimmendes Gesicht gefunden, leitet das System einen Registrierungsprozess ein. Je nach Einstellung der Häufigkeit wird ein Gesicht registriert, wenn es entsprechend oft hintereinander erkannt worden ist. Im Falle der Erkennung eines bekannten Gesichts werden Eigenschaften der erkannten Person, wie zum Beispiel die Gesichtsmerkmale oder die Position in der aktuellen Karte aktualisiert. \\ 
+	
 		
 	\section{Konzept und Aufbau des Zustandsautomaten}
 	\label{sec: Umsetzung der Statemachine}
@@ -181,92 +279,16 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 	\input{Bilder/uml} 
 	
-	\section{Funktionsweise des Gesamtsystems}
-	\label{sec: Funktionsweise des Gesamtsystems}
-		
-	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des im Kapitel \ref{ch: Einleitung} beschriebenen autonomen Logistikfahrzeugs. In Abschnitt \ref{sec: Anforderungserhebung} wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung ist im Folgenden erklärt.\\
+	Darüber hinaus gilt es, den Zustandsautomaten und das ALF nach gegebenen Standards auszulegen. Die \textit{Society of Automotive Engineers} (SAE) ist eine Organisation, die aus Ingenieuren und technischen Experten besteht \cite{saeorg}. Ziel dieser ist im Allgemeinen die Weiterentwicklung im Thema Mobilität \cite{saeorg}. Unter anderem veröffentlicht \textit{SAE International} Normen wie die \textit{SAE J3016}. Diese beschäftigt sich mit verschiedenen Stufen der Automatisierung von Fahrzeugen. Eine entsprechende Tabelle ist in Abbildung \ref{fig: tabautonom} dargestellt.\\
 	
-	Wie bereits in Kapitel \ref{ch: Einleitung} dieser Masterarbeit beschrieben, wird die Personenerkennung am ALF mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben. Als Programmiersprache wird im Zuge dieser Masterarbeit \textit{Python} verwendet. Mit Softwarepaketen wie beispielsweise \textit{OpenCV} oder \textit{Pillow} bietet \textit{Python} ein großes Spektrum an Softwarelösungen für die Bildverarbeitung. Viele bekannte Frameworks wie \textit{Tensorflow} oder \textit{Keras} unterstützen \textit{Python}.\\
+	Das ALF wird zum Zeitpunkt des Entwicklungsbeginns dieser Masterarbeit auf dem \textit{SAE-Level} 3 eingeschätzt. Hierbei werden lediglich die autonomen Fahrmodi des Fahrzeugs berücksichtigt. Die Fahrbefehle konnten selbstständig durch das System ausgeführt werden und die Umgebung über die bereits genannten Sensoren erfasst werden. Die \textit{Fallback Performance} beschreibt den Übergang des automatisierten oder autonomen in einen risikominimalen Zustand. Bisher musste die laufende Software des ALFs auch im Fehlerfall manuell am Fahrzeug beendet werden. Dies bestärkte die Einschätzung, dass das Fahrzeug bedingt automatisiert sei.	
 	
-	Wie auch in dem Projekt der Bachelorarbeit liefert das integrierte \textit{ROS}-Netzwerk die Bildinformation der Kameras. Die Schnittstelle zwischen \textit{ROS} und \textit{Python} bietet die Möglichkeit, eingehende Bilder sowohl parallel als auch seriell zu bearbeiten. Jedoch ist zu beachten, dass die Recheneinheit eines Computers durchaus mit der Bildverarbeitung eines Bildes mit bis zu über 50 \percent\text{ } Rechenkapazität belastet sein kann. Demzufolge ist auf einem eingebetteten System eine deutlich höhere Belastung zu erwarten. Aufgrund dessen wird bei der Bildverarbeitung der Personenerkennung auf eine serielle Bearbeitung gesetzt. Zu Beginn arbeitet das System in einem reduzierten Modus. Hierbei werden Pausen mit der gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt, bis ein relevantes Bild erkannt wird. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Der reduzierte Modus erspart weitere Rechenkapazität des Computers für parallel laufende Prozesse. Als relevant werden Bilder eingestuft, die eine Person enthalten.\\
+	\input{Bilder/tabautonom}
 	
-
-	In Abbildung \ref{fig: Personenerkennung} wird der Ablauf der Personenerkennung in Form eines Programmablaufplans dargestellt. Die Darstellung zeigt die Funktionsweise des Programms ab dem Zeitpunkt, an dem eine Person von einer Kamera detektiert wird. Zu Beginn der Analyse gelangt jedes Bild in das verwendete künstliche neuronale Netz. Je nach Anzahl der erkannten Person werden korrespondierende Begrenzungsrahmen ausgegeben, die die Position des Interessensbereichs im Bild beschreiben. Dieser Vorgang ist beispielhaft in Darstellung \ref{fig: bbox} präsentiert. Die dort abgebildeten Personen werden in diesem Fall von einem roten Begrenzungsrahmen umrandet. Wird keine Person erkannt, verfällt das Programm wieder in den bereits beschriebenen, reduzierten Modus. Die extrahierten Begrenzungsrahmen gelten im Falle einer Personendetektion als Interessensbereich der Gesichtserkennung.\\
-	
-		\newpage
-	\begin{figure}[H]
-		\centering
-		\begin{tikzpicture}[node distance = 1.2cm, auto]
-			
-			% Place nodes
-			\node [papStart] (Start1){Start};
-			\node [papProcess, below of = Start1] (pro1){Prozess};
-			\node [papDecision, below of = pro1, yshift= -9mm,label={[align=left,anchor=west,shift={(1.2,-0.3)}]\footnotesize\textit{Menschen im Bild?}}](dec1){Entscheidung};
-			\node [papProcess, right of = dec1,xshift=25mm](pro3){Prozess};
-			\node [papDecision, below of = pro3, yshift= -9mm](dec2){Entscheidung};
-			\node [papProcess, below of = dec2, yshift= -9mm](pro4){Prozess};
-			\node [papDecision, below of = pro4, yshift= -9mm,label={[align=left,anchor=west,shift={(1.2,-0.3)}]\footnotesize\textit{Gesicht bekannt?}}](dec3){Entscheidung};
-			\node [papDecision, below of = dec3, yshift= -18mm,label={[align=left,anchor=west,shift={(1.2,-0.3)}]\footnotesize\textit{\makecell[l]{Registrierungs-\\prozess\\einleiten?}}}](dec4){Entscheidung};
-			%\node [papData, right of = dec3, xshift= 25mm,label={[shift={(5,-0.6)}]\footnotesize\textit{Gesicht bekannt?}}](dat1){I/O};		
-			\node [papProcess, below of = dec4,yshift= -9mm](pro6){Prozess};
-			\node [papProcess, below of = pro6](pro5){Prozess};
-			\node [papEnd, below of = pro5,xshift=-37mm] (End) {Ende};
-			
-			\node[right of = pro1,xshift=0.5cm,align=left,anchor=west] (P1) {\footnotesize\textit{\makecell[l]{Personendetektion\\durch KNN}}};
-			\node[right of = pro3,xshift=0.5cm,align=left,anchor=west] (P2) {\footnotesize\textit{\makecell[l]{Gesichtsdetektion\\durch KNN}}};
-			\node[right of = dec2,xshift=0.5cm,align=left,anchor=west] (D2) {\footnotesize\textit{\makecell[l]{Gesicht im\\Interessensbereich?}}};
-			\node[right of = pro4,xshift=0.5cm,align=left,anchor=west] (P3) {\footnotesize\textit{\makecell[l]{Merkmalsextraktion\\des Gesichts}}};
-			\node[right of = pro6,xshift=0.5cm,align=left,anchor=west] (P1) {\footnotesize\textit{\makecell[l]{Person\\registrieren}}};
-			\node[right of = pro5,xshift=0.5cm,align=left,anchor=west] (P1) {\footnotesize\textit{\makecell[l]{Person\\aktualisieren}}};
-			
-			% Place joins
-			\coordinate [below of = dec1, yshift= -9mm] (join1);
-			\coordinate [right of = dec3,xshift=25mm] (join2);
-			\coordinate [left of = dec4, xshift= -25mm] (join3);
-			\coordinate [right of = pro5,xshift=25mm] (join4);
-			\coordinate [left of = pro5,xshift=-25mm] (join5);
-			
-			% Draw edges
-			\path [papLine] (Start1) -- (pro1);
-			\path [papLine] (pro1) -- (dec1);
-			\path [papLine] (dec1) -- node [above] {\papYes} (pro3);
-			\draw (dec1) -- node [left] {\papNo} (join1);
-			\path [papLine] (pro3) -- (dec2);
-			%	\path [papLine] (dec2) -- node [above] {\papYes} (pro4)
-			\draw (dec2) -- node [above] {\papNo} (join1);
-			\path [papLine] (dec3) -- node [left] {\papNo} (dec4);
-			\draw (dec3) -- node [above] {\papYes} (join2);
-			\path [papLine] (join1) -- (End);
-			\draw (dec4) -- node [above] {\papNo} (join3);
-			\draw (join2) -- (join4);
-			\path [papLine] (join4) -- (pro5);
-			\draw (pro5) -- (join5);
-			\path [papLine] (dec4) -- node [left] {\papYes} (pro6);
-			\path [papLine] (pro6) -- (pro5);
-			\path [papLine] (dec2) -- node [left] {\papYes} (pro4);
-			\path [papLine] (pro4) -- (dec3);
-			
-		\end{tikzpicture}
-		\caption{Prozessablaufplan der Personenerkennung. Der Start sowie das Ende des Programms sind als Boxen mit Abrundungen dargestellt. Rechtecke zeigen Prozesse und Parallelogramme deuten eine Entscheidung im Programmablauf an. Die Flussrichtung der entsprechenden Informationen werden durch Pfeile präsentiert.}
-		\label{fig: Personenerkennung}
-	\end{figure}
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=1\textwidth]{Bilder/person.pdf}
-		\caption{Konzept eines Fallbeispiels der Personenerkennung. Zu sehen sind zwei Personen im Labor für Antriebstechnik der Hochschule Bochum. Rote Rechtecke zeigen den Interessensbereich der Personendetektion. Der Begrenzungsrahmen der Gesichtsdetektion ist gestrichelt dargestellt. Das als Strichpunkt präsentierte Rechteck deutet den Bereich der Distanzmessung an.}
-		\label{fig: bbox}
-	\end{figure}
-	
-	Das Pythonpaket \textit{face-recognition} wird in diesem Projekt für die Gesichterkennung verwendet. Prinzipiell arbeitet das Paket in drei Schritten. Die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} erklärte \textit{HOG}-Methode wird zur Extraktion des Begrenzungsrahmens des jeweiligen Gesichts angewendet \cite{facerecarticle}. Damit eine Person nicht unbedingt gerade in das entsprechende Aufnahmegerät schauen muss, werden durch die Software sogenannte Landmarken auf dem Gesicht verteilt \cite{facerecarticle}. Diese werden zur Rotation des Gesichts im Bild verwendet \cite{facerecarticle}. Das bearbeitete Bild des Gesichts wird mit einem neuronalen Netz analysiert, das von den Entwicklern von \textit{OpenFace} bereitgestellt wird \cite{facerecarticle}. Entwickler \textit{Adam Geitgey} gibt für das im Paket verwendete Netz eine Genauigkeit von 99,38$\percent$ an \cite{facerecognition}. Hinsichtlich der in Kapitel \ref{ch: Grundlagen} besprochenen, möglichen Nutzungsszenarien der Personenerkennung ist eine hohe Genauigkeit notwendig. Nach eigener Recherche besitzen die von \textit{OpenFace} bereitgestellten, neuronalen Netze zwischen 3,7 - 7,4 Millionen Parameter \cite{openface}. Die Größenordnung ähnelt folglich der einer herkömmlichen \textit{MobileNet}-Architektur. Außerdem bietet das \textit{face-recognition} Paket eine Funktion zum Vergleichen und Unterscheiden von Gesichtsmerkmalen. Aufgrund der Genauigkeit und der verwendeten Netze wird das \textit{face-recognition} Paket in dieser Masterarbeit für die Gesichtserkennung eingesetzt.\\
-	
-	Es kann davon ausgegangen werden, dass sich das Gesicht einer Person im oberen Teil eines extrahierten Begrenzungsrahmens befindet. Aufgrund dessen wird der Interessensbereich entsprechend verkleinert. Somit muss die Gesichtserkennung nicht den vollständigen Bereich durchsuchen und es wird weitere Rechenkapazität eingespart. Sollte sich kein Gesicht im relevanten Bereich befinden, wird davon ausgegangen, dass die Person stark von der Kamera abgewandt ist. Somit ist keine eindeutige Identifikation möglich und es erfolgt ein Neustart des Programms.\\
-	
-	Detektiert das Netz jedoch ein Gesicht, wird eine Merkmalsextraktion durchgeführt. Im Anschluss werden die extrahierten Merkmale mit denen der bereits abgespeicherten Gesichter verglichen. Wird kein übereinstimmendes Gesicht gefunden, leitet das System ein Registrierungsprozess ein. Je nach Einstellung wird ein Gesicht registriert, wenn es entsprechend oft hintereinander erkannt worden ist. Im Falle der Erkennung eines bekannten Gesichts werden Eigenschaften der erkannten Person, wie zum Beispiel die Gesichtsmerkmale oder die Position in der aktuellen Karte aktualisiert. \\ 
-	
+	Das ALF wird im Rahmen der technischen und sicherheitsrelevanten Möglichkeiten auf das \textit{SAE-Level} 5 angehoben. Dies betrifft insbesondere den zu entwickelnden Zustandsautomat, da dieser den Aufruf der Fahraufgaben realisiert.\\
 	  
-
 	
+
 
 		
 	
