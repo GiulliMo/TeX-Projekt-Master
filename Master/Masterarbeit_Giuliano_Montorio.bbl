@@ -164,44 +164,6 @@
     \field{year}{2020}
   \endentry
 
-  \entry{saeorg}{book}{}
-    \name{author}{1}{}{%
-      {{hash=IS}{%
-         family={International},
-         familyi={I\bibinitperiod},
-         given={SAE},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{IS1}
-    \strng{fullhash}{IS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{\url{https://www.sae.org/about} - zugegriffen am 22.09.2020}
-    \field{title}{About SAE International}
-    \field{year}{2020}
-  \endentry
-
-  \entry{sae}{book}{}
-    \name{author}{1}{}{%
-      {{hash=IS}{%
-         family={International},
-         familyi={I\bibinitperiod},
-         given={SAE},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{IS1}
-    \strng{fullhash}{IS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{\url{https://saemobilus.sae.org/content/j3016\_201806} -
-  zugegriffen am 02.10.2020}
-    \field{title}{Automated Driving - Levels of driving are defined in new SAE
-  International standard J3016}
-    \field{year}{2014}
-  \endentry
-
   \entry{neuronennetz}{book}{}
     \name{author}{1}{}{%
       {{hash=M}{%
@@ -1230,6 +1192,44 @@
   \field{note}{\url{https://cmusatyalab.github.io/openface/models-and-accuracies/}
   - zugegriffen am 24.09.2020}
     \field{title}{Models and Accuracies}
+  \endentry
+
+  \entry{saeorg}{book}{}
+    \name{author}{1}{}{%
+      {{hash=IS}{%
+         family={International},
+         familyi={I\bibinitperiod},
+         given={SAE},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IS1}
+    \strng{fullhash}{IS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{\url{https://www.sae.org/about} - zugegriffen am 22.09.2020}
+    \field{title}{About SAE International}
+    \field{year}{2020}
+  \endentry
+
+  \entry{sae}{book}{}
+    \name{author}{1}{}{%
+      {{hash=IS}{%
+         family={International},
+         familyi={I\bibinitperiod},
+         given={SAE},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IS1}
+    \strng{fullhash}{IS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{\url{https://saemobilus.sae.org/content/j3016\_201806} -
+  zugegriffen am 02.10.2020}
+    \field{title}{Automated Driving - Levels of driving are defined in new SAE
+  International standard J3016}
+    \field{year}{2014}
   \endentry
 
   \entry{hogcode}{book}{}

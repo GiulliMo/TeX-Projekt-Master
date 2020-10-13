@@ -6,8 +6,9 @@
  	\section{Neuronale Netze}
 	\label{sec: ROS}
 	
-	Das Neuronennetz des menschlichen Gehirns dient als Vorbild für künstliche, neuronale Netze (KNN) \cite{neuronennetz}. Sie ermöglichen es, komplexe Strukturen und Muster aus großen Datenmengen zu erkennen und werden daher verwendet, um diverse Anwendungsprobleme zu lösen. 
-	\cite{neuronennetz}. Das in diesem Projekt zugrundeliegende Bildverarbeitungsproblem besitzt jene Eigenschaften und eignet sich für den Einsatz eines neuronalen Netzes als Problemlösung. Anders als bei regelbasierten Systemen verhalten sich KNNs grundlegend verschieden \cite{proba}. Sie lernen Verhaltensmuster basierend auf den entsprechenden Trainingsdaten \cite{proba}. Diese unterscheiden sich jedoch häufig mit den Daten, die während des Einsatzes im Feld eingegeben werden. Somit kann keine Aussage darüber getroffen werden, welches Verhalten durch das KNN erzeugt wird. Dies führt unter Umständen zu unvorhersehbaren Ergebnissen. Am vorliegenden, autonomen Logistikfahrzeug werden zur Personenerkennung derartige neuronale Netze untersucht.
+	Das Neuronennetz des menschlichen Gehirns dient als Vorbild für künstliche, neuronale Netze (KNN) \cite{neuronennetz}. Sie ermöglichen es, komplexe Strukturen und Muster aus großen Datenmengen zu erkennen und werden daher verwendet, um diverse Anwendungsprobleme zu lösen \cite{neuronennetz}. Hierzu zählen unter anderem die Bildverarbeitung oder die Analyse von Sprache \cite{bibid}.\\
+	
+	Anders als bei regelbasierten Systemen verhalten sich KNNs grundlegend verschieden \cite{proba}. Sie lernen Verhaltensmuster basierend auf den entsprechenden Trainingsdaten \cite{proba}. Diese unterscheiden sich jedoch häufig mit den Daten, die während des Einsatzes im Feld eingegeben werden. Somit kann keine Aussage darüber getroffen werden, welches Verhalten durch das KNN erzeugt wird. Dies führt unter Umständen zu unvorhersehbaren Ergebnissen. Am vorliegenden, autonomen Logistikfahrzeug werden zur Personenerkennung derartige neuronale Netze untersucht.
 	
 		\subsection{Eigenschaften von neuronalen Netzen}
 		\label{subsec: Eigenschaften von neuronalen Netzen}
@@ -676,33 +677,33 @@
 		\input{Bilder/depthwiseconv}
 		Ein \textit{MobileNet} Modell basiert grundlegend auf tiefenorientierter, trennbarer Konvolution \cite{mobilenets}. Diese setzt sich aus Tiefenkonvolutionen und einer $1\times1$ Faltung, auch punktuelle Konvolution genannt, zusammen und ist schematisch in Abbildung \ref{fig: depthwiseconv} dargestellt \cite{mobilenets}.\\
 		
-		Der Rechenaufwand $R_p$ einer konventionellen Konvolutionsschicht kann mit Gleichung \ref{eq: rechenaufwand} beschrieben werden \cite{mobilenets}. Hierbei wird die Dimension der Eingangsdaten durch $D_F$ und die Tiefe durch $M$ ausgedrückt. Die Größe des Kernels wird in der Gleichung durch die Variable $D_K$, sowie die Tiefe der Ausgangsdaten mit $N$ dargestellt. Im Gegensatz zu üblichen Faltungsprozessen werden die Eingangskanäle während einer tiefenorientierten Konvolution lediglich gefiltert und nicht zusammengeführt \cite{mobilenets}. Somit ist die Tiefe der Ausgangsdaten für die Berechnung des Rechenaufwands $R_d$ bei einer tiefenorientierten Faltung zu vernachlässigen und ist in Gleichung \ref{eq: rechenaufwand t} gezeigt. \\
+		Der Rechenaufwand $R_\text{p}$ einer konventionellen Konvolutionsschicht kann mit Gleichung \ref{eq: rechenaufwand} beschrieben werden \cite{mobilenets}. Hierbei wird die Dimension der Eingangsdaten durch $D_\text{F}$ und die Tiefe durch $M$ ausgedrückt. Die Größe des Kernels wird in der Gleichung durch die Variable $D_\text{K}$, sowie die Tiefe der Ausgangsdaten mit $N$ dargestellt. Im Gegensatz zu üblichen Faltungsprozessen werden die Eingangskanäle während einer tiefenorientierten Konvolution lediglich gefiltert und nicht zusammengeführt \cite{mobilenets}. Somit ist die Tiefe der Ausgangsdaten für die Berechnung des Rechenaufwands $R_\text{d}$ bei einer tiefenorientierten Faltung zu vernachlässigen und ist in Gleichung \ref{eq: rechenaufwand t} gezeigt. \\
 		
 		\begin{equation}
-			R_p=D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F
+			R_\text{p}=D_\text{K} \cdot D_\text{K} \cdot M \cdot N \cdot D_\text{F} \cdot D_\text{F}
 			\label{eq: rechenaufwand}
 		\end{equation}
 		\begin{equation}
-		R_d=D_K \cdot D_K \cdot M \cdot D_F \cdot D_F
+		R_\text{d}=D_\text{K} \cdot D_\text{K} \cdot M \cdot D_\text{F} \cdot D_\text{F}
 		\label{eq: rechenaufwand t}
 		\end{equation}\\
 	
-		Durch die Zusammensetzung einer tiefenorientierten und einer punktuellen Faltung kann die Rechenbelastung der tiefenorientierten, trennbaren Konvolution durch die in Gleichung \ref{eq: rechenaufwand dw} gezeigte Addition errechnet werden. Die Kombination der beiden Methoden reduziert den Rechenaufwand um den in Gleichung \ref{eq: rechenersparnis} dargestellten Faktor $\frac{1}{N}+\frac{1}{D^2_K}$ \cite{mobilenets}. In Zahlen ausgedrückt erreicht die \textit{MobileNet} Architektur eine Reduktion der Rechenoperationen um den Faktor 8 bis 9 gegenüber konventionellen Faltungsmethoden \cite{mobilenets}.  \\
+		Durch die Zusammensetzung einer tiefenorientierten und einer punktuellen Faltung kann die Rechenbelastung $R_\text{t}$ der tiefenorientierten, trennbaren Konvolution durch die in Gleichung \ref{eq: rechenaufwand dw} gezeigte Addition errechnet werden. Die Kombination der beiden Methoden bewirkt eine Reduktion $R_\text{r}$ des Rechenaufwands um die in Gleichung \ref{eq: rechenersparnis} dargestellte Summe $\frac{1}{N}+\frac{1}{D^2_\text{K}}$ \cite{mobilenets}. In Zahlen ausgedrückt erreicht die \textit{MobileNet} Architektur eine Reduktion der Rechenoperationen um den Faktor 8 bis 9 gegenüber konventionellen Faltungsmethoden \cite{mobilenets}.  \\
 	
 		\begin{equation}
-			R_{dp}=D_K \cdot D_K \cdot M \cdot D_F \cdot D_F + M \cdot N \cdot D_F \cdot D_F
+			R_\text{t}=D_\text{K} \cdot D_\text{K} \cdot M \cdot D_\text{F} \cdot D_\text{F} + M \cdot N \cdot D_\text{F} \cdot D_\text{F}
 			\label{eq: rechenaufwand dw}
 		\end{equation}
 		\begin{equation}
-			R_{rdp}=\frac{D_K \cdot D_K \cdot M \cdot D_F \cdot D_F + M \cdot N \cdot D_F \cdot D_F}{D_K \cdot D_K \cdot M \cdot N \cdot D_F \cdot D_F}=\frac{1}{N}+\frac{1}{D^2_K}
+			R_\text{r}=\frac{D_\text{K} \cdot D_\text{K} \cdot M \cdot D_\text{F} \cdot D_\text{F} + M \cdot N \cdot D_\text{F} \cdot D_\text{F}}{D_\text{K} \cdot D_\text{K} \cdot M \cdot N \cdot D_\text{F} \cdot D_\text{F}}=\frac{1}{N}+\frac{1}{D^2_\text{K}}
 			\label{eq: rechenersparnis}
 		\end{equation}\\
 		
 		
-		Weiterhin nutzt \textit{MobileNet} Weiten- und Auflösungsmultiplikatoren für die Optimierung des Netzes \cite{mobilenets}. Der Weitenmultiplikator $\alpha$ reduziert sowohl die Tiefe $M$ der Eingangsdaten durch $\alpha M$ als auch die Tiefe $N$ der Ausgangsdaten durch $\alpha N$ \cite{mobilenets}. Eine Minimierung der Dimension $D_F$ der Eingangsdaten erfolgt durch den Auflösungsmultiplikator $\rho$ durch $\rho D_F$ \cite{mobilenets}. Beide Multiplikatoren reduzieren den Rechenaufwand nochmals um $\alpha^2$ und $\rho^2$ \cite{mobilenets}. Dieser kann somit mit folgender Gleichung dargestellt werden. \\
+		Weiterhin nutzt \textit{MobileNet} Weiten- und Auflösungsmultiplikatoren für die Optimierung des Netzes \cite{mobilenets}. Der Weitenmultiplikator $\alpha$ reduziert sowohl die Tiefe $M$ der Eingangsdaten durch $\alpha M$ als auch die Tiefe $N$ der Ausgangsdaten durch $\alpha N$ \cite{mobilenets}. Eine Minimierung der Dimension $D_\text{F}$ der Eingangsdaten erfolgt durch den Auflösungsmultiplikator $\rho$ durch $\rho D_\text{F}$ \cite{mobilenets}. Beide Multiplikatoren reduzieren den Rechenaufwand nochmals um $\alpha^2$ und $\rho^2$ \cite{mobilenets}. Dieser wird mit mit der Variablen $R_\text{m}$ und der folgenden Gleichung dargestellt. \\
 		
 		\begin{equation}
-			R_{dpm}=D_K \cdot D_K \cdot \alpha M \cdot \rho D_F \cdot \rho D_F + \alpha M \cdot \alpha N \cdot \rho D_F \cdot \rho D_F \text{  }\text{mit}\text{  } \alpha \in (0,1] ; \rho \in (0,1]
+			R_\text{m}=D_\text{K} \cdot D_\text{K} \cdot \alpha M \cdot \rho D_\text{F} \cdot \rho D_\text{F} + \alpha M \cdot \alpha N \cdot \rho D_\text{F} \cdot \rho D_\text{F} \text{  }\text{mit}\text{  } \alpha \in (0,1] ; \rho \in (0,1]
 			\label{eq: rechenaufwand w}
 		\end{equation}\\
 	
