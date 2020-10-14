@@ -13,19 +13,19 @@
 \contentsline {subsection}{\numberline {2.2.1}Objekterkennung durch alternative Verfahren}{10}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Objekterkennung durch neuronale Netze}{12}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}Vergleich möglicher Konvolutionsnetze}{18}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Zustandsautomat}{24}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Bestimmung von Positionskoordinaten}{26}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Konzeptionierung}{29}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Anforderungserhebung mit CONSENS}{29}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Konzept und Aufbau der Personenerkennung}{32}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Wirkstruktur der Personenerkennung}{32}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Konzept der Bildverarbeitung}{33}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Entwicklung eines neuronalen Netzes}{36}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Funktionsweise der Personenerkennung}{38}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Konzept und Aufbau des Zustandsautomaten}{42}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Evaluation}{48}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{57}{chapter.5}%
-\contentsline {chapter}{\nonumberline Quellenverzeichnis}{59}{chapter*.51}%
-\contentsline {chapter}{\numberline {A}Anhang}{64}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Abbildungen}{64}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{66}{section.A.2}%
+\contentsline {section}{\numberline {2.4}Zustandsautomat}{25}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Bestimmung von Positionskoordinaten}{27}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Konzeptionierung}{30}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Anforderungserhebung mit CONSENS}{30}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Konzept und Aufbau der Personenerkennung}{33}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Wirkstruktur der Personenerkennung}{33}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Konzept der Bildverarbeitung}{34}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Entwicklung eines neuronalen Netzes}{37}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Funktionsweise der Personenerkennung}{39}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Konzept und Aufbau des Zustandsautomaten}{44}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Evaluation}{50}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{60}{chapter.5}%
+\contentsline {chapter}{\nonumberline Quellenverzeichnis}{62}{chapter*.51}%
+\contentsline {chapter}{\numberline {A}Anhang}{68}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Abbildungen}{68}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Inhalt Datenträger}{70}{section.A.2}%

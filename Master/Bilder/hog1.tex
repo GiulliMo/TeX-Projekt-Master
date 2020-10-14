@@ -9,12 +9,14 @@
 	axis y line*=left,
 	ticklabel style={% gilt für x und y
 		/pgf/number format/.cd,
+		/pgf/number format/fixed,
 		use comma,% Komma als Dezimaltrenner
 		1000 sep = {}% keine Tausendertrennung 
 	},
 	xlabel={$\text{Recall } \textit{r(t)}$},
 	ylabel={$\text{Precision } \textit{p(t)}$},
 	axis x line*=bottom,
+	scale only axis,
 	xmin=0, xmax=0.5, 
 	ymin=0, ymax=0.6,
 	%every axis plot/.append style={line width=1.0pt}
