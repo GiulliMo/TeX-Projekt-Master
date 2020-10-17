@@ -54,27 +54,6 @@
     \field{year}{2017}
   \endentry
 
-  \entry{alf}{booklet}{}
-    \name{author}{1}{}{%
-      {{hash=EH}{%
-         prefix={{Eickmann, D. }und},
-         prefixi={E\bibinitperiod},
-         family={{Hotze, D.}},
-         familyi={H\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{HE1}
-    \strng{fullhash}{HE1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{Masterthesis}
-    \field{title}{Entwicklung und Verfikation eines autonomen
-  Logistik-Fahrzeugs. Hochschule Bochum - Bochum University of Applied
-  Sciences}
-    \field{month}{02}
-    \field{year}{2018}
-  \endentry
-
   \entry{Bachelorarbeit}{book}{}
     \name{author}{1}{}{%
       {{hash=uDM}{%
@@ -96,6 +75,27 @@
   Hochschule Bochum - Bochum University of Applied Sciences}
     \field{month}{02}
     \field{year}{2019}
+  \endentry
+
+  \entry{alf}{booklet}{}
+    \name{author}{1}{}{%
+      {{hash=EH}{%
+         prefix={{Eickmann, D. }und},
+         prefixi={E\bibinitperiod},
+         family={{Hotze, D.}},
+         familyi={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HE1}
+    \strng{fullhash}{HE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{Masterthesis}
+    \field{title}{Entwicklung und Verfikation eines autonomen
+  Logistik-Fahrzeugs. Hochschule Bochum - Bochum University of Applied
+  Sciences}
+    \field{month}{02}
+    \field{year}{2018}
   \endentry
 
   \entry{Dittmann}{book}{}
@@ -173,6 +173,24 @@
   and Technology}
     \field{month}{08}
     \field{year}{2017. S. 1422-1432}
+  \endentry
+
+  \entry{last}{article}{}
+    \name{author}{1}{}{%
+      {{hash=LH}{%
+         prefix={{Liu, Q., }{Jiang, H., }{Ling, Z.-H.}{Wei S. }und},
+         prefixi={L\bibinitperiod},
+         family={{Hu, Y.}},
+         familyi={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HL1}
+    \strng{fullhash}{HL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Probabilistic Reasoning via Deep Learning: Neural Association
+  Models - Computing Research Repository (CoRR)}
+    \field{year}{2016}
   \endentry
 
   \entry{neuron}{book}{}
