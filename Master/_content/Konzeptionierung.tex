@@ -82,11 +82,45 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 		\textit{Xus} Publikation zeigt, dass \textit{Tensorflow} und \textit{Tensorflow Lite} die meistgenutzten Frameworks sind, wenn es um mobile Applikationen geht. Weiterhin unterstützt \textit{Tensorflow} die \textit{NVIDIA CUDA Deep Neural Network} (cuDNN) Bibliothek \cite{frameworks}. \textit{NVIDIA cuDNN} ist für Grafikprozessoren und die Arbeit mit künstlichen neuronalen Netzen optimiert \cite{frameworks}. Außerdem unterstützt \textit{Tensorflow} die Betriebssysteme \textit{Linux}, \textit{Mac OS X} und \textit{Windows} \cite{frameworks}. Somit kann der integrierte Computer des autonomen Logistikfahrzeugs als ausführende Instanz verwendet werden.\\
 		
-		Für Trainingsprozesse eignet sich in vielen Fällen ein Rechner mit einer leistungsstarken Grafikeinheit. Die Praxiserfahrung dieser Masterarbeit zeigte, dass eine Grafikkarte im Vergleich zu einer Recheneinheit den Trainingsprozess um den Faktor 12 beschleunigt. Jedoch gibt es Anwendungsfälle, die durch die Verwendung der zentralen Recheneinheit des Computers beschleunigt werden \cite{cpugpu}. \\
+		Für Trainingsprozesse eignet sich in vielen Fällen ein Rechner mit einer leistungsstarken Grafikeinheit. Die Praxiserfahrung dieser Masterarbeit zeigte, dass eine Grafikkarte im Vergleich zu einer Recheneinheit den Trainingsprozess der CNNs um den Faktor 12 beschleunigt. Jedoch gibt es Anwendungsfälle, die durch die Verwendung der zentralen Recheneinheit des Computers beschleunigt werden \cite{cpugpu}. \\
 		
-		Als Datensatz für das Training der Netze wird der \textit{Common Objects in Context} (COCO) Datensatz der Firma \textit{Microsoft} verwendet. Dieser Datensatz enthält circa 330000 Bilder mit diversen alltäglichen Objekten \cite{coco, cocopaper}. Davon sind laut eigener Aussagen über 200000 Bilder mit sogenannten \textit{Annotations} oder auch \textit{Labels} (deutsch: Anmerkungen/Etiketten) versehen \cite{coco}. Die Daten sind in Trainings-, Evaluations- und Testdaten unterteilt. Letzteres ist jedoch nicht etikettiert und somit für diese Masterarbeit nicht relevant. Die Trainingsdaten von dem \textit{COCO}-Datensatz aus dem Jahr 2017 stellt knapp 65000 etikettierte Bilder von Personen bereit. Circa 5000 Bilder sind im Evalutaionsdatensatz enthalten.\\
+		Als Datensatz für das Training der Netze wird der \textit{Common Objects in Context} (COCO) Datensatz der Firma \textit{Microsoft} verwendet. Die dem Datensatz beigefügte \textit{Application Programming Interface} (API) ermöglichst es dem Benutzer, Datenmengen anhand der gewünschten Klassen zu extrahieren.\\
 		
-		Für den Lernprozess wird somit der Trainingsdatensatz in Trainings- und Testdaten unterteilt. So kann ein Teil der eigentlichen Trainingsdaten durch die vorhandenen Etiketten als Testdatensatz verwendet werden. Als zweiten Test wird ein eigener Datensatz erstellt. Hierbei werden 160 Bilder aus dem Einsatzumfeld des ALFs aufgenommen und etikettiert. In Kapitel \ref{ch: Verifikation} werden bereits besprochene Netze mit dem eigenen und dem \textit{COCO}-Datensatz evaluiert.
+		Der Datensatz enthält circa 330000 Bilder mit diversen alltäglichen Objekten \cite{coco, cocopaper}. Davon sind laut eigener Aussagen über 200000 Bilder mit sogenannten \textit{Annotations} oder auch \textit{Labels} (deutsch: Anmerkungen/Etiketten) versehen \cite{coco}. Die Daten sind in Trainings-, Evaluations- und Testdaten unterteilt. Letzteres ist jedoch nicht etikettiert und somit für diese Masterarbeit nicht relevant.\\
+		
+		Die Trainingsdaten von dem \textit{COCO}-Datensatz aus dem Jahr 2017 stellt knapp 65000 etikettierte Bilder von Personen bereit. Circa 5000 Bilder sind im Evalutaionsdatensatz enthalten. Aufgrund des Umfangs und der entsprechenden API, die eine vereinfachte Extraktion der Daten ermöglicht, wird der \textit{COCO}-Datensatz verwendet. \\
+		
+		Für den Lernprozess wird der Trainingsdatensatz in Trainings- und Testdaten unterteilt. So kann ein Teil der eigentlichen Trainingsdaten durch die vorhandenen Etiketten als Testdatensatz verwendet werden. In Kapitel \ref{ch: Verifikation} werden bereits besprochene Netze mit dem eigenen und dem \textit{COCO}-Datensatz evaluiert.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{Bilder/coco1.jpg}
+			\caption{Beispiel eines Bildes aus dem erstellten \textit{COCO}-Testdatensatz. Dargestellt ist eine Menschenmenge auf einer Grünfläche. Personen sind teilweise verdeckt.}
+			\label{fig: cocotest}
+		\end{figure}
+	
+		In Abbildung \ref{fig: cocotest} ist ein Bild des erstellten \textit{COCO}-Testdatensatzes gezeigt. Personen sind im Hintergrund teilweise verdeckt oder nicht eindeutig dargestellt. Dies erschwert die Erkennung der beschriebenen Personen und könnte somit das Ergebnis einer Evaluation negativ beeinflussen. \\ 
+		
+		Für einen zweiten Test wird ein eigener Datensatz erstellt. Hierbei werden 160 Bilder aus dem Einsatzumfeld des ALFs aufgenommen und etikettiert. Die Abbildungen \ref{fig: owndata}a und b zeigen zwei Beispiele des Datensatzes. 
+		Im Rahmen dieser Masterarbeit wird aufgrund der in Kapitel \ref{ch: Einleitung} beschriebenen Anwendungen die Erkennung von Personen insbesondere auf den Nahbereich des Fahrzeugs ausgelegt. Aufgrund dessen sind Personen auf den Bildern des eigenen Datensatzes häufig verhältnismäßig groß dargestellt.\\
+		
+			\begin{figure}[H]
+			\centering
+			\begin{minipage}[b]{0.49\textwidth}
+				(a)
+				\includegraphics[width=0.94\textwidth]{Bilder/26.jpg}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[b]{0.49\textwidth}
+				(b)
+				\includegraphics[width=0.94\textwidth]{Bilder/39.jpg}
+			\end{minipage}
+			\caption{(a) Foto von zwei Personen im Labor für Antriebstechnik der Hochschule Bochum. (b) Darstellung von zwei Menschen. Eine Person ist teilweise verdeckt. }
+			\label{fig: owndata}
+		\end{figure}
+		
+		Trotzdem können Menschen auch am Einsatzort des ALFs durch verschiedene Objekte verdeckt werden. Abbildung \ref{fig: owndata}b zeigt den entsprechenden Anwendungsfall. Daher wurden derartige Situationen bei der Aufnahme des Datensatzes berücksichtigt und simuliert.
+		
 	
 		
 	\subsection{Funktionsweise der Personenerkennung}
@@ -107,10 +141,12 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1\textwidth]{Bilder/person.pdf}
-		\caption{Konzept eines Fallbeispiels der Personenerkennung. Zu sehen sind zwei Personen im Labor für Antriebstechnik der Hochschule Bochum. Rote Rechtecke zeigen den Interessensbereich der Personendetektion. Der Begrenzungsrahmen der Gesichtsdetektion ist gestrichelt dargestellt. Das als Strichpunkt präsentierte Rechteck deutet den Bereich der Distanzmessung an.}
+		\caption{Konzept eines Fallbeispiels der Personenerkennung. Zu sehen sind zwei Personen im Labor für Antriebstechnik der Hochschule Bochum. Rote Rechtecke zeigen den Interessensbereich der Personendetektion. Die \textit{Bounding Box} der Gesichtsdetektion ist gestrichelt dargestellt. Das als Strichpunkt präsentierte Rechteck deutet den Bereich der Distanzmessung an.}
 		\label{fig: bbox}
 	\end{figure}
-		In Abbildung \ref{fig: Personenerkennung} wird der Ablauf der Personenerkennung in Form eines Programmablaufplans dargestellt. Zu Beginn der Analyse gelangt jedes Bild in das verwendete künstliche neuronale Netz. Je nach Anzahl der erkannten Person werden korrespondierende Begrenzungsrahmen ausgegeben, die die Position des Interessensbereichs im Bild beschreiben. Dieser Vorgang ist beispielhaft in Darstellung \ref{fig: bbox} präsentiert. Die dort abgebildeten Personen werden in diesem Fall von einem roten Begrenzungsrahmen umrandet. Wird keine Person erkannt, verfällt das Programm wieder in den bereits beschriebenen, reduzierten Modus. Die extrahierten Begrenzungsrahmen gelten im Falle einer Personendetektion als Interessensbereich für die Gesichtserkennung.\\
+		In Abbildung \ref{fig: Personenerkennung} wird der Ablauf der Personenerkennung in Form eines Programmablaufplans dargestellt. Zu Beginn der Analyse gelangt jedes Bild in das verwendete künstliche neuronale Netz. Je nach Anzahl der erkannten Person werden korrespondierende \textit{Bounding Boxes} ausgegeben, die die Position des Interessensbereichs im Bild beschreiben. Dieser Vorgang ist beispielhaft in Darstellung \ref{fig: bbox} präsentiert.\\
+		
+		Die dort abgebildeten Personen werden in diesem Fall von roten \textit{Bounding Boxes} umrandet. Wird keine Person erkannt, verfällt das Programm wieder in den bereits beschriebenen, reduzierten Modus. Die extrahierten \textit{Bounding Boxes} gelten im Falle einer Personendetektion als Interessensbereich für die Gesichtserkennung.\\
 		
 			\begin{figure}[H]
 			\centering
@@ -170,7 +206,13 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		\end{figure}
 		\newpage
 		
-	Das Pythonpaket \textit{face-recognition} wird in diesem Projekt für die Gesichterkennung verwendet. Prinzipiell arbeitet das Paket in drei Schritten. Die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} erklärte \textit{HOG}-Methode wird zur Extraktion des Begrenzungsrahmens des jeweiligen Gesichts angewendet \cite{facerecarticle}. Damit eine Person nicht unbedingt gerade in das entsprechende Aufnahmegerät schauen muss, werden durch die Software sogenannte Landmarken auf dem Gesicht verteilt \cite{facerecarticle}. Diese werden zur Rotation des Gesichts im Bild verwendet \cite{facerecarticle}. Das bearbeitete Bild des Gesichts wird mit einem neuronalen Netz analysiert, das von den Entwicklern von \textit{OpenFace} bereitgestellt wird \cite{facerecarticle}. Entwickler \textit{Adam Geitgey} gibt für das im Paket verwendete Netz eine Genauigkeit von 99,38 \% an \cite{facerecognition}. Hinsichtlich der in Kapitel \ref{ch: Grundlagen} besprochenen, möglichen Nutzungsszenarien der Personenerkennung ist eine hohe Genauigkeit notwendig. Nach eigener Recherche besitzen die von \textit{OpenFace} bereitgestellten, neuronalen Netze zwischen 3,7 - 7,4 Millionen Parameter \cite{openface}. Die Größenordnung ähnelt folglich der einer herkömmlichen \textit{MobileNet}-Architektur.\\
+	Das Pythonpaket \textit{face-recognition} wird in diesem Projekt für die Gesichterkennung verwendet. Prinzipiell arbeitet das Paket in drei Schritten. Die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} erklärte \textit{HOG}-Methode wird zur Extraktion der \textit{Bounding Box}, des jeweiligen Gesichts angewendet \cite{facerecarticle}.\\
+	
+	Damit eine Person nicht unbedingt gerade in das entsprechende Aufnahmegerät schauen muss, werden durch die Software sogenannte Landmarken auf dem Gesicht verteilt \cite{facerecarticle}. Diese werden zur Rotation des Gesichts im Bild verwendet \cite{facerecarticle}. \\
+	
+	Das bearbeitete Bild des Gesichts wird mit einem neuronalen Netz analysiert, das von den Entwicklern von \textit{OpenFace} bereitgestellt wird \cite{facerecarticle}. Entwickler \textit{Adam Geitgey} gibt für das im Paket verwendete Netz eine Genauigkeit von 99,38 \% an \cite{facerecognition}. Hinsichtlich der in Kapitel \ref{ch: Grundlagen} besprochenen, möglichen Nutzungsszenarien der Personenerkennung ist eine hohe Genauigkeit notwendig. \\
+	
+	Nach eigener Recherche besitzen die von \textit{OpenFace} bereitgestellten, neuronalen Netze zwischen 3,7 - 7,4 Millionen Parameter \cite{openface}. Die Größenordnung ähnelt folglich der einer herkömmlichen \textit{MobileNet}-Architektur.\\
 	
 	Außerdem bietet das \textit{face-recognition} Paket eine Funktion zum Vergleichen und Unterscheiden von Gesichtsmerkmalen. Aufgrund der Genauigkeit und der verwendeten Netze wird das \textit{face-recognition} Paket in dieser Masterarbeit für die Gesichtserkennung eingesetzt.\\
 	

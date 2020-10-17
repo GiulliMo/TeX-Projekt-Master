@@ -1,4 +1,4 @@
-\chapter{Grundlagen}
+\chapter{Betrachtung verwendeter Methoden}
 \label{ch: Grundlagen}
 	Für ein besseres Verständnis der in Kapitel \ref{ch: Konzeptionierung} angewandten Methoden werden folgend die dazugehörigen Grundlagen behandelt. Informationen zu der verwendeten Hard- und Software wurden bereits in der vorangegangenen Bachelorarbeit vermittelt \cite{Bachelorarbeit}.\\
 	
@@ -204,14 +204,27 @@
 		
 		Häufig muss in der Praxis ein Kompromiss zwischen \textit{Precision} und \textit{Recall} gefunden werden. Dies lässt sich anhand eines Beispiels in der Personenerkennung veranschaulichen. Das System zur Erkennung wird beispielhaft mit einem hohen \textit{Precision}- und einem niedrigen \textit{Recall}-Wert betrieben. Dies führt dazu, dass irrelevanter Bildinhalt selten als Person klassifiziert wird. Jedoch kommt es häufiger vor, dass keine Person detektiert wird, obwohl eine zu sehen ist. Legt man den Fokus auf einen hohen \textit{Recall}- und einen niedrigen \textit{Precision}-Wert, würden Personen dann häufiger als Person klassifiziert werden, jedoch wird irrelevanter Bildinhalt ebenfalls häufig als Person erkannt. Je nach Anwendungsfall eines Netzes wird dann der entsprechende Betriebspunkt zwischen \textit{Precision} und \textit{Recall} gewählt.\\
 		
-		Objekterkennungssysteme geben erkannte Objekte mithilfe eines Begrenzungsrahmens aus. Dieser wird mithilfe von Pixelkoordinaten passend zum untersuchten Bild angegeben. Der \textit{Intersection over Union} (IoU) Wert sagt aus, ob die Lokalisierung eines Objekts in einem Bild entsprechend genau ist. Als Grundlage dient hierfür ein Testdatensatz mit verschiedenen Bildern und grundwahren Begrenzungsrahmen für enthaltene Objekte. Zur Ermittlung des \textit{IoU}-Werts werden von einem Objekterkennungssystem ausgegebene mit grundwahren Begrenzungsrahmen verglichen. Hierbei lässt sich die überlappende und die zusammengesetzte Fläche beider Rahmen in ein Verhältnis setzen. Das Ergebnis ist der \textit{IoU}-Wert.    \\
+		Objekterkennungssysteme geben erkannte Objekte mithilfe eines Begrenzungsrahmens (engl. Bounding Box) aus. Dieser wird mithilfe von Pixelkoordinaten passend zum untersuchten Bild angegeben.\\
 		
-		\begin{equation}
-		mAP = \frac{1}{K}\sum_{i=1}^{K}\int_{0}^{1}p_i(r_i)dr
-		\label{eq: map}
-		\end{equation}\\
+	
+		
+		Der \textit{Intersection over Union} (IoU) Wert sagt aus, ob die Lokalisierung eines Objekts in einem Bild entsprechend genau ist. Als Grundlage dient hierfür ein Testdatensatz mit verschiedenen Bildern und grundwahren Begrenzungsrahmen für enthaltene Objekte. Zur Ermittlung des \textit{IoU}-Werts werden von einem Objekterkennungssystem ausgegebene, mit grundwahren Bounding Boxes verglichen. Hierbei lassen sich die überlappende und die zusammengesetzte Fläche beider Rahmen in ein Verhältnis setzen. Die Methode des \textit{IoU}-Werts ist in Abbildung \ref{fig: iou} gezeigt.    \\
+		
+		Ein Vorteil des \textit{IoU}-Werts ist die Berücksichtigung von zu großen \textit{Bounding Boxes}. Ein Begrenzungsrahmen mit der Größe des analysierten Bildes würde schließlich alle vorhandenen und zu erkennende Objekte enthalten. Aufgrund der kleinen, überlappenden und der daraus resultierenden großen zusammengesetzten Fläche würde laut der Berechnung aus Abbildung \ref{fig: iou} ein kleiner \textit{IoU}-Wert resultieren.
+		
+				\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{Bilder/iouc.pdf}
+			\caption{Darstellung der Ermittlung eines \textit{IoU}-Werts. Der vertikale Strich auf der rechten Seite der Abbildung stellt einen Bruchstrich dar. Adaptiert aus \cite{ioupng}.}
+			\label{fig: iou}
+		\end{figure}
 		
 		Der \textit{mAP}-Wert oder auch die mittlere durchschnittliche Genauigkeit ist ein Indiz dafür, wie genau die Objekterkennung klassenübergreifend arbeitet. Die Berechnung dieses Werts beinhaltet hierbei die bereits vorgestellten \textit{Precision} und \textit{Recall} Werte. Dieser Messwert ist besonders aussagekräftig, wenn Systeme lediglich eine Objektklasse erkennen können. Gleichung \ref{eq: map} zeigt die Berechnung der mittleren durchschnittlichen Genauigkeit. Die Variable $K$ ist die Menge aller Klassen, die durch das Netz erkannt werden können.  \\
+		
+		\begin{equation}
+			mAP = \frac{1}{K}\sum_{i=1}^{K}\int_{0}^{1}p_i(r_i)dr
+			\label{eq: map}
+		\end{equation}\\
 		
 		Eine einfache Betrachtung zur Evaluierung der Qualität hinsichtlich der Genauigkeit eines Netzes liefert der Top-$x$ Fehler. Der Platzhalter $x$ kann zunächst durch eine beliebige Zahl ersetzt werden. In der Praxis hat sich jedoch der Top-5 und der Top-1 Fehler als Vergleich durchgesetzt \cite{cnnvergleich}. Hierbei wird zunächst ein Bild durch ein beliebiges KNN analysiert und über die Ausgabeschicht extrahiert. Als Beispiel sollte sich im optimalen Fall die tatsächliche Klasse des Bildes unter den $x$ wahrscheinlichsten Klassen befinden, die über das Netz ausgegeben wurden. Folglich sagt der Top-1 Fehler aus, wie oft ein Netz ein eingegebenes Bild falsch klassifiziert hat.
 		
@@ -231,11 +244,15 @@
 		
 		Neben der neuronalen Netze gibt es weitere Methoden zur Objekterkennung. Ein gängiges Verfahren zur Merkmalsextraktion ist das sogenannte \textit{Histogram of oriented gradients} (HOG) von \textit{Dalal} in Verbindung mit der \textit{Support Vector Machine} (SVM).\\
 		
-		Bei diesem Verfahren wird ein Bild in kleine Bereiche, sogenannte Zellen, aufgeteilt \cite{hogsvm}. Für jede Zelle wird ein eindimensionales Histogram extrahiert \cite{hogsvm}. Dieses enthält Gradienten, die aus den Informationen der Pixel enstehen, wie zum Beispiel durch die Lichtintensität oder die Farbe. Hieraus lassen sich Kanten und Ecken und somit auch Konturen und Muster aus einem Bild erkennen. In den Abbildungen \ref{fiq: hog}a und b lässt sich die Umwandlung des \textit{HOGs} beobachten. Die Realität, so wie sie eine übliche Fotokamera widerspiegeln würde, ist in \ref{fiq: hog}a zu erkennen. Die entsprechenden Richtungen der Gradienten werden in \ref{fiq: hog}b dargestellt. \\
+		Bei diesem Verfahren wird ein Bild in kleine Bereiche, sogenannte Zellen, aufgeteilt \cite{hogsvm}. Für jede Zelle wird ein eindimensionales Histogram extrahiert \cite{hogsvm}. Dieses enthält Gradienten, die aus den Informationen der Pixel enstehen, wie zum Beispiel durch die Lichtintensität oder die Farbe. Hieraus lassen sich Kanten und Ecken und somit auch Konturen und Muster aus einem Bild erkennen.\\
+		
+		In den Abbildungen \ref{fiq: hog}a und b lässt sich die Umwandlung des \textit{HOGs} beobachten. Die Realität, so wie sie eine übliche Fotokamera widerspiegeln würde, ist in \ref{fiq: hog}a zu erkennen. Die entsprechenden Richtungen der Gradienten werden in \ref{fiq: hog}b dargestellt. \\
 		
 		\input{Bilder/hog}
 		
-		Die \textit{SVM} ist ein Funktionsapproximator für eine Objektklassifikation. Häufig wird dieser auf die Ausgangsdaten des \textit{HOGs} angewendet. Hierbei wird ein mathematisches Verfahren angewendet, das Klassen durch Trennungsebenen, sogenannte Hyperebenen, voneinander trennt. Wie auch bei den KNNs gibt es für \textit{SVMs} einen Lernprozess in Form des überwachten Lernens. Ziel der Algorithmen des Trainings einer \textit{SVM} ist es, die Hyperebenen so zu konstruieren, sodass Objekte sicher klassifiziert werden können. In der Realität lassen sich Objekte rein mathematisch häufig nicht linear trennen. Nichtlineare Trennbarkeit bedeutet oft einen höheren Rechenaufwand. Somit verwendet die Methode der \textit{SVM} den sogenannten \textit{Kernel-Trick} \cite{svmalt}. Dieser transformiert Daten in eine höhere Dimension, um eine lineare Trennbarkeit zu erreichen \cite{svmalt}. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt. In Abbildung \ref{fig: kerneltrick}a und b ist das Funktionsprinzip prinzipiell dargestellt. Darstellung \ref{fig: kerneltrick}a zeigt Objektklassen, die jeweils als Formen dargestellt sind. Eine lineare Trennbarkeit mittels einer Hyperebene ist in diesem Beispiel nicht möglich. Eine dritte Dimension wird in der Darstellung \ref{fig: kerneltrick}b verwendet, um die dargestellte, lineare Trennbarkeit zu erreichen.\\
+		Die \textit{SVM} ist ein Funktionsapproximator für eine Objektklassifikation. Häufig wird dieser auf die Ausgangsdaten des \textit{HOGs} angewendet. Hierbei wird ein mathematisches Verfahren verwendet, das Klassen durch Trennungsebenen, sogenannte Hyperebenen, voneinander trennt.\\
+		
+		Wie auch bei den KNNs gibt es für \textit{SVMs} einen Lernprozess in Form des überwachten Lernens. Ziel der Algorithmen des Trainings einer \textit{SVM} ist es, die Hyperebenen so zu konstruieren, sodass Objekte sicher klassifiziert werden können. In der Realität lassen sich Objekte rein mathematisch häufig nicht linear trennen. Nichtlineare Trennbarkeit bedeutet oft einen höheren Rechenaufwand. Somit verwendet die Methode der \textit{SVM} den sogenannten \textit{Kernel-Trick} \cite{svmalt}. Dieser transformiert Daten in eine höhere Dimension, um eine lineare Trennbarkeit zu erreichen \cite{svmalt}. Diese Methode hat sich vor allem aufgrund ihrer kurzen Rechenzeit durchgesetzt. In Abbildung \ref{fig: kerneltrick}a und b ist das Funktionsprinzip prinzipiell dargestellt. Darstellung \ref{fig: kerneltrick}a zeigt Objektklassen, die jeweils als Formen dargestellt sind. Eine lineare Trennbarkeit mittels einer Hyperebene ist in diesem Beispiel nicht möglich. Eine dritte Dimension wird in der Darstellung \ref{fig: kerneltrick}b verwendet, um die dargestellte, lineare Trennbarkeit zu erreichen.\\
 		
 		\input{Bilder/kerneltrick}
 			
@@ -243,7 +260,9 @@
 	
 		\subsection{Objekterkennung durch neuronale Netze}
 		\label{subsec: Objekterkennung durch neuronale Netze}
-		Die bisher besten Ergebnisse in der Bildverarbeitung wurden durch die Abwandlung der neuronalen Netze, der sogenannten \textit{Convolutional Neural Networks} (CNN) erreicht \cite{deeplearning}. Derartige Netzwerke nutzen zur Verarbeitung der Eingangsdaten Faltungsoperationen statt der üblichen Matrizenmultiplikation \cite{deeplearning}. Diese werden auch als Konvolution bezeichnet. Der Aufbau eines CNNs setzt sich aus einer Merkmalsextraktion der Eingangsdaten und der darauffolgenden Klassifikation zusammen.\\ 
+		Die bisher besten Ergebnisse in der Bildverarbeitung wurden durch die Abwandlung der neuronalen Netze, der sogenannten \textit{Convolutional Neural Networks} (CNN) erreicht \cite{deeplearning}. Derartige Netzwerke nutzen Faltungsoperationen zur Verarbeitung der Eingangsdaten   \cite{deeplearning}. Diese werden auch als Konvolution bezeichnet.\\ 
+		
+		Der Aufbau eines CNNs setzt sich aus einer Merkmalsextraktion der Eingangsdaten und der darauffolgenden Klassifikation zusammen. Im Folgenden wird die Zusammensetzung und die Funktionsweise von CNNs genauer erklärt. Die Abbildung \ref{fig: cnntyp} zeigt schematisch die verschiedenen Prozesse in einem Faltungsnetzwerk.\\ 
 		
 		\input{Bilder/towadatacnn}
 		
@@ -351,7 +370,17 @@
 		\end{figure}
 		
 		
-		Während der Konvolution werden eingehende Daten in Filter, sogenannte Kernel, eingegeben. Abbildung \ref{fig: faltung } zeigt den prinzipiellen Vorgang der Faltung. Hierbei wird die Matrix des Kernels mit der Eingabematrix elementweise multipliziert und erzeugt die gezeigte Ausgabe. Die Konfiguration des Kernels ist beispielhaft mit $w$, $x$, $y$ und $z$ dargestellt. Eingehende Datenpunkte sind hier mit den Buchstaben $a$ bis $l$ gekennzeichnet. Die Filter extrahieren bestimmte Merkmale je nach Konfiguration, wie im unteren Teil der Abbildung als Ausgabe dargestellt. So können verschiedene Schichten diverse Merkmale extrahieren. Die Ausgänge der Schichten üblicher, neuronaler Netze sind mit jedem Eingang der folgenden Schicht verknüpft. Ein typischer Aufbau wurde bereits in Abschnitt \ref{subsec: Eigenschaften von neuronalen Netzen} in Abbildung \ref{fig: neuronales netz } gezeigt. Wird bei derartigen Netzen eine Schicht mit $n$ Ausgaben und eine mit $m$ Eingaben verknüpft, werden $m \cdot n$ Parameter benötigt \cite{deeplearning}. Durch den Faltungsprozess wird diese Konnektivität eingeschränkt. Beispielsweise wird der Datenpunkt $b$ der Eingabe aus der Darstellung \ref{fig: faltung } lediglich in zwei von sechs Datenpunkten der Ausgabe berücksichtigt. Die Ausmaße der eingeschränkten Konnektivität lassen sich in der folgenden Abbildung \ref{fig: eingeschränkte konnektivität} verdeutlichen. Die Eingabepunkte $I_n$ geben je nach Netzart ihre Informationen an alle oder benachbarten Ausgabepunkte $O_n$ weiter. Die Einschränkung der Konnektivität hängt von der Dimension des Kernels ab. Folglich nehmen CNNs deutlich weniger Speicher im Vergleich zu herkömmlichen KNNs ein\cite{deeplearning}. Gleichzeitig wird durch die Faltung eine höhere statistische Effizienz erreicht \cite{deeplearning}.\\
+		Während der Konvolution werden eingehende Daten in Filter, sogenannte Kernel, eingegeben. Abbildung \ref{fig: faltung } zeigt den prinzipiellen Vorgang der Faltung. Hierbei wird die Matrix des Kernels mit der Eingabematrix elementweise multipliziert und erzeugt die gezeigte Ausgabe.\\
+		
+		Die Konfiguration des Kernels ist beispielhaft mit $w$, $x$, $y$ und $z$ dargestellt. Die Zahlenwerte der Filterkonfiguration sind als Parameter der jeweiligen Zwischenschicht zu deuten. Diese haben analog zu den Gewichtungen des klassischen KNNs einen Einfluss auf die Ausgabe der jeweiligen Schicht.\\
+		
+		Eingehende Datenpunkte sind in der Abbildung mit den Buchstaben $a$ bis $l$ gekennzeichnet. Die Filter extrahieren bestimmte Merkmale je nach Konfiguration, wie im unteren Teil der Abbildung als Ausgabe dargestellt. So können verschiedene Schichten diverse Merkmale extrahieren.\\
+		
+		Die Ausgänge der Schichten üblicher, neuronaler Netze sind mit jedem Eingang der folgenden Schicht verknüpft. Ein typischer Aufbau wurde bereits in Abschnitt \ref{subsec: Eigenschaften von neuronalen Netzen} in Abbildung \ref{fig: neuronales netz } gezeigt. Wird bei derartigen Netzen eine Schicht mit $n$ Ausgaben und eine mit $m$ Eingaben verknüpft, werden $m \cdot n$ Parameter benötigt \cite{deeplearning}. Durch den Faltungsprozess wird diese Konnektivität eingeschränkt. Beispielsweise wird der Datenpunkt $b$ der Eingabe aus der Darstellung \ref{fig: faltung } lediglich in zwei von sechs Datenpunkten der Ausgabe berücksichtigt.\\
+		
+		Die Ausmaße der eingeschränkten Konnektivität lassen sich in der folgenden Abbildung \ref{fig: eingeschränkte konnektivität} verdeutlichen. Die Eingabepunkte $I_n$ geben je nach Netzart ihre Informationen an alle oder benachbarten Ausgabepunkte $O_n$ weiter.\\
+		
+		Die Einschränkung der Konnektivität hängt von der Dimension des Kernels ab. Folglich nehmen CNNs deutlich weniger Speicher im Vergleich zu herkömmlichen KNNs ein\cite{deeplearning}. Gleichzeitig wird durch die Faltung eine höhere statistische Effizienz erreicht \cite{deeplearning}.\\
 		
 	
 			\tikzset{%
@@ -428,7 +457,7 @@
 		
 		Als Parameterverteilung bezeichnet man die Nutzung eines Parameters pro Funktion eines Netzes \cite{deeplearning}. Bei herkömmlichen, ausschließlich vorwärtspropagierenden Netzwerken wird jede Eingabe eines Neurons, wie in Abschnitt \ref{subsec: Eigenschaften von neuronalen Netzen} mit einem Gewichtungsfaktor verrechnet  \cite{deeplearning}. Wie bereits beschrieben, wird bei CNNs ein Kernel pro Schicht für die Merkmalsextraktion verwendet. Dies führt zu deutlich weniger Speicheraufwand, da das Netz lediglich die Kernel abspeichert statt jeden Gewichtungsfaktor pro Neuron.\\
 		
-		Die äquivariante Darstellung bezieht sich auf die Auswirkung der Ausgabe eines Netzes bei einer Änderung der Eingabedaten. Die Merkmalsextraktion eines Netzes erzeugt eine zweidimensionale Karte, die sogenannte \textit{Feature Map}. In dieser werden Merkmale eines Bildes eingetragen. Wird ein Objekt in dem eingegebenen Bild des CNNs bewegt, verändert sich die Merkmalskarte im selben Maße wie das Objekt im Bild \cite{deeplearning}.\\		
+		Die äquivariante Darstellung bezieht sich auf die Auswirkung der Ausgabe eines Netzes bei einer Änderung der Eingabedaten. Die Merkmalsextraktion eines Netzes erzeugt eine Karte, die sogenannte \textit{Feature Map}. In dieser werden Merkmale eines Bildes eingetragen. Wird ein Objekt in dem eingegebenen Bild des CNNs bewegt, verändert sich die Merkmalskarte im selben Maße wie das Objekt im Bild. \cite{deeplearning}\\		
 		
 	
 		
@@ -614,7 +643,9 @@
 		
 		Für die Auswahl der Netzarchitektur werden state-of-the-art Lösungen hinzugezogen. In \textit{Canzianis} wissenschaftlichen Beitrag \cite{cnnvergleich} aus dem Jahr 2016 werden bekannte CNNs nach der Genauigkeit über die Anzahl der Rechenoperationen pro eingegebenem Bild in einem Diagramm aufgetragen. Als dritte Eigenschaft ist dort ebenfalls die Größe der Architekturen bemessen. Die höchsten Genauigkeiten erzielten hierbei die \textit{ResNet}, \textit{Inception} und \textit{VGG} Architekturen \cite{cnnvergleich}.\\
 		
-		Ein Jahr später entwickelte \textit{Howard} \cite{mobilenets} die \textit{MobileNet} Architektur. Sie zeichnet sich durch die ihre Geschwindigkeit bei teilweise höherer Genauigkeit im Vergleich zu bekannten Architekturen aus \cite{mobilenets}. Weiterhin werden in diesem Abschnitt die gängigen Lösungen \textit{R-CNN} und \textit{SSD} als optionale Klassifikatoren präsentiert.\\
+		Ein Jahr später entwickelte \textit{Howard} \cite{mobilenets} die \textit{MobileNet} Architektur. Sie zeichnet sich durch die ihre Geschwindigkeit bei teilweise höherer Genauigkeit im Vergleich zu bekannten Architekturen aus \cite{mobilenets}.\\
+		
+		Wie bereits in Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} beschrieben, benötigt ein Faltungsnetzwerk einen Klassifikator zur Analyse einer durch das Netz extrahierten \textit{Feature Map}. Somit werden in diesem Abschnitt ebenfalls die gängigen Lösungen \textit{R-CNN} und \textit{SSD} als optionale Klassifikatoren präsentiert.\\
 		
 		\section*{VGG}
 		\label{subsec: vgg}
@@ -731,11 +762,11 @@
 		
 		Im November 2016 präsentierte \textit{Liu} in seiner Arbeit den \textit{SSD}, ein modifiziertes \textit{VGG-16} Netzwerk \cite{ssd}. Hierbei wurden die vollständig verbundenen Schichten des \textit{VGG-16} Netzes entfernt und durch Konvolutionsschichten ersetzt \cite{ssd}.\\
 		
-		Ein besonderes Merkmal dieser Architektur ist die Verwendung der \textit{non-maximum suppression} (NMS) Methode in der Ausgabeschicht \cite{ssd}. Die NMS Methode unterdrückt überlappende Begrenzungsrahmen in Abhängigkeit des \textit{IoU}-Wertes und der Konfidenz \cite{nms}. Im optimalen Fall bleibt für jedes erkannte Objekt ein Begrenzungsrahmen über.\\
+		Ein besonderes Merkmal dieser Architektur ist die Verwendung der \textit{non-maximum suppression} (NMS) Methode in der Ausgabeschicht \cite{ssd}. Die NMS Methode unterdrückt überlappende \textit{Bounding Boxes} in Abhängigkeit des \textit{IoU}-Wertes und der Konfidenz \cite{nms}. Im optimalen Fall bleibt für jedes erkannte Objekt ein Begrenzungsrahmen über.\\
 		
-		Der Name \textit{SSD} unterteilt sich in \textit{Single Shot}, \textit{Multibox} und \textit{Detector}. Anhand dessen lässt sich die Funktionsweise dieser Methode erklären. \textit{Single Shot} drückt aus, dass die Architektur mit nur einer Bildanalyse auskommt und die Objekterkennung durchführen kann. Die \textit{Multibox} Methode wurde von \textit{Szegedy} entwickelt \cite{multibox}. Diese gibt klassenbasierte Vorschläge zur Objekterkennung in Form von Begrenzungsrahmen aus \cite{multibox}.\\
+		Der Name \textit{SSD} unterteilt sich in \textit{Single Shot}, \textit{Multibox} und \textit{Detector}. Anhand dessen lässt sich die Funktionsweise dieser Methode erklären. \textit{Single Shot} drückt aus, dass die Architektur mit nur einer Bildanalyse auskommt und die Objekterkennung durchführen kann. Die \textit{Multibox} Methode wurde von \textit{Szegedy} entwickelt \cite{multibox}. Diese gibt klassenbasierte Vorschläge zur Objekterkennung in Form von \textit{Bounding Boxes} aus \cite{multibox}.\\
 		
-		Der Aufbau der \textit{SSD} Architektur ähnelt in der Grundidee der bereits erwähnten \textit{Inception} Methode. Aus den Zwischenschichten können mithilfe von speziellen Filter vorzeitige Klassifikationen vorgenommen und an die bereits erwähnte \textit{NMS} Ausgabechicht weitergeleitet werden \cite{ssd}. So ergeben sich die überlappenden Begrenzungsrahmen.\\
+		Der Aufbau der \textit{SSD} Architektur ähnelt in der Grundidee der bereits erwähnten \textit{Inception} Methode. Aus den Zwischenschichten können mithilfe von speziellen Filter vorzeitige Klassifikationen vorgenommen und an die bereits erwähnte \textit{NMS} Ausgabechicht weitergeleitet werden \cite{ssd}. So ergeben sich die überlappenden \textit{Bounding Boxes}.\\
 		
 		Die \textit{SSD300} Netzarchitektur erreicht im \text{PASCAL VOC} Test aus \textit{Lius} Veröffentlichung einen mAP-Wert von 0,74 bei 59 FPS \cite{ssd}. FPS steht für \textit{frames per second} und besagt, wie viele Bilder pro Sekunde verarbeitet werden.\\
 		

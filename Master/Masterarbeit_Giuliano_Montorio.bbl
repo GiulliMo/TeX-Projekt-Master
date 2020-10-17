@@ -307,6 +307,14 @@
     \field{year}{2014}
   \endentry
 
+  \entry{ioupng}{book}{}
+    \field{labeltitlesource}{title}
+  \field{note}{\url{https://i.pinimg.com/originals/36/30/39/3630397627c2537326e88761abdb6ca4.png}
+  - zugegriffen am 17.10.2020}
+    \field{title}{What is Intersection over Union (IoU) and Mean Average
+  Precision (MAP)?}
+  \endentry
+
   \entry{cnnvergleich}{book}{}
     \name{author}{1}{}{%
       {{hash=uCC}{%

@@ -17,9 +17,9 @@
 %\node[CONSENSsysc] (sys11) at (10.5,6) {Move Base};
 %\node[CONSENSsysc] (sys12) at (10.5,4) {RALFMain};
 
-\draw[CSarrow,dashed] (sys1) -- node[midway,left,align=center,font=\scriptsize]{Begrenzungs-\\rahmen}(sys6);
-\draw[CSarrow,dashed] (sys1) -- (sys2) node[align=center,font=\scriptsize,above] at (1.75,0.2){Begrenzungs-\\rahmen\\Person};
-\draw[CSarrow,dashed] (sys2) -- (sys3) node[align=center,font=\scriptsize,above] at (5.25,0.2){Begrenzungs-\\rahmen\\Gesicht};
+\draw[CSarrow,dashed] (sys1) -- node[midway,left,align=center,font=\scriptsize]{Bounding\\Box}(sys6);
+\draw[CSarrow,dashed] (sys1) -- (sys2) node[align=center,font=\scriptsize,above] at (1.75,0.2){Bounding\\Box\\Person};
+\draw[CSarrow,dashed] (sys2) -- (sys3) node[align=center,font=\scriptsize,above] at (5.25,0.2){Bounding\\Box\\Gesicht};
 \draw[CSarrow,dashed] (sys6) -- (sys5) node[align=center,font=\scriptsize,above] at (3.5,2){Distanz zur Person};
 \draw[CSarrow,dashed] (sys5) -- (sys3) node[align=center,font=\scriptsize,right] at (7,1){Position\\d. Person};
 \draw[CSarrow,dashed] (sys2.333) -- node[midway,above,align=center,font=\scriptsize]{Gesicht}(sys3.207);
