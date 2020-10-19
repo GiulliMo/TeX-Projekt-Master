@@ -23,8 +23,8 @@
 	]
 	
 	\addlegendentry{\scriptsize Eigener Datensatz}; % legende1
-	\addplot[gray, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1tflite.csv};
-	\addplot[black, line width=0.8pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1cocotest.csv};
+	\addplot[gray!50, line width=1pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1tflite.csv};
+	\addplot[black, line width=1pt]  table [x=Step,y=Value,col sep=comma] from {Bilder/cocossdmobilenetv1cocotest.csv};
 	\addlegendimage{/pgfplots/refstyle=plotbrr};				
 	\addlegendentry{\scriptsize \textit{COCO}-Datensatz} ;%legende 2;
 	%\addlegendentry{plot 1}

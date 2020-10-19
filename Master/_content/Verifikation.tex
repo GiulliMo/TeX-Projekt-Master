@@ -1,10 +1,12 @@
 \chapter{Evaluation}
 \label{ch: Verifikation}
-Zur Evaluation der künstlichen neuronalen Netze wird eine anwendungsorientierte \textit{Benchmark} durchgeführt. Hierbei wird anhand der in Abschnitt \ref{subsec: Entwickeltes neuronales Netz} beschriebenen Datensätze die \textit{Precision-Recall}-Methode angewendet. Weiterhin werden die Benchmarks auf dem integrierten Computer des ALFs und einem eingebetteten System ausgeführt. Als eingebettetes System wird ein \textit{Raspberry Pi 3 Model B} verwendet. Die Eckdaten des integrierten Computers sind in der Masterthesis von M.Sc. \textit{Dominik Eickmann} und M.Sc. \textit{Dennis Hotze} dargestellt \cite{alf}.\\
+Zur Evaluation der künstlichen neuronalen Netze wird eine \textit{Benchmark} durchgeführt. Hierbei wird anhand der in Abschnitt \ref{subsec: Entwickeltes neuronales Netz} beschriebenen Datensätze die \textit{Precision-Recall}-Methode aus Abschnitt \ref{subsec: evaluation neuronaler netze} angewendet. Diese ist berücksichtigt Detektionen ab einem \textit{IoU}-Wert von 0,5.\\
+
+ Weiterhin werden die Benchmarks auf dem integrierten Computer des ALFs und einem eingebetteten System ausgeführt. Als eingebettetes System wird ein \textit{Raspberry Pi 3 Model B} verwendet. Die Eckdaten des integrierten Computers sind in der entsprechenden Masterthesis dargestellt \cite{alf}.\\
 
 Es ist keine geräteübergreifende Veränderung der Genauigkeit je Netz zu erwarten, da die Eingangsdaten und die Rechenoperationen identisch sind. Jedoch können so die Bearbeitungszeiten pro Bild für unterschiedliche Hardwareplattformen verglichen werden. Eine präzise Auflistung aller gemessenen Analysezeiten ist in Tabelle \ref{fig: zeitentab} präsentiert. \\
 
-Insgesamt werden für den Test 12755 Bilder von Personen aus dem Trainingsdatensatz entnommen. Der technische Hintergrund hierfür ist in Abschnitt \ref{subsec: Entwickeltes neuronales Netz} zu finden. Die Unterteilung des Datensatzes in Trainings- und Testdaten geschah vor dem Training. Andernfalls würde ein Netz während des Trainings mit bereits bekannten Eingangsdaten rechnen. Dies würde das Testergebnis verfälschen.\\
+Insgesamt werden für die Benchmark 12755 Bilder von Personen aus dem Trainingsdatensatz entnommen, da der eigentliche Testdatensatz des \textit{COCO}-Datensatzes keine grundwahren Labels enthält. Die Unterteilung des Datensatzes in Trainings- und Testdaten geschah vor dem Training. Andernfalls würde ein Netz während der Benchmark mit bereits bekannten Trainingsdaten rechnen. Dies würde das Testergebnis verfälschen. \\
  
 
 Der im Grundlagenabschnitt \ref{subsec: evaluation neuronaler netze} beschriebene \textit{mAP}-Wert wird häufig auf Objekterkennungssystemen mit multiplen Klassen angewendet. Die hier entwickelte Personenerkennung soll jedoch lediglich die Klasse \textit{Person} erkennen. Somit ist der \textit{mAP}-Wert in diesem Fall der Mittelwert eines Messwerts und kann als Integral der \textit{Precision-Recall}-Kurve angesehen werden. Im Verlauf der Evaluation der angewendeten Systeme wird mithilfe einer Berechnungssoftware jeweils der \textit{mAP}-Wert berechnet.
@@ -22,9 +24,9 @@ Die Kombination aus \textit{HOG} und \textit{SVM} erreicht in der Benchmark die 
 
 
 
- Die eingetragenen \textit{Bounding Boxes} fallen bei der Durchsicht der Ergebnisse durch ihre verhältnismäßig große Fläche im Hinblick auf die zu erkennende Person auf. Dies lässt sich auf die Dimension der Zellen zurückführen.\\
+ Die eingetragenen \textit{Bounding Boxes} fallen bei der Durchsicht der Ergebnisse durch ihre verhältnismäßig große Fläche im Hinblick auf die zu erkennenden Personen auf. Dies lässt sich auf die Größe der Zellen zurückführen, da die Ausbreitung der \textit{Bounding Box} davon abhängig ist.\\
  
- Eine Reduktion der Zellengröße wirkte sich negativ auf die Ergebnisse der Personenerkennung aus. Der \textit{IoU}-Wert ist hierdurch entsprechend niedrig und führt zu diesem Ergebnis. Mit den entsprechende Optimierungen wurden die \textit{Precision-Recall} Werte für dieses System maximiert und sind in der obigen Abbildung dargestellt.\\
+ Derartige Erkennungen führen zu einem kleinen \textit{IoU}-Wert und gehen somit negativ in der Bewertung ein. Der Versuch die Zellgröße zu reduzieren, wirkte sich jedoch ebenfalls negativ auf die Ergebnisse der Personenerkennung aus. Mit den entsprechende Optimierungen wurden die \textit{Precision-Recall} Werte für dieses System maximiert. Diese sind in Abbildung \ref{fig: hog1} dargestellt.\\
 	\begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Bilder/iouhog.png}
@@ -32,12 +34,12 @@ Die Kombination aus \textit{HOG} und \textit{SVM} erreicht in der Benchmark die 
 	\label{fig: hogiou}
 \end{figure}
 
-In Abbildung \ref{fig: hogiou} sind sowohl die grundwahren \textit{Bounding Boxes} in roter, sowie die durch das Netz ausgegebenen Begrenzungsrahmen in pinker Farbe gezeigt. Es ist zu erkennen, dass sich die extrahierten \textit{Bounding Boxes} erheblich zu den grundwahren unterscheiden.\\
+In Abbildung \ref{fig: hogiou} sind sowohl die grundwahren \textit{Bounding Boxes} in roter, sowie die durch die \textit{HOG-SVM} Methode ausgegebenen Begrenzungsrahmen in pinker Farbe gezeigt. Es ist zu erkennen, dass sich die extrahierten \textit{Bounding Boxes} im Vergleich zu den grundwahren unterscheiden.\\
 
  Vermutlich markiert das System bei der linken Person den vollständigen Körper aufgrund der Schranktüren, die unter der Person zu sehen sind. Diese erzeugen vertikal verlaufende Gradienten, wie auch die Beine einer Person.
 \input{Bilder/cocossdmobilenetv1tflite}
 
-Eine deutliche Steigerung hinsichtlich der Geschwindigkeit im Vergleich zur \textit{HOG-SVM}-Methode wird durch das quantisierte \textit{MobileNet V1 SSD} Netz erreicht. Die Berechnung des Integrals der \textit{Precision-Recall}-Kurve ergab für den eigenen Datensatz einen Wert von 0,68 und für den \textit{COCO}-Datensatz 0,46. Dieses Netz ist in der Lage 90 verschiedene Klassen zu erkennen. Hierbei nimmt das Netz jedoch lediglich 4 MB Speicherplatz ein.\\
+Eine deutliche Steigerung hinsichtlich der Genauigkeit im Vergleich zur \textit{HOG-SVM}-Methode wird durch das quantisierte \textit{MobileNet V1 SSD} Netz erreicht. Die Berechnung des Integrals der \textit{Precision-Recall}-Kurve ergab für den eigenen Datensatz einen Wert von 0,68 und für den \textit{COCO}-Datensatz 0,46. Dieses Netz ist in der Lage 90 verschiedene Klassen zu erkennen. Hierbei nimmt das Netz jedoch lediglich 4 MB Speicherplatz ein.\\
 
 \input{Bilder/ownssdmobilenetv1}
 
@@ -66,17 +68,15 @@ Abbildung \ref{fig: ssdmobilenetv2} zeigt die \textit{Precision} und \textit{Rec
 
 
 Ein Beispiel der Personenerkennung durch das modifizierte \textit{MobileNet V2 SSDLite} Netz ist in Abbildung \ref{fig: ownnetiou} dargestellt. Das Bild stammt aus dem eigenen Datensatz und zeigt eine kniende Person im Labor für Antriebstechnik der Hochschule Bochum. Die Person wird durch das Netz mithilfe einer pinken \textit{Bounding Box} eingerahmt.\\
-
-Personen sind auf den Bildern im Trainingsdatensatz häufig sitzend oder stehend abgebildet. Das Netz ist somit nicht darauf trainiert, Personen in anderen Körperhaltungen zu erkennen. Folglich ist eine extrahierte Konfidenz von 77 \% für eine Erkennung einer knienden Person als positiv zu werten.\\
-
-Weiterhin ist die Größe der ausgegebenen \textit{Bounding Box} nahezu gleich gegenüber des grundwahren Begrenzungsrahmens. Der \textit{IoU}-Wert fällt somit deutlich höher aus, als der der \textit{HOG-SVM} Kombination.
-
 	\begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{Bilder/12.jpg}
+	\includegraphics[width=0.88\textwidth]{Bilder/12.jpg}
 	\caption{Darstellung einer Person mit kniender Körperhaltung. Die \textit{Bounding Box} des modifizierten \textit{MobileNet V2 SSDLite} ist in pinker Farbe dargestellt.}
 	\label{fig: ownnetiou}
 \end{figure}
+Personen sind auf den Bildern im Trainingsdatensatz häufig sitzend oder stehend abgebildet. Das Netz ist somit nicht darauf trainiert, Personen in anderen Körperhaltungen zu erkennen. Folglich ist eine extrahierte Konfidenz von 77 \% für eine Erkennung einer knienden Person als positiv zu werten. Weiterhin ist die Größe der ausgegebenen \textit{Bounding Box} nahezu gleich gegenüber des grundwahren Begrenzungsrahmens. Der \textit{IoU}-Wert fällt somit deutlich höher aus, als der der \textit{HOG-SVM} Kombination.
+
+
 
 \subsection{Gegenüberstellung der Objekterkennungssysteme}
 
@@ -84,18 +84,24 @@ Nachfolgend werden die Benchmarkergebnisse der untersuchten Objekterkennungssyst
 
 In Abbildung \ref{fig: genauigkeitsvergleich} werden die untersuchten \textit{MobileNet} Architekturen anhand des eigenen Datensatzes verglichen. So kann eine Aussage darüber getroffen werden, ob die Systeme ortsabhängig ein anderes Verhaltensmuster aufzeigen. Es kann beispielsweise vorkommen, dass die Netze aufgrund prägnanter Eigenschaften der Umgebung am Standort der Hochschule Bochum verschieden reagieren.\\
 
+\input{Bilder/gesamtvergleich}
+
 Eine allgemeine Aussage über die Genauigkeiten kann anhand der Darstellung \ref{fig: genauigkeitsvergleichcoco} getroffen werden. Für die Verallgemeinerung sorgt hierbei der \textit{COCO}-Datensatz. Dieser enthält anders als der eigene Datensatz Bilder von verschiedenen Orten.     
 
 
-\input{Bilder/gesamtvergleich}
+
 
 \input{Bilder/gesamtvergleichcoco}
 
-Bei den Auswertungen der \textit{Precision-Recall}-Werte erreichte die Kombination aus \textit{HOG} und \textit{SVM} im Vergleich zu den \textit{MobileNet} Netzen niedrige Ergebnisse. In den Vergleichsgrafiken \ref{fig: genauigkeitsvergleich} und \ref{fig: genauigkeitsvergleichcoco} wird das System aufgrund dessen nicht weiter betrachtet. Überwiegend fällt das quantisierte \textit{MobileNet V1 SSD} Netz in Abbildung \ref{fig: genauigkeitsvergleich} auf. Die Kurve des Netzes zeigt einen anderen Verlauf als die anderen Architekturen. Das Verhältnis aus \textit{Precision} und \textit{Recall} reduziert sich bei derartigen Strukturen durch eine Quantisierung. Netzoptimierungen wie die zweite Version des \textit{MobileNets} oder die Weiterentwicklung des \textit{SSDs} zeigen vorwiegend geringere \textit{Recall}-Werte. Jedoch gibt es im Verlauf der \textit{Precision}-Werte keine nenneswerte Unterschiede. 
+Bei den Auswertungen der \textit{Precision-Recall}-Werte erreichte die Kombination aus \textit{HOG} und \textit{SVM} im Vergleich zu den \textit{MobileNet} Netzen niedrige Ergebnisse. In den Vergleichsgrafiken \ref{fig: genauigkeitsvergleich} und \ref{fig: genauigkeitsvergleichcoco} wird das System aufgrund dessen nicht weiter betrachtet.\\
+
+Überwiegend fällt das quantisierte \textit{MobileNet V1 SSD} Netz in Abbildung \ref{fig: genauigkeitsvergleich} auf. Die Kurve des Netzes verläuft tiefer als die der anderen Architekturen. Das Verhältnis aus \textit{Precision} und \textit{Recall} reduziert sich bei derartigen Strukturen vermutlich durch eine Quantisierung. Netzoptimierungen wie die zweite Version des \textit{MobileNets} oder die Weiterentwicklung des \textit{SSDs} zeigen vorwiegend geringere \textit{Recall}-Werte. Jedoch gibt es im Verlauf der \textit{Precision}-Werte keine nenneswerte Unterschiede. \\
+
+Die Berechnungszeit pro Bild des eigenen Datensatzes aller untersuchten Objekterkennungssysteme ist in Tabelle \ref{fig: zeitentab} präsentiert. Die Tabelle basiert auf der Benchmark, die auf dem Rechner des ALFs in Anwendung auf den eigenen Datensatz durchgeführt wurde.\\
 
 \input{Bilder/zeitenvergleich}
 
-Die Berechnungszeit pro Bild des eigenen Datensatzes aller untersuchten Objekterkennungssysteme ist in Tabelle \ref{fig: zeitentab} präsentiert. Die Tabelle basiert auf der Benchmark, die auf dem Rechner des ALFs in Anwendung auf den eigenen Datensatz durchgeführt wurde.\\
+
 
 Bereits aus den beschriebenen Grundlagen aus Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} geht eine grobe Schätzung der Rechengeschwindigkeiten hervor. Die gezeigten Messergebnisse spiegeln die Erwartungen aus den Grundlagen wider.\\
 
@@ -110,22 +116,26 @@ Mit 18 ms Rechenzeit und einer mittleren Durchschnittsgenauigkeit am eigenen Dat
 
 \section{Bewertung der Netzarchitekturen}
 
-Für eine vollständige Übersicht der Evaluationsergebnisse aller \textit{MobileNet} Netze ist der Graph in Abbildung \ref{fig: komplettvergleich} gezeigt. Der belegte Speicherplatz durch die Netze wird durch den Durchmesser der grauen Kreise angedeutet.\\
+Für eine vollständige Übersicht der Evaluationsergebnisse aller \textit{MobileNet} Netze ist der Graph in Abbildung \ref{fig: komplettvergleich} gezeigt. Der belegte Speicherplatz durch die Netze wird durch den Durchmesser der grauen Kreise angedeutet. Auf den Achsen des Diagramms ist sowohl die mittlere Durchschnittsgenauigkeit als auch die Rechenzeit angegeben.\\
 
 Im Beispiel der \textit{SSDLite} Modifikation ist zu erkennen, dass die Änderung der Ausgabeschicht den Speicherplatz minimiert. Dies bestätigt die These aus Abschnitt \ref{subsec: Entwickeltes neuronales Netz}.\\
 
-Das quantisierte \textit{MobileNet V1 SSD} Netz weist im Verhältnis zu den anderen Netzen eine langsame Rechenzeit und eine niedrige Genauigkeit auf. Letzteres wird durch die Quantisierung verursacht.\\
+Das quantisierte \textit{MobileNet V1 SSD} Netz weist im Verhältnis zu den anderen Netzen eine langsame Rechenzeit und eine niedrige Genauigkeit auf. Letzteres wird vermutlich durch die Quantisierung verursacht. Der Grund für die langsame Rechenzeit ist vermutlich ein Fehler seitens des \textit{Tensorflow} Frameworks. Nutzer berichten in diversen Foren von langsamen Rechenzeiten nach einer Quantizierung \cite{quant}. \\
 
- Die Benchmark Ergebnisse zeigen einen stärkeren Anstieg der Rechengeschwindigkeit bei der Verwendung des \textit{SSDLite} Klassifikators. Zwischen den Versionen der \textit{MobileNet} Architekturen ist keine relevante Leistungsänderung für diese Benchmark zu erkennen. 
-
-\input{Bilder/tollerplot}
+Die Benchmark Ergebnisse zeigen einen stärkeren Anstieg der Rechengeschwindigkeit bei der Verwendung des \textit{SSDLite} Klassifikators. Für die modifizierten \textit{MobileNet V2} Netze verkürzt der Wechsel des Klassifikators die Analysezeit um 4 ms. Zwischen den Versionen der \textit{MobileNet} Architekturen ist keine relevante Leistungsänderung für diese Benchmark zu erkennen. Die Reduktion der Parameter zeichnet sich jedoch in der Größe des benötigten Speicherplatzes ab.\\
 
 Die Auswirkung der Größe eines Netzes und des damit verbundenen Rechenaufwands ist in Abbildung \ref{fig: komplettvergleich} zu beobachten. Durch die in Abschnitt \ref{subsec: Entwickeltes neuronales Netz} beschriebene Modifikation der Netze wurde die jeweilige Architektur auf die Anwendung des ALFs angepasst.\\
 
-Abweichende Werte hinsichtlich der Genauigkeit für gleiche Netzarchitekturen können verschiedene technische Hintergründe haben. Der Effekt ist in Abbildung \ref{fig: komplettvergleich} für die \textit{SSDLite} Architekturen zu erkennen. Unter anderem können unterschiedliche Trainingskonfigurationen dazu führen, dass die Genauigkeiten der KNNs abweichen.\\
+\input{Bilder/tollerplot}
 
-In Abschnitt \ref{subsec: Eigenschaften von neuronalen Netzen} wurde bereits auf den Einfluss des Trainingsdatesatzes auf das Verhaltensmuster eines Netzes eingegangen. Das große \textit{MobileNet V2 SSDLite} Netz wurde vermutlich nicht mit dem in diesem Projekt verwendeteten, benutzerdefinierten \textit{COCO}-Datensatz trainiert. Dies könnte ebenfalls die abweichende Genauigkeit der \textit{SSDLite} Architekturen erklären.
 
+
+Abweichende Werte hinsichtlich der Genauigkeit für gleiche Netzarchitekturen können verschiedene Gründe haben. Der Effekt ist in Abbildung \ref{fig: komplettvergleich} für die \textit{SSDLite} Architekturen zu erkennen. Unter anderem können unterschiedliche Trainingskonfigurationen dazu führen, dass die Genauigkeiten der KNNs abweichen.\\
+
+In Abschnitt \ref{subsec: Eigenschaften von neuronalen Netzen} wurde bereits auf den Einfluss des Trainingsdatesatzes auf das Verhaltensmuster eines Netzes eingegangen. Das große \textit{MobileNet V2 SSDLite} Netz wurde vermutlich nicht mit dem in diesem Projekt verwendeteten, benutzerdefinierten \textit{COCO}-Datensatz trainiert. Dies könnte ebenfalls die abweichende Genauigkeit der \textit{SSDLite} Architekturen erklären.\\
+
+
+Die Abbildungen \ref{fig: owndatat}a und b zeigen erfolgreiche Analysen des modifizierten \textit{MobileNet V2 SSDLite} Netzes. In Abbildung \ref{fig: owndatat}a wurde die linke Person mit einer Konfidenz von 87 \% und die rechte Person mit einer Konfidenz von 67 \% erkannt. Die Darstellung \ref{fig: owndatat}b zeigt, dass die Person im Vordergrund mit einer Wahrscheinlichkeit von 84 \% und die verdeckte Person mit einer Sicherheit von {72~\%} erkannt wurde.  \\
 
 	\begin{figure}[H]
 	\centering
@@ -144,9 +154,8 @@ In Abschnitt \ref{subsec: Eigenschaften von neuronalen Netzen} wurde bereits auf
 
 
 
-Die Abbildungen \ref{fig: owndatat}a und b zeigen erfolgreiche Analysen des modifizierten \textit{MobileNet V2 SSDLite} Netzes. In Bild \ref{fig: owndatat}a wurde die linke Person mit einer Konfidenz von 87 \% und die rechte Person mit einer Konfidenz von 67 \% erkannt. Darstellung \ref{fig: owndatat}b zeigt, dass die Person im Vordergrund mit einer Wahrscheinlichkeit von 84 \% und die Person im mit einer Sicherheit von {72~\%} erkannt wurde. \\
 
-Eine fehlerhafte Personenerkennung ist in Abbildung \ref{fig: hogtest} dargestellt. Ein Küchentuch wurde fälschlicherweise als Person klassifiziert. Der Grund dafür ist vermutlich die Silhouette des Tuchs. Diese ähnelt grob dem Körperbau eines Mensche. Dies könnte zu einer ähnlichen Struktur der durch den \textit{HOG} extrahierten Gradienten und somit zu einer fehlerhaften Klassifizierung geführt haben.
+Eine fehlerhafte Personenerkennung durch die Kombination aus \textit{HOG} und \textit{SVM} ist in Abbildung \ref{fig: hogtest} dargestellt. Ein Küchentuch wurde fälschlicherweise als Person klassifiziert. Der Grund dafür ist vermutlich die Silhouette des Tuchs.\\
 
 	\begin{figure}[H]
 	\centering
@@ -154,3 +163,15 @@ Eine fehlerhafte Personenerkennung ist in Abbildung \ref{fig: hogtest} dargestel
 	\caption{Veranschaulichung einer fehlerhaften Personenerkennung. Das dargestellte Küchentuch wurde von der \textit{HOG-SVM} Kombination als Person Klassifiziert.}
 	\label{fig: hogtest}
 \end{figure}
+
+ Diese ähnelt grob dem Körperbau eines Menschens. Dies könnte zu einer ähnlichen Struktur der durch den \textit{HOG} extrahierten Gradienten und somit zu einer fehlerhaften Klassifizierung geführt haben.\\
+
+
+
+
+
+In diesem Kapitel wurden Objekterkennungssysteme nach verschiedenen Eigenschaften untersucht. Zusammenfassend können zwei der sechs präsentierten Methoden für den Einsatz am ALF sowie auf einem eingebetteten System empfohlen werden. Die Empfehlungen basiert hierbei auf die Berücksichtigung aller dargestellten Messergebnisse und dem jeweiligen Anwendungsfall.\\
+
+Für eine reine Personenerkennung im Nahbereich des Fahrzeugs wird der Einsatz des modifizierten \textit{MobileNet V2 SSDLite} empfohlen. Das Netz erreicht sowohl auf dem Computer des ALFs als auch auf dem \textit{Raspberry Pi} die geringsten Analysezeiten. Lässt der Anwendungsfall eine Genauigkeit von 0,74 zu, ist die genannte Architektur zu wählen.\\
+
+Die Rechenzeit der großen \textit{MobileNet V2 SSDLite} Architektur ist lediglich 2 ms langsamer als das modifizierte Netz. Somit lassen sich mit nahezu gleicher Geschwindigkiet deutlich mehr Objekte erkennen. Wenn es folglich um die Erkennung mehrerer Klassen geht, wird die Implementierung des \textit{MobileNet V2 SSDLite} Netzes mit 90 Klassen empfohlen.\\ 

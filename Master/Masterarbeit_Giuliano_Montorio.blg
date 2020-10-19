@@ -20,50 +20,56 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'field_info' (item size: 4) to 13340 items.
+Reallocating 'field_info' (item size: 4) to 13757 items.
 Database file #1: Masterarbeit_Giuliano_Montorio-blx.bib
 Database file #2: _bib/biblio.bib
+I was expecting a `,' or a `}'---line 219 of file _bib/biblio.bib
+ : 
+ : title = {Machine Learning for Mobile Developers: Tensorflow Lite Framework}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Biblatex version: 3.13
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 60 entries,
+You've used 63 entries,
             6365 wiz_defined-function locations,
-            1422 strings with 20094 characters,
-and the built_in function-call counts, 292644 in all, are:
-= -- 20667
-> -- 4721
-< -- 1011
-+ -- 5212
-- -- 1501
-* -- 20254
-:= -- 29743
+            1433 strings with 20685 characters,
+and the built_in function-call counts, 305256 in all, are:
+= -- 21518
+> -- 4945
+< -- 1059
++ -- 5324
+- -- 1566
+* -- 21156
+:= -- 30847
 add.period$ -- 0
-call.type$ -- 60
-change.case$ -- 384
+call.type$ -- 63
+change.case$ -- 403
 chr.to.int$ -- 127
-cite$ -- 118
-duplicate$ -- 27960
-empty$ -- 29670
-format.name$ -- 2996
-if$ -- 62229
+cite$ -- 124
+duplicate$ -- 28971
+empty$ -- 31067
+format.name$ -- 3131
+if$ -- 65070
 int.to.chr$ -- 0
-int.to.str$ -- 135
+int.to.str$ -- 143
 missing$ -- 0
-newline$ -- 1246
-num.names$ -- 2188
-pop$ -- 20249
+newline$ -- 1291
+num.names$ -- 2308
+pop$ -- 21235
 preamble$ -- 1
-purify$ -- 639
+purify$ -- 667
 quote$ -- 0
-skip$ -- 8801
+skip$ -- 9244
 stack$ -- 0
-substring$ -- 39002
-swap$ -- 5912
-text.length$ -- 1099
+substring$ -- 40736
+swap$ -- 6161
+text.length$ -- 1150
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 2028
+type$ -- 2130
 warning$ -- 0
-while$ -- 3503
+while$ -- 3589
 width$ -- 0
-write$ -- 1187
+write$ -- 1229
+(There was 1 error message)

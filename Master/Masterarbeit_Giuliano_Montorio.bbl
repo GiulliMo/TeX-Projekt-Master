@@ -130,7 +130,7 @@
     \strng{fullhash}{M3}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{A view of Artificial Neural Network - 2014 International
+    \field{title}{A View of Artificial Neural Network - 2014 International
   Conference on Advances in Engineering Technology Research (ICAETR - 2014)}
     \field{year}{2014. S. 1-3}
   \endentry
@@ -175,7 +175,7 @@
     \field{year}{2017. S. 1422-1432}
   \endentry
 
-  \entry{last}{article}{}
+  \entry{last}{book}{}
     \name{author}{1}{}{%
       {{hash=LH}{%
          prefix={{Liu, Q., }{Jiang, H., }{Ling, Z.-H.}{Wei S. }und},
@@ -191,6 +191,25 @@
     \field{title}{Probabilistic Reasoning via Deep Learning: Neural Association
   Models - Computing Research Repository (CoRR)}
     \field{year}{2016}
+  \endentry
+
+  \entry{Kriesel}{book}{}
+    \name{author}{1}{}{%
+      {{hash=DK}{%
+         family={D.},
+         familyi={D\bibinitperiod},
+         given={{Kriesel,}},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DK1}
+    \strng{fullhash}{DK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{\url{http://www.dkriesel.com/science/neural\_networks} -
+  zugegriffen am 01.10.2020}
+    \field{title}{Ein kleiner Überblick über Neuronale Netze}
+    \field{year}{2007}
   \endentry
 
   \entry{neuron}{book}{}
@@ -228,23 +247,26 @@
     \field{year}{2020}
   \endentry
 
-  \entry{Kriesel}{book}{}
+  \entry{deeplearning}{book}{}
     \name{author}{1}{}{%
-      {{hash=DK}{%
-         family={D.},
-         familyi={D\bibinitperiod},
-         given={{Kriesel,}},
-         giveni={K\bibinitperiod},
+      {{hash=uCAGIBY}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Courville,}\bibnamedelima A.},
+         familyi={C\bibinitperiod\bibinitdelim A\bibinitperiod},
+         given={{Goodfellow,} I. {, Bengio,}\bibnamedelima Y.},
+         giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim
+  B\bibinitperiod\bibinitdelim Y\bibinitperiod},
       }}%
     }
-    \strng{namehash}{DK1}
-    \strng{fullhash}{DK1}
+    \strng{namehash}{CAGIBYu1}
+    \strng{fullhash}{CAGIBYu1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{note}{\url{http://www.dkriesel.com/science/neural\_networks} -
-  zugegriffen am 01.10.2020}
-    \field{title}{Ein kleiner Überblick über Neuronale Netze}
-    \field{year}{2007}
+    \field{note}{\url{http://www.deeplearningbook.org} - zugegriffen am
+  21.09.2020. The MIT Press}
+    \field{title}{{Deep Learning}}
+    \field{year}{2016}
   \endentry
 
   \entry{Ertel}{book}{}
@@ -305,6 +327,23 @@
     \field{title}{Bildverarbeitung und Objekterkennung - Computer Vision in
   Industrie und Medizin. Springer Vieweg}
     \field{year}{2014}
+  \endentry
+
+  \entry{ioupaper}{book}{}
+    \name{author}{1}{}{%
+      {{hash=R}{%
+         family={{Rezatofighi, S. H., }{Tsoi, N., }{Gwak, J., }{Sadeghian, A.,
+  }{Reid, I. D. }und{ Savarese, S.}},
+         familyi={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{R1}
+    \strng{fullhash}{R1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Generalized Intersection over Union: {A} Metric and {A} Loss
+  for Bounding Box Regression - Computing Research Repository (CoRR)}
+    \field{year}{2019}
   \endentry
 
   \entry{ioupng}{book}{}
@@ -416,28 +455,6 @@
   on Electrical \& Electronic Engineering (ICEEE)}
     \field{month}{12}
     \field{year}{2017}
-  \endentry
-
-  \entry{deeplearning}{book}{}
-    \name{author}{1}{}{%
-      {{hash=uCAGIBY}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={{Courville,}\bibnamedelima A.},
-         familyi={C\bibinitperiod\bibinitdelim A\bibinitperiod},
-         given={{Goodfellow,} I. {, Bengio,}\bibnamedelima Y.},
-         giveni={G\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim
-  B\bibinitperiod\bibinitdelim Y\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{CAGIBYu1}
-    \strng{fullhash}{CAGIBYu1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{\url{http://www.deeplearningbook.org} - zugegriffen am
-  21.09.2020. The MIT Press}
-    \field{title}{{Deep Learning}}
-    \field{year}{2016}
   \endentry
 
   \entry{carpng}{book}{}
@@ -718,7 +735,7 @@
     \field{year}{2016}
   \endentry
 
-  \entry{nms}{article}{}
+  \entry{nms}{book}{}
     \name{author}{1}{}{%
       {{hash=H}{%
          family={{Hosang J. H., }{Benenson, R. }and{ Schiele, B.}},
@@ -771,7 +788,7 @@
   Praxis mit UML 2.5}
   \endentry
 
-  \entry{mooremealy}{article}{}
+  \entry{mooremealy}{book}{}
     \name{author}{1}{}{%
       {{hash=S}{%
          family={{Solov’ev, V.}},
@@ -851,90 +868,6 @@
   Secure Comp., 16th Int. Conf. on Pervasive Intelligence \& Comp., 4th Int.
   Conf. on Big Data Intelligence \& Comp., and 3rd Cyber Sci. and Tech. Cong.}
     \field{year}{2018}
-  \endentry
-
-  \entry{frameworks}{book}{}
-    \name{author}{1}{}{%
-      {{hash=uPP}{%
-         prefix={und},
-         prefixi={u\bibinitperiod},
-         family={{Pathak, V.}},
-         familyi={P\bibinitperiod},
-         given={{Parvat, A.,}{ Chavan, J., }{Kadam, S., }{Dev, S.,}},
-         giveni={P\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{PPu1}
-    \strng{fullhash}{PPu1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{A survey of deep-learning frameworks - 2017 International
-  Conference on Inventive Systems and Control (ICISC)}
-    \field{year}{2017. S. 1-7}
-  \endentry
-
-  \entry{tflite}{book}{}
-    \name{author}{1}{}{%
-      {{hash=F}{%
-         family={{Farhoodfar, A.}},
-         familyi={F\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{F1}
-    \strng{fullhash}{F1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Machine Learning for Mobile Developers: Tensorflow Lite
-  Framework}
-    \field{month}{04}
-    \field{year}{2019}
-  \endentry
-
-  \entry{cpugpu}{book}{}
-    \name{author}{1}{}{%
-      {{hash=W}{%
-         family={{Wang, Y., }{Wei, G.-Y., und Brooks, D.}},
-         familyi={W\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{W1}
-    \strng{fullhash}{W1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Benchmarking TPU, GPU, and {CPU} Platforms for Deep Learning}
-    \field{year}{2019}
-  \endentry
-
-  \entry{coco}{book}{}
-    \name{author}{1}{}{%
-      {{hash=L}{%
-         family={{Lin, T.-Y.}},
-         familyi={L\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{L1}
-    \strng{fullhash}{L1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{\url{https://cocodataset.org/} - zugegriffen am 24.09.2020}
-    \field{title}{COCO - Common Objects in Context}
-  \endentry
-
-  \entry{cocopaper}{book}{}
-    \name{author}{1}{}{%
-      {{hash=L}{%
-         family={{Lin, T.-Y., }{Maire, M., }{Belongie, S., }{Hays, J.,
-  }{Perona, P., }{Ramanan, D., }{Doll{\'a}r, P., }{und Zitnick, C. L.}},
-         familyi={L\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{L2}
-    \strng{fullhash}{L2}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Microsoft {COCO:} Common Objects in Context - Computing
-  Research Repository (CoRR)}
-    \field{year}{2014}
   \endentry
 
   \entry{tensorflow}{misc}{}
@@ -1189,6 +1122,108 @@
     \field{year}{2016}
   \endentry
 
+  \entry{frameworks}{book}{}
+    \name{author}{1}{}{%
+      {{hash=uPP}{%
+         prefix={und},
+         prefixi={u\bibinitperiod},
+         family={{Pathak, V.}},
+         familyi={P\bibinitperiod},
+         given={{Parvat, A.,}{ Chavan, J., }{Kadam, S., }{Dev, S.,}},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PPu1}
+    \strng{fullhash}{PPu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{A survey of deep-learning frameworks - 2017 International
+  Conference on Inventive Systems and Control (ICISC)}
+    \field{year}{2017. S. 1-7}
+  \endentry
+
+  \entry{tflite}{book}{}
+    \name{author}{1}{}{%
+      {{hash=F}{%
+         family={{Farhoodfar, A.}},
+         familyi={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{F1}
+    \strng{fullhash}{F1}
+    \field{labelnamesource}{author}
+  \field{note}{\url{https://de.slideshare.net/AvidFarhood/2019-0423tf-liteavidf}
+  - zugegriffen am 19.10.2020}
+    \field{month}{04}
+    \field{year}{2019}
+  \endentry
+
+  \entry{warumtf}{book}{}
+    \name{author}{1}{}{%
+      {{hash=X}{%
+         family={{Xu, M., }{Liu, J., }{Liu. Y., }{Lin, F., }{Liu, Y., }und{
+  Liu, X.}},
+         familyi={X\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{X1}
+    \strng{fullhash}{X1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{When Mobile Apps Going Deep: An Empirical Study of Mobile
+  Deep Learning}
+    \field{year}{2018}
+  \endentry
+
+  \entry{cpugpu}{book}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={{Wang, Y., }{Wei, G.-Y., und Brooks, D.}},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{\url{https://arxiv.org/pdf/1907.10701.pdf} - zugegriffen
+  17.10.2020}
+    \field{title}{Benchmarking TPU, GPU, and {CPU} Platforms for Deep Learning}
+    \field{year}{2019}
+  \endentry
+
+  \entry{coco}{book}{}
+    \name{author}{1}{}{%
+      {{hash=L}{%
+         family={{Lin, T.-Y.}},
+         familyi={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{L1}
+    \strng{fullhash}{L1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{\url{https://cocodataset.org/} - zugegriffen am 24.09.2020}
+    \field{title}{COCO - Common Objects in Context}
+  \endentry
+
+  \entry{cocopaper}{book}{}
+    \name{author}{1}{}{%
+      {{hash=L}{%
+         family={{Lin, T.-Y., }{Maire, M., }{Belongie, S., }{Hays, J.,
+  }{Perona, P., }{Ramanan, D., }{Doll{\'a}r, P., }{und Zitnick, C. L.}},
+         familyi={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{L2}
+    \strng{fullhash}{L2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Microsoft {COCO:} Common Objects in Context - Computing
+  Research Repository (CoRR)}
+    \field{year}{2014}
+  \endentry
+
   \entry{keraspython}{book}{}
     \name{author}{1}{}{%
       {{hash=A}{%
@@ -1301,8 +1336,8 @@
          familyi={R\bibinitperiod},
       }}%
     }
-    \strng{namehash}{R1}
-    \strng{fullhash}{R1}
+    \strng{namehash}{R2}
+    \strng{fullhash}{R2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
   \field{note}{\url{https://www.pyimagesearch.com/2015/11/09/pedestrian-detection-opencv/}
@@ -1333,6 +1368,22 @@
   \field{note}{\url{https://github.com/kaka-lin/object-detection\#sdlite-mobilenet-v2}
   - zugegriffen am 24.09.2020}
     \field{title}{SSDLite-MobileNet v2 (tflite)}
+  \endentry
+
+  \entry{quant}{book}{}
+    \name{author}{1}{}{%
+      {{hash=c}{%
+         family={changyun79},
+         familyi={c\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{c1}
+    \strng{fullhash}{c1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{\url{https://github.com/tensorflow/tensorflow/issues/2807} -
+  zugegriffen am 17.10.2020}
+    \field{title}{Slow quantized graph}
   \endentry
 \enddatalist
 \endinput

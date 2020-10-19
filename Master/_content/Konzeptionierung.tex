@@ -9,7 +9,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 	In Abbildung \ref{fig: consensenv} ist das erweiterte Umfeldmodell des ALFs zu sehen. Das ursprüngliche Umfeldmodell ist in der entsprechenden Bachelorarbeit wiederzufinden \cite{Bachelorarbeit}. Der Aufbau des Entwurfs besteht im Allgemeinen aus hellblauen und gelben Hexagonen, die Wirk- und Umfeldelemente repräsentieren. Der Informationsfluss zwischen den Elementen ist durch gestrichelte Pfeile gekennzeichnet.\\
 	
-	Das ALF gilt als Kern des Gesamtsystems und ist deswegen im Modell mittig dargestellt. Es interagiert sowohl mit Wirk- als auch mit Umfeldelementen, wie in Abbildung \ref{fig: consensenv} gezeigt. Zur Umsetzung von Fahraufgaben wird zusätzlich zur Personenerkennung der im Abschnitt \ref{sec: Zustandautomat} erwähnte Zustandsautomat entwickelt. Dieser ist in Abbildung \ref{fig: consensenv} mit einem gelben Hexagon dargestellt. Der EA wird mittels der von Herrn Dittmann entwickelten Sprachverarbeitung gesteuert. Diese kann, wie in Abbildung \ref{fig: consensenv} gezeigt, sowohl auf dem Rechner des ALFs als auch auf dem integrierten \textit{Raspberry Pi} ausgeführt werden \cite{Dittmann}. \\
+	Das ALF gilt als Kern des Gesamtsystems und ist deswegen im Modell mittig dargestellt. Es interagiert sowohl mit Wirk- als auch mit Umfeldelementen, wie in Abbildung \ref{fig: consensenv} gezeigt. Zur Umsetzung von Fahraufgaben wird zusätzlich zur Personenerkennung der im Abschnitt \ref{sec: Zustandautomat} erwähnte Zustandsautomat entwickelt. Dieser ist in Abbildung \ref{fig: consensenv} mit einem gelben Hexagon dargestellt. Der EA wird mittels der von Herrn Dittmann entwickelten Sprachverarbeitung gesteuert.\\
 	
 	\input{Bilder/umfeldmodell}	
 	
@@ -30,11 +30,15 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 	Die Personenerkennung gilt als eine von zwei in dieser Masterarbeit entwickelten Erweiterungen und gleichzeitig als Hauptthema. Ziel hierbei ist die eindeutige Unterscheidung und Wiedererkennung von Personen durch das System. In diesem Abschnitt wird die Personenerkennung in ihrer Struktur und Umsetzung näher erläutert. Weiterhin werden konkurrierende Softwarekomponenten gegenübergestellt.\\
 	
-	Grundlage für eine Personenerkennung ist die eindeutige Identifikation eines Menschen. Folglich muss ein System in der Lage sein, äußerliche Merkmale festzustellen, die langfristig wiederzuerkennen sind. Aufgrund dessen musste das äußere Erscheinungsbild der Person, wie zum Beispiel die Kleidung oder die Körperhaltung dieser als Identifikationsmerkmal ausgeschlossen werden. Das Gesicht eines Menschen verändert sich mit fortlaufendem Alter. Es wird angenommen, dass sich die Benutzergruppe des ALFs auf Studenten und Mitarbeiter des Hochschule Bochum beschränkt. Mit dieser Annahme besteht die Benutzergruppe des Fahrzeugs aus Personen mit einem Alter zwischen 20 und 65 Jahren. Durch diese Beschränkung könnten individuelle Personen schätzungsweise mindestens 5 Jahre durch das Gesicht erkannt werden. Die eindeutige Erkennung eines Menschen setzt also voraus, dass das Gesicht einer Person von der Kamera des ALFs erfasst wird. \\ 
+	Grundlage für eine Personenerkennung ist die eindeutige Identifikation eines Menschen. Folglich muss ein System in der Lage sein, äußerliche Merkmale festzustellen, die langfristig wiederzuerkennen sind. Aufgrund dessen musste das äußere Erscheinungsbild der Person, wie zum Beispiel die Kleidung oder die Körperhaltung dieser als Identifikationsmerkmal ausgeschlossen werden.\\
+	
+	Das Gesicht eines Menschen verändert sich mit fortlaufendem Alter. Es wird angenommen, dass sich die Benutzergruppe des ALFs auf Studenten und Mitarbeiter des Hochschule Bochum beschränkt. Mit dieser Annahme besteht die Benutzergruppe des Fahrzeugs aus Personen mit einem Alter zwischen circa 20 und 65 Jahren. Durch diese Beschränkung könnten individuelle Personen schätzungsweise mindestens 5 Jahre durch das Gesicht erkannt werden. Die eindeutige Erkennung eines Menschen setzt also voraus, dass das Gesicht einer Person von der Kamera des ALFs erfasst wird. \\ 
 	
 	\subsection{Wirkstruktur der Personenerkennung}
 	\label{subsec: Wirkstrukur Personenerkennung}
-	In Abbildung \ref{fig: consenspers} ist die Wirkstruktur der Personenerkennung dargestellt. Eine der Gesichtserkennung vorangegangene Personendetektion gibt die Bildkoordinaten der erkannten Menschen an die Positionsbestimmung und die Gesichtserkennung weiter. In den Bildinformationen der \textit{Kinect}-Kameras befinden sich unter anderem auch Tiefeninformationen passend zum gelieferten Farbbild. Somit wird die Distanz und die daraus resultierende Position einer Person ebenfalls errechnet. Die Abschnitte \ref{sec: Bestimmung der Positionskoordinaten} und \ref{sec: Funktionsweise des Gesamtsystems} führen die Berechnung und die Methodik genauer aus.\\
+	In Abbildung \ref{fig: consenspers} ist die Wirkstruktur der Personenerkennung dargestellt. Eine der Gesichtserkennung vorangegangene Personendetektion gibt die Bildkoordinaten der erkannten Menschen an die Positionsbestimmung und die Gesichtserkennung weiter.\\
+	
+	In den Bildinformationen der \textit{Kinect}-Kameras befinden sich unter anderem auch Tiefeninformationen passend zum gelieferten Farbbild. Somit wird die Distanz und die daraus resultierende Position einer Person ebenfalls errechnet. Die Abschnitte \ref{sec: Bestimmung der Positionskoordinaten} und \ref{sec: Funktionsweise des Gesamtsystems} führen die Berechnung und die Methodik genauer aus.\\
 		
 	\input{Bilder/wirkpers}
 	
@@ -45,28 +49,38 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	\subsection{Konzept der Bildverarbeitung}
 	\label{subsec: Auswahl und Training der verwendeten neuronalen Netze}
 		
-	In Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} wurde bereits erwähnt, dass state-of-the-art Lösungen häufig auf künstliche, neuronale Netze zurückgreifen. Insbesondere werden Konvolutionsnetze bevorzugt, wenn es um eine Umsetzung einer Objekterkennung geht. Auch in dieser Masterarbeit werden CNNs untersucht. Jedoch werden die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} beschrieben Methoden weiterhin berücksichtigt, indem ihre Leistung mit der der Faltungsnetze verglichen wird. Im Folgenden werden Vergleiche zwischen den in Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} genannten künstlichen neuronalen Netzen gezogen. Weiterhin wird eine Auswahl für die praktische Anwendung am ALF getroffen. \\
+	In Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} wurde bereits erwähnt, dass state-of-the-art Lösungen häufig auf künstliche, neuronale Netze zurückgreifen. Insbesondere werden Konvolutionsnetze bevorzugt, wenn es um eine Umsetzung einer Objekterkennung geht \cite{bildundobjekt}.\\
+	
+	Auch in dieser Masterarbeit werden CNNs in Anwendungs auf eine Objekterkennung untersucht. Jedoch werden die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} beschrieben Methoden weiterhin berücksichtigt, indem ihre Eigenschaften mit der der Faltungsnetze verglichen werden. Weiterhin wird eine Auswahl für die praktische Anwendung am ALF getroffen. \\
 		
 		
 		
-		\input{Bilder/cnnvergleich}	
+	
 		
-		Tabelle \ref{fig: cnnvergleich} zeigt den Vergleich unterschiedlicher Netzarchitekturen. Hierbei ist zu beachten, dass die Angaben je nach Trainings- und Testdatensatz variieren können. Die nähere Auswahl der gezeigten CNNs \textit{VGG-16}, \textit{ResNet50}, \textit{InceptionV3} und \textit{MobileNet} wurde bereits in Abschnitt \ref{sec: cnns} begründet. Die Gegenüberstellung der Parameteranzahl und des daraus resultierenden Speicherplatzes zeigt deutlich, dass die \textit{MobileNet}-Architektur hierbei die kleinsten Werte aufweist. Bei der Betrachtung der Genauigkeiten im Hinblick auf die Tiefe der Netze fällt auf, dass sich offensichtlich keinerlei Relation beschreiben lässt. \textit{InceptionV3} weist bei den Top-$x$ Fehlern die höchsten Werte auf und hat somit die höchste Genauigkeit.\\
+		Die Tabelle \ref{fig: cnnvergleich} zeigt den Vergleich unterschiedlicher Netzarchitekturen. Hierbei ist zu beachten, dass die Angaben je nach Trainings- und Testdatensatz variieren können. Die nähere Auswahl der gezeigten CNNs \textit{VGG-16}, \textit{ResNet50}, \textit{InceptionV3} und \textit{MobileNet} wurde bereits in Abschnitt \ref{sec: cnns} begründet.\\
 		
-		Im Bezug auf die entwickelte Wirkstruktur \ref{fig: consenspers} zielt der Anwendungsfall darauf ab, Personen sicher und schnell zu erkennen. Die Aufgabe der reinen Personendetektion erfordert jedoch keine sicherheitsrelevanten Eigenschaften des Netzes, sodass geringe Abstriche bei der Genauigkeit in Kauf genommen werden können. Die \textit{MobileNet}-Architektur zeigt das gesuchte Zusammenspiel aus geringem Speicherbedarf und verhältnismäßig hoher Genauigkeit. Durch den Einsatz von \textit{MobileNet} wird im Vergleich zu \textit{InceptionV3} eine Einsparung des Speicherplatzes um circa 82 \% bei einem Verlust der Top-1 Genauigkeit um lediglich 10 \% erreicht. Für eine zukünftige Anwendung auf einem eingebetteten System eignet sich die Umsetzung mithilfe von \textit{MobileNet}.\\
+			\input{Bilder/cnnvergleich}	
+		
+		Die Gegenüberstellung der Parameteranzahl und des daraus resultierenden Speicherplatzes zeigt, dass die \textit{MobileNet}-Architektur hierbei die kleinsten Werte aufweist. Bei der Betrachtung der Genauigkeiten im Hinblick auf die Tiefe der Netze fällt auf, dass sich offensichtlich keinerlei Relation beschreiben lässt. \textit{InceptionV3} weist bei den Top-$x$ Fehlern die höchsten Werte auf und hat somit die höchste Genauigkeit.\\
+		
+		Im Bezug auf die entwickelte Wirkstruktur \ref{fig: consenspers} zielt der Anwendungsfall darauf ab, Personen sicher und schnell zu erkennen. Die Aufgabe der reinen Personendetektion erfordert jedoch keine sicherheitsrelevanten Eigenschaften des Netzes, sodass geringe Abstriche bei der Genauigkeit in Kauf genommen werden können.\\
+		
+		Die \textit{MobileNet}-Architektur zeigt das gesuchte Zusammenspiel aus geringem Speicherbedarf und verhältnismäßig hoher Genauigkeit. Durch den Einsatz von \textit{MobileNet} wird im Vergleich zu \textit{InceptionV3} eine Einsparung des Speicherplatzes um circa 82 \% bei einem Verlust der Top-1 Genauigkeit um lediglich 10 \% erreicht. Für eine zukünftige Anwendung auf einem eingebetteten System eignet sich die Umsetzung mithilfe von \textit{MobileNet}.\\
 		
 		\input{Bilder/mobilessd}
 		
-		Bereits in Abschnitt \ref{sec: cnns} wurde die Kombination diverser Architekturen zur Merkmalsextraktion mit entsprechenden Detektoren beschrieben. In Tabelle \ref{fig: mobilessdtab} werden derartige Verknüpfungen und ihre Eigenschaften gezeigt. In der Fachsprache wird der Teil der Merkmalsextraktion eines Netzes häufig auch als \textit{Backbone} bezeichnet. Die Tabelle zeigt die Architekturen \textit{Faster R-CNN} und \textit{SSD} mit jeweils einem \textit{VGG-16} Netz als \textit{Backbone} und das \textit{MobileNet SSD} aus Zhangs Publikation \cite{embedded}. Zhang wendet dort ebenfalls die \textit{MobileNet-SSD} Architektur auf einem eingebetteten System an und erreicht eine Rechenzeit von 1.13 FPS. Wie bereits in Abschnitt \ref{sec: cnns} beschrieben können am ALF maximal bis zu 60 Bilder in der Sekunde eingehen. Mit 7 FPS und einer geringeren Genauigkeit als der \text{SSD (VGG-16)} ist der Einsatz des \text{Faster R-CNN} ausgeschlossen. Die \textit{MobileNet-SSD} Architektur erreicht laut der präsentierten Benchmark nahezu 60 FPS und nimmt aufgrund des \textit{MobileNet Backbones} weniger Speicherplatz ein als das \textit{SSD (VGG-16)} Netz \cite{leightweight}. \\ 
+		Bereits in Abschnitt \ref{sec: cnns} wurde die Kombination diverser Architekturen zur Merkmalsextraktion mit entsprechenden Detektoren beschrieben. In Tabelle \ref{fig: mobilessdtab} werden derartige Verknüpfungen und ihre Eigenschaften gezeigt. In der Fachsprache wird der Teil der Merkmalsextraktion eines Netzes häufig auch als \textit{Backbone} bezeichnet.\\
 		
-		Das Kapitel \ref{ch: Verifikation} wird sich mit der tatsächlich gemessenen Leistung der behandelten Netze im Feld beschäftigen. Hierbei wird der Einsatz auf verschiedenen Hardwareplattformen getestet. Die durch die wissenschaftlichen Beiträge erlangten Informationen zeigen jedoch, welche Netzarten und -architekturen hierfür in Betracht gezogen werden können. Über die \textit{SSDLite}-Struktur gibt es keine aussagekräftigen Benchmarks. Auch diese Architektur wird in der Evaluation in Kapitel \ref{ch: Verifikation} berücksichtigt.
+		Die Tabelle zeigt die Architekturen \textit{Faster R-CNN} und \textit{SSD} mit jeweils einem \textit{VGG-16} Netz als \textit{Backbone} und das \textit{MobileNet SSD} aus Zhangs Publikation \cite{embedded}. Wie bereits in Abschnitt \ref{sec: cnns} beschrieben können am ALF maximal bis zu 60 Bilder in der Sekunde eingehen. Mit 7 FPS und einer geringeren Genauigkeit als der \text{SSD (VGG-16)} ist der Einsatz des \text{Faster R-CNN} ausgeschlossen. Die \textit{MobileNet SSD} Architektur erreicht laut der präsentierten Benchmark nahezu 60 FPS und nimmt aufgrund des \textit{MobileNet Backbones} weniger Speicherplatz ein als das \textit{SSD (VGG-16)} Netz \cite{leightweight}. \\ 
+		
+		Das Kapitel \ref{ch: Verifikation} wird sich mit der tatsächlich gemessenen Leistung der behandelten Netze im Feld beschäftigen. Hierbei wird der Einsatz auf verschiedenen Hardwareplattformen getestet. Die durch die wissenschaftlichen Beiträge erlangten Informationen zeigen jedoch, welche Netzarten und -architekturen hierfür in Betracht gezogen werden können. Über die \textit{SSDLite}-Struktur gibt es keine aussagekräftigen Benchmarks. Auch diese Methode wird in der Evaluation in Kapitel \ref{ch: Verifikation} berücksichtigt.
 		
 		\subsection{Entwicklung eines neuronalen Netzes}
 		\label{subsec: Entwickeltes neuronales Netz}
 		
 		Die in Abschnitt \ref{subsec: Auswahl und Training der verwendeten neuronalen Netze} behandelten neuronalen Netze wurden auf ihre Leistungsfähigkeit passend zum Anwendungsfall am ALF untersucht. Weiterhin kann die Struktur eines gewählten KNNs optimiert werden. Der Vorgang wird in diesem Abschnitt beschrieben.\\
 		
-		Mittlerweile gibt es auf Seiten wie zum Beispiel \textit{Tensorflow.org} oder \textit{Keras.io} viele Möglichkeiten zum Download vortrainierter Netze. Viele der angebotenen KNNs sind je nach Anwendungsfall diversen Kategorien zugeordnet. Unter anderem finden sich dort auch KNNs zur Objekterkennung. Die meisten sind darauf ausgelegt, multiple Objekte zu erkennen. Somit lassen sich beispielsweise mit einem Netz nicht nur Personen, sondern auch Flugzeuge, Autos und viele weitere Gegenstände des Alltags erkennen. \\ 
+		Mittlerweile gibt es auf Seiten wie zum Beispiel \textit{Tensorflow.org} oder \textit{Keras.io} viele Möglichkeiten zum Download vortrainierter Netze \cite{tensorflow}. Viele der angebotenen KNNs sind je nach Anwendungsfall diversen Kategorien zugeordnet \cite{tensorflow}. Unter anderem finden sich dort auch KNNs zur Objekterkennung \cite{tensorflow}. Die meisten sind darauf ausgelegt, multiple Objekte zu erkennen. Somit lassen sich beispielsweise mit einem Netz nicht nur Personen, sondern auch Flugzeuge, Autos und viele weitere Gegenstände des Alltags erkennen \cite{tensorflow}. \\ 
 		
 		\input{Bilder/ownnet}
 		\newpage
@@ -74,15 +88,15 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 		In Abbildung \ref{fig: ownnet} ist eine weitere Lösung dargestellt. Die Ausgabeschicht eines Netzes wird so verändert, dass lediglich ein Ausgangsneuron vorhanden ist. Dieses ist bekanntlich in der Lage, auf eine Klasse trainiert zu werden. Die restlichen Klassen werden somit verworfen und das Neuron wird ausschließlich auf die Klasse \textit{Person} trainiert. Hierbei sei zu beachten, dass diese Veränderung nicht mit einer \textit{Softmax} Ausgabeschicht zu realisieren ist, da das Ausgangsneuron in jedem Fall die Wertigkeit eins haben würde. Der technische Hintergrund ist in Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} beschrieben.\\
 		
-		Diese Vorgehensweise spart nicht nur die Einbindung eines Sortieralgorithmus, sondern auch Speicherplatz ein. Durch die Elimination der unbedeutsamen Neuronen werden folglich auch Parameter gelöscht, die gewissen Speicher einnehmen und Rechenoperationen vorraussetzen. Somit wird auch eine schnellere Rechenzeit erwartet. \\
+		Diese Vorgehensweise spart nicht nur die Einbindung eines Sortieralgorithmus, sondern senkt in geringen Mengen den benötigten Speicherplatz. Durch die Elimination der nicht benötigten Neuronen werden folglich auch Parameter gelöscht, die gewissen Speicher einnehmen und Rechenoperationen vorraussetzen.\\
 		
-		Zur Umsetzung des KNNs wird \textit{Tensorflow} der Firma \textit{Google} verwendet. \textit{Tensorflow} bietet neben der Möglichkeit des Trainings vortrainierter Netze, Lösungen zur Implementierung auf eingebetteten Systemen \cite{frameworks}. Diesbezüglich haben die Entwickler einen eigenen Framework namens \textit{Tensorflow Lite} ins Leben gerufen. Dieser Framework ist insbesondere für die Entwicklung mobiler Applikationen ausgelegt \cite{tflite}.\\
+		Zur Umsetzung des KNNs wird \textit{Tensorflow} der Firma \textit{Google} verwendet. \textit{Tensorflow} bietet neben der Möglichkeit des Trainings vortrainierter Netze, Lösungen zur Implementierung auf eingebetteten Systemen \cite{frameworks}.\\
 		
-		\textit{Tensorflow Lite} bietet beispielsweise die Möglichkeit, Netze einer sogenannten Quantisierung zu unterziehen \cite{tflite}. Dies ermöglicht einen noch kleineren FPS-Wert bei geringer Einsparung der Genauigkeit.\\
+		Diesbezüglich haben die Entwickler eine Erweiterung namens \textit{Tensorflow Lite} veröffentlicht. Dieser Toolkit ist insbesondere für die Entwicklung mobiler Applikationen ausgelegt \cite{tflite}. Aufgrund dessen ermöglicht \textit{Tensorflow}, Netze einer sogenannten Quantisierung zu unterziehen. Diese bewirkt einen noch größeren FPS-Wert bei weiterer Einsparung der Genauigkeit \cite{tflite}.\\
 		
-		\textit{Xus} Publikation zeigt, dass \textit{Tensorflow} und \textit{Tensorflow Lite} die meistgenutzten Frameworks sind, wenn es um mobile Applikationen geht. Weiterhin unterstützt \textit{Tensorflow} die \textit{NVIDIA CUDA Deep Neural Network} (cuDNN) Bibliothek \cite{frameworks}. \textit{NVIDIA cuDNN} ist für Grafikprozessoren und die Arbeit mit künstlichen neuronalen Netzen optimiert \cite{frameworks}. Außerdem unterstützt \textit{Tensorflow} die Betriebssysteme \textit{Linux}, \textit{Mac OS X} und \textit{Windows} \cite{frameworks}. Somit kann der integrierte Computer des autonomen Logistikfahrzeugs als ausführende Instanz verwendet werden.\\
+		\textit{Xus} Publikation zeigt, dass \textit{Tensorflow} und \textit{Tensorflow Lite} die meistgenutzten Frameworks sind, wenn es um mobile Applikationen geht \cite{warumtf}. Weiterhin unterstützt \textit{Tensorflow} die \textit{NVIDIA CUDA Deep Neural Network} (cuDNN) Bibliothek \cite{frameworks}. \textit{NVIDIA cuDNN} ist für Grafikprozessoren und die Arbeit mit künstlichen neuronalen Netzen optimiert \cite{frameworks}. Außerdem unterstützt \textit{Tensorflow} die Betriebssysteme \textit{Linux}, \textit{Mac OS X} und \textit{Windows} \cite{frameworks}. Somit kann der integrierte Computer des autonomen Logistikfahrzeugs als ausführende Instanz verwendet werden.\\
 		
-		Für Trainingsprozesse eignet sich in vielen Fällen ein Rechner mit einer leistungsstarken Grafikeinheit. Die Praxiserfahrung dieser Masterarbeit zeigte, dass eine Grafikkarte im Vergleich zu einer Recheneinheit den Trainingsprozess der CNNs um den Faktor 12 beschleunigt. Jedoch gibt es Anwendungsfälle, die durch die Verwendung der zentralen Recheneinheit des Computers beschleunigt werden \cite{cpugpu}. \\
+		Für Trainingsprozesse eignet sich in vielen Fällen ein Rechner mit einer leistungsstarken Grafikeinheit. Die Praxiserfahrung dieser Masterarbeit zeigte, dass eine Grafikkarte im Vergleich zu einer Recheneinheit den Trainingsprozess der CNNs um den Faktor 12 beschleunigt. Die Spezifikationen der in diesem Projekt verwendeten Hardware für den Trainingsprozess sind in Kapitel \ref{Abbildungen} in der Tabelle \ref{fig: pcinfo} aufgelistet. Jedoch gibt es Anwendungsfälle, die durch die Verwendung der zentralen Recheneinheit des Computers beschleunigt werden \cite{cpugpu}. \\
 		
 		Als Datensatz für das Training der Netze wird der \textit{Common Objects in Context} (COCO) Datensatz der Firma \textit{Microsoft} verwendet. Die dem Datensatz beigefügte \textit{Application Programming Interface} (API) ermöglichst es dem Benutzer, Datenmengen anhand der gewünschten Klassen zu extrahieren.\\
 		
@@ -90,7 +104,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 		Die Trainingsdaten von dem \textit{COCO}-Datensatz aus dem Jahr 2017 stellt knapp 65000 etikettierte Bilder von Personen bereit. Circa 5000 Bilder sind im Evalutaionsdatensatz enthalten. Aufgrund des Umfangs und der entsprechenden API, die eine vereinfachte Extraktion der Daten ermöglicht, wird der \textit{COCO}-Datensatz verwendet. \\
 		
-		Für den Lernprozess wird der Trainingsdatensatz in Trainings- und Testdaten unterteilt. So kann ein Teil der eigentlichen Trainingsdaten durch die vorhandenen Etiketten als Testdatensatz verwendet werden. In Kapitel \ref{ch: Verifikation} werden bereits besprochene Netze mit dem eigenen und dem \textit{COCO}-Datensatz evaluiert.
+		Für den Lernprozess wird der Trainingsdatensatz in Trainings- und Testdaten unterteilt. So kann ein Teil der eigentlichen Trainingsdaten durch die vorhandenen Labels als Testdatensatz verwendet werden. In Kapitel \ref{ch: Verifikation} werden die bereits besprochenen Netze mit dem eigenen und dem \textit{COCO}-Datensatz evaluiert.
 		
 		\begin{figure}[H]
 			\centering
@@ -101,7 +115,8 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 		In Abbildung \ref{fig: cocotest} ist ein Bild des erstellten \textit{COCO}-Testdatensatzes gezeigt. Personen sind im Hintergrund teilweise verdeckt oder nicht eindeutig dargestellt. Dies erschwert die Erkennung der beschriebenen Personen und könnte somit das Ergebnis einer Evaluation negativ beeinflussen. \\ 
 		
-		Für einen zweiten Test wird ein eigener Datensatz erstellt. Hierbei werden 160 Bilder aus dem Einsatzumfeld des ALFs aufgenommen und etikettiert. Die Abbildungen \ref{fig: owndata}a und b zeigen zwei Beispiele des Datensatzes. 
+		Für einen zweiten Test wird ein eigener Datensatz erstellt. Hierbei werden 160 Bilder aus dem Einsatzumfeld des ALFs aufgenommen und etikettiert. Die Abbildungen \ref{fig: owndata}a und b zeigen zwei Beispiele des Datensatzes. \\
+		
 		Im Rahmen dieser Masterarbeit wird aufgrund der in Kapitel \ref{ch: Einleitung} beschriebenen Anwendungen die Erkennung von Personen insbesondere auf den Nahbereich des Fahrzeugs ausgelegt. Aufgrund dessen sind Personen auf den Bildern des eigenen Datensatzes häufig verhältnismäßig groß dargestellt.\\
 		
 			\begin{figure}[H]
@@ -128,12 +143,15 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 	Der Kern dieser Arbeit ist die Personenerkennung im praktischen Kontext des in Kapitel \ref{ch: Einleitung} beschriebenen autonomen Logistikfahrzeugs. In Abschnitt \ref{sec: Anforderungserhebung} wurden bereits alle Schnittstellen zu verbauten Hardware- und Softwarekomponenten präsentiert. Das vollständige System der Personenerkennung ist im Folgenden erklärt.\\
 	
-	Wie bereits in Kapitel \ref{ch: Einleitung} dieser Masterarbeit beschrieben, wird die Personenerkennung am ALF mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben. Als Programmiersprache wird im Zuge dieser Masterarbeit \textit{Python} verwendet. Mit Softwarepaketen wie beispielsweise \textit{OpenCV} oder \textit{Pillow} bietet \textit{Python} ein großes Spektrum an Softwarelösungen für die Bildverarbeitung. Bekannte Frameworks wie \textit{Tensorflow} oder \textit{Keras} unterstützen \textit{Python} \cite{tensorflow, keraspython}.\\
+ 	Als Programmiersprache wird im Zuge dieser Masterarbeit \textit{Python} verwendet. Mit Softwarepaketen wie beispielsweise \textit{OpenCV} oder \textit{Pillow} bietet \textit{Python} ein großes Spektrum an Softwarelösungen für die Bildverarbeitung. Bekannte Frameworks wie \textit{Tensorflow} oder \textit{Keras} unterstützen \textit{Python} \cite{tensorflow, keraspython}.\\
 	
-	Wie auch in dem Projekt der Bachelorarbeit liefert das integrierte \textit{ROS}-Netzwerk die Bildinformation der Kameras \cite{Bachelorarbeit}. Die Schnittstelle zwischen \textit{ROS} und \textit{Python} bietet die Möglichkeit, eingehende Bilder sowohl parallel als auch seriell zu bearbeiten. Jedoch ist zu beachten, dass die Recheneinheit eines Computers mit der Bildverarbeitung eines Bildes stark belastet sein kann. Der beschriebene Effekt variiert je nach verwendeter Hardwareplattform. Demzufolge ist auf einem eingebetteten System eine deutlich höhere Belastung zu erwarten als auf dem Computer des ALFs. Aufgrund dessen wird bei der Bildverarbeitung der Personenerkennung auf eine serielle Bearbeitung gesetzt. So wird ausgeschlossen, dass zwei eingehende Bilder gleichzeitig analysiert werden.\\
+	Wie bereits in Kapitel \ref{ch: Grundlagen} dieser Masterarbeit beschrieben, wird die Personenerkennung am ALF mithilfe der Bildinformationen von zwei \textit{Kinect}-Kameras betrieben.
+	Das integrierte \textit{ROS}-Netzwerk sendet die Bildinformation der Kameras an den integrierten Computer \cite{Bachelorarbeit}.\\
+	
+	 Die Schnittstelle zwischen \textit{ROS} und \textit{Python} bietet die Möglichkeit, eingehende Bilder sowohl parallel als auch seriell zu bearbeiten. Jedoch ist zu beachten, dass die Recheneinheit eines Computers mit der Bildverarbeitung eines Bildes stark belastet sein kann. Der beschriebene Effekt variiert je nach verwendeter Hardwareplattform. Demzufolge ist auf einem eingebetteten System eine deutlich höhere Belastung zu erwarten als auf dem Computer des ALFs. Aufgrund dessen wird bei der Bildverarbeitung der Personenerkennung auf eine serielle Bearbeitung gesetzt. So wird ausgeschlossen, dass zwei eingehende Bilder gleichzeitig analysiert werden.\\
 	
 
-	Zu Beginn arbeitet das entwickelte System in einem reduzierten Modus. Hierbei werden Pausen mit einer gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt, bis ein relevantes Bild erkannt wird. Als relevant werden Bilder eingestuft, die eine Person enthalten. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Der reduzierte Modus erspart weitere Rechenkapazität des Computers für parallel laufende Prozesse. 
+	Zu Beginn arbeitet das entwickelte System in einem reduzierten Modus. Hierbei werden Pausen mit einer gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt, bis ein relevantes Bild erkannt wird. Als relevant werden Bilder eingestuft, die eine Person enthalten. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Der reduzierte Modus erspart weitere Rechenkapazität des Computers für parallel laufende Prozesse. \\
 		
 
 	
@@ -144,9 +162,10 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		\caption{Konzept eines Fallbeispiels der Personenerkennung. Zu sehen sind zwei Personen im Labor für Antriebstechnik der Hochschule Bochum. Rote Rechtecke zeigen den Interessensbereich der Personendetektion. Die \textit{Bounding Box} der Gesichtsdetektion ist gestrichelt dargestellt. Das als Strichpunkt präsentierte Rechteck deutet den Bereich der Distanzmessung an.}
 		\label{fig: bbox}
 	\end{figure}
-		In Abbildung \ref{fig: Personenerkennung} wird der Ablauf der Personenerkennung in Form eines Programmablaufplans dargestellt. Zu Beginn der Analyse gelangt jedes Bild in das verwendete künstliche neuronale Netz. Je nach Anzahl der erkannten Person werden korrespondierende \textit{Bounding Boxes} ausgegeben, die die Position des Interessensbereichs im Bild beschreiben. Dieser Vorgang ist beispielhaft in Darstellung \ref{fig: bbox} präsentiert.\\
+
+	
 		
-		Die dort abgebildeten Personen werden in diesem Fall von roten \textit{Bounding Boxes} umrandet. Wird keine Person erkannt, verfällt das Programm wieder in den bereits beschriebenen, reduzierten Modus. Die extrahierten \textit{Bounding Boxes} gelten im Falle einer Personendetektion als Interessensbereich für die Gesichtserkennung.\\
+	
 		
 			\begin{figure}[H]
 			\centering
@@ -205,6 +224,10 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 			\label{fig: Personenerkennung}
 		\end{figure}
 		\newpage
+	
+		In Abbildung \ref{fig: Personenerkennung} wird der Ablauf der Personenerkennung in Form eines Programmablaufplans dargestellt. Zu Beginn der Analyse gelangt jedes Bild in das verwendete künstliche neuronale Netz. Je nach Anzahl der erkannten Person werden korrespondierende \textit{Bounding Boxes} ausgegeben, die die Position des Interessensbereichs im Bild beschreiben. Dieser Vorgang ist beispielhaft in Darstellung \ref{fig: bbox} präsentiert.\\
+	
+		Die dort abgebildeten Personen werden in diesem Fall von roten \textit{Bounding Boxes} umrandet. Wird keine Person erkannt, verfällt das Programm wieder in den bereits beschriebenen, reduzierten Modus. Die extrahierten \textit{Bounding Boxes} gelten im Falle einer Personendetektion als Interessensbereich für die Gesichtserkennung.\\
 		
 	Das Pythonpaket \textit{face-recognition} wird in diesem Projekt für die Gesichterkennung verwendet. Prinzipiell arbeitet das Paket in drei Schritten. Die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} erklärte \textit{HOG}-Methode wird zur Extraktion der \textit{Bounding Box}, des jeweiligen Gesichts angewendet \cite{facerecarticle}.\\
 	
@@ -214,7 +237,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 	Nach eigener Recherche besitzen die von \textit{OpenFace} bereitgestellten, neuronalen Netze zwischen 3,7 - 7,4 Millionen Parameter \cite{openface}. Die Größenordnung ähnelt folglich der einer herkömmlichen \textit{MobileNet}-Architektur.\\
 	
-	Außerdem bietet das \textit{face-recognition} Paket eine Funktion zum Vergleichen und Unterscheiden von Gesichtsmerkmalen. Aufgrund der Genauigkeit und der verwendeten Netze wird das \textit{face-recognition} Paket in dieser Masterarbeit für die Gesichtserkennung eingesetzt.\\
+	Außerdem bietet das \textit{face-recognition} Paket eine Funktion zum Vergleichen und Unterscheiden von Gesichtsmerkmalen \cite{facerecarticle}. Aufgrund der Genauigkeit und der verwendeten Netze wird das \textit{face-recognition} Paket in dieser Masterarbeit für die Gesichtserkennung eingesetzt.\\
 	
 	Es kann davon ausgegangen werden, dass sich das Gesicht einer Person im oberen Teil eines extrahierten Begrenzungsrahmens befindet. Aufgrund dessen wird der Interessensbereich entsprechend verkleinert. Somit muss die Gesichtserkennung nicht den vollständigen Bereich durchsuchen und es werden weitere Rechenoperationen eingespart. Sollte sich kein Gesicht im relevanten Bereich befinden, wird davon ausgegangen, dass die Person stark von der Kamera abgewandt ist. Somit ist keine eindeutige Identifikation möglich und es erfolgt ein Neustart des Programms.\\
 	
@@ -225,9 +248,15 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	\label{sec: Umsetzung der Statemachine}
 	Bisher wurden für den Aufruf der Fahrfunktionen in \textit{ROS} ausführbare Dateien aufgerufen \cite{Bachelorarbeit}. Hierbei musste der Benutzer darauf achten, diese Dateien nicht im geringen Zeitabstand und vor allem in der richtigen Reihenfolge aufzurufen \cite{Bachelorarbeit}. Zu jedem Anwendungsfall gehören entsprechende Dateien. \\
 	
-	Ein hierarchischer Zustandsautomat nach Mealy unterbindet die Probleme, indem sich der Endzustand durch zuvor aufgerufene Zustände zusammensetzt. Der Aufruf verschiedner \textit{ROS}-Knoten in der korrekten Reihenfolge wird somit autark geregelt. Für die Steuerung des EAs wird die Spracherkennung aus der parallel laufenden Masterarbeit verwendet. Die Auswahl des Zustandsautomats wird im folgendem Abschnitt näher ausgeführt.\\	
+	Ein hierarchischer Zustandsautomat nach \textit{Mealy} unterbindet die Probleme, indem sich der Endzustand durch zuvor aufgerufene Zustände zusammensetzt. Die Wahl der \textit{Mealy}-Methode beruht auf dessen Ausgangsfunktion, die von dem aktuellen Zustand abhängig ist. Die Abhängigkeit der Zustände voneinander ist im Folgenden beschrieben.\\
 	
-	Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes \cite{Dittmann}. In der Masterarbeit von \textit{Hannes Dittmann} werden Sprachbefehle kategorisiert \cite{Dittmann}. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Transitionsbedingung für den EA genutzt. Weiterhin wird zwischen einer manuellen und einer autonomen Fahraufgabe unterschieden. Die Information wird dann als zweite Bedingung für den Zustandsautomaten verwendet. Anhand der technischen Fähigkeiten des Roboters wurden die Kategorienamen so gewählt, dass alle möglichen Handlungen abgedeckt sind. Der Zustandsautomat wurde so entworfen, dass er trotz der umfangreichen Fahrfunktionen des Roboters mit möglichst wenig Zuständen arbeitet. Außerdem deckt der Automat die Richtlinien nach Level 5 der in Kapitel \ref{ch: Einleitung} gezeigten Tabelle ab. Für die größtmögliche Effizienz hinsichtlich der Dimension und Funktionsweise des EAs wurde ein mathematisches Modell entworfen.\\
+	Der Aufruf verschiedener \textit{ROS}-Knoten in der korrekten Reihenfolge wird somit autark geregelt. Für die Steuerung des EAs wird die Spracherkennung aus der parallel laufenden Masterarbeit verwendet. Die Auswahl des Zustandsautomats wird im folgendem Abschnitt näher ausgeführt.\\	
+	
+	Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes \cite{Dittmann}. In der Masterarbeit von \textit{Hannes Dittmann} werden Sprachbefehle kategorisiert \cite{Dittmann}. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Transitionsbedingung für den EA genutzt.\\
+	
+	Weiterhin wird zwischen einer manuellen und einer autonomen Fahraufgabe unterschieden. Die Information wird dann als zweite Bedingung für den Zustandsautomaten verwendet. Anhand der technischen Fähigkeiten des Roboters wurden die Kategorienamen so gewählt, dass alle möglichen Handlungen abgedeckt sind.\\
+	
+	 Der Zustandsautomat wurde so entworfen, dass er trotz der umfangreichen Fahrfunktionen des Roboters mit möglichst wenig Zuständen arbeitet. Außerdem deckt der Automat die Richtlinien nach Level 5 der in Kapitel \ref{ch: Einleitung} gezeigten Tabelle ab. Für die größtmögliche Effizienz hinsichtlich der Dimension und Funktionsweise des EAs wurde ein mathematisches Modell entworfen.\\
 	
 	\begin{equation}
 	\vec{\epsilon}=\sum_{\epsilon_0}^{\epsilon_f} \left[ \begin{array}{r}
@@ -257,9 +286,13 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	\label{eq: statemachine}
 	\end{equation}\\
 	
-		Anhand der Gleichungen \ref{eq: statemachine} und \ref{eq: Binärfunktion} wird der mathematische Hintergrund des EAs erläutert. Der hierarchische Zustandsautomat ermöglicht einen finalen, sich aufbauenden Zustand $\vec{\epsilon}$. Dieser wird anhand der in Gleichung \ref{eq: statemachine} dargestellten Summe berechnet. Beginnend von dem Anfangszustand $\epsilon_0$ wird jeder mögliche $\epsilon$ bis zum finalen Zustand $\epsilon_f$ addiert. Bei der Addition geht es hauptsächlich darum, dem Anwendungsfall entsprechende \textit{ROS}-Knoten aufzurufen. Zu einem Zustand fest zugehörige Knotengruppen werden in Gleichung \ref{eq: statemachine} mit $k$ bezeichnet. Dessen Index deutet auf die Zugehörigkeit des Knotens zum jeweiligen Zustand an. Hierbei werden die möglichen Endzustände wie in Abbildung \ref{fig: uml} nummeriert.\\
+		Anhand der Gleichungen \ref{eq: statemachine} und \ref{eq: Binärfunktion} wird der mathematische Hintergrund des EAs erläutert. Der hierarchische Zustandsautomat ermöglicht einen finalen, sich aufbauenden Zustand $\vec{\epsilon}$. Dieser wird anhand der in Gleichung \ref{eq: statemachine} dargestellten Summe berechnet.\\
 		
-		Die Knotengruppe $k_0$ gehört zu dem Zustand \textit{Stop} und leitet den risikominimalen Zustand ein. Dieser wird erreicht, indem alle \textit{ROS}-Knoten inklusive des \textit{ROS}-Netzwerks heruntergefahren werden. So kann sichergestellt werden, dass keine Nachrichten an die Motorsteuergeräte der vier verbauten Motoren gesendet werden. Der Zustand \textit{Stop} kann nur verlassen werden, indem ein sicherer Wechsel in den Folgezustand \textit{Warten} durch den Benutzer zugesichert wird. Die Abfrage erfolgt sowohl über die Tastatur als auch über Sprache. Alle folgenden Zustände enthalten der jeweiligen Anwendung entsprechende Knotengruppen. Eine Auflistung aller Zustände inklusive der Knotengruppen ist im Anhang \ref{Abbildungen} in der Abbildung \ref{fig: knotenmengen} aufgeführt.\\ 
+		Beginnend von dem Anfangszustand $\epsilon_0$ wird jeder mögliche $\epsilon$ bis zum finalen Zustand $\epsilon_f$ addiert. Bei der Addition geht es hauptsächlich darum, dem Anwendungsfall entsprechende \textit{ROS}-Knoten aufzurufen. Zu einem Zustand fest zugehörige Knotengruppen werden in Gleichung \ref{eq: statemachine} mit $k$ bezeichnet. Dessen Index deutet auf die Zugehörigkeit des Knotens zum jeweiligen Zustand an. Hierbei werden die möglichen Endzustände wie in Abbildung \ref{fig: uml} nummeriert.\\
+		
+		Die Knotengruppe $k_0$ gehört zu dem Zustand \textit{Stop} und leitet den risikominimalen Zustand ein. Dieser wird erreicht, indem alle \textit{ROS}-Knoten inklusive des \textit{ROS}-Netzwerks heruntergefahren werden. So kann sichergestellt werden, dass keine Nachrichten an die Motorsteuergeräte der vier verbauten Motoren gesendet werden.\\
+		
+		Der Zustand \textit{Stop} kann nur verlassen werden, indem ein sicherer Wechsel in den Folgezustand durch den Benutzer zugesichert wird. Die Abfrage erfolgt sowohl über die Tastatur als auch über Sprache. Alle folgenden Zustände enthalten der jeweiligen Anwendung entsprechende Knotengruppen. Eine Auflistung aller Zustände inklusive der Knotengruppen ist im Anhang \ref{Abbildungen} in der Abbildung \ref{fig: knotenmengen} aufgeführt.\\ 
 	
 	\begin{equation}
 	g(\epsilon)=\left\{\begin{array}{ll} 1 \text{ für } \epsilon=n \\
@@ -269,7 +302,9 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 		Gleichung \ref{eq: Binärfunktion} zeigt die verwendete Binärfunktion $g(\epsilon)$. Je nach Iterationsschritt de- und aktiviert die Funktion $g(\epsilon)$ rein binär die entsprechende Zeile in Gleichung \ref{eq: statemachine}. Nicht aktive Zustände werden mit 0 multipliziert. Aktive Zustände werden mit einer einfachen Verstärkung beaufschlagt. \\
 		
-		Die ebenfalls binären Vektorelemente $m_n(\epsilon_f)$ sind mathematisch von der Zusammensetzung des Endzustands abhängig. Dieser Sachverhalt wird beispielsweise mithilfe der manuellen Fahrfunktion erklärt. Diese wird automatisiert mit einer statischen Karte gestartet, in der sich der Roboter durch einen Partikelfilter selbst findet. Hat der Benutzer jedoch zuvor eine Lokalisierung mithilfe der \textit{SLAM}-Methode gefordert, kann dieselbe Fahraufgabe mit einer sich aufbauenden Karte vollzogen werden. Widerrum schließen sich diverse Zustände gegenseitig aus. Eine bestimmte Zielpose ist von dem Ursprung einer statischen Karte abhängig. Diese ist beim \textit{SLAM}-Algorithmus jedoch nicht vorhanden. So kann folglich kein Ziel angefahren werden, wenn zuvor die Lokalisierung mithilfe von \textit{SLAM} abgeschlossen wurde.\\
+		Die binären Vektorelemente $m_n(\epsilon_f)$ sind mathematisch von der Zusammensetzung des Endzustands abhängig. Dieser Sachverhalt wird beispielsweise mithilfe der manuellen Fahrfunktion erklärt. Diese wird automatisiert mit einer statischen Karte gestartet, in der sich der Roboter selbst findet. Hat der Benutzer jedoch zuvor eine Lokalisierung mithilfe der \textit{SLAM}-Methode gefordert, kann dieselbe Fahraufgabe mit einer sich aufbauenden Karte vollzogen werden.\\
+		
+		Widerrum schließen sich diverse Zustände gegenseitig aus. Eine bestimmte Zielpose ist von dem Ursprung einer statischen Karte abhängig. Diese ist beim \textit{SLAM}-Algorithmus jedoch nicht vorhanden. So kann folglich kein Ziel angefahren werden, wenn zuvor die Lokalisierung mithilfe von \textit{SLAM} abgeschlossen wurde.\\
 		
 		\begin{figure}[H]
 			\centering
@@ -290,7 +325,9 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 			\end{minipage}
 		\end{figure}
 		
-		Nur eines der Vektorelemente $m_2(\epsilon_f)$ und $m_3(\epsilon_f)$ kann aktiv sein. Der Modus entspricht auch hier dem Index und sagt aus, ob die Fahraufgabe mit einer statischen oder einer sich aufbauenden Karte bearbeitet werden soll. Hierfür gelten die bereits angesprochenen Restriktionen. Die drei fahrfähigen Endzustände \textit{Manuell}, \textit{Erkunden} und \textit{Ziel} werden durch $m_5$, $m_7$ und $m_8$ aktiviert. Der Zustandsautomat besitzt die Fähigkeit, diverse Zwischenzustände, als temporäre Endzustände $\epsilon_f$ auszuführen. Somit kann sich das ALF beispielsweise im Modus \textit{Statische Karte} $\epsilon_f=3$ ohne eine bestimmte Fahraufgabe selbst lokalisieren. In einem weiteren Schritt ist es dem Benutzer erlaubt, vollständige und fahrfähige Endzustände auszuwählen, wie zum Beispiel den Modus \textit{Ziel} $\epsilon_f=8$.\\
+		Nur eines der Vektorelemente $m_2(\epsilon_f)$ und $m_3(\epsilon_f)$ kann aktiv sein. Der Modus entspricht auch hier dem Index und sagt aus, ob die Fahraufgabe mit einer statischen oder einer sich aufbauenden Karte bearbeitet werden soll. Hierfür gelten die bereits angesprochenen Restriktionen.\\
+		
+		Die drei fahrfähigen Endzustände \textit{Manuell}, \textit{Erkunden} und \textit{Ziel} werden durch $m_5$, $m_7$ und $m_8$ aktiviert. Der Zustandsautomat besitzt die Fähigkeit, diverse Zwischenzustände, als temporäre Endzustände $\epsilon_f$ auszuführen. Somit kann sich das ALF beispielsweise im Modus \textit{Statische Karte} $\epsilon_f=3$ ohne eine bestimmte Fahraufgabe selbst lokalisieren. In einem weiteren Schritt ist es dem Benutzer erlaubt, vollständige und fahrfähige Endzustände auszuwählen, wie zum Beispiel den Modus \textit{Ziel} $\epsilon_f=8$.\\
 		
 		
 				\begin{equation}
@@ -323,9 +360,11 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 	\input{Bilder/uml} 
 	
-	Darüber hinaus gilt es, den Zustandsautomaten und das ALF nach gegebenen Standards auszulegen. Die \textit{Society of Automotive Engineers} (SAE) ist eine Organisation, die aus Ingenieuren und technischen Experten besteht \cite{saeorg}. Ziel dieser ist im Allgemeinen die Weiterentwicklung im Thema Mobilität \cite{saeorg}. Unter anderem veröffentlicht \textit{SAE International} Normen wie die \textit{SAE J3016}. Diese beschäftigt sich mit verschiedenen Stufen der Automatisierung von Fahrzeugen.In Abbildung \ref{fig: tabautonom} sind die Stufen dargestellt.\\
+	Darüber hinaus gilt es, den Zustandsautomaten und das ALF nach gegebenen Standards auszulegen. Die \textit{Society of Automotive Engineers} (SAE) ist eine Organisation, die aus Ingenieuren und technischen Experten besteht \cite{saeorg}. Ziel dieser ist im Allgemeinen die Weiterentwicklung im Thema Mobilität \cite{saeorg}. Unter anderem veröffentlicht \textit{SAE International} Normen wie die \textit{SAE J3016} \cite{sae}. Diese beschäftigt sich mit verschiedenen Stufen der Automatisierung von Fahrzeugen \cite{sae}. In Abbildung \ref{fig: tabautonom} sind die Stufen dargestellt.\\
 	
-	Das ALF wird zum Zeitpunkt des Entwicklungsbeginns dieser Masterarbeit auf dem \textit{SAE-Level} 3 eingeschätzt. Hierbei werden lediglich die autonomen Fahrmodi des Fahrzeugs berücksichtigt. Die Fahrbefehle konnten selbstständig durch das System ausgeführt werden und die Umgebung über die bereits genannten Sensoren erfasst werden. Die \textit{Fallback Performance} beschreibt den Übergang des automatisierten oder autonomen in einen risikominimalen Zustand. Bisher musste die laufende Software des ALFs auch im Fehlerfall manuell am Fahrzeug beendet werden. Dies bestärkte die Einschätzung, dass das Fahrzeug bedingt automatisiert sei.	
+	Das ALF wird zum Zeitpunkt des Entwicklungsbeginns dieser Masterarbeit auf dem \textit{SAE-Level} 3 eingeschätzt. Hierbei werden lediglich die autonomen Fahrmodi des Fahrzeugs berücksichtigt. Die Fahrbefehle konnten selbstständig durch das System ausgeführt und die Umgebung über die bereits genannten Sensoren erfasst werden.\\
+	
+	Die \textit{Fallback Performance} beschreibt den Übergang des automatisierten oder autonomen in einen risikominimalen Zustand. Bisher musste die laufende Software des ALFs auch im Fehlerfall manuell am Fahrzeug beendet werden. Dies bestärkte die Einschätzung, dass das Fahrzeug bedingt automatisiert sei.	
 	
 	\input{Bilder/tabautonom}
 	
