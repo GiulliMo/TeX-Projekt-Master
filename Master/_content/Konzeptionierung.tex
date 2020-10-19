@@ -13,7 +13,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 	\input{Bilder/umfeldmodell}	
 	
-	Die Erweiterung um die Personenerkennung und Sprachverarbeitung ist in der in Abbildung \ref{fig: consensctrl} gezeigten Wirkstruktur dargestellt. Eine Wirkstruktur repräsentiert den Inhalt eines Wirkelements. In diesem Fall wird das Wirkelement mit dem Titel ALF aus dem vorangegangenem Umfeldmodell \ref{fig: consensenv} aufgeschlüsselt. Elemente mit blassen Farben sind für diese Masterarbeit nicht relevant und werden im Folgenden nicht behandelt.\\
+	Die Erweiterung um die Personenerkennung und Sprachverarbeitung ist in der in Abbildung~\ref{fig: consensctrl} gezeigten Wirkstruktur dargestellt. Eine Wirkstruktur repräsentiert den Inhalt eines Wirkelements. In diesem Fall wird das Wirkelement mit dem Titel ALF aus dem vorangegangenem Umfeldmodell \ref{fig: consensenv} aufgeschlüsselt. Elemente mit blassen Farben sind für diese Masterarbeit nicht relevant und werden im Folgenden nicht behandelt.\\
 	
 	Für den Betrieb der Personenerkennung sind die Bildinformationen der integrierten \textit{Kinect}-Kameras notwendig. Als Ausgabe werden die Positionen von erkannten Personen veröffentlicht. Dies kann in zukünftigen Projekten beispielsweise als Einfluss auf eine Navigationsanwendung zur Vermeidung von Personenkontakt verwendet werden.\\
 	
@@ -57,7 +57,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 	
 		
-		Die Tabelle \ref{fig: cnnvergleich} zeigt den Vergleich unterschiedlicher Netzarchitekturen. Hierbei ist zu beachten, dass die Angaben je nach Trainings- und Testdatensatz variieren können. Die nähere Auswahl der gezeigten CNNs \textit{VGG-16}, \textit{ResNet50}, \textit{InceptionV3} und \textit{MobileNet} wurde bereits in Abschnitt \ref{sec: cnns} begründet.\\
+		Die Tabelle \ref{fig: cnnvergleich} zeigt den Vergleich unterschiedlicher Netzarchitekturen. Hierbei ist zu beachten, dass die Angaben je nach Trainings- und Testdatensatz variieren können. Die nähere Auswahl der gezeigten CNNs \textit{VGG-16}, \textit{ResNet50}, \textit{InceptionV3} und \textit{MobileNet} wurde bereits in Abschnitt~\ref{sec: cnns} begründet.\\
 		
 			\input{Bilder/cnnvergleich}	
 		
@@ -246,13 +246,13 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 	\section{Konzept und Aufbau des Zustandsautomaten}
 	\label{sec: Umsetzung der Statemachine}
-	Bisher wurden für den Aufruf der Fahrfunktionen in \textit{ROS} ausführbare Dateien aufgerufen \cite{Bachelorarbeit}. Hierbei musste der Benutzer darauf achten, diese Dateien nicht im geringen Zeitabstand und vor allem in der richtigen Reihenfolge aufzurufen \cite{Bachelorarbeit}. Zu jedem Anwendungsfall gehören entsprechende Dateien. \\
+	Bisher wurden für den Aufruf der Fahrfunktionen in \textit{ROS} ausführbare Dateien aufgerufen~\cite{Bachelorarbeit}. Hierbei musste der Benutzer darauf achten, diese Dateien nicht im geringen Zeitabstand und vor allem in der richtigen Reihenfolge aufzurufen \cite{Bachelorarbeit}. Zu jedem Anwendungsfall gehören entsprechende Dateien. \\
 	
 	Ein hierarchischer Zustandsautomat nach \textit{Mealy} unterbindet die Probleme, indem sich der Endzustand durch zuvor aufgerufene Zustände zusammensetzt. Die Wahl der \textit{Mealy}-Methode beruht auf dessen Ausgangsfunktion, die von dem aktuellen Zustand abhängig ist. Die Abhängigkeit der Zustände voneinander ist im Folgenden beschrieben.\\
 	
 	Der Aufruf verschiedener \textit{ROS}-Knoten in der korrekten Reihenfolge wird somit autark geregelt. Für die Steuerung des EAs wird die Spracherkennung aus der parallel laufenden Masterarbeit verwendet. Die Auswahl des Zustandsautomats wird im folgendem Abschnitt näher ausgeführt.\\	
 	
-	Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes \cite{Dittmann}. In der Masterarbeit von \textit{Hannes Dittmann} werden Sprachbefehle kategorisiert \cite{Dittmann}. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Transitionsbedingung für den EA genutzt.\\
+	Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes \cite{Dittmann}. In der Masterarbeit von \textit{Hannes Dittmann} werden Sprachbefehle kategorisiert~\cite{Dittmann}. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Transitionsbedingung für den EA genutzt.\\
 	
 	Weiterhin wird zwischen einer manuellen und einer autonomen Fahraufgabe unterschieden. Die Information wird dann als zweite Bedingung für den Zustandsautomaten verwendet. Anhand der technischen Fähigkeiten des Roboters wurden die Kategorienamen so gewählt, dass alle möglichen Handlungen abgedeckt sind.\\
 	
@@ -361,7 +361,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	\input{Bilder/uml} 
 	
 	Darüber hinaus gilt es, den Zustandsautomaten und das ALF nach gegebenen Standards auszulegen. Die \textit{Society of Automotive Engineers} (SAE) ist eine Organisation, die aus Ingenieuren und technischen Experten besteht \cite{saeorg}. Ziel dieser ist im Allgemeinen die Weiterentwicklung im Thema Mobilität \cite{saeorg}. Unter anderem veröffentlicht \textit{SAE International} Normen wie die \textit{SAE J3016} \cite{sae}. Diese beschäftigt sich mit verschiedenen Stufen der Automatisierung von Fahrzeugen \cite{sae}. In Abbildung \ref{fig: tabautonom} sind die Stufen dargestellt.\\
-	
+	\newpage
 	Das ALF wird zum Zeitpunkt des Entwicklungsbeginns dieser Masterarbeit auf dem \textit{SAE-Level} 3 eingeschätzt. Hierbei werden lediglich die autonomen Fahrmodi des Fahrzeugs berücksichtigt. Die Fahrbefehle konnten selbstständig durch das System ausgeführt und die Umgebung über die bereits genannten Sensoren erfasst werden.\\
 	
 	Die \textit{Fallback Performance} beschreibt den Übergang des automatisierten oder autonomen in einen risikominimalen Zustand. Bisher musste die laufende Software des ALFs auch im Fehlerfall manuell am Fahrzeug beendet werden. Dies bestärkte die Einschätzung, dass das Fahrzeug bedingt automatisiert sei.	

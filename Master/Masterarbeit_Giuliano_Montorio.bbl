@@ -816,6 +816,8 @@
     \strng{fullhash}{Y1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
+  \field{note}{\url{https://www.researchgate.net/publication/226020512\_Hierarchical\_State\_Machines}
+  - zugegriffen am 19.10.2020}
     \field{title}{Hierarchical State Machines}
     \field{month}{01}
     \field{year}{2000. S. 315-330}
@@ -1152,8 +1154,11 @@
     \strng{namehash}{F1}
     \strng{fullhash}{F1}
     \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
   \field{note}{\url{https://de.slideshare.net/AvidFarhood/2019-0423tf-liteavidf}
   - zugegriffen am 19.10.2020}
+    \field{title}{Machine Learning for Mobile Developers: Tensorflow Lite
+  Framework}
     \field{month}{04}
     \field{year}{2019}
   \endentry
@@ -1384,6 +1389,38 @@
     \field{note}{\url{https://github.com/tensorflow/tensorflow/issues/2807} -
   zugegriffen am 17.10.2020}
     \field{title}{Slow quantized graph}
+  \endentry
+
+  \entry{beagle}{book}{}
+    \name{author}{1}{}{%
+      {{hash=b}{%
+         family={beagleboard.org},
+         familyi={b\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{b1}
+    \strng{fullhash}{b1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{\url{https://beagleboard.org/bone} - zugegriffen am
+  17.10.2020}
+    \field{title}{BeagleBone}
+  \endentry
+
+  \entry{jetson}{book}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={NVIDIA},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N2}
+    \strng{fullhash}{N2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{note}{\url{https://www.nvidia.com/de-de/autonomous-machines/embedded-systems/jetson-nano/}
+  - zugegriffen am 17.10.2020}
+    \field{title}{NVIDIA JETSON NANO}
   \endentry
 \enddatalist
 \endinput

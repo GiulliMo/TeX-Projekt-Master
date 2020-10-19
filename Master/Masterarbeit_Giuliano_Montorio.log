@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  19 OCT 2020 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  19 OCT 2020 20:35
 entering extended mode
 **./Masterarbeit_Giuliano_Montorio.tex
 (Masterarbeit_Giuliano_Montorio.tex
@@ -2164,6 +2164,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--184
  []
 
 
+Underfull \hbox (badness 2922) in paragraph at lines 185--186
+\T1/phv/m/n/12 pro-pa-ga-ti-on) oder Feh-ler-rück-füh-rung ge-nannt [[][]14[][]
+]. Wie be-reits be-schrie-ben, be-ste-hen
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
@@ -2319,7 +2325,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 276--277
  []
 
 (Bilder/towadatacnn.tex
-<Bilder/png.png, id=344, 1069.596pt x 1069.596pt>
+<Bilder/png.png, id=340, 1069.596pt x 1069.596pt>
 File: Bilder/png.png Graphic file (type png)
 <use Bilder/png.png>
 Package pdftex.def Info: Bilder/png.png  used on input line 49.
@@ -2891,7 +2897,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
-<Bilder/coco1.jpg, id=733, 150.5625pt x 103.28587pt>
+<Bilder/coco1.jpg, id=729, 150.5625pt x 103.28587pt>
 File: Bilder/coco1.jpg Graphic file (type jpg)
 <use Bilder/coco1.jpg>
 Package pdftex.def Info: Bilder/coco1.jpg  used on input line 111.
@@ -2915,7 +2921,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-<Bilder/26.jpg, id=745, 963.6pt x 542.025pt>
+<Bilder/26.jpg, id=741, 963.6pt x 542.025pt>
 File: Bilder/26.jpg Graphic file (type jpg)
 <use Bilder/26.jpg>
 Package pdftex.def Info: Bilder/26.jpg  used on input line 126.
@@ -2925,7 +2931,7 @@ Overfull \hbox (2.10313pt too wide) in paragraph at lines 125--127
 []\T1/phv/m/n/12 (a) [] 
  []
 
-<Bilder/39.jpg, id=746, 963.6pt x 542.025pt>
+<Bilder/39.jpg, id=742, 963.6pt x 542.025pt>
 File: Bilder/39.jpg Graphic file (type jpg)
 <use Bilder/39.jpg>
 Package pdftex.def Info: Bilder/39.jpg  used on input line 131.
@@ -2972,7 +2978,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
 pdfTeX warning: pdflatex.exe (file ./Bilder/person.pdf): PDF inclusion: found P
 DF version <1.7>, but at most version <1.5> allowed
-<Bilder/person.pdf, id=765, 963.6pt x 542.025pt>
+<Bilder/person.pdf, id=761, 963.6pt x 542.025pt>
 File: Bilder/person.pdf Graphic file (type pdf)
 <use Bilder/person.pdf>
 Package pdftex.def Info: Bilder/person.pdf  used on input line 161.
@@ -3190,15 +3196,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 363--364
  []
 
 
+Overfull \vbox (1.76944pt too high) has occurred while \output is active []
+
+
+[52]
 Underfull \hbox (badness 10000) in paragraph at lines 365--366
 
  []
 
-
-Overfull \vbox (1.76944pt too high) has occurred while \output is active []
-
-
-[52] (Bilder/tabautonom.tex
+(Bilder/tabautonom.tex
 
 Package array Warning: Column C is already defined on input line 1.
 
@@ -3264,7 +3270,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-<Bilder/iouhog.png, id=881, 963.6pt x 542.025pt>
+<Bilder/iouhog.png, id=877, 963.6pt x 542.025pt>
 File: Bilder/iouhog.png Graphic file (type png)
 <use Bilder/iouhog.png>
 Package pdftex.def Info: Bilder/iouhog.png  used on input line 32.
@@ -3415,7 +3421,7 @@ Overfull \vbox (1.76944pt too high) has occurred while \output is active []
 
 
 [59]
-<Bilder/12.jpg, id=925, 963.6pt x 542.025pt>
+<Bilder/12.jpg, id=921, 963.6pt x 542.025pt>
 File: Bilder/12.jpg Graphic file (type jpg)
 <use Bilder/12.jpg>
 Package pdftex.def Info: Bilder/12.jpg  used on input line 73.
@@ -3597,7 +3603,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
-<Bilder/26t.jpg, id=971, 963.6pt x 542.025pt>
+<Bilder/26t.jpg, id=967, 963.6pt x 542.025pt>
 File: Bilder/26t.jpg Graphic file (type jpg)
 <use Bilder/26t.jpg>
 Package pdftex.def Info: Bilder/26t.jpg  used on input line 144.
@@ -3607,7 +3613,7 @@ Overfull \hbox (2.10313pt too wide) in paragraph at lines 143--145
 []\T1/phv/m/n/12 (a) [] 
  []
 
-<Bilder/39t.jpg, id=972, 963.6pt x 542.025pt>
+<Bilder/39t.jpg, id=968, 963.6pt x 542.025pt>
 File: Bilder/39t.jpg Graphic file (type jpg)
 <use Bilder/39t.jpg>
 Package pdftex.def Info: Bilder/39t.jpg  used on input line 149.
@@ -3626,7 +3632,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
-<Bilder/80.jpg, id=979, 963.6pt x 542.025pt>
+<Bilder/80.jpg, id=975, 963.6pt x 542.025pt>
 File: Bilder/80.jpg Graphic file (type jpg)
 <use Bilder/80.jpg>
 Package pdftex.def Info: Bilder/80.jpg  used on input line 162.
@@ -3815,7 +3821,7 @@ Overfull \hbox (25.19997pt too wide) in paragraph at lines 547--563
 
 
 ]
-<Bilder/Bild.jpeg, id=1082, 1927.2pt x 1445.4pt>
+<Bilder/Bild.jpeg, id=1086, 1927.2pt x 1445.4pt>
 File: Bilder/Bild.jpeg Graphic file (type jpg)
 <use Bilder/Bild.jpeg>
 Package pdftex.def Info: Bilder/Bild.jpeg  used on input line 570.
@@ -3847,10 +3853,10 @@ l'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57148 strings out of 481212
- 1301444 string characters out of 2922283
- 2164607 words of memory out of 3000000
- 71391 multiletter control sequences out of 15000+200000
+ 57156 strings out of 481212
+ 1301690 string characters out of 2922283
+ 2165405 words of memory out of 3000000
+ 71397 multiletter control sequences out of 15000+200000
  592572 words of font info for 129 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  64i,21n,113p,10647b,2791s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -3865,10 +3871,10 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb><Y:/Miktex/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><Y:/Mi
 ktex/fonts/type1/urw/helvetic/uhvb8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uh
 vr8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Masterarbeit_Giuliano_Montorio.pdf (89 pages, 5459123 bytes).
+Output written on Masterarbeit_Giuliano_Montorio.pdf (89 pages, 5460689 bytes).
 
 PDF statistics:
- 1360 PDF objects out of 1440 (max. 8388607)
- 271 named destinations out of 1000 (max. 500000)
+ 1365 PDF objects out of 1440 (max. 8388607)
+ 273 named destinations out of 1000 (max. 500000)
  359 words of extra memory for PDF output out of 10000 (max. 10000000)
 
