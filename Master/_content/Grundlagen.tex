@@ -12,7 +12,7 @@
 	
 	Anders als bei regelbasierten Systemen verhalten sich KNNs grundlegend verschieden \cite{proba}. Sie lernen Verhaltensmuster basierend auf den entsprechenden Trainingsdatensatz \cite{proba}. Wie wahrscheinlich das richtige Verhaltensmuster während des Einsatzes im Feld hervorgerufen wird, ist von dem Einsatz selbst und dem Training eines solchen Systems abhängig \cite{last}.\\
 	
-	Am vorliegenden ALF werden zur Personenerkennung derartige neuronale Netze hinsichtlich der genannten Eigenschaften entwickelt und untersucht. Im folgenden Abschnitt werden die grundlagen neuronaler Netzwerke näher erläutert.
+	Am vorliegenden ALF werden zur Personenerkennung derartige neuronale Netze hinsichtlich der genannten Eigenschaften entwickelt und untersucht. Im folgenden Abschnitt werden die Grundlagen neuronaler Netzwerke näher erläutert.
 	
 		\subsection{Eigenschaften von neuronalen Netzen}
 		\label{subsec: Eigenschaften von neuronalen Netzen}
@@ -39,9 +39,9 @@
 				start chain=2,node distance=13mm
 				]
 				\node[on chain=2] 
-				(x2) {\text{ }\text{ }$x_{j+1}$};
+				(x2) {$x_{2}$};
 				\node[on chain=2,join=by o-latex] 
-				{$w_{j+1}$};
+				{$w_{2}$};
 				\node[on chain=2,init] (sigma) 
 				{$\displaystyle\Sigma$};
 				\node[on chain=2,squa,label=above:{\parbox{2cm}{\centering Aktivierungs-funktion}}] 
@@ -53,13 +53,13 @@
 				\draw[fill=black](1,-1.075)circle(1pt);
 				\begin{scope}[start chain=1]
 					\node[on chain=1] at (0,1.5cm) 
-					(x1) {$x_{j}\text{ }\text{ }\text{ }\text{ }\text{ }$};
+					(x1) {$x_{1}$};
 					\node[on chain=1,join=by o-latex] 
-					(w1) {$w_{j}$};
+					(w1) {$w_{1}$};
 				\end{scope}
 				\begin{scope}[start chain=3]
 					\node[on chain=3] at (0,-1.5cm) 
-					(x3) {$x_{n}\text{ }\text{ }\text{ }\text{ }\text{ }$};
+					(x3) {$x_{n}$};
 					\node[on chain=3,label=below:Gewichtung,join=by o-latex] 
 					(w3) {$w_{n}$};
 				\end{scope}
@@ -151,7 +151,7 @@
 				\draw [->] (hidden2-\i) -- (output-\j);
 				
 				\foreach \l [count=\x from 0] in {Input, Hidden, Hidden, Output}
-				\node [align=center, above] at (\x*2,2) {\l \\ layer};
+				\node [align=center, above] at (\x*2,2) {\l \\ Layer};
 				
 				\draw[fill=black](0,-1.3)circle(1pt);
 				\draw[fill=black](0,-1.5)circle(1pt);
@@ -173,7 +173,7 @@
 		
 		In Abbildung \ref{fig: neuronales netz } ist die Grundstruktur eines neuronalen Netzes veranschaulicht. Neuronen sind hier mit Kreisen angedeutet und bilden einzelne Schichten in den beispielhaft vertikal dargestellten Formationen. Hierbei wird zwischen Eingabe-, Zwischen- und Ausgabeschichten unterschieden. Entsprechende Neuronen sind mit $I$, $H$ und $O$ bezeichnet.\\
 		
-		Die Eingabeschicht nimmt Informationen in Form von Daten auf und gibt diese an die erste Zwischenschicht weiter \cite{deeplearning}. Die Anzahl der Zwischenschichten, oder auch verdeckten Schichten (engl. Hidden Layer), ist in der Anwendung neuronaler Netze variabel \cite{deeplearning}. Gibt es mehr als einen \textit{Hidden Layer}, spricht man in der Bildverarbeitung von tiefen neuronalen Netzen (engl. deep neural networks). Am rechten Bildrand ist die Ausgabeschicht gezeigt, die die entsprechende Ausgabe des Netzes generiert.  \newpage
+		Die Eingabeschicht nimmt Informationen in Form von Daten auf und gibt diese an die erste Zwischenschicht weiter \cite{deeplearning}. Die Anzahl der Zwischenschichten, oder auch verdeckten Schichten (engl. Hidden Layer), ist in der Anwendung neuronaler Netze variabel \cite{deeplearning}. Gibt es mehr als einen \textit{Hidden Layer}, spricht man in der Bildverarbeitung von tiefen neuronalen Netzen (engl. Deep Neural Networks). Am rechten Bildrand ist die Ausgabeschicht gezeigt, die die entsprechende Ausgabe des Netzes generiert.  \newpage
 	
 		\subsection{Lernprozess}
 		Der Lernprozess von neuronalen Netzen zielt darauf ab, einer Netzstruktur ein gewünschtes Verhalten beizubringen \cite{proba}. Genauer sollen die in Abschnitt \ref{subsec: Eigenschaften von neuronalen Netzen} beschriebenen Gewichtungen so modifiziert werden, dass sie eine bestimmte Ausgabe erzeugen. Häufig wird der Lernprozess eines Netzes auch als Training bezeichnet.\\
@@ -182,7 +182,7 @@
 		
 		Das überwachte Lernen setzt eine Trainingsmenge voraus, die neben der Eingabedaten auch das dazugehörige korrekte Ergebnis enthält \cite{Kriesel,bildv2020}. Im Falle einer Personenerkennung wäre beispielsweise ein Datensatz aus Bildern von Personen eine geeignete Trainingsmenge. In der sogenannten Vorwärtspropagierung wird durch eine Eingabe eine entsprechende Ausgabe erzeugt und diese mit dem korrekten Ergebnis verglichen \cite{bildv2020}. Ausgehend von einem KNN mit lediglich einer Schicht, werden die Gewichtungen dann mithilfe des aus dem vorangegangenen Vergleich entstandenen Fehlers korrigiert \cite{bildv2020}.\\
 		
-		Die meist genutzte Form des überwachten Lernens ist die Rückwärtspropagierung (engl.~Backpropagation) oder Fehlerrückführung genannt \cite{Ertel}. Wie bereits beschrieben, bestehen neuronale Netze häufig aus mehreren \textit{Hidden Layern}. Für diese liegt beim Training jedoch kein Korrekturwert vor \cite{bildv2020}.\\
+		Die meistgenutzte Form des überwachten Lernens ist die Rückwärtspropagierung (engl.~Backpropagation) oder Fehlerrückführung genannt \cite{Ertel}. Wie bereits beschrieben, bestehen neuronale Netze häufig aus mehreren \textit{Hidden Layern}. Für diese liegt beim Training jedoch kein Korrekturwert vor \cite{bildv2020}.\\
 		
 		Der Algorithmus der Rückwärtspropagierung ist eine mögliche Lösung dieses Problems \cite{bildv2020}. Die mathematische Grundlage für dieses Lernverfahren sind Gradientenabstiegsverfahren \cite{Kriesel,bildv2020}. Nach der Vorwärtspropagierung wird die Ausgabe des Netzes mit Informationen aus dem Trainingsdatensatz verglichen \cite{bildv2020}. Beim darauffolgenden Rückwärtsschritt wird durch die Fehlerrückführung für jede verdeckte Schicht ein Korrekturwert errechnet \cite{bildv2020}. Auch in dieser Masterarbeit werden Netze mithilfe der Rückwärtspropagierung trainiert.\\
 		
@@ -251,7 +251,7 @@
 		
 		Neben der neuronalen Netze gibt es weitere Methoden zur Objekterkennung. Im Rahmen dieser Masterarbeit werden klassische und moderne Verfahren gegenübergestellt und verglichen. Ein gängiges Verfahren zur Merkmalsextraktion ist das sogenannte \textit{Histogram of oriented gradients} (HOG) in Verbindung mit der \textit{Support Vector Machine} (SVM) \cite{hogsvm}.\newpage
 		
-		Bei diesem Verfahren wird ein Bild in kleine Bereiche, sogenannte Zellen, aufgeteilt \cite{hogsvm}. Für jede Zelle wird ein eindimensionales Histogram extrahiert \cite{hogsvm}. Dieses enthält Gradienten, die aus den Informationen der Pixel enstehen, wie zum Beispiel durch die Lichtintensität oder die Farbe \cite{hogsvm}. Hieraus lassen sich Kanten und Ecken und somit auch Konturen und Muster aus einem Bild erkennen \cite{hogsvm}.\\
+		Bei diesem Verfahren wird ein Bild in kleine Bereiche, sogenannte Zellen, aufgeteilt. Für jede Zelle wird ein eindimensionales Histogramm extrahiert. Dieses enthält Gradienten, die aus den Informationen der Pixel entstehen, wie zum Beispiel durch die Lichtintensität oder die Farbe. Hieraus lassen sich Kanten und Ecken und somit auch Konturen und Muster aus einem Bild erkennen. \cite{hogsvm}\\
 		
 		In den Abbildungen \ref{fiq: hog}a und b lässt sich die Umwandlung des \textit{HOGs} beobachten. Die Realität, so wie sie eine übliche Fotokamera widerspiegeln würde, ist in \ref{fiq: hog}a zu erkennen. Die entsprechenden Richtungen der Gradienten werden in \ref{fiq: hog}b dargestellt. \\
 		
@@ -261,13 +261,13 @@
 		
 		Wie auch bei den KNNs gibt es für \textit{SVMs} einen Lernprozess in Form des überwachten Lernens. Ziel der Algorithmen des Trainings einer \textit{SVM} ist es, die Hyperebenen so zu konstruieren, sodass Objekte sicher klassifiziert werden können. \cite{svmalt}\newpage
 		
-		In der Realität lassen sich Objekte rein mathematisch häufig nicht linear trennen. Nichtlineare Trennbarkeit bedeutet oft einen höheren Rechenaufwand. Somit verwendet die Methode der \textit{SVM} den sogenannten \textit{Kernel-Trick}. Dieser transformiert Daten in eine höhere Dimension, um eine lineare Trennbarkeit zu erreichen. \cite{svmalt}\\
+		In der Realität lassen sich Objekte rein mathematisch häufig nicht linear trennen. Nichtlineare Trennbarkeit bedeutet oft einen höheren Rechenaufwand. Somit verwendet die Methode der \textit{SVM} den sogenannten \textit{Kernel Trick}. Dieser transformiert Daten in eine höhere Dimension, um eine lineare Trennbarkeit zu erreichen. \cite{svmalt}\\
 		
 		In Abbildung \ref{fig: kerneltrick}a und b ist das Funktionsprinzip prinzipiell dargestellt. Darstellung~\ref{fig: kerneltrick}a zeigt Objektklassen, die jeweils als Formen dargestellt sind. Eine lineare Trennbarkeit mittels einer Hyperebene ist in diesem Beispiel nicht möglich. Eine dritte Dimension wird in der Darstellung~\ref{fig: kerneltrick}b verwendet, um die dargestellte, lineare Trennbarkeit zu erreichen.\\
 		
 		\input{Bilder/kerneltrick}
 			
-		Die \textit{HOG} Methode in Verbindung mit der beschriebenen \textit{SVM} ist ein weitverbreitetes Mittel zur Klassifikation \cite{hogsvmvscnn}. Die Publikation von \textit{Kibira} und \textit{Hasan} führt Vergleiche hinsichtlich der Trainingszeit und der Genauigkeit von \textit{HOG-SVM}-Kombinationen und Faltungsnetzwerken an \cite{hogsvmvscnn}. Letzteres weist im direkten Vergleich eine höhere Klassifikationsgenauigkeit bei verhältnismäßig längerer Trainingsdauer auf. Das Thema der Faltungsnetzwerke wird im folgenden Abschnitt behandelt. 
+		Die \textit{HOG} Methode in Verbindung mit der beschriebenen \textit{SVM} ist ein weitverbreitetes Mittel zur Klassifikation \cite{hogsvmvscnn}. Die Publikation von \textit{Kibira} und \textit{Hasan} führt Vergleiche hinsichtlich der Trainingszeit und der Genauigkeit von \textit{HOG-SVM} Kombinationen und Faltungsnetzwerken an \cite{hogsvmvscnn}. Letzteres weist im direkten Vergleich eine höhere Klassifikationsgenauigkeit bei längerer Trainingsdauer auf. Das Thema der Faltungsnetzwerke wird im folgenden Abschnitt behandelt. 
 	
 		\subsection{Objekterkennung durch neuronale Netze}
 		\label{subsec: Objekterkennung durch neuronale Netze}
@@ -661,15 +661,15 @@
 		
 		Auf dem Rechner des ALFs laufen häufig Softwarekomponenten, die für die Realisierung der Fahraufgaben aufgerufen werden \cite{Bachelorarbeit}. Eine Rechenauslastung von maximal 60 \% auf dem Computer des ALFs wird hierbei durch den Aufruf der Komponenten erzeugt. Außerdem sind die integrierten \textit{Kinect}-Kameras des ALFs in der Lage, bis zu 30 Bilder in der Sekunde aufzunehmen \cite{alf}. Folglich wird eine Netzarchitektur verwendet, die Bilder möglichst schnell, mit einer hohen Genauigkeit verarbeitet und eine geringe Anzahl an Rechenoperationen benötigt. Für eine zukünftige Auslagerung auf ein eingebettetes System zur Entlastung des ALFs bezüglich des Rechenaufwands ist der Speicherplatz des Netzes sowie seine Rechenzeit von Bedeutung.\\
 		\newpage
-		Für die Auswahl der Netzarchitektur werden state-of-the-art Lösungen hinzugezogen, die sich bis zum heutigen Zeitpunkt durchgesetzt haben. In \textit{Canzianis} wissenschaftlichen Beitrag \cite{cnnvergleich} aus dem Jahr 2016 werden bekannte CNNs nach der Genauigkeit über die Anzahl der Rechenoperationen pro eingegebenem Bild in einem Diagramm aufgetragen. Als dritte Eigenschaft ist dort ebenfalls die Größe der Architekturen bemessen. Die höchsten Genauigkeiten erzielten hierbei die \textit{ResNet}, \textit{Inception} und \textit{VGG} Architekturen \cite{cnnvergleich}.\\
+		Für die Auswahl der Netzarchitektur werden state-of-the-art Lösungen hinzugezogen, die sich bis zum heutigen Zeitpunkt durchgesetzt haben. In \textit{Canzianis} wissenschaftlichen Beitrag aus dem Jahr 2016 werden bekannte CNNs nach der Genauigkeit über die Anzahl der benötigten Rechenoperationen für ein eingegebenes Bild in einem Diagramm aufgetragen  \cite{cnnvergleich}. Als dritte Eigenschaft ist dort ebenfalls die Größe der Architekturen bemessen. Die höchsten Genauigkeiten erzielten hierbei die \textit{ResNet}, \textit{Inception} und \textit{VGG} Architekturen \cite{cnnvergleich}.\\
 		
-		Ein Jahr später entwickelte \textit{Howard} \cite{mobilenets} die \textit{MobileNet} Architektur. Sie zeichnet sich durch die ihre Geschwindigkeit bei teilweise höherer Genauigkeit im Vergleich zu bekannten Architekturen aus \cite{mobilenets}.\\
+		Ein Jahr später entwickelte \textit{Howard} die \textit{MobileNet} Architektur \cite{mobilenets}. Sie zeichnet sich durch die ihre Geschwindigkeit bei teilweise höherer Genauigkeit im Vergleich zu bekannten Architekturen aus \cite{mobilenets}.\\
 		
 		Wie bereits in Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} beschrieben, benötigt ein Faltungsnetzwerk einen Klassifikator zur Analyse einer durch das Netz extrahierten \textit{Feature Map}. Somit werden in diesem Abschnitt ebenfalls die gängigen Lösungen \textit{R-CNN} und \textit{SSD} als optionale Klassifikatoren präsentiert.
 		
 		\section*{VGG}
 		\label{subsec: vgg}
-		Die VGG Architektur wurde im Jahr 2015 von \textit{Simonyan} und \textit{Zisserman} \cite{vgg} vorgestellt. Oft wird die Bezeichnung \textit{VGG-xx} verwendet, wobei \textit{xx} für die Anzahl der Konvolutionsschichten in Addition mit den vollständig verbundenen Schichten steht. Bei dieser Architektur werden ausschließlich sehr kleine $3 \times 3$ Filter für die Faltung verwendet \cite{vgg}. Im Gegenzug setzten die Entwickler auf eine ausgeprägte Tiefe der Netzarchitektur bis zu 19 Schichten untersucht worden \cite{vgg}.\\
+		Die VGG Architektur wurde im Jahr 2015 von \textit{Simonyan} und \textit{Zisserman} vorgestellt \cite{vgg}. Oft wird die Bezeichnung \textit{VGG-xx} verwendet, wobei \textit{xx} für die Anzahl der Konvolutionsschichten in Addition mit den vollständig verbundenen Schichten steht. Bei dieser Architektur werden ausschließlich sehr kleine $3 \times 3$ Filter für die Faltung verwendet \cite{vgg}. Im Gegenzug setzten die Entwickler auf eine ausgeprägte Tiefe der Netzarchitektur bis zu 19 Schichten untersucht worden \cite{vgg}.\\
 		
 		Es konnte gezeigt werden, dass die Veränderung der Tiefe eines Netzes über die Genauigkeit der Klassifikation bestimmt \cite{vgg}. Die Anzahl der Schichten hängt direkt mit dem Speicher- und dem Rechenaufwand eines Netzes zusammen. Ein typisches \textit{VGG-16} Netz nimmt circa 530~MB Speicherplatz aufgrund seiner 138 Millionen Parameter ein \cite{keras}.\\
 		
@@ -717,7 +717,7 @@
 			
 			
 			\end{tikzpicture}
-			\caption{Markantes Merkmal eines \textit{ResNets}. Die Flussrichtung der Bildinformationen ist als Pfeil dargestellt. Adaptiert aus \cite{resnet}}
+			\caption{Markantes Merkmal eines \textit{ResNets}. Die Flussrichtung der Bildinformationen ist als Pfeil dargestellt. Adaptiert aus \cite{resnet}.}
 			\label{fig: residual}
 		\end{figure}
 	
@@ -725,9 +725,9 @@
 		
 		\section*{Inception/GoogleNet}
 		\label{subsec: inception}
-		Gemessen an der Top-1 Genauigkeit schneiden \textit{Inception/GoogLeNet} Netze besser ab als \textit{VGG} und \textit{ResNet} Architekturen \cite{cnnvergleich}. \textit{Szegedy} erklärt die erste Version der \textit{Inception} CNNs in seiner Publikation \cite{inception} aus dem Jahr 2015. Die Besonderheit hierbei ist der Einsatz multipler Kernel auf die jeweiligen Schichten \cite{inception}.\\
+		Gemessen an der Top-1 Genauigkeit schneiden \textit{Inception/GoogLeNet} Netze besser ab als \textit{VGG} und \textit{ResNet} Architekturen \cite{cnnvergleich}. \textit{Szegedy} erklärt die erste Version der \textit{Inception} CNNs in seiner Publikation aus dem Jahr 2015 \cite{inception}. Die Besonderheit hierbei ist der Einsatz multipler Kernel auf die jeweiligen Schichten \cite{inception}.\\
 		
-		Durch diesen Aufbau benötigt ein solches Netz keine vollständig verbundene Schicht zur Klassikation, da die Genauigkeit nur geringfügig beeinträchtigt wird \cite{inception}. Gleichzeitig erfolgt eine Einsparung eines Großteils der Parameter \cite{inception}. Bei \textit{VGG} Architekturen befinden sich beispielsweise circa 90 \% aller Parameter in den vollständig verbundenen Schichten am Ende des Netzes. Die klassische \textit{Inception} Architektur enthält insgesamt 27 Schichten, 22 davon enthalten Parameter~\cite{inception}. Übliche \textit{Inception} Netze sind circa 90 MB groß und verfügen über 23 Millionen Parameter~\cite{keras}.
+		Durch diesen Aufbau benötigt ein solches Netz keine vollständig verbundene Schicht zur Klassifikation, da die Genauigkeit nur geringfügig beeinträchtigt wird \cite{inception}. Gleichzeitig erfolgt eine Einsparung eines Großteils der Parameter \cite{inception}. Bei \textit{VGG} Architekturen befinden sich beispielsweise circa 90 \% aller Parameter in den vollständig verbundenen Schichten am Ende des Netzes. Die klassische \textit{Inception} Architektur enthält insgesamt 27 Schichten, 22 davon enthalten Parameter~\cite{inception}. Übliche \textit{Inception} Netze sind circa 90 MB groß und verfügen über 23 Millionen Parameter~\cite{keras}.
 		
 
 		
@@ -767,7 +767,7 @@
 		\end{equation}\\
 		
 		
-		Weiterhin nutzt \textit{MobileNet} Weiten- und Auflösungsmultiplikatoren für die Optimierung des Netzes \cite{mobilenets}. Der Weitenmultiplikator $\alpha$ reduziert sowohl die Tiefe $M$ der Eingangsdaten durch $\alpha M$ als auch die Tiefe $N$ der Ausgangsdaten durch $\alpha N$ \cite{mobilenets}. Eine Minimierung der Dimension $D_\text{F}$ der Eingangsdaten erfolgt durch den Auflösungsmultiplikator $\rho$ durch $\rho D_\text{F}$ \cite{mobilenets}. Beide Multiplikatoren reduzieren den Rechenaufwand nochmals um $\alpha^2$ und $\rho^2$ \cite{mobilenets}. Dieser wird mit mit der Variablen $R_\text{m}$ und der folgenden Gleichung dargestellt. \\
+		Weiterhin nutzt \textit{MobileNet} Weiten- und Auflösungsmultiplikatoren für die Optimierung des Netzes \cite{mobilenets}. Der Weitenmultiplikator $\alpha$ reduziert sowohl die Tiefe $M$ der Eingangsdaten durch $\alpha M$ als auch die Tiefe $N$ der Ausgangsdaten durch $\alpha N$ \cite{mobilenets}. Eine Minimierung der Dimension $D_\text{F}$ der Eingangsdaten erfolgt durch den Auflösungsmultiplikator $\rho$ durch $\rho D_\text{F}$ \cite{mobilenets}. Beide Multiplikatoren reduzieren den Rechenaufwand nochmals um $\alpha^2$ und $\rho^2$ \cite{mobilenets}. Dieser wird mit der Variablen $R_\text{m}$ und der folgenden Gleichung dargestellt. \\
 		
 		\begin{equation}
 			R_\text{m}=D_\text{K} \cdot D_\text{K} \cdot \alpha M \cdot \rho D_\text{F} \cdot \rho D_\text{F} + \alpha M \cdot \alpha N \cdot \rho D_\text{F} \cdot \rho D_\text{F} \text{  }\text{mit}\text{  } \alpha \in (0,1] ; \rho \in (0,1]
@@ -794,9 +794,9 @@
 		\newpage
 		Der Name \textit{SSD} unterteilt sich in \textit{Single Shot}, \textit{Multibox} und \textit{Detector}. Anhand dessen lässt sich die Funktionsweise dieser Methode erklären. \textit{Single Shot} drückt aus, dass die Architektur mit nur einer Bildanalyse auskommt und die Objekterkennung durchführen kann. Die \textit{Multibox} Methode wurde von \textit{Szegedy} entwickelt \cite{multibox}. Diese gibt klassenbasierte Vorschläge zur Objekterkennung in Form von \textit{Bounding Boxes} aus \cite{multibox}.\\
 		
-		Der Aufbau der \textit{SSD} Architektur ähnelt in der Grundidee der bereits erwähnten \textit{Inception} Methode. Aus den Zwischenschichten können mithilfe von speziellen Filter vorzeitige Klassifikationen vorgenommen und an die bereits erwähnte \textit{NMS} Ausgabechicht weitergeleitet werden \cite{ssd}. So ergeben sich die überlappenden \textit{Bounding Boxes}.\\
+		Der Aufbau der \textit{SSD} Architektur ähnelt in der Grundidee der bereits erwähnten \textit{Inception} Methode. Aus den Zwischenschichten können mithilfe von speziellen Filter vorzeitige Klassifikationen vorgenommen und an die bereits erwähnte \textit{NMS} Ausgabeschicht weitergeleitet werden \cite{ssd}. So ergeben sich die überlappenden \textit{Bounding Boxes}.\\
 		
-		Die \textit{SSD300} Netzarchitektur erreicht im Test aus \textit{Lius} Veröffentlichung eine rechengeschwindigkeit 59 FPS \cite{ssd}. FPS steht für \textit{frames per second} und besagt, wie viele Bilder pro Sekunde verarbeitet werden.\\
+		Die \textit{SSD300} Netzarchitektur erreicht im Test aus \textit{Lius} Veröffentlichung eine Rechengeschwindigkeit 59 FPS \cite{ssd}. FPS steht für \textit{Frames per Second} und besagt, wie viele Bilder pro Sekunde verarbeitet werden.\\
 		
 		In der Publikation von \textit{Sandler} wird eine erweiterte Form des \textit{SSD}-Klassifikators eingeführt~\cite{mobilenetv2}. Bei der sogenannten \textit{SSDLite}-Struktur werden die bereits erwähnten Konvolutionsschichten ausgetauscht. Tiefenorientierte, trennbare Konvolution wird stattdessen für eine Steigerung der Geschwindigkeit bei minimaler Regression der Genauigkeit eingesetzt \cite{mobilenetv2}.     		
 		
@@ -808,9 +808,9 @@
 			
 	\section{Zustandsautomat}
 	\label{sec: Zustandautomat}
-	In der vorangegangenen Bachelorarbeit werden diverse Modi beschrieben, die den Aufruf von unterschiedlichen Knoten des bereits integrierten \textit{Robot Operating System} (ROS) voraussetzen~\cite{Bachelorarbeit}. Aufgrund der Analogie zwischen den beschriebenen Modi und der Zustände eines Zustandsautomaten wird die Nutzung eines solchen Automaten begründet. Im Folgenden wird auf die Eigenschaften eines endlichen Automats eingegangen.\\
+	In der vorangegangenen Bachelorarbeit werden diverse Modi beschrieben, die den Aufruf von unterschiedlichen Knoten des bereits integrierten \textit{Robot Operating System} (ROS) voraussetzen~\cite{Bachelorarbeit}. Aufgrund der Analogie zwischen den beschriebenen Modi und der Zustände eines Zustandsautomaten wird die Nutzung eines solchen Automaten begründet. Im Folgenden wird auf die Eigenschaften eines endlichen Automaten eingegangen.\\
 	
-	Im Allgemeinen geht es bei einem Zustandsautomaten (kurz: EA für endlicher Automat) um die Beschreibung von Zuständen (engl. states) eines Objekts \cite{uml}. Dabei stellt das Objekt meist das Gesamtsystem dar, etwa einen Getränkeautomat oder wie in dieser Masterarbeit ein autonomes Fahrzeug \cite{uml}.\\
+	Im Allgemeinen geht es bei einem Zustandsautomaten (kurz: EA für endlicher Automat) um die Beschreibung von Zuständen (engl. States) eines Objekts \cite{uml}. Dabei stellt das Objekt meist das Gesamtsystem dar, etwa ein Getränkeautomat oder wie in dieser Masterarbeit ein autonomes Fahrzeug \cite{uml}.\\
 	
 	States sind durch Bedingungen verknüpft und lösen während sogenannter Ereignisse eine Transition aus, die den Wechsel des Zustands nach sich zieht \cite{uml}. Weiterhin bilden die Zustände in ihrer Gesamtheit den Lebenszyklus des Objekts \cite{uml}.\\
 	
@@ -828,7 +828,7 @@
 		\label{eq: Moore2}
 	\end{equation}
 	\\
-	Durch die Gleichungen \ref{eq: Moore1} und \ref{eq: Moore2} wird das Verhalten eines \textit{Mealy}-Zustandsautomaten beschrieben. Die Transitionsfunktion $\phi$ und die Ausgabefunktion $\psi$ des \textit{Moore}-Automats stehen jeweils in Abhängigkeit von $\zeta_t $, der aktuellen Eingabe, und $\epsilon_t$, dem aktuellen Zustand. Mithilfe der Transitionsfunktion lässt sich der Zustand $\epsilon_{t+1}$ bestimmen, der im folgenden Zeitschritt $t+1$ angestrebt wird. Der Ausgang des \textit{Mealy}-Automaten wird durch $\gamma_t$ ausgedrückt. Dieser hängt genau wie die Transitionsfunktion von der Eingabe und dem Zustand zum Zeitpunkt $t$ ab.\\
+	Durch die Gleichungen \ref{eq: Moore1} und \ref{eq: Moore2} wird das Verhalten eines \textit{Mealy}-Zustandsautomaten beschrieben. Die Transitionsfunktion $\phi$ und die Ausgabefunktion $\psi$ des \textit{Moore}-Automaten stehen jeweils in Abhängigkeit von $\zeta_t $, der aktuellen Eingabe, und $\epsilon_t$, dem aktuellen Zustand. Mithilfe der Transitionsfunktion lässt sich der Zustand $\epsilon_{t+1}$ bestimmen, der im folgenden Zeitschritt $t+1$ angestrebt wird. Der Ausgang des \textit{Mealy}-Automaten wird durch $\gamma_t$ ausgedrückt. Dieser hängt genau wie die Transitionsfunktion von der Eingabe und dem Zustand zum Zeitpunkt $t$ ab.\\
 	
 	Das Verhalten eines \textit{Moore}-Automaten wird mathematisch durch die Gleichungen \ref{eq: Mealy1} und \ref{eq: Mealy2} ausgedrückt. Im Vergleich zum Verhalten eines \textit{Mealy}-Automaten ist zu erkennen, dass die Ausgangsfunktion $\psi$ lediglich vom Ausgang zum Zeitpunkt $t$ abhängig ist.  \cite{mooremealy}\\
 	

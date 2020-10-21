@@ -44,14 +44,14 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 
 		
-	Eine Datenverarbeitung sorgt letztendlich für das Abspeichern verwertbarer Informationen einer erkannten Person. Zukünftige Projekte am ALF können diese Eigenschaften für weitere Entwicklungen nutzen.\\   
+	Eine Datenverarbeitung speichert verwertbare Informationen einer erkannten Person. Zukünftige Projekte am ALF können diese Eigenschaften für weitere Entwicklungen nutzen.\\   
 		
 	\subsection{Konzept der Bildverarbeitung}
 	\label{subsec: Auswahl und Training der verwendeten neuronalen Netze}
 		
 	In Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} wurde bereits erwähnt, dass state-of-the-art Lösungen häufig auf künstliche, neuronale Netze zurückgreifen. Insbesondere werden Konvolutionsnetze bevorzugt, wenn es um eine Umsetzung einer Objekterkennung geht \cite{bildundobjekt}.\\
 	
-	Auch in dieser Masterarbeit werden CNNs in Anwendungs auf eine Objekterkennung untersucht. Jedoch werden die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} beschrieben Methoden weiterhin berücksichtigt, indem ihre Eigenschaften mit der der Faltungsnetze verglichen werden. Weiterhin wird eine Auswahl für die praktische Anwendung am ALF getroffen. \\
+	Auch in dieser Masterarbeit werden CNNs in Anwendung auf eine Objekterkennung untersucht. Jedoch werden die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} beschrieben Methoden weiterhin berücksichtigt, indem ihre Eigenschaften mit der der Faltungsnetze verglichen werden. Weiterhin wird eine Auswahl für die praktische Anwendung am ALF getroffen. \\
 		
 		
 		
@@ -88,7 +88,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 		In Abbildung \ref{fig: ownnet} ist eine weitere Lösung dargestellt. Die Ausgabeschicht eines Netzes wird so verändert, dass lediglich ein Ausgangsneuron vorhanden ist. Dieses ist bekanntlich in der Lage, auf eine Klasse trainiert zu werden. Die restlichen Klassen werden somit verworfen und das Neuron wird ausschließlich auf die Klasse \textit{Person} trainiert. Hierbei sei zu beachten, dass diese Veränderung nicht mit einer \textit{Softmax} Ausgabeschicht zu realisieren ist, da das Ausgangsneuron in jedem Fall die Wertigkeit eins haben würde. Der technische Hintergrund ist in Abschnitt \ref{subsec: Objekterkennung durch neuronale Netze} beschrieben.\\
 		
-		Diese Vorgehensweise spart nicht nur die Einbindung eines Sortieralgorithmus, sondern senkt in geringen Mengen den benötigten Speicherplatz. Durch die Elimination der nicht benötigten Neuronen werden folglich auch Parameter gelöscht, die gewissen Speicher einnehmen und Rechenoperationen vorraussetzen.\\
+		Diese Vorgehensweise spart nicht nur die Einbindung eines Sortieralgorithmus, sondern senkt in geringen Mengen den benötigten Speicherplatz. Durch die Elimination, der nicht benötigten Neuronen werden folglich auch Parameter gelöscht, die gewissen Speicher einnehmen und Rechenoperationen voraussetzen.\\
 		
 		Zur Umsetzung des KNNs wird \textit{Tensorflow} der Firma \textit{Google} verwendet. \textit{Tensorflow} bietet neben der Möglichkeit des Trainings vortrainierter Netze, Lösungen zur Implementierung auf eingebetteten Systemen \cite{frameworks}.\\
 		
@@ -98,11 +98,11 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 		Für Trainingsprozesse eignet sich in vielen Fällen ein Rechner mit einer leistungsstarken Grafikeinheit. Die Praxiserfahrung dieser Masterarbeit zeigte, dass eine Grafikkarte im Vergleich zu einer Recheneinheit den Trainingsprozess der CNNs um den Faktor 12 beschleunigt. Die Spezifikationen der in diesem Projekt verwendeten Hardware für den Trainingsprozess sind in Kapitel \ref{Abbildungen} in der Tabelle \ref{fig: pcinfo} aufgelistet. Jedoch gibt es Anwendungsfälle, die durch die Verwendung der zentralen Recheneinheit des Computers beschleunigt werden \cite{cpugpu}. \\
 		
-		Als Datensatz für das Training der Netze wird der \textit{Common Objects in Context} (COCO) Datensatz der Firma \textit{Microsoft} verwendet. Die dem Datensatz beigefügte \textit{Application Programming Interface} (API) ermöglichst es dem Benutzer, Datenmengen anhand der gewünschten Klassen zu extrahieren.\\
+		Als Datensatz für das Training der Netze wird der \textit{Common Objects in Context} (COCO) Datensatz der Firma \textit{Microsoft} verwendet. Die dem Datensatz beigefügte \textit{Application Programming Interface} (API) ermöglicht es dem Benutzer, Datenmengen anhand der gewünschten Klassen zu extrahieren.\\
 		
 		Der Datensatz enthält circa 330000 Bilder mit diversen alltäglichen Objekten \cite{coco, cocopaper}. Davon sind laut eigener Aussagen über 200000 Bilder mit sogenannten \textit{Annotations} oder auch \textit{Labels} (deutsch: Anmerkungen/Etiketten) versehen \cite{coco}. Die Daten sind in Trainings-, Evaluations- und Testdaten unterteilt. Letzteres ist jedoch nicht etikettiert und somit für diese Masterarbeit nicht relevant.\\
 		
-		Die Trainingsdaten von dem \textit{COCO}-Datensatz aus dem Jahr 2017 stellt knapp 65000 etikettierte Bilder von Personen bereit. Circa 5000 Bilder sind im Evalutaionsdatensatz enthalten. Aufgrund des Umfangs und der entsprechenden API, die eine vereinfachte Extraktion der Daten ermöglicht, wird der \textit{COCO}-Datensatz verwendet. \\
+		Die Trainingsdaten von dem \textit{COCO}-Datensatz aus dem Jahr 2017 stellt knapp 65000 etikettierte Bilder von Personen bereit. Circa 5000 Bilder sind im Evaluationsdatensatz enthalten. Aufgrund des Umfangs und der entsprechenden API, die eine vereinfachte Extraktion der Daten ermöglicht, wird der \textit{COCO}-Datensatz verwendet. \\
 		
 		Für den Lernprozess wird der Trainingsdatensatz in Trainings- und Testdaten unterteilt. So kann ein Teil der eigentlichen Trainingsdaten durch die vorhandenen Labels als Testdatensatz verwendet werden. In Kapitel \ref{ch: Verifikation} werden die bereits besprochenen Netze mit dem eigenen und dem \textit{COCO}-Datensatz evaluiert.
 		
@@ -117,7 +117,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 		Für einen zweiten Test wird ein eigener Datensatz erstellt. Hierbei werden 160 Bilder aus dem Einsatzumfeld des ALFs aufgenommen und etikettiert. Die Abbildungen \ref{fig: owndata}a und b zeigen zwei Beispiele des Datensatzes. \\
 		
-		Im Rahmen dieser Masterarbeit wird aufgrund der in Kapitel \ref{ch: Einleitung} beschriebenen Anwendungen die Erkennung von Personen insbesondere auf den Nahbereich des Fahrzeugs ausgelegt. Aufgrund dessen sind Personen auf den Bildern des eigenen Datensatzes häufig verhältnismäßig groß dargestellt.\\
+		Im Rahmen dieser Masterarbeit wird aufgrund der in Kapitel \ref{ch: Einleitung} beschriebenen Anwendungen die Erkennung von Personen insbesondere auf den Nahbereich des Fahrzeugs ausgelegt. Aufgrund dessen sind Personen auf den Bildern des eigenen Datensatzes häufig groß dargestellt.\\
 		
 			\begin{figure}[H]
 			\centering
@@ -151,7 +151,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	 Die Schnittstelle zwischen \textit{ROS} und \textit{Python} bietet die Möglichkeit, eingehende Bilder sowohl parallel als auch seriell zu bearbeiten. Jedoch ist zu beachten, dass die Recheneinheit eines Computers mit der Bildverarbeitung eines Bildes stark belastet sein kann. Der beschriebene Effekt variiert je nach verwendeter Hardwareplattform. Demzufolge ist auf einem eingebetteten System eine deutlich höhere Belastung zu erwarten als auf dem Computer des ALFs. Aufgrund dessen wird bei der Bildverarbeitung der Personenerkennung auf eine serielle Bearbeitung gesetzt. So wird ausgeschlossen, dass zwei eingehende Bilder gleichzeitig analysiert werden.\\
 	
 
-	Zu Beginn arbeitet das entwickelte System in einem reduzierten Modus. Hierbei werden Pausen mit einer gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt, bis ein relevantes Bild erkannt wird. Als relevant werden Bilder eingestuft, die eine Person enthalten. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Der reduzierte Modus erspart weitere Rechenkapazität des Computers für parallel laufende Prozesse. \\
+	Zu Beginn arbeitet das entwickelte System in einem reduzierten Modus. Hierbei werden Pausen mit einer gewünschten Dauer zwischen Bildverarbeitungsprozessen eingelegt, bis ein relevantes Bild erkannt wird. Als relevant werden Bilder eingestuft, die eine Person enthalten. Erst dann arbeitet die Personenerkennung mit der maximalen Geschwindigkeit. Der reduzierte Modus erspart weitere Rechenkapazität des Computers für parallellaufende Prozesse. \\
 		
 
 	
@@ -220,7 +220,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 			\path [papLine] (pro4) -- (dec3);
 			
 			\end{tikzpicture}
-			\caption{Prozessablaufplan der Personenerkennung. Der Start sowie das Ende des Programms sind als Boxen mit Abrundungen dargestellt. Rechtecke zeigen Prozesse und Parallelogramme deuten eine Entscheidung im Programmablauf an. Die Flussrichtung der entsprechenden Informationen werden durch Pfeile präsentiert.}
+			\caption{Prozessablaufplan der Personenerkennung. Der Start sowie das Ende des Programms sind als Boxen mit Abrundungen dargestellt. Rechtecke zeigen Prozesse und Parallelogramme deuten eine Entscheidung im Programmablauf an. Die Flussrichtung der entsprechenden Informationen wird durch Pfeile präsentiert.}
 			\label{fig: Personenerkennung}
 		\end{figure}
 		\newpage
@@ -229,13 +229,13 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 		Die dort abgebildeten Personen werden in diesem Fall von roten \textit{Bounding Boxes} umrandet. Wird keine Person erkannt, verfällt das Programm wieder in den bereits beschriebenen, reduzierten Modus. Die extrahierten \textit{Bounding Boxes} gelten im Falle einer Personendetektion als Interessensbereich für die Gesichtserkennung.\\
 		
-	Das Pythonpaket \textit{face-recognition} wird in diesem Projekt für die Gesichterkennung verwendet. Prinzipiell arbeitet das Paket in drei Schritten. Die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} erklärte \textit{HOG}-Methode wird zur Extraktion der \textit{Bounding Box}, des jeweiligen Gesichts angewendet \cite{facerecarticle}.\\
+	Das Pythonpaket \textit{face-recognition} wird in diesem Projekt für die Gesichtserkennung verwendet. Prinzipiell arbeitet das Paket in drei Schritten. Die in Abschnitt \ref{subsec: Objekterkennung durch alternative Verfahren} erklärte \textit{HOG}-Methode wird zur Extraktion der \textit{Bounding Box}, des jeweiligen Gesichts angewendet \cite{facerecarticle}.\\
 	
 	Damit eine Person nicht unbedingt gerade in das entsprechende Aufnahmegerät schauen muss, werden durch die Software sogenannte Landmarken auf dem Gesicht verteilt \cite{facerecarticle}. Diese werden zur Rotation des Gesichts im Bild verwendet \cite{facerecarticle}. \\
 	
 	Das bearbeitete Bild des Gesichts wird mit einem neuronalen Netz analysiert, das von den Entwicklern von \textit{OpenFace} bereitgestellt wird \cite{facerecarticle}. Entwickler \textit{Adam Geitgey} gibt für das im Paket verwendete Netz eine Genauigkeit von 99,38 \% an \cite{facerecognition}. Hinsichtlich der in Kapitel \ref{ch: Grundlagen} besprochenen, möglichen Nutzungsszenarien der Personenerkennung ist eine hohe Genauigkeit notwendig. \\
 	
-	Nach eigener Recherche besitzen die von \textit{OpenFace} bereitgestellten, neuronalen Netze zwischen 3,7 - 7,4 Millionen Parameter \cite{openface}. Die Größenordnung ähnelt folglich der einer herkömmlichen \textit{MobileNet}-Architektur.\\
+	Nach eigener Recherche besitzen die von \textit{OpenFace} bereitgestellten, neuronalen Netze zwischen 3,7 - 7,4 Millionen Parameter \cite{openface}. Die Größenordnung ähnelt folglich der einer herkömmlichen \textit{MobileNet} Architektur.\\
 	
 	Außerdem bietet das \textit{face-recognition} Paket eine Funktion zum Vergleichen und Unterscheiden von Gesichtsmerkmalen \cite{facerecarticle}. Aufgrund der Genauigkeit und der verwendeten Netze wird das \textit{face-recognition} Paket in dieser Masterarbeit für die Gesichtserkennung eingesetzt.\\
 	
@@ -250,7 +250,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 	
 	Ein hierarchischer Zustandsautomat nach \textit{Mealy} unterbindet die Probleme, indem sich der Endzustand durch zuvor aufgerufene Zustände zusammensetzt. Die Wahl der \textit{Mealy}-Methode beruht auf dessen Ausgangsfunktion, die von dem aktuellen Zustand abhängig ist. Die Abhängigkeit der Zustände voneinander ist im Folgenden beschrieben.\\
 	
-	Der Aufruf verschiedener \textit{ROS}-Knoten in der korrekten Reihenfolge wird somit autark geregelt. Für die Steuerung des EAs wird die Spracherkennung aus der parallel laufenden Masterarbeit verwendet. Die Auswahl des Zustandsautomats wird im folgendem Abschnitt näher ausgeführt.\\	
+	Der Aufruf verschiedener \textit{ROS}-Knoten in der korrekten Reihenfolge wird somit autark geregelt. Für die Steuerung des EAs wird die Spracherkennung aus der parallellaufenden Masterarbeit verwendet. Die Auswahl des Zustandsautomaten wird im folgenden Abschnitt näher ausgeführt.\\	
 	
 	Die Problematik der Steuerung über Sprache ist die Extraktion der eigentlichen Aussage eines Satzes \cite{Dittmann}. In der Masterarbeit von \textit{Hannes Dittmann} werden Sprachbefehle kategorisiert~\cite{Dittmann}. Die KI ist in der Lage verschiedene Sätze einer für den Roboter relevanten Kategorie zuzuordnen. Diese werden als Transitionsbedingung für den EA genutzt.\\
 	
@@ -304,7 +304,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 		
 		Die binären Vektorelemente $m_n(\epsilon_f)$ sind mathematisch von der Zusammensetzung des Endzustands abhängig. Dieser Sachverhalt wird beispielsweise mithilfe der manuellen Fahrfunktion erklärt. Diese wird automatisiert mit einer statischen Karte gestartet, in der sich der Roboter selbst findet. Hat der Benutzer jedoch zuvor eine Lokalisierung mithilfe der \textit{SLAM}-Methode gefordert, kann dieselbe Fahraufgabe mit einer sich aufbauenden Karte vollzogen werden.\\
 		
-		Widerrum schließen sich diverse Zustände gegenseitig aus. Eine bestimmte Zielpose ist von dem Ursprung einer statischen Karte abhängig. Diese ist beim \textit{SLAM}-Algorithmus jedoch nicht vorhanden. So kann folglich kein Ziel angefahren werden, wenn zuvor die Lokalisierung mithilfe von \textit{SLAM} abgeschlossen wurde.\\
+		Wiederum schließen sich diverse Zustände gegenseitig aus. Eine bestimmte Zielpose ist von dem Ursprung einer statischen Karte abhängig. Diese ist beim \textit{SLAM}-Algorithmus jedoch nicht vorhanden. So kann folglich kein Ziel angefahren werden, wenn zuvor die Lokalisierung mithilfe von \textit{SLAM} abgeschlossen wurde.\\
 		
 		\begin{figure}[H]
 			\centering
@@ -353,7 +353,7 @@ In diesem Kapitel wird die Konzeptionierung der Personenerkennung sowie die des 
 					\label{eq: m8}
 				\end{equation}\\
 		
-		Für eine übersichtliche Darstellung eines Zustandsautomats wird \textit{Unified Modeling Language} (UML) verwendet. Das dem entworfenen Zustandsautomaten entsprechende UML-Diagramm ist in Abbildung \ref{fig: uml} gezeigt. Zustände sind als Boxen mit Abrundungen dargestellt und durch den Namen sowie den dazugehörigen Index gekennzeichnet. Pfeile stehen für Transitionen zwischen den Zuständen. Je nach Hierarchieebene legen schwarze Punkte den Startpunkt fest, der durchlaufen werden muss. 
+		Für eine übersichtliche Darstellung eines Zustandsautomaten wird \textit{Unified Modeling Language} (UML) verwendet. Das dem entworfenen Zustandsautomaten entsprechende UML-Diagramm ist in Abbildung \ref{fig: uml} gezeigt. Zustände sind als Boxen mit Abrundungen dargestellt und durch den Namen sowie den dazugehörigen Index gekennzeichnet. Pfeile stehen für Transitionen zwischen den Zuständen. Je nach Hierarchieebene legen schwarze Punkte den Startpunkt fest, der durchlaufen werden muss. 
 		
 	
 	
