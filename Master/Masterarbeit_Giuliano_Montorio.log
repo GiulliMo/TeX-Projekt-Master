@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  22 OCT 2020 08:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.26)  26 OCT 2020 18:36
 entering extended mode
 **./Masterarbeit_Giuliano_Montorio.tex
 (Masterarbeit_Giuliano_Montorio.tex
@@ -3490,6 +3490,12 @@ Package pgfplots Warning: Table 'Bilder/cocossdmobilenetv1tflite.csv' has non-u
 nique column name 'a'. Only the first occurence can be accessed via column name
 s. on input line 33.
 
+PGFPlots: reading {Bilder/hog.csv}
+
+Package pgfplots Warning: Table 'Bilder/hog.csv' has non-unique column name 'a'
+. Only the first occurence can be accessed via column names. on input line 34.
+
+Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -3865,7 +3871,7 @@ l'.
 Here is how much of TeX's memory you used:
  57157 strings out of 481212
  1301720 string characters out of 2922283
- 2165447 words of memory out of 3000000
+ 2167849 words of memory out of 3000000
  71398 multiletter control sequences out of 15000+200000
  592572 words of font info for 129 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
@@ -3881,7 +3887,7 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb><Y:/Miktex/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb><Y:/Miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><Y:/Mi
 ktex/fonts/type1/urw/helvetic/uhvb8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uh
 vr8a.pfb><Y:/Miktex/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Masterarbeit_Giuliano_Montorio.pdf (89 pages, 5378677 bytes).
+Output written on Masterarbeit_Giuliano_Montorio.pdf (89 pages, 5378801 bytes).
 
 PDF statistics:
  1367 PDF objects out of 1440 (max. 8388607)
